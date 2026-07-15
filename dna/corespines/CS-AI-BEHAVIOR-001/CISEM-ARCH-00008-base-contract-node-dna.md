@@ -12,8 +12,8 @@ CISEM node must carry from its first draft.
 **Short description (AI):** Schema contract node — Sections I–X enumerate
 required node fields for creation-time compliance checks; DRAFT, not yet
 enforced by tooling.
-**Status:** DRAFT — proposal for Governor ratification, not yet built or wired
-**Version:** v0.1 (first draft, no prior versions)
+**Status:** RATIFIED — Governor ratification 2026-07-16
+**Version:** v1.0 (ratified 2026-07-16; prior: v0.1 draft)
 **Change protocol:** Edits are proposals, not silent updates — any change
 bumps the version, is logged in §X Change log, and does not become binding
 until CS-MASTER-VALIDATION-001 ratifies it. Builder may not apply a change
@@ -23,9 +23,8 @@ the Path Rejection Declaration principle (CLAUDE.md §2.8).
 node must satisfy at creation.
 **Who I'm serving:** The Governor (ratification authority) and Builder
 (execution-time compliance checks against this contract).
-**Position in schema:** PLACEHOLDER — T-SYS/T-DOM ancestor chain not yet
-resolved; per CISEM-SCHEMA-00001 this reserves the slot without blocking
-creation.
+**Position in schema:** T-SYS — governance/schema layer; PLACEHOLDER resolved
+at ratification 2026-07-16 (per CISEM-SCHEMA-00001).
 **Position in corespine:** Filed under CS-AI-BEHAVIOR-001 pending a
 dedicated schema corespine; not a declared child in corespine-registry.yaml
 yet — flagged, not assumed.
@@ -81,9 +80,9 @@ Goal incl. measurable outcomes, Role, Who I am serving
 Position in schema (T-SYS/T-DOM), Position in corespine, Position in pipeline(s),
 Connection to Threshold
 
-**Applied to this node:** All four present in the header above. Two
-resolve to `PLACEHOLDER`/none-yet rather than a concrete position — that's
-a disclosed gap, not a missing field.
+**Applied to this node:** All four present in the header above. Position in
+schema resolved to T-SYS at ratification (2026-07-16); position in corespine
+is CS-AI-BEHAVIOR-001 (declared in header). No remaining PLACEHOLDER positions.
 
 ## IV. RELATIONSHIPS
 Who I inherit from/obligated by, Who inherits from me/I deliver to, Dependencies,
@@ -100,10 +99,10 @@ Propagation membership
 - *Dependencies:* CISEM-SCHEMA-00001, CISEM-ARCH-00011, and — for the
   Pocket Declaration fields specifically — `pocket-mechanism.md`, which
   CLAUDE.md §3.3 and corespine-registry.yaml both cite as living at
-  `dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md`. **That file does
-  not exist in this repo.** This node uses Pocket Declaration vocabulary
+  `dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md`. **Resolved:
+  file committed in 71b15fd (2026-07-15).** Pocket Declaration vocabulary
   (reasoning_scope, inherited_constraints, output_contract, ai_cannot)
-  that is itself currently ungrounded — flagged, not silently assumed.
+  is now grounded.
 - *Propagation membership:* None yet. Not a propagation source until
   ratified and at least one dependent node exists.
 
@@ -120,8 +119,9 @@ Vocabulary alignment, Naming/numbering compliance, Tags, Statuses (incl. interna
   Sequence 00008 is recorded in `naming-registry.yaml` (migrated this
   session, no longer `pending_migration`).
 - *Tags:* see header (`schema, node-dna, base-contract, governance`).
-- *Statuses (incl. internal):* Single external `Status: DRAFT`. No
-  internal sub-statuses defined — not applicable at depth_level L1.
+- *Statuses (incl. internal):* Single external `Status: RATIFIED`
+  (2026-07-16, Governor decree). No internal sub-statuses defined — not
+  applicable at depth_level L1.
 
 ## VI. AI BEHAVIOR / POCKET
 Pocket declaration (reasoning_scope, inherited_constraints, output_contract,
@@ -167,7 +167,7 @@ last_verified + owner
 - *Verification scenario + last_verified + owner:* Verification scenario
   is re-running the §3.4 Standalone Test against this node and confirming
   every Section I–X field resolves or is explicitly flagged absent.
-  last_verified: 2026-07-15 (this pass). owner: Builder (Claude Code),
+  last_verified: 2026-07-16 (ratification pass). owner: Builder (Claude Code),
   pending Governor assignment of a permanent owner.
 
 ## X. AUDIT
@@ -189,11 +189,15 @@ Applicable checklist reference, Change log / visible-change record
     original definition text; flagged the missing Path Rejection
     Declaration (§VI) and the missing `pocket-mechanism.md` dependency
     (§IV) instead of fabricating either.
+  - v1.0 — 2026-07-16: Governor ratification. Status DRAFT → RATIFIED.
+    Position in schema PLACEHOLDER → T-SYS (CISEM-SCHEMA-00001 now
+    committed). §IV pocket-mechanism.md gap resolved (committed 71b15fd).
+    §III Applied note updated to reflect resolved positions.
 
 ## What this document is NOT
-Not ratified. Not enforced. Not exhaustive. Zero nodes currently inherit
-from or are checked against it (§IV). It now states, per section, either
-how it satisfies its own schema or explicitly that it doesn't (§VI's
-missing Path Rejection Declaration, §IV's missing `pocket-mechanism.md`) —
-but "fully discloses its own gaps" and "is ratification-ready" are
-different claims; only the first is true.
+Ratified (2026-07-16, Governor decree) but **NOT yet enforced** by tooling,
+and NOT exhaustive. Zero nodes are currently checked against it (§IV) — no
+automated check exists yet (plan Step 5 wires it). One disclosed gap remains
+open even post-ratification: §VI's missing Path Rejection Declaration — kept
+as an honest disclosure, not fabricated retroactively into a ratified node;
+tracked for a proposed edit under the §Change-protocol, not silently added.
