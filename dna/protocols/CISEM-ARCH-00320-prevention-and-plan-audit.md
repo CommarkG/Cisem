@@ -37,7 +37,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I1 | Phantom reference | DNA-00001, ARCH-00012/13 cited, no file | Every referenced ID/path resolves on disk OR carries an explicit `NOT-YET-A-NODE` / `example-only` tag inline |
 | I2 | Disclosed-as-Resolved | commits "close §3.4 gaps" over disclosure-only work | `DISCLOSED` ≠ `RESOLVED`. Closure verbs (close/resolve/complete/fix) in a commit or status require a `last_verified` line + a reproducible check |
 | I3 | Uncommitted truth-bump | ARCH-00008 `RATIFIED` sat in the working tree | Truth-field changes (Status/RATIFIED/last_verified) commit atomically with a decree reference; never left dangling in the working tree at handoff |
-| I4 | Non-reconcilable registry | naming-registry tracks next_seq only | Every registry maintains an assigned-ID→file manifest, diffable against the filesystem |
+| I4 | Non-reconcilable registry | naming-registry tracks next_seq only | Every registry maintains an assigned-ID→file manifest, diffable against the filesystem. The manifest is **DERIVED** (ground truth = registry + filesystem), regenerated and diffed each audit — never hand-authored, or it becomes a second source of truth that drifts |
 | I5 | Dangling child | `ai-oversight-layer3.md` declared, absent | Every registry `child`/dependency reference resolves on disk or is `PLACEHOLDER`-tagged |
 | I6 | Phantom commit batch | ARCH-00170 "created this session" ≠ git | Any "committed/created" claim is verified against `git log` before the claim is written |
 | I7 | Truth asserted below Opus | (prevented) | No truth-bearing field authored below Opus — CISEM-ARCH-00300 Hard Line |

@@ -50,7 +50,8 @@ CS-CONTROLPLANE-001:
 CS-SOLUTIONS-001:
   status: PROPOSED
   goal: "Governs every tenant-facing Solution"
-  note: "SIMULATION-ONLY instances isolated at file end — see block below"
+  children: [SOL-GIFTPRO-001]   # governance edge RETAINED; SIMULATION-ONLY — full entry isolated in the block at file end
+  note: "SOL-GIFTPRO-001 is SIMULATION-ONLY; its full entry lives in the '# SIMULATION-ONLY' block below, but it remains a governed child here (edge not severed)"
   depth_level: L1
 
 CS-AI-INTEGRATION-001:

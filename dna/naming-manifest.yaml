@@ -1,7 +1,10 @@
 # CISEM Naming Manifest — Assigned ID → Filesystem Path
 # Purpose: invariant I4 compliance (CISEM-ARCH-00320)
 # Generated: 2026-07-16 by Sonnet structuring tier
-# Status: DATA ONLY — proposed, not Opus-verified, not ratified
+# Status: DERIVED ARTIFACT — Opus-verified 2026-07-16. Ground truth is
+#   naming-registry.yaml + the filesystem, NOT this file. Regenerate and
+#   diff this manifest on every plan-audit (CISEM-ARCH-00320 I4); never
+#   hand-author it, or it becomes a second source of truth that can drift.
 # Ground truth: filesystem glob + naming-registry.yaml
 #
 # Key: present   = file exists on disk and is git-committed
@@ -135,8 +138,8 @@ CISEM-DNA-00001:
 # Bulk notation used; expand when migrated.
 CISEM-GOV-00001_thru_00026:
   path: ABSENT
-  count: 26
-  note: Drive-only governance nodes, never migrated; individual IDs unverified
+  max_possible: 26   # inferred from next_seq 27 — proves the counter reached 27, NOT that 26 files exist. May have gaps (cf. ARCH 10-spacing). Do NOT treat as a verified count.
+  note: Drive-only governance nodes, never migrated; individual IDs and actual quantity unverified
 
 # ── PARK ──────────────────────────────────────────────────────────────
 CISEM-PARK-00001:
