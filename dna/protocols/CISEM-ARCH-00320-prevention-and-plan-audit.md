@@ -42,6 +42,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I6 | Phantom commit batch | ARCH-00170 "created this session" ≠ git | Any "committed/created" claim is verified against `git log` before the claim is written |
 | I7 | Truth asserted below Opus | (prevented) | No truth-bearing field authored below Opus — CISEM-ARCH-00300 Hard Line |
 | I8 | Off-repo "authoritative" source | Founding Node, DNA-00001, GOV-00018, constraint-set.yaml cited as binding but Drive-only | No off-repo artifact may be cited as authoritative. It must be migrated into git OR flagged `NOT-IN-REPO` inline **with a named migration step** in the active plan. A referenced governing source with no file and no migration step is a violation |
+| I9 | Unregistered TYPE prefix | CISEM-SCHEMA-00001, CISEM-TEMPLATE-PROTOCOL-001 use prefixes absent from ARCH-00011 §1 | Every node's TYPE prefix MUST exist in the ARCH-00011 §1 TYPE registry, OR the same change updates that registry to add it. A node whose prefix is unregistered is a naming violation |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -68,6 +69,7 @@ Every plan node MUST now carry:
 [ ] I6  Every "committed/created" claim verified against git log
 [ ] I7  No truth-bearing field authored below Opus
 [ ] I8  No off-repo source cited as authoritative without a NOT-IN-REPO flag + migration step
+[ ] I9  Every node's TYPE prefix is registered in ARCH-00011 §1 (or registered in the same change)
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)
@@ -91,11 +93,18 @@ to Haiku per §3):
 - **I5 — dangling children:** none in corespine-registry after this session
   (only `pocket-mechanism.md`, resolves). **VERDICT: pass.** (`ai-oversight-layer3.md`
   is listed in a prior registry entry — recheck at next audit.)
-- **I4 — manifest:** absent. **VERDICT: fail;** ARCH-00310 Step 6 / Sonnet task builds it.
+- **I4 — manifest:** built this session — `dna/naming-manifest.yaml` (Sonnet,
+  Opus-verified: 15 ARCH present + 2 absent, all TYPEs mapped, off-repo IDs marked
+  ABSENT). **VERDICT: in-progress;** manifest exists, ongoing reconciliation is now
+  a diffable check, not a blind spot.
 - **I8 — off-repo authoritative sources:** Founding Node (TSA/CoreSpiral/Pocket),
   CISEM-DNA-00001, CISEM-GOV-00018, constraint-set.yaml — all cited as governing
   but Drive-only / never created. **VERDICT: fail (was un-flagged);** now each has a
   named migration step in ARCH-00310 §4 coverage map. Founding Node is P0.
+- **I9 — unregistered TYPE prefix:** CISEM-SCHEMA-00001 (prefix SCHEMA),
+  CISEM-TEMPLATE-PROTOCOL-001 (prefix TEMPLATE-PROTOCOL) — neither in ARCH-00011
+  §1. **VERDICT: fail;** register both TYPEs in ARCH-00011 §1 or rename — ARCH-00310
+  Step 8. (Surfaced by Sonnet in naming-manifest.yaml, ruled by Opus.)
 
 ## Does NOT cover
 Wiring the audit as an automated script — that is ARCH-00180's job (this defines

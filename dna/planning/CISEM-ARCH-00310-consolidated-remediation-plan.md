@@ -17,8 +17,8 @@ CISEM-ARCH-00170 (gap registry) as the actionable sequence.
 (execution after confirmation).
 **Prepared by:** Opus (consolidation + verification), Sonnet (sequencing),
 Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
-**Prevention invariants touched:** I1, I2, I3, I4, I5, I6, I8 (per CISEM-ARCH-00320 — this plan invokes that protocol; I7 is Opus-authorship, structurally enforced).
-**Plan-audit last run:** 2026-07-16 (Opus first audit — see CISEM-ARCH-00320 §5). Verdict: disclosed gaps tracked below; working tree clean except held-back ARCH-00008 bump.
+**Prevention invariants touched:** I1, I2, I3, I4, I5, I6, I8, I9 (per CISEM-ARCH-00320 — this plan invokes that protocol; I7 is Opus-authorship, structurally enforced).
+**Plan-audit last run:** 2026-07-16 (2nd pass — Haiku enumerated, Sonnet remediated, Opus verified; see CISEM-ARCH-00320 §5). Artifacts: `dna/naming-manifest.yaml` built (I4 in-progress). Working tree clean except the held-back ARCH-00008 bump.
 
 ## Pocket Declaration
 - **reasoning_scope:** consolidate + order all remediation, assign tier owners
@@ -67,7 +67,7 @@ Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
 | 5 | Wire **ARCH-00180** scripts: naming-check (WARN-ONLY first) → size-check → field-check → compute-registry; then ARCH-00270 pre-commit hook → CI | Builder (**Sonnet** exec, **Opus** verify) | Steps 1–2 (field-check); naming/size after Step 2 alone | not started |
 | 6 | Remediation pass: fix WITNESS-00001 §3.4; **create the absent CISEM-DNA-00001 living index**; migrate **CISEM-GOV-00018** or flag NOT-IN-REPO (I8); create/formally-close **constraint-set.yaml** (I8); migrate or formally close dna/harvest/from-csp/; build the **ID→file manifest** (I4); purge phantom batch from ARCH-00170 (I6); **decide the held-back ARCH-00008 RATIFIED bump** (Governor decree → then Opus commits, or revert) | Builder (**Haiku** enumerate, **Sonnet** apply, **Opus/Governor** rule) | parallel with Step 5 | not started |
 | 7 | SOL-GIFTPRO-001 isolation: move to a visually separated `# SIMULATION-ONLY — NOT REAL BUILD TRACKS` block in the registry + note on CS-SOLUTIONS-001 | Builder (**Sonnet**) | none | not started |
-| 8 | **Content for the 3 remaining content-less corespines** (CS-CREATION-001, CS-ACCOUNTABILITY-001, and CS-THRESHOLD-001 body) — registered but bodiless (I1). Draft or PLACEHOLDER+SCHEDULED each; do not leave registered-without-content | Brain drafts → Builder (**Sonnet**) → **Opus** verify | Step 1 | disclosed |
+| 8 | **CS-THRESHOLD-001 body (true violation)** — it is `RATIFIED` yet bodiless, breaking the registry's own "content-once-past-DRAFT" rule (I1). The DRAFT/DECLARED/PROPOSED corespines are legitimately deferred, NOT violations. **Plus register/rename the unregistered TYPE prefixes** SCHEMA + TEMPLATE-PROTOCOL in ARCH-00011 §1 (I9). | Brain drafts → Builder (**Sonnet**) → **Opus** verify | Step 1 (CS-THRESHOLD body); none (I9 registration) | disclosed |
 
 ## 1b. Coverage map — every ARCH-00170 gap has a written destination
 This plan supersedes ARCH-00170's "next step"; per I1/I8 a supersession must

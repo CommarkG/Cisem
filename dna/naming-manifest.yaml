@@ -1,0 +1,169 @@
+# CISEM Naming Manifest — Assigned ID → Filesystem Path
+# Purpose: invariant I4 compliance (CISEM-ARCH-00320)
+# Generated: 2026-07-16 by Sonnet structuring tier
+# Status: DATA ONLY — proposed, not Opus-verified, not ratified
+# Ground truth: filesystem glob + naming-registry.yaml
+#
+# Key: present   = file exists on disk and is git-committed
+#      modified  = committed but has uncommitted local changes (Tasks A/B/D edits)
+#      absent    = no file found matching this ID
+
+# ── LOAD ──────────────────────────────────────────────────────────────
+CISEM-LOAD-00001:
+  path: CLAUDE.md
+  status: present
+
+CISEM-LOAD-00002:
+  path: ABSENT
+  note: NOT DELIVERED — phantom batch; corrected in ARCH-00170 2026-07-16
+
+# ── WITNESS ───────────────────────────────────────────────────────────
+CISEM-WITNESS-00001:
+  path: dna/CISEM-WITNESS-00001-creation-witness-plan.md
+  status: present
+
+CISEM-WITNESS-00002:
+  path: ABSENT
+  note: pending_migration (Drive-only, named in naming-registry.yaml)
+
+CISEM-WITNESS-00003:
+  path: ABSENT
+  note: NOT DELIVERED — phantom claim in ARCH-00170 (corrected 2026-07-16)
+  registry_flag: not formally registered — WITNESS next_seq is 3, meaning only 00001+00002 assigned
+
+CISEM-WITNESS-00004:
+  path: ABSENT
+  note: NOT DELIVERED — dna/brain/ directory does not exist
+  registry_flag: not formally registered
+
+# ── VOC ───────────────────────────────────────────────────────────────
+CISEM-VOC-00001:
+  path: dna/vocabulary/CISEM-VOC-00001-tag-library.md
+  status: present
+
+CISEM-VOC-00002:
+  path: dna/vocabulary/CISEM-VOC-00002-status-library.md
+  status: present
+
+# ── ARCH (assigned node IDs only — reserved ranges noted separately) ──
+CISEM-ARCH-00008:
+  path: dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md
+  status: modified  # pending: ratification edits from Task session (v1.0 updates)
+
+CISEM-ARCH-00011:
+  path: dna/protocols/CISEM-ARCH-00011-naming-numbering-policy.md
+  status: present
+
+CISEM-ARCH-00012:
+  path: ABSENT
+  note: NOT DELIVERED — phantom batch; corrected in ARCH-00170 2026-07-16
+
+CISEM-ARCH-00013:
+  path: ABSENT
+  note: NOT DELIVERED — phantom batch; corrected in ARCH-00170 2026-07-16
+
+CISEM-ARCH-00150:
+  path: dna/corespines/CISEM-ARCH-00150-brain-cisem-alignment-plan.md
+  status: present
+
+CISEM-ARCH-00160:
+  path: dna/corespines/CISEM-ARCH-00160-project-sync-manifest.md
+  status: present
+
+CISEM-ARCH-00170:
+  path: dna/corespines/CISEM-ARCH-00170-master-plan-gap-registry.md
+  status: modified  # pending: phantom batch correction (Task B)
+
+CISEM-ARCH-00180:
+  path: dna/planning/CISEM-ARCH-00180-layer1-hardcode-plan.md
+  status: present
+
+CISEM-ARCH-00190:
+  path: dna/planning/CISEM-ARCH-00190-planning-domain-protocol.md
+  status: present
+
+CISEM-ARCH-00230:
+  path: dna/protocols/CISEM-ARCH-00230-file-creation-template.md
+  status: present
+
+CISEM-ARCH-00240:
+  path: dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00240-pro-colleague-persona.md
+  status: present
+
+CISEM-ARCH-00270:
+  path: dna/planning/CISEM-ARCH-00270-enforcement-depth-plan.md
+  status: present
+
+CISEM-ARCH-00280:
+  path: dna/planning/CISEM-ARCH-00280-open-design-questions.md
+  status: present
+
+CISEM-ARCH-00290:
+  path: dna/templates/CISEM-ARCH-00290-template-library-draft.md
+  status: present
+
+CISEM-ARCH-00300:
+  path: dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00300-model-tier-routing.md
+  status: present
+
+CISEM-ARCH-00310:
+  path: dna/planning/CISEM-ARCH-00310-consolidated-remediation-plan.md
+  status: present
+
+CISEM-ARCH-00320:
+  path: dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md
+  status: present
+
+# ARCH reserved ranges (per naming-registry comment — intentionally not assigned):
+# 00001-00007, 00009-00010, 00014-00149, 00151-00159, 00161-00169,
+# 00171-00179, 00181-00189, 00191-00229, 00231-00239, 00241-00269,
+# 00281-00289, 00291-00299, 00301-00309, 00311-00319, 00321-00329
+
+# ── FOUND ─────────────────────────────────────────────────────────────
+CISEM-FOUND-00001:
+  path: ABSENT
+  note: assigned (naming-registry next_seq: 2); no file on disk
+
+# ── DNA ───────────────────────────────────────────────────────────────
+CISEM-DNA-00001:
+  path: ABSENT
+  note: Living Index — Drive-only, never migrated (ARCH-00170 Gap #6, HIGHEST PRIORITY)
+
+# ── GOV ───────────────────────────────────────────────────────────────
+# naming-registry GOV next_seq: 27 → 26 node IDs assigned (00001–00026)
+# All ABSENT from this repo. Individual node names unknown — Drive-only.
+# Bulk notation used; expand when migrated.
+CISEM-GOV-00001_thru_00026:
+  path: ABSENT
+  count: 26
+  note: Drive-only governance nodes, never migrated; individual IDs unverified
+
+# ── PARK ──────────────────────────────────────────────────────────────
+CISEM-PARK-00001:
+  path: ABSENT
+  note: assigned (naming-registry next_seq: 2); no file on disk
+
+# ── SES ───────────────────────────────────────────────────────────────
+CISEM-SES-00001:
+  path: ABSENT
+  note: assigned (naming-registry next_seq: 2); no file on disk
+
+# ── ANOMALY FLAGS — for Opus ruling ───────────────────────────────────
+# Files present on disk whose TYPE prefix is NOT in ARCH-00011 §1 TYPE registry.
+# No structural ruling made here — data only.
+
+_anomaly_unregistered_type_prefix:
+  CISEM-SCHEMA-00001:
+    path: dna/schema/CISEM-SCHEMA-00001-placement-engine.md
+    status: modified  # pending: Task D example-only tags
+    issue: prefix "SCHEMA" not in TYPE registry (FOUND/DNA/GOV/ARCH/PARK/SES/WITNESS/VOC/LOAD/REG)
+  CISEM-TEMPLATE-PROTOCOL-001:
+    path: dna/protocols/CISEM-TEMPLATE-PROTOCOL-001.md
+    status: modified  # pending: Task D example-only tags
+    issue: prefix "TEMPLATE-PROTOCOL" not in TYPE registry; node header self-declares Type as ARCH
+
+# ── NO-ID FILE — present, no CISEM typed ID assigned ─────────────────
+_no_id:
+  pocket-mechanism:
+    path: dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md
+    note: governed by CS-AI-BEHAVIOR-001 corespine; no CISEM-{TYPE}-{SEQ} ID assigned

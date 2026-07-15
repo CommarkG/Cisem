@@ -15,11 +15,11 @@ CS-AI-PROFILING-001 ✓ in corespine-registry.yaml
 CS-PRIORITY-001 ✓ in corespine-registry.yaml
 CISEM-ARCH-00150 ✓ committed (this batch)
 CISEM-ARCH-00160 ✓ committed (this batch)
-CISEM-WITNESS-00003 — pending delivery, this commit batch
-CISEM-LOAD-00002 — pending delivery, this commit batch
-CISEM-ARCH-00012 — pending delivery, this commit batch
-CISEM-ARCH-00013 — pending delivery, this commit batch
-CISEM-WITNESS-00004 — pending delivery, this commit batch
+CISEM-WITNESS-00003 — NOT DELIVERED, no file exists (corrected per plan-audit 2026-07-16)
+CISEM-LOAD-00002 — NOT DELIVERED, no file exists (corrected per plan-audit 2026-07-16)
+CISEM-ARCH-00012 — NOT DELIVERED, no file exists (corrected per plan-audit 2026-07-16)
+CISEM-ARCH-00013 — NOT DELIVERED, no file exists (corrected per plan-audit 2026-07-16)
+CISEM-WITNESS-00004 — NOT DELIVERED, no file exists (corrected per plan-audit 2026-07-16)
 
 ## Gap Registry
 1. Founding Node — never migrated to git. TSA/CoreSpiral/Pocket

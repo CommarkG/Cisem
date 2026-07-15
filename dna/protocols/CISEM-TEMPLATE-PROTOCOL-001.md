@@ -1,10 +1,10 @@
 # Template Protocol
 **Node ID:** CISEM-TEMPLATE-PROTOCOL-001
 **Type:** ARCH (protocol subtype) | **Status:** DRAFT
-**Goal:** Resolve the CS-TEMPLATE-001 A/B scope fork by correcting a category
+**Goal:** Resolve the CS-TEMPLATE-001 (example-only, NOT-YET-A-NODE) A/B scope fork by correcting a category
 error — Template is not a corespine, it is a protocol every corespine follows.
 **Position:** T-SYS, protocol layer — sibling to Naming Policy, NOT a peer of
-CS-UXUI-001 or CS-DESIGN-001.
+CS-UXUI-001 (example-only, NOT-YET-A-NODE) or CS-DESIGN-001 (example-only, NOT-YET-A-NODE).
 
 ## 1. The correction
 A corespine governs WHY and WHAT'S REQUIRED. A template is the concrete

@@ -50,7 +50,7 @@ CS-CONTROLPLANE-001:
 CS-SOLUTIONS-001:
   status: PROPOSED
   goal: "Governs every tenant-facing Solution"
-  children: [SOL-GIFTPRO-001]
+  note: "SIMULATION-ONLY instances isolated at file end — see block below"
   depth_level: L1
 
 CS-AI-INTEGRATION-001:
@@ -88,6 +88,7 @@ CS-CORECOUNCIL-001:
          acknowledged, awaiting core-basics completion before build"
   depth_level: L1
 
+# SIMULATION-ONLY — NOT REAL BUILD TRACKS
 SOL-GIFTPRO-001:
   status: SIMULATION-ONLY
   goal: "Engraved: virtual simulation/exercise tool for the schema and gates

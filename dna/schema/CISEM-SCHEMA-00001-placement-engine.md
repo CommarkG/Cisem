@@ -6,7 +6,7 @@ nothing resolves — every prior mention this session (DNA schema, CLAUDE.md,
 corespine "position in schema" fields) pointed here and found nothing.
 
 ## Precedent — this already happened once, informally
-`CS-WEB-DESIGN-001` and `CS-PHYSICAL-DESIGN-001` were created as named-slot
+`CS-WEB-DESIGN-001` (example-only, NOT-YET-A-NODE) and `CS-PHYSICAL-DESIGN-001` (example-only, NOT-YET-A-NODE) were created as named-slot
 placeholders, no content built, when the Design corespine tree was first
 established. This node formalizes that instinct as a permanent rule.
 
