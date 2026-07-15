@@ -10,10 +10,10 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 12 }   # 00008 migrated this session; 00011 (this policy) now used
+ARCH:    { next_seq: 320 }  # highest assigned: 00310. Convention: planning/governance ARCH nodes are spaced by 10 (…00280, 00290, 00300, 00310); the intervening numbers are intentionally reserved, NOT a gap. 00300 = model-tier-routing, 00310 = consolidated-remediation-plan (both 2026-07-16). NOTE: registry still lacks an assigned-ID->file manifest, so it cannot be reconciled against the filesystem — see CISEM-ARCH-00310 §0.
 PARK:    { next_seq: 2 }
 SES:     { next_seq: 2 }
 WITNESS: { next_seq: 3, pending_migration: ["00002"] }   # 00001 migrated this session
-VOC:     { next_seq: 1 }    # not yet created — blocked on bounded-context design
+VOC:     { next_seq: 3 }    # 00001 (Tag Library), 00002 (Status Library) assigned this session
 LOAD:    { next_seq: 2 }    # 00001 used
 REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself (root registry, exempt)
