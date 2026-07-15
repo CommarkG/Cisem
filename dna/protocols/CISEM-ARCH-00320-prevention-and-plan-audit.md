@@ -41,6 +41,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I5 | Dangling child | `ai-oversight-layer3.md` declared, absent | Every registry `child`/dependency reference resolves on disk or is `PLACEHOLDER`-tagged |
 | I6 | Phantom commit batch | ARCH-00170 "created this session" ≠ git | Any "committed/created" claim is verified against `git log` before the claim is written |
 | I7 | Truth asserted below Opus | (prevented) | No truth-bearing field authored below Opus — CISEM-ARCH-00300 Hard Line |
+| I8 | Off-repo "authoritative" source | Founding Node, DNA-00001, GOV-00018, constraint-set.yaml cited as binding but Drive-only | No off-repo artifact may be cited as authoritative. It must be migrated into git OR flagged `NOT-IN-REPO` inline **with a named migration step** in the active plan. A referenced governing source with no file and no migration step is a violation |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -66,6 +67,7 @@ Every plan node MUST now carry:
 [ ] I5  Every registry child/dependency resolves on disk or is PLACEHOLDER
 [ ] I6  Every "committed/created" claim verified against git log
 [ ] I7  No truth-bearing field authored below Opus
+[ ] I8  No off-repo source cited as authoritative without a NOT-IN-REPO flag + migration step
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)
@@ -90,6 +92,10 @@ to Haiku per §3):
   (only `pocket-mechanism.md`, resolves). **VERDICT: pass.** (`ai-oversight-layer3.md`
   is listed in a prior registry entry — recheck at next audit.)
 - **I4 — manifest:** absent. **VERDICT: fail;** ARCH-00310 Step 6 / Sonnet task builds it.
+- **I8 — off-repo authoritative sources:** Founding Node (TSA/CoreSpiral/Pocket),
+  CISEM-DNA-00001, CISEM-GOV-00018, constraint-set.yaml — all cited as governing
+  but Drive-only / never created. **VERDICT: fail (was un-flagged);** now each has a
+  named migration step in ARCH-00310 §4 coverage map. Founding Node is P0.
 
 ## Does NOT cover
 Wiring the audit as an automated script — that is ARCH-00180's job (this defines

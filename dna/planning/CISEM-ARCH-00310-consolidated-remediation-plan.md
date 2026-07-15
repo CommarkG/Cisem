@@ -17,7 +17,7 @@ CISEM-ARCH-00170 (gap registry) as the actionable sequence.
 (execution after confirmation).
 **Prepared by:** Opus (consolidation + verification), Sonnet (sequencing),
 Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
-**Prevention invariants touched:** I1, I2, I3, I4, I5, I6 (per CISEM-ARCH-00320 — this plan invokes that protocol).
+**Prevention invariants touched:** I1, I2, I3, I4, I5, I6, I8 (per CISEM-ARCH-00320 — this plan invokes that protocol; I7 is Opus-authorship, structurally enforced).
 **Plan-audit last run:** 2026-07-16 (Opus first audit — see CISEM-ARCH-00320 §5). Verdict: disclosed gaps tracked below; working tree clean except held-back ARCH-00008 bump.
 
 ## Pocket Declaration
@@ -59,23 +59,40 @@ Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
 ## 1. Ordered remediation (owner tier per CISEM-ARCH-00300)
 | # | Step | Owner | Blocked by | State |
 |---|------|-------|-----------|-------|
-| 1 | Write + Governor-self-ratify **CS-MASTER-VALIDATION-001** (meta-governance declaration: what it governs, corespine validation protocol, self-ratify clause). Unblocks everything. | Brain drafts → **Governor** ratifies | nothing (P0) | disclosed |
+| 0 | **Migrate the Founding Node** (TSA / CoreSpiral / Pocket philosophy) from Drive into git, OR flag `NOT-IN-REPO` and reconstruct as a new node if lost. It is cited on nearly every page with no source file (I8). The entire DNA rests on it. **True P0 — precedes even Step 1.** | Brain/**Governor** (source) → Builder migrates | nothing (P0) | disclosed |
+| 1 | Write + Governor-self-ratify **CS-MASTER-VALIDATION-001** (meta-governance declaration: what it governs, corespine validation protocol, self-ratify clause). Unblocks everything. | Brain drafts → **Governor** ratifies | Step 0 (philosophy grounding) | disclosed |
 | 2 | Ratify **ARCH-00011** naming policy (DRAFT → RATIFIED) so gate scripts encode stable field names | **Governor** review | Governor only | disclosed |
 | 3 | Define **TIER-0 / TIER-1 boundary** explicitly (what TIER-1 is, what exactly freezes). Closes the implicit-freeze ambiguity | **Governor** decision | nothing | disclosed |
 | 4 | Validate current file batch against **ARCH-00008 §I–X** (full 10-section, not just §3.4). First real proof-of-use; converts schema aspirational→operational | Builder (**Opus** verify) | Steps 1–2 | not started |
 | 5 | Wire **ARCH-00180** scripts: naming-check (WARN-ONLY first) → size-check → field-check → compute-registry; then ARCH-00270 pre-commit hook → CI | Builder (**Sonnet** exec, **Opus** verify) | Steps 1–2 (field-check); naming/size after Step 2 alone | not started |
-| 6 | Remediation pass: fix WITNESS-00001 §3.4; **create the absent CISEM-DNA-00001 living index**; migrate or formally close dna/harvest/from-csp/; purge phantom batch from ARCH-00170; **decide the held-back ARCH-00008 RATIFIED bump** (Governor decree → then Opus commits, or revert) | Builder (**Haiku** enumerate, **Sonnet** apply, **Opus/Governor** rule) | parallel with Step 5 | not started |
+| 6 | Remediation pass: fix WITNESS-00001 §3.4; **create the absent CISEM-DNA-00001 living index**; migrate **CISEM-GOV-00018** or flag NOT-IN-REPO (I8); create/formally-close **constraint-set.yaml** (I8); migrate or formally close dna/harvest/from-csp/; build the **ID→file manifest** (I4); purge phantom batch from ARCH-00170 (I6); **decide the held-back ARCH-00008 RATIFIED bump** (Governor decree → then Opus commits, or revert) | Builder (**Haiku** enumerate, **Sonnet** apply, **Opus/Governor** rule) | parallel with Step 5 | not started |
 | 7 | SOL-GIFTPRO-001 isolation: move to a visually separated `# SIMULATION-ONLY — NOT REAL BUILD TRACKS` block in the registry + note on CS-SOLUTIONS-001 | Builder (**Sonnet**) | none | not started |
+| 8 | **Content for the 3 remaining content-less corespines** (CS-CREATION-001, CS-ACCOUNTABILITY-001, and CS-THRESHOLD-001 body) — registered but bodiless (I1). Draft or PLACEHOLDER+SCHEDULED each; do not leave registered-without-content | Brain drafts → Builder (**Sonnet**) → **Opus** verify | Step 1 | disclosed |
+
+## 1b. Coverage map — every ARCH-00170 gap has a written destination
+This plan supersedes ARCH-00170's "next step"; per I1/I8 a supersession must
+account for **every** superseded gap or explicitly defer it. All 9:
+| ARCH-00170 gap | Destination | Permanent prevention |
+|---|---|---|
+| 1. Founding Node never migrated | **Step 0 (P0)** | I8 |
+| 2. Corespines registered w/ no content | Step 1 (CS-MASTER-VALIDATION) + **Step 8** (CS-CREATION, CS-ACCOUNTABILITY, CS-THRESHOLD body) | I1 |
+| 3. dna/harvest/from-csp/ empty | Step 6 | I1 |
+| 4. GiftPro code never migrated | **Deferred by design** — SOL-GIFTPRO-001 is SIMULATION-ONLY; isolation only (Step 7), not migration | I1 (tagged example-only) |
+| 5. constraint-set.yaml never created | Step 6 | I8 |
+| 6. DNA-00001 + GOV-00018 Drive-only | Step 6 | I8 |
+| 7. 9 PRIO-BLOCKING ratifications | Steps 1–2 (root) + Step 8 (branches) | I1 |
+| 8. Vocabulary | **Closed** — VOC-00001/00002 committed (60192bf); no action | n/a |
+| 9. DNA self-compliance on existing files | Step 4 (full §I–X pass) | I2 (disclosed≠resolved) |
 
 ## 2. The honest bottleneck
-Steps 1–3 are **all Governor decisions**. Nothing in Steps 4–7 moves until those
-three are given. This is a Governor-gated plan, not a Builder-blocked one.
+Steps 0–3 are **all Governor / Brain-sourced decisions**. Nothing in Steps 4–8
+moves until those are given. This is a Governor-gated plan, not a Builder-blocked one.
 
 ## 3. On Haiku's three options
 Not Option C (hard freeze) — TIER-0 governance work should continue; freezing all
-creation is overcorrection. **A then B**, sequenced above: Option A (unblock
-CS-MASTER-VALIDATION-001) = Steps 1–4; Option B (wire gates) = Step 5. Sequential,
-not competing.
+creation is overcorrection. **A then B**, sequenced above: Option A (ground +
+unblock: Founding Node + CS-MASTER-VALIDATION-001) = Steps 0–4; Option B (wire
+gates) = Step 5. Steps 6–8 run parallel. Sequential, not competing.
 
 ## Does NOT cover
 Execution of any step (blocked on Governor confirmation). The 5 pending file
