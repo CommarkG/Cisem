@@ -40,9 +40,11 @@ Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
   passes it" — that **inverts** the order. A schema must be ratified *before*
   nodes are built to it; what is premature is *claiming nodes are checked against
   it*. The cycle is **soft**: a node only needs to *satisfy* the schema, not wait
-  for it to be *ratified*. Escape = **governance bootstrapping**: the Governor
-  self-ratifies CS-MASTER-VALIDATION-001 by decree (root authorities self-sign);
-  ARCH-00008's status today is **provisional** until that closes, then confirmed.
+  for it to be *ratified*. Escape = **foundational decree** (ARCH-00011 §7): the
+  Governor ratifies the root node CS-MASTER-VALIDATION-001 *without* an upstream
+  validator, because it defines the validation itself. This is distinct from the
+  forbidden AI "self-ratify" — same neither-word, opposite acts. ARCH-00008's
+  status today is **provisional** until that closes, then confirmed.
 - **Opus-only findings the lower tiers missed:** ARCH-00008 had an **uncommitted
   working-tree bump** to `Status: RATIFIED` that contradicts its own committed
   body ("Not ratified") and its own precondition. This session **deliberately did
@@ -60,7 +62,7 @@ Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
 | # | Step | Owner | Blocked by | State |
 |---|------|-------|-----------|-------|
 | 0 | **Migrate the Founding Node** (TSA / CoreSpiral / Pocket philosophy) from Drive into git, OR flag `NOT-IN-REPO` and reconstruct as a new node if lost. It is cited on nearly every page with no source file (I8). The entire DNA rests on it. **True P0 — precedes even Step 1.** | Brain/**Governor** (source) → Builder migrates | nothing (P0) | disclosed |
-| 1 | Write + Governor-self-ratify **CS-MASTER-VALIDATION-001** (meta-governance declaration: what it governs, corespine validation protocol, self-ratify clause). Unblocks everything. | Brain drafts → **Governor** ratifies | Step 0 (philosophy grounding) | disclosed |
+| 1 | Write + **foundational-decree** ratify **CS-MASTER-VALIDATION-001** (meta-governance declaration: what it governs, corespine validation protocol, `root_authority: true` clause per ARCH-00011 §7). Unblocks everything. | Brain drafts → **Governor** decree | Step 0 (philosophy grounding) | disclosed |
 | 2 | Ratify **ARCH-00011** naming policy (DRAFT → RATIFIED) so gate scripts encode stable field names | **Governor** review | Governor only | disclosed |
 | 3 | Define **TIER-0 / TIER-1 boundary** explicitly (what TIER-1 is, what exactly freezes). Closes the implicit-freeze ambiguity | **Governor** decision | nothing | disclosed |
 | 4 | Validate current file batch against **ARCH-00008 §I–X** (full 10-section, not just §3.4). First real proof-of-use; converts schema aspirational→operational | Builder (**Opus** verify) | Steps 1–2 | not started |

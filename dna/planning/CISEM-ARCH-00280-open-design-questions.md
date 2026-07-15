@@ -48,3 +48,29 @@ independently. This answer is now canonical, closing the open item.
 Q3: Fold into CS-LOOPS-001/learning-loop, not a new corespine. Register
 rejected-idea as a tag in CISEM-VOC-00001. When learning-loop is wired,
 rejected-idea-tagged nodes enter it automatically.
+
+## Q4 — The REAL template fork (added 2026-07-16, D7 deep dive) — Planning Status: AWAITING-GOVERNOR
+The old "CS-TEMPLATE-001 A/B fork" (UX/UI-only vs platform-wide) is **settled** —
+TEMPLATE-PROTOCOL-001 §1 correctly dissolved it as a category error (a template is
+not a corespine). But the deep dive found the *actual* unresolved question hiding
+underneath, plus two soft spots:
+- **The two-level problem (undecided):** "template" exists at TWO levels that
+  aren't reconciled — (a) a **node-level** template (is CISEM-ARCH-00008, the Node
+  DNA schema, itself the template every node fills? ARCH-00290 flags this exact
+  decision, unanswered) and (b) a **corespine-level** template
+  (`{CORESPINE-ID}-TEMPLATE.md`, per TEMPLATE-PROTOCOL-001 §2). And ARCH-00230 is a
+  **third** thing — a file-creation checklist. Q2 answered corespine/template/
+  pipeline/node *composition* but never addressed that "template" is itself
+  two-level. **Builder/Opus recommendation:** ARCH-00008 is a *contract/schema*
+  (what fields MUST exist), not a *template* (a pre-filled default artifact) — keep
+  them distinct: ARCH-00008 = node contract; a node template is a separate
+  default-filled starter that *satisfies* ARCH-00008. Corespine templates are a
+  different level again. Governor to confirm this three-way distinction.
+- **SHOULD vs MUST (soft):** TEMPLATE-PROTOCOL-001 §2 says a RATIFIED corespine
+  "SHOULD" have a template, "flagged INCOMPLETE" if not. Is INCOMPLETE a blocking
+  state or cosmetic? Undefined. Recommendation: MUST for RATIFIED corespines;
+  INCOMPLETE blocks the RATIFIED claim (ties to I1/I9 discipline).
+- **Zero satisfiable instances (symptom):** the §2 rule applies only to RATIFIED
+  corespines; the sole RATIFIED corespine (CS-THRESHOLD-001) has no file at all, so
+  the rule currently governs nothing. Resolves once CS-THRESHOLD-001 gets a body
+  (plan Step 8).

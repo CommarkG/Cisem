@@ -1,8 +1,11 @@
 # CISEM Naming Sequence Registry — REG type
 # Governed by: CISEM-ARCH-00011-naming-numbering-policy.md
 # Rule: read next_seq for TYPE before creating a node, use it, increment here.
-# Concurrent-write risk (Brain + Builder writing simultaneously) is UNSOLVED —
-# treat this file as authoritative but not race-safe until Phase 4 gates wire.
+# Concurrent-write risk RESOLVED 2026-07-16 (Governor-accepted, Brain-proposed):
+# the Builder live session is the SOLE numbering authority. Brain describes
+# content; Builder assigns the ID at commit time. Single writer = no race,
+# structurally (this exact registry already suffered a Brain/Builder collision
+# on 00300/00310/00320 — Brain's drafts withdrawn, Builder's stand canonical).
 # pending_migration: sequence numbers legitimately allocated (source: Google
 # Drive) but not yet committed as files in this repo. Remove an entry once
 # its file is migrated here.

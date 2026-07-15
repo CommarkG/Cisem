@@ -6,9 +6,15 @@ Goal: One place listing every registered status enum — node Status
 and Planning Status are separate lifecycles, kept distinct here too.
 Governing corespine: CS-CREATION-001
 
-## Node Status (per CISEM-ARCH-00011 §4)
-DRAFT | PROPOSED | DECLARED | RATIFIED | PLACEHOLDER | SCHEDULED |
-SPLIT | STAGED
+## Node Status (MIRRORS CISEM-ARCH-00011 §4 — authoritative source; this file may not add/remove values, per invariant I10)
+DRAFT | PROPOSED | DECLARED | RATIFIED | PLACEHOLDER | SCHEDULED | SPLIT
+
+`STAGED` removed 2026-07-16 (D2): it appeared only here, never in the ARCH-00011
+authoritative enum, and had no definition or use — vocabulary drift, corrected.
+
+**DECLARED** = formally entered into governance (binding intent established), but
+not yet enforced/wired (corespine) or formally ratified (node). One definition,
+both uses. See ARCH-00011 §4.
 
 ## Planning Status (per CISEM-ARCH-00190 — separate lifecycle)
 AWAITING-BUILDER-REVIEW | COMMENTS-RECEIVED | CONSENSUS-REACHED |
