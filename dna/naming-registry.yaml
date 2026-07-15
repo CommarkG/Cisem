@@ -1,0 +1,16 @@
+# CISEM Naming Sequence Registry — REG type
+# Governed by: CISEM-ARCH-00011-naming-numbering-policy.md
+# Rule: read next_seq for TYPE before creating a node, use it, increment here.
+# Concurrent-write risk (Brain + Builder writing simultaneously) is UNSOLVED —
+# treat this file as authoritative but not race-safe until Phase 4 gates wire.
+
+FOUND:   { next_seq: 2 }
+DNA:     { next_seq: 2 }
+GOV:     { next_seq: 27 }
+ARCH:    { next_seq: 12 }   # 00011 (this policy) now used
+PARK:    { next_seq: 2 }
+SES:     { next_seq: 2 }
+WITNESS: { next_seq: 3 }    # 00001, 00002 used
+VOC:     { next_seq: 1 }    # not yet created — blocked on bounded-context design
+LOAD:    { next_seq: 2 }    # 00001 used
+REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself (root registry, exempt)
