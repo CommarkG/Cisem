@@ -36,8 +36,10 @@ CS-ACCOUNTABILITY-001:
     external: { status: PLACEHOLDER, note: "deferred — no external user yet, Core-vs-Instance rule applies" }
   depth_level: L1
 
-CS-PROFILING-001:
-  status: DRAFT
+CS-AI-PROFILING-001:
+  status: DECLARED
+  goal: "Governs internal virtual AI personas — behavioral contracts for persona
+         specifications used in review and consultation roles across CISEM"
   depth_level: L1
 
 CS-CONTROLPLANE-001:
@@ -72,6 +74,12 @@ CS-LOOPS-001:
     learning-loop: { status: DEFINED, unwired: true }
     qc-findings-loop: { status: DEFINED, unwired: true, note: "gap fixed this session — was missing entirely" }
     violation-review-loop: { status: DEFINED, unwired: true }
+  depth_level: L1
+
+CS-PRIORITY-001:
+  status: PROPOSED
+  goal: "Governs priority assignment across CISEM — built this session,
+         goal text to be confirmed against governing file on delivery"
   depth_level: L1
 
 CS-CORECOUNCIL-001:
