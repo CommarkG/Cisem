@@ -17,6 +17,8 @@ CISEM-ARCH-00170 (gap registry) as the actionable sequence.
 (execution after confirmation).
 **Prepared by:** Opus (consolidation + verification), Sonnet (sequencing),
 Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
+**Prevention invariants touched:** I1, I2, I3, I4, I5, I6 (per CISEM-ARCH-00320 — this plan invokes that protocol).
+**Plan-audit last run:** 2026-07-16 (Opus first audit — see CISEM-ARCH-00320 §5). Verdict: disclosed gaps tracked below; working tree clean except held-back ARCH-00008 bump.
 
 ## Pocket Declaration
 - **reasoning_scope:** consolidate + order all remediation, assign tier owners
