@@ -44,6 +44,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I8 | Off-repo "authoritative" source | Founding Node, DNA-00001, GOV-00018, constraint-set.yaml cited as binding but Drive-only | No off-repo artifact may be cited as authoritative. It must be migrated into git OR flagged `NOT-IN-REPO` inline **with a named migration step** in the active plan. A referenced governing source with no file and no migration step is a violation |
 | I9 | Unregistered TYPE prefix | CISEM-SCHEMA-00001, CISEM-TEMPLATE-PROTOCOL-001 use prefixes absent from ARCH-00011 §1 | Every node's TYPE prefix MUST exist in the ARCH-00011 §1 TYPE registry, OR the same change updates that registry to add it. A node whose prefix is unregistered is a naming violation |
 | I10 | Vocabulary drift between sources | VOC-00002 carried `STAGED`; ARCH-00011 §4 did not — two governing files disagreed on the status enum | Every controlled vocabulary (status enum, TYPE registry, tag set) has exactly ONE authoritative source. All other files *mirror* it and may not add or remove values. On conflict the authoritative source wins |
+| I11 | root_authority sprawl | `root_authority` is a skip-validation switch that could spread | `root_authority: true` is confined to the closed set in ARCH-00011 §7 (Founding, ARCH-00011, CS-MASTER-VALIDATION). Any other node carrying it — or adding to the set without a foundational decree — is a violation |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -72,6 +73,7 @@ Every plan node MUST now carry:
 [ ] I8  No off-repo source cited as authoritative without a NOT-IN-REPO flag + migration step
 [ ] I9  Every node's TYPE prefix is registered in ARCH-00011 §1 (or registered in the same change)
 [ ] I10 Every controlled vocabulary has ONE authoritative source; other files mirror, never extend
+[ ] I11 root_authority confined to the ARCH-00011 §7 closed set; adding to it needs a foundational decree
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)

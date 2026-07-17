@@ -16,7 +16,9 @@ CS-CREATION-001:
 CS-AI-BEHAVIOR-001:
   status: DECLARED
   goal: "Governs every AI instance — pocket mechanism, path-rejection, oversight"
-  children: [pocket-mechanism.md, ai-oversight-layer3.md]
+  children: [pocket-mechanism.md]   # ai-oversight-layer3.md reclassified below (was a dangling I5 reference)
+  pending_children:
+    ai-oversight-layer3.md: { status: PLACEHOLDER, scheduled: true, note: "AI-supervision layer-3 — DECLARED intent, NOT built. Awaiting Governor design intent (build vs drop). Converted from dangling I5 reference 2026-07-16." }
   depth_level: L1
 
 CS-MASTER-VALIDATION-001:

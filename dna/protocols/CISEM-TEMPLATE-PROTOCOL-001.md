@@ -1,6 +1,6 @@
 # Template Protocol
 **Node ID:** CISEM-TEMPLATE-PROTOCOL-001
-**Type:** ARCH (protocol subtype) | **Status:** DRAFT
+**Type:** TEMPLATE-PROTOCOL | **Status:** DRAFT   <!-- I9: Type aligned to ID prefix 2026-07-16 (was "ARCH (protocol subtype)"); TEMPLATE-PROTOCOL now registered in ARCH-00011 §1 -->
 **Goal:** Resolve the CS-TEMPLATE-001 (example-only, NOT-YET-A-NODE) A/B scope fork by correcting a category
 error — Template is not a corespine, it is a protocol every corespine follows.
 **Position:** T-SYS, protocol layer — sibling to Naming Policy, NOT a peer of

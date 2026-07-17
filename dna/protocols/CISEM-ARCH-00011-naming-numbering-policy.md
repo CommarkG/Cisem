@@ -7,7 +7,11 @@ and retrieval index — closes the root cause of the -L1 collision incident.
 **Position in schema:** T-SYS, protocol layer (sibling to Template Protocol)
 
 ## 1. TYPE registry (extensible, not closed — extension requires this node's own update)
-FOUND, DNA, GOV, ARCH, PARK, SES, WITNESS, VOC, LOAD, REG
+FOUND, DNA, GOV, ARCH, PARK, SES, WITNESS, VOC, LOAD, REG, SCHEMA, TEMPLATE-PROTOCOL
+(`SCHEMA`, `TEMPLATE-PROTOCOL` registered 2026-07-16 — I9 resolution for
+CISEM-SCHEMA-00001 and CISEM-TEMPLATE-PROTOCOL-001.) **Rule:** a node's `Type`
+field MUST equal its ID prefix — no `Type: ARCH` on a `CISEM-SCHEMA-*` node.
+Mismatch is an I9 violation.
 
 ## 2. ID format
 `CISEM-{TYPE}-{SEQ5}-{slug}.md` — sequence per TYPE, tracked in `naming-registry.yaml`.
@@ -79,3 +83,10 @@ Two distinct acts that must never be conflated by sharing the word "self-ratify"
 node's change log as a "foundational decree" with date. It is a named, bounded
 exception — not a general licence to skip validation. Every non-root node still
 ratifies through the normal validator chain once that chain exists.
+
+**Closed set (bounded 2026-07-16):** `root_authority: true` is restricted to
+exactly three nodes — **CISEM-FOUND-00001** (Founding), **CISEM-ARCH-00011** (this
+policy), **CS-MASTER-VALIDATION-001** (root validator). Adding a fourth is ITSELF a
+foundational decree, logged here. Any other node carrying `root_authority` is an
+invariant violation (candidate I11). This keeps the skip-validation switch from
+ever spreading.

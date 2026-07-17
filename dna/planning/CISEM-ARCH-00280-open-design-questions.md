@@ -27,7 +27,7 @@ Ask: Builder's independent read, not Brain asserting an answer.
 CISEM-ARCH-00150 §2 currently reads as a static list. Needs its own
 pipeline + governing corespine, tagged/statused, feeding
 CS-LOOPS-001's learning-loop branch. Saved to git only.
-Open question: new corespine (CS-REJECTED-IDEAS-001?) or fold into
+Open question: new corespine (CS-REJECTED-IDEAS-001 — example-only, NOT-YET-A-NODE, decided AGAINST per Q3 answer below) or fold into
 existing Learning Loop structure? Flagged, not decided.
 
 ## Requested

@@ -37,11 +37,23 @@ runs:
     check_refined: "plan-audit.sh v1 -> v2 (skip tag-exempt refs; I3 field-form only) — loop closed same session, re-run clean"
     verdict: gate operational; self-improved on first run
 
+  - run: 5
+    date: 2026-07-16
+    trigger: Governor "go ahead" batch (accepted-all-recommendations)
+    tiers: [opus]
+    resolved: >
+      Founding I8 dangling -> CISEM-FOUND-00001 PLACEHOLDER (honest, axioms pending);
+      I9 -> SCHEMA + TEMPLATE-PROTOCOL registered in ARCH-00011 §1 + Type fields aligned;
+      ai-oversight-layer3 I5 dangling -> PLACEHOLDER/pending_children; CS-REJECTED-IDEAS-001
+      tagged example-only; root_authority bounded to closed set of 3.
+    invariants_added: [I11]                # root_authority sprawl — born from the bounding decision
+    verdict: batch clean; live gate now shows only genuine off-repo GOV nodes (I8)
+
 metrics:
-  invariants_total: 10
-  invariants_added_last_4_runs: 3        # I8, I9, I10 — the loop IS learning
-  checks_refined: 1                       # run 4 improved the gate instead of adding an invariant
-  recurrence_count: 0                     # no resolved finding has re-appeared
+  invariants_total: 11
+  invariants_added_last_5_runs: 4         # I8, I9, I10, I11 — the loop keeps learning
+  checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
+  recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:
     - founding-node (I8, P0 — needs Governor/Drive source)
     - CS-MASTER-VALIDATION-001 ratification (drafted, awaiting foundational decree)

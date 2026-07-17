@@ -1,6 +1,6 @@
 # Schema Placement Engine — T-SYS / T-DOM First Real Content
 **Node ID:** CISEM-SCHEMA-00001
-**Type:** ARCH | **Status:** DRAFT
+**Type:** SCHEMA | **Status:** DRAFT   <!-- I9: Type aligned to ID prefix 2026-07-16 (was ARCH); SCHEMA now registered in ARCH-00011 §1 -->
 **Goal:** Give T-SYS/T-DOM actual content instead of being a forward reference
 nothing resolves — every prior mention this session (DNA schema, CLAUDE.md,
 corespine "position in schema" fields) pointed here and found nothing.
