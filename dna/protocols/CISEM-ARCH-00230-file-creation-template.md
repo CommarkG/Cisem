@@ -26,6 +26,15 @@ Node ID/Type/Status/depth_level/tags present. Goal present. Governing
 corespine present. Rule = the checklist itself. Self-compliance = this
 note.
 
+## Creation Doctrine reminders — D4 "enhancement, named at creation" (CLAUDE.md §2.5)
+Every creation ACTIVELY APPLIES these (not just avoids violations):
+[ ] Reuse / bundle before creating new — enhance existing over proliferating (guards the meta-ratio)
+[ ] Disclosed ≠ Resolved — never label a gap closed without `last_verified` + a real check (I2)
+[ ] Hardcode the INVARIANT, not the path (D2) — fix what must stay true, leave the method free
+[ ] After creating, run the RQC check (`dna/checks/plan-audit.sh`) and log the run to `dna/quality-ledger.yaml` (D5)
+[ ] Prevention is permanent: if this creation reveals a NEW unwanted class, propose it as an invariant (D3)
+Full doctrine: CLAUDE.md §2.5 (D1–D6). This gate is where D4 becomes active, not aspirational.
+
 ## Does NOT cover
 Corespine content templates (CISEM-TEMPLATE-PROTOCOL-001), node DNA
 fields (CISEM-ARCH-00008), planning documents (CISEM-ARCH-00190).

@@ -49,9 +49,23 @@ runs:
     invariants_added: [I11]                # root_authority sprawl — born from the bounding decision
     verdict: batch clean; live gate now shows only genuine off-repo GOV nodes (I8)
 
+  - run: 6
+    date: 2026-07-16
+    trigger: Governor "saturate CISEM permanently" batch (Creation Doctrine)
+    tiers: [opus]
+    perspective: 3-expert review (cybernetics / immune-antifragility / constitutional) — all converged
+    built: >
+      Creation Doctrine D1-D6 embedded in CLAUDE.md §2.5 (always-loaded surface);
+      wired into ARCH-00230 (creation-time) + CS-CREATION-001 (carries_doctrine);
+      CISEM-WITNESS-00003 full-context continuity record created; CLAUDE.md §5-7
+      stale facts corrected (D6 constitution items closed honestly).
+    invariants_added: []                    # a permanence/enhancement batch, not a new failure class
+    permanence_layers: [read-every-session, enforced-every-creation, strengthened-every-cycle, carried-across-sessions]
+    verdict: doctrine saturated across all 4 permanence layers
+
 metrics:
   invariants_total: 11
-  invariants_added_last_5_runs: 4         # I8, I9, I10, I11 — the loop keeps learning
+  invariants_added_last_6_runs: 4         # I8, I9, I10, I11 — the loop keeps learning
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:

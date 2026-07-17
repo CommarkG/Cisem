@@ -20,7 +20,35 @@ and verify. Governor (Yariv Fink) holds sole ratification authority.
 7. Reversible, Audited Action — leaves a Witness/change-log trace
 8. Path Rejection Declaration — name what was rejected and why
 
-## 3. HARD GATES — run in this order before ANY creation
+## 2.5 THE CISEM CREATION DOCTRINE — firm definitions, loaded every session
+*Hardcoding is a respectful guardian, not a cage. It fixes what was ratified and
+frees everything else. Rigidity is a failure mode, not a virtue.* Six definitions
+govern how AI creates in CISEM — applied from the first step, audited each time,
+improved every cycle:
+- **D1 Ratified = Recurring.** What the Governor ratified happens the same way every
+  time. Fidelity to ratified truth is the guardian's first duty.
+- **D2 Guard boundaries, not paths.** Hardcode WHAT must stay true (invariants),
+  never HOW to get there. Fixed ends, free means — this is what stops stability
+  from becoming rigidity.
+- **D3 Prevention is permanent + cumulative.** Every unwanted outcome becomes a
+  standing invariant (I1..In, ARCH-00320 §4). The set only GROWS; removing one needs
+  a foundational decree. (the system's immune memory)
+- **D4 Enhancement is permanent + named.** Every wanted behavior is written INTO the
+  creation protocol so AI is reminded AT creation — never left to memory (see ARCH-00230).
+- **D5 The guardian audits itself.** Hardcoding ACTIVATES AI oversight: the Recurring
+  Quality Cycle (ARCH-00320 §6) audits every creation and learns from each. Stability
+  and self-evolution are ONE loop, not two forces.
+- **D6 Polarity, not contradiction.** Stable-and-evolving are complementary. Hold
+  ratified truth firm while letting all else adapt. Lose the stable pole → drift; lose
+  the evolving pole → ossify. The balance IS the design.
+
+**How this stays permanent (not one session's context):** (1) READ every session — it
+lives here in CISEM-LOAD-00001; (2) ENFORCED every creation — §3 gates serve it;
+(3) STRENGTHENED every cycle — the RQC grows the invariants; (4) CARRIED across sessions
+— WITNESS nodes + `dna/quality-ledger.yaml` preserve full context. Any AI, any session,
+is saturated in D1–D6 before it creates anything.
+
+## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
 ### 3.1 Goal-First — stated, saved, measurable goal exists?
 ### 3.2a Corespine-First — governing corespine declared? See `dna/corespines/corespine-registry.yaml`
 ### 3.2b Template-First (NEW) — "Do we have a core template and a corespine
@@ -48,15 +76,20 @@ references all resolve or are flagged NOT YET A NODE; schema-compliant.
 - SOL-GIFTPRO-001 is SIMULATION-ONLY — do not build it as a real feature
 
 ## 5. CURRENT MATURITY — full honesty
-Phase 1→2 transition. All gate scripts DECLARED, none WIRED. Treat §3 as
-manual discipline until told otherwise.
+Phase 1→2. FIRST gate now WIRED: `dna/checks/plan-audit.sh` (WARN-ONLY pre-commit,
+invariants I1/I3/I6). The rest of §3 remain manual discipline until ARCH-00180 wires
+them and ARCH-00270 flips to BLOCK-mode. Invariant set I1–I11 (ARCH-00320 §4);
+Recurring Quality Cycle live (ARCH-00320 §6); RQC recurrence 0.
 
-## 6. ACTIVE TASK LIST — TIER 0
-- Populate `dna/naming-registry.yaml` compliance on every new file
-- Correct CISEM-WITNESS-00001 and CISEM-ARCH-00008 against §3.4 (known failures, uncorrected)
-- Await Governor confirmation before TIER 1
+## 6. ACTIVE STATE — critical path (full session context: CISEM-WITNESS-00003)
+- CISEM-ARCH-00008 RATIFIED (Governor decree); CISEM-ARCH-00011 RATIFIED (foundational).
+- Naming compliance on every new file; sole numbering authority = Builder session.
+- PENDING GOVERNOR (the whole spine): (1) Founding Node axioms — CISEM-FOUND-00001 is a
+  PLACEHOLDER awaiting source-or-lost ruling; (2) ratify ARCH-00320; (3) decree
+  CS-MASTER-VALIDATION-001; (4) ARCH-00280 Q4 template ruling; (5) ai-oversight-layer3 build/drop.
 
 ## 7. Open dependencies
-CS-MASTER-VALIDATION-001, CS-ACCOUNTABILITY-001, remaining PRIO-BLOCKING
-items — see `dna/CISEM-DNA-00001-living-index.md` (NOTE: conflicting
-version found this session, unresolved — verify before trusting).
+CS-MASTER-VALIDATION-001 content now DRAFTED (awaiting foundational decree);
+CS-ACCOUNTABILITY-001 still DRAFT. The living index `dna/CISEM-DNA-00001-living-index.md`
+is NOT-IN-REPO (Drive-only, I8) — do NOT treat as authoritative until migrated; use
+CISEM-WITNESS-00003 + `dna/quality-ledger.yaml` + ARCH-00310 for current state.
