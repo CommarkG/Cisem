@@ -108,10 +108,41 @@ to Haiku per §3):
   §1. **VERDICT: fail;** register both TYPEs in ARCH-00011 §1 or rename — ARCH-00310
   Step 8. (Surfaced by Sonnet in naming-manifest.yaml, ruled by Opus.)
 
+## 6. The Recurring Quality Cycle (RQC) — bundled from existing pieces, no new node
+Formalizes this session's deep-dive audit into a STANDING, self-improving loop.
+It bundles what already exists; it adds no governance doc.
+
+**Stages (PDCA + adversarial + learning):**
+1. **TRIGGER** (regular, NOT on-request): every commit/PR touching a plan,
+   registry, or corespine, plus a scheduled full sweep. Now: the WARN-ONLY hook
+   `dna/checks/plan-audit.sh` + the standing ARCH-00300 one-click prompts. After
+   ARCH-00180/00270: pre-commit + CI in BLOCK-mode.
+2. **RUN** (tiers, ARCH-00300): Haiku enumerate → Sonnet map → Opus rule
+   (adversarial, default-refute) → Governor decree on any truth-field.
+3. **CHECK** (§4): invariants I1..In.
+4. **SELF-CHECK**: every 5th run, a meta-audit of prior runs for MISSED findings
+   (completeness critic) — the cycle audits its own auditor.
+5. **LEARN & GROW** (CS-LOOPS-001/learning + qc-findings, now `unwired:false`): a
+   novel finding mapping to NO existing invariant becomes a CANDIDATE invariant;
+   Opus rules, Governor ratifies, the checklist GROWS. Resolved findings are
+   re-checked each run (regression memory). Proof it already works: **I8, I9, I10
+   were each born this session from real findings — the loop has learned 3×.**
+6. **MEASURE**: each run appends to `dna/quality-ledger.yaml` (findings/invariant,
+   disclosed→resolved time, recurrence rate, invariants-added). A flat or
+   worsening trend is itself a finding.
+7. **GOVERN** (bounded self-improvement): the cycle may ADD invariants but may
+   NEVER weaken a foundational rule (Hard Line I7, foundational decree,
+   disclosed≠resolved) without Governor decree. It is subject to its own invariants.
+
+**Honest maturity:** MANUAL tier-run + WARN-ONLY script now; BLOCK-mode only after
+this node is RATIFIED (approved sequence) and ARCH-00180 wires the rest. §6 is the
+SPECIFICATION of the control; it becomes the control when wired — stated so it is
+never mistaken for already-enforced.
+
 ## Does NOT cover
-Wiring the audit as an automated script — that is ARCH-00180's job (this defines
-*what* the audit checks; ARCH-00180 will *execute* it). Until wired, audit is
-manual discipline run per the tier ownership above.
+Full automation of every invariant — only the first check is wired so far
+(`dna/checks/plan-audit.sh`, WARN-ONLY: I1/I3/I6). The rest stay manual until
+ARCH-00180 scripts them and ARCH-00270 moves the hook to BLOCK-mode.
 
 ## Self-compliance (against ARCH-00230 checklist)
 Header, measurable Goal, Governing corespine, Why-standalone, Rule-as-procedure

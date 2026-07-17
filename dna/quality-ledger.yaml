@@ -1,0 +1,56 @@
+# CISEM Quality Ledger — Recurring Quality Cycle (RQC) run history + metrics
+# APPEND-ONLY DERIVED data (like naming-manifest): the LEARNING MEMORY of the cycle.
+# Ground truth = git history + audit outputs. Governed by CISEM-ARCH-00320 §6.
+# One entry per RQC run. `invariants_added` is what the loop LEARNED that run.
+
+runs:
+  - run: 1
+    date: 2026-07-16
+    trigger: on-request (pre-formalization deep dive)
+    tiers: [opus]
+    findings: { I1: "7 phantom refs", I2: "3 closure-verb commits", I3: "1 held (ARCH-00008 bump)", I5: "0 dangling", I8: "4 off-repo sources" }
+    invariants_added: [I8]
+    verdict: disclosed
+
+  - run: 2
+    date: 2026-07-16
+    trigger: on-request (Haiku+Sonnet+Opus tier pass)
+    tiers: [haiku, sonnet, opus]
+    findings: { I1: "dead ref ARCH-00290->PROTOCOL-TEMPLATE-001", I4: "manifest absent -> built", I6: "phantom batch corrected", I9: "2 unregistered TYPE prefixes" }
+    invariants_added: [I9]
+    verdict: mixed (pass / disclosed / fail per item)
+
+  - run: 3
+    date: 2026-07-16
+    trigger: on-request (delicate-issue deep dive D1-D7)
+    tiers: [opus]
+    findings: { D2: "status enum drift (STAGED)", D3: "severed CS-SOLUTIONS edge", D4: "manifest drift-risk", D5: "phantom GOV count" }
+    invariants_added: [I10]
+    verdict: 3 fixed by Opus, 4 routed to Governor (D1/D2/D6/D7)
+
+  - run: 4
+    date: 2026-07-16
+    trigger: FIRST WIRED-GATE run (dna/checks/plan-audit.sh, WARN-ONLY pre-commit)
+    tiers: [opus]
+    findings: { false_positive_classes: "2 — example-only refs flagged as I1; prose 'RATIFIED' flagged as I3", genuine: "GOV-00001/00018 (I8), CS-REJECTED-IDEAS-001 (decided-against name, untagged)" }
+    invariants_added: []                  # no new class — instead the CHECK ITSELF was refined
+    check_refined: "plan-audit.sh v1 -> v2 (skip tag-exempt refs; I3 field-form only) — loop closed same session, re-run clean"
+    verdict: gate operational; self-improved on first run
+
+metrics:
+  invariants_total: 10
+  invariants_added_last_4_runs: 3        # I8, I9, I10 — the loop IS learning
+  checks_refined: 1                       # run 4 improved the gate instead of adding an invariant
+  recurrence_count: 0                     # no resolved finding has re-appeared
+  open_disclosed:
+    - founding-node (I8, P0 — needs Governor/Drive source)
+    - CS-MASTER-VALIDATION-001 ratification (drafted, awaiting foundational decree)
+    - ARCH-00280 Q4 (template two-level question)
+
+target:
+  recurrence_rate: 0                      # a resolved finding must never return
+  invariants_added_per_run: DECLINING     # fewer NEW failure classes over time = maturing
+  note: >
+    A rising invariants_added_per_run means we keep discovering new failure
+    CLASSES — immature. A declining trend toward zero means the invariant set
+    is becoming complete. That trend is the single health metric of the cycle.

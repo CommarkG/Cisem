@@ -73,8 +73,8 @@ CS-LOOPS-001:
   goal: "Root for improvement/learning/QC loops"
   branches:
     improvement-loop: { status: DEFINED, unwired: true }
-    learning-loop: { status: DEFINED, unwired: true }
-    qc-findings-loop: { status: DEFINED, unwired: true, note: "gap fixed this session — was missing entirely" }
+    learning-loop: { status: DEFINED, unwired: false, note: "carries the Recurring Quality Cycle LEARN stage (ARCH-00320 §6) — grows the invariant set; I8/I9/I10 born 2026-07-16" }
+    qc-findings-loop: { status: DEFINED, unwired: false, note: "carries the RQC MEASURE stage -> dna/quality-ledger.yaml" }
     violation-review-loop: { status: DEFINED, unwired: true }
   depth_level: L1
 
