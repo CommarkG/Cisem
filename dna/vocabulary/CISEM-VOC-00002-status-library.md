@@ -7,7 +7,10 @@ and Planning Status are separate lifecycles, kept distinct here too.
 Governing corespine: CS-CREATION-001
 
 ## Node Status (MIRRORS CISEM-ARCH-00011 §4 — authoritative source; this file may not add/remove values, per invariant I10)
-DRAFT | PROPOSED | DECLARED | RATIFIED | PLACEHOLDER | SCHEDULED | SPLIT
+DRAFT | PROPOSED | DECLARED | RATIFIED | PLACEHOLDER | SCHEDULED | SPLIT | PROVISIONAL-ACTIVE
+
+`PROVISIONAL-ACTIVE` (added 2026-07-18) = a high-quality DRAFT in USE to bootstrap; audit-flagged
+until ratified+LIVE; see ARCH-00011 §4 for the guardrails.
 
 `STAGED` removed 2026-07-16 (D2): it appeared only here, never in the ARCH-00011
 authoritative enum, and had no definition or use — vocabulary drift, corrected.

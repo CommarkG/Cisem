@@ -20,7 +20,15 @@ allocates a number outside it; per-directory indexes only mirror. An id not regi
 violation (wired by BP-0005). This ends the parallel-authority drift (was: registry + queue/ + ibd/).
 
 `CISEM-{TYPE}-{SEQ5}-{slug}.md` — sequence per TYPE, tracked in `naming-registry.yaml`.
-Any creation MUST read next_seq before assigning, then increment. Concurrent-write
+Any creation MUST read next_seq before assigning, then increment.
+
+**SPACING + TREE-ALIGNMENT rule (2026-07-18, Governor):** numbering LEAVES GAPS by design (the
+10-spacing convention: …300, 310, 320…) so a new node can be inserted in its LOGICAL place later,
+not appended to the end. In the Node-as-Hub schema, numbers should follow the tree — trunk →
+branch → sub-branch → … → leaf — so position is readable from the number and there is room to grow
+at every level. An **ALIGNMENT GATE** (wired in BP-0005) checks: (a) gaps are preserved, (b) a
+node's number is consistent with its schema position (SCHEMA-00001), (c) no two nodes collide.
+Re-numbering existing nodes to full tree-alignment is a PHASED plan, never big-bang. Concurrent-write
 risk (Brain + Builder both writing) remains open — flagged, not solved by this policy alone.
 
 **Declared naming exceptions (D6):** `CLAUDE.md` IS node `CISEM-LOAD-00001`, but the
@@ -44,7 +52,16 @@ general versioning (this is the direct fix for the original -L1 misuse).
 Every node MUST declare, at creation:
 - **depth_level:** L1 (exists/summary) | L2 (operational) | L3 (full architectural)
 - **tags:** free-form, cross-cutting (populated once Tag Library exists; until then, inline list)
-- **status:** DRAFT | PROPOSED | DECLARED | RATIFIED | PLACEHOLDER | SCHEDULED | SPLIT
+- **status:** DRAFT | PROPOSED | DECLARED | RATIFIED | PLACEHOLDER | SCHEDULED | SPLIT | PROVISIONAL-ACTIVE
+
+**`PROVISIONAL-ACTIVE` (added 2026-07-18, Governor-approved) — the bootstrap-escape status.**
+A high-quality DRAFT that is IN USE to make progress (breaks chicken-and-egg), but NOT ratified.
+Guardrails (or it becomes the permanent-draft trap): (1) the audit FLAGS every `PROVISIONAL-ACTIVE`
+node each run until it is ratified+LIVE — the completion obligation lives in the audit, not a tag;
+(2) anything CREATED THROUGH a provisional wizard/protocol is itself `PROVISIONAL-ACTIVE` and must be
+RE-VERIFIED when the parent ratifies; (3) it applies ONLY to the bounded, named exception it was
+granted for (e.g. the plan meta-layer bootstrap) — it closes on ratification. Track completion via
+the 4 Wiring States (DECLARED→CONNECTED→ACCESSIBLE→LIVE).
 
 **This is the SINGLE authoritative status enum (D2).** VOC-00002 (Status Library)
 *mirrors* this list — it may not add or remove a value. On any conflict, ARCH-00011
