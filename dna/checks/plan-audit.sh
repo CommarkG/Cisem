@@ -284,11 +284,12 @@ if [ -f "$concept_registry" ]; then
     # Count total lines changed and new files
     total_insertions=$(echo "$combined_diff" | grep -oE "[0-9]+ insertion" | awk '{s+=$1} END{print s+0}')
     total_deletions=$(echo "$combined_diff" | grep -oE "[0-9]+ deletion" | awk '{s+=$1} END{print s+0}')
-    new_files=$(git diff --cached --name-status 2>/dev/null | grep -cE "^A" || echo 0)
+    new_files=$(git diff --cached --name-status 2>/dev/null | grep -cE "^A")
+    new_files=${new_files:-0}
     total_changed=$(( total_insertions + total_deletions ))
     # concept-envelope-registry.yaml creation_event.penumbra: "a one-line truth-field fix or status stamp"
     # → if total changed lines ≤ 5 AND no new governed files → route to UNKNOWN (not a creation event FAIL)
-    if [ "$total_changed" -gt 0 ] && [ "$total_changed" -le 5 ] && [ "$new_files" -eq 0 ]; then
+    if [ "${total_changed:-0}" -gt 0 ] && [ "${total_changed:-0}" -le 5 ] && [ "${new_files:-0}" -eq 0 ]; then
       edge_findings="${edge_findings}   [CONCEPT-EDGE] small patch (${total_changed} lines, 0 new files) — 'creation_event' penumbra in $concept_registry: a truth-field fix on an existing node may NOT trigger I25 (UNKNOWN, not FAIL — Opus judgment required)\n"
       found_edge=1
     fi
