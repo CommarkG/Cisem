@@ -208,6 +208,7 @@ to maximize their value without blast risk:**
    extracted, and why the rest waits). NEVER extract a part that risks existing work — that's the whole point.
 
 ## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
+**Creation-checklist SSOT:** `dna/protocols/CISEM-ARCH-00230-file-creation-template.md` — the ONE source for what every created file/node must contain. Referenced here as a pointer; do NOT restate the checklist (A8/I10). See ssot-registry.yaml `creation_checklist` entry.
 ### 3.0 Tier-Routing (NEW, MANDATORY) — before creating/executing, DECLARE the tier + why.
 Haiku gathers, Sonnet executes an agreed plan, Opus judges + codes sensitive spots.
 Opus doing mechanical work needs a stated exception (e.g. "trivial, in-context,

@@ -4,6 +4,7 @@
 **tags:** [tier-binding, handoff, sonnet, opus, permanent]  
 **Goal:** Every Sonnet work product comes with a ONE-CLICK summary so Opus can instantly assess scope + seeds + readiness.  
 **Governing corespine:** CS-AI-PROFILING-001
+**Operating-Model reference (ARCH-00396 Phase B, concern 3):** This node is the cross-tier comms protocol referenced by CLAUDE.md §1.7 OPERATING MODEL ("Cross-tier communication is git + Core Seeds + ARCH-00350"). It is absorbed as the referenced comms protocol under the §1.7 operating model, not forked. Parent: CS-AI-PROFILING-001; aligns with CS-COMMS-001 when that node is built (I10 — this node must REFERENCE CS-COMMS-001, not redefine its rules).
 **Opus verification note (2026-07-18):** content accepted; content-placement reasonable. BUT Sonnet
 created this OUT-OF-PLAN (BP-0007 scope) and did NOT register it (Opus registered it retroactively);
 its Infrastructure-Use Proof falsely claimed "no new ARCH IDs." Kept as PROVISIONAL-ACTIVE.

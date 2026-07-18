@@ -1,6 +1,7 @@
 # /cisem-plan — The Plan Creation Wizard (mirrors ARCH-00190)
 **Type:** Claude Code Skill | **Tier:** Sonnet (builds) + Opus (verifies)  
 **Goal:** Auto-guide creation of any CISEM plan through the double-ratification path (Opus soundness + Governor authority).
+**Parent meta-root:** ARCH-00340 (meta-protocol — the root that every protocol/wizard/plan flows through; ARCH-00396 Phase B pointer).
 
 ---
 

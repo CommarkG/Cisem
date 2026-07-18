@@ -1,6 +1,7 @@
 # /cisem-create — The Creation Triad Skill
 **Type:** Claude Code Skill | **Tier:** Sonnet (drafts) + Opus (verifies truth-bearing steps)  
 **Goal:** Auto-fire the Creation Triad on every CISEM element creation, converting manual discipline into engine-driven enforcement.
+**Parent meta-root:** ARCH-00340 (meta-protocol — this skill is a creation-gate derivative of the meta-root; ARCH-00396 Phase B pointer).
 
 ---
 
@@ -92,12 +93,14 @@
 ### STEP 4: TEMPLATE-FIRST (§3.2b)
 **Question:** Do we have a template for this corespine?
 
+**Creation-checklist SSOT:** `dna/protocols/CISEM-ARCH-00230-file-creation-template.md` is the ONE authoritative source for what every created file/node must contain. This skill REFERENCES it — the checklist lives there, not here (A8/I10). See ssot-registry.yaml `creation_checklist` entry.
+
 ```
 [ ] Search dna/templates/ or {CORESPINE-ID}-TEMPLATE.md for a reusable protocol
     Found → use it as the skeleton (follow the template; deviations are explicit)
     Not found → name the gap explicitly (flag "no template yet" in the creation)
     
-    TEMPLATES include: node-structure (ARCH-00008), protocol checklist (ARCH-00230),
+    TEMPLATES include: node-structure (ARCH-00008), protocol checklist (ARCH-00230 — SSOT),
     build-prompt (dna/queue/BUILD-PROMPT-template.md), etc.
 [ ] Template used or gap named (no silent skipping)
 ```

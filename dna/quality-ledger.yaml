@@ -376,6 +376,42 @@ runs:
       No truth-bearing fields written; WITNESS-00003 + ARCH-00392 Status untouched.
     status: IN-PROGRESS   # GATE 2→3 pending Opus + Governor
 
+  - run: 23
+    date: 2026-07-18
+    trigger: "Sonnet STRUCTURING tier: ARCH-00396 Phase B — creation-layer consolidation under the proven meta-root (9 deliverables)"
+    pocket: cisem-sonnet (STRUCTURING) — declared; executing Opus-approved plan exactly; Opus judges result at Gate B
+    tier_routing: "Sonnet executes per CLAUDE.md §3.0 under 5 Opus-authored Core Seeds (immutable); Opus judges Gate B"
+    finding: >
+      DELIVERABLE 1 — ssot-registry.yaml: new `creation_checklist` entry added pointing to ARCH-00230 as ONE SSOT.
+      DELIVERABLE 2 — ARCH-00230 header corrected: title → "File / Node Creation Checklist"; Governing corespine line
+        no longer carries CISEM-TEMPLATE-PROTOCOL-001 (corrected to CS-CREATION-001 only); explicit SSOT declaration added.
+      DELIVERABLE 3 — ARCH-00230 SSOT scope tightened: opening block explicitly states ONE SSOT for file/node creation
+        checklist; NOT plans (ARCH-00190) or node-DNA schema (ARCH-00008).
+      DELIVERABLE 4 — CLAUDE.md §3 pointer line added ("Creation-checklist SSOT: dna/protocols/CISEM-ARCH-00230-file-creation-template.md");
+        cisem-create SKILL.md STEP 4 pointer added (ARCH-00230 SSOT reference note). Checklist NOT duplicated (A8/I10).
+      DELIVERABLE 5 — ARCH-00394 header annotated: "DECLARED COMBINED protocol+wizard node (I10 exception, noted);
+        parent meta-root: ARCH-00340" — concern 2 resolved explicitly, Opus-reviewable at Gate B.
+      DELIVERABLE 6 — ARCH-00350 header annotated: "Operating-Model reference" back-reference to CLAUDE.md §1.7
+        ("referenced by CLAUDE.md §1.7 OPERATING MODEL as the cross-tier comms protocol").
+      DELIVERABLE 7 — Parent ARCH-00340 pointer added to: cisem-plan SKILL.md, cisem-meta SKILL.md,
+        cisem-create SKILL.md, ARCH-00394 (combined in deliverable 5 note + explicit parent line).
+      DELIVERABLE 8 — overlap-map updated: all 4 concerns marked RESOLVED with fix locations.
+      DELIVERABLE 9 — this run 23 entry (IN-PROGRESS — Gate B = Opus soundness + Governor pre-decreed).
+    invariants_added: []
+    new_enhancements:
+      - "creation_checklist SSOT registered in ssot-registry.yaml — ARCH-00230 is now the named ONE source"
+      - "ARCH-00230 header identity corrected — corespine corrected from TEMPLATE-PROTOCOL-001 to CS-CREATION-001"
+      - "ARCH-00230 SSOT scope tightened — explicit boundary against plans + node-DNA schema"
+      - "CLAUDE.md §3 + cisem-create: pointer to ARCH-00230 as checklist SSOT (A8 compliant — reference, never duplicate)"
+      - "ARCH-00394 combined-node exception declared explicitly (concern 2 resolved)"
+      - "ARCH-00350 operating-model back-reference added (concern 3 resolved)"
+      - "Wizard parent pointers (ARCH-00340) added to cisem-plan, cisem-meta, cisem-create, ARCH-00394"
+    honesty_scope: >
+      No truth-bearing Status fields written (I7/CORE-SEED 1). ARCH-00230 Status remains DRAFT (Opus stamps the
+      transition). No GATE/RATIFIED claim made. This is Sonnet's Phase B build — Gate B is Opus soundness +
+      Governor pre-decreed (A4/I25 already satisfied). ZF run pending (see [ZF] in return message).
+    status: IN-PROGRESS  # GATE B pending Opus soundness; Governor pre-decreed per ARCH-00396 v1.1
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14

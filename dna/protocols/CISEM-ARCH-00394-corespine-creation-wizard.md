@@ -12,6 +12,8 @@ Last_verified: 2026-07-18
 
 **CISEM-ARCH-00394** | WIZARD | **Status: CONNECTED** (not RATIFIED until first independently-verified end-to-end run — I24)
 **Purpose:** Define, create, and register ANY CISEM corespine via a single YAML input block. Supports batch creation (N corespines at once). Subsumes ad-hoc corespine creation — all corespines go through this wizard from now on.
+**Architecture note (ARCH-00396 Phase B, concern 2):** This node embeds its corespine-creation protocol INLINE as STEP 1–6 (lines 70–117). This is a DECLARED COMBINED protocol+wizard node — an I10 exception, noted here explicitly. There is no separate corespine-creation protocol file; the protocol and wizard are intentionally unified in this single node. This exception is documented (not silent) and Opus-reviewable at Gate B.
+**Parent meta-root:** ARCH-00340 (meta-protocol — the root that every protocol/wizard derives from; ARCH-00396 Phase B pointer).
 
 **Size note:** 233 lines — exceeds 200-line gate. Exception: wizard-type node with mandated STEP 1–6 procedure + template blocks + YAML schema; structural content not reducible without losing executability.
 

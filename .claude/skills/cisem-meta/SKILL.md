@@ -1,6 +1,7 @@
 # /cisem-meta — The Meta-Wizard (protocol-creation guide, implements ARCH-00340)
 **Type:** Claude Code Skill | **Tier:** Opus (drafts protocols); Sonnet (builds wizards per protocols)  
 **Goal:** Guide creation of ANY CISEM protocol through the meta-protocol structure (ARCH-00340), so protocols stop being ad-hoc.
+**Parent meta-root:** ARCH-00340 (meta-protocol — this wizard IS the runnable form of ARCH-00340; they mirror 1:1; ARCH-00396 Phase B pointer).
 
 ---
 

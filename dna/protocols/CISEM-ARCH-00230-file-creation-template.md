@@ -1,11 +1,16 @@
-# File Creation Template
+# File / Node Creation Checklist
+**SSOT:** This is the ONE authoritative source for what every created file/node must contain (the creation checklist). Referenced by CLAUDE.md §3 and cisem-create SKILL.md. Does NOT cover plans (ARCH-00190) or node-DNA schema (ARCH-00008) — see "Does NOT cover" below.
 Node ID: CISEM-ARCH-00230
 Type: ARCH | Status: DRAFT
 depth_level: L1 | Position in schema: T-SYS
-tags: [template, file-creation, checklist, mandatory]
-Goal: The canonical checklist every file must match at creation —
-mandatory whenever a protocol is being created, applicable broadly.
-Governing corespine: CS-CREATION-001 (Template Protocol, CISEM-TEMPLATE-PROTOCOL-001)
+tags: [checklist, file-creation, node-creation, mandatory, ssot]
+Goal: The canonical checklist every file/node must match at creation —
+mandatory for any protocol, plan, node, or governed artifact.
+Governing corespine: CS-CREATION-001
+Note (2026-07-18 ARCH-00396 Phase B): header corrected — prior "Governing corespine" line
+wrongly carried "(Template Protocol, CISEM-TEMPLATE-PROTOCOL-001)"; this node's corespine
+is CS-CREATION-001 (its actual governing corespine). CISEM-TEMPLATE-PROTOCOL-001 is a
+separate node covering corespine content templates, not this checklist.
 Renamed 2026-07-15: was "Protocol File Template" / mis-titled
 "CISEM-PROTOCOL-TEMPLATE-001" — real naming violation, corrected per
 Governor's direct catch, not treated as sacred.
