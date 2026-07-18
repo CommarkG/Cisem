@@ -70,6 +70,45 @@ regardless of which model drives.
 2. Opus verifies **adversarially**: default every claim to *refuted* unless the cited evidence forces otherwise. Cheap finders hallucinate confidently.
 3. Only surviving findings receive a status, written by Opus (the Hard Line).
 
+## CORE SEEDS — how Opus's intent survives lower-tier execution (MANDATORY)
+A **Core Seed** is an Opus-authored, machine-detectable, **immutable** directive
+planted at a *sensitive* point in a plan or artifact. A lower tier MUST execute it
+verbatim and MAY NOT reinterpret, edit, or remove it — only flag it back to Opus.
+Seeds are how "Sonnet follows Opus's lead and executes exactly as intended" becomes
+enforceable rather than hoped.
+
+**Syntax (grep-detectable so the gate can check it):**
+```
+[[CORE-SEED n | MUST: <exact directive> | WHY: <trigger below> | VERIFY: <how to check it was honored>]]
+```
+
+**Trigger checklist — a spot is SENSITIVE (→ Opus codes it directly OR seeds it) if it:**
+1. writes a truth-bearing field / status / ratification (I7);
+2. defines authority, a root/foundational node, an invariant, or the Doctrine;
+3. is a contract or cross-reference other artifacts depend on;
+4. fails **silently** if misread (no loud error) — the highest-priority trigger;
+5. touches naming/numbering identity or the vocabulary single-source (I9/I10).
+No trigger hit → Sonnet is genuinely FREE on that spot. **Seed the minimum:**
+over-seeding turns Sonnet into a typist and destroys the token-efficiency — it is a
+smell, not thoroughness (guard boundaries, not paths — D2).
+
+**Grades:** `MUST` seed = immutable, verbatim, non-negotiable. `GUIDE` seed = strong
+default; Sonnet may adapt ONLY by flagging back to Opus first, never silently.
+
+**Immutability (extends the Hard Line):** a lower tier cannot author, edit, or delete
+a Core Seed. Disagreement → flag to Opus. Altering/stripping a seed = I13 violation.
+
+## The mandatory plan-execution loop (fires whenever a LOWER tier will execute a plan)
+1. **(Haiku)** gather/enumerate the plan's scope — structured, no judgment.
+2. **(Opus) REVIEW every such plan** against the trigger checklist. Mandatory — but
+   depth scales: a plan with zero triggers gets a fast "cleared, no seeds" stamp; a
+   plan with triggers gets steps 3–4.
+3. **(Opus)** CODE the most sensitive spots directly; PLANT `MUST`/`GUIDE` seeds at the rest.
+4. **(Sonnet)** EXECUTE, honoring every seed verbatim; may not edit/remove a seed; flags back if a seed seems wrong.
+5. **(Opus) VERIFY** (adversarial, default-refute) that every seed is present AND honored
+   in the output. An unhonored or missing seed = reject, do not sign off.
+This loop is hardcoded via CLAUDE.md §3.0 (Tier-Routing gate) + invariants I12/I13.
+
 ## Enhanced Haiku default prompt (prepend to every Haiku analysis/audit task)
 ```
 You are the Haiku gathering tier. Your job is EVIDENCE, not judgment.

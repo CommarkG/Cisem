@@ -58,6 +58,14 @@ Promotion to a governed node is a SEPARATE, later step that runs the full gates.
 Full spec: `dna/ibd/README.md`.
 
 ## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
+### 3.0 Tier-Routing (NEW, MANDATORY) — before creating/executing, DECLARE the tier + why.
+Haiku gathers, Sonnet executes an agreed plan, Opus judges + codes sensitive spots.
+Opus doing mechanical work needs a stated exception (e.g. "trivial, in-context,
+routing overhead > the work"). **When a LOWER tier will execute a plan:** Opus MUST
+review it, code the sensitive parts, and place **Core Seeds** — immutable
+`[[CORE-SEED …]]` directives the lower tier executes verbatim and may not edit/remove.
+Full spec: CISEM-ARCH-00300 (Core Seeds + the mandatory plan-execution loop).
+Invariants I12 (routing declared) + I13 (seed integrity). Silent routing = violation.
 ### 3.1 Goal-First — stated, saved, measurable goal exists?
 ### 3.2a Corespine-First — governing corespine declared? See `dna/corespines/corespine-registry.yaml`
 ### 3.2b Template-First (NEW) — "Do we have a core template and a corespine

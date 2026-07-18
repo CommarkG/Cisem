@@ -63,9 +63,22 @@ runs:
     permanence_layers: [read-every-session, enforced-every-creation, strengthened-every-cycle, carried-across-sessions]
     verdict: doctrine saturated across all 4 permanence layers
 
+  - run: 7
+    date: 2026-07-18
+    trigger: Governor caught Opus building IBD with no tier-routing decision
+    tiers: [opus]
+    finding: "tier-routing (ARCH-00300) was discipline, not a gate — so it got skipped under conversational momentum"
+    built: >
+      Core Seeds mechanism (ARCH-00300): immutable Opus-authored [[CORE-SEED]]
+      directives + trigger checklist + grades + mandatory plan-execution loop.
+      CLAUDE.md §3.0 Tier-Routing gate (mandatory, always-loaded).
+    invariants_added: [I12, I13]           # I12 routing-declared; I13 core-seed integrity
+    note: "I12 born from Governor oversight catching a real Opus self-compliance miss (D5 with Governor as auditor)"
+    verdict: routing now gated + seed mechanism formalized
+
 metrics:
-  invariants_total: 11
-  invariants_added_last_6_runs: 4         # I8, I9, I10, I11 — the loop keeps learning
+  invariants_total: 13
+  invariants_added_last_7_runs: 6         # I8..I13 — the loop keeps learning
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:

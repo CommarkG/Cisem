@@ -45,6 +45,8 @@ planning template so prevention is the default, not a thing someone remembers.
 | I9 | Unregistered TYPE prefix | CISEM-SCHEMA-00001, CISEM-TEMPLATE-PROTOCOL-001 use prefixes absent from ARCH-00011 §1 | Every node's TYPE prefix MUST exist in the ARCH-00011 §1 TYPE registry, OR the same change updates that registry to add it. A node whose prefix is unregistered is a naming violation |
 | I10 | Vocabulary drift between sources | VOC-00002 carried `STAGED`; ARCH-00011 §4 did not — two governing files disagreed on the status enum | Every controlled vocabulary (status enum, TYPE registry, tag set) has exactly ONE authoritative source. All other files *mirror* it and may not add or remove values. On conflict the authoritative source wins |
 | I11 | root_authority sprawl | `root_authority` is a skip-validation switch that could spread | `root_authority: true` is confined to the closed set in ARCH-00011 §7 (Founding, ARCH-00011, CS-MASTER-VALIDATION). Any other node carrying it — or adding to the set without a foundational decree — is a violation |
+| I12 | Silent tier-routing | IBD was built by Opus with no routing decision — the Governor caught it | Every creation/execution DECLARES its tier owner + why before starting (CLAUDE.md §3.0). Opus doing mechanical work needs a stated exception. Silent routing is a violation |
+| I13 | Core-seed integrity | needed so Opus intent survives lower-tier execution | Every `[[CORE-SEED]]` is Opus-authored and immutable by lower tiers; it must be PRESENT and HONORED in the executed output. A missing, altered, or unhonored seed is a violation (ARCH-00300 Core Seeds) |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -74,6 +76,8 @@ Every plan node MUST now carry:
 [ ] I9  Every node's TYPE prefix is registered in ARCH-00011 §1 (or registered in the same change)
 [ ] I10 Every controlled vocabulary has ONE authoritative source; other files mirror, never extend
 [ ] I11 root_authority confined to the ARCH-00011 §7 closed set; adding to it needs a foundational decree
+[ ] I12 tier-routing declared before creating/executing (CLAUDE.md §3.0); Opus mechanical work has a stated exception
+[ ] I13 every [[CORE-SEED]] is Opus-authored, immutable, and present+honored in the executed output
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)
