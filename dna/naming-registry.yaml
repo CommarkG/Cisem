@@ -13,7 +13,7 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 330 }  # highest assigned: 00320. Convention: planning/governance ARCH nodes are spaced by 10 (…00290, 00300, 00310, 00320); the intervening numbers are intentionally reserved, NOT a gap. 00300 = model-tier-routing, 00310 = consolidated-remediation-plan, 00320 = prevention-and-plan-audit (all 2026-07-16). NOTE: registry still lacks an assigned-ID->file manifest (invariant I4, CISEM-ARCH-00320) — cannot yet be reconciled against the filesystem. Manifest build is an open Sonnet task.
+ARCH:    { next_seq: 340 }  # highest assigned: 00330 (mini-tree protocol, 2026-07-18). Convention: planning/governance ARCH nodes are spaced by 10 (…00290, 00300, 00310, 00320); the intervening numbers are intentionally reserved, NOT a gap. 00300 = model-tier-routing, 00310 = consolidated-remediation-plan, 00320 = prevention-and-plan-audit (all 2026-07-16). NOTE: registry still lacks an assigned-ID->file manifest (invariant I4, CISEM-ARCH-00320) — cannot yet be reconciled against the filesystem. Manifest build is an open Sonnet task.
 PARK:    { next_seq: 2 }
 SES:     { next_seq: 2 }
 WITNESS: { next_seq: 4, pending_migration: ["00002"] }   # 00001 migrated; 00003 = session-continuity witness (2026-07-16, real node — supersedes the prior phantom 00003 claim in ARCH-00170)
