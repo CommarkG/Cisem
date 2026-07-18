@@ -1,6 +1,6 @@
 # Context-Envelope + Governance-Spine — Phased Plan
 **Node ID:** CISEM-ARCH-00392 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW | **depth_level:** L1
+**Planning Status:** IN-PROGRESS — Governor RATIFIED 2026-07-18 (Stage-2 decree). Stage-1 independent soundness review DISPATCHED IN PARALLEL as a safety net (session's Opus-authored plans are 2/2 UNSOUND on first review); Phase-0 build authorized but HALTS + routes findings if the review returns UNSOUND. | **depth_level:** L1
 **tags:** [planning-domain, context-envelope, three-state, invariant-registry, threshold-entry, consolidation]
 **Goal:** Make context-focus (A6/D6) MECHANICAL: give every check a machine-readable ENVELOPE and a third
 verdict state (UNKNOWN) so out-of-scope application flags instead of silently false-passing — measurable as
