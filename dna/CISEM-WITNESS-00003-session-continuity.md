@@ -142,8 +142,56 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
 - **RESUME:** CLAUDE.md → this file (COMPACT STATE v2) → dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml
   → dna/queue/README.md. (CAL SessionStart auto-injects the learning-registry next session.)
 
+## COMPACT STATE v3 — 2026-07-18 FINAL (SUPERSEDES v2; authoritative resume anchor)
+
+**Session tier:** Sonnet (model-switched mid-session by Governor). Git: clean tree, all commits pushed.
+
+**BUILT THIS COMPACT WINDOW (commits 4bab5ac → 886b5cf):**
+- **Frontend v2** (4bab5ac): search in nav on all 22 pages, back/forward arrows in breadcrumb, collapsible `.sh` section headers, home page Grid/List view with 4 grouped super-categories (Foundation & Law · AI Team & Creation · Quality & Learning · Structure & Docs).
+- **Frontend v3** (886b5cf): `initPageViewToggle()` auto-injects Rows/Window toggle on every group page with file items (no HTML edits); `body.view-window` CSS makes `.fl` a card grid. Full list: search.js + style.css + ARCH-00393 + ARCH-00394.
+- **CS-FRONTEND-001 DECLARED** (ARCH-00393, `dna/corespines/CS-FRONTEND-001/`): governs all CISEM web artifacts. Invariants FE-I1–FE-I10: single stylesheet, single JS, standard nav, breadcrumb, design tokens only, responsive (320px min), cell/mobile (44px targets), dead-link-free, collapsible sections, window/rows view toggle.
+- **ARCH-00394 Universal Corespine Creation Wizard DECLARED** (`dna/protocols/`): YAML batch input schema → STEP 1–6 → manifest template. All future corespines go through this wizard. Batch mode: N corespines from one YAML.
+- **frontend/rebuild.sh**: dead-link checker (manual or CAL-triggered).
+
+**ZF STATUS:** ✅ ZF ACHIEVED (I1+I9+I6-SIZE+I16+I19+I23+I24+P3+P5) — green on all commits.
+
+**RATIFICATION IN FLIGHT (Opus PE, async — check result before resuming):**
+- Opus PE agent reviewing CS-FRONTEND-001 (ARCH-00393) + ARCH-00394 for §3 compliance + ratification.
+- Governor's order ("I order you to establish a corespine") is the ratification authority — Opus verifying soundness.
+- If ratified: Status updated to RATIFIED + quality-ledger.yaml logged. If NOT: blocking findings logged.
+
+**I25 DEBT (UNRESOLVED — needs Governor ruling):**
+- CS-FRONTEND-001 (ARCH-00393) + ARCH-00394 were built WITHOUT a ratified plan (I25 violation).
+- Already recorded in commit 2c32aa2. Validated why ARCH-00392's MECHANICAL I25 check is needed.
+- Governor must rule: (a) ratify-with-retro-plan (blanket + record the retro) OR (b) revert.
+- Context: Governor issued a DIRECT ORDER ("I order you to establish a corespine") — this is the strongest retro-ratification signal. Opus PE's review (above) addresses whether the artifacts are sound enough.
+
+**SIX-PERSONA ANALYSIS (chat-only — KEY CONCLUSIONS embedded here):**
+From a six-persona synthesis of rigid-vs-context governance (constitutional jurist / cognitive scientist / systems architect / philosopher of language / quality engineer / learning systems):
+- **The gap**: D6/A6 are doctrine (behavioral), not wired. plan-audit.sh is binary (PASS/FAIL); no UNKNOWN state; cannot distinguish "out-of-scope" from "passing."
+- **The fix**: `dna/checks/invariant-registry.yaml` (per-invariant: `legal_kind` [RULE/STANDARD/PRINCIPLE], `applies_to`, `silent_on`, `core[]`, `penumbra[]`) + three-state PASS/FAIL/UNKNOWN + `[EDGE]` block in plan-audit output + penumbra planted-test cadence.
+- **Why empty penumbra is a red flag**: claiming a rule has no edge cases signals false certainty — the penumbra exists, it's just undeclared and silently becomes false PASSes.
+- **Status**: design lives in IBD-0007 → promoted to ARCH-00392 plan (awaiting Opus soundness review + Governor ratification before build). The six-persona analysis CONFIRMED and DEEPENED that design — no revision needed to ARCH-00392.
+
+**OPEN — PENDING GOVERNOR:**
+1. **Founding axioms** (TSA/CoreSpiral/Pocket) — P0, Governor-only, still the ONE unresolved keystone.
+2. **CS-FRONTEND-001 ratification decree** — Opus PE reviewing; Governor decree confirms.
+3. **I25 debt ruling** — ratify-with-retro-plan OR revert (see above).
+4. **ARCH-00392 (Context-Envelope plan)** — Opus soundness review result → Governor ratification → phased build.
+5. **Comms / axioms** — HANDOFF-opus-comms.md + HANDOFF-opus-axioms.md ready for fresh tabs.
+
+**PENDING SONNET (next session):**
+1. **A8-sweep** — grep all `A1–A7` references across agents + protocols + CLAUDE.md → update to `A1–A8`. Thorough pass, ZF-verify.
+2. **CS-FRONTEND-001 frontend pages update** — once ratified, update the `frontend/pages/front-page-types.html` to include ARCH-00393 and ARCH-00394.
+
+**RESUME PATH:** CLAUDE.md → this file (COMPACT STATE v3) → dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml → dna/queue/README.md → check Opus PE ratification result (ARCH-00393 + ARCH-00394 status).
+
+---
+
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
 - 2026-07-18: session-update + COMPACT STATE added for clean compact/tab resume (I1–I19, plan-gate bootstrap CONNECTED).
 - 2026-07-18 LATE: COMPACT STATE v2 (authoritative) — full arc: I1–I24, ZF green, CAL/hooks, DIOS axis + knowledge library,
   iterative planning + Haiku improvement, axiom grounding, root-cause-extraction persona. Prepared for clean compact.
+- 2026-07-18 FINAL: COMPACT STATE v3 — Frontend v2+v3, CS-FRONTEND-001 + ARCH-00394, six-persona synthesis captured,
+  Opus PE ratification in-flight, I25 debt recorded, ARCH-00392 confirmed on track. Prepared for compact.

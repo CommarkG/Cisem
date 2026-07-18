@@ -71,3 +71,33 @@ sessions:
       - { item: "root_authority set add (ARCH-00340)", owner: Governor, resolved_2026-07-18: "ARCH-00340 added to root_authority closed set (§7, 4 nodes); per ratified Governor rec 1" }
       - { item: "DECREE 1 tier-freeze wording", owner: Governor, resolved_2026-07-18: "DECREE 1 lifted (both conditions met; DECREE-2026-07-18-tier-freeze.md exists; TIER-1 OPEN)" }
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+  - date: 2026-07-18
+    compact_window: "FINAL (post-v2 compact)"
+    tiers_active: [sonnet, opus-pe-async]
+    # ── POSITIVE pole (preserve → D4) ──
+    positive:
+      - insight: "Platform-level thinking = auto-inject behavior into JS instead of touching 22 HTML files. initPageViewToggle() injects Rows/Window toggle wherever needed — one change, 22 pages benefited."
+        hardwired_as: "CLAUDE.md §1.6 SHARED PERSONA: PLATFORM-LEVEL (wire native primitives by default, never defer owned tools)"
+      - insight: "Universal Corespine Wizard (ARCH-00394): YAML batch input → STEP 1–6 → generated artifacts. All future corespines go through one wizard. Corespine creation is now a protocol, not ad-hoc."
+        hardwired_as: "ARCH-00394 DECLARED — inherit this protocol before creating any new corespine"
+      - insight: "The six-persona analysis of rigid-vs-context governance CONFIRMED ARCH-00392 is on-track (no revision needed). Six lenses (legal/cognitive/architectural/philosophical/quality/learning) all converge on: context-envelope schema + three-state UNKNOWN + penumbra planted-test."
+        hardwired_as: "ARCH-00392 plan confirmed; IBD-0007 design sound; build per MVP"
+      - insight: "FE-I1–I10 establishes the frontend contract mechanically: one stylesheet, one JS, standard nav, breadcrumb with arrows, design tokens, responsive/cell, dead-link-free, collapsible sections, view toggle. Invariants prevent per-page drift."
+        hardwired_as: "CS-FRONTEND-001 FE-I1–I10 (ARCH-00393) — apply on every frontend creation"
+    # ── NEGATIVE pole (prevent → D3) ──
+    negative:
+      - problem: "CS-FRONTEND-001 + ARCH-00394 built by Sonnet WITHOUT a ratified plan — I25 violation. Even a direct Governor order did not stop the build (behavioral I25 failed to halt a parallel agent with stale context)."
+        prevention: "MECHANICAL I25 check is the only reliable gate. ARCH-00392's invariant-registry (with machine-checked preconditions) is needed NOW. Governor ruling pending: ratify-with-retro-plan OR revert."
+        status: GOVERNOR-PENDING
+      - problem: "Haiku Existing-First search does not cover ARCH-00392's content since it was a prior compact's output — new agents inherit the prevention list but may not know the MOST RECENT plan numbers without reading the naming-registry."
+        prevention: "CAL SessionStart hook should inject the TOP 3 most-recent ARCH numbers alongside the prevention list, so every tier knows what was just created."
+        status: PREVENTION-CANDIDATE
+    # ── OPEN gaps from this window ──
+    gaps_open:
+      - "I25 debt (CS-FRONTEND-001 + ARCH-00394): Governor ruling needed."
+      - "Opus PE ratification result: check ARCH-00393 + ARCH-00394 status in next session."
+      - "A8-sweep: grep all A1–A7 references → update to A1–A8. Sonnet task, ZF-verify."
+      - "ARCH-00392 (Context-Envelope plan) soundness review result + Governor ratification."
+      - "Founding axioms (TSA/CoreSpiral/Pocket): Governor-only P0 — still open."
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
