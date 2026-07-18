@@ -100,4 +100,15 @@ sessions:
       - "A8-sweep: grep all A1–A7 references → update to A1–A8. Sonnet task, ZF-verify."
       - "ARCH-00392 (Context-Envelope plan) soundness review result + Governor ratification."
       - "Founding axioms (TSA/CoreSpiral/Pocket): Governor-only P0 — still open."
+    opus_harvest_final_2026-07-18:
+      meta_lesson: "THE HARVEST WAS NOT TRIGGERED at compact-prep — Opus substituted 'update COMPACT STATE' (save-all, Principle 13) for 'run the harvest' (Principle 12/ARCH-00370). Neither mechanical (CAL PreCompact hook is LIVE only next session) nor behavioral. Governor caught it. FIX: harvest is now a §1.6 SHARED-PERSONA line (ONE source, binds Opus + Sonnet) + CAL PreCompact fires it mechanically next session. Incremental logging ≠ the deliberate ARCH-00370 STEP 1–5 harvest."
+      positive:
+        - "Plan-gate MATURING: ARCH-00382 v1 UNSOUND → ARCH-00391 UNSOUND → ARCH-00392 SOUND on FIRST review. Opus applied the 2 prior lessons (no §1.6 fork; threshold=entry-gate; enumerated gates; size-blast pre-declared) and the 3rd plan passed. Independent-review architecture works AND the author learns from it."
+        - "RATIFY-WITH-SAFETY-NET pattern: Governor ratified before Stage-1; Opus ran the review in PARALLEL + Core-Seeded Sonnet to HALT if UNSOUND. Returned SOUND → build proceeds, zero risk taken. Honors Governor urgency without abandoning the guardrail."
+      negative:
+        - problem: "Opus plan-authoring under-searches its OWN recent work (§1.6 fork in ARCH-00391 — 2nd occurrence; fresh-eyes review catches it, author doesn't)."
+          prevention: "Stage-0 must grep the author's own recent commits + §1.6 + IBD registries for lineage before Stage-1."
+          status: PREVENTION-CANDIDATE
+      threshold_gap: "CS-THRESHOLD-001 is RATIFIED but BODILESS (no manifest file) — flagged by the ARCH-00392 review. Non-blocking for MVP; honesty gap (a ratified corespine with an empty body). Route: disclose + build its manifest via a plan."
+      arch_00392_verdict: "SOUND (independent safety-net review). Phase-0 build authorized; 4 non-blocking P3-hygiene revisions recommended as ratification conditions (disclose threshold empty body; scope P3 '0-forks' to plan-introduced elements; name P3 blocks-on the I25 debt + 393/394 collision; fix stale A8 label in ssot-registry — folds into A8-sweep)."
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md

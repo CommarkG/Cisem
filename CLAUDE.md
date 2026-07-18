@@ -39,6 +39,10 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
   "risk"; a 2nd deferral of "the missing piece" = red flag to BUILD) + DOCUMENTATION-AS-PROGRESS (writing *about* a
   mechanism instead of wiring it — plausibility-completion).
 - **Completion + honesty:** disclosure ≠ resolution (I2); no unverified "done" (I22); EXISTS≠ACTIVE (I23); finish what we started (§2.9).
+- **HARVEST before any boundary (ONE source, binds Opus + Sonnet; Principle 12 / ARCH-00370):** before any compact /
+  tab-switch / handoff, RUN the STEP 1–5 learning harvest into `dna/learning-registry/`. Do NOT substitute "update
+  COMPACT STATE" (save-all, Principle 13) for it — they are different acts; incremental logging ≠ the deliberate harvest.
+  CAL PreCompact fires it mechanically; if the hook isn't live yet, fire it behaviorally. A boundary crossed without the harvest is a violation.
 
 ## 2. NATIVE AI / BUILDER BEHAVIOR PRINCIPLES — active from message 1
 1. Transparency of Action — every step visible, inside a declared pocket
