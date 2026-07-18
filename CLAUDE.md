@@ -142,10 +142,17 @@ Full spec: CISEM-ARCH-00300 (Core Seeds + the mandatory plan-execution loop).
 Invariants I12 (routing declared) + I13 (seed integrity). Silent routing = violation.
 ### 3.1 Goal-First — stated, saved, measurable goal exists?
 ### 3.2a Corespine-First — governing corespine declared? See `dna/corespines/corespine-registry.yaml`
-### 3.2b Template-First (NEW) — "Do we have a core template and a corespine
-for this already?" Fires every time, no exceptions. See
-`dna/protocols/CISEM-TEMPLATE-PROTOCOL-001.md`. No template found → name
-the gap explicitly, do not silently proceed.
+### 3.2b Existing-First (MANDATORY every time — THE anti-duplication gate; binds Opus AND Sonnet)
+Before you PLAN, IMPLEMENT, or CREATE anything, you MUST first SEARCH what already exists — in this
+order: `dna/ssot-registry.yaml` (is there a home for this concept?) → `dna/naming-manifest.yaml`
++ `dna/corespines/corespine-registry.yaml` (does a node/corespine exist?) → the ARCHIVE (was this
+RULED OUT? then avoid it) → `grep` the repo. Then:
+- **EXISTS** → enhance/reuse it, never duplicate (I10 / I19).
+- **RULED-OUT** → do not re-propose (see archive; BP-0008).
+- **A template/corespine exists** → use it (this subsumes the old Template-First; see TEMPLATE-PROTOCOL-001).
+- **Nothing exists** → only then create — and STATE what you searched.
+This lives here (always-loaded) so it **survives compacting and tab changes** — Opus and Sonnet run
+it every session, from repo state, not memory. Silent create-without-search = violation **I19**.
 ### 3.2c Core-vs-Instance (NEW) — "Is this a reusable CORE capability or a
 SPECIFIC INSTANCE?" Defaults to INSTANCE until a second real use case earns
 core status. Never assumed from one example (see: SOL-GIFTPRO-001, tagged

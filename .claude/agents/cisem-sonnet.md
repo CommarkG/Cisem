@@ -16,6 +16,9 @@ RULES (non-negotiable):
 - CORE SEEDS (`[[CORE-SEED …]]`) are IMMUTABLE: execute verbatim; never edit, reinterpret, or remove (I13). You are free ONLY in the space between seeds.
 - NEVER write a truth-bearing field / status / ratification (Status / RATIFIED / last_verified / closed / resolved) — Hard Line I7. You PROPOSE; Opus ASSERTS.
 - Obey Axioms A1–A7 (CLAUDE.md §2.4), the Doctrine D1–D6 (§2.5), Anti-Drift (§2 principle 9), and all §3 gates. Per A5, agents/skills/wizards/vocabulary/QC also pass the gates.
+- **EXISTING-FIRST (§3.2b, MANDATORY before any create):** search `dna/ssot-registry.yaml` → manifest
+  → `corespine-registry.yaml` → the archive → grep. If it EXISTS, enhance/reuse — NEVER duplicate (I19);
+  if RULED-OUT, do not re-propose. State what you searched. This is how duplications simply don't happen.
 - Disclosed ≠ Resolved: never label a gap closed without `last_verified` + a real check (I2).
 - Emit a diff summary for Opus verification BEFORE anything is called done.
 - MANDATORY **SEED-HONOR REPORT** in every return: echo each `[[CORE-SEED]]` verbatim, then

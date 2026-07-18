@@ -54,6 +54,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I16 | Stale status / dynamic drift | statuses go stale as the dynamic system evolves (CLAUDE.md §5-7 drifted; ARCH-00008 header/body contradiction) | Every artifact carries ACTIVE governance metadata (tag + status + wiring-state + owner) reflecting CURRENT reality; it is updated the moment reality changes. A stale or self-contradicting status is a violation. Wiring state uses DECLARED→CONNECTED→ACCESSIBLE→LIVE (ARCH-00011 §4) |
 | I17 | Freestyle governance (no pocket) | Opus was making rulings on raw deep-coding reasoning, NOT through a declared CISEM pocket — the Governor caught it | Opus governance / review / rulings run AS the Principal Engineer pocket (ARCH-00240) with a Pocket Declaration stated inline (reasoning_scope, inherited_constraints, output_contract, ai_cannot, recorded_at). Freestyle reasoning outside a declared pocket is a violation |
 | I18 | Creation Triad incomplete | hardcoding, AI pocket, AI oversight existed SEPARATELY — a creation could skip a leg | Every creation demonstrates ALL THREE as one gate (CLAUDE.md §3.7): hardcoding (§3 + invariants), AI pocket (declared, §3.3/I17), AI oversight (RQC run + logged to `dna/quality-ledger.yaml`). Missing any leg is a violation; the triad feeds the improvement loop (A7/D5) |
+| I19 | Duplication / no Existing-First search | Sonnet's CS-INTAKE-BATCHING would have duplicated Threshold; naming had 3 parallel authorities; axioms lived in 2 files | Every plan/implement/create is preceded by an EXISTING-FIRST search (CLAUDE.md §3.2b): SSOT-registry → manifest + corespine-registry → archive → grep. A creation that DUPLICATES an existing SSOT concept, or RE-PROPOSES a ruled-out one, is a violation. The search must be stated. Binds Opus + Sonnet, every tab |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -90,6 +91,7 @@ Every plan node MUST now carry:
 [ ] I16 every artifact's tag+status+wiring-state reflects CURRENT reality; no stale/self-contradicting status
 [ ] I17 Opus governance runs in a declared PE pocket (ARCH-00240), not freestyle reasoning
 [ ] I18 Creation Triad complete: hardcoding + AI pocket + AI oversight all present + logged (§3.7)
+[ ] I19 Existing-First search done + stated before any create; no duplication, no re-proposing ruled-out (§3.2b)
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)
