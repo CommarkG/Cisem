@@ -19,6 +19,7 @@ SES:     { next_seq: 2 }
 WITNESS: { next_seq: 5, pending_migration: ["00002"] }   # 00001 migrated; 00003 = session-continuity (2026-07-16); 00004 = compaction handoff (2026-07-18)
 VOC:     { next_seq: 3 }    # 00001 (Tag Library), 00002 (Status Library) assigned this session
 LOAD:    { next_seq: 2 }    # 00001 used
+SCHEMA:  { next_seq: 2 }    # 00001 (placement-engine) — added 2026-07-18 after the I9 check flagged CISEM-SCHEMA-00001 unregistered
 REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself (root registry, exempt)
 
 # ── PRE-NODE namespaces (parking / queue / handoff) — now allocated through THIS SINGLE GATE too ──

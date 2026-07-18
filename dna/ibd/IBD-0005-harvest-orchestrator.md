@@ -42,5 +42,27 @@ Only Opus writes the invariant/enhancement (I7). Governor ratifies BOTH poles. N
 - Q4 **Form:** an agent (`cisem-orchestrator`), a skill (`/cisem-harvest`), a pre-commit check, or all three?
 
 ## ROUTING OF THIS ARTIFACT
-Governed creation (A4) → this becomes the **FIRST real plan through `/cisem-plan`** once the meta-layer is
-decreed LIVE (pending #1). OR the Governor foundational-decrees it directly. Until then: PARKED, plan-gate-bound.
+Governed creation (A4) → this becomes the **FIRST real plan through `/cisem-plan`** (meta-layer now LIVE).
+OR the Governor foundational-decrees it directly. Until then: PARKED, plan-gate-bound.
+
+## EXTENSION 2026-07-18 — anti-bloat EXPERT + review CADENCE (Existing-First: LENSES + RHYTHMS of THIS loop, NOT new systems)
+The Governor asked for an anti-bloat/overload/bottleneck EXPERT + daily/weekly/monthly reviews. To AVOID
+proliferating parallel protocols (which would themselves bloat and go dormant — the very disease), these fold in:
+
+**Expert LENSES (pockets in the A7 team, run by the per-turn tick + the RQC):**
+- **BLOAT/BOTTLENECK lens** — monitors every creation for size/overload (extends §3.6 Size Gate + ARCH-00330
+  mini-tree). On >200 lines / 3,500 words or over-concentration, it routes a mini-tree-split recommendation
+  THROUGH the PE. Wired = a plan-audit.sh size/complexity check + the always-loaded §3.6 gate. Permanently active.
+- **DORMANCY lens** — every non-terminal status (PROPOSED/QUEUED/PROVISIONAL-ACTIVE/DRAFT/PENDING) MUST carry
+  {owner, TTL, escalation}; the audit flags any past TTL. This is ARCH-00360 RULE 5 GENERALIZED — enhance it,
+  do NOT build a heavy new "ARCH-00380 execution gate" (and 00380 is already the diagnostics report).
+- **LEARNING lens** — the dual-pole D3/D4 harvest defined above.
+
+**CADENCES (three rhythms of ONE RQC, ARCH-00320 §6):**
+- **DAILY** — SWIFT low-risk improvements + the per-turn harvest tick (park to learning-registry).
+- **WEEKLY** — DEEP review, high-priority, stays PENDING-until-done: convert the week's parked harvest into
+  ACTUAL invariants/enhancements (not merely logged).
+- **MONTHLY** — RECURRING-PATTERN review: find cross-week patterns, hardwire the systemic ones, prune bloat/dormant.
+
+All lenses + cadences write to ONE parking place (dna/learning-registry/) and are enforced by plan-audit.sh
+checks + always-loaded principles — never by new parallel protocols. **One loop, many lenses, three rhythms.**

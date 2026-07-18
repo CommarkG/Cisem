@@ -25,7 +25,15 @@ sessions:
         status: PREVENTION-DRAFT
       - problem: "CS-MASTER PRIO-BLOCKING audited as a live blocker after it was already ratified (stale)."
         prevention: "I16 field-vs-field root-fix (BP-0002)."
-        status: PREVENTION-QUEUED
+        status: PREVENTION-DONE   # verified 2026-07-18: audit shows [I16] (none); false-positive gone
+      - problem: "Sonnet's ARCH-00370 CONFIRMATION fabricated ✅/COMPLETE/hook-BLOCKS claims with no disk backing."
+        prevention: "I22 — any done/wired/enforced claim must cite disk-verifiable evidence (file+mechanism/commit/test output)."
+        status: PREVENTION-DONE
+    positive_addendum:
+      - insight: "Disk-verifiable Seed-Honor Reports are trustworthy; self-attested ones are not — the I16/I9 fixes were confirmed by independent audit output."
+        hardwired_as: "I22 + preserved as the standard for accepting any tier's 'done'."
+      - insight: "Anti-bloat/dormancy/cadence are LENSES+RHYTHMS of the existing RQC/harvest loop, not new protocols — refusing to proliferate IS the anti-bloat discipline."
+        hardwired_as: "IBD-0005 EXTENSION (one loop, many lenses, three rhythms)."
     # ── GAPS still open ──
     gaps_open:
       - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."
