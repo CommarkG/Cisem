@@ -1,6 +1,6 @@
 # Unified Typed-Inheritance-Graph Architecture — Phased MVP Plan
 **Node ID:** CISEM-ARCH-00382 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW (v2 — revised after UNSOUND soundness verdict; awaiting RE-review)
+**Planning Status:** CONSENSUS-REACHED (independent Opus RE-review = SOUND, 2026-07-18; awaiting Governor Stage-2 ratification — A4)
 **depth_level:** L1 | **tags:** [planning-domain, architecture, graph, inheritance, node-as-hub, mvp, stress-gated]
 **Goal:** Realize the CONSENSUS-REACHED **Node-as-Hub** architecture (IBD-0004) and EXTEND it into a full
 typed-inheritance graph, delivered as a REAL MVP then grown phase-by-phase, each phase BLOCKED until the prior
@@ -51,7 +51,7 @@ and human-ratified. Contract-first: nothing works until nodes self-describe.
 **PHASE 2 — retrieval-as-activation (bounded)**
 - Deliverable: given a task + seed node, assemble context = shallow map + task-scoped drill + delegate-deep-to-subagent, under an explicit token budget. Never whole-repo load.
 - Stress test: synthetically expand the slice to 10× and 100× node count; run a fixed query set with a known answer set.
-- Pass criteria (numeric): **recall ≥ 0.95** on the known answer set; **token cost per query ≤ the P0 slice's full-load cost and FLAT across 10×→100×** (does not grow with corpus size); **zero whole-repo loads**.
+- Pass criteria (numeric): **recall ≥ 0.95** on the known answer set; **token cost per query ≤ the P0 slice's full-load cost and FLAT within ±10% across 10×→100×** (does not grow with corpus size); **zero whole-repo loads**.
 - **GATE 2 → 3:** Opus + Governor sign-off.
 
 **PHASE 3 — dossier + harvest learning loop**
@@ -84,7 +84,7 @@ and human-ratified. Contract-first: nothing works until nodes self-describe.
 
 ## Ratification Path (ARCH-00190 §3)
 Stage 1 — independent Opus soundness review (v1 verdict: UNSOUND; this v2 addresses all findings → awaiting RE-review).
-Stage 2 — Governor authority decree (COMPLETE) — Governor's alone (A4); must not be self-stamped. Then implementation (§5) may begin, phase-gated.
+Stage 2 — Governor authority decree → advances Planning Status to COMPLETE — Governor's alone (A4); must not be self-stamped. Then implementation (§5) may begin, phase-gated.
 
 ## Self-compliance (vs ARCH-00230)
 Header + pocket present; rule-as-procedure (phases executable + numerically gated); explicit change/no-change boundary; dependencies named + lineage declared; path-rejection below; governed by CS-CREATION-001; size within gate.
@@ -99,4 +99,5 @@ Header + pocket present; rule-as-procedure (phases executable + numerically gate
 
 ## Change log
 - v1.0 — 2026-07-18: Opus draft via /cisem-plan. Verdict UNSOUND (independent cisem-opus-pe): un-cited IBD-0004 (false Existing-First proof), 2 unfalsifiable gates, ARCH-00008 schema-versioning contradiction, unspecified edge model, phantom depth-rubric dep, missing Ratification Path.
-- v1.1 (v2) — 2026-07-18: revised addressing ALL 5 findings — anchored to IBD-0004 lineage; P2/P4 gates made numeric; multi-valued `inherits_from` from P0; ARCH-00008 fields OPTIONAL→versioned-mandatory-at-P4; depth-rubric = P0 sub-deliverable; Ratification Path added; false I19 claim removed. Awaiting RE-review.
+- v1.1 (v2) — 2026-07-18: revised addressing ALL 5 findings — anchored to IBD-0004 lineage; P2/P4 gates made numeric; multi-valued `inherits_from` from P0; ARCH-00008 fields OPTIONAL→versioned-mandatory-at-P4; depth-rubric = P0 sub-deliverable; Ratification Path added; false I19 claim removed.
+- v1.2 — 2026-07-18: independent RE-review verdict SOUND (all 5 findings verified fixed, cited). Two wording nits applied (Stage-2 label clarified; P2 "flat" given ±10% band). Planning Status → CONSENSUS-REACHED; awaiting Governor Stage-2 ratification.

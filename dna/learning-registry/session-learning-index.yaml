@@ -43,7 +43,7 @@ sessions:
         caught_by: "independent cisem-opus-pe soundness review (default-refute) — the tier machine caught OPUS's own miss, not just Sonnet's. Verification is tier-agnostic."
         prevention: "a plan MUST declare its parent-concept lineage; any Path-Rejection I19-compliance claim MUST cite the Existing-First search performed (prevention candidate — strengthens I19 + I22)."
         status: PREVENTION-CANDIDATE
-        positive: "the /cisem-plan gate + independent review WORKED on its first real use — caught a real duplication before it could propagate."
+        positive: "the /cisem-plan gate + independent review WORKED on its first real use — caught a real duplication before it could propagate; v2 RE-review returned SOUND — full UNSOUND→revise→SOUND cycle completed end-to-end (ARCH-00382 → CONSENSUS-REACHED, awaiting Governor)."
     # ── GAPS still open ──
     gaps_open:
       - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."
