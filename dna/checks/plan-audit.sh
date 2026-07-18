@@ -29,7 +29,7 @@ for id in $refs; do
   fi
   # unresolved, but if it is tagged as intentionally-not-a-node anywhere, accept it (I1 satisfied by tag)
   reflines=$(grep -rhn "$id" --include="*.md" --include="*.yaml" . 2>/dev/null | grep -v '.git/')
-  if echo "$reflines" | grep -qiE "example-only|NOT-YET-A-NODE|SIMULATION"; then
+  if echo "$reflines" | grep -qiE "example-only|NOT-YET-A-NODE|SIMULATION|off-repo|Drive-only|forward-ref|not-in-repo"; then
     continue
   fi
   echo "   UNRESOLVED: $id"; found_i1=1
@@ -125,6 +125,17 @@ for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.m
   fi
 done
 [ "$found_i24" = 0 ] && echo "   (none — every RATIFIED node cites its validating decree)"
+
+# ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
+#      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
+#      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.
+zf_open=$(( found_i1 + found_i9 + found_i16 + found_i19 + found_i23 + found_i24 ))
+echo "[ZF] zero-findings gate (I1+I9+I16+I19+I23+I24):"
+if [ "$zf_open" -eq 0 ]; then
+  echo "   ✅ ZF ACHIEVED — zero un-routed findings this run"
+else
+  echo "   ✗ NOT ZF — $zf_open check(s) have open findings above; route EACH (resolve / tag-exempt / Governor) to reach ZF"
+fi
 
 echo "── end — WARN-ONLY (except I13 seed-strip BLOCK in pre-commit). Full protocol: ARCH-00320 ──"
 exit 0

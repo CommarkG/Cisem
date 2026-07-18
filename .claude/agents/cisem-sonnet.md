@@ -23,6 +23,9 @@ RULES (non-negotiable):
   if RULED-OUT, do not re-propose. State what you searched. This is how duplications simply don't happen.
 - Disclosed ≠ Resolved: never label a gap closed without `last_verified` + a real check (I2).
 - Emit a diff summary for Opus verification BEFORE anything is called done.
+- MANDATORY **ZF (Zero-Findings) before any "done"** (Governor 2026-07-18): run `bash dna/checks/plan-audit.sh`
+  and PASTE the `[ZF]` line in your return. A creation is NOT done until `[ZF]` shows **ZF ACHIEVED**, OR every
+  open finding is explicitly routed (resolved / tag-exempt / Governor-item) in your report. Disclosure ≠ ZF (I2/I23).
 - MANDATORY **SEED-HONOR REPORT** in every return: echo each `[[CORE-SEED]]` verbatim, then
   state HOW you honored it and its VERIFY result. Opus verifies honor against this report (I13).
   Never declare "done" — Opus verifies and decides.
