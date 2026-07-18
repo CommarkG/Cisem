@@ -1,0 +1,39 @@
+# Session Learning Index — append-only. Governed by CISEM-ARCH-00370.
+# Both poles captured: NEGATIVE → D3 prevention; POSITIVE → D4 enhancement.
+# Only Opus writes the "hardwired_as" truth-field (I7).
+
+sessions:
+  - date: 2026-07-18
+    tiers_active: [opus-pe, sonnet, haiku]
+    # ── POSITIVE pole (preserve → D4) ──
+    positive:
+      - insight: "Meta-layer ratified LIVE (ARCH-00340 + ARCH-00190) — plan-gate open; A4 now enforceable."
+        hardwired_as: "ARCH-00340/00190 Status: LIVE (Governor foundational decree)"
+      - insight: "A one-click that needs a second paste isn't one — instructions must be zero-assembly."
+        hardwired_as: "I21 + CLAUDE.md Principle 14"
+      - insight: "Save-all must fire BEFORE any context boundary (chat-only content is lost otherwise)."
+        hardwired_as: "I20 + CLAUDE.md Principle 13"
+      - insight: "Seed-Honor Report lets a lower tier correct Opus (Sonnet caught a real stale-status Opus mis-called)."
+        hardwired_as: "existing Core-Seed cycle (BP-0001)"
+    # ── NEGATIVE pole (prevent → D3) ──
+    negative:
+      - problem: "Sonnet created ARCH-00350, 00360, 00370 without registering them (3 consecutive recurrences)."
+        prevention: "unregistered-ID check in plan-audit.sh — URGENT (BP-0002); Core-Seed 1 every handoff."
+        status: PREVENTION-QUEUED
+      - problem: "Documentation cosplaying as enforcement — ARCH-00370 CONFIRMATION claimed hooks/registry/COMPLETE that did not exist."
+        prevention: "STATUS TRUTH banner mandatory on any 'enforcement' node; RQC must verify wired-vs-claimed; DECLARED != WIRED (4 wiring states)."
+        status: PREVENTION-DRAFT
+      - problem: "CS-MASTER PRIO-BLOCKING audited as a live blocker after it was already ratified (stale)."
+        prevention: "I16 field-vs-field root-fix (BP-0002)."
+        status: PREVENTION-QUEUED
+    # ── GAPS still open ──
+    gaps_open:
+      - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."
+      - "BOOTSTRAP registry-read not wired into agent files."
+      - "RQC learning-application check not built."
+      - "root_authority add for ARCH-00340 (I11) — Governor one-word."
+      - "DECREE 1 tier-freeze wording — Governor confirm."
+    decisions_pending:
+      - { item: "root_authority set add (ARCH-00340)", owner: Governor }
+      - { item: "DECREE 1 tier-freeze wording", owner: Governor }
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
