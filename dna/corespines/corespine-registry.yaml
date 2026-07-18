@@ -43,8 +43,14 @@ CS-ACCOUNTABILITY-001:
 
 CS-AI-PROFILING-001:
   status: DECLARED
-  goal: "Governs internal virtual AI personas — behavioral contracts for persona
-         specifications used in review and consultation roles across CISEM"
+  goal: "The AI-TEAM corespine (broadened 2026-07-18, Governor-ratified): governs AGENTS
+         (tier workers) AND SKILLS (pre-created gated procedures) AND how they DELIVER the
+         Creation Triad (hardcoding + AI pockets + oversight, §3.7) automatically each time.
+         Includes the original persona / review-mode behavioral contracts."
+  team:
+    agents: [cisem-haiku, cisem-sonnet, cisem-opus-pe]                       # .claude/agents/ — bound, bootstrapped
+    skills: [cisem-create, cisem-audit, cisem-consolidate, cisem-park, cisem-promote]  # pre-created verbs; queued via build-prompts
+  pattern: "Skill invokes Agent in a Pocket, constrained by Hardcoding, verified by Oversight, learned into the Loop"
   depth_level: L1
 
 CS-CONTROLPLANE-001:

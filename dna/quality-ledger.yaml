@@ -181,9 +181,29 @@ runs:
       14/18 invariants manual, triad-check, BLOCK graduation, tier chain never run live.
     verdict: core RATIFIED + coherent SPEC; enforcement still 1 engine + 4/18 automated — path queued (BP-0001->BP-0002)
 
+  - run: 15
+    date: 2026-07-18
+    trigger: Sonnet Seed-Honor Report corrected an Opus mis-verdict; Governor ratified skills+agents pattern + defined SWIFT
+    pocket: Principal Engineer (ARCH-00240) — declared
+    honesty_event: >
+      FIRST completed Core Seed cycle exposed an Opus error: I called the CS-MASTER-VALIDATION I16
+      flag a false positive; cisem-sonnet's Seed-Honor Report correctly identified GENUINE stale
+      status (78/88/97 had post-decree "not ratified" language). Fixed the real content. BUT a
+      residual WARN persists on legitimate ratification PROSE (line 41) — a real I16 check-design
+      limitation (field-vs-prose); the fix is field-vs-field, folded into BP-0002. Both tiers were
+      partly right — the loop worked.
+    built: >
+      SWIFT methodology formalized (CLAUDE.md §2.7, Governor definition). CS-AI-PROFILING-001
+      BROADENED to the AI-TEAM corespine (agents + skills + triad delivery; Governor-ratified).
+      cisem-opus-pe agent created (the JUDGE tier). BP-0003 queued (/cisem-create skill).
+    invariants_added: []
+    verdict: Seed-Honor Report proved its worth (corrected Opus); AI-Team pattern ratified + roster started
+
 metrics:
   invariants_total: 18
-  invariants_added_last_14_runs: 11
+  invariants_added_last_15_runs: 11
+  agents: 3                                # cisem-haiku, cisem-sonnet, cisem-opus-pe
+  core_seed_cycles_completed: 1            # BP-0001 (first live cycle; Opus-verify caught residual + was corrected by Sonnet)
   engines: "1 executable (plan-audit.sh) + 1 routing structure (queue)"
   invariant_automation: "4/18 automated; 14 manual — BP-0002 closes the mechanical ones"
   corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-MASTER-VALIDATION-001)"

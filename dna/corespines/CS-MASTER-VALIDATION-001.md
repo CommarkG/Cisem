@@ -75,7 +75,7 @@ V1 has-content ✓ (this file). V2 ARCH-00008 fields ✓ (header + pocket). V3
 invariants: refs all resolve (ARCH-00008/00011/00320, TEMPLATE-PROTOCOL-001 all
 exist) ✓; TYPE "corespine" is the CS-* namespace, not a CISEM-{TYPE} prefix, so
 I9 n/a. V4 no higher corespine exists (I am root) ✓. V5 naming CS-*-001 ✓.
-**Verdict: VALID → eligible for foundational decree.** Not RATIFIED until decreed.
+**Verdict: VALID → RATIFIED by Governor foundational decree 2026-07-18.**
 
 ## Does NOT cover
 - Node-level structure (ARCH-00008). Input validation (CS-THRESHOLD-001).
@@ -85,8 +85,8 @@ I9 n/a. V4 no higher corespine exists (I am root) ✓. V5 naming CS-*-001 ✓.
 
 ## Path Rejection Declaration (CLAUDE.md §2.8)
 - **Rejected: self-ratifying to "close the P0 blocker" faster.** Tempting, and
-  exactly what I3/I7 forbid. Status stays PROPOSED; only the Governor's
-  foundational decree flips it.
+  exactly what I3/I7 forbid. Status was PROPOSED until the Governor's foundational
+  decree flipped it to RATIFIED (2026-07-18) — the correct path was honored.
 - **Rejected: building this against a corespine template.** None exists yet
   (ARCH-00290: zero validated corespine templates) — §3.2b gap named, not
   silently skipped. This node is authored directly, flagged as template-less.
@@ -94,4 +94,10 @@ I9 n/a. V4 no higher corespine exists (I am root) ✓. V5 naming CS-*-001 ✓.
 ## Change log
 - v0.1 — 2026-07-16: Opus first draft on Governor "proceed" instruction. First
   node authored deliberately against the now-ratified ARCH-00008 §I–X (plan
-  Step 4 proof-of-use). Awaiting foundational decree.
+  Step 4 proof-of-use). Was awaiting foundational decree.
+- v1.0 — 2026-07-18: RATIFIED by Governor foundational decree. Body updated for
+  status currency (I16) — the outdated pre-decree status language was caught by the
+  audit (via cisem-sonnet's Seed-Honor Report, which corrected an Opus mis-verdict)
+  and corrected here. A residual WARN on this file is a known I16 check limitation
+  (it matches legitimate ratification PROSE, e.g. "could not ratify until…") — the
+  real fix is a field-vs-field contradiction check, queued.

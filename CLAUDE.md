@@ -115,6 +115,12 @@ drift and the protector of completion (I14) — the AI does NOT get to PROCESS-N
 - **Timeline:** parked items carry priority + essential(y/n) + timeframe + depends-on.
 Routing (Threshold-First, CS-THRESHOLD-001): `PROCESS-NOW | QUEUE(+build-prompt) | PARK(IBD) | REJECT`.
 Engine + queue: `dna/queue/`.
+**SWIFT (Governor-defined 2026-07-18) — assess inputs DURING active implementation/planning
+to maximize their value without blast risk:**
+1. If the input has NO immediate, current-process-related significant value → **PARK it properly** (full context).
+2. If it HAS immediate contribution → apply ONLY the parts with **ZERO blast risk** to existing work;
+   then **PARK the rest with full context + a description of what was "swifted"** (which parts were
+   extracted, and why the rest waits). NEVER extract a part that risks existing work — that's the whole point.
 
 ## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
 ### 3.0 Tier-Routing (NEW, MANDATORY) — before creating/executing, DECLARE the tier + why.
