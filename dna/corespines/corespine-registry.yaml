@@ -33,11 +33,12 @@ CS-ACCOUNTABILITY-001:
   status: DRAFT
   priority: PRIO-BLOCKING
   goal: "Root ratified now; branches below scoped per Governor's 4-part structure"
+  parked_draft: dna/ibd/IBD-0002-accountability-4-routes.md   # Governor's 4-route fork (core/platform-dev/external-dev/external-user) ~ Ring Architecture 0-3; awaiting promotion
   branches:
-    core: { status: DRAFT }
-    development: { status: DRAFT }
+    core: { status: DRAFT }               # Route 1 — Governor (Ring 0)
+    development: { status: DRAFT }         # Route 2 — internal platform devs (Ring 1)
     internal: { status: DRAFT }
-    external: { status: PLACEHOLDER, note: "deferred — no external user yet, Core-vs-Instance rule applies" }
+    external: { status: PLACEHOLDER, note: "Routes 3 (external devs, Ring 2) + 4 (external users, Ring 3) — external-DEV is NEW vs current branches; deferred, Core-vs-Instance" }
   depth_level: L1
 
 CS-AI-PROFILING-001:

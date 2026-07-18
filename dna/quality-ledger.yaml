@@ -89,9 +89,26 @@ runs:
     invariants_added: [I14]
     verdict: anti-drift hardwired; dogfooded same reply by resurfacing open session items
 
+  - run: 9
+    date: 2026-07-18
+    trigger: Governor — park accountability 4-route spine; strengthen anti-drift; align Gemini vocab
+    tiers: [opus]
+    routing_declared: "gathering = grounding grep (declared Opus exception); rulings = Opus (Hard Line)"
+    built: >
+      I14 strengthened to ALL tabs/sessions (CLAUDE.md §2.9 + I14). IBD-0002 (accountability
+      4-route/Ring park + Opus draft). IBD-0003 (Gemini vocab alignment audit, 30 terms).
+    finding: >
+      Strong convergence — ~20/30 Gemini terms already exist in CISEM under different vocab
+      (independent validation). Adopt-candidates: Five-Surface Engraving, 4 Wiring States,
+      Field Wiring Triad, Planted-Violation Test, 4-Layer Template (answers Q4), Trigger
+      Registry. Founding material: Sovereign Phrase. VOCAB CLASH: PCR (Pros/Cons/Rec vs
+      Problem/Cause/Resolution) — flagged to Governor.
+    invariants_added: []                    # alignment/park batch; adopt-candidates await Governor
+    verdict: Founding-vocab alignment delivered; unblocks Governor presenting the axioms
+
 metrics:
   invariants_total: 14
-  invariants_added_last_8_runs: 7         # I8..I14 — the loop keeps learning
+  invariants_added_last_9_runs: 7         # I8..I14 — the loop keeps learning
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:

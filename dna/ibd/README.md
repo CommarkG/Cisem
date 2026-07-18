@@ -25,5 +25,7 @@ prematurely smoothed.
 does not touch the naming registry, and the plan-audit node-reference scan ignores it by
 design. Promotion assigns a real node ID at that time.
 
-## Index (next: IBD-0002)
+## Index (next: IBD-0004)
 - IBD-0001 — ai-behavior / premature-structuring-destroys-native-vocabulary — PARKED-RAW
+- IBD-0002 — accountability / core-spine / 4-route-fork — PARKED (Opus draft; feeds CS-ACCOUNTABILITY-001)
+- IBD-0003 — vocabulary / gemini-crosswalk / founding-alignment — PARKED (Opus feedback; feeds Founding + VOC)
