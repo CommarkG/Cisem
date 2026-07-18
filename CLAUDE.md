@@ -115,7 +115,7 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
 - **A3 Nothing exists without a place in the schema** — no floating/un-placed element; nothing drifts without a schema place (ARCH-00008 position; SCHEMA-00001).
-- **A4 Nothing is implemented without a ratified plan** — no ad-hoc building; plan → ratify → implement (D1; RULE-RAT; Hard Line I7).
+- **A4 Nothing is implemented without a ratified plan** — no ad-hoc building; plan → ratify → implement (D1; RULE-RAT; Hard Line I7). **MANDATORY (Governor decree 2026-07-18, invariant I25): a plan is NOT optional. NO governed creation without a ratified plan; the ONLY exemptions are IBD raw-capture + SWIFT-safe zero-blast (ARCH-00190 §7). "small / safe / dogfooding" is NOT an excuse.**
 - **A5 EVERYTHING is created via hardcoded protocol** — files, documents, agents, skills, wizards, vocabulary, file-naming, QC of every type, changes to hardcoded elements, core councils. NO category is exempt from §3.
 - **A6 Context-focus over rigidity** — act with context focus; stay aware of the limits and dangers of rigid interpretation (D6; guardian-not-cage).
 - **A7 Constant self-improvement via an AI expert team** — a brilliant holistic team of top-AI-expert pockets oversees + critiques how CISEM works and finds PERMANENT improvements, presenting conclusions for human processing + ratification (RQC / D5; A4 gates the implementation).
