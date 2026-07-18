@@ -124,6 +124,15 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
 - **NEXT-SESSION TASK (Governor-parked 2026-07-18, handle thoroughly):** A8-sweep — axioms are now A1–A8, so update
   every scattered `A1–A7` / `A1–A8` reference (agent files, ARCH-00320, protocols) to `A1–A8`. A THOROUGH pass (grep
   all, fix all, verify ZF), assigned to Sonnet. Cosmetic/consistency-debt that A8 (one-source, no-divergence) itself mandates closing.
+- **GOVERNANCE (late 2026-07-18):** **I25 — a PLAN is MANDATORY** (no governed creation without a ratified plan; ONLY
+  IBD-capture + SWIFT-safe zero-blast exempt; "small/safe/dogfooding" is NOT). Session's pre-I25 ad-hoc builds BLANKET-RATIFIED
+  (Governor). **Axiom A8 added** (One Source / Consolidation; synced both homes). **Rigid-vs-context RESOLVED as a design**
+  (IBD-0007 — 6+6 persona synthesis: context-envelope + three-state UNKNOWN + echo-to-apply + penumbra loop; the invariant-registry
+  is the keystone) → **promoted to PLAN ARCH-00392** (Context-Envelope + Governance-Spine; MVP = `dna/checks/invariant-registry.yaml`
+  + three-state PASS/FAIL/UNKNOWN + `[EDGE]`; §1.6 = AI-defaults home; CS-THRESHOLD-001 = universal PROCESS-ENTRY gate). ARCH-00391 SUPERSEDED into it.
+- **FIRST POST-COMPACT ACTION:** dispatch the independent `cisem-opus-pe` soundness review of **ARCH-00392** (AWAITING-BUILDER-REVIEW) →
+  Governor ratification → phased build (MVP first). Second queued Sonnet task: the A8-sweep. Lesson logged: Opus plan-authoring
+  under-searches its OWN recent work (§1.6 fork caught by fresh-eyes review — 2nd time; Stage-0 must grep the author's own recent commits).
 - **PENDING GOVERNOR:** (1) Founding axioms TSA/CoreSpiral/Pocket (the one keystone); (2) comms CS-COMMS-001 (HANDOFF ready);
   (3) DIOS deep-dive / full-series ingestion (Governor: after axioms + the large parked issue).
 - **RESUME:** CLAUDE.md → this file (COMPACT STATE v2) → dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml

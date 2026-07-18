@@ -1,6 +1,6 @@
 # Consolidated Governance Spine (CGS) — Phased Plan
 **Node ID:** CISEM-ARCH-00391 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW | **depth_level:** L1
+**Planning Status:** SUPERSEDED (by ARCH-00392, 2026-07-18 — folded into the merged Context-Envelope + Governance-Spine plan per A8; was UNSOUND) | **depth_level:** L1
 **tags:** [planning-domain, consolidation, spine, ai-defaults, threshold, sonnet-role]
 **Goal:** Consolidate CISEM's scattered governance into ONE navigable spine anchored by the threshold, and turn
 the named AI-defaults into a single registry that every plan/implementation self-checks against — measurable as
