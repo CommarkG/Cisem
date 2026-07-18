@@ -111,7 +111,7 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
     WHY: assembly-required instructions leak steps and re-introduce the drift they were meant to prevent |
     VERIFY: could the recipient run it from ONE paste with zero back-reference? | (I21)]]
 
-## 2.4 CISEM CORE AXIOMS (A1–A7) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
+## 2.4 CISEM CORE AXIOMS (A1–A8) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
 - **A3 Nothing exists without a place in the schema** — no floating/un-placed element; nothing drifts without a schema place (ARCH-00008 position; SCHEMA-00001).
@@ -119,6 +119,7 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
 - **A5 EVERYTHING is created via hardcoded protocol** — files, documents, agents, skills, wizards, vocabulary, file-naming, QC of every type, changes to hardcoded elements, core councils. NO category is exempt from §3.
 - **A6 Context-focus over rigidity** — act with context focus; stay aware of the limits and dangers of rigid interpretation (D6; guardian-not-cage).
 - **A7 Constant self-improvement via an AI expert team** — a brilliant holistic team of top-AI-expert pockets oversees + critiques how CISEM works and finds PERMANENT improvements, presenting conclusions for human processing + ratification (RQC / D5; A4 gates the implementation).
+- **A8 One Source (SSOT / Consolidation)** — every concept/rule/node has exactly ONE authoritative home; related content CONSOLIDATES into that hub, never duplicates or forks; a mirror may not diverge from its source (I10 one-home + I19 no-duplication; Node-as-Hub; §1.6 shared-persona ONE-source; knowledge-library index). Governor-decreed 2026-07-18.
 
 ## 2.5 THE CISEM CREATION DOCTRINE — firm definitions, loaded every session
 *Hardcoding is a respectful guardian, not a cage. It fixes what was ratified and

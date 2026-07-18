@@ -1,6 +1,6 @@
 # CISEM Founding Node — TSA / CoreSpiral / Pocket (PLACEHOLDER)
 **Node ID:** CISEM-FOUND-00001
-**Type:** FOUND | **Status:** DRAFT — operating Axioms A1–A7 now provided (Governor 2026-07-18); TSA/CoreSpiral/Pocket definitions + Gemini genesis content still pending. Not ratified.
+**Type:** FOUND | **Status:** DRAFT — operating Axioms A1–A8 provided (A8 One-Source/Consolidation added by Governor decree 2026-07-18); TSA/CoreSpiral/Pocket definitions + Gemini genesis content still pending. Not ratified.
 **root_authority:** true (reserved — ARCH-00011 §7 closed set)
 **Version:** v0.1 (operating axioms provided; founding definitions pending)
 **depth_level:** L1 | **Position in schema:** T-SYS, apex
@@ -45,6 +45,7 @@ it — complete, optimized, firm; no axiom is decorative:
 | **A5** | EVERYTHING via hardcoded protocol (files, docs, agents, skills, wizards, vocab, naming, QC, hardcoded-changes, councils) | §3 gate suite + §3.2b Existing-First (now **live check [I19]**) + naming ONE-gate + **I9 unregistered-ID check (live)** + I15 | GATE + I9/I15/I19 |
 | **A6** | Context-focus over rigidity | Doctrine D6 (polarity, not rigid) + guardian-not-cage + SWIFT + park-by-demand + **anti-bloat lens** (don't proliferate protocols) | DOCTRINE (behavioral) |
 | **A7** | Constant self-improvement via an AI expert team | RQC (§6) + **cross-tier spiral** (Haiku→Sonnet→Opus, proven live) + harvest loop (IBD-0005) + learning-registry + prevention invariants **I16–I23** + **DIOS "validation is the engine of maturity"** | RQC live; I19/I23 WIRED checks |
+| **A8** | One Source (SSOT / Consolidation) — every concept/rule/node has exactly ONE authoritative home; content CONSOLIDATES into its hub, never duplicates or forks; a mirror may not diverge from its source | I10 (one home) + I19 (no duplication) + Node-as-Hub (IBD-0004) + §1.6 shared-persona ONE-source + knowledge-library index; audited by `plan-audit.sh` I1/I9/I16 | GATE + I10/I19 (Governor-decreed 2026-07-18) |
 
 **Honest firmness (updated 2026-07-18):** A2/A3 now grounded in the DIOS maturity spine (KL-0001); A4 is
 **LIVE** (the plan-gate ran end-to-end on ARCH-00382); A5 gained two live checks (I9, I19); A7 gained the
