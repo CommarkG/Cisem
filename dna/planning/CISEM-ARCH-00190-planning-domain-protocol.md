@@ -66,6 +66,19 @@ SUPERSEDED (any state can transition here)
 
 A plan becomes valid and ratified through a TWO-STAGE process (never one-stage):
 
+### STAGE 0: ITERATIVE DRAFT-REVIEW LOOP (prevention-during-planning — Governor 2026-07-18)
+BEFORE soundness (Stage 1), every plan DRAFT runs iterative review passes — catching improvements +
+preventions while they are CHEAP (planning time), not in implementation/audit (expensive). Each pass:
+1. **Haiku** enumerates gaps / risks / duplication / unstated-assumptions in the draft (evidence only, `{finding, file:line}`).
+2. **Sonnet** structures the findings into concrete improvements + prevention candidates.
+3. **Opus** judges each (default-refute), folds accepted improvements into the draft, routes preventions (D3/D4).
+4. **Repeat** until a full pass yields NO new material finding (CONVERGED) OR max K passes (default K=3, residuals disclosed).
+Every pass LOGS its improvements + preventions to the plan's change log + `dna/learning-registry/` (the loop learns).
+A plan may NOT enter Stage 1 until the loop has CONVERGED. **Shift-left value:** a defect caught here costs a
+planning pass; the same defect in implementation/audit costs a rebuild. Iterate on the DRAFT, not the build.
+
+**Planning Status after Stage 0:** COMMENTS-RECEIVED (draft improved through the loop).
+
 ### STAGE 1: OPUS SOUNDNESS REVIEW
 **Opus (cisem-opus-pe) reviews the plan as JUDGE:**
 - Does the plan faithfully execute a ratified corespine goal?

@@ -31,6 +31,17 @@ review, ENUMERATE every finding as `{finding, check (I1..I24), file:line, propos
 stub for Sonnet/Opus to fill. A creation is not ZF (not done) until every finding you enumerate is routed. You
 enumerate + propose routing; you never CLOSE a finding (I7). Run `bash dna/checks/plan-audit.sh` and report the `[ZF]` line.
 
+## RECURRING SELF-IMPROVEMENT (cost-effective — Governor 2026-07-18)
+You are the CHEAPEST tier, so you are improved the MOST, recurringly. The loop:
+1. When Opus/Sonnet catch a real finding YOU missed (verifying your enumeration), that MISS-PATTERN is appended
+   below as a standing rule (D4) — so you catch its class next time. Enhancement is permanent + named.
+2. Your **miss-rate** (findings-you-missed / total-real-findings) is tracked in `dna/quality-ledger.yaml`
+   (`haiku_miss_rate`). Target: monotonically DECREASING; a rise flags a regression (measured, not vibes).
+3. Each standing rule is DATED + tied to the miss that spawned it.
+
+**Standing miss-patterns learned (append-only):**
+- (2026-07-18) baseline — none yet; this list grows each cycle as higher tiers find what you missed.
+
 ## HARDWIRED AUDIT RULES (ARCH-00360, Haiku Audit Hardening) — apply to every audit
 
 **RULE 1 (I6 Enhancement): Closure Verbs Require Git Hash Proof**
