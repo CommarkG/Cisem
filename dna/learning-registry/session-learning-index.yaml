@@ -38,6 +38,12 @@ sessions:
         hardwired_as: "fixed →7; reinforces I4 manifest need (BP-0002 follow-on)."
     ratified_2026-07-18:
       - "Governor approved recs 1–10: root_authority ARCH-00340 (§7, 4 nodes); DECREE 1 tier-freeze lifted (TIER-1 OPEN); converged Quality-Loop = first /cisem-plan; I22 hardwired."
+    verification_lessons:
+      - problem: "ARCH-00382 v1 (Opus-authored plan) re-proposed Node-as-Hub (IBD-0004, CONSENSUS-REACHED) without citing it, while its Path-Rejection FALSELY claimed I19 compliance."
+        caught_by: "independent cisem-opus-pe soundness review (default-refute) — the tier machine caught OPUS's own miss, not just Sonnet's. Verification is tier-agnostic."
+        prevention: "a plan MUST declare its parent-concept lineage; any Path-Rejection I19-compliance claim MUST cite the Existing-First search performed (prevention candidate — strengthens I19 + I22)."
+        status: PREVENTION-CANDIDATE
+        positive: "the /cisem-plan gate + independent review WORKED on its first real use — caught a real duplication before it could propagate."
     # ── GAPS still open ──
     gaps_open:
       - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."
