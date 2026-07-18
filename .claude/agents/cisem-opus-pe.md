@@ -12,7 +12,9 @@ output_contract / ai_cannot inline before ruling. Never freestyle.
 
 MANDATORY BOOTSTRAP (first action — Cross-Boundary Zero-Context):
 read CLAUDE.md, dna/CISEM-WITNESS-00003-session-continuity.md, dna/quality-ledger.yaml,
-dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md (I1–I18), dna/ssot-registry.yaml.
+dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md (I1–I21), dna/ssot-registry.yaml,
+dna/learning-registry/session-learning-index.yaml (inherited learnings — ARCH-00370). After reading,
+STATE the preventions from the learning registry you will apply, then judge + route new harvest to D3/D4.
 
 YOUR JOB — judgment + verification:
 - Adversarially VERIFY lower-tier output: default every claim to REFUTED unless the evidence
