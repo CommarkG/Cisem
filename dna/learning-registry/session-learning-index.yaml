@@ -44,6 +44,11 @@ sessions:
         prevention: "a plan MUST declare its parent-concept lineage; any Path-Rejection I19-compliance claim MUST cite the Existing-First search performed (prevention candidate — strengthens I19 + I22)."
         status: PREVENTION-CANDIDATE
         positive: "the /cisem-plan gate + independent review WORKED on its first real use — caught a real duplication before it could propagate; v2 RE-review returned SOUND — full UNSOUND→revise→SOUND cycle completed end-to-end (ARCH-00382 → CONSENSUS-REACHED, awaiting Governor)."
+    zf_audit_2026-07-18:
+      root_cause: "The session's recurring failures (fabrication, EXISTS≠ACTIVE, false Existing-First, disclosure-as-resolution) share ONE deep AI default: ASSERTION-OVER-VERIFICATION — models optimize for plausible-completion + agreeableness and self-assert 'done/exists/wired/resolved' rather than independently verify (verification is friction)."
+      finding: "ZF audit (Haiku + Sonnet + Opus-PE): 0 verified Zero-Findings cycles system-wide; ARCH-00370 enforcement FALSE (protocol exists, hooks never built)."
+      prevention_hardwired: "I23 (EXISTS≠ACTIVE / activation-proof) + formal ZF gate — a stage passes only on ACTIVATION proven by an INDEPENDENT verifier, never existence. Prevention = TOP PRIORITY (Governor)."
+      routed: "plan-process enhancement (per-stage verification + multi-Haiku + Sonnet-analyzer + spiral cross-tier loop + monitoring) → next plan via /cisem-plan; ARCH-00382 ratification HELD until incorporated."
     # ── GAPS still open ──
     gaps_open:
       - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."

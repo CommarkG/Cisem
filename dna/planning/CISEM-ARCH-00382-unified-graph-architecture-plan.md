@@ -101,3 +101,7 @@ Header + pocket present; rule-as-procedure (phases executable + numerically gate
 - v1.0 — 2026-07-18: Opus draft via /cisem-plan. Verdict UNSOUND (independent cisem-opus-pe): un-cited IBD-0004 (false Existing-First proof), 2 unfalsifiable gates, ARCH-00008 schema-versioning contradiction, unspecified edge model, phantom depth-rubric dep, missing Ratification Path.
 - v1.1 (v2) — 2026-07-18: revised addressing ALL 5 findings — anchored to IBD-0004 lineage; P2/P4 gates made numeric; multi-valued `inherits_from` from P0; ARCH-00008 fields OPTIONAL→versioned-mandatory-at-P4; depth-rubric = P0 sub-deliverable; Ratification Path added; false I19 claim removed.
 - v1.2 — 2026-07-18: independent RE-review verdict SOUND (all 5 findings verified fixed, cited). Two wording nits applied (Stage-2 label clarified; P2 "flat" given ±10% band). Planning Status → CONSENSUS-REACHED; awaiting Governor Stage-2 ratification.
+- HOLD — 2026-07-18 (Governor): Stage-2 ratification HELD pending incorporation of PER-STAGE verification +
+  prevention-first (EXISTS≠ACTIVE / I23) + independent multi-agent verification (multiple Haiku + Sonnet-analyzer
+  + Opus judge) with links to files/skills/agents between stages. ARCH-00382 to be RE-GATED against the enhanced
+  plan-protocol before ratification. Prevention is top priority — it must begin IN the plan, not after.
