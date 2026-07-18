@@ -8,6 +8,8 @@ the proven cause of repeated drift — into real executable scripts.
 Governing corespine: CS-CREATION-001
 Planning Domain: dna/planning/ — first artifact establishing the pattern
 
+**Existing-First (§3.2b, I19):** Searched dna/checks/ (only plan-audit.sh — no naming, size, field, or registry scripts exist); dna/ssot-registry.yaml (no concept entry for naming/size/field automation); dna/naming-registry.yaml (no script IDs registered); knowledge-library/index.yaml KL-0001 (DIOS maturity — no script tooling overlap). All 4 scripts proposed below are new with no existing counterpart.
+
 ## Why this exists
 Naming/registry drift happened repeatedly: unregistered ID prefix
 schemes used before being checked; registry sequence counter went

@@ -9,6 +9,8 @@ gap with two independent, redundant layers.
 Governing corespine: CS-CREATION-001
 Planning Domain: dna/planning/, per CISEM-ARCH-00190
 
+**Existing-First (§3.2b, I19):** Searched .git/hooks/ (pre-commit exists but runs plan-audit.sh only — no naming/size/field check hook wired); .github/ (does not exist — no CI workflows in repo); dna/checks/ (only plan-audit.sh — no enforcement-layer scripts); dna/ssot-registry.yaml (no entry for pre-commit or CI enforcement); knowledge-library/index.yaml KL-0001 consulted. Both mechanisms below (pre-commit hook for ARCH-00180 scripts + GitHub Actions CI) are new with no existing counterpart.
+
 ## Why two, not one
 A single enforcement point can be bypassed. Two independent
 mechanisms — one local, one remote — mean bypassing one still leaves

@@ -91,7 +91,7 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
   CADENCES of the RQC (NOT new protocols); I22 (no unverified done/wired claim) hardwired; Sonnet BP-0002 I16/I9 fixes VERIFIED live.
 - **ENFORCEMENT LIVE (plan-audit.sh):** I1, I3, I6, I9, I16 + I13 seed-strip BLOCK. Invariant set I1–I22.
 - **NEXT (one-clicks ready):** Sonnet → build+TEST hooks (SessionStart/PreCompact/SessionEnd, under I22), anti-bloat
-  size-check, dormancy-TTL check, BP-0004 front-end, fix CS-FOUND-000 + WITNESS-00007 dangling refs; then the
+  size-check, dormancy-TTL check, BP-0004 front-end, fix CISEM-FOUND-00001 ref + WITNESS-00007 dangling refs; then the
   converged Quality-Loop plan via /cisem-plan. Haiku → harvest enumeration each boundary.
 - **OPEN (non-blocking):** ARCH-00280 Q4 template ruling; comms + axioms fresh tabs (HANDOFF-opus-comms.md / -axioms.md ready).
 - **KNOWN WARN (not a bug):** I16 flags ARCH-00011 (the words "not ratified" inside the PROVISIONAL-ACTIVE

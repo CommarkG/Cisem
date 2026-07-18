@@ -6,6 +6,8 @@
 **Governing corespine:** CS-CREATION-001  
 **SSOT declaration:** This protocol is the ONE authoritative source for plan creation; the PLAN-WIZARD mirrors it 1:1 (I10).
 
+**Existing-First exemption (§3.2b, I19):** Governance protocol definition — not a creating-plan. This document defines the plan lifecycle process; it proposes no new nodes or files of its own. The PLAN-WIZARD skill it references was created under BP-0007. Exempt from Existing-First: process/protocol specifications are governance definitions analogous to the "open-questions" class, not artifact creation proposals.
+
 ## Pocket Declaration
 - **reasoning_scope:** define the complete plan lifecycle (DRAFT → PLAN → implementation)
 - **inherited_constraints:** Axioms A1–A7; Doctrine D1–D6; ARCH-00340 meta-protocol structure; I10 (wizard mirrors); I19 (no parallel protocols)

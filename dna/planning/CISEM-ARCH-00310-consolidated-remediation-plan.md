@@ -20,6 +20,8 @@ Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
 **Prevention invariants touched:** I1, I2, I3, I4, I5, I6, I8, I9 (per CISEM-ARCH-00320 — this plan invokes that protocol; I7 is Opus-authorship, structurally enforced).
 **Plan-audit last run:** 2026-07-16 (2nd pass — Haiku enumerated, Sonnet remediated, Opus verified; see CISEM-ARCH-00320 §5). Artifacts: `dna/naming-manifest.yaml` built (I4 in-progress). Working tree clean except the held-back ARCH-00008 bump.
 
+**Existing-First (§3.2b, I19):** Searched dna/corespines/corespine-registry.yaml (all corespines listed — gaps in content identified; drove Steps 1 + 8); dna/naming-registry.yaml (sequences confirmed); dna/naming-manifest.yaml (ID→file map reviewed — drove I4 step); CISEM-ARCH-00170 (master-plan-gap-registry — existing gap list found and reviewed; this plan explicitly supersedes ARCH-00170 §"next step", accounting for all 9 gaps in §1b); knowledge-library/index.yaml KL-0001 (DIOS maturity anti-patterns — confirmed alignment). No duplication: this plan supersedes rather than parallels.
+
 ## Pocket Declaration
 - **reasoning_scope:** consolidate + order all remediation, assign tier owners
 - **inherited_constraints:** no execution before Governor scope+sequence confirmation (CLAUDE.md §4)

@@ -114,5 +114,17 @@ for f in $(find dna/planning -name "*.md" 2>/dev/null); do
 done
 [ "$found_i19" = 0 ] && echo "   (none — every plan states its Existing-First search)"
 
+# I24 — premature promotion of status (DIOS anti-patterns "validation avoidance" / "premature principle").
+#       A node claiming RATIFIED (DIOS Constitutional/Validated level) MUST carry validation evidence for that
+#       level: a decree / ratified-by / foundational citation. Missing = premature promotion. (VOC-00003 axis.)
+echo "[I24] RATIFIED status without validation evidence (premature promotion, DIOS anti-pattern):"
+found_i24=0
+for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+  if ! grep -qiE "decree|ratified by|ratified —|ratified by governor|foundational|by governor" "$f"; then
+    echo "   PREMATURE: $f (Status RATIFIED but no decree/ratification citation — validation avoidance)"; found_i24=1
+  fi
+done
+[ "$found_i24" = 0 ] && echo "   (none — every RATIFIED node cites its validating decree)"
+
 echo "── end — WARN-ONLY (except I13 seed-strip BLOCK in pre-commit). Full protocol: ARCH-00320 ──"
 exit 0
