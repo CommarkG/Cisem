@@ -1,0 +1,94 @@
+# CISEM Concept-Envelope Registry — ARCH-00392 Phase 1
+# PURPOSE: give the 5 under-scoped GOVERNANCE TERMS a machine-readable context envelope,
+#          so a plan-audit / tier can route an EDGE case to UNKNOWN (judgment) instead of a
+#          false PASS/FAIL. This is the mechanical form of Axiom A6 (context-focus over rigidity):
+#          a term with a declared penumbra can no longer be applied as a rigid bright line.
+# SCHEMA: identical to dna/checks/invariant-registry.yaml (A8 — one pattern, two populations:
+#          that file scopes INVARIANTS; this file scopes TERMS). NEVER duplicate rule/term CONTENT
+#          here — content lives in CLAUDE.md / ARCH-00320 / ARCH-00190. This carries SCOPE ONLY.
+# legal_kind: RULE (bright line) | STANDARD (context-sensitive threshold) | PRINCIPLE (directional).
+# An EMPTY penumbra[] is itself a red flag (false certainty) — every term here declares its edge.
+# READ BY: plan-audit.sh (concept-edge routing, Phase 2 cadence) + any tier before applying the term.
+# HOME NOTE (Phase-1 design refinement, pending GATE 1→2): the plan text said "on the VOC nodes";
+#   refined to this sibling machine-registry because these are machine-scope envelopes, not human vocab.
+
+creation_event:
+  term: "creation event"
+  defines: "what counts as CREATING a governed artifact — the trigger for §3 gates + the I25 plan-mandate"
+  content_home: "CLAUDE.md §3 (gates) + A5 (everything via hardcoded protocol) + I25"
+  legal_kind: STANDARD          # a threshold, NOT a bright line — this is exactly why edges must route to UNKNOWN
+  applies_to:
+    - "producing a NEW node file (dna/**/CISEM-*.md)"
+    - "producing a new corespine, protocol, agent, skill, wizard, or vocabulary term"
+  silent_on:
+    - "IBD raw-capture (dna/ibd/IBD-*) — capture-first, gate-exempt by design (§2.6)"
+    - "SWIFT-safe zero-blast extraction (ARCH-00190 §7) — a task, not a creation"
+  core:
+    - "a new file that introduces a governed node / corespine / protocol / agent / skill / wizard / term"
+  penumbra:
+    - "a one-line truth-field fix or status stamp on an EXISTING node (is that a 'creation'? → UNKNOWN, not a false I25 FAIL)"
+    - "appending a change-log row / cross-link / comment / typo fix to an existing file"
+    - "splitting an over-size node per §3.6 (structural, not net-new content)"
+
+plan:
+  term: "plan"
+  defines: "what IS a plan (the only thing that authorizes governed creation under A4/I25)"
+  content_home: "CISEM-ARCH-00190 (PLAN-PROTOCOL, SSOT) + CLAUDE.md Principle 11 vocab"
+  legal_kind: RULE              # ARCH-00190 defines it precisely — bright line
+  applies_to:
+    - "any artifact claimed to authorize implementation under A4/I25"
+  silent_on:
+    - "IBD captures + HANDOFF coordination files — explicitly NOT plans"
+  core:
+    - "a wizard-produced (/cisem-plan) artifact in dna/planning/ carrying the double-ratification path"
+  penumbra:
+    - "a 'detailed first-draft of a topic' — feels plan-like but is NOT a plan (Principle 11: do not conflate)"
+    - "a retro-plan (ARCH-00395) — a plan in form, but retroactive; authorizes nothing new going forward"
+
+done:
+  term: "done"
+  defines: "the completion standard — when a claim of done is TRUE"
+  content_home: "CLAUDE.md Principle 2/5 + I22 (disk-verifiable evidence) + I23 (EXISTS≠ACTIVE)"
+  legal_kind: RULE              # I22 is a bright line: evidence or it isn't done
+  applies_to:
+    - "any line asserting something is 'done', 'complete', 'wired', 'enforced', or 'verified'"
+  silent_on:
+    - "lines that explicitly scope themselves 'NOT-YET-BUILT' / 'PARTIAL' / 'BEHAVIORAL'"
+  core:
+    - "the done-claim cites disk-verifiable evidence: file+mechanism, commit hash, or test/run output"
+  penumbra:
+    - "done asserted WITH disclosure but WITHOUT verification (disclosure ≠ resolution — I2)"
+    - "a mechanism that EXISTS on disk but is not activated/registered (EXISTS ≠ ACTIVE — I23)"
+    - "'LIVE' recommended/stamped for enforcement whose wiring was not read first (this session's run-18 miss)"
+
+hardwired:
+  term: "hardwired"
+  defines: "MECHANICAL enforcement, not documentation about enforcement"
+  content_home: "CLAUDE.md §1.5 (CAL clause) + ARCH-00390 (CAL) + §3.7 Creation Triad"
+  legal_kind: RULE              # §1.5 is explicit: hardwired = MECHANICAL (wired into CAL), never a document
+  applies_to:
+    - "any claim that a rule/behavior/prevention is 'hardwired', 'mechanical', or 'autonomic'"
+  silent_on:
+    - "claims explicitly labelled 'behavioral' / 'always-loaded reminder' (honest non-mechanical)"
+  core:
+    - "enforcement wired into a running mechanism: a .git or .claude hook registered + firing, or a plan-audit check that runs"
+  penumbra:
+    - "a document that DESCRIBES a mechanism but wires nothing (documentation-as-progress bias)"
+    - "a hook file present in .claude/hooks/ but NOT registered in settings*.json (fires nothing)"
+    - "a mechanism that FIRES + VERIFIES but whose acted-upon step is model-performed (partly mechanical — route to UNKNOWN, disclose the split; e.g. ARCH-00370 harvest gate)"
+
+ratified:
+  term: "ratified"
+  defines: "truth made binding by Governor decree — the strongest CISEM status"
+  content_home: "CLAUDE.md A4 + Hard-Line I7 + I24 (validation evidence) + ARCH-00011 status enum"
+  legal_kind: RULE              # I7/A4 bright line: only a Governor decree ratifies
+  applies_to:
+    - "any node/registry line carrying 'RATIFIED' status"
+  silent_on:
+    - "pre-node files (IBD/HANDOFF/BP) — they do not carry RATIFIED"
+  core:
+    - "RATIFIED cites a Governor decree with a specific date (YYYY-MM-DD) or a quality-ledger run reference"
+  penumbra:
+    - "'per Governor' / authorization word but NO date and NO run reference (I24 penumbra)"
+    - "Opus self-ratification without a Governor decree (I7 violation — never core)"
+    - "a Governor decree RELAYED secondhand through another tab, not witnessed in the ratifying tab (this session's real edge — route to UNKNOWN; require direct confirmation before stamping)"

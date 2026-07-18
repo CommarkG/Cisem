@@ -285,6 +285,28 @@ runs:
     status: COMPLETE
     ratified_by: "Governor — decree 2026-07-18 (accept-all + 'decide and act'); implements ratified ARCH-00370 spec"
 
+  - run: 20
+    date: 2026-07-18
+    trigger: "Opus PE: ARCH-00392 Phase-1 (partial) — build the concept-envelope registry for the 5 under-scoped governance terms"
+    pocket: cisem-opus-pe (PE) — declared; tier-routing exception stated (full in-context design decision; routing overhead > work)
+    verdict_soundness: SOUND
+    finding: >
+      Built dna/checks/concept-envelope-registry.yaml — 5 envelopes (creation_event STANDARD; plan/done/hardwired/ratified RULE),
+      each with legal_kind + non-empty core[] + penumbra[]; YAML-validated (5/5 PASS). Penumbras grounded in THIS session's real
+      edges (secondhand-relayed decree → 'ratified' penumbra; run-18 false-LIVE → 'done'/'hardwired' penumbra). Existing-First:
+      envelope schema reused from invariant-registry.yaml (A8, one pattern two populations — no fork); 5 concepts had no prior home.
+    design_refinement: >
+      Plan §PHASE-1 said envelopes live 'on the VOC nodes'; refined to a sibling MACHINE registry (machine-scope ≠ human vocab).
+      Flagged for Governor GATE 1→2 sign-off — a deliberate, disclosed deviation from the plan's suggested home.
+    honesty_scope: >
+      Phase-1 is HALF done. DONE: the 5 concept envelopes. REMAINING before GATE 1→2: (a) mandatory applies_to on [[CORE-SEED]]
+      + plan-audit flag for seeds lacking it; (b) wire plan-audit to route concept-edges to [EDGE]/UNKNOWN; (c) planted-edge stress
+      tests. NOT claiming Phase-1 complete (I22 / anti-plausibility-completion).
+    invariants_added: []
+    new_enhancements: ["concept-envelope registry (A6 context-focus made machine-readable for 5 governance terms)"]
+    status: IN-PROGRESS
+    ratified_by: "implementation under ratified ARCH-00392 (A4/I25 satisfied); Phase-1 GATE 1→2 pending Governor"
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14

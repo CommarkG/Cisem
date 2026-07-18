@@ -214,7 +214,7 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 
 **OPEN FOLLOW-UPS (Opus/Sonnet — next):**
 - ~~Wire ARCH-00370 harvest into pre-compact.sh~~ **DONE run 18** — STEP 0 HARVEST GATE built + tested; ARCH-00370 LIVE. (Not-yet-built remainder: SessionEnd hook + RQC learning-application check, Enforcement Point 3.)
-- **ARCH-00392 Phase-1** (echo-to-apply + 5 core concepts: creation-event/plan/done/hardwired/ratified) — planning authorized. **← next.**
+- **ARCH-00392 Phase-1 — IN PROGRESS (run 20):** ✅ `dna/checks/concept-envelope-registry.yaml` built — 5 concept envelopes (creation-event/plan/done/hardwired/ratified), each legal_kind + non-empty core+penumbra, YAML-validated. **REMAINING (before GATE 1→2):** (a) mandatory `applies_to` on `[[CORE-SEED]]` + plan-audit flag for seeds lacking it; (b) wire plan-audit to route concept-edges to `[EDGE]`/UNKNOWN; (c) planted-edge stress tests. Design refinement flagged: concept home = machine-registry (not VOC), pending GATE 1→2 sign-off.
 - ARCH-00394 first clean run → earns RATIFIED (I24).
 
 **STILL PENDING GOVERNOR (unchanged, not dropped — I14):**
