@@ -112,3 +112,22 @@ sessions:
       threshold_gap: "CS-THRESHOLD-001 is RATIFIED but BODILESS (no manifest file) — flagged by the ARCH-00392 review. Non-blocking for MVP; honesty gap (a ratified corespine with an empty body). Route: disclose + build its manifest via a plan."
       arch_00392_verdict: "SOUND (independent safety-net review). Phase-0 build authorized; 4 non-blocking P3-hygiene revisions recommended as ratification conditions (disclose threshold empty body; scope P3 '0-forks' to plan-introduced elements; name P3 blocks-on the I25 debt + 393/394 collision; fix stale A8 label in ssot-registry — folds into A8-sweep)."
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+  - date: 2026-07-18
+    compact_window: "run 18 — post-compact ratification pass (Opus PE)"
+    opus_ratification_run_18:
+      context: "Governor 'accept all recommendations, do the clearer ones first' → executed the 6-item ratification queue."
+      resolved:
+        - "I25 debt CLOSED: ARCH-00393 RATIFIED, ARCH-00394 CONNECTED (I24), ARCH-00395 RATIFIED — D-1..D-4 verified on disk FIRST (Core Seed 1 honored)."
+        - "ARCH-00392 Phase-0 GATE 0→1 PASSED; findings 6a/6b folded into the plan; Phase-1 authorized."
+        - "VOC-00003 LIVE; ssot A1_A7→A1_A8 fixed; corespines_ratified metric corrected (honest)."
+      negative:
+        - problem: "Opus recommended stamping ARCH-00370 LIVE on the false premise 'CAL PreCompact fires the harvest'. VERIFICATION showed pre-compact.sh does save-all + resume-one-click + preventions-echo only — it does NOT run STEP 1–5."
+          root: "DOCUMENTATION-AS-PROGRESS / plausibility-completion — recommended a LIVE stamp for a mechanism whose enforcement isn't wired. This is the SAME class as the meta_lesson above (harvest not triggered) recurring at the RECOMMENDATION layer, not just the execution layer."
+          prevention: "Before recommending ANY status→LIVE, READ the enforcing mechanism on disk and confirm it does what the status claims (I22/I23). A LIVE recommendation is a done-claim and needs disk evidence. → stamped RATIFIED-SPEC + honest NOT-YET-BUILT flag instead."
+          status: PREVENTION-DONE (this run — verify-before-recommend applied; ARCH-00370 honestly scoped)
+          class_note: "Candidate to strengthen I22: a status RECOMMENDATION of LIVE/wired/done, not only a status STAMP, must cite the mechanism read. Route to Opus for I22 wording."
+      positive:
+        - "Verify-before-stamp WORKED: reading pre-compact.sh caught the false-LIVE before it reached disk. The discipline (D5 self-audit) is functioning at the recommendation layer."
+      open_followup: "Wire ARCH-00370 STEP 1–5 into pre-compact.sh → RATIFIED-SPEC becomes LIVE (owned tool, low-blast; do NOT defer as risk — §1.6 platform-level persona)."
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md

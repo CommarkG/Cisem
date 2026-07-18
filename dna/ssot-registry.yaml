@@ -5,7 +5,7 @@
 # on conflict the SSOT wins. Governed by I10 (broadened: EVERY element has one source).
 
 concepts:
-  axioms_A1_A7:        { ssot: dna/CISEM-FOUND-00001-founding-node.md, mirrors: ["CLAUDE.md §2.4"] }
+  axioms_A1_A8:        { ssot: dna/CISEM-FOUND-00001-founding-node.md, mirrors: ["CLAUDE.md §2.4"] }
   creation_doctrine:   { ssot: "CLAUDE.md §2.5", mirrors: [] }
   behavior_principles: { ssot: "CLAUDE.md §2", mirrors: [] }
   invariants_I1_In:    { ssot: dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md, mirrors: ["inline refs only"] }

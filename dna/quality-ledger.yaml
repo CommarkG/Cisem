@@ -243,6 +243,28 @@ runs:
     invariants_added: []
     verdict: SOUND — parallel safety net cleared the plan; corrections are P3 disclosure/scoping hygiene, non-blocking to Phase-0; Governor holds A4/I7 ratification
 
+  - run: 18
+    date: 2026-07-18
+    trigger: "Opus PE post-compact ratification pass — Governor decree 'accept-all-recommendations' (this tab): I25-debt ratify-with-retro-plan + ARCH-00392 Phase-0 sign-off + VOC-00003 LIVE + ARCH-00370 spec"
+    pocket: cisem-opus-pe (Principal Engineer) — declared
+    verdict_soundness: SOUND
+    finding: >
+      D-1..D-4 VERIFIED fixed on disk (108/233 lines; wizard-row→ARCH-00394; registry comment→ARCH-00394;
+      no Doc-Status drift). Stamped: ARCH-00393→RATIFIED, ARCH-00394→CONNECTED (I24: earns RATIFIED on first
+      clean independently-verified run), ARCH-00395→RATIFIED (Planning_Status COMPLETE) → I25/A4 debt CLOSED.
+      corespine-registry CS-FRONTEND-001→RATIFIED. VOC-00003→LIVE (foundational decree). ssot-registry stale
+      axioms_A1_A7→A1_A8 fixed (revision-4 folded ahead of P3).
+    honesty_correction: >
+      Opus rec ③ claimed "CAL PreCompact fires the harvest" — FALSE on verification. pre-compact.sh does
+      save-all + resume-one-click + preventions-echo; it does NOT run ARCH-00370 STEP 1–5. So ARCH-00370 stamped
+      RATIFIED-SPEC (design is the SSOT) but ENFORCEMENT NOT-YET-BUILT (I23) — the harvest is BEHAVIORAL until
+      STEP 1–5 is wired into the hook. Caught by verify-before-stamp (plausibility-completion bias averted).
+    invariants_added: []
+    new_enhancements: ["ARCH-00394 CONNECTED — first wizard in CISEM; earns RATIFIED on first clean run (I24)"]
+    open_followups: ["wire ARCH-00370 STEP 1–5 into pre-compact.sh (RATIFIED-SPEC→LIVE)", "fold ARCH-00392 findings 6a/6b before Gate-3 decree"]
+    status: COMPLETE
+    ratified_by: "Governor — decree 2026-07-18 (accept-all-recommendations, this tab)"
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
@@ -251,7 +273,7 @@ metrics:
   haiku_miss_rate: "baseline (not yet measured)"   # findings Haiku missed / total real findings; target monotonically DECREASING (recurring Haiku improvement, cisem-haiku.md)
   engines: "1 executable (plan-audit.sh) + 1 routing structure (queue)"
   invariant_automation: "8/24 automated (I1,I3,I6,I9,I16,I19,I23,I24 in plan-audit.sh + I13 seed-strip BLOCK; I19/I23/I24 wired+validated 2026-07-18 via planted tests); rest manual"
-  corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-MASTER-VALIDATION-001)"
+  corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-FRONTEND-001) — corrected run 18: CS-MASTER-VALIDATION-001 is DRAFTED-awaiting-decree, NOT ratified"
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared

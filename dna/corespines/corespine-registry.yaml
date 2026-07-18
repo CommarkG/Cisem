@@ -4,7 +4,7 @@
 # Creation protocol: ARCH-00394 (Universal Corespine Creation Wizard) — use for ALL new corespines.
 
 CS-FRONTEND-001:
-  status: DECLARED   # Governor-ordered 2026-07-18; Opus ratification pending
+  status: RATIFIED   # Governor decree 2026-07-18 (retro-plan ARCH-00395); D-1..D-4 fixed; Opus PE stamped
   goal: "Governs all CISEM web/frontend artifacts — HTML pages, CSS design system, JS behaviors, responsive/cell layouts, rebuild engine. Invariants FE-I1–FE-I10."
   content_location:
     canonical_file: dna/corespines/CS-FRONTEND-001/CISEM-ARCH-00393-frontend-corespine-manifest.md

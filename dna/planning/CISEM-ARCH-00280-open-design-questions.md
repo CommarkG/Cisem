@@ -52,7 +52,7 @@ Q3: Fold into CS-LOOPS-001/learning-loop, not a new corespine. Register
 rejected-idea as a tag in CISEM-VOC-00001. When learning-loop is wired,
 rejected-idea-tagged nodes enter it automatically.
 
-## Q4 — The REAL template fork (added 2026-07-16, D7 deep dive) — Planning Status: AWAITING-GOVERNOR
+## Q4 — The REAL template fork (added 2026-07-16, D7 deep dive) — Planning Status: PARKED-DEFERRED (Governor decree 2026-07-18: defer until after ARCH-00392 Phase-1 — the context-envelope model may reshape the node-vs-corespine template question; do not rule in isolation)
 The old "CS-TEMPLATE-001 A/B fork" (UX/UI-only vs platform-wide) is **settled** —
 TEMPLATE-PROTOCOL-001 §1 correctly dissolved it as a category error (a template is
 not a corespine). But the deep dive found the *actual* unresolved question hiding

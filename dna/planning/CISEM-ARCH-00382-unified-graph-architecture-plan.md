@@ -1,6 +1,6 @@
 # Unified Typed-Inheritance-Graph Architecture — Phased MVP Plan
 **Node ID:** CISEM-ARCH-00382 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** SUPERSEDED (Governor DEFERRED 2026-07-18 — resurrectable). Sound but held: to be re-gated against the prevention-first plan-process enhancement (per-stage verification), and re-anchored to the saved knowledge-graph research, before any resurrection.
+**Planning Status:** SUPERSEDED (Governor DEFERRED 2026-07-18 — resurrectable; reaffirmed run 18). **Resurrection trigger:** only AFTER ARCH-00392 lands (it supplies the depth axis this plan lacked), then re-anchor the graph's depth/maturity dimension to **VOC-00003 / DIOS maturity levels** (Signal→Constitutional) and re-gate against the per-stage-verification plan-process before rebuilding.
 **depth_level:** L1 | **tags:** [planning-domain, architecture, graph, inheritance, node-as-hub, mvp, stress-gated]
 **Goal:** Realize the CONSENSUS-REACHED **Node-as-Hub** architecture (IBD-0004) and EXTEND it into a full
 typed-inheritance graph, delivered as a REAL MVP then grown phase-by-phase, each phase BLOCKED until the prior

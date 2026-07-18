@@ -199,6 +199,35 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 
 ---
 
+## COMPACT STATE v4 — 2026-07-18 (SUPERSEDES v3; authoritative resume anchor)
+
+**Session tier:** Opus PE (post-compact). Trigger: Governor "accept all recommendations, do the clearer ones first" → executed the ratification queue (quality-ledger run 18).
+
+**RESOLVED THIS WINDOW (Governor decree "accept-all-recommendations", this tab):**
+1. **I25 DEBT CLOSED** — verified D-1..D-4 fixed on disk, then stamped: **ARCH-00393 → RATIFIED**, **ARCH-00394 → CONNECTED** (I24: earns RATIFIED on first clean independently-verified run), **ARCH-00395 (retro-plan) → RATIFIED / Planning COMPLETE**, corespine-registry CS-FRONTEND-001 → RATIFIED.
+2. **ARCH-00392 Phase-0 SIGNED-OFF** — GATE 0→1 PASSED; findings 6a (CS-THRESHOLD-001 bodiless, disclosed in Dependencies) + 6b (P3 "0-forks" scoped to plan-introduced; inherited 393/394+I25 debt now RESOLVED) folded into the plan. **Phase-1 planning is authorized.**
+3. **VOC-00003 → LIVE** (foundational decree). **ARCH-00370 → RATIFIED-SPEC** (NOT LIVE — honest: harvest enforcement NOT-YET-BUILT; see follow-up).
+4. **ssot-registry** stale `axioms_A1_A7` → `axioms_A1_A8` fixed. **corespines_ratified metric corrected** (CS-MASTER-VALIDATION-001 is DRAFTED, not ratified).
+5. Park notes recorded: **ARCH-00280 Q4** deferred until after ARCH-00392 Phase-1; **ARCH-00382** deferred, resurrection re-anchored to VOC-00003/DIOS maturity.
+
+**HONESTY CORRECTION (run 18):** Opus rec ③ claimed "CAL PreCompact fires the harvest" — FALSE. `pre-compact.sh` does save-all + resume-one-click + preventions-echo; it does NOT run ARCH-00370 STEP 1–5. Caught by verify-before-stamp (plausibility-completion averted). → ARCH-00370 stamped RATIFIED-SPEC, not LIVE.
+
+**OPEN FOLLOW-UPS (Opus/Sonnet — next):**
+- **Wire ARCH-00370 STEP 1–5 into `.claude/hooks/pre-compact.sh`** → flips RATIFIED-SPEC → LIVE (the real "make the harvest mechanical" build; low-blast, owned tool — do NOT defer as risk).
+- **ARCH-00392 Phase-1** (echo-to-apply + 5 core concepts: creation-event/plan/done/hardwired/ratified) — planning authorized.
+- ARCH-00394 first clean run → earns RATIFIED (I24).
+
+**STILL PENDING GOVERNOR (unchanged, not dropped — I14):**
+1. **Founding axioms** (TSA/CoreSpiral/Pocket, FOUND-00001) — the ONE keystone; Governor-only: supply source OR author-fresh + decree.
+2. CS-MASTER-VALIDATION-001 foundational decree (P0-5). 3. ai-oversight-layer3 build-or-drop (P0-6). 4. Comms CS-COMMS-001 (HANDOFF ready).
+
+**FOCUS:** enhance HARDCODING + AI-context-focus — ARCH-00392 Phase-1 IS that.
+
+**ZF STATUS:** ✅ ZF ACHIEVED · [EDGE] clean (run 18, post-stamp).
+**RESUME PATH:** CLAUDE.md → this file (COMPACT STATE v4) → dna/quality-ledger.yaml (run 18) → dna/learning-registry/session-learning-index.yaml → dna/queue/README.md.
+
+---
+
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
 - 2026-07-18: session-update + COMPACT STATE added for clean compact/tab resume (I1–I19, plan-gate bootstrap CONNECTED).
@@ -206,3 +235,6 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
   iterative planning + Haiku improvement, axiom grounding, root-cause-extraction persona. Prepared for clean compact.
 - 2026-07-18 FINAL: COMPACT STATE v3 — Frontend v2+v3, CS-FRONTEND-001 + ARCH-00394, six-persona synthesis captured,
   Opus PE ratification in-flight, I25 debt recorded, ARCH-00392 confirmed on track. Prepared for compact.
+- 2026-07-18 run 18: COMPACT STATE v4 — ratification queue executed (Governor "accept all"): I25 debt CLOSED
+  (393 RATIFIED / 394 CONNECTED / 395 RATIFIED), ARCH-00392 Phase-0 signed + 6a/6b folded, VOC-00003 LIVE,
+  ARCH-00370 RATIFIED-SPEC (honesty correction: harvest not yet wired). ZF+EDGE green. Founding axioms still the keystone.

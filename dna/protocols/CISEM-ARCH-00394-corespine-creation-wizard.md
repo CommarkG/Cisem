@@ -1,7 +1,7 @@
 ---
 Node_ID: CISEM-ARCH-00394
 Type: WIZARD
-Status: DECLARED
+Status: CONNECTED
 Corespine: CS-CREATION-001
 Schema_anchor: CISEM-ARCH-00008
 Core_spine: CS-CREATION-001
@@ -10,7 +10,7 @@ Last_verified: 2026-07-18
 
 # CISEM Corespine Creation Wizard — Universal Protocol
 
-**CISEM-ARCH-00394** | WIZARD | **Status: DECLARED**
+**CISEM-ARCH-00394** | WIZARD | **Status: CONNECTED** (not RATIFIED until first independently-verified end-to-end run — I24)
 **Purpose:** Define, create, and register ANY CISEM corespine via a single YAML input block. Supports batch creation (N corespines at once). Subsumes ad-hoc corespine creation — all corespines go through this wizard from now on.
 
 **Size note:** 233 lines — exceeds 200-line gate. Exception: wizard-type node with mandated STEP 1–6 procedure + template blocks + YAML schema; structural content not reducible without losing executability.
@@ -232,3 +232,4 @@ Sonnet runs STEP 1–6 for EACH entry in sequence. All three corespines are crea
 |---|---|---|
 | 2026-07-18 | DECLARED — initial wizard, STEP 1–6 procedure, YAML schema, template | Sonnet (Governor-ordered) |
 | 2026-07-18 | D-1: corrected size note + §3.6 line count (215→233); D-4: template field Doc-Status→Status | Sonnet (defect fix pass, Opus PE ruling) |
+| 2026-07-18 | CONNECTED — per Governor decree "ratify-with-retro-plan" (ARCH-00395) + Opus PE stamp. I24 protection: earns RATIFIED only on first clean independently-verified run | Opus PE (cisem-opus-pe) |

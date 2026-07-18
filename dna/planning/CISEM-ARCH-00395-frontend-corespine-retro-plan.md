@@ -1,14 +1,14 @@
 ---
 Node_ID: CISEM-ARCH-00395
 Type: ARCH
-Status: DECLARED
-Planning_Status: AWAITING-OPUS-STAMP — Governor decree issued 2026-07-18; Opus stamps RATIFIED after verifying D-1..D-4 fixes
+Status: RATIFIED
+Planning_Status: COMPLETE — Governor decree 2026-07-18; D-1..D-4 verified fixed; Opus PE stamped; I25 debt CLOSED
 depth_level: L2
 tags: [planning-domain, retro-plan, cs-frontend-001, i25-resolution]
 ---
 
 # Retro-Plan — CS-FRONTEND-001 + ARCH-00394 Corespine Creation
-**CISEM-ARCH-00395** | ARCH | **Status: DECLARED** (Governor decree 2026-07-18 — Opus stamps RATIFIED after D-1..D-4 verify)
+**CISEM-ARCH-00395** | ARCH | **Status: RATIFIED** (Governor decree 2026-07-18 "ratify-with-retro-plan"; D-1..D-4 verified fixed; Opus PE stamped; I25 debt CLOSED)
 
 **Goal:** Retroactively authorize CS-FRONTEND-001 (ARCH-00393) and the Universal Corespine
 Creation Wizard (ARCH-00394), built under direct Governor order but without a prior ratified
@@ -95,3 +95,4 @@ Stage 2 (Governor): "ratify with retro plan" decree 2026-07-18.
 | Date | Change | Author |
 |---|---|---|
 | 2026-07-18 | DECLARED — retro-plan filed post Governor decree; D-1..D-4 fixes confirmed; awaiting Opus RATIFIED stamp | Sonnet (defect fix pass) + Governor (decree) |
+| 2026-07-18 | RATIFIED — I25/A4 debt CLOSED; D-1..D-4 verified on disk by Opus PE; Governor decree "accept-all-recommendations" this tab | Opus PE (cisem-opus-pe) |

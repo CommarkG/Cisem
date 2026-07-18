@@ -1,5 +1,5 @@
 # CISEM Maturity-Depth Axis — the DIOS maturity ladder, adopted
-**Node ID:** CISEM-VOC-00003 | **Type:** VOC | **Status:** PROVISIONAL-ACTIVE (adopted from DIOS 0014 / KL-0001; Governor "go" 2026-07-18; awaiting foundational decree)
+**Node ID:** CISEM-VOC-00003 | **Type:** VOC | **Status:** LIVE (adopted from DIOS 0014 / KL-0001; Governor foundational decree 2026-07-18 — the maturity-depth axis is in force)
 **depth_level:** L1 | **Position in schema:** T-SYS, vocabulary layer
 **tags:** [maturity, depth-axis, dios, validation, promotion, semantic-depth]
 **Goal:** Give CISEM a SEMANTIC maturity axis (how validated a piece of knowledge is), distinct from the

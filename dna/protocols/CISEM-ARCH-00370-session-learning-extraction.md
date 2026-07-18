@@ -1,5 +1,5 @@
 # Session Learning Extraction Protocol (Mandatory, Hardwired)
-**Node ID:** CISEM-ARCH-00370 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE (Sonnet-authored; Opus-verified 2026-07-18: registered →380; reconciled as the SSOT of the harvest/learning system with IBD-0005 folded in; enforcement NOT-YET-BUILT). Awaiting plan-gate ratification.  
+**Node ID:** CISEM-ARCH-00370 | **Type:** ARCH | **Status:** RATIFIED-SPEC (Governor decree 2026-07-18 — this IS the SSOT of the harvest/learning system, IBD-0005 folded in). **ENFORCEMENT NOT-YET-BUILT (honest, I23):** the harvest is BEHAVIORAL — the PreCompact hook does save-all + resume-one-click + preventions-echo, it does NOT yet run STEP 1–5. Wiring STEP 1–5 into `.claude/hooks/pre-compact.sh` is the open follow-up that flips this spec from RATIFIED-SPEC → LIVE.  
 **depth_level:** L2 | **Position in schema:** T-SYS, learning-loop + memory layer  
 **tags:** [learning, extraction, session-end, harvest, dual-pole, anti-loss]  
 **Goal:** Capture — at every session/tab boundary AND (per IBD-0005) each turn — both NEGATIVE value (→ D3 preventions) and POSITIVE value (→ D4 named enhancements) into ONE parking place (dna/learning-registry/), so learnings are INHERITED (not re-discovered), never silently lost.

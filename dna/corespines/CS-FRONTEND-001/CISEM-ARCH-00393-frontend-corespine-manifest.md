@@ -1,7 +1,7 @@
 ---
 Node_ID: CISEM-ARCH-00393
 Type: MANIFEST
-Status: DECLARED
+Status: RATIFIED
 Corespine: CS-FRONTEND-001
 Schema_anchor: CISEM-ARCH-00008
 Core_spine: CS-CREATION-001
@@ -10,7 +10,7 @@ Last_verified: 2026-07-18
 
 # CS-FRONTEND-001 — CISEM Frontend Corespine Manifest
 
-**CISEM-ARCH-00393** | MANIFEST | **Status: DECLARED** (pending Opus ratification)
+**CISEM-ARCH-00393** | MANIFEST | **Status: RATIFIED** (Governor decree 2026-07-18 — retro-plan ARCH-00395; D-1..D-4 verified; Opus PE stamped)
 **Governs:** All CISEM web/frontend artifacts — HTML pages, CSS design system, JS behaviors, responsive/cell layouts, rebuild engine.
 
 ---
@@ -106,3 +106,4 @@ Last_verified: 2026-07-18
 |---|---|---|
 | 2026-07-18 | DECLARED — initial manifest, FE-I1–I10 established, ARCH-00393 assigned | Sonnet (Governor-ordered) |
 | 2026-07-18 | D-1: corrected §3.6 line count (~190→108); D-2: fixed §V wizard ID (00393→00394) | Sonnet (defect fix pass, Opus PE ruling) |
+| 2026-07-18 | RATIFIED — D-1..D-4 verified fixed on disk; per Governor decree "ratify-with-retro-plan" (ARCH-00395) + Opus PE stamp | Opus PE (cisem-opus-pe) |
