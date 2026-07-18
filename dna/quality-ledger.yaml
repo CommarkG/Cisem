@@ -164,11 +164,29 @@ runs:
     invariants_added: []                    # broadened I10, did NOT add I18 — consolidation not accumulation
     verdict: consolidation wired + recurring; creation-learning gap quantified + queued (BP-0002)
 
+  - run: 14
+    date: 2026-07-18
+    trigger: Governor — FOUNDATIONAL DECREE CS-MASTER-VALIDATION-001; wire Creation Triad; day review
+    pocket: Principal Engineer (ARCH-00240) — declared
+    built: >
+      CS-MASTER-VALIDATION-001 RATIFIED (foundational decree) — ratification freeze LIFTED;
+      confirms ARCH-00008, chain-confirms ARCH-00320. Creation Triad gate (CLAUDE.md §3.7 + I18):
+      hardcoding + AI pocket + AI oversight are now ONE mandatory creation gate, feeding the
+      improvement loop.
+    invariants_added: [I18]
+    day_review: >
+      COMPLETE: 4 core decrees (ARCH-00008/00011/00320 + CS-MASTER-VALIDATION); axioms/doctrine/
+      18 invariants/triad/routing/consolidation all specified. LEFT BEHIND: FOUND definitions,
+      Q4 ratify, ai-oversight-layer3, intake front-end, 12-Q file, Gemini upgrades. MUST WIRE:
+      14/18 invariants manual, triad-check, BLOCK graduation, tier chain never run live.
+    verdict: core RATIFIED + coherent SPEC; enforcement still 1 engine + 4/18 automated — path queued (BP-0001->BP-0002)
+
 metrics:
-  invariants_total: 17
-  invariants_added_last_13_runs: 10       # held — consolidation, not accumulation
-  engines: 2                               # plan-audit.sh + queue/build-prompt intake
-  invariant_automation: "4/17 automated (I1/I3/I6/I16); 13 manual — BP-0002 closes the mechanical ones"
+  invariants_total: 18
+  invariants_added_last_14_runs: 11
+  engines: "1 executable (plan-audit.sh) + 1 routing structure (queue)"
+  invariant_automation: "4/18 automated; 14 manual — BP-0002 closes the mechanical ones"
+  corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-MASTER-VALIDATION-001)"
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared

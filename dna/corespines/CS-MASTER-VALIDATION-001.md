@@ -1,7 +1,8 @@
 # CS-MASTER-VALIDATION-001 — Root Validation Corespine
 **Node ID:** CS-MASTER-VALIDATION-001
-**Type:** corespine (root) | **Status:** PROPOSED — awaiting Governor
-**foundational decree** (ARCH-00011 §7). Opus drafted; Opus does NOT self-ratify.
+**Type:** corespine (root) | **Status:** RATIFIED — Governor **foundational decree**
+2026-07-18 (ARCH-00011 §7, root_authority). This CONFIRMS CISEM-ARCH-00008 and
+chain-confirms ARCH-00320; the corespine ratification freeze is LIFTED.
 **Version:** v0.1 (2026-07-16, first draft)
 **root_authority:** true — validated by Governor decree without an upstream
 validator, because it defines the validation that all others depend on.

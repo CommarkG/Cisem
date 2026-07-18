@@ -23,8 +23,8 @@ CS-AI-BEHAVIOR-001:
   depth_level: L1
 
 CS-MASTER-VALIDATION-001:
-  status: PROPOSED   # content drafted 2026-07-16 (CS-MASTER-VALIDATION-001.md); awaiting Governor FOUNDATIONAL DECREE (ARCH-00011 §7)
-  priority: PRIO-BLOCKING   # remains blocking until decreed RATIFIED
+  status: RATIFIED   # Governor FOUNDATIONAL DECREE 2026-07-18 (root_authority). Freeze LIFTED; confirms ARCH-00008 + chain-confirms ARCH-00320.
+  priority: PRIO-BLOCKING-RESOLVED
   root_authority: true
   goal: "Governs all other corespines — defines the corespine validation protocol V1–V5 and the foundational-decree escape"
   depth_level: L1

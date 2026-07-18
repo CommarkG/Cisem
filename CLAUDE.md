@@ -147,6 +147,15 @@ Freestyle governance without a declared pocket is a violation.
 references all resolve or are flagged NOT YET A NODE; schema-compliant.
 ### 3.5 Naming & Index-Extension — per `dna/protocols/CISEM-ARCH-00011-naming-numbering-policy.md`.
 ### 3.6 Size Gate — 3,500 words / 200 lines; triggers mini-tree split, never "exceed and flag."
+### 3.7 THE CREATION TRIAD (NEW, MANDATORY) — hardcoding + AI pocket + AI oversight, wired together
+Every creation demonstrates ALL THREE, as ONE gate, and feeds the improvement loop (I18):
+1. **HARDCODING** — passes §3 gates + the accumulated invariants I1–In apply (A5 hardcoded protocol).
+2. **AI POCKET** — a Pocket Declaration is present (§3.3); governance runs as the PE pocket (ARCH-00240, I17).
+3. **AI OVERSIGHT** — the RQC / plan-audit runs on the creation AND its result is LOGGED to
+   `dna/quality-ledger.yaml` (A7, D5), so the improvement loop LEARNS from it.
+Missing any leg = the creation is NOT done. The three are hardwired together: hardcoding
+constrains, the pocket declares intent, oversight verifies + learns. This is the standing
+triage the Governor mandated — no creation escapes all three.
 
 ## 4. WHAT YOU DO NOT DO
 - No MCP/third-party registration — CS-AI-BEHAVIOR-001 incomplete

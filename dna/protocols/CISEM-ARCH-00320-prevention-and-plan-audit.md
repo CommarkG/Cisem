@@ -53,6 +53,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I15 | Category exempt from §3 (Axiom A5) | A5 says EVERYTHING is created via hardcoded protocol, but nothing checked that agents/skills/wizards/vocab/QC/etc. actually pass §3 | No category of creation is exempt from the §3 gates: files, documents, agents, skills, wizards, vocabulary, file-naming, QC of every type, changes to hardcoded elements, core councils. Creating any of these without the gates is a violation |
 | I16 | Stale status / dynamic drift | statuses go stale as the dynamic system evolves (CLAUDE.md §5-7 drifted; ARCH-00008 header/body contradiction) | Every artifact carries ACTIVE governance metadata (tag + status + wiring-state + owner) reflecting CURRENT reality; it is updated the moment reality changes. A stale or self-contradicting status is a violation. Wiring state uses DECLARED→CONNECTED→ACCESSIBLE→LIVE (ARCH-00011 §4) |
 | I17 | Freestyle governance (no pocket) | Opus was making rulings on raw deep-coding reasoning, NOT through a declared CISEM pocket — the Governor caught it | Opus governance / review / rulings run AS the Principal Engineer pocket (ARCH-00240) with a Pocket Declaration stated inline (reasoning_scope, inherited_constraints, output_contract, ai_cannot, recorded_at). Freestyle reasoning outside a declared pocket is a violation |
+| I18 | Creation Triad incomplete | hardcoding, AI pocket, AI oversight existed SEPARATELY — a creation could skip a leg | Every creation demonstrates ALL THREE as one gate (CLAUDE.md §3.7): hardcoding (§3 + invariants), AI pocket (declared, §3.3/I17), AI oversight (RQC run + logged to `dna/quality-ledger.yaml`). Missing any leg is a violation; the triad feeds the improvement loop (A7/D5) |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -88,6 +89,7 @@ Every plan node MUST now carry:
 [ ] I15 no creation category exempt from §3 (files/docs/agents/skills/wizards/vocab/naming/QC/hardcoded-changes/councils) — Axiom A5
 [ ] I16 every artifact's tag+status+wiring-state reflects CURRENT reality; no stale/self-contradicting status
 [ ] I17 Opus governance runs in a declared PE pocket (ARCH-00240), not freestyle reasoning
+[ ] I18 Creation Triad complete: hardcoding + AI pocket + AI oversight all present + logged (§3.7)
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)
