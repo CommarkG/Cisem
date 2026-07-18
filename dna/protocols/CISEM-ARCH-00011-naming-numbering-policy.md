@@ -14,6 +14,11 @@ field MUST equal its ID prefix — no `Type: ARCH` on a `CISEM-SCHEMA-*` node.
 Mismatch is an I9 violation.
 
 ## 2. ID format
+**ONE-GATE RULE (2026-07-18):** `naming-registry.yaml` is the SINGLE naming/numbering gate for
+EVERY id in CISEM — `CISEM-{TYPE}-{SEQ}` nodes AND pre-node namespaces (BP, IBD, HANDOFF). No file
+allocates a number outside it; per-directory indexes only mirror. An id not registered there is a
+violation (wired by BP-0005). This ends the parallel-authority drift (was: registry + queue/ + ibd/).
+
 `CISEM-{TYPE}-{SEQ5}-{slug}.md` — sequence per TYPE, tracked in `naming-registry.yaml`.
 Any creation MUST read next_seq before assigning, then increment. Concurrent-write
 risk (Brain + Builder both writing) remains open — flagged, not solved by this policy alone.

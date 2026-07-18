@@ -27,3 +27,4 @@ Only ESSENTIAL jumps to PROCESS-NOW. In-flight completion is respected first (I1
 - BP-0002 — orchestrate ALL invariants into the engine (creation-learning; pivot step 3) — HIGH — essential: y — QUEUED (depends BP-0001); FOLD IN the I16 field-vs-field redesign
 - BP-0003 — /cisem-create skill (auto-delivers the Creation Triad; pattern-ratified) — HIGH — essential: y — QUEUED (approved to hand to Sonnet)
 - BP-0004 — most-basic front-end "Index" (= the navigable living index / DNA-00001) — HIGH — essential: y — QUEUED (Governor-spec'd)
+- BP-0005 — wire the ONE naming/numbering gate (naming was EXISTS≠ACTIVE / 3 parallel authorities) — HIGH — essential: y — QUEUED (depends BP-0001)

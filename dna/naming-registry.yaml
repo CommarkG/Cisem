@@ -20,3 +20,12 @@ WITNESS: { next_seq: 4, pending_migration: ["00002"] }   # 00001 migrated; 00003
 VOC:     { next_seq: 3 }    # 00001 (Tag Library), 00002 (Status Library) assigned this session
 LOAD:    { next_seq: 2 }    # 00001 used
 REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself (root registry, exempt)
+
+# ── PRE-NODE namespaces (parking / queue / handoff) — now allocated through THIS SINGLE GATE too ──
+# ONE-GATE RULE (2026-07-18, Governor "one gate only"): naming-registry.yaml is the SINGLE
+# naming/numbering authority for ALL prefixes — CISEM-{TYPE}-{SEQ} nodes AND the pre-node
+# namespaces below. Per-README indexes (dna/queue/, dna/ibd/) MIRROR this; they do NOT allocate.
+# No parallel numbering. BP-0005 wires the check that flags any ID not registered here.
+BP:      { next_seq: 5 }    # build-prompts (dna/queue/BP-*): 0001-0004 used
+IBD:     { next_seq: 4 }    # internal brain dumps (dna/ibd/IBD-*): 0001-0003 used
+HANDOFF: { next_seq: 2 }    # cross-tab handoffs (dna/queue/HANDOFF-*): opus-axioms used
