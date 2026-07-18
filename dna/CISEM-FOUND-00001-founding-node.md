@@ -1,8 +1,8 @@
 # CISEM Founding Node — TSA / CoreSpiral / Pocket (PLACEHOLDER)
 **Node ID:** CISEM-FOUND-00001
-**Type:** FOUND | **Status:** PLACEHOLDER — reserved slot, axiom content NOT yet supplied.
+**Type:** FOUND | **Status:** DRAFT — operating Axioms A1–A7 now provided (Governor 2026-07-18); TSA/CoreSpiral/Pocket definitions + Gemini genesis content still pending. Not ratified.
 **root_authority:** true (reserved — ARCH-00011 §7 closed set)
-**Version:** v0.0 (placeholder, no axiom content)
+**Version:** v0.1 (operating axioms provided; founding definitions pending)
 **depth_level:** L1 | **Position in schema:** T-SYS, apex
 **tags:** [founding, axioms, tsa, corespiral, pocket, placeholder, awaiting-governor]
 **Goal:** Hold the founding axiom-set (TSA / CoreSpiral / Pocket) that the whole
@@ -31,6 +31,33 @@ Fires when the Governor supplies the source OR rules it lost:
 - **CoreSpiral** — [definition AWAITING-GOVERNOR]
 - **Pocket (founding sense)** — [definition AWAITING-GOVERNOR; note: `pocket-mechanism.md`
   is the *mechanism*, not the founding axiom — do not conflate]
+
+## Operating Axioms A1–A7 (Governor-provided 2026-07-18) — REAL CONTENT, firmly wired
+The platform's operating laws. Each is FIRMLY connected to the mechanism that enforces
+it — complete, optimized, firm; no axiom is decorative:
+
+| Axiom | Law | Enforced by (the FIRM connection) | Firmness |
+|---|---|---|---|
+| **A1** | Nothing stands alone | I1+I5 dangling scan (`plan-audit.sh`) + §3.4 Standalone Test + Island Detection | WIRED (WARN) |
+| **A2** | Everything is part of a corespine | §3.2a Corespine-First gate + ARCH-00008 "Governing corespine" field | GATE |
+| **A3** | Nothing exists without a place in the schema | §3.4 + ARCH-00008 "Position in schema" + SCHEMA-00001 | GATE |
+| **A4** | Nothing implemented without a ratified plan | §3.0 + Hard Line I7 + foundational decree + RULE-RAT quarantine | GATE + DECREE |
+| **A5** | EVERYTHING via hardcoded protocol (files, docs, agents, skills, wizards, vocab, naming, QC, hardcoded-changes, councils) | §3 gate suite + Template-First §3.2b + **invariant I15** (category completeness) | GATE + I15 |
+| **A6** | Context-focus over rigidity | Doctrine D6 (polarity, not rigid) + guardian-not-cage | DOCTRINE (behavioral) |
+| **A7** | Constant self-improvement via an AI expert team | RQC (ARCH-00320 §6) + multi-expert review + D5; conclusions → human ratify (Hard Line I7) | RQC (live, WARN) |
+
+**Honest firmness:** A1–A5 are wired to gates/invariants; A6 is behavioral (Doctrine);
+A7 is the live RQC loop. Full BLOCK-enforcement arrives when ARCH-00320 is ratified and
+ARCH-00180 wires the rest. **No axiom is unconnected** — the connection to the platform
+is complete.
+
+## The Sovereign Phrase (candidate genesis law — Gemini stack, Opus-accepted)
+> "Context is the palace, Alignment is the King, and Timing is the Queen."
+Baseline diagnostic law for systemic failures; assigned to this genesis file.
+
+## STILL PENDING from the Governor (keystone not complete)
+TSA / CoreSpiral / Pocket definitions + Gemini's genesis content are NOT yet supplied.
+This node is DRAFT (operating axioms present) — not ratified, not complete.
 
 ## Pocket Declaration
 - **reasoning_scope:** reserve + honestly flag the founding slot only

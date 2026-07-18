@@ -97,3 +97,17 @@ One is a real vocab CLASH to resolve (PCR).
 - **FOUNDING-AXIOM material:** 26 (Sovereign Phrase).
 - **RESOLVE:** 24 (PCR meaning — Pros/Cons/Rec vs Problem/Cause/Resolution).
 - **Different layer (keep at solution/UX):** 13, 21.
+
+## Opus decision on Gemini's Alignment Ledger (2026-07-18) — I am the deciding expert
+Per Gemini's own note (Opus decides what is useful and how; enhance-before-create; vocab stage):
+- **Vocab sync ACCEPTED** for the RATIFIED terms — but renaming across the repo
+  (e.g. DECLARED→EXISTS≠ACTIVE) is DEFERRED to a ratified plan (Axiom A4); no mass rename now.
+- **The 7 UPGRADES ACCEPTED as PROPOSED**, each mapped to ENHANCE an existing node (not new files):
+  Five-Surface Engraving → enhance D3/ARCH-00320; 4 Wiring States → enhance ARCH-00011 §4 + ARCH-00180;
+  Field Wiring Triad → invariant candidate (I16?); 4-Layer Template → answers ARCH-00280 Q4;
+  Planted-Violation Test → ARCH-00270 gate-proof; Trigger Registry → ARCH-00180 scope;
+  Sovereign Phrase → FOUND-00001 (DONE).
+- **Gemini's 3 "Deployment-Ready Master Files" → NOT deployed.** Per enhance-before-create + A4,
+  they enhance existing nodes; a wholesale 3-file drop is REJECTED until a ratified plan.
+- **Stage held: VOCAB-ALIGNMENT.** Real founding content (TSA/CoreSpiral/Pocket) not yet presented.
+- Implementation of all upgrades AWAITS a Governor-ratified plan (A4 enforcing itself).

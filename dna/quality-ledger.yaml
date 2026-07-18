@@ -106,9 +106,23 @@ runs:
     invariants_added: []                    # alignment/park batch; adopt-candidates await Governor
     verdict: Founding-vocab alignment delivered; unblocks Governor presenting the axioms
 
+  - run: 10
+    date: 2026-07-18
+    trigger: Governor — merge PCR; encode Axioms A1-A7; firm axiom↔platform wiring; permanent Sonnet/Haiku binding
+    tiers: [opus]
+    built: >
+      PCR merged (Pros/Cons/Rec enriched with Problem/Cause/Resolution — CLAUDE.md §2 principle 10).
+      Axioms A1-A7 encoded (CLAUDE.md §2.4 + FOUND-00001 real content with a firm axiom→enforcement
+      traceability map). Sovereign Phrase → FOUND-00001. FOUND-00001 PLACEHOLDER→DRAFT.
+      Invariant I15 (A5 category completeness). Tier Binding (CLAUDE.md §1.5) + repo-resident agent
+      defs (.claude/agents/cisem-haiku.md, cisem-sonnet.md) — Sonnet/Haiku bound session-independently.
+      Opus ruling on Gemini's ledger recorded (upgrades PROPOSED, implementation deferred per A4).
+    invariants_added: [I15]
+    verdict: axioms firmly wired; lower tiers bound in-repo; PCR resolved; still at vocab-alignment stage
+
 metrics:
-  invariants_total: 14
-  invariants_added_last_9_runs: 7         # I8..I14 — the loop keeps learning
+  invariants_total: 15
+  invariants_added_last_10_runs: 8        # I8..I15 — the loop keeps learning
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:
