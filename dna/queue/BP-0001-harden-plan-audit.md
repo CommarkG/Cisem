@@ -11,9 +11,10 @@ safely graduate to BLOCK-mode. DONE = a re-run shows the I16 and I3 false positi
 while a genuinely stale/violating file would still be flagged.
 
 ## CONTEXT
-The gate runs on every commit (WARN + I13 seed-strip BLOCK). Two false positives block
-graduation: (a) I16 flags ARCH-00310 (PROPOSED) because it matches "Status…RATIFIED" in
-PROSE, not the header field; (b) I3 flags the check script's own `status:` lines and the ledger.
+The gate runs on every commit (WARN + I13 seed-strip BLOCK). Two false-positive classes
+block BLOCK-graduation: (a) I16 flags ARCH-00310 (PROPOSED) AND CS-MASTER-VALIDATION-001
+(RATIFIED, body just discusses ratification) — both matched "Status…RATIFIED" in PROSE, not
+the header field; (b) I3 flags the check script's own `status:` lines and the ledger.
 Do NOT change the routing, the invariants, or add BLOCK conditions — hardening only.
 
 ## CORE SEEDS (immutable Opus intent)

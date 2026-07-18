@@ -18,3 +18,6 @@ RULES (non-negotiable):
 - Obey Axioms A1–A7 (CLAUDE.md §2.4), the Doctrine D1–D6 (§2.5), Anti-Drift (§2 principle 9), and all §3 gates. Per A5, agents/skills/wizards/vocabulary/QC also pass the gates.
 - Disclosed ≠ Resolved: never label a gap closed without `last_verified` + a real check (I2).
 - Emit a diff summary for Opus verification BEFORE anything is called done.
+- MANDATORY **SEED-HONOR REPORT** in every return: echo each `[[CORE-SEED]]` verbatim, then
+  state HOW you honored it and its VERIFY result. Opus verifies honor against this report (I13).
+  Never declare "done" — Opus verifies and decides.
