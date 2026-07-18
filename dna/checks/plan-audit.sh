@@ -35,6 +35,20 @@ for id in $refs; do
 done
 [ "$found_i1" = 0 ] && echo "   (none — all refs resolve or are tag-exempt)"
 
+# I9 — unregistered TYPE prefix check (CORE-SEED 1: every new ID must be registered in naming-registry.yaml)
+echo "[I9] unregistered CISEM node IDs (must be in dna/naming-registry.yaml):"
+found_i9=0
+unregistered=$(grep -rhoE "CISEM-[A-Z]+-[0-9]{5}" --include="*.md" --include="*.yaml" . 2>/dev/null | sort -u)
+for id in $unregistered; do
+  # extract TYPE from CISEM-{TYPE}-{SEQ}
+  type=$(echo "$id" | sed -E 's/CISEM-([A-Z]+)-[0-9]+/\1/')
+  # check if this TYPE is registered in naming-registry.yaml (as "TYPE: { next_seq:")
+  if ! grep -q "^${type}:[[:space:]]*{" dna/naming-registry.yaml 2>/dev/null; then
+    echo "   UNREGISTERED TYPE: $id (TYPE '$type' not in dna/naming-registry.yaml)"; found_i9=1
+  fi
+done
+[ "$found_i9" = 0 ] && echo "   (all types registered)"
+
 # I3 — uncommitted truth-FIELD changes (field-form only, not prose mentions)
 echo "[I3] uncommitted truth-field additions (Status:/last_verified: field lines):"
 tf=$( { git diff --cached --unified=0 -- ':(exclude)dna/checks/' ':(exclude)dna/quality-ledger.yaml' 2>/dev/null; \
@@ -48,12 +62,18 @@ echo "[I6] recent closure-verb commits (verify each has a real check behind it):
 cv=$(git log --oneline -10 2>/dev/null | grep -iE "clos|resolv|complet| fix")
 [ -n "$cv" ] && echo "$cv" | sed 's/^/   /' || echo "   (none in last 10)"
 
-# I16 — stale / self-contradicting status (header says RATIFIED but body says "not ratified")
-echo "[I16] status contradictions (dynamic-currency check):"
+# I16 — stale / self-contradicting status (FIELD-vs-FIELD: header Status vs body Status, not prose)
+echo "[I16] status contradictions (header Status FIELD vs body Status FIELD):"
 found_i16=0
-for f in $(find . -name "*.md" -not -path './.git/*' -exec sh -c 'head -15 "$1" | grep -qE "Status:\**[[:space:]]*RATIFIED" && echo "$1"' _ {} \;); do
-  if grep -qi "not ratified" "$f" 2>/dev/null; then
-    echo "   STALE?: $f (header RATIFIED but body contains 'not ratified')"; found_i16=1
+for f in $(find . -name "*.md" -not -path './.git/*' 2>/dev/null); do
+  header_status=$(head -20 "$f" | grep -iE "^\*\*Status:|^status:" | head -1 | sed -E 's/.*Status:\s*\*?\*?//i' | xargs)
+  [ -z "$header_status" ] && continue
+
+  # check if body has a DIFFERENT Status field declaration (ignore prose "ratified" mentions)
+  body_status=$(tail -n +21 "$f" 2>/dev/null | grep -iE "^\*\*Status:|^status:" | head -1 | sed -E 's/.*Status:\s*\*?\*?//i' | xargs)
+
+  if [ -n "$body_status" ] && [ "$header_status" != "$body_status" ]; then
+    echo "   STALE: $f (header Status: $header_status | body Status: $body_status)"; found_i16=1
   fi
 done
 [ "$found_i16" = 0 ] && echo "   (none)"
