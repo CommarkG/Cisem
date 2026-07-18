@@ -49,6 +49,10 @@ sessions:
       finding: "ZF audit (Haiku + Sonnet + Opus-PE): 0 verified Zero-Findings cycles system-wide; ARCH-00370 enforcement FALSE (protocol exists, hooks never built)."
       prevention_hardwired: "I23 (EXISTS≠ACTIVE / activation-proof) + formal ZF gate — a stage passes only on ACTIVATION proven by an INDEPENDENT verifier, never existence. Prevention = TOP PRIORITY (Governor)."
       routed: "plan-process enhancement (per-stage verification + multi-Haiku + Sonnet-analyzer + spiral cross-tier loop + monitoring) → next plan via /cisem-plan; ARCH-00382 ratification HELD until incorporated."
+      root_cause_refined: "PLAUSIBILITY-COMPLETION BIAS (Sonnet-analyzer, Opus-verified) — the model treats a task as complete when the OUTPUT is plausible/coherent, not when the OUTCOME is verified. 3 layers: local-completion-signal + existence-as-activation + cost-of-insisting. Sharper than 'assertion-over-verification'; same family."
+      preventions_proposed: "5 structural (Opus-verified SOUND), each mechanically enforced + measured + independent-verifier-based: P1 per-stage Activation Certificate (activator≠author); P2 ZF closure gate wired into plan-audit.sh (findings_routing block in quality-ledger); P3 Governor-decision TTL (machine-checkable); P4 audit file needs a routing table before COMPLETE; P5 Independent Verifier named at plan CREATION (not completion). Candidate invariants I24/I25/I26 (await Governor)."
+      spiral_demonstrated: "Haiku enumerated → Sonnet analyzed+proposed → Opus verified → Governor ratifies → hardwire. The cross-tier improvement spiral ran ONCE, live, on its own meta-problem — proof of concept for the monitoring loop."
+      next: "draft the plan-process-enhancement plan (P1–P5) via /cisem-plan, dogfooding per-stage verification; then re-gate ARCH-00382 against it."
     # ── GAPS still open ──
     gaps_open:
       - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."
