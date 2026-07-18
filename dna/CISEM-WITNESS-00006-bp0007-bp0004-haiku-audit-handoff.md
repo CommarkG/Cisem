@@ -111,7 +111,7 @@
 
 | Item | Current State | Owner | Timeline | Why Parked |
 |------|---|---|---|---|
-| **BP-0003 re-submission** | NOT approved; needs CS-FOUND-00001 fix + TRUE SEED-HONOR | Sonnet → Opus | Post-BP-0007 | Opus found real defects; needs rework before acceptance |
+| **BP-0003 re-submission** | NOT approved; needs CISEM-FOUND-00001 fix + TRUE SEED-HONOR | Sonnet → Opus | Post-BP-0007 | Opus found real defects; needs rework before acceptance |
 | **Phantom batch (5 nodes)** | ARCH-00170 declares pending; ARCH-00360 Rule 5 applies | Governor + Builder | 1-week TTL from 2026-07-16 = **OVERDUE** | Needs formal decision: create or prune |
 | **Corespine content locations** | 11 of 12 corespines have no dedicated .md | Brain (design) + Sonnet (build) | Post-ARCH-00360 | ARCH-00360 DECREE 3 requires content_location field in registry |
 | **Field format standardization** | 0% detected (false negative) | Opus + Builder | Post-audit hardening | ARCH-00360 Rule 2 requires explicit markdown format spec |
