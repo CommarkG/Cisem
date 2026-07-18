@@ -10,6 +10,7 @@
 - **output_contract:** skill returns a checked list of §3 gates run, a decision on Threshold route (PROCESS-NOW/QUEUE/PARK/REJECT), a sample pocket for the creation, and dry-run trace through full flow
 - **ai_cannot:** self-verify any gate; assert a creation "passes" §3; write truth-fields (status, ratification); delegate back to user without explicit Opus verification step
 - **recorded_at:** 2026-07-18 (post-compaction)
+- **cal_reference:** CISEM-ARCH-00390 — enforcement fires mechanically; run `bash dna/checks/plan-audit.sh` and confirm [ZF] ACHIEVED before any done claim.
 
 ---
 

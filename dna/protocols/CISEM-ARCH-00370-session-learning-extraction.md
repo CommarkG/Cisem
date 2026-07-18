@@ -3,6 +3,7 @@
 **depth_level:** L2 | **Position in schema:** T-SYS, learning-loop + memory layer  
 **tags:** [learning, extraction, session-end, harvest, dual-pole, anti-loss]  
 **Goal:** Capture — at every session/tab boundary AND (per IBD-0005) each turn — both NEGATIVE value (→ D3 preventions) and POSITIVE value (→ D4 named enhancements) into ONE parking place (dna/learning-registry/), so learnings are INHERITED (not re-discovered), never silently lost.
+**Size exception (§3.6):** 270 lines — exceeds 200-line gate. Exception: protocol-type node with mandated STEP 1–5 procedure + STATUS TRUTH block + change log; structural content not reducible without losing executability. Mini-tree deferred until §3 wiring is complete (this node governs that process).
 
 ## ⚠️ STATUS TRUTH (Opus PE, 2026-07-18) — read before trusting any ✅ below
 This protocol is a DESIGN, most of it NOT yet wired. **REAL now:** this document + CLAUDE.md §2 Principle 12

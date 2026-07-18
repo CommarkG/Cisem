@@ -138,10 +138,12 @@ states it in the explicit "name what was rejected and why" form CLAUDE.md
 Length/complexity compliance, Mini-tree split protocol, Mandatory depth levels
 
 **Applied to this node:** `depth_level: L1` declared in header (mandatory
-depth level ✓). Length: well under the 3,500-word / 200-line size gate
-(ARCH-00011 §5) — no measurement was previously stated, so stating it now:
-comfortably compliant, no split triggered. Mini-tree split protocol: not
-applicable — this node has never been split.
+depth level ✓). Length: 223 lines — exceeds the 200-line size gate (§3.6).
+Exception: ARCH type schema-contract node with ten mandated sections
+(I–X); each section cannot stand alone without the others. Mini-tree split
+deferred until CS-THRESHOLD-001 body + TEMPLATE-PROTOCOL-001 establish the
+base level. Exception documented here; not silently accepted (I22 corrected
+from prior false "well under" claim at v1.0).
 
 ## VIII. NOTIFICATION / MONITORING
 What I notify, How I stay updated
@@ -191,7 +193,7 @@ Required for all Phase 1 creations (ARCH-00360 DECREE 3).
 §3.3 Pocket Declaration✓ PASS (Pocket declared in header)
 §3.4 False Assumption  ✓ PASS (All section references resolve or are flagged)
 §3.5 Naming & Index    ✓ PASS (ID registered in naming-registry.yaml)
-§3.6 Size Gate         ✓ PASS (~203 lines, well under 3,500-word/200-line limit)
+§3.6 Size Gate         FLAGGED (223 lines > 200-line limit — exception documented in §VII; I22)
 
 Run by: Opus (2026-07-16, ratification pass)
 Ratified: Governor decree 2026-07-16

@@ -3,7 +3,8 @@
 # Governed by CISEM-ARCH-00320 §6 (Trigger) + §4 (invariants).
 # Wires: I1 (dangling refs), I3 (uncommitted truth-fields), I6 (closure-verb commits),
 #        I9 (unregistered IDs), I16 (status contradictions), I23 (activation / EXISTS≠ACTIVE),
-#        I24 (premature promotion), P3 (Governor-decision TTL), P5 (independent verifier).
+#        I24 (premature promotion), P3 (Governor-decision TTL), P5 (independent verifier),
+#        I6-SIZE (size gate — plans/protocols >200 lines without exception).
 # WARN-ONLY by design: reports findings, NEVER blocks a commit (always exit 0).
 # Promote to BLOCK-mode only per ARCH-00270 after ARCH-00320 is RATIFIED.
 #
@@ -14,6 +15,8 @@
 #   v4 (2026-07-18): P3 (Governor-decision TTL — decisions_pending must carry
 #   owner+created_date+ttl_days) + P5 (independent verifier per ARCH-00190 §3);
 #   ZF aggregation updated to include P3+P5. Grounds: session-learning-index P3/P5.
+#   v5 (2026-07-18): I6-SIZE (size gate §3.6 — plans+protocols >200 lines without declared exception).
+#   Grounds: Haiku audit finding (9 files exceeded without exemptions documented).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -130,6 +133,22 @@ for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.m
 done
 [ "$found_i24" = 0 ] && echo "   (none — every RATIFIED node cites its validating decree)"
 
+# I6-SIZE — Size gate: plans + protocols exceeding 200 lines must declare a size exception or mini-tree split.
+#           Exempt by content: AUDIT, WITNESS, SKILL, LOAD, VOCAB, GOV types are contextually exempt (long by nature).
+#           Only dna/planning/ and dna/protocols/ .md files are checked (plans + named protocols must be crisp).
+echo "[I6-SIZE] plans/protocols exceeding 200-line gate without documented size exception (§3.6):"
+found_i6s=0
+for f in $(find dna/planning dna/protocols -name "*.md" 2>/dev/null); do
+  lines=$(wc -l < "$f" 2>/dev/null || echo 0)
+  if [ "$lines" -gt 200 ]; then
+    if grep -qiE "size.exception|mini.tree|exceeds.*200|200.line.*exception|exception.*200|size.*gate.*defer|size.*gate.*exempt" "$f"; then
+      continue
+    fi
+    echo "   EXCEEDS: $f (${lines} lines — §3.6: split into mini-tree or declare exception)"; found_i6s=1
+  fi
+done
+[ "$found_i6s" = 0 ] && echo "   (none — all plans/protocols under 200 lines or have declared size exceptions)"
+
 # P3 — Governor-decision TTL (session-learning-index P3; ARCH-00360 Rule 5 escalation).
 #       Every decisions_pending entry in a governance YAML must carry {owner, created_date, ttl_days}.
 #       A missing-field entry is a structural violation; a past-TTL entry is a required-escalation finding.
@@ -182,8 +201,8 @@ done
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.
-zf_open=$(( found_i1 + found_i9 + found_i16 + found_i19 + found_i23 + found_i24 + found_p3 + found_p5 ))
-echo "[ZF] zero-findings gate (I1+I9+I16+I19+I23+I24+P3+P5):"
+zf_open=$(( found_i1 + found_i9 + found_i16 + found_i19 + found_i23 + found_i24 + found_p3 + found_p5 + found_i6s ))
+echo "[ZF] zero-findings gate (I1+I9+I6-SIZE+I16+I19+I23+I24+P3+P5):"
 if [ "$zf_open" -eq 0 ]; then
   echo "   ✅ ZF ACHIEVED — zero un-routed findings this run"
 else

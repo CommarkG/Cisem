@@ -10,6 +10,7 @@
 - **output_contract:** a protocol skeleton following ARCH-00340 §1 checklist exactly, with all required sections, ready for foundational decree (root) or double-ratification (non-root)
 - **ai_cannot:** self-ratify a protocol; decide which protocols need foundational decree; assume a protocol is CORE from one example
 - **recorded_at:** 2026-07-18
+- **cal_reference:** CISEM-ARCH-00390 — enforcement fires mechanically; run `bash dna/checks/plan-audit.sh` and confirm [ZF] ACHIEVED before any done claim.
 
 ---
 

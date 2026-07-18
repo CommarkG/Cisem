@@ -10,6 +10,7 @@
 - **output_contract:** a plan skeleton following ARCH-00190 structure exactly, with every section filled, ready for Opus soundness review
 - **ai_cannot:** self-ratify a plan; decide consensus (only Opus + Governor can); write as if implementation is already approved
 - **recorded_at:** 2026-07-18
+- **cal_reference:** CISEM-ARCH-00390 — enforcement fires mechanically; run `bash dna/checks/plan-audit.sh` and confirm [ZF] ACHIEVED before any done claim.
 
 ---
 
