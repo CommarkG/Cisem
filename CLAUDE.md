@@ -64,7 +64,18 @@ Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.m
     conclusion has joined a discussion (I14). **VOCAB (do not conflate):** a detailed
     first-draft-of-a-topic is NOT a plan; a plan is a wizard-produced artifact.
 
-12. Pre-Boundary Save-All (ALL tiers — Opus + Sonnet) — BEFORE compacting OR moving to a new
+12. Session Learning Extraction (ALL tiers — MANDATORY, hardwired, fires BEFORE compaction/tab-switch)
+    — EXTRACT all learnings from THIS session before any compaction or tab-switch happens. NO EXCEPTIONS.
+    What to extract: insights discovered, solutions built, preventions hardwired, gaps still open, decisions
+    pending, governance rules created. WHERE: `dna/learning-registry/` (permanent, grows each session).
+    HOW: Run ARCH-00370 STEP 1–5 (extraction protocol); write to session-learning-index.yaml; verify
+    all items captured (I14 audit). INHERIT: Next agent/tab reads registry as part of BOOTSTRAP;
+    applies prior preventions BEFORE creating anything. ENFORCE: Pre-compaction hook BLOCKS compaction
+    if extraction incomplete. RQC audits learnings were actually applied (quality-ledger.yaml metric).
+    **Why:** Learning loss = repeated discovery = wasted energy. Hardwiring prevents forgetting. Every
+    session builds on PRIOR sessions, never starts blind. Full spec: `dna/protocols/CISEM-ARCH-00370-session-learning-extraction.md`
+
+13. Pre-Boundary Save-All (ALL tiers — Opus + Sonnet) — BEFORE compacting OR moving to a new
     tab/session, you MUST save-all so the repo is a COMPLETE SSOT (State-on-Disk Invariant —
     nothing load-bearing lives only in volatile context): (1) update the continuity record
     (WITNESS **COMPACT STATE**) with current state; (2) **EMBED any chat-only content into a file** —
@@ -74,7 +85,7 @@ Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.m
     moving to a fresh tab; (5) state the resume path. The context boundary is the TRIGGER; save-all
     fires BEFORE it. A compact/tab-change without save-all is a violation (I20).
 
-13. Instruction Completeness / Zero-Assembly (ALL tiers — Governor-decreed 2026-07-18) — every
+14. Instruction Completeness / Zero-Assembly (ALL tiers — Governor-decreed 2026-07-18) — every
     instruction you hand off (one-click, Core Seeds, handoff, build-prompt) MUST be COMPLETE and
     SELF-CONTAINED: the recipient pastes ONE block and runs — no "see above", no placeholder to fill,
     no cross-reference to assemble, no ambiguity about what/where/order. A "one-click" that needs a

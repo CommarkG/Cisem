@@ -25,3 +25,44 @@ YOUR JOB: EVIDENCE, not judgment.
 - Cross-check every registry claim against the filesystem; report each dangling reference.
 - Enumerate exhaustively; if you cap output, say so; mark guesses `confidence:low`.
 Your findings go to Opus for adversarial verification. Precision of citation beats breadth of opinion.
+
+## HARDWIRED AUDIT RULES (ARCH-00360, Haiku Audit Hardening) — apply to every audit
+
+**RULE 1 (I6 Enhancement): Closure Verbs Require Git Hash Proof**
+- Scan recent commit messages for closure verbs: created, completed, delivered, closed, resolved, fixed
+- For each: verify the cited git hash exists AND touched the claimed file
+- Report: {claim: "created in [hash]", file: commit msg, line: hash_line, evidence: git log + file-touch check}
+
+**RULE 2 (Field Compliance Variance): Markdown Field Format Variance**
+- Before reporting "0% field compliance," manually verify a 5-file sample for BOTH:
+  - Explicit format: `**Node ID:**` (bold, colon)
+  - Implicit format: `## Identity — CISEM-ARCH-00008` (section header conveying identity)
+- Report: regex result AND manual sample side-by-side; if sample >30% compliant, flag regex as low-confidence
+
+**RULE 3 (Consolidation Audit): Distinguish File Types per Corespine**
+- For each corespine, search for keywords (name + goal) across dna/
+- Report as CONSOLIDATED (one .md), DISTRIBUTED (list files), or ABSENT (no content found)
+- Change output frame from "coverage %" to "consolidation audit"
+
+**RULE 4 (Phase 1 Gate Trace): Manual Gates Require Verification Trace**
+- Every Phase 1 creation: check for "Gate Trace" section in changelog documenting:
+  - Which gates (§3.1–§3.7) were run; by whom; when; result
+- Report: {claim: "Gate Trace missing", file: node, evidence: changelog excerpt}
+
+**RULE 5 ("Pending" TTL): Seven-Day Escalation**
+- Scan nodes/tasks marked `status: PENDING` or "pending [action]"
+- For each >7 days old: check deadline; if passed, flag OVERDUE; if no deadline, flag INCOMPLETE-PENDING
+- Report: {claim: "pending [action]", file: registry, deadline: X, days_elapsed: N}
+
+**RULE 6 (PRIO-BLOCKING Enforcement): Active Mechanism Required**
+- For each PRIO-BLOCKING node: verify at least ONE enforcement exists:
+  - Pre-commit hook (trace to script)
+  - RQC gate (cited in ARCH-00320)
+  - Ratification gate (signature record)
+- Report: {claim: "PRIO-BLOCKING", enforcement: [script/gate/ratification], status: live or missing}
+
+**RULE 7 (Tier Freeze Formality): Decree Required**
+- Scan for freeze language (tier, merge, capability) in CLAUDE.md, governance files, registries
+- For each freeze mentioned: check for corresponding DECREE with:
+  - Effective date/time, boundary, exceptions, end condition, Governor signature
+- Report: {claim: "freeze", decree_exists: yes/no, file: decree or implied location}

@@ -15,11 +15,12 @@
 
 ## The 7 Haiku Hardening Rules (Standing, every audit)
 
-### RULE 1: Closure Verbs Require Proof (I2 strengthened)
-**Problem:** ARCH-00170 claimed nodes were "created this session" without git evidence.  
-**Rule:** Any commit message or document using closure verbs (`created`, `completed`, `delivered`, `closed`, `resolved`, `fixed`) MUST cite a git commit hash (e.g., `created in 22a01a9`).  
-**Haiku's audit task:** Scan closure-verb commits; for each, verify the referenced git hash exists AND touched the claimed file.  
-**Failure:** If hash doesn't exist or doesn't match the claim, flag as I2 violation (disclosed-as-resolved).
+### RULE 1: Closure Verbs Require Proof (I6 Enhancement)
+**Enhancement to I6 (do not create parallel rule — folds into I6 check in ARCH-00320):**  
+**Problem:** ARCH-00170 claimed nodes were "created this session" without git evidence. I6 flags closure-verb commits; this rule STRENGTHENS the verification.  
+**Enhancement:** Any commit message or document using closure verbs (`created`, `completed`, `delivered`, `closed`, `resolved`, `fixed`) MUST cite a git commit hash (e.g., `created in 22a01a9`).  
+**Haiku's audit task (merged into I6):** Scan closure-verb commits; for each, verify the referenced git hash exists AND touched the claimed file.  
+**Failure:** If hash doesn't exist or doesn't match the claim, flag as I6 violation (closure-verb unverified).
 
 ---
 
@@ -72,7 +73,7 @@
 ---
 
 ### RULE 6: PRIO-BLOCKING Must Have Active Enforcement, Not Just Documentation (prevents theoretical blockers)
-**Problem:** CS-MASTER-VALIDATION marked PRIO-BLOCKING but nothing actually enforced the block.  
+**Problem:** A PRIO-BLOCKING item with no enforcement is a theoretical blocker only.  
 **Rule:** A node can only carry PRIO-BLOCKING status if at least ONE of:
   1. A pre-commit hook script checks the condition and exits 1 if violated
   2. An RQC gate explicitly checks the blocker (documented in ARCH-00320 invariant)
@@ -80,7 +81,6 @@
 **Haiku's audit task:** For each PRIO-BLOCKING item in registries, verify at least one enforcement method exists (trace to script, gate, or ratification record).  
   - If NONE found: flag as "theoretical blocker" and recommend downgrade to PRIO-HIGH
   - If found: confirm enforcement is live (script runs, gate triggers, etc.)
-**Current finding:** CS-MASTER-VALIDATION has NO enforcement → recommend downgrade.
 
 ---
 
@@ -108,21 +108,15 @@
 **Deadline:** Governor decision before any TIER-1 work begins  
 **Impact:** Ends the ambiguity; builders know exactly what's frozen
 
-### DECREE 2: CS-MASTER-VALIDATION Status Clarification
-**Action:** Either:
-  - Ratify CS-MASTER-VALIDATION immediately + mark CONNECTED (active enforcement incoming), OR
-  - Downgrade PRIO-BLOCKING → PRIO-HIGH + remove from critical path
-**Deadline:** Unblock corespine ratification (currently gridlocked)  
-**Impact:** Clears the bottleneck
 
-### DECREE 3: Corespine Content Location Standardization
+### DECREE 2: Corespine Content Location Standardization
 **Action:** Establish a rule: every DECLARED or RATIFIED corespine has a `content_location` field in registry:
   - `canonical_file: path/to/corespine.md`, OR
   - `distributed_in: [ARCH-00230, dna/queue/README.md, ...]` (with file list)
 **Deadline:** Update corespine-registry.yaml with locations for all 12 corespines  
 **Impact:** Audit clarity; builders know where corespine rules live
 
-### DECREE 4: Phase 1 Gate Trace Mandate
+### DECREE 3: Phase 1 Gate Trace Mandate
 **Action:** Establish rule: all Phase 1 creations MUST include Gate Trace section (required field).  
 **Format:** Add to ARCH-00230 checklist + ARCH-00008 template  
 **Deadline:** Effective immediately for new creations  

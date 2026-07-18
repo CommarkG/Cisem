@@ -13,7 +13,7 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 380 }  # highest assigned: 00370 (session-learning-extraction, PROVISIONAL-ACTIVE — Sonnet created it 2026-07-18 but AGAIN failed to register it; Opus registered retroactively. THIRD consecutive recurrence (00350, 00360, 00370) of the register-failure — the unregistered-ID check (BP-0002) is now URGENT, not optional. 00361-00369 open for inserts.). 00341-00349 + 00351-00359 open for inserts. Note: 10-spacing leaves 00341-00349 open for logical inserts (ARCH-00011 spacing rule). Convention: planning/governance ARCH nodes are spaced by 10 (…00290, 00300, 00310, 00320); the intervening numbers are intentionally reserved, NOT a gap. 00300 = model-tier-routing, 00310 = consolidated-remediation-plan, 00320 = prevention-and-plan-audit (all 2026-07-16). NOTE: registry still lacks an assigned-ID->file manifest (invariant I4, CISEM-ARCH-00320) — cannot yet be reconciled against the filesystem. Manifest build is an open Sonnet task.
+ARCH:    { next_seq: 382 }  # highest assigned: 00381 (dormancy-audit, PROVISIONAL-ACTIVE, registered 2026-07-18). 00380 = diagnostics-report, 00381 = dormancy-audit (both audit reports, dna/audits/). 00361-00369, 00371-00379 open for inserts. 10-spacing: planning/governance nodes spaced by 10 (…00290, 00300, 00310, 00320); intervening reserved. NOTE: I4 invariant (assigned-ID→file manifest) still unfulfilled — build is open Sonnet task (BP-0002 dependent work).
 PARK:    { next_seq: 2 }
 SES:     { next_seq: 2 }
 WITNESS: { next_seq: 4, pending_migration: ["00002"] }   # 00001 migrated; 00003 = session-continuity witness (2026-07-16, real node — supersedes the prior phantom 00003 claim in ARCH-00170)
