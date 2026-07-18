@@ -47,6 +47,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I11 | root_authority sprawl | `root_authority` is a skip-validation switch that could spread | `root_authority: true` is confined to the closed set in ARCH-00011 §7 (Founding, ARCH-00011, CS-MASTER-VALIDATION). Any other node carrying it — or adding to the set without a foundational decree — is a violation |
 | I12 | Silent tier-routing | IBD was built by Opus with no routing decision — the Governor caught it | Every creation/execution DECLARES its tier owner + why before starting (CLAUDE.md §3.0). Opus doing mechanical work needs a stated exception. Silent routing is a violation |
 | I13 | Core-seed integrity | needed so Opus intent survives lower-tier execution | Every `[[CORE-SEED]]` is Opus-authored and immutable by lower tiers; it must be PRESENT and HONORED in the executed output. A missing, altered, or unhonored seed is a violation (ARCH-00300 Core Seeds) |
+| I14 | Silent thread-drop / drift | recurring: items presented → Governor pivots → threads silently dropped, completion abandoned (compounding waste) | Every presented decision-item stays OPEN until explicitly resolved / rejected / parked; SILENCE ≠ resolution. On a pivot the reply handles the new AND resurfaces open items. A silently dropped thread is a violation (CLAUDE.md §2 principle 9) |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -78,6 +79,7 @@ Every plan node MUST now carry:
 [ ] I11 root_authority confined to the ARCH-00011 §7 closed set; adding to it needs a foundational decree
 [ ] I12 tier-routing declared before creating/executing (CLAUDE.md §3.0); Opus mechanical work has a stated exception
 [ ] I13 every [[CORE-SEED]] is Opus-authored, immutable, and present+honored in the executed output
+[ ] I14 no presented item silently dropped; open items resurfaced on every pivot; silence ≠ resolution
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)

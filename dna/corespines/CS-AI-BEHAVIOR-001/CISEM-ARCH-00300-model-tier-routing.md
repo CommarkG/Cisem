@@ -36,6 +36,12 @@ This was validated live: Haiku enumerated accurately and even caught the
 ratification cycle, but took a lying `Status` field at face value — exactly
 the split this policy encodes.
 
+## Applies to ALL tiers: Anti-Drift (CLAUDE.md §2 principle 9)
+Opus, Sonnet, AND Haiku all finish what they started — no silently dropped thread.
+Dropping started work is not just an excellence failure; it wastes the tokens already
+spent AND the tokens about to be spent on abandoned new work (compounding waste). The
+tiering exists to spend tokens WELL; abandoning in-flight work spends them for nothing.
+
 ## THE ONE RULE (executable)
 > Do the cheapest tier that can be **trusted** for the task; escalate only
 > the residue. Ladder: **Haiku gathers → Sonnet structures → Opus judges.**

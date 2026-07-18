@@ -76,9 +76,22 @@ runs:
     note: "I12 born from Governor oversight catching a real Opus self-compliance miss (D5 with Governor as auditor)"
     verdict: routing now gated + seed mechanism formalized
 
+  - run: 8
+    date: 2026-07-18
+    trigger: Governor named the silent-thread-drop pattern (present items -> pivot -> drop)
+    tiers: [opus]
+    routing_declared: "Opus (design=judgment); mechanical edits = declared Opus exception, Governor-approved"
+    built: >
+      CLAUDE.md §2 principle 9 (Completion Insistence / Anti-Drift) — all tiers; with a
+      standing [[CORE-SEED 1]] (handle new AND resurface open, never obstruct/nag) and the
+      honest rationale (default conflict-avoidance does not serve excellence or the user).
+      ARCH-00300 cross-tier anti-drift note. Invariant I14.
+    invariants_added: [I14]
+    verdict: anti-drift hardwired; dogfooded same reply by resurfacing open session items
+
 metrics:
-  invariants_total: 13
-  invariants_added_last_7_runs: 6         # I8..I13 — the loop keeps learning
+  invariants_total: 14
+  invariants_added_last_8_runs: 7         # I8..I14 — the loop keeps learning
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:
