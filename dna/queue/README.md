@@ -23,5 +23,5 @@ Each QUEUE item carries: `priority`, `essential (y/n)`, `timeframe`, `depends-on
 Only ESSENTIAL jumps to PROCESS-NOW. In-flight completion is respected first (I14).
 
 ## Queue index (next: BP-0003)
-- BP-0001 — harden plan-audit.sh (pivot step 1) — priority: HIGH — essential: y — status: QUEUED
+- BP-0001 — harden plan-audit.sh (pivot step 1) — priority: HIGH — essential: y — status: IN-FLIGHT (handed to cisem-sonnet 2026-07-18; awaiting Seed-Honor Report)
 - BP-0002 — orchestrate ALL invariants into the engine (creation-learning; pivot step 3) — HIGH — essential: y — QUEUED (depends BP-0001)

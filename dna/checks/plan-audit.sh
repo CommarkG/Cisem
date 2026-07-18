@@ -37,7 +37,8 @@ done
 
 # I3 — uncommitted truth-FIELD changes (field-form only, not prose mentions)
 echo "[I3] uncommitted truth-field additions (Status:/last_verified: field lines):"
-tf=$( { git diff --cached --unified=0 2>/dev/null; git diff --unified=0 2>/dev/null; } \
+tf=$( { git diff --cached --unified=0 -- ':(exclude)dna/checks/' ':(exclude)dna/quality-ledger.yaml' 2>/dev/null; \
+        git diff --unified=0 -- ':(exclude)dna/checks/' ':(exclude)dna/quality-ledger.yaml' 2>/dev/null; } \
       | grep -E "^\+" | grep -vE "^\+\+\+" \
       | grep -iE "(\*\*status:|^\+status:|^\+ *status:|last_verified:)" | sort -u )
 [ -n "$tf" ] && echo "$tf" | sed 's/^/   /' || echo "   (none)"
@@ -50,7 +51,7 @@ cv=$(git log --oneline -10 2>/dev/null | grep -iE "clos|resolv|complet| fix")
 # I16 — stale / self-contradicting status (header says RATIFIED but body says "not ratified")
 echo "[I16] status contradictions (dynamic-currency check):"
 found_i16=0
-for f in $(grep -rIlE "Status:\**[[:space:]]*RATIFIED" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+for f in $(find . -name "*.md" -not -path './.git/*' -exec sh -c 'head -15 "$1" | grep -qE "Status:\**[[:space:]]*RATIFIED" && echo "$1"' _ {} \;); do
   if grep -qi "not ratified" "$f" 2>/dev/null; then
     echo "   STALE?: $f (header RATIFIED but body contains 'not ratified')"; found_i16=1
   fi
