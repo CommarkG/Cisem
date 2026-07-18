@@ -221,7 +221,7 @@ metrics:
   agents: 3                                # cisem-haiku, cisem-sonnet, cisem-opus-pe
   core_seed_cycles_completed: 1            # BP-0001 (first live cycle; Opus-verify caught residual + was corrected by Sonnet)
   engines: "1 executable (plan-audit.sh) + 1 routing structure (queue)"
-  invariant_automation: "~6/22 automated (I1,I3,I6,I9,I16 in plan-audit.sh + I13 seed-strip BLOCK; I9/I16 wired 2026-07-18); rest manual"
+  invariant_automation: "7/23 automated (I1,I3,I6,I9,I16,I23 in plan-audit.sh + I13 seed-strip BLOCK; I23 wired+validated 2026-07-18 via planted-violation test); rest manual"
   corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-MASTER-VALIDATION-001)"
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant

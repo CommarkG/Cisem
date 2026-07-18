@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # CISEM Recurring Quality Cycle — WARN-ONLY plan-audit
 # Governed by CISEM-ARCH-00320 §6 (Trigger) + §4 (invariants).
-# Wires: I1 (dangling references), I3 (uncommitted truth-fields), I6 (closure-verb commits).
+# Wires: I1 (dangling refs), I3 (uncommitted truth-fields), I6 (closure-verb commits),
+#        I9 (unregistered IDs), I16 (status contradictions), I23 (activation / EXISTS≠ACTIVE).
 # WARN-ONLY by design: reports findings, NEVER blocks a commit (always exit 0).
 # Promote to BLOCK-mode only per ARCH-00270 after ARCH-00320 is RATIFIED.
 #
@@ -77,6 +78,29 @@ for f in $(find . -name "*.md" -not -path './.git/*' 2>/dev/null); do
   fi
 done
 [ "$found_i16" = 0 ] && echo "   (none)"
+
+# I23 — activation / anti-premature-promotion (EXISTS≠ACTIVE). Grounds: DIOS Knowledge-Maturity
+#       anti-patterns "validation avoidance" + "premature principle". A file that asserts an ACTIVE
+#       enforcement mechanism (a hook) as working must have the mechanism on disk — UNLESS it honestly
+#       marks it NOT-YET-BUILT. Honest disclosure of immaturity satisfies I23; a done-claim with no
+#       mechanism is a violation (this is the ARCH-00370 failure class, made machine-checkable).
+echo "[I23] activation claims without a mechanism on disk (EXISTS≠ACTIVE):"
+found_i23=0
+# Claude-Code SESSION-hook mechanism present? (NOTE: .git/hooks/pre-commit is a DIFFERENT, real,
+# existing mechanism — a git hook — and legitimate references to it must NOT flag here.)
+hooks_present=0
+if [ -d .claude/hooks ] && [ -n "$(find .claude/hooks -type f 2>/dev/null)" ]; then hooks_present=1; fi
+if grep -rqiE '(PreCompact|SessionStart|SessionEnd)' .claude/settings*.json 2>/dev/null; then hooks_present=1; fi
+if [ "$hooks_present" = 0 ]; then
+  # claim = a SESSION hook (PreCompact/SessionStart/SessionEnd) ASSERTED as active/wired/live/blocking
+  for f in $(grep -rliE "(PreCompact|SessionStart|SessionEnd)" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+    grep -qiE "(PreCompact|SessionStart|SessionEnd).{0,40}(BLOCKS|wired|active|live|runs|fires)|(BLOCKS|wired|active|live|fires).{0,40}(PreCompact|SessionStart|SessionEnd)" "$f" || continue
+    # honest NOT-YET-BUILT / design-only disclosure satisfies I23 (disclosed immaturity ≠ premature promotion)
+    grep -qiE "NOT-YET-BUILT|NOT YET BUILT|not yet wired|to be implemented|design-only|PARKED|awaiting build|enforcement NOT|do not claim|STATUS TRUTH" "$f" && continue
+    echo "   PREMATURE: $f (asserts an active SESSION hook, but .claude/hooks is empty & no NOT-YET-BUILT marker)"; found_i23=1
+  done
+fi
+[ "$found_i23" = 0 ] && echo "   (none — every activation claim has a mechanism on disk or an honest NOT-YET-BUILT marker)"
 
 echo "── end — WARN-ONLY (except I13 seed-strip BLOCK in pre-commit). Full protocol: ARCH-00320 ──"
 exit 0
