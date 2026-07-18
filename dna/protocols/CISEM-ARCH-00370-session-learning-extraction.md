@@ -1,20 +1,20 @@
 # Session Learning Extraction Protocol (Mandatory, Hardwired)
-**Node ID:** CISEM-ARCH-00370 | **Type:** ARCH | **Status:** RATIFIED-SPEC (Governor decree 2026-07-18 — this IS the SSOT of the harvest/learning system, IBD-0005 folded in). **ENFORCEMENT NOT-YET-BUILT (honest, I23):** the harvest is BEHAVIORAL — the PreCompact hook does save-all + resume-one-click + preventions-echo, it does NOT yet run STEP 1–5. Wiring STEP 1–5 into `.claude/hooks/pre-compact.sh` is the open follow-up that flips this spec from RATIFIED-SPEC → LIVE.  
+**Node ID:** CISEM-ARCH-00370 | **Type:** ARCH | **Status:** LIVE (Governor decree 2026-07-18; enforcement WIRED + TESTED 2026-07-18). **What LIVE means here (honest, I23):** the PreCompact hook (`.claude/hooks/pre-compact.sh`, CAL/ARCH-00390) now MECHANICALLY (a) FIRES the STEP 1–5 mandate and (b) VERIFIES a fresh harvest was written to `session-learning-index.yaml`, warning if stale — Enforcement Point 1. The STEP 1–5 EXTRACTION is performed by the model on that mechanical cue (no bash can reason) — exactly as `plan-audit.sh` is a mechanical check whose fix is model-performed. CAVEAT: a PreCompact hook cannot HARD-BLOCK compaction — the gate is a loud WARN, not a hard stop.  
 **depth_level:** L2 | **Position in schema:** T-SYS, learning-loop + memory layer  
 **tags:** [learning, extraction, session-end, harvest, dual-pole, anti-loss]  
 **Goal:** Capture — at every session/tab boundary AND (per IBD-0005) each turn — both NEGATIVE value (→ D3 preventions) and POSITIVE value (→ D4 named enhancements) into ONE parking place (dna/learning-registry/), so learnings are INHERITED (not re-discovered), never silently lost.
 **Size exception (§3.6):** 270 lines — exceeds 200-line gate. Exception: protocol-type node with mandated STEP 1–5 procedure + STATUS TRUTH block + change log; structural content not reducible without losing executability. Mini-tree deferred until §3 wiring is complete (this node governs that process).
 
-## ⚠️ STATUS TRUTH (Opus PE, 2026-07-18) — read before trusting any ✅ below
-This protocol is a DESIGN, most of it NOT yet wired. **REAL now:** this document + CLAUDE.md §2 Principle 12
-(always-loaded → every tier *behaviorally* runs extraction) + the parking place `dna/learning-registry/`
-(created + seeded this session). **NOT YET BUILT (do not claim otherwise):** the compaction/session hooks,
-the BOOTSTRAP registry-read wiring in the agent files, and the RQC learning-application check. The prior
-CONFIRMATION report's "✅ hook BLOCKS compaction / learnings WRITTEN / production-ready" was **FALSE** —
-`dna/learning-registry/` did not exist and `.claude/hooks/` was empty. **Real automation path** = Claude
-Code native hooks: `SessionStart` injects the registry (inheritance), `PreCompact` + `SessionEnd` run
-extraction. Buildable and human-independent — but must be BUILT + TESTED before any ✅. Reconciliation:
-IBD-0005 (Harvest Orchestrator) is the per-turn/dual-pole MODE of THIS system — one home, no parallel (I10).
+## ⚠️ STATUS TRUTH (Opus PE, updated run 18 2026-07-18) — read before trusting any ✅ below
+**WIRED + TESTED now:** this document + CLAUDE.md §2 Principle 12 (always-loaded → every tier runs extraction) +
+the parking place `dna/learning-registry/` + **the `SessionStart` hook (injects the registry for inheritance) and
+the `PreCompact` hook's HARVEST GATE (Enforcement Point 1: fires the STEP 1–5 mandate + mechanically verifies a
+fresh registry write, warns if stale) — both built + run-tested 2026-07-18.** **STILL BEHAVIORAL (not mechanical):**
+the STEP 1–5 extraction cognition itself (a bash hook cannot reason — the model performs it on the mechanical cue),
+and a true HARD block (PreCompact only WARNs, it cannot stop compaction). **STILL NOT BUILT:** the `SessionEnd` hook
+and the RQC learning-application check (Enforcement Point 3). The old CONFIRMATION report's "✅ hook BLOCKS compaction /
+production-ready" was FALSE when written (hooks were empty then); the fire+verify gate is now real, the hard-block is not.
+Reconciliation: IBD-0005 (Harvest Orchestrator) is the per-turn/dual-pole MODE of THIS system — one home, no parallel (I10).
 
 ## Pocket Declaration
 - **reasoning_scope:** extract session knowledge into durable storage; make learning mandatory, not optional
@@ -220,9 +220,13 @@ IF (token budget < 15% remaining OR manual "compact" command):
     Continue normally
 ```
 
-**To be implemented as (NOT YET BUILT):** a Claude Code `PreCompact` + `SessionEnd` native hook — no
-bash script can otherwise intercept compaction. A `SessionStart` hook injects the registry for inheritance.
-Until built, this enforcement is BEHAVIORAL (CLAUDE.md Principle 12), not mechanical. Do not report it as wired.
+**Implemented as (BUILT + TESTED 2026-07-18):** the Claude Code `PreCompact` native hook
+(`.claude/hooks/pre-compact.sh`) STEP 0 HARVEST GATE — it (1) FIRES the STEP 1–5 mandate and (2) mechanically
+VERIFIES a fresh registry write (dirty registry = in-progress; registry written in HEAD = fresh; N commits behind =
+loud "may be UNHARVESTED" WARN). The `SessionStart` hook injects the registry for inheritance. HONEST LIMITS:
+step 1 (run STEP 1–5) is model-performed on the cue (bash can't reason); step 4 ("Block compaction") is a WARN,
+not a hard stop (PreCompact can't intercept); the `SessionEnd` hook is not built. So: fire+verify = mechanical;
+extract + hard-block = behavioral. This is LIVE in the same sense plan-audit is: mechanical gate, model-performed action.
 
 ### Enforcement Point 2: New Tab / New Agent Gate
 ```

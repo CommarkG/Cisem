@@ -206,15 +206,15 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 **RESOLVED THIS WINDOW (Governor decree "accept-all-recommendations", this tab):**
 1. **I25 DEBT CLOSED** — verified D-1..D-4 fixed on disk, then stamped: **ARCH-00393 → RATIFIED**, **ARCH-00394 → CONNECTED** (I24: earns RATIFIED on first clean independently-verified run), **ARCH-00395 (retro-plan) → RATIFIED / Planning COMPLETE**, corespine-registry CS-FRONTEND-001 → RATIFIED.
 2. **ARCH-00392 Phase-0 SIGNED-OFF** — GATE 0→1 PASSED; findings 6a (CS-THRESHOLD-001 bodiless, disclosed in Dependencies) + 6b (P3 "0-forks" scoped to plan-introduced; inherited 393/394+I25 debt now RESOLVED) folded into the plan. **Phase-1 planning is authorized.**
-3. **VOC-00003 → LIVE** (foundational decree). **ARCH-00370 → RATIFIED-SPEC** (NOT LIVE — honest: harvest enforcement NOT-YET-BUILT; see follow-up).
+3. **VOC-00003 → LIVE** (foundational decree). **ARCH-00370 → LIVE** (run 18: harvest enforcement now WIRED + TESTED — PreCompact STEP 0 HARVEST GATE fires the STEP 1–5 mandate + mechanically verifies a fresh registry write; extraction stays model-performed on the cue; PreCompact WARNs, can't hard-block — all disclosed honestly).
 4. **ssot-registry** stale `axioms_A1_A7` → `axioms_A1_A8` fixed. **corespines_ratified metric corrected** (CS-MASTER-VALIDATION-001 is DRAFTED, not ratified).
 5. Park notes recorded: **ARCH-00280 Q4** deferred until after ARCH-00392 Phase-1; **ARCH-00382** deferred, resurrection re-anchored to VOC-00003/DIOS maturity.
 
 **HONESTY CORRECTION (run 18):** Opus rec ③ claimed "CAL PreCompact fires the harvest" — FALSE. `pre-compact.sh` does save-all + resume-one-click + preventions-echo; it does NOT run ARCH-00370 STEP 1–5. Caught by verify-before-stamp (plausibility-completion averted). → ARCH-00370 stamped RATIFIED-SPEC, not LIVE.
 
 **OPEN FOLLOW-UPS (Opus/Sonnet — next):**
-- **Wire ARCH-00370 STEP 1–5 into `.claude/hooks/pre-compact.sh`** → flips RATIFIED-SPEC → LIVE (the real "make the harvest mechanical" build; low-blast, owned tool — do NOT defer as risk).
-- **ARCH-00392 Phase-1** (echo-to-apply + 5 core concepts: creation-event/plan/done/hardwired/ratified) — planning authorized.
+- ~~Wire ARCH-00370 harvest into pre-compact.sh~~ **DONE run 18** — STEP 0 HARVEST GATE built + tested; ARCH-00370 LIVE. (Not-yet-built remainder: SessionEnd hook + RQC learning-application check, Enforcement Point 3.)
+- **ARCH-00392 Phase-1** (echo-to-apply + 5 core concepts: creation-event/plan/done/hardwired/ratified) — planning authorized. **← next.**
 - ARCH-00394 first clean run → earns RATIFIED (I24).
 
 **STILL PENDING GOVERNOR (unchanged, not dropped — I14):**

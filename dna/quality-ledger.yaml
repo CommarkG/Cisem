@@ -265,6 +265,26 @@ runs:
     status: COMPLETE
     ratified_by: "Governor — decree 2026-07-18 (accept-all-recommendations, this tab)"
 
+  - run: 19
+    date: 2026-07-18
+    trigger: "Opus PE: wire ARCH-00370 harvest into PreCompact hook (RATIFIED-SPEC → LIVE); Governor 'you have a PE engine — decide and act'"
+    pocket: cisem-opus-pe (Principal Engineer) — declared; implements ARCH-00370 Enforcement Point 1 under CAL/ARCH-00390
+    verdict_soundness: SOUND
+    finding: >
+      pre-compact.sh STEP 0 HARVEST GATE added: FIRES the STEP 1–5 mandate + MECHANICALLY verifies a fresh
+      registry write (dirty=in-progress / written-in-HEAD=fresh / N-behind=WARN). Also fixed two staleness bugs in
+      the hook's one-click: hardcoded "COMPACT STATE v2" and stale "A8-sweep" first-move → now resolves the LATEST
+      COMPACT STATE version dynamically + points to the WITNESS block as the one source (A8, no fork). Run-tested:
+      fresh-path confirmed; stale-path confirmed on the very next commit (HEAD 1 ahead of registry → WARN fired).
+    honesty_scope: >
+      "LIVE" = the fire+verify GATE is mechanical (like plan-audit's check); the STEP 1–5 EXTRACTION stays
+      model-performed on the cue (no bash reasoning), and PreCompact WARNs — it cannot HARD-BLOCK. SessionEnd hook +
+      RQC learning-application check (Enforcement Point 3) remain NOT-BUILT. All disclosed in ARCH-00370 STATUS TRUTH.
+    invariants_added: []
+    new_enhancements: ["PreCompact HARVEST GATE (fire+verify)", "hook one-click resolves latest COMPACT STATE dynamically (anti-staleness)"]
+    status: COMPLETE
+    ratified_by: "Governor — decree 2026-07-18 (accept-all + 'decide and act'); implements ratified ARCH-00370 spec"
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
