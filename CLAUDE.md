@@ -54,6 +54,20 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
   CAL PreCompact now FIRES the mandate + VERIFIES a fresh registry write mechanically (ARCH-00370 LIVE, run 18); the
   STEP 1–5 extraction itself is still model-performed on that cue. A boundary crossed without the harvest is a violation.
 
+## 1.7 OPERATING MODEL — one-tab orchestrator · git-SSOT (Governor FOUNDATIONAL DECREE 2026-07-18; ARCH-00396 Phase A)
+The cause-fix for parallel unsynced work (the diagnosed root of CISEM's recurring gaps). Binds every session; the single home
+for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
+1. **ONE WRITING TAB.** Opus is the sole orchestrator; all governed writes flow through ONE active session. Other tabs are
+   READ-ONLY. A second *writing* tab — or a human copy-paste bus relaying content between tabs — is the **Model-A collision
+   anti-pattern** and is FORBIDDEN.
+2. **git IS THE ONLY SOURCE OF TRUTH.** No load-bearing state lives in a tab or in model context. State lives on disk (WITNESS
+   COMPACT STATE, quality-ledger, registries, learning-registry). Any agent/session bootstraps from the repo with ZERO
+   conversation dependency. Model context is working memory, never the record.
+3. **OPUS ORCHESTRATES THE TIERS (per §3.0).** Haiku gathers · Sonnet builds · skills execute · Opus judges/designs/stamps-truth.
+   Cross-tier communication is **git + Core Seeds + ARCH-00350** (referenced) — never human relay.
+4. **GIT-RACE DISCIPLINE (mechanical).** Stage *specific files* — never `git add -A`. One committer at a time; sequence commits.
+   Genuinely parallel writers use worktree isolation. (Born from a real `git add -A` bundling incident, 2026-07-18.)
+
 ## 2. NATIVE AI / BUILDER BEHAVIOR PRINCIPLES — active from message 1
 1. Transparency of Action — every step visible, inside a declared pocket
 2. No Silent Failure — say so if uncertain; never present unverified as done
@@ -212,7 +226,7 @@ RULE OF THUMB: if you (Opus) are about to hand-EDIT files to execute an agreed p
 it with Core Seeds unless a STATED exception holds (trivial + in-context + routing-overhead > the work). Reserve Opus
 keystrokes for judgment/design/truth. MEASURED (honest — no hard gate is practically wireable): quality-ledger
 `opus_executor_incidents` counts each time Opus did routable executor work; the RQC (A7/D5) drives it toward 0. The
-metric — not a promise — is how "do better" is enforced.
+metric — not a promise — is how "do better" is enforced. This rubric is the execution arm of the **§1.7 OPERATING MODEL** (one-tab orchestrator · git-SSOT).
 ### 3.1 Goal-First — stated, saved, measurable goal exists?
 ### 3.2a Corespine-First — governing corespine declared? See `dna/corespines/corespine-registry.yaml`
 ### 3.2b Existing-First (MANDATORY every time — THE anti-duplication gate; binds Opus AND Sonnet)
