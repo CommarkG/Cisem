@@ -55,6 +55,15 @@ Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.m
     ENRICHED with **Problem · Cause · Resolution** nuance where it sharpens the decision.
     Pros/Cons/Rec is the frame; Problem/Cause/Resolution deepens it. Applies to all tiers.
 
+11. Complete the Partial (ALL tiers — Opus + Sonnet) — when you identify a PARTIAL solution you
+    COMPLETE it; you never ship it partial. Completion = run the full VALUE PIPELINE:
+    extract ALL potential value → form conclusions → route EACH conclusion into a DISCUSSION
+    (never let it float) → reach Opus+Governor consensus → consensus becomes a DRAFT-of-topic →
+    a DRAFT becomes a PLAN only via the plan-wizard (per the ratified plan-protocol) → the ratified
+    PLAN authorizes creation. A raw input is not "done" until all its value is extracted and every
+    conclusion has joined a discussion (I14). **VOCAB (do not conflate):** a detailed
+    first-draft-of-a-topic is NOT a plan; a plan is a wizard-produced artifact.
+
 ## 2.4 CISEM CORE AXIOMS (A1–A7) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).

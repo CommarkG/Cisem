@@ -28,3 +28,5 @@ Only ESSENTIAL jumps to PROCESS-NOW. In-flight completion is respected first (I1
 - BP-0003 — /cisem-create skill (auto-delivers the Creation Triad; pattern-ratified) — HIGH — essential: y — QUEUED (approved to hand to Sonnet)
 - BP-0004 — most-basic front-end "Index" (= the navigable living index / DNA-00001) — HIGH — essential: y — QUEUED (Governor-spec'd)
 - BP-0005 — wire the ONE naming/numbering gate (naming was EXISTS≠ACTIVE / 3 parallel authorities) — HIGH — essential: y — QUEUED (depends BP-0001)
+- BP-0006 — raw-input preservation + FULL value lifecycle (capture→extract→discuss→consensus→plan→create) — HIGH — essential: y — QUEUED (depends BP-0007)
+- BP-0007 — plan-gate BOOTSTRAP (meta-protocol/wizard + plan-protocol/wizard; ratified design) — HIGH — essential: y — QUEUED (root; foundational decree)
