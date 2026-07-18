@@ -5,6 +5,8 @@
 CS-THRESHOLD-001:
   status: RATIFIED
   goal: "Layer 1 mechanical input validation — the only fully closed corespine"
+  content_location:
+    distributed_in: [ARCH-00320, CLAUDE.md]   # Invariants I1-I21 live in both places
   depth_level: L2
 
 CS-CREATION-001:
@@ -12,12 +14,16 @@ CS-CREATION-001:
   goal: "Governs every creation event — Corespine-First, Goal-First, Template-First,
          Core-vs-Instance checks all fire here; ENFORCES the Creation Doctrine D1-D6 (CLAUDE.md §2.5)"
   carries_doctrine: true   # D1-D6 fire through this corespine's gates (CLAUDE.md §3 + ARCH-00230)
+  content_location:
+    distributed_in: [CLAUDE.md, ARCH-00230, ARCH-00340, ARCH-00190]  # gates, template, meta-protocol, plan-protocol
   depth_level: L1
 
 CS-AI-BEHAVIOR-001:
   status: DECLARED
   goal: "Governs every AI instance — pocket mechanism, path-rejection, oversight"
   children: [pocket-mechanism.md]   # ai-oversight-layer3.md reclassified below (was a dangling I5 reference)
+  content_location:
+    distributed_in: [CLAUDE.md, ARCH-00008, .claude/agents/CS-AI-BEHAVIOR-001/pocket-mechanism.md]  # pocket protocol, node schema, pocket definition
   pending_children:
     ai-oversight-layer3.md: { status: PLACEHOLDER, scheduled: true, note: "AI-supervision layer-3 — DECLARED intent, NOT built. Awaiting Governor design intent (build vs drop). Converted from dangling I5 reference 2026-07-16." }
   depth_level: L1
@@ -27,6 +33,8 @@ CS-MASTER-VALIDATION-001:
   priority: PRIO-BLOCKING-RESOLVED
   root_authority: true
   goal: "Governs all other corespines — defines the corespine validation protocol V1–V5 and the foundational-decree escape"
+  content_location:
+    distributed_in: [ARCH-00008, ARCH-00320, quality-ledger.yaml]  # foundational decree, invariants, ratification record
   depth_level: L1
 
 CS-ACCOUNTABILITY-001:
@@ -47,6 +55,8 @@ CS-AI-PROFILING-001:
          (tier workers) AND SKILLS (pre-created gated procedures) AND how they DELIVER the
          Creation Triad (hardcoding + AI pockets + oversight, §3.7) automatically each time.
          Includes the original persona / review-mode behavioral contracts."
+  content_location:
+    canonical_file: dna/corespines/CS-AI-PROFILING-001/CISEM-ARCH-00240-pe-pocket-definition.md  # PE pocket definition
   team:
     agents: [cisem-haiku, cisem-sonnet, cisem-opus-pe]                       # .claude/agents/ — bound, bootstrapped
     skills: [cisem-create, cisem-audit, cisem-consolidate, cisem-park, cisem-promote]  # pre-created verbs; queued via build-prompts
