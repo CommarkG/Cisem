@@ -215,6 +215,34 @@ runs:
     invariants_added: []
     verdict: OVERSIGHT WORKED — the guardrails caught a real violation on their first live test
 
+  - run: 17
+    date: 2026-07-18
+    trigger: parallel Stage-1 soundness safety-net review of ARCH-00392 (Governor RATIFIED, skipped Stage-1; Phase-0 build Core-Seeded to HALT on UNSOUND)
+    pocket: cisem-opus-pe (Principal Engineer) — declared
+    verdict_soundness: SOUND (HALT condition NOT triggered; Phase-0 authorized)
+    finding: >
+      All 3 prior-UNSOUND traps CORRECTED on disk: (1) no §1.6 fork — index-and-point
+      (ARCH-00392:54,65,83); (2) CS-THRESHOLD-001 used ONLY as ratified entry gate, category
+      error named+rejected (:66,:84); (3) gates enumerate-not-sample via grep (:53,:86). IBD-0007
+      lineage cited (:10,:70), size-blast pre-declared (:54; ssot-registry=28 lines verified),
+      I25 self-authorized, ARCH-00190 structure complete (Independent-Verifier + CAL present).
+      ARCH-00391 supersession bidirectional + real (ARCH-00391:3).
+    weakest_point: >
+      CS-THRESHOLD-001 is RATIFIED-but-BODILESS (find returns no manifest; corespine-registry:14
+      distributed_in only; audits ARCH-00280/00380/00381 flag it) — plan cites it as live anchor
+      without disclosing the empty body (I2/I23 disclosure gap). Non-blocking: MVP (Phase 0) does
+      not depend on threshold body-content.
+    highest_risk_phase: >
+      Phase 3 (repo-wide index) — its "100% one-home / 0 forks" grep gate will collide with
+      PRE-EXISTING A8 debt this plan did not cause (ARCH-00393 vs ARCH-00394 wizard-role collision;
+      CS-FRONTEND-001 I25 debt) → could red-flag a phase for inherited mess.
+    revisions_required_pre_governor_final: >
+      (1) disclose threshold bodiless-ness in Dependencies; (2) scope P3 "0 forks" to plan-introduced
+      elements, enumerate+route pre-existing debt separately; (3) name P3 blocks-on the open I25 debt +
+      393/394 collision; (4) fold stale axioms_A1_A7 label into the A8-sweep at P3.
+    invariants_added: []
+    verdict: SOUND — parallel safety net cleared the plan; corrections are P3 disclosure/scoping hygiene, non-blocking to Phase-0; Governor holds A4/I7 ratification
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
