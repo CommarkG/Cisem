@@ -2,13 +2,13 @@
 Node_ID: CISEM-ARCH-00396
 Type: ARCH
 Status: PROVISIONAL-ACTIVE
-Planning_Status: AWAITING-BUILDER-REVIEW
+Planning_Status: COMMENTS-RECEIVED — Governor ratified-with-safety-net 2026-07-18; Stage-1 independent Opus review returned UNSOUND (HALT-1 A8/ssot-registry · HALT-2 chat-only gate · HALT-3 foundational-decree weight); execution HALTED; revised v1.1 closes all 3 — Governor decree pending on the revised plan
 depth_level: L1
 tags: [planning-domain, operating-model, one-tab-orchestrator, git-ssot, creation-layer, consolidation, apex-corespine]
 ---
 
 # Operating-Model + Creation-Layer Consolidation — Plan
-**CISEM-ARCH-00396** | ARCH | **Status: PROVISIONAL-ACTIVE** | **Planning Status: AWAITING-BUILDER-REVIEW**
+**CISEM-ARCH-00396** | ARCH | **Status: PROVISIONAL-ACTIVE** | **Planning Status: COMMENTS-RECEIVED — Stage-1 UNSOUND; revised v1.1 closes 3 HALT items; Governor decree pending**
 **Goal:** Fix the ROOT cause of CISEM's recurring gaps — parallel unsynced work — by (A) formalizing the
 one-tab-orchestrator + git-SSOT operating model, and (B) consolidating the scattered creation layer under the
 proven meta-root (ARCH-00340) with CS-CREATION-001 formalized as the apex "corespine-of-corespines". ONE plan,
@@ -18,11 +18,13 @@ because it is ONE problem: *how CISEM creates and coordinates, made single-sourc
 **Independent Verifier (P5):** a FRESH cisem-opus-pe soundness review, dispatched post-draft — author (Opus) ≠ verifier.
 
 ## Existing-First (§3.2b — searched, stated)
-Ran the Haiku creation-layer OVERLAP MAP (this session): ARCH-00340 (meta-protocol, LIVE) + cisem-meta (mirror,
-self-generation test PASS this session) already ARE "the protocol+wizard that create protocols/wizards" — do NOT
-rebuild (A8/I19). CS-CREATION-001 already IS the implicit apex (L1, carries_doctrine, parent of every corespine —
-corespine-registry.yaml:21) — FORMALIZE, don't invent. ARCH-00350 is the existing (out-of-plan) comms protocol —
-absorb, don't fork. This plan ENHANCES/CONSOLIDATES existing homes; it creates exactly one new manifest (CS-CREATION-001).
+Ran the Haiku creation-layer OVERLAP MAP, embedded on disk at `dna/audits/creation-layer-overlap-map-2026-07-18.md`:
+`dna/protocols/CISEM-ARCH-00340-meta-protocol.md` (LIVE, root_authority) + `.claude/skills/cisem-meta/SKILL.md` (mirror,
+self-generation test PASS this session) already ARE "the protocol+wizard that create protocols/wizards" — do NOT rebuild
+(A8/I19). CS-CREATION-001 already IS the implicit apex (L1, carries_doctrine, parent of every corespine —
+`dna/corespines/corespine-registry.yaml:21`) — FORMALIZE, don't invent. `dna/protocols/CISEM-ARCH-00350-*` is the existing
+(out-of-plan) comms protocol — absorb, don't fork. `dna/planning/CISEM-ARCH-00190-*` is the plan-protocol this plan itself
+obeys. This plan ENHANCES/CONSOLIDATES existing homes; it creates exactly one new manifest (CS-CREATION-001) + one registry entry.
 
 ## Pocket Declaration
 - **reasoning_scope:** author the plan that formalizes the operating model + consolidates the creation layer
@@ -46,17 +48,25 @@ proven meta-root, and formalizes the apex corespine. One coordinated build; no n
 - Deliverable: a decree (CLAUDE.md new §1.7 "OPERATING MODEL", always-loaded) — *one writing tab; Opus orchestrates
   Haiku/Sonnet/skills; git = SSOT; a second WRITING tab is the Model-A violation.* Absorbs stream ① (CS-COMMS) + ② (1-tab).
   Cross-tier comms protocol = ARCH-00350 referenced (not forked). Wire the delegation rubric (§3.0) as its execution arm.
+  NOTE (HALT-3): §1.7 is an ALWAYS-LOADED, foundational governing rule binding every future session — a foundational
+  decree in effect, not mechanical bookkeeping; it is gated as such below.
 - Pass criteria (numeric): decree present in CLAUDE.md §1.7; the 3 agent files + §3.0 reference it; git-race discipline
   (stage-specific-files, no `git add -A`; worktree isolation for parallel writers) stated as a rule.
-- **GATE A → B:** Opus soundness + Governor sign-off.
+- **GATE A → B:** Opus soundness + Governor **FOUNDATIONAL DECREE** (§1.7 is foundational, not a sign-off).
 
-**PHASE B — Creation-layer consolidation (A8 under the proven root)**
+**PHASE B — Creation-layer consolidation (A8 under the proven root; closes the 4 overlap-map concerns)**
+- Evidence on disk (HALT-2 fix): `dna/audits/creation-layer-overlap-map-2026-07-18.md` enumerates the 4 flagged concerns this phase must resolve.
 - Deliverable: (1) ratify cisem-meta as verified mirror of ARCH-00340 (self-generation PASS rendered this session);
-  (2) declare **ARCH-00230 the ONE SSOT for "what every creation contains"** — CLAUDE.md §3 + cisem-create REFERENCE it,
-  stop restating (kills the triple-overlap); (3) resolve ARCH-00394 protocol-vs-wizard (annotate as a declared combined
-  node OR split the STEP 1–6 protocol out as SSOT); (4) map plan/corespine/create wizards as INSTANCES deriving from ARCH-00340.
-- Pass criteria (numeric): 0 unresolved SSOT-ambiguities from the overlap map's 4 flagged concerns; each wizard cites its
-  parent (ARCH-00340) + its mirrored protocol; [ZF] green.
+  (2) **fix the creation-checklist SSOT (concerns 1+4, HALT-1)** — designate ARCH-00230 the ONE SSOT for the *file/node
+  creation CHECKLIST* (its ACTUAL scope; it explicitly excludes plans + node-DNA per ARCH-00230:38-40 — do NOT over-title it
+  "everything"). To do so it MUST: (a) transition OUT of DRAFT; (b) correct its header self-identity (it is the creation-checklist
+  protocol, NOT CISEM-TEMPLATE-PROTOCOL-001); (c) be REGISTERED in `dna/ssot-registry.yaml` as `creation_checklist → ARCH-00230`.
+  Then CLAUDE.md §3 + cisem-create REFERENCE it (stop restating). ARCH-00340 §1 stays SSOT for *protocol structure* (concern 4);
+  (3) resolve ARCH-00394 protocol-in-wizard (concern 2) — annotate as a declared combined node with an explicit note, OR split;
+  (4) absorb ARCH-00350 as the referenced comms protocol under the Phase-A operating-model (concern 3);
+  (5) map plan/corespine/create wizards as INSTANCES deriving from ARCH-00340 (parent pointer).
+- Pass criteria (numeric): all 4 overlap-map concerns marked RESOLVED on disk; `ssot-registry.yaml` carries the new
+  `creation_checklist` entry; ARCH-00230 no longer DRAFT + header self-identity corrected; each wizard cites parent ARCH-00340 + its mirrored protocol; [ZF] green.
 - **GATE B → C:** Opus soundness + Governor sign-off.
 
 **PHASE C — Formalize CS-CREATION-001 as the apex**
@@ -76,16 +86,18 @@ proven meta-root, and formalizes the apex corespine. One coordinated build; no n
 - **GATE D:** Opus soundness (mechanical hygiene — Governor sign-off optional).
 
 ## What DOES change
-- New: CLAUDE.md §1.7 (operating-model decree); CS-CREATION-001 manifest (via ARCH-00394). Modified: ARCH-00230 (SSOT
-  declaration), CLAUDE.md §3 + cisem-create (reference ARCH-00230), cisem-meta (ratified mirror), ARCH-00394 (role
-  resolved), the 3 wizards (parent pointer), penumbra-sweep.sh + invariant-registry + quality-ledger (Phase-D fixes), naming-registry.
+- New: CLAUDE.md §1.7 (operating-model decree); CS-CREATION-001 manifest (via ARCH-00394); **`dna/ssot-registry.yaml` new
+  `creation_checklist → ARCH-00230` entry (HALT-1)**; `dna/audits/creation-layer-overlap-map-2026-07-18.md` (gate evidence, HALT-2 — created).
+  Modified: ARCH-00230 (status out of DRAFT + header self-identity corrected + SSOT scope tightened), CLAUDE.md §3 + cisem-create
+  (reference ARCH-00230), cisem-meta (ratified mirror), ARCH-00394 (role resolved), the 3 wizards (parent pointer),
+  penumbra-sweep.sh + invariant-registry + quality-ledger (Phase-D fixes), naming-registry (BP next_seq drift).
 
 ## What DOES NOT change (boundary)
 - No ratified invariant/axiom/decree weakened. ARCH-00340 (root) content unchanged — only referenced-from. The plan-gate,
   ZF gate, CAL hooks unchanged. No creation-layer PROTOCOL deleted — only consolidated/pointed. Nothing self-ratified; no phase before its gate (I7).
 
 ## Dependencies
-- **Blocks-on / uses:** Haiku overlap map (run); cisem-meta self-generation PASS (rendered); ARCH-00394 (Phase C dogfood).
+- **Blocks-on / uses:** overlap map `dna/audits/creation-layer-overlap-map-2026-07-18.md`; cisem-meta self-generation PASS (rendered); ARCH-00394 (Phase C dogfood).
 - **Absorbs:** deep-work streams ① CS-COMMS + ② 1-tab-optimization (folded into Phase A — no separate plans).
 - **Related (distinct homes):** ARCH-00350 (comms — referenced), ARCH-00392 (Phase-2 fixes land in Phase D), ARCH-00300 (§3.0 rubric).
 
@@ -108,3 +120,8 @@ phases; explicit change/no-change; dependencies + absorbed-streams named; path-r
 ## Change log
 - v1.0 — 2026-07-18: Opus draft (PE pocket). Folds the Governor-approved operating-model decision + the meta-consolidation
   architecture + the Phase-2 fixes into one phase-gated plan. Planning Status AWAITING-BUILDER-REVIEW; independent soundness review next.
+- v1.1 — 2026-07-18: Revised per Stage-1 independent review (verdict UNSOUND — 3 blocking items). Closed HALT-1 (Phase B now
+  registers `creation_checklist → ARCH-00230` in ssot-registry, transitions ARCH-00230 out of DRAFT, corrects its header
+  self-identity, tightens SSOT scope to its actual coverage), HALT-2 (overlap map embedded on disk + cited in the gate),
+  HALT-3 (Phase A §1.7 re-gated as a Governor FOUNDATIONAL decree). Fixed self-compliance path refs (§3.4). Architecture
+  unchanged (reviewer: "fundamentally sound"). Planning Status COMMENTS-RECEIVED; Governor decree pending on v1.1.
