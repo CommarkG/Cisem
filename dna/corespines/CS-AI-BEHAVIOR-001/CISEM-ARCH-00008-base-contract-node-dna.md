@@ -171,12 +171,32 @@ last_verified + owner
   pending Governor assignment of a permanent owner.
 
 ## X. AUDIT
-Applicable checklist reference, Change log / visible-change record
+Applicable checklist reference, Gate Trace (Phase 1), Change log / visible-change record
 
 **Applied to this node:**
 - *Applicable checklist reference:* CLAUDE.md §3 Hard Gates (Goal-First,
   Corespine-First, Template-First, Core-vs-Instance, Pocket Declaration,
   False Assumption Gate, Naming & Index-Extension, Size Gate).
+
+### Gate Trace (Phase 1 Auditing)
+Phase 1 manually enforced gates — document which gates ran, by whom, when, and result.
+Required for all Phase 1 creations (ARCH-00360 DECREE 3).
+
+**Gate Trace for CISEM-ARCH-00008:**
+```
+§3.1 Goal-First        ✓ PASS (Goal present, measurable outcomes stated)
+§3.2a Corespine-First  ✓ PASS (Governing corespine: CS-MASTER-VALIDATION-001)
+§3.2b Existing-First   ✓ PASS (Search: BASE-CONTRACT type reserved before creation)
+§3.2c Core-vs-Instance ✓ PASS (This is a core schema, reusable across all nodes)
+§3.3 Pocket Declaration✓ PASS (Pocket declared in header)
+§3.4 False Assumption  ✓ PASS (All section references resolve or are flagged)
+§3.5 Naming & Index    ✓ PASS (ID registered in naming-registry.yaml)
+§3.6 Size Gate         ✓ PASS (~203 lines, well under 3,500-word/200-line limit)
+
+Run by: Opus (2026-07-16, ratification pass)
+Ratified: Governor decree 2026-07-16
+```
+
 - *Change log:*
   - v0.1 — 2026-07-14: initial Drive-sourced draft (schema definition
     only, no self-applied fields).
