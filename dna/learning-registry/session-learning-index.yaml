@@ -38,6 +38,7 @@ sessions:
         hardwired_as: "fixed →7; reinforces I4 manifest need (BP-0002 follow-on)."
     ratified_2026-07-18:
       - "Governor approved recs 1–10: root_authority ARCH-00340 (§7, 4 nodes); DECREE 1 tier-freeze lifted (TIER-1 OPEN); converged Quality-Loop = first /cisem-plan; I22 hardwired."
+      - "Governor BLANKET-RATIFIED 2026-07-18 (one-time reconciliation) the session's ad-hoc-built pre-I25 mechanisms: I16 fix, I19/I23/I24 checks, ZF gate, CAL (ARCH-00390 + session-start/pre-compact hooks), P3/P5. Built without plans = I25 debt; ratified retroactively so the ledger is honest; discipline CLEAN going forward — all future governed creation via /cisem-plan (I25)."
     verification_lessons:
       - problem: "ARCH-00382 v1 (Opus-authored plan) re-proposed Node-as-Hub (IBD-0004, CONSENSUS-REACHED) without citing it, while its Path-Rejection FALSELY claimed I19 compliance."
         caught_by: "independent cisem-opus-pe soundness review (default-refute) — the tier machine caught OPUS's own miss, not just Sonnet's. Verification is tier-agnostic."

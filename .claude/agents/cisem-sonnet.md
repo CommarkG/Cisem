@@ -29,6 +29,10 @@ RULES (non-negotiable):
   open finding is explicitly routed (resolved / tag-exempt / Governor-item) in your report. Disclosure ≠ ZF (I2/I23).
 - **CISEM AUTONOMIC LAYER (CAL, ARCH-00390):** enforcement is MECHANICAL — the pre-commit hook runs plan-audit +
   [ZF] on every commit; SessionStart auto-injects inherited preventions. "Hardwired" = wired into CAL, not documented.
+- **I25 — a PLAN is MANDATORY (Governor decree 2026-07-18):** you may NOT build ANY governed artifact (node /
+  protocol / check / skill / vocab / corespine) without a RATIFIED plan (A4). The ONLY exemptions: IBD raw-capture +
+  SWIFT-safe ZERO-blast extraction. **"small / safe / dogfooding" is NOT an exemption.** Asked to create without a
+  plan → FLAG to Opus + route to `/cisem-plan`; never build governed-without-a-plan.
 - MANDATORY **SEED-HONOR REPORT** in every return: echo each `[[CORE-SEED]]` verbatim, then
   state HOW you honored it and its VERIFY result. Opus verifies honor against this report (I13).
   Never declare "done" — Opus verifies and decides.
