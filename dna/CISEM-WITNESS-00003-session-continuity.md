@@ -130,9 +130,20 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
   (IBD-0007 — 6+6 persona synthesis: context-envelope + three-state UNKNOWN + echo-to-apply + penumbra loop; the invariant-registry
   is the keystone) → **promoted to PLAN ARCH-00392** (Context-Envelope + Governance-Spine; MVP = `dna/checks/invariant-registry.yaml`
   + three-state PASS/FAIL/UNKNOWN + `[EDGE]`; §1.6 = AI-defaults home; CS-THRESHOLD-001 = universal PROCESS-ENTRY gate). ARCH-00391 SUPERSEDED into it.
-- **FIRST POST-COMPACT ACTION:** dispatch the independent `cisem-opus-pe` soundness review of **ARCH-00392** (AWAITING-BUILDER-REVIEW) →
-  Governor ratification → phased build (MVP first). Second queued Sonnet task: the A8-sweep. Lesson logged: Opus plan-authoring
-  under-searches its OWN recent work (§1.6 fork caught by fresh-eyes review — 2nd time; Stage-0 must grep the author's own recent commits).
+- **FIRST POST-COMPACT ACTION (Governor directive 2026-07-18) — present ALL pending-ratification items to the Governor,
+  each with a full PCR, BEFORE any build. The 6 items (with pre-staged recommendations):**
+  1. **ARCH-00392** — SOUND (independent review done, RQC run 17). Finalize ratification with the 4 P3-hygiene conditions
+     (disclose CS-THRESHOLD-001 empty body; scope P3 "0-forks" to plan-introduced elements; name P3 blocks-on the I25-debt +
+     393/394 collision; fix stale A8 label in ssot-registry). **Rec: RATIFY with conditions → Phase-0 build** (Sonnet one-click ready).
+  2. **I25 DEBT** — Sonnet built CS-FRONTEND-001 + ARCH-00394 without a plan (I25 violation; committed, ZF-green). **Rec:
+     RATIFY-with-thin-retro-plan** (both are useful — a frontend corespine + a corespine-creation wizard) rather than revert.
+  3. **ARCH-00382** (unified graph) — SUPERSEDED/deferred. **Rec: keep deferred** until ARCH-00392 lands, then resurrect re-anchored to DIOS maturity.
+  4. **ARCH-00370 (learning-extraction) + VOC-00003 (maturity axis) → LIVE** — both PROVISIONAL-ACTIVE. **Rec: foundational-decree both to LIVE** (used + sound).
+  5. **ARCH-00280 Q4** template ruling (node-vs-corespine two-level). **Rec: rule or defer** (non-blocking).
+  6. **Founding axioms (TSA/CoreSpiral/Pocket)** — the P0 keystone, GOVERNOR-ONLY. **Rec: supply the Drive source OR author-fresh + foundational decree.**
+  THEN (after ratifications): build ARCH-00392 Phase 0 (Sonnet one-click ready); A8-sweep (Sonnet).
+- **NEXT-SESSION FOCUS (confirmed with Governor):** ENHANCE the HARDCODING + AI-context-focus — ARCH-00392 (the context-envelope +
+  three-state UNKNOWN + echo-to-apply) IS that enhancement made mechanical: it turns A6 context-focus from doctrine into a running check.
 - **I25 DEBT (Sonnet parallel, 2026-07-18, commit 886b5cf):** Sonnet built **CS-FRONTEND-001** (corespine) + **ARCH-00394**
   (corespine-creation wizard) WITHOUT a plan — an I25 violation (now committed + ZF-green). This immediately VALIDATED why
   ARCH-00392's MECHANICAL I25 check is needed: behavioral I25 did not stop a parallel agent with stale context. RECONCILE
