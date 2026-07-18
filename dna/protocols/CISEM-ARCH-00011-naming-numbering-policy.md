@@ -119,9 +119,10 @@ node's change log as a "foundational decree" with date. It is a named, bounded
 exception — not a general licence to skip validation. Every non-root node still
 ratifies through the normal validator chain once that chain exists.
 
-**Closed set (bounded 2026-07-16):** `root_authority: true` is restricted to
-exactly three nodes — **CISEM-FOUND-00001** (Founding), **CISEM-ARCH-00011** (this
-policy), **CS-MASTER-VALIDATION-001** (root validator). Adding a fourth is ITSELF a
+**Closed set (bounded 2026-07-16; extended 2026-07-18):** `root_authority: true` is restricted to
+exactly four nodes — **CISEM-FOUND-00001** (Founding), **CISEM-ARCH-00011** (this
+policy), **CS-MASTER-VALIDATION-001** (root validator), **CISEM-ARCH-00340** (meta-protocol /
+plan-creation root — added by Governor foundational decree 2026-07-18). Adding a fifth is ITSELF a
 foundational decree, logged here. Any other node carrying `root_authority` is an
 invariant violation (candidate I11). This keeps the skip-validation switch from
 ever spreading.

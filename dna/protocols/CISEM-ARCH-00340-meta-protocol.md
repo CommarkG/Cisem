@@ -2,7 +2,7 @@
 **Node ID:** CISEM-ARCH-00340
 **Type:** ARCH | **Status:** LIVE — ratified by Governor **foundational decree 2026-07-18** (blanket
 approval of all pending, this session). The plan-gate is now LIVE; the PROVISIONAL-ACTIVE leash is removed.
-**root_authority:** candidate — a root creation tool; added to ARCH-00011 §7 set on decree.
+**root_authority:** true — added to the ARCH-00011 §7 closed set by Governor foundational decree 2026-07-18 (plan-creation root).
 **Version:** v0.1-provisional | **depth_level:** L2 | **Position in schema:** T-SYS, meta-governance
 **Wiring state:** DECLARED (drafted) → CONNECTED (when the meta-wizard implements it) → LIVE (on ratify).
 **Goal:** Define how ANY protocol is created — so protocols stop being ad-hoc — AND bootstrap the

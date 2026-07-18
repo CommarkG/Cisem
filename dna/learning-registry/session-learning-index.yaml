@@ -34,6 +34,10 @@ sessions:
         hardwired_as: "I22 + preserved as the standard for accepting any tier's 'done'."
       - insight: "Anti-bloat/dormancy/cadence are LENSES+RHYTHMS of the existing RQC/harvest loop, not new protocols — refusing to proliferate IS the anti-bloat discipline."
         hardwired_as: "IBD-0005 EXTENSION (one loop, many lenses, three rhythms)."
+      - insight: "Registry can drift from disk (WITNESS next_seq=5 while 00005/00006 existed) — a live collision risk; audit registry-vs-filesystem each save-all."
+        hardwired_as: "fixed →7; reinforces I4 manifest need (BP-0002 follow-on)."
+    ratified_2026-07-18:
+      - "Governor approved recs 1–10: root_authority ARCH-00340 (§7, 4 nodes); DECREE 1 tier-freeze lifted (TIER-1 OPEN); converged Quality-Loop = first /cisem-plan; I22 hardwired."
     # ── GAPS still open ──
     gaps_open:
       - "Learning-extraction hooks (PreCompact/SessionStart/SessionEnd) NOT built."

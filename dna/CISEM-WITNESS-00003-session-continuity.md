@@ -85,12 +85,15 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
   living index, APPROVED parallel), BP-0005 (naming gate + alignment), BP-0006 (raw lifecycle),
   BP-0008 (active archive of ruled-out ideas). BP-0003 (cisem-create) = has defects, NOT verified.
 - **PARKED (IBD):** 0001 native-vocab, 0002 accountability 4-routes/Rings, 0003 gemini-vocab, 0004 node-as-hub.
-- **PENDING GOVERNOR (post blanket-approval 2026-07-18):** CLOSED — (1) meta-layer LIVE ✓; (4) ai-oversight-
-  layer3 DROPPED ✓; DECREE 2 withdrawn ✓. OPEN — root_authority set add for ARCH-00340 (I11, one-word confirm);
-  tier-freeze decree wording confirm (DECREE 1 draft); Founding axioms (fresh tab, HANDOFF-opus-axioms.md);
-  comms content (fresh tab, HANDOFF-opus-comms.md); ARCH-00280 Q4 template ruling (non-blocking).
-- **SONNET ONE-CLICK ISSUED 2026-07-18:** BP-0002 (orchestrate invariants + I16 field-vs-field + unregistered-ID
-  check) → ARCH-00360 completion → DECREE 3/4 fields → BP-0004 parallel. Core Seeds placed by Opus.
+- **RATIFIED 2026-07-18 (Governor approved recs 1–10):** root_authority ARCH-00340 → §7 closed set (now 4 nodes) ✓;
+  DECREE 1 tier-freeze formalized + LIFTED (both conditions met → TIER-1 OPEN; `dna/queue/DECREE-2026-07-18-tier-freeze.md`) ✓;
+  converged Quality-Loop = FIRST plan through /cisem-plan; anti-bloat + dormancy = LENSES + daily/weekly/monthly
+  CADENCES of the RQC (NOT new protocols); I22 (no unverified done/wired claim) hardwired; Sonnet BP-0002 I16/I9 fixes VERIFIED live.
+- **ENFORCEMENT LIVE (plan-audit.sh):** I1, I3, I6, I9, I16 + I13 seed-strip BLOCK. Invariant set I1–I22.
+- **NEXT (one-clicks ready):** Sonnet → build+TEST hooks (SessionStart/PreCompact/SessionEnd, under I22), anti-bloat
+  size-check, dormancy-TTL check, BP-0004 front-end, fix CS-FOUND-000 + WITNESS-00007 dangling refs; then the
+  converged Quality-Loop plan via /cisem-plan. Haiku → harvest enumeration each boundary.
+- **OPEN (non-blocking):** ARCH-00280 Q4 template ruling; comms + axioms fresh tabs (HANDOFF-opus-comms.md / -axioms.md ready).
 - **KNOWN WARN (not a bug):** I16 flags ARCH-00011 (the words "not ratified" inside the PROVISIONAL-ACTIVE
   definition) + CS-COMMS-001 forward-ref — both disclosed; BP-0002 field-vs-field is the root fix.
 - **RESUME:** read CLAUDE.md → this file → quality-ledger.yaml → ssot-registry.yaml → queue/README.md.
