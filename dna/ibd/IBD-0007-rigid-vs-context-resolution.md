@@ -46,5 +46,41 @@ Rigid in the **core** (bright-line rules by rote), flagged in the **penumbra** (
 - **Phase 2:** the feedback loop (flag→ruling→regression→core migration) + the three metrics (penumbra-closure, rubber-stamp, flag precision/recall).
 - **Later:** full rollout + the human flag-UI payload.
 
+## MERGE ADDENDUM — 2026-07-18 (Haiku enumeration + Sonnet's 6 personas merged in; A8 one-source)
+**Existing-First CORRECTION (Haiku enumeration) — the honest gap is "ad-hoc + un-schematized", NOT "absent":**
+CISEM ALREADY has partial context-awareness; the new layer UNIFIES + completes it, doesn't add from scratch —
+escape valves (NOT-YET-BUILT, example-only, PLACEHOLDER, SWIFT-safe, size-exception, NOT-IN-REPO); the **4 Wiring
+States** (DECLARED→CONNECTED→ACCESSIBLE→LIVE — a proto-three-state); tag-exemptions in I1/I23; scope-aware checks
+(I19 only checks `dna/planning/`); D2's "free between seeds". MISSING: a unified schema + the UNKNOWN verdict + the penumbra loop.
+
+**THE CONCRETE HOME (Sonnet, Systems-Architect lens) — `dna/checks/invariant-registry.yaml`:** one machine-readable
+entry per invariant (I1–I24 + P3/P5/I6-SIZE): `legal_kind · applies_to · silent_on · core[] · penumbra[]`. `plan-audit.sh`
+READS it → checks only in-scope artifacts → emits **UNKNOWN (not PASS)** for penumbra. **New checks become SCHEMA
+ENTRIES, not new bash.** This is the concrete form of the envelope + the three-state (fills the gap in §1–2 above).
+
+**ACTIVE SURVEILLANCE (Sonnet, Evolutionary lens) — penumbra planted-test cadence:** each `penumbra[]` entry carries
+`test_cadence: N`; Haiku periodically PLANTS the edge + verifies it yields UNKNOWN, not a false PASS. Generalizes the
+I23 planted-violation test from one-off → systemic — closing the evolutionary loop (active, not passive, surveillance).
+
+**THE AUDIT DISTINCTION (Sonnet, ISO/QE lens) — design-adequacy vs operational-effectiveness:** today's checks test
+STRUCTURAL compliance (is the field present?), NOT the intended RISK (is the rule applied in the right context?). A
+token "Existing-First:" phrase passes I19 without a real search. Add an **out-of-scope-false-pass-rate** metric beside
+`haiku_miss_rate`; a periodic context-coherence RQC sweep that hunts false PASSES, not just failures.
+
+**FIRST CONCRETE TARGET (Sonnet, Philosophy-of-Language lens):** enumerate `core[]`/`penumbra[]` for the 5 most-used,
+under-scoped concepts — **"creation event" · "plan" · "done" · "hardwired" · "ratified"** (is a one-line field fix a
+"creation"? SWIFT says no — but it's not machine-checked). These live on the VOC nodes; the DIOS ladder is their fitness axis.
+
+**MERGED BUILD ORDER (supersedes the phased list above; Opus + Sonnet reconciled):**
+1. Promote THIS IBD via `/cisem-plan` (contract-first, stress-gated). 2. `dna/checks/invariant-registry.yaml` (envelope
+schema, one entry per check). 3. Three-state output in `plan-audit.sh` (PASS/FAIL/UNKNOWN) → an `[EDGE]` channel beside
+`[ZF]`; CAL surfaces EDGE like ZF. 4. Echo-to-apply + mandatory `applies_to` on every `[[CORE-SEED]]` (I13 enhancement
+flags seeds lacking it). 5. Penumbra planted-test cadence + out-of-scope-false-pass metric → then 5-concept enumeration + rollout.
+
+**Failure modes: the original three (over-flag / under-flag / never-close) + Sonnet's fourth — the AUDIT failure**
+(a check that tests structure but not risk = token-compliance), guarded by the out-of-scope-false-pass metric + risk-based sampling.
+
 ## ROUTING
-GOVERNED creation that **rewires A6 (axiom-weight, significant)**. All six personas + A4 insist: needs a PLAN + Governor ratification — NOT self-wired. → next: draft as a plan via `/cisem-plan` (Phase 0 first). Parked here as the SSOT of the resolution.
+GOVERNED creation that **rewires A6 (axiom-weight, significant)**. All twelve persona-lenses (Opus 6 + Sonnet 6) + A4 insist:
+needs a PLAN + Governor ratification — NOT self-wired. → next: draft as a plan via `/cisem-plan` (step 2, the invariant-registry,
+is the MVP). Parked here as the ONE SSOT of the resolution (Opus + Sonnet + Haiku merged — A8).
