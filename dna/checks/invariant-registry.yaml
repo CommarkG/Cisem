@@ -2,9 +2,13 @@
 # PURPOSE: machine-readable scope envelope per invariant so plan-audit.sh emits
 #          PASS / FAIL / UNKNOWN (three states) instead of binary PASS/FAIL.
 # READ BY: dna/checks/plan-audit.sh (v6 — presence check + grep for key patterns)
+#          dna/checks/penumbra-sweep.sh (Phase 2 — planted-test cadence, reads by path, no fork)
 # SSOT NOTE: invariant CONTENT lives in ARCH-00320 / CLAUDE.md. This file carries
 #            SCOPE ENVELOPE ONLY — legal_kind, applies_to, silent_on, core[], penumbra[].
 #            NEVER duplicate invariant rules here (A8/I10/I19 — no fork).
+# PHASE-2 NOTE: test_cadence field on penumbra[] groups = how often (every N plan-audit runs)
+#               the penumbra-sweep.sh PLANTS and ASSERTS that case routes to UNKNOWN (not PASS).
+#               A cadence of 5 means: plant-and-assert on run 5, 10, 15, … of the sweep.
 
 I19:
   label: "Existing-First search (§3.2b, plan gate)"
@@ -21,6 +25,7 @@ I19:
   penumbra:
     - "plan mentions 'Existing-First' but lists NO registries, grep, or search results"
     - "plan says 'nothing found' without naming what was searched"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
   check_pattern: "grep -qiE 'ssot-registry|corespine-registry|naming-registry|grep|archive|PROMOTES|IBD-[0-9]+|nothing found|no existing|SUPERSEDES'"
 
 I23:
@@ -38,6 +43,7 @@ I23:
   penumbra:
     - "hook files exist in .claude/hooks/ but are NOT registered in .claude/settings*.json"
     - "activation claim cites a file that exists but specific registration path is absent"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
   check_pattern: "grep -rqiE '<hook_basename>' .claude/settings*.json"
 
 I24:
@@ -54,4 +60,5 @@ I24:
   penumbra:
     - "RATIFIED with 'per Governor' or authorization word but NO date (YYYY-MM-DD) and NO run reference"
     - "RATIFIED status added without any attribution in the file"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
   check_pattern: "grep -qiE '[0-9]{4}-[0-9]{2}-[0-9]{2}|run [0-9]+|quality.ledger'"

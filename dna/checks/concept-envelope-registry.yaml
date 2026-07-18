@@ -9,8 +9,12 @@
 # legal_kind: RULE (bright line) | STANDARD (context-sensitive threshold) | PRINCIPLE (directional).
 # An EMPTY penumbra[] is itself a red flag (false certainty) — every term here declares its edge.
 # READ BY: plan-audit.sh (concept-edge routing, Phase 2 cadence) + any tier before applying the term.
+#          dna/checks/penumbra-sweep.sh (Phase 2 — planted-test cadence, reads by path, no fork)
 # HOME NOTE (Phase-1 design refinement, pending GATE 1→2): the plan text said "on the VOC nodes";
 #   refined to this sibling machine-registry because these are machine-scope envelopes, not human vocab.
+# PHASE-2 NOTE: test_cadence field on penumbra[] groups = how often (every N plan-audit runs)
+#               the penumbra-sweep.sh PLANTS and ASSERTS that case routes to UNKNOWN (not PASS).
+#               A cadence of 5 means: plant-and-assert on run 5, 10, 15, … of the sweep.
 
 creation_event:
   term: "creation event"
@@ -29,6 +33,7 @@ creation_event:
     - "a one-line truth-field fix or status stamp on an EXISTING node (is that a 'creation'? → UNKNOWN, not a false I25 FAIL)"
     - "appending a change-log row / cross-link / comment / typo fix to an existing file"
     - "splitting an over-size node per §3.6 (structural, not net-new content)"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
 
 plan:
   term: "plan"
@@ -44,6 +49,7 @@ plan:
   penumbra:
     - "a 'detailed first-draft of a topic' — feels plan-like but is NOT a plan (Principle 11: do not conflate)"
     - "a retro-plan (ARCH-00395) — a plan in form, but retroactive; authorizes nothing new going forward"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
 
 done:
   term: "done"
@@ -60,6 +66,7 @@ done:
     - "done asserted WITH disclosure but WITHOUT verification (disclosure ≠ resolution — I2)"
     - "a mechanism that EXISTS on disk but is not activated/registered (EXISTS ≠ ACTIVE — I23)"
     - "'LIVE' recommended/stamped for enforcement whose wiring was not read first (this session's run-18 miss)"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
 
 hardwired:
   term: "hardwired"
@@ -76,6 +83,7 @@ hardwired:
     - "a document that DESCRIBES a mechanism but wires nothing (documentation-as-progress bias)"
     - "a hook file present in .claude/hooks/ but NOT registered in settings*.json (fires nothing)"
     - "a mechanism that FIRES + VERIFIES but whose acted-upon step is model-performed (partly mechanical — route to UNKNOWN, disclose the split; e.g. ARCH-00370 harvest gate)"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
 
 ratified:
   term: "ratified"
@@ -92,3 +100,4 @@ ratified:
     - "'per Governor' / authorization word but NO date and NO run reference (I24 penumbra)"
     - "Opus self-ratification without a Governor decree (I7 violation — never core)"
     - "a Governor decree RELAYED secondhand through another tab, not witnessed in the ratifying tab (this session's real edge — route to UNKNOWN; require direct confirmation before stamping)"
+  test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)

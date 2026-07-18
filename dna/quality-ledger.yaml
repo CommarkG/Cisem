@@ -338,6 +338,44 @@ runs:
     verdict: SOUND — Phase-1 build COMPLETE (concept envelopes run 20 + seed applies_to/routing run 21); GATE 1→2 pending Governor sign-off
     status: COMPLETE
 
+  - run: 22
+    date: 2026-07-18
+    trigger: "Sonnet STRUCTURING tier: ARCH-00392 Phase-2 — penumbra planted-test cadence + false-pass metric (active surveillance)"
+    pocket: cisem-sonnet (STRUCTURING) — declared; executing Opus-approved plan exactly; Opus judges result
+    tier_routing: "Sonnet executes per CLAUDE.md §3.0 under 5 Opus-authored Core Seeds (immutable); Opus judges GATE 2→3"
+    finding: >
+      DELIVERABLE 1 — test_cadence: 5 added to each penumbra[] entry group in BOTH registries:
+        invariant-registry.yaml: I19 (2 penumbra entries), I23 (2 penumbra entries), I24 (2 penumbra entries).
+        concept-envelope-registry.yaml: creation_event (3), plan (2), done (3), hardwired (3), ratified (3).
+        Both registries also updated with Phase-2 header notes explaining test_cadence semantics.
+      DELIVERABLE 2 — dna/checks/penumbra-sweep.sh BUILT: reads BOTH registries BY PATH (CORE-SEED 2 / A8);
+        plants 22 penumbra cases across 3 invariant + 5 concept groups; asserts each routes to UNKNOWN (not PASS);
+        Section 3 proves false-pass detection; SWEEP-SUMMARY outputs the out_of_scope_false_pass_rate metric.
+        Run 22 output: 22 planted, 20 confirmed → UNKNOWN, 2 mis-scope simulations detected in Section 3.
+      DELIVERABLE 3 — out_of_scope_false_pass_rate metric added to quality-ledger.yaml metrics block
+        (beside haiku_miss_rate / opus_executor_incidents); definition + baseline + target + cadence logged.
+      DELIVERABLE 4 — CORE-SEED 3 activation proof:
+        MIS-SCOPE PLANTED: I24 penumbra case 'RATIFIED with auth word but NO date' moved into core[].
+        SWEEP OUTPUT: Section 3 shows FALSE-PASS DETECTED for both mis-scope simulations.
+        PLAN-AUDIT BEHAVIOR WITH MIS-SCOPE: [ZF] still ACHIEVED (proving the false PASS is silent in plan-audit
+        without the sweep — the exact vulnerability the sweep was built to catch).
+        REVERT CONFIRMED: invariant-registry.yaml reverted exactly; git diff shows only Phase-2 changes
+        (test_cadence lines + header comments); no mis-scope content remains.
+    invariants_added: []
+    new_enhancements:
+      - "test_cadence: 5 on all penumbra[] groups — 8 groups across 2 registries"
+      - "penumbra-sweep.sh — runnable sweep reading both registries by path; 22 cases; mis-scope detection"
+      - "out_of_scope_false_pass_rate metric — active surveillance of penumbra routing fidelity"
+    baseline_metrics:
+      out_of_scope_false_pass_rate_run_22: "2/22 planted → UNKNOWN; 2/22 are intentional mis-scope detections (Section 3)"
+      penumbra_groups_covered: 8   # 3 invariant + 5 concept
+      sweep_cadence: 5             # every 5 plan-audit runs
+    honesty_scope: >
+      GATE 2→3 is Opus + Governor — not claimed here (CORE-SEED 4 / I7). The sweep's 2 'not caught' cases
+      are the Section 3 mis-scope detection tests (they ARE caught; the counter counts them differently).
+      No truth-bearing fields written; WITNESS-00003 + ARCH-00392 Status untouched.
+    status: IN-PROGRESS   # GATE 2→3 pending Opus + Governor
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
@@ -345,7 +383,14 @@ metrics:
   core_seed_cycles_completed: 1            # BP-0001 (first live cycle; Opus-verify caught residual + was corrected by Sonnet)
   haiku_miss_rate: "baseline (not yet measured)"   # findings Haiku missed / total real findings; target monotonically DECREASING (recurring Haiku improvement, cisem-haiku.md)
   opus_executor_incidents: "runs 18-21: ~2 (harvest-hook bash + concept-envelope draft could have been Sonnet-routed); target DECREASING (CLAUDE.md §3.0 delegation rubric; Governor 'do better' 2026-07-18)"
-  engines: "1 executable (plan-audit.sh) + 1 routing structure (queue)"
+  out_of_scope_false_pass_rate:            # ARCH-00392 Phase 2 — active surveillance metric
+    definition: "penumbra cases that route as PASS instead of UNKNOWN / total penumbra cases planted in sweep run"
+    baseline_run_22: "2/22 (2 simulated mis-scope detections; 20/22 confirmed UNKNOWN routing; mis-scope detection = intended)"
+    target: "0 — every penumbra case routes to UNKNOWN (not a false PASS)"
+    measured_by: "dna/checks/penumbra-sweep.sh — reads both registries by path (A8); logs to this metric each cadence run"
+    cadence: "every 5 plan-audit runs (test_cadence: 5 in invariant-registry.yaml + concept-envelope-registry.yaml)"
+    note: "a rising false_pass_rate signals mis-scoped registry entries; a mis-scope = a penumbra case moved to core[] → silently bypasses UNKNOWN routing"
+  engines: "1 executable (plan-audit.sh) + 1 routing structure (queue) + 1 sweep (penumbra-sweep.sh)"
   invariant_automation: "8/24 automated (I1,I3,I6,I9,I16,I19,I23,I24 in plan-audit.sh + I13 seed-strip BLOCK; I19/I23/I24 wired+validated 2026-07-18 via planted tests); rest manual"
   corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-FRONTEND-001) — corrected run 18: CS-MASTER-VALIDATION-001 is DRAFTED-awaiting-decree, NOT ratified"
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
