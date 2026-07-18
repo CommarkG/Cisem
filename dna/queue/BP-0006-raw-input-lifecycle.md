@@ -21,9 +21,9 @@ saved-and-forgotten (the partial I was corrected on). DONE = every input/upload 
 conclusion has reached consensus (→ plan) or explicit park. Track raw status: OPEN → EXTRACTED → CLOSED.
 
 ## CORE SEEDS (immutable)
-[[CORE-SEED 1 | MUST: raw files in dna/raw/ are IMMUTABLE — processing only ever writes NEW versioned files; the raw is never edited | WHY: provenance/audit integrity | VERIFY: raw files unchanged after processing]]
-[[CORE-SEED 2 | MUST: every conclusion from extraction is routed to a discussion + tracked OPEN until consensus/park — none silently dropped | WHY: I14 / complete-the-partial (principle 11) | VERIFY: an extracted-but-unrouted conclusion is flagged]]
-[[CORE-SEED 3 | MUST: raw ids allocated through naming-registry (one gate); WARN-only, no blast risk | WHY: one-gate + SWIFT | VERIFY: raw id registered]]
+[[CORE-SEED 1 | MUST: raw files in dna/raw/ are IMMUTABLE — processing only ever writes NEW versioned files; the raw is never edited | WHY: provenance/audit integrity | VERIFY: raw files unchanged after processing | APPLIES_TO: the Sonnet tier executing BP-0006 (raw input lifecycle) — governs all writes under dna/raw/]]
+[[CORE-SEED 2 | MUST: every conclusion from extraction is routed to a discussion + tracked OPEN until consensus/park — none silently dropped | WHY: I14 / complete-the-partial (principle 11) | VERIFY: an extracted-but-unrouted conclusion is flagged | APPLIES_TO: the Sonnet tier executing BP-0006 (raw input lifecycle) — governs the extraction→discussion routing]]
+[[CORE-SEED 3 | MUST: raw ids allocated through naming-registry (one gate); WARN-only, no blast risk | WHY: one-gate + SWIFT | VERIFY: raw id registered | APPLIES_TO: the Sonnet tier executing BP-0006 (raw input lifecycle) — every raw id allocated]]
 
 ## PLAN
 1. Create dna/raw/ + register a RAW namespace in naming-registry. 2. Define the raw-status tracker

@@ -19,9 +19,9 @@ permanent, consulted memory — Gemini's Five-Surface Engraving applied to decis
 Tagged `[rejected-idea | superseded | dropped]`. Home: CS-LOOPS-001 learning-loop (its real content).
 
 ## CORE SEEDS (immutable)
-[[CORE-SEED 1 | MUST: the archive is APPEND-ONLY + immutable (like raw) — ruled-out items are never deleted, only added; a superseded item links to what replaced it | WHY: the point is a permanent memory of what to avoid | VERIFY: no archive file is ever mutated/deleted]]
-[[CORE-SEED 2 | MUST: a plan-audit WARN check flags when a new creation matches a ruled-out entry's signature (tag/keyword) → "this was ruled out on {date} because {reason} — see archive/{id}" | WHY: mechanical avoidance, not reliance on memory | VERIFY: re-proposing a ruled-out idea IS flagged]]
-[[CORE-SEED 3 | MUST: triggered at CREATION (Triad §3.7) AND on each RQC run | WHY: catch it before it is built | VERIFY: fires on creation, not only after]]
+[[CORE-SEED 1 | MUST: the archive is APPEND-ONLY + immutable (like raw) — ruled-out items are never deleted, only added; a superseded item links to what replaced it | WHY: the point is a permanent memory of what to avoid | VERIFY: no archive file is ever mutated/deleted | APPLIES_TO: the Sonnet tier executing BP-0008 (active archive) — governs all writes under dna/archive/]]
+[[CORE-SEED 2 | MUST: a plan-audit WARN check flags when a new creation matches a ruled-out entry's signature (tag/keyword) → "this was ruled out on {date} because {reason} — see archive/{id}" | WHY: mechanical avoidance, not reliance on memory | VERIFY: re-proposing a ruled-out idea IS flagged | APPLIES_TO: the Sonnet tier executing BP-0008 (active archive) — governs the plan-audit signature-match check]]
+[[CORE-SEED 3 | MUST: triggered at CREATION (Triad §3.7) AND on each RQC run | WHY: catch it before it is built | VERIFY: fires on creation, not only after | APPLIES_TO: the Sonnet tier executing BP-0008 (active archive) — the archive check fires at creation time AND on RQC runs]]
 
 ## PLAN
 1. `dna/archive/` + register an ARCHIVE namespace (one gate). 2. Migrate ARCH-00150's rejected-ideas in.

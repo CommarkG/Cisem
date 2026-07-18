@@ -13,7 +13,7 @@ dna/corespines/corespine-registry.yaml, dna/naming-manifest.yaml, + any file nam
 <what exists, what this touches, what NOT to touch>
 
 ## CORE SEEDS (immutable Opus intent — execute verbatim, flag back if wrong, never remove — I13)
-[[CORE-SEED 1 | MUST: <exact directive> | WHY: <trigger> | VERIFY: <check>]]
+[[CORE-SEED 1 | MUST: <exact directive> | WHY: <trigger> | VERIFY: <check> | APPLIES_TO: UNKNOWN — Opus to scope (this is a template placeholder; real APPLIES_TO is set when the BP is authored)]]
 
 ## PLAN (Sonnet executes step by step)
 1. <step>

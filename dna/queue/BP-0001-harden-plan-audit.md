@@ -18,9 +18,9 @@ the header field; (b) I3 flags the check script's own `status:` lines and the le
 Do NOT change the routing, the invariants, or add BLOCK conditions — hardening only.
 
 ## CORE SEEDS (immutable Opus intent)
-[[CORE-SEED 1 | MUST: I16 parses ONLY the header Status field (first ~15 lines of a file), never a "Status…RATIFIED" substring in body prose | WHY: silent-fail + status-currency I16 | VERIFY: ARCH-00310 no longer flagged; a file that is RATIFIED in header + "not ratified" in body IS still flagged]]
-[[CORE-SEED 2 | MUST: I3 excludes dna/checks/ and dna/quality-ledger.yaml from its diff scan | WHY: self-reference noise | VERIFY: editing the check script does not self-flag I3]]
-[[CORE-SEED 3 | MUST: keep plan-audit.sh WARN-ONLY (exit 0); the ONLY BLOCK stays in the pre-commit hook (I13 seed-strip) | WHY: safety, no accidental hard-block | VERIFY: script exits 0]]
+[[CORE-SEED 1 | MUST: I16 parses ONLY the header Status field (first ~15 lines of a file), never a "Status…RATIFIED" substring in body prose | WHY: silent-fail + status-currency I16 | VERIFY: ARCH-00310 no longer flagged; a file that is RATIFIED in header + "not ratified" in body IS still flagged | APPLIES_TO: the Sonnet tier executing BP-0001 (plan-audit.sh I16/I3 hardening)]]
+[[CORE-SEED 2 | MUST: I3 excludes dna/checks/ and dna/quality-ledger.yaml from its diff scan | WHY: self-reference noise | VERIFY: editing the check script does not self-flag I3 | APPLIES_TO: the Sonnet tier executing BP-0001 (plan-audit.sh I16/I3 hardening)]]
+[[CORE-SEED 3 | MUST: keep plan-audit.sh WARN-ONLY (exit 0); the ONLY BLOCK stays in the pre-commit hook (I13 seed-strip) | WHY: safety, no accidental hard-block | VERIFY: script exits 0 | APPLIES_TO: the Sonnet tier executing BP-0001 (plan-audit.sh hardening) — and ALL plan-audit.sh modifications by any tier]]
 
 ## PLAN
 1. Restrict the I16 loop to the file's header region (e.g. `head -15`) for the RATIFIED match.

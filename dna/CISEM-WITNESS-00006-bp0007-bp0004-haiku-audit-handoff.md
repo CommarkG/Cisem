@@ -205,11 +205,11 @@ ESSENTIAL: y
 BOOTSTRAP: Read this node (CISEM-WITNESS-00006) for full context + all 5 Core Seeds.
 
 CORE SEEDS (from BP-0004, immutable):
-[[CORE-SEED 1 | MUST: pure static HTML/CSS + minimal vanilla JS; NO framework/build/npm → double-click opens offline | WHY: "most basic" | VERIFY: no package.json, file opens offline]]
-[[CORE-SEED 2 | MUST: every file link = REAL existing repo file; zero dead links | WHY: A1/I1 | VERIFY: grep each href resolves]]
-[[CORE-SEED 3 | MUST: ALL 20 groups in menu + subgroups; "Index" hovers to reveal topics | WHY: Governor spec | VERIFY: 20 groups present]]
-[[CORE-SEED 4 | MUST: "To Be Reviewed & Created" page with all 12 items verbatim | WHY: Governor spec | VERIFY: page exists]]
-[[CORE-SEED 5 | MUST: every page has search, help, CISEM logo, breadcrumbs, back/forward | WHY: Governor spec | VERIFY: present on all]]
+[[CORE-SEED 1 | MUST: pure static HTML/CSS + minimal vanilla JS; NO framework/build/npm → double-click opens offline | WHY: "most basic" | VERIFY: no package.json, file opens offline | APPLIES_TO: the frontend build task (BP-0004/WITNESS-00006) — the tier executing the frontend/index.html creation]]
+[[CORE-SEED 2 | MUST: every file link = REAL existing repo file; zero dead links | WHY: A1/I1 | VERIFY: grep each href resolves | APPLIES_TO: the frontend build task (BP-0004/WITNESS-00006) — every link in the built frontend]]
+[[CORE-SEED 3 | MUST: ALL 20 groups in menu + subgroups; "Index" hovers to reveal topics | WHY: Governor spec | VERIFY: 20 groups present | APPLIES_TO: the frontend build task (BP-0004/WITNESS-00006) — the navigation structure of the built frontend]]
+[[CORE-SEED 4 | MUST: "To Be Reviewed & Created" page with all 12 items verbatim | WHY: Governor spec | VERIFY: page exists | APPLIES_TO: the frontend build task (BP-0004/WITNESS-00006) — the "To Be Reviewed" page content]]
+[[CORE-SEED 5 | MUST: every page has search, help, CISEM logo, breadcrumbs, back/forward | WHY: Governor spec | VERIFY: present on all | APPLIES_TO: the frontend build task (BP-0004/WITNESS-00006) — every page produced by the frontend build]]
 
 PHASE 1: State back the 5 seeds + what NOT to do.
 PHASE 2: Build files (frontend/index.html + 20 pages).

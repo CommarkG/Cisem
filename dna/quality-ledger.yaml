@@ -307,6 +307,27 @@ runs:
     status: IN-PROGRESS
     ratified_by: "implementation under ratified ARCH-00392 (A4/I25 satisfied); Phase-1 GATE 1→2 pending Governor"
 
+  - run: 21
+    date: 2026-07-18
+    trigger: "Sonnet STRUCTURING tier: ARCH-00392 Phase-1 mechanical remainder — applies_to on all seeds, plan-audit [SEED] check, concept-edge routing"
+    pocket: cisem-sonnet (STRUCTURING) — declared; executing Opus-approved plan exactly; Opus judges result
+    tier_routing: "Sonnet executes per CLAUDE.md §3.0; Opus wrote the 5 Core Seeds (immutable); Sonnet may not redesign"
+    finding: >
+      DELIVERABLE 1 — APPLIES_TO retrofitted on all [[CORE-SEED]] directives in the repo (14 files: CLAUDE.md + .claude/agents/
+      notes have only mechanism-mentions, not directive seeds; all 37+ actual seed directives across CLAUDE.md + dna/queue/BP-*/
+      + dna/queue/HANDOFF-* + WITNESS-00006 + ARCH-00300 + BUILD-PROMPT-template). Zero seeds lacking APPLIES_TO. Template/syntax-example
+      seeds got APPLIES_TO: UNKNOWN — Opus to scope (per Core Seed 1: unclear scope → UNKNOWN, not a guess).
+      DELIVERABLE 2 — plan-audit.sh v7: [SEED] WARN check added (seeds missing APPLIES_TO flagged; WARN-only, NOT in ZF formula).
+      Stress test A: planted TEST-SEED-MISSING-APPLIES-TO.md (seed lacking APPLIES_TO) → [SEED] flagged it; [ZF] remained ACHIEVED.
+      DELIVERABLE 3 — plan-audit.sh v7: concept-edge routing reads dna/checks/concept-envelope-registry.yaml BY PATH (A8, no fork).
+      Detects small-patch commits (≤5 changed lines, 0 new files) → routes to [EDGE] UNKNOWN per 'creation_event' penumbra.
+      Stress test B: staged 1-line change to existing file only (0 new files) → [EDGE] fired CONCEPT-EDGE UNKNOWN (not FAIL). Both planted files removed post-test.
+    invariants_added: []
+    new_enhancements:
+      - "[SEED] check — seeds without APPLIES_TO flagged (WARN-only, not ZF)"
+      - "concept-edge routing — reads concept-envelope-registry.yaml; small-patch commits → [EDGE] UNKNOWN"
+      - "APPLIES_TO retrofitted on all seeds — scope declared for I13 enforcement"
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14

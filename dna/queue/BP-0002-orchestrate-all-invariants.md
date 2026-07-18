@@ -17,9 +17,9 @@ forgotten under pressure (the exact failure this fixes). Some invariants are jud
 (e.g. I17 pocket-declared, I6 verification-behind-commit) and stay manual — that's honest.
 
 ## CORE SEEDS (immutable Opus intent)
-[[CORE-SEED 1 | MUST: every newly-automated check is WARN-ONLY first; graduation to BLOCK is a SEPARATE Opus decision after false-positive review | WHY: rigidity/safety (guardian not cage) | VERIFY: script exits 0]]
-[[CORE-SEED 2 | MUST: do NOT invent new invariants; only automate existing I1–I17 that are mechanically checkable; explicitly LIST which remain judgment-only | WHY: consolidation not accumulation | VERIFY: the list maps 1:1 to ARCH-00320's table]]
-[[CORE-SEED 3 | MUST: candidates to automate = I5 (dangling children), I9 (unregistered TYPE prefix), I15 (category §3 coverage) — the clearly-mechanical ones | WHY: highest-value, lowest-false-positive | VERIFY: each has a check block]]
+[[CORE-SEED 1 | MUST: every newly-automated check is WARN-ONLY first; graduation to BLOCK is a SEPARATE Opus decision after false-positive review | WHY: rigidity/safety (guardian not cage) | VERIFY: script exits 0 | APPLIES_TO: the Sonnet tier executing BP-0002 (invariant orchestration in plan-audit.sh)]]
+[[CORE-SEED 2 | MUST: do NOT invent new invariants; only automate existing I1–I17 that are mechanically checkable; explicitly LIST which remain judgment-only | WHY: consolidation not accumulation | VERIFY: the list maps 1:1 to ARCH-00320's table | APPLIES_TO: the Sonnet tier executing BP-0002 — governs which checks may be added to plan-audit.sh]]
+[[CORE-SEED 3 | MUST: candidates to automate = I5 (dangling children), I9 (unregistered TYPE prefix), I15 (category §3 coverage) — the clearly-mechanical ones | WHY: highest-value, lowest-false-positive | VERIFY: each has a check block | APPLIES_TO: the Sonnet tier executing BP-0002 (invariant orchestration)]]
 
 ## PLAN
 1. Read the I1–I17 table; tag each mechanical vs judgment-only.

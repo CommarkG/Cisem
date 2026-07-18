@@ -17,9 +17,9 @@ This converts manual discipline into an auto-firing engine (the Governor-ratifie
 Skill invokes Agent in a Pocket, constrained by Hardcoding, verified by Oversight, learned into the Loop).
 
 ## CORE SEEDS (immutable)
-[[CORE-SEED 1 | MUST: the skill runs ALL §3 gates (3.0–3.7) including the Triad §3.7; it may not skip a gate | WHY: A5/I18 | VERIFY: skill enumerates every gate by name]]
-[[CORE-SEED 2 | MUST: the skill routes through Threshold FIRST (PROCESS-NOW/QUEUE/PARK/REJECT) + honors park-by-demand + SWIFT | WHY: mother routing §2.7 | VERIFY: skill asks/decides the route before creating]]
-[[CORE-SEED 3 | MUST: truth-bearing steps (status, ratification, verify) are delegated to Opus/cisem-opus-pe — Sonnet drafts, never asserts | WHY: Hard Line I7 | VERIFY: skill routes truth-fields to Opus]]
+[[CORE-SEED 1 | MUST: the skill runs ALL §3 gates (3.0–3.7) including the Triad §3.7; it may not skip a gate | WHY: A5/I18 | VERIFY: skill enumerates every gate by name | APPLIES_TO: the Sonnet tier executing BP-0003 (cisem-create skill authoring) — governs the content of .claude/skills/cisem-create/SKILL.md]]
+[[CORE-SEED 2 | MUST: the skill routes through Threshold FIRST (PROCESS-NOW/QUEUE/PARK/REJECT) + honors park-by-demand + SWIFT | WHY: mother routing §2.7 | VERIFY: skill asks/decides the route before creating | APPLIES_TO: the Sonnet tier executing BP-0003 (cisem-create skill authoring)]]
+[[CORE-SEED 3 | MUST: truth-bearing steps (status, ratification, verify) are delegated to Opus/cisem-opus-pe — Sonnet drafts, never asserts | WHY: Hard Line I7 | VERIFY: skill routes truth-fields to Opus | APPLIES_TO: the Sonnet tier executing BP-0003 (cisem-create skill authoring) — and the cisem-create skill itself at runtime]]
 
 ## PLAN
 1. Write .claude/skills/cisem-create/SKILL.md enumerating: Threshold route → pocket declaration →

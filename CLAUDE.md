@@ -63,7 +63,7 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
    compactly (one line); NEVER block the new on the old, NEVER nag; the Governor may
    EXPLICITLY park/defer (then stop resurfacing it) | WHY: silent-fail trigger + the
    conflict-avoidance bias below | VERIFY: does the reply engage the new input AND list
-   what is still open?]]
+   what is still open? | APPLIES_TO: all tiers (Opus/Sonnet/Haiku) — every reply in which the Governor pivots to new content while prior open items remain unresolved]]
    WHY THIS EXISTS: the default LLM disposition optimizes for agreeableness and following
    the latest turn — it avoids friction and drops open threads when the user pivots. It
    feels smooth, but it does NOT serve excellence or the user: incomplete work wastes ALL
@@ -113,7 +113,7 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
     second paste is NOT one. Core Seeds are embedded INLINE, verbatim, in the same block they govern.
     [[CORE-SEED | MUST: a handoff/one-click is a SINGLE runnable block — all seeds + context + order inline |
     WHY: assembly-required instructions leak steps and re-introduce the drift they were meant to prevent |
-    VERIFY: could the recipient run it from ONE paste with zero back-reference? | (I21)]]
+    VERIFY: could the recipient run it from ONE paste with zero back-reference? | (I21) | APPLIES_TO: any handoff, one-click instruction, Core Seed block, or build-prompt authored by any tier]]
 
 ## 2.4 CISEM CORE AXIOMS (A1–A8) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).

@@ -18,9 +18,9 @@ Naming was 3 parallel authorities (registry + queue/README + ibd/README) — I10
 consolidated: naming-registry.yaml is the single allocator; READMEs only mirror.
 
 ## CORE SEEDS (immutable)
-[[CORE-SEED 1 | MUST: add a WARN check to plan-audit.sh that enumerates every CISEM-*/BP-*/IBD-*/HANDOFF- id on disk and flags any inconsistent with naming-registry.yaml namespaces | WHY: one-gate enforcement (I10) | VERIFY: a planted unregistered id is flagged; all current ids pass]]
-[[CORE-SEED 2 | MUST: WARN-ONLY (exit 0); do NOT rename any existing file | WHY: zero blast risk (SWIFT) | VERIFY: exit 0, no renames]]
-[[CORE-SEED 3 | MUST: treat per-README indexes (queue/ibd) as MIRRORS — if a README index disagrees with naming-registry, flag it; the README never allocates | WHY: single source I10 | VERIFY: check compares README vs registry]]
+[[CORE-SEED 1 | MUST: add a WARN check to plan-audit.sh that enumerates every CISEM-*/BP-*/IBD-*/HANDOFF- id on disk and flags any inconsistent with naming-registry.yaml namespaces | WHY: one-gate enforcement (I10) | VERIFY: a planted unregistered id is flagged; all current ids pass | APPLIES_TO: the Sonnet tier executing BP-0005 (naming gate wiring in plan-audit.sh)]]
+[[CORE-SEED 2 | MUST: WARN-ONLY (exit 0); do NOT rename any existing file | WHY: zero blast risk (SWIFT) | VERIFY: exit 0, no renames | APPLIES_TO: the Sonnet tier executing BP-0005 (naming gate wiring)]]
+[[CORE-SEED 3 | MUST: treat per-README indexes (queue/ibd) as MIRRORS — if a README index disagrees with naming-registry, flag it; the README never allocates | WHY: single source I10 | VERIFY: check compares README vs registry | APPLIES_TO: the Sonnet tier executing BP-0005 (naming gate wiring in plan-audit.sh)]]
 
 ## PLAN
 1. Enumerate ids on disk (grep filenames + headers).

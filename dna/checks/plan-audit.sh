@@ -7,6 +7,8 @@
 #        I6-SIZE (size gate — plans/protocols >200 lines without exception).
 # PHASE-0 (ARCH-00392): three-state I19/I23/I24 + [EDGE] channel (UNKNOWN/penumbra).
 #        Registry: dna/checks/invariant-registry.yaml (legal_kind/applies_to/core[]/penumbra[]).
+# PHASE-1 (ARCH-00392): [SEED] check (APPLIES_TO missing → WARN, not ZF); concept-edge routing via
+#        dna/checks/concept-envelope-registry.yaml (5 governance terms with penumbra[] → [EDGE] UNKNOWN).
 # WARN-ONLY by design: reports findings, NEVER blocks a commit (always exit 0).
 # Promote to BLOCK-mode only per ARCH-00270 after ARCH-00320 is RATIFIED.
 #
@@ -21,6 +23,10 @@
 #   Grounds: Haiku audit finding (9 files exceeded without exemptions documented).
 #   v6 (2026-07-18): ARCH-00392 Phase-0 three-state output (PASS/FAIL/UNKNOWN) for I19/I23/I24.
 #   UNKNOWN → [EDGE] channel beside [ZF]. Scope envelopes in dna/checks/invariant-registry.yaml.
+#   v7 (2026-07-18): ARCH-00392 Phase-1 — [SEED] check (APPLIES_TO missing on [[CORE-SEED]],
+#   WARN-only, not ZF); concept-edge routing reads dna/checks/concept-envelope-registry.yaml by
+#   path and routes small-patch commits (≤5 lines, 0 new files) to [EDGE] UNKNOWN per
+#   'creation_event' penumbra (A8 — registry path referenced, content not copied).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -232,8 +238,65 @@ for f in $(find dna/planning -name "*.md" 2>/dev/null); do
 done
 [ "$found_p5" = 0 ] && echo "   (none — every plan names an independent verifier)"
 
+# SEED — Phase-1 (ARCH-00392): warn when a [[CORE-SEED ...]] directive lacks an APPLIES_TO: clause.
+#        WARN-ONLY; does NOT enter the ZF formula. Detects seeds missing scope so Opus can assign.
+#        A seed spanning multiple lines: the APPLIES_TO must appear on the SAME line as ]] (closing).
+echo "[SEED] [[CORE-SEED]] directives missing APPLIES_TO: (ARCH-00392 Phase-1, WARN-only):"
+found_seed_missing=0
+# Single-line seeds: full pattern on one line — check if ]] is present AND APPLIES_TO is absent
+while IFS= read -r seedline; do
+  if echo "$seedline" | grep -qE "\[\[CORE-SEED" && echo "$seedline" | grep -qE "\]\]"; then
+    # single-line seed (opening [[ and closing ]] on same line)
+    if ! echo "$seedline" | grep -qiE "APPLIES_TO:"; then
+      srcfile=$(echo "$seedline" | cut -d: -f1)
+      srcline=$(echo "$seedline" | cut -d: -f2)
+      echo "   MISSING APPLIES_TO: $srcfile:$srcline"
+      found_seed_missing=1
+    fi
+  elif echo "$seedline" | grep -qE "\[\[CORE-SEED"; then
+    # multi-line seed — check the file for APPLIES_TO within 20 lines of this seed start
+    srcfile=$(echo "$seedline" | cut -d: -f1)
+    srclinenum=$(echo "$seedline" | cut -d: -f2)
+    # Extract lines from seed start to its ]] closing
+    seed_block=$(tail -n +"$srclinenum" "$srcfile" 2>/dev/null | head -20)
+    if ! echo "$seed_block" | grep -qiE "APPLIES_TO:"; then
+      echo "   MISSING APPLIES_TO: $srcfile:$srclinenum (multi-line seed)"
+      found_seed_missing=1
+    fi
+  fi
+done < <(grep -rn "\[\[CORE-SEED" --include="*.md" . 2>/dev/null | grep -v '.git/' | grep "MUST:")
+[ "$found_seed_missing" = 0 ] && echo "   (none — all [[CORE-SEED]] directives carry APPLIES_TO)"
+
 # EDGE — Phase-0 (ARCH-00392): UNKNOWN/penumbra channel. UNKNOWN ≠ FAIL; advisory for Opus judgment.
-echo "[EDGE] unknown/penumbra findings (invariant-registry.yaml I19/I23/I24 scope envelopes):"
+# Phase-1 enhancement: reads dna/checks/concept-envelope-registry.yaml by path to route concept-edge
+# cases to UNKNOWN instead of a false FAIL. Registry path: dna/checks/concept-envelope-registry.yaml.
+echo "[EDGE] unknown/penumbra findings (invariant-registry.yaml I19/I23/I24 scope envelopes + concept-envelope-registry.yaml concept edges):"
+# Phase-1 concept-edge routing: detect commits whose diff is ONLY small patches to EXISTING governed
+# nodes (≤5 lines changed total, no new files) — this matches the 'creation_event' penumbra entry
+# ("a one-line truth-field fix or status stamp on an EXISTING node") in concept-envelope-registry.yaml.
+# Per A8: we READ the registry path; we do NOT copy its content here.
+concept_registry="dna/checks/concept-envelope-registry.yaml"
+if [ -f "$concept_registry" ]; then
+  staged_diff=$(git diff --cached --stat 2>/dev/null)
+  unstaged_diff=$(git diff --stat 2>/dev/null)
+  combined_diff="$staged_diff$unstaged_diff"
+  if [ -n "$combined_diff" ]; then
+    # Count total lines changed and new files
+    total_insertions=$(echo "$combined_diff" | grep -oE "[0-9]+ insertion" | awk '{s+=$1} END{print s+0}')
+    total_deletions=$(echo "$combined_diff" | grep -oE "[0-9]+ deletion" | awk '{s+=$1} END{print s+0}')
+    new_files=$(git diff --cached --name-status 2>/dev/null | grep -cE "^A" || echo 0)
+    total_changed=$(( total_insertions + total_deletions ))
+    # concept-envelope-registry.yaml creation_event.penumbra: "a one-line truth-field fix or status stamp"
+    # → if total changed lines ≤ 5 AND no new governed files → route to UNKNOWN (not a creation event FAIL)
+    if [ "$total_changed" -gt 0 ] && [ "$total_changed" -le 5 ] && [ "$new_files" -eq 0 ]; then
+      edge_findings="${edge_findings}   [CONCEPT-EDGE] small patch (${total_changed} lines, 0 new files) — 'creation_event' penumbra in $concept_registry: a truth-field fix on an existing node may NOT trigger I25 (UNKNOWN, not FAIL — Opus judgment required)\n"
+      found_edge=1
+    fi
+  fi
+else
+  edge_findings="${edge_findings}   [CONCEPT-EDGE-WARN] $concept_registry not found — concept-edge routing cannot run\n"
+  found_edge=1
+fi
 if [ "$found_edge" -eq 0 ]; then
   echo "   (none — no penumbra cases this run)"
 else

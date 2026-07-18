@@ -27,9 +27,9 @@ ROOT (foundational decree, Opus+Governor):
 - A wizard is ratified only when verified to faithfully implement its protocol (mirror, not parallel — I10).
 
 ## CORE SEEDS (immutable)
-[[CORE-SEED 1 | MUST: META-PROTOCOL + META-WIZARD are the ONLY things ratified by foundational decree (root); everything else goes through them | WHY: bootstrap without regress | VERIFY: only root nodes carry root_authority (I11)]]
-[[CORE-SEED 2 | MUST: every wizard is verified to MIRROR its protocol (the protocol is SSOT; the wizard is its executable) — never two divergent sources | WHY: I10 | VERIFY: wizard steps map 1:1 to protocol clauses]]
-[[CORE-SEED 3 | MUST: the plan-gate binds GOVERNED creations only; raw capture + SWIFT-safe extractions stay exempt | WHY: no rigidity (D6) / preserve park-by-demand | VERIFY: an IBD capture needs no plan; a new node does]]
+[[CORE-SEED 1 | MUST: META-PROTOCOL + META-WIZARD are the ONLY things ratified by foundational decree (root); everything else goes through them | WHY: bootstrap without regress | VERIFY: only root nodes carry root_authority (I11) | APPLIES_TO: the Sonnet tier executing BP-0007 (plan-gate bootstrap) — governs what may carry root_authority in the created artifacts]]
+[[CORE-SEED 2 | MUST: every wizard is verified to MIRROR its protocol (the protocol is SSOT; the wizard is its executable) — never two divergent sources | WHY: I10 | VERIFY: wizard steps map 1:1 to protocol clauses | APPLIES_TO: the Sonnet tier executing BP-0007 (plan-gate bootstrap) — governs the wizard-vs-protocol fidelity check]]
+[[CORE-SEED 3 | MUST: the plan-gate binds GOVERNED creations only; raw capture + SWIFT-safe extractions stay exempt | WHY: no rigidity (D6) / preserve park-by-demand | VERIFY: an IBD capture needs no plan; a new node does | APPLIES_TO: the Sonnet tier executing BP-0007 (plan-gate bootstrap) — and the plan-gate check wired into plan-audit.sh]]
 
 ## PLAN (Opus drafts each as PROPOSED for Governor foundational decree)
 1. META-PROTOCOL + META-WIZARD (root). 2. PLAN-PROTOCOL (enhance ARCH-00190) + PLAN-WIZARD (/cisem-plan).

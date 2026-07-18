@@ -24,15 +24,15 @@ State your inherited preventions before acting on ANYTHING.
 
 ## CORE SEEDS (immutable — execute verbatim, I13)
 
-[[CORE-SEED 1 | MUST: VERIFY D-1..D-4 are fixed on disk BEFORE stamping RATIFIED — do NOT ratify a file with known defects | WHY: I22 (no unverified done) | VERIFY: D-1..D-4 confirmed fixed?]]
+[[CORE-SEED 1 | MUST: VERIFY D-1..D-4 are fixed on disk BEFORE stamping RATIFIED — do NOT ratify a file with known defects | WHY: I22 (no unverified done) | VERIFY: D-1..D-4 confirmed fixed? | APPLIES_TO: the Opus PE tier executing this HANDOFF ratification pass — governs ARCH-00393/00394/00395 stamping]]
 
-[[CORE-SEED 2 | MUST: ARCH-00394 gets Status→CONNECTED, NOT RATIFIED — it has never been run end-to-end by an independent tier | WHY: I24 (premature promotion) | VERIFY: ARCH-00394 stamped CONNECTED not RATIFIED?]]
+[[CORE-SEED 2 | MUST: ARCH-00394 gets Status→CONNECTED, NOT RATIFIED — it has never been run end-to-end by an independent tier | WHY: I24 (premature promotion) | VERIFY: ARCH-00394 stamped CONNECTED not RATIFIED? | APPLIES_TO: the Opus PE tier executing this HANDOFF ratification pass — governs ARCH-00394 status field only]]
 
-[[CORE-SEED 3 | MUST: log this ratification run to quality-ledger.yaml as a NEW run entry (increment run counter) | WHY: A7/D5 — oversight loop requires every governed creation to be logged | VERIFY: quality-ledger.yaml new run entry written?]]
+[[CORE-SEED 3 | MUST: log this ratification run to quality-ledger.yaml as a NEW run entry (increment run counter) | WHY: A7/D5 — oversight loop requires every governed creation to be logged | VERIFY: quality-ledger.yaml new run entry written? | APPLIES_TO: the Opus PE tier executing this HANDOFF ratification pass — governs the quality-ledger.yaml append]]
 
-[[CORE-SEED 4 | MUST: run plan-audit.sh and paste BOTH the [ZF] and [EDGE] lines | WHY: I22/I23 activation-proof; three-state checks are now live | VERIFY: [ZF]+[EDGE] pasted?]]
+[[CORE-SEED 4 | MUST: run plan-audit.sh and paste BOTH the [ZF] and [EDGE] lines | WHY: I22/I23 activation-proof; three-state checks are now live | VERIFY: [ZF]+[EDGE] pasted? | APPLIES_TO: the Opus PE tier executing this HANDOFF ratification pass]]
 
-[[CORE-SEED 5 | MUST: write NO truth-bearing field in ARCH-00395 or quality-ledger unless it reflects a real Governor decree — the Governor's decree is "ratify with retro plan" (2026-07-18); cite it exactly | WHY: I7 (only Opus writes truth-fields, and only when Governor has decreed) | VERIFY: decree cited correctly?]]
+[[CORE-SEED 5 | MUST: write NO truth-bearing field in ARCH-00395 or quality-ledger unless it reflects a real Governor decree — the Governor's decree is "ratify with retro plan" (2026-07-18); cite it exactly | WHY: I7 (only Opus writes truth-fields, and only when Governor has decreed) | VERIFY: decree cited correctly? | APPLIES_TO: the Opus PE tier executing this HANDOFF ratification pass — governs truth-field writes in ARCH-00395 and quality-ledger.yaml]]
 
 ---
 

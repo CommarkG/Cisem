@@ -85,7 +85,7 @@ enforceable rather than hoped.
 
 **Syntax (grep-detectable so the gate can check it):**
 ```
-[[CORE-SEED n | MUST: <exact directive> | WHY: <trigger below> | VERIFY: <how to check it was honored>]]
+[[CORE-SEED n | MUST: <exact directive> | WHY: <trigger below> | VERIFY: <how to check it was honored> | APPLIES_TO: UNKNOWN — Opus to scope (this is a template/syntax example, not a real directive)]]
 ```
 
 **Trigger checklist — a spot is SENSITIVE (→ Opus codes it directly OR seeds it) if it:**
