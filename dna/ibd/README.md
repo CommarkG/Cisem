@@ -29,3 +29,4 @@ design. Promotion assigns a real node ID at that time.
 - IBD-0001 — ai-behavior / premature-structuring-destroys-native-vocabulary — PARKED-RAW
 - IBD-0002 — accountability / core-spine / 4-route-fork — PARKED (Opus draft; feeds CS-ACCOUNTABILITY-001)
 - IBD-0003 — vocabulary / gemini-crosswalk / founding-alignment — PARKED (Opus feedback; feeds Founding + VOC)
+- IBD-0004 — architecture / node-as-hub / gem / persistent-topic-tree — PARKED (topic-draft; the ideal first PLAN through the wizard)
