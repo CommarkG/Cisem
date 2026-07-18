@@ -121,6 +121,9 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
   DOCUMENTATION-AS-PROGRESS; root-cause analysis must generalize to the CLASS + set an improved path, balanced with context (D6).
 - **DEFERRED (not dropped):** graph ARCH-00382 (SUPERSEDED, resurrectable → re-anchor to DIOS maturity); harvest loop (IBD-0005);
   SessionEnd hook + a registry-read-verify check (CAL roadmap); BLOCK-mode graduation.
+- **NEXT-SESSION TASK (Governor-parked 2026-07-18, handle thoroughly):** A8-sweep — axioms are now A1–A8, so update
+  every scattered `A1–A7` / `A1–A8` reference (agent files, ARCH-00320, protocols) to `A1–A8`. A THOROUGH pass (grep
+  all, fix all, verify ZF), assigned to Sonnet. Cosmetic/consistency-debt that A8 (one-source, no-divergence) itself mandates closing.
 - **PENDING GOVERNOR:** (1) Founding axioms TSA/CoreSpiral/Pocket (the one keystone); (2) comms CS-COMMS-001 (HANDOFF ready);
   (3) DIOS deep-dive / full-series ingestion (Governor: after axioms + the large parked issue).
 - **RESUME:** CLAUDE.md → this file (COMPACT STATE v2) → dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml
