@@ -61,6 +61,30 @@ Read: CLAUDE.md → this file → dna/quality-ledger.yaml (latest runs) → dna/
 dna/queue/README.md. Then you have full context with zero conversation dependency. First move:
 process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
+## COMPACT STATE — 2026-07-18 (latest; use THIS to resume after compact/new tab)
+- **Invariants I1–I19** (I19 = Existing-First anti-duplication; I18 = Creation Triad; I17 = PE-pocket).
+- **RATIFIED:** ARCH-00008, ARCH-00011, ARCH-00320, CS-MASTER-VALIDATION-001 (foundational).
+- **Engines:** `plan-audit.sh` (WARN + I13 seed-strip BLOCK, pre-commit); `dna/queue/` build-prompt intake.
+- **Agents:** cisem-haiku / cisem-sonnet / cisem-opus-pe (repo-resident, bootstrap + Existing-First bound).
+- **PLAN-GATE BOOTSTRAP (the unblocker):** ARCH-00340 meta-protocol + ARCH-00190 plan-protocol
+  (PROVISIONAL-ACTIVE) + `/cisem-plan` + `/cisem-meta` wizards — BP-0007 Opus-verified → CONNECTED.
+  Next: **Governor foundational decree → LIVE** (closes the PROVISIONAL-ACTIVE leash).
+- **CONSENSUS:** Node-as-Hub (the "Gem") = target architecture; it becomes the FIRST plan through
+  the wizard once the meta-layer is LIVE. (IBD-0004.)
+- **Handoff standard:** ARCH-00350 ("I am…you are…" frame + WAIT-FOR-OPUS gate).
+- **Disciplines live:** SWIFT, park-by-demand, Complete-the-Partial (principle 11), PCR (Pros/Cons/Rec
+  enriched with Problem/Cause/Resolution), PROVISIONAL-ACTIVE (audit-leashed drafts).
+- **QUEUED:** BP-0002 (orchestrate invariants + I16 field-vs-field root-fix), BP-0004 (front-end =
+  living index, APPROVED parallel), BP-0005 (naming gate + alignment), BP-0006 (raw lifecycle),
+  BP-0008 (active archive of ruled-out ideas). BP-0003 (cisem-create) = has defects, NOT verified.
+- **PARKED (IBD):** 0001 native-vocab, 0002 accountability 4-routes/Rings, 0003 gemini-vocab, 0004 node-as-hub.
+- **PENDING GOVERNOR:** (1) foundational decree the meta-layer → LIVE; (2) Founding axioms (fresh tab,
+  HANDOFF-opus-axioms.md); (3) comms content (fresh tab; CS-COMMS-001 8-fork design); (4) ai-oversight-
+  layer3 build/drop; (5) ARCH-00280 Q4 template ruling.
+- **KNOWN WARN (not a bug):** I16 flags ARCH-00011 (the words "not ratified" inside the PROVISIONAL-ACTIVE
+  definition) + CS-COMMS-001 forward-ref — both disclosed; BP-0002 field-vs-field is the root fix.
+- **RESUME:** read CLAUDE.md → this file → quality-ledger.yaml → ssot-registry.yaml → queue/README.md.
+
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
-- 2026-07-18: session-update added for clean fresh-tab handoff (many decrees + engines since).
+- 2026-07-18: session-update + COMPACT STATE added for clean compact/tab resume (I1–I19, plan-gate bootstrap CONNECTED).
