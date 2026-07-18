@@ -74,6 +74,15 @@ Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.m
     moving to a fresh tab; (5) state the resume path. The context boundary is the TRIGGER; save-all
     fires BEFORE it. A compact/tab-change without save-all is a violation (I20).
 
+13. Instruction Completeness / Zero-Assembly (ALL tiers — Governor-decreed 2026-07-18) — every
+    instruction you hand off (one-click, Core Seeds, handoff, build-prompt) MUST be COMPLETE and
+    SELF-CONTAINED: the recipient pastes ONE block and runs — no "see above", no placeholder to fill,
+    no cross-reference to assemble, no ambiguity about what/where/order. A "one-click" that needs a
+    second paste is NOT one. Core Seeds are embedded INLINE, verbatim, in the same block they govern.
+    [[CORE-SEED | MUST: a handoff/one-click is a SINGLE runnable block — all seeds + context + order inline |
+    WHY: assembly-required instructions leak steps and re-introduce the drift they were meant to prevent |
+    VERIFY: could the recipient run it from ONE paste with zero back-reference? | (I21)]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A7) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
