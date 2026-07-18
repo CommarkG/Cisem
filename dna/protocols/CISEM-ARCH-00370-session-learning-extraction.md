@@ -18,7 +18,7 @@ IBD-0005 (Harvest Orchestrator) is the per-turn/dual-pole MODE of THIS system �
 
 ## Pocket Declaration
 - **reasoning_scope:** extract session knowledge into durable storage; make learning mandatory, not optional
-- **inherited_constraints:** Axioms A1–A7, Doctrine D3 (prevention permanent + cumulative), D4 (enhancement permanent + named), D5 (guardian audits itself); I14 (no silent drops); CS-LOOPS-001 (learning loop)
+- **inherited_constraints:** Axioms A1–A8, Doctrine D3 (prevention permanent + cumulative), D4 (enhancement permanent + named), D5 (guardian audits itself); I14 (no silent drops); CS-LOOPS-001 (learning loop)
 - **output_contract:** a session-learning registry entry + a learning-extraction task that runs BEFORE every compaction + a verification that learnings were persisted
 - **ai_cannot:** skip extraction (hardwired); forget prior learnings (registry is permanent); treat learnings as optional
 - **recorded_at:** 2026-07-18

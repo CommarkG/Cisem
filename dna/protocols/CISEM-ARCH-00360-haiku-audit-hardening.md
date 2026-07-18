@@ -6,7 +6,7 @@
 
 ## Pocket Declaration
 - **reasoning_scope:** harden Haiku's enumeration process + prevent root-cause gaps from re-emerging
-- **inherited_constraints:** Axioms A1–A7; Doctrine D3 (prevention permanent + cumulative); ARCH-00320 invariants I1–I18
+- **inherited_constraints:** Axioms A1–A8; Doctrine D3 (prevention permanent + cumulative); ARCH-00320 invariants I1–I18
 - **output_contract:** 7 new standing rules that Haiku applies to every audit + 4 new governance decrees (Owner: Governor)
 - **ai_cannot:** self-ratify these rules (Opus verifies, Governor decrees)
 - **recorded_at:** 2026-07-18

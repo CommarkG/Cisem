@@ -11,7 +11,7 @@ plan-gate: this + the meta-wizard are the ROOT that every protocol/wizard/plan f
 
 ## Pocket Declaration
 - **reasoning_scope:** the universal protocol-creation contract (bootstrap root)
-- **inherited_constraints:** A1–A7, Doctrine, I10 (SSOT), the plan-gate design (BP-0007)
+- **inherited_constraints:** A1–A8, Doctrine, I10 (SSOT), the plan-gate design (BP-0007)
 - **output_contract:** required structure + ratification path + SSOT rule + wizard pairing
 - **ai_cannot:** self-ratify; leave this PROVISIONAL-ACTIVE forever (audit-enforced)
 - **recorded_at:** 2026-07-18

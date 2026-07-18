@@ -28,7 +28,7 @@ Skill invokes Agent in a Pocket, constrained by Hardcoding, verified by Oversigh
 3. Emit diff + SEED-HONOR REPORT for cisem-opus-pe verification.
 
 ## CONSTRAINTS
-Axioms A1–A7, Doctrine, §3, SSOT (I10), disclosed ≠ resolved.
+Axioms A1–A8, Doctrine, §3, SSOT (I10), disclosed ≠ resolved.
 
 ## OUTPUT
 Diff + SEED-HONOR REPORT for Opus verification BEFORE done.

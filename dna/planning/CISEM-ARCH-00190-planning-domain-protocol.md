@@ -10,7 +10,7 @@
 
 ## Pocket Declaration
 - **reasoning_scope:** define the complete plan lifecycle (DRAFT → PLAN → implementation)
-- **inherited_constraints:** Axioms A1–A7; Doctrine D1–D6; ARCH-00340 meta-protocol structure; I10 (wizard mirrors); I19 (no parallel protocols)
+- **inherited_constraints:** Axioms A1–A8; Doctrine D1–D6; ARCH-00340 meta-protocol structure; I10 (wizard mirrors); I19 (no parallel protocols)
 - **output_contract:** full planning gate structure, double-ratification path, Planning Status enum, integration with PLAN-WIZARD
 - **ai_cannot:** self-ratify a plan (only Opus + Governor can); leave ambiguity about who decides consensus
 - **recorded_at:** 2026-07-18

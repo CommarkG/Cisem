@@ -6,7 +6,7 @@
 
 ## Pocket Declaration (AI Behavior §3.3)
 - **reasoning_scope:** guide plan creation through full lifecycle (DRAFT → CONSENSUS-REACHED → COMPLETE)
-- **inherited_constraints:** ARCH-00190 (PLAN-PROTOCOL, SSOT); Axioms A1–A7; Doctrine D1–D6; I10 (mirror protocol, never diverge)
+- **inherited_constraints:** ARCH-00190 (PLAN-PROTOCOL, SSOT); Axioms A1–A8; Doctrine D1–D6; I10 (mirror protocol, never diverge)
 - **output_contract:** a plan skeleton following ARCH-00190 structure exactly, with every section filled, ready for Opus soundness review
 - **ai_cannot:** self-ratify a plan; decide consensus (only Opus + Governor can); write as if implementation is already approved
 - **recorded_at:** 2026-07-18

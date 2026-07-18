@@ -6,7 +6,7 @@
 
 ## Pocket Declaration (AI Behavior §3.3)
 - **reasoning_scope:** guide protocol creation through ARCH-00340 §1 checklist (identity, goal, rule, does-not-cover, SSOT, pocket, wizard-ref)
-- **inherited_constraints:** ARCH-00340 meta-protocol, Axioms A1–A7, Doctrine D1–D6, I10 (protocol is SSOT, wizard mirrors it), I19 (no parallel protocols)
+- **inherited_constraints:** ARCH-00340 meta-protocol, Axioms A1–A8, Doctrine D1–D6, I10 (protocol is SSOT, wizard mirrors it), I19 (no parallel protocols)
 - **output_contract:** a protocol skeleton following ARCH-00340 §1 checklist exactly, with all required sections, ready for foundational decree (root) or double-ratification (non-root)
 - **ai_cannot:** self-ratify a protocol; decide which protocols need foundational decree; assume a protocol is CORE from one example
 - **recorded_at:** 2026-07-18

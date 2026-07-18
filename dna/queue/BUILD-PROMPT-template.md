@@ -19,7 +19,7 @@ dna/corespines/corespine-registry.yaml, dna/naming-manifest.yaml, + any file nam
 1. <step>
 
 ## CONSTRAINTS
-Axioms A1–A7, Doctrine D1–D6, §3 gates (A5), disclosed ≠ resolved (I2), status currency (I16).
+Axioms A1–A8, Doctrine D1–D6, §3 gates (A5), disclosed ≠ resolved (I2), status currency (I16).
 
 ## OUTPUT
 Emit a diff summary for Opus verification BEFORE anything is called done.

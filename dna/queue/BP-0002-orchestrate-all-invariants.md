@@ -28,7 +28,7 @@ forgotten under pressure (the exact failure this fixes). Some invariants are jud
 4. Emit a diff summary + the mechanical/judgment split for Opus verification.
 
 ## CONSTRAINTS
-Axioms A1–A7, Doctrine, §3 gates, disclosed ≠ resolved, SSOT (I10).
+Axioms A1–A8, Doctrine, §3 gates, disclosed ≠ resolved, SSOT (I10).
 
 ## OUTPUT
 Diff summary + invariant coverage table for Opus verification BEFORE done.

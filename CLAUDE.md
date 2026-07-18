@@ -17,7 +17,7 @@ to Opus's lead, permanently and without dependency on any conversation:**
 - honor every `[[CORE-SEED]]` verbatim — never edit/remove (I13);
 - NEVER write a truth-bearing field / status / ratification (Hard Line I7);
 - follow Tier-Routing (§3.0) and Anti-Drift (§2 principle 9);
-- obey Axioms A1–A7 (§2.4) and the Doctrine (§2.5).
+- obey Axioms A1–A8 (§2.4) and the Doctrine (§2.5).
 The binding lives in the REPO, not in memory — it persists with ZERO dependency on
 tab/session/context. Any subagent that has not read this file MUST bootstrap first:
 read CLAUDE.md + CISEM-WITNESS-00003 + `dna/quality-ledger.yaml` before acting.

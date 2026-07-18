@@ -14,7 +14,7 @@ consensus and adds scope-roles (specific/regular/meganode≡corespine), typed ed
 
 ## Pocket Declaration
 - **reasoning_scope:** sequence the Node-as-Hub graph into stress-gated phases, MVP-first, contract-first
-- **inherited_constraints:** A1–A7; D1–D6; I7; I10 (one home); I19 (this plan's lineage = IBD-0004, not a fork); I22
+- **inherited_constraints:** A1–A8; D1–D6; I7; I10 (one home); I19 (this plan's lineage = IBD-0004, not a fork); I22
 - **output_contract:** a phased plan; each phase = deliverable + stress test + NUMERIC pass criteria + gate
 - **ai_cannot:** self-ratify; start a phase before the prior gate passes; declare a phase done without shown stress-test output
 - **recorded_at:** 2026-07-18 (v2)

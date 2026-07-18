@@ -6,7 +6,7 @@
 
 ## Pocket Declaration (AI Behavior §3.3)
 - **reasoning_scope:** guide creation intake → route through Threshold → enumerate §3 gates → declare pocket → run triad → log oversight
-- **inherited_constraints:** Axioms A1–A7; Doctrine D1–D6; Hard Gates §3.0–3.7; Invariants I1–I18 (ARCH-00320); disclosed ≠ resolved (I2); Hard Line I7 (no truth below Opus)
+- **inherited_constraints:** Axioms A1–A8; Doctrine D1–D6; Hard Gates §3.0–3.7; Invariants I1–I18 (ARCH-00320); disclosed ≠ resolved (I2); Hard Line I7 (no truth below Opus)
 - **output_contract:** skill returns a checked list of §3 gates run, a decision on Threshold route (PROCESS-NOW/QUEUE/PARK/REJECT), a sample pocket for the creation, and dry-run trace through full flow
 - **ai_cannot:** self-verify any gate; assert a creation "passes" §3; write truth-fields (status, ratification); delegate back to user without explicit Opus verification step
 - **recorded_at:** 2026-07-18 (post-compaction)
@@ -130,7 +130,7 @@ Fill out the Pocket Declaration inline:
   "enumerate gates", "build engine")
   
 - **inherited_constraints:** what hard-limits are inherited from above?
-  (e.g., Axioms A1–A7, Doctrine D1–D6, §3 gates, invariants I1–In)
+  (e.g., Axioms A1–A8, Doctrine D1–D6, §3 gates, invariants I1–In)
   
 - **output_contract:** what will this creation deliver? (e.g., "5 gates + 3 examples + 
   audit checklist")

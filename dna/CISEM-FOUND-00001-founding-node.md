@@ -32,7 +32,7 @@ Fires when the Governor supplies the source OR rules it lost:
 - **Pocket (founding sense)** — [definition AWAITING-GOVERNOR; note: `pocket-mechanism.md`
   is the *mechanism*, not the founding axiom — do not conflate]
 
-## Operating Axioms A1–A7 (Governor-provided 2026-07-18) — REAL CONTENT, firmly wired
+## Operating Axioms A1–A8 (Governor-provided 2026-07-18) — REAL CONTENT, firmly wired
 The platform's operating laws. Each is FIRMLY connected to the mechanism that enforces
 it — complete, optimized, firm; no axiom is decorative:
 

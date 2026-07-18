@@ -29,7 +29,7 @@ Do NOT change the routing, the invariants, or add BLOCK conditions — hardening
 4. Emit a diff summary for Opus verification.
 
 ## CONSTRAINTS
-Axioms A1–A7, Doctrine, §3 gates, disclosed ≠ resolved, status currency.
+Axioms A1–A8, Doctrine, §3 gates, disclosed ≠ resolved, status currency.
 
 ## OUTPUT
 Diff summary for Opus verification BEFORE done. Opus then decides which checks graduate to BLOCK.
