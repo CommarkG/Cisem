@@ -136,7 +136,7 @@ CISEM-DNA-00001:
 # naming-registry GOV next_seq: 27 → 26 node IDs assigned (00001–00026)
 # All ABSENT from this repo. Individual node names unknown — Drive-only.
 # Bulk notation used; expand when migrated.
-CISEM-GOV-00001_thru_00026:
+CISEM-GOV-00001_thru_00026:   # off-repo (I8) — Drive-only, never migrated; routed as known-off-repo, not an open finding
   path: ABSENT
   max_possible: 26   # inferred from next_seq 27 — proves the counter reached 27, NOT that 26 files exist. May have gaps (cf. ARCH 10-spacing). Do NOT treat as a verified count.
   note: Drive-only governance nodes, never migrated; individual IDs and actual quantity unverified
