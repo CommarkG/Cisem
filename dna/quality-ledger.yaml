@@ -134,9 +134,24 @@ runs:
     wiring: first BLOCK condition live (I13 seed-strip); all else WARN
     verdict: ARCH-00320 binding; freestyle hole (I17) closed; core moving toward testable maturity
 
+  - run: 12
+    date: 2026-07-18
+    trigger: Governor — "park-by-demand + build-prompts is the mother solution to ~80%"
+    pocket: Principal Engineer (ARCH-00240) — declared
+    built: >
+      PARK-BY-DEMAND formalized (CLAUDE.md §2.7): parking new input is a first-class Governor/CISEM
+      DEMAND, not AI discretion; PROCESS-NOW reserved for essential/Governor-directed; swift-when-
+      essential is a virtue. WIRED the intake engine: dna/queue/ (4-route Threshold intake +
+      build-prompt template + timeline). Demo: BP-0001 (real Sonnet-ready build-prompt to harden
+      plan-audit.sh) — parked the pivot's own step 1 instead of building it now.
+    invariants_added: []                    # engine build, not a new invariant — ON-PIVOT (wire, don't accumulate)
+    note: "first real ENGINE beyond plan-audit.sh; directly counters the shiny-object failure named in run 11 assessment"
+    verdict: mother routing live; work now distributes on a timeline via build-prompts
+
 metrics:
   invariants_total: 17
-  invariants_added_last_11_runs: 10       # I8..I17 — the loop keeps learning
+  invariants_added_last_12_runs: 10       # I8..I17 — held (no new invariant; pivot = wire, not accumulate)
+  engines: 2                               # plan-audit.sh + the queue/build-prompt intake
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared

@@ -101,6 +101,21 @@ structuring buries native vocabulary — D2); (2) assign `IBD-NNNN` + a proposed
 Promotion to a governed node is a SEPARATE, later step that runs the full gates.
 Full spec: `dna/ibd/README.md`.
 
+## 2.7 PARK-BY-DEMAND + the Timeline Virtue (the mother routing — solves ~80%)
+Parking new input is a FIRST-CLASS DEMAND: the Governor OR CISEM policy may demand ANY
+input be PARKED rather than processed now. This is the structural antidote to shiny-object
+drift and the protector of completion (I14) — the AI does NOT get to PROCESS-NOW by reflex.
+- **Default posture** under load / for non-essential input / while in-flight work is
+  incomplete = **PARK, don't process.**
+- **PROCESS-NOW only when ESSENTIAL or Governor-directed.** *Swift implementation when
+  essential is a CISEM VIRTUE* — speed is reserved for what matters, not spent on everything.
+- **Build-Prompt:** when a complex input is parked for later, Opus generates a self-contained
+  BUILD-PROMPT for `cisem-sonnet` (bootstrap + goal + Core Seeds + plan) so it processes later
+  with ZERO context loss and zero Opus re-work.
+- **Timeline:** parked items carry priority + essential(y/n) + timeframe + depends-on.
+Routing (Threshold-First, CS-THRESHOLD-001): `PROCESS-NOW | QUEUE(+build-prompt) | PARK(IBD) | REJECT`.
+Engine + queue: `dna/queue/`.
+
 ## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
 ### 3.0 Tier-Routing (NEW, MANDATORY) — before creating/executing, DECLARE the tier + why.
 Haiku gathers, Sonnet executes an agreed plan, Opus judges + codes sensitive spots.
