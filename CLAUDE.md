@@ -55,7 +55,7 @@ Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.m
     ENRICHED with **Problem · Cause · Resolution** nuance where it sharpens the decision.
     Pros/Cons/Rec is the frame; Problem/Cause/Resolution deepens it. Applies to all tiers.
 
-## 2.4 CISEM CORE AXIOMS (A1–A7) — Governor-set law, loaded every session. Full text: CISEM-FOUND-00001.
+## 2.4 CISEM CORE AXIOMS (A1–A7) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
 - **A3 Nothing exists without a place in the schema** — no floating/un-placed element; nothing drifts without a schema place (ARCH-00008 position; SCHEMA-00001).

@@ -1,0 +1,28 @@
+# CISEM SSOT Registry — ONE authoritative home per concept (consolidation index)
+# Purpose: "one source of truth serving the required outputs; no parallel elements not
+# obligated to one perfected setting." The recurring consolidation audit (RQC §6 + I10)
+# checks this each run: mirrors may reference/summarize the SSOT, they may NOT diverge;
+# on conflict the SSOT wins. Governed by I10 (broadened: EVERY element has one source).
+
+concepts:
+  axioms_A1_A7:        { ssot: dna/CISEM-FOUND-00001-founding-node.md, mirrors: ["CLAUDE.md §2.4"] }
+  creation_doctrine:   { ssot: "CLAUDE.md §2.5", mirrors: [] }
+  behavior_principles: { ssot: "CLAUDE.md §2", mirrors: [] }
+  invariants_I1_In:    { ssot: dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md, mirrors: ["inline refs only"] }
+  status_enum:         { ssot: "CISEM-ARCH-00011 §4", mirrors: [dna/vocabulary/CISEM-VOC-00002-status-library.md] }
+  wiring_states:       { ssot: "CISEM-ARCH-00011 §4", mirrors: [dna/vocabulary/CISEM-VOC-00002-status-library.md] }
+  tag_library:         { ssot: dna/vocabulary/CISEM-VOC-00001-tag-library.md, mirrors: [] }
+  TYPE_registry:       { ssot: "CISEM-ARCH-00011 §1", mirrors: [] }
+  naming_allocation:   { ssot: dna/naming-registry.yaml, note: "next_seq allocation only" }
+  naming_id_to_file:   { ssot: "filesystem", derived_view: dna/naming-manifest.yaml, note: "manifest is DERIVED, never hand-authored (I4)" }
+  tier_routing:        { ssot: dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00300-model-tier-routing.md, mirrors: ["CLAUDE.md §3.0"] }
+  core_seeds:          { ssot: "CISEM-ARCH-00300 (Core Seeds section)", mirrors: ["CLAUDE.md §3.0"] }
+  intake_routing:      { ssot: dna/queue/README.md, includes: ["dna/ibd/README.md = the PARK route"], note: "queue/ ORCHESTRATES all 4 routes incl. IBD — one intake" }
+  validation_protocol: { ssot: dna/corespines/CS-MASTER-VALIDATION-001.md, note: "V1-V5; awaiting foundational decree" }
+  session_state:       { ssot: dna/CISEM-WITNESS-00003-session-continuity.md, mirrors: ["CLAUDE.md §6"] }
+
+# CONSOLIDATION ACTIONS (from the 2026-07-18 scan):
+# - axioms: CLAUDE.md §2.4 marked a MIRROR of FOUND-00001 (SSOT) — done.
+# - intake: dna/ibd + dna/queue -> queue/ declared the orchestrator, IBD its PARK route.
+# - naming: registry (allocation) vs manifest (derived view) -> roles delineated above, not parallel.
+# - checks: only 4/17 invariants automated -> BP-0002 orchestrates the rest into ONE engine.

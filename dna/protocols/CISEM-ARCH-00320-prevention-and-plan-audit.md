@@ -45,7 +45,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I7 | Truth asserted below Opus | (prevented) | No truth-bearing field authored below Opus — CISEM-ARCH-00300 Hard Line |
 | I8 | Off-repo "authoritative" source | Founding Node, DNA-00001, GOV-00018, constraint-set.yaml cited as binding but Drive-only | No off-repo artifact may be cited as authoritative. It must be migrated into git OR flagged `NOT-IN-REPO` inline **with a named migration step** in the active plan. A referenced governing source with no file and no migration step is a violation |
 | I9 | Unregistered TYPE prefix | CISEM-SCHEMA-00001, CISEM-TEMPLATE-PROTOCOL-001 use prefixes absent from ARCH-00011 §1 | Every node's TYPE prefix MUST exist in the ARCH-00011 §1 TYPE registry, OR the same change updates that registry to add it. A node whose prefix is unregistered is a naming violation |
-| I10 | Vocabulary drift between sources | VOC-00002 carried `STAGED`; ARCH-00011 §4 did not — two governing files disagreed on the status enum | Every controlled vocabulary (status enum, TYPE registry, tag set) has exactly ONE authoritative source. All other files *mirror* it and may not add or remove values. On conflict the authoritative source wins |
+| I10 | Parallel elements / SSOT drift | axioms lived in 2 files; VOC-00002 once carried a status the policy didn't — parallel definitions drift | **Broadened (2026-07-18): EVERY concept/element** (vocabulary, axioms, invariants, doctrine, intake, routing, seeds…) has exactly ONE authoritative source, registered in `dna/ssot-registry.yaml`. Mirrors may summarize/reference but may NOT diverge; a parallel element not obligated to its SSOT is a violation. The **consolidation audit** (RQC §6) scans for this every run. On conflict, the SSOT wins |
 | I11 | root_authority sprawl | `root_authority` is a skip-validation switch that could spread | `root_authority: true` is confined to the closed set in ARCH-00011 §7 (Founding, ARCH-00011, CS-MASTER-VALIDATION). Any other node carrying it — or adding to the set without a foundational decree — is a violation |
 | I12 | Silent tier-routing | IBD was built by Opus with no routing decision — the Governor caught it | Every creation/execution DECLARES its tier owner + why before starting (CLAUDE.md §3.0). Opus doing mechanical work needs a stated exception. Silent routing is a violation |
 | I13 | Core-seed integrity | needed so Opus intent survives lower-tier execution | Every `[[CORE-SEED]]` is Opus-authored and immutable by lower tiers; it must be PRESENT and HONORED in the executed output. A missing, altered, or unhonored seed is a violation (ARCH-00300 Core Seeds) |
@@ -138,11 +138,16 @@ It bundles what already exists; it adds no governance doc.
 3. **CHECK** (§4): invariants I1..In.
 4. **SELF-CHECK**: every 5th run, a meta-audit of prior runs for MISSED findings
    (completeness critic) — the cycle audits its own auditor.
-5. **LEARN & GROW** (CS-LOOPS-001/learning + qc-findings, now `unwired:false`): a
+5. **LEARN & GROW + EXECUTE** (CS-LOOPS-001/learning + qc-findings, `unwired:false`): a
    novel finding mapping to NO existing invariant becomes a CANDIDATE invariant;
-   Opus rules, Governor ratifies, the checklist GROWS. Resolved findings are
-   re-checked each run (regression memory). Proof it already works: **I8, I9, I10
-   were each born this session from real findings — the loop has learned 3×.**
+   Opus rules, Governor ratifies, the checklist GROWS. **Critical (the creation-learning
+   loop): every learning must be EXECUTED on every creation, not merely recorded — else
+   AI forgets it and endlessly repeats already-identified mistakes.** Today only 4/17
+   invariants are automated; BP-0002 orchestrates the rest into the one engine so
+   learnings are enforced, not forgotten. Resolved findings are re-checked each run
+   (regression memory). Proof it works: I8–I17 were born from real findings.
+5b. **CONSOLIDATE** (SSOT audit): each run, scan for parallel elements not obligated to
+   their one source (`dna/ssot-registry.yaml`); flag divergent mirrors (I10).
 6. **MEASURE**: each run appends to `dna/quality-ledger.yaml` (findings/invariant,
    disclosed→resolved time, recurrence rate, invariants-added). A flat or
    worsening trend is itself a finding.

@@ -148,10 +148,27 @@ runs:
     note: "first real ENGINE beyond plan-audit.sh; directly counters the shiny-object failure named in run 11 assessment"
     verdict: mother routing live; work now distributes on a timeline via build-prompts
 
+  - run: 13
+    date: 2026-07-18
+    trigger: Governor — enhance consolidation (one source of truth); wire creation-learning; present validation keystone
+    pocket: Principal Engineer (ARCH-00240) — declared
+    consolidation_scan: >
+      Axioms were defined in 2 files (SSOT split — fixed: FOUND-00001 is SSOT, CLAUDE §2.4 a mirror).
+      Intake was 2 mechanisms (ibd+queue — queue declared orchestrator). Only 4/17 invariants
+      automated → 13 learnings declared-not-executed (the creation-forgetting risk, quantified).
+    built: >
+      dna/ssot-registry.yaml (concept→one-home consolidation index). I10 BROADENED (every element
+      one source, not just vocab) instead of adding I18 — consolidation by example. RQC §6 gains a
+      CONSOLIDATE stage + creation-learning EXECUTE note. BP-0002 queued (orchestrate all invariants
+      into the one engine so learnings are executed, not forgotten).
+    invariants_added: []                    # broadened I10, did NOT add I18 — consolidation not accumulation
+    verdict: consolidation wired + recurring; creation-learning gap quantified + queued (BP-0002)
+
 metrics:
   invariants_total: 17
-  invariants_added_last_12_runs: 10       # I8..I17 — held (no new invariant; pivot = wire, not accumulate)
-  engines: 2                               # plan-audit.sh + the queue/build-prompt intake
+  invariants_added_last_13_runs: 10       # held — consolidation, not accumulation
+  engines: 2                               # plan-audit.sh + queue/build-prompt intake
+  invariant_automation: "4/17 automated (I1/I3/I6/I16); 13 manual — BP-0002 closes the mechanical ones"
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
