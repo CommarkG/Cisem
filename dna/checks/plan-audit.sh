@@ -102,5 +102,17 @@ if [ "$hooks_present" = 0 ]; then
 fi
 [ "$found_i23" = 0 ] && echo "   (none — every activation claim has a mechanism on disk or an honest NOT-YET-BUILT marker)"
 
+# I19 — Existing-First is MANDATORY and now MACHINE-CHECKED (Governor 2026-07-18: "check what exists"
+#       must be enforced, not manual). Every plan (dna/planning/*.md) MUST state its Existing-First search
+#       (registry / manifest / corespine / archive / grep / knowledge-library). A plan without it is a violation.
+echo "[I19] plans missing a stated Existing-First search (§3.2b):"
+found_i19=0
+for f in $(find dna/planning -name "*.md" 2>/dev/null); do
+  if ! grep -qiE "existing.first|EXISTS-FIRST|§?3\.2b|i searched|searched:|search order|Lineage \(I19\)|knowledge.library" "$f"; then
+    echo "   MISSING: $f (no Existing-First search stated)"; found_i19=1
+  fi
+done
+[ "$found_i19" = 0 ] && echo "   (none — every plan states its Existing-First search)"
+
 echo "── end — WARN-ONLY (except I13 seed-strip BLOCK in pre-commit). Full protocol: ARCH-00320 ──"
 exit 0

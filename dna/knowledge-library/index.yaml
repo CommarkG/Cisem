@@ -1,0 +1,27 @@
+# CISEM Knowledge Library — index of uploaded files + external research findings.
+# Governed by: CLAUDE.md §3.2b (Existing-First MUST consult this on any topic change + before any plan/create).
+# Off-repo sources = I8 (Drive), cited by fileId. Each entry MUST carry: id, status, total_tags,
+# internal_parts (part → tags), summary — so any AI can find relevant knowledge fast (Governor requirement).
+# Maturity status uses the DIOS 0014 scale (Signal … Constitutional).
+
+next_seq: KL-0002
+entries:
+  - id: KL-0001
+    title: "DIOS Knowledge Maturity & Transformation Framework (0014)"
+    source: "Google Drive (off-repo, I8), fileId: 1mx0n0DG4x7GCfu8Vcgh1iS3FFexn8cnw"
+    status: REFERENCE — DIOS L7 (Constitutional); ADOPTED as CISEM's maturity/depth spine (2026-07-18)
+    total_tags: [knowledge-maturity, depth-levels, validation, inheritance, anti-patterns, corespine-transformation, confidence, regression]
+    internal_parts:
+      - part: "8 maturity levels (Signal→Observation→Hypothesis→Pattern→Insight→Principle-Candidate→Validated→Constitutional)"
+        tags: [maturity-levels, semantic-depth]
+      - part: "Promotion requires validation (evidence + independent confirmation; not automatic)"
+        tags: [validation, independent-verifier, I23]
+      - part: "Anti-patterns: validation-avoidance, premature-principle, asset-addiction, hoarding, inflation"
+        tags: [anti-patterns, exists-not-active, prevention]
+      - part: "Knowledge→CoreSpine: Branch / Sub-Branch / Core by scope+universality"
+        tags: [scope, meganode, corespine, three-scopes]
+      - part: "Maturity-aware + relationship-aware inheritance; confidence model; regression-is-integrity"
+        tags: [inheritance, graph, confidence, regression]
+    summary: "The constitutional knowledge-maturity spine. Knowledge matures Signal→Constitutional; promotion requires validation; anti-patterns map to CISEM's exact recurring failures. Adopted as CISEM's depth axis (resurrection approved)."
+    consulted_by: "ALL tiers, on any topic change + before any plan/create (§3.2b, machine-checked by plan-audit.sh [I19])."
+# Deep-dive scheduled (Governor 2026-07-18): index the full DIOS series (0005, 0010–0013) + uploaded research.

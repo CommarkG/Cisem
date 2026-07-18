@@ -183,6 +183,11 @@ RULED OUT? then avoid it) → `grep` the repo. Then:
 - **Nothing exists** → only then create — and STATE what you searched.
 This lives here (always-loaded) so it **survives compacting and tab changes** — Opus and Sonnet run
 it every session, from repo state, not memory. Silent create-without-search = violation **I19**.
+**HARDWIRED (Governor 2026-07-18):** Existing-First fires on ANY TOPIC CHANGE (not only at creation) and MUST
+be STATED in EVERY plan. The search INCLUDES the KNOWLEDGE LIBRARY (`dna/knowledge-library/index.yaml` — uploaded
+files + research, tagged + status'd + indexed). Now MECHANICALLY ENFORCED: `plan-audit.sh [I19]` flags any plan
+lacking a stated Existing-First search. Binds ALL tiers, ALL skills (existing + the creation protocol), and every
+plan. A deeper wiring pass is SCHEDULED (not the final form).
 ### 3.2c Core-vs-Instance (NEW) — "Is this a reusable CORE capability or a
 SPECIFIC INSTANCE?" Defaults to INSTANCE until a second real use case earns
 core status. Never assumed from one example (see: SOL-GIFTPRO-001, tagged
