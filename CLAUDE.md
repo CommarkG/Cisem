@@ -48,6 +48,15 @@ lives here in CISEM-LOAD-00001; (2) ENFORCED every creation — §3 gates serve 
 — WITNESS nodes + `dna/quality-ledger.yaml` preserve full context. Any AI, any session,
 is saturated in D1–D6 before it creates anything.
 
+## 2.6 IBD — Internal Brain Dump (raw parking, gate-exempt by design)
+The Governor may drop a raw thought/issue at any time. Protocol: (1) save it VERBATIM
+to `dna/ibd/` — never edit, restructure, summarize, or "optimize" it (premature
+structuring buries native vocabulary — D2); (2) assign `IBD-NNNN` + a proposed tag +
+`status: PARKED-RAW`; (3) present ONLY the tag + status for Governor ratify; (4) SILENCE
+= saved as-is anyway. IBD is a sanctioned exception to the §3 gates (capture-first).
+Promotion to a governed node is a SEPARATE, later step that runs the full gates.
+Full spec: `dna/ibd/README.md`.
+
 ## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
 ### 3.1 Goal-First — stated, saved, measurable goal exists?
 ### 3.2a Corespine-First — governing corespine declared? See `dna/corespines/corespine-registry.yaml`
