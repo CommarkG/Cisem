@@ -16,7 +16,7 @@ GOV:     { next_seq: 27 }
 ARCH:    { next_seq: 382 }  # highest assigned: 00381 (dormancy-audit, PROVISIONAL-ACTIVE, registered 2026-07-18). 00380 = diagnostics-report, 00381 = dormancy-audit (both audit reports, dna/audits/). 00361-00369, 00371-00379 open for inserts. 10-spacing: planning/governance nodes spaced by 10 (…00290, 00300, 00310, 00320); intervening reserved. NOTE: I4 invariant (assigned-ID→file manifest) still unfulfilled — build is open Sonnet task (BP-0002 dependent work).
 PARK:    { next_seq: 2 }
 SES:     { next_seq: 2 }
-WITNESS: { next_seq: 4, pending_migration: ["00002"] }   # 00001 migrated; 00003 = session-continuity witness (2026-07-16, real node — supersedes the prior phantom 00003 claim in ARCH-00170)
+WITNESS: { next_seq: 5, pending_migration: ["00002"] }   # 00001 migrated; 00003 = session-continuity (2026-07-16); 00004 = compaction handoff (2026-07-18)
 VOC:     { next_seq: 3 }    # 00001 (Tag Library), 00002 (Status Library) assigned this session
 LOAD:    { next_seq: 2 }    # 00001 used
 REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself (root registry, exempt)
