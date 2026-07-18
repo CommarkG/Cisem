@@ -202,6 +202,17 @@ review it, code the sensitive parts, and place **Core Seeds** — immutable
 `[[CORE-SEED …]]` directives the lower tier executes verbatim and may not edit/remove.
 Full spec: CISEM-ARCH-00300 (Core Seeds + the mandatory plan-execution loop).
 Invariants I12 (routing declared) + I13 (seed integrity). Silent routing = violation.
+**DELEGATION EFFICIENCY (Governor "do better" 2026-07-18) — the routing RUBRIC · default-parallel · measured:**
+Before executing multi-step work, DECOMPOSE into three lanes and dispatch the INDEPENDENT ones IN PARALLEL (one message,
+multiple Agent calls — never serialize what can run concurrently):
+- **GATHER → Haiku** (cheap, first): grep/enumerate, registry-vs-fs diffs, header extraction, overlap maps, gap scans.
+- **BUILD → Sonnet** (the main builder): apply an Opus-approved plan/checklist — edits, sweeps, manifests, stress tests.
+- **JUDGE · DESIGN · TRUTH → Opus ONLY:** soundness verdicts, architecture decisions, Core Seeds, truth-fields (I7).
+RULE OF THUMB: if you (Opus) are about to hand-EDIT files to execute an agreed plan, STOP — that is Sonnet's lane; route
+it with Core Seeds unless a STATED exception holds (trivial + in-context + routing-overhead > the work). Reserve Opus
+keystrokes for judgment/design/truth. MEASURED (honest — no hard gate is practically wireable): quality-ledger
+`opus_executor_incidents` counts each time Opus did routable executor work; the RQC (A7/D5) drives it toward 0. The
+metric — not a promise — is how "do better" is enforced.
 ### 3.1 Goal-First — stated, saved, measurable goal exists?
 ### 3.2a Corespine-First — governing corespine declared? See `dna/corespines/corespine-registry.yaml`
 ### 3.2b Existing-First (MANDATORY every time — THE anti-duplication gate; binds Opus AND Sonnet)

@@ -7,7 +7,7 @@
     var cnt = document.getElementById('cnt');
     var nr  = document.getElementById('no-result');
     if (!inp) return;
-    var items = document.querySelectorAll('.fi, .gc');
+    var items = document.querySelectorAll('.fi, .gc, .cl-item, .tier-card');
     var total = items.length;
     function upd() {
       var q = inp.value.toLowerCase().trim();

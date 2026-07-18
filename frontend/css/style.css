@@ -122,6 +122,33 @@ body.view-window .fi:hover { border-color: var(--accent); }
 body.view-window .fi .ico { font-size: 20px; }
 body.view-window .fi .fp { margin-left: 0; padding-left: 0; font-size: 10px; margin-top: auto; }
 
+/* CONTENT LIST ITEMS (inline axioms, principles, rules, agents on group pages) */
+ul.cl { list-style: none; }
+.cl-item { border-top: 1px solid var(--border); padding: 12px 10px; display: flex; gap: 12px; }
+.cl-item:last-child { border-bottom: 1px solid var(--border); }
+.cl-main { flex: 1; min-width: 0; }
+.cl-num { color: var(--muted); font-size: 11px; font-family: var(--mono); min-width: 34px; flex-shrink: 0; padding-top: 2px; font-weight: 600; }
+.cl-title { color: var(--text); font-weight: 600; font-size: 13px; margin-bottom: 3px; }
+.cl-body { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.cl-badge { display: inline-block; border-radius: 3px; font-size: 10px; padding: 1px 6px; margin-top: 6px; margin-right: 4px; font-family: var(--mono); }
+.cl-badge.auto { background: rgba(63,185,80,.12); border: 1px solid rgba(63,185,80,.3); color: #3fb950; }
+.cl-badge.auto-block { background: rgba(248,81,73,.12); border: 1px solid rgba(248,81,73,.3); color: #f85149; }
+.cl-badge.manual { background: rgba(139,148,158,.1); border: 1px solid var(--border); color: var(--muted); }
+.cl-badge.ratified { background: rgba(88,166,255,.12); border: 1px solid rgba(88,166,255,.3); color: var(--accent); }
+.cl-badge.declared { background: rgba(139,148,158,.1); border: 1px solid var(--border); color: var(--muted); }
+
+/* Tier cards (agents page) */
+.tier-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; margin-bottom: 20px; }
+.tier-card { background: var(--nav); border: 1px solid var(--border); border-radius: 6px; padding: 16px; }
+.tier-model { font-size: 10px; font-family: var(--mono); color: var(--muted); margin-bottom: 4px; }
+.tier-name { color: var(--accent); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.tier-role { color: var(--text); font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+.tier-body { color: var(--muted); font-size: 12px; line-height: 1.6; margin-bottom: 8px; }
+.tier-caps { display: flex; flex-wrap: wrap; gap: 4px; }
+.tier-cap { background: rgba(139,148,158,.1); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; padding: 1px 6px; font-family: var(--mono); }
+.tier-cap.can { border-color: rgba(63,185,80,.3); color: #3fb950; background: rgba(63,185,80,.08); }
+.tier-cap.cannot { border-color: rgba(248,81,73,.3); color: #f85149; background: rgba(248,81,73,.08); }
+
 /* TO-BE-REVIEWED LIST */
 .tbr-item { border-top: 1px solid var(--border); padding: 10px 12px; }
 .tbr-item:last-child { border-bottom: 1px solid var(--border); }

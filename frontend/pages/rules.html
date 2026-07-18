@@ -40,36 +40,226 @@
     <a href="help.html" class="ni" title="Help">?</a>
   </div>
 </nav>
-<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button> 
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <a href="../index.html">Home</a><span class="sep">/</span><span>20 · Rules</span>
 </div>
 <main>
   <h1>Rules</h1>
-  <p class="pg-desc">Invariants I1&ndash;I22 &mdash; standing prevention rules. Each was born from a real failure (D3: Prevention is permanent + cumulative). Automation state: ~6/22 automated; 16/22 manual discipline.</p>
+  <p class="pg-desc">Invariants I1&ndash;I25 — standing prevention rules, each born from a real failure (D3: Prevention is permanent + cumulative). The set only grows; removal needs a foundational decree. Automation state: plan-audit.sh checks I1/I3/I6/I9/I13/I16/I19/I23/I24 (WARN-ONLY; I13 also BLOCKS). SSOT: CISEM-ARCH-00320.</p>
 
-  <div class="sh">SSOT for Invariants</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md"><span class="ico">&#128196;</span>CISEM-ARCH-00320-prevention-and-plan-audit.md<span class="fp">dna/protocols/ — §4 I1–I22, §6 RQC</span></a></li>
+  <div class="sh">Invariants I1&ndash;I25</div>
+  <ul class="cl">
+    <li class="cl-item">
+      <div class="cl-num">I1</div>
+      <div class="cl-main">
+        <div class="cl-title">No phantom references</div>
+        <div class="cl-body">Every referenced ID / path resolves on disk OR carries an explicit <code>NOT-YET-A-NODE</code> / <code>example-only</code> tag inline. A dangling reference with no tag is a violation.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I2</div>
+      <div class="cl-main">
+        <div class="cl-title">Disclosed ≠ Resolved</div>
+        <div class="cl-body">Closure verbs (close / resolve / complete / fix) in a commit or status require a <code>last_verified</code> line + a reproducible check. Acknowledging a problem does not close it.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I3</div>
+      <div class="cl-main">
+        <div class="cl-title">Uncommitted truth-bump</div>
+        <div class="cl-body">Truth-field changes (Status / RATIFIED / last_verified) commit atomically with a decree reference — never left dangling in the working tree at handoff.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I4</div>
+      <div class="cl-main">
+        <div class="cl-title">Registry must have an ID→file manifest</div>
+        <div class="cl-body">Every registry maintains an assigned-ID→file manifest, diffable against the filesystem. The manifest is DERIVED (ground truth = registry + filesystem), regenerated and diffed each audit — never hand-authored.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I5</div>
+      <div class="cl-main">
+        <div class="cl-title">No dangling children</div>
+        <div class="cl-body">Every registry <code>child</code> / dependency reference resolves on disk or is <code>PLACEHOLDER</code>-tagged. A declared child with no file and no tag is a violation.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I6</div>
+      <div class="cl-main">
+        <div class="cl-title">Phantom commit claim</div>
+        <div class="cl-body">Any "committed / created" claim is verified against <code>git log</code> before the claim is written. A claim that cannot be verified in git history is a violation.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I7</div>
+      <div class="cl-main">
+        <div class="cl-title">Truth asserted below Opus</div>
+        <div class="cl-body">No truth-bearing field (Status: RATIFIED, last_verified, quality-ledger run entries) authored below the Opus tier. CISEM-ARCH-00300 Hard Line — this is the highest-priority tier invariant.</div>
+        <span class="cl-badge manual">MANUAL (tier discipline)</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I8</div>
+      <div class="cl-main">
+        <div class="cl-title">No off-repo authoritative source</div>
+        <div class="cl-body">No off-repo artifact (Google Drive, etc.) may be cited as authoritative. It must be migrated into git OR flagged <code>NOT-IN-REPO</code> inline with a named migration step in the active plan.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I9</div>
+      <div class="cl-main">
+        <div class="cl-title">Unregistered TYPE prefix</div>
+        <div class="cl-body">Every node's TYPE prefix MUST exist in ARCH-00011 §1 TYPE registry, OR the same change updates that registry to add it. A node whose prefix is unregistered is a naming violation.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I10</div>
+      <div class="cl-main">
+        <div class="cl-title">SSOT drift / parallel elements</div>
+        <div class="cl-body">EVERY concept / element has exactly ONE authoritative source registered in <code>dna/ssot-registry.yaml</code>. Mirrors may summarize / reference but may NOT diverge. A parallel element not obligated to its SSOT is a violation. Broadened 2026-07-18 (A8).</div>
+        <span class="cl-badge manual">MANUAL (RQC consolidation audit)</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I11</div>
+      <div class="cl-main">
+        <div class="cl-title">root_authority sprawl</div>
+        <div class="cl-body"><code>root_authority: true</code> is confined to the closed set in ARCH-00011 §7 (Founding, ARCH-00011, CS-MASTER-VALIDATION). Adding to the set requires a foundational decree.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I12</div>
+      <div class="cl-main">
+        <div class="cl-title">Silent tier-routing</div>
+        <div class="cl-body">Every creation / execution DECLARES its tier owner + why before starting (CLAUDE.md §3.0). Opus doing mechanical work needs a stated exception. Silent routing is a violation.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I13</div>
+      <div class="cl-main">
+        <div class="cl-title">Core-Seed integrity</div>
+        <div class="cl-body">Every <code>[[CORE-SEED]]</code> is Opus-authored and immutable by lower tiers. Must be PRESENT and HONORED in the executed output, verified via a mandatory Seed-Honor Report. A missing, altered, or unhonored seed is a violation.</div>
+        <span class="cl-badge auto-block">BLOCK pre-commit</span>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I14</div>
+      <div class="cl-main">
+        <div class="cl-title">Silent thread-drop / drift</div>
+        <div class="cl-body">Every presented decision-item stays OPEN until explicitly resolved / rejected / parked. SILENCE ≠ resolution. On a pivot the reply handles the new AND resurfaces open items. All tiers, all tabs / sessions, no exceptions.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I15</div>
+      <div class="cl-main">
+        <div class="cl-title">Category exempt from §3 (A5)</div>
+        <div class="cl-body">No category of creation is exempt from §3 gates — files, documents, agents, skills, wizards, vocabulary, file-naming, QC of every type, changes to hardcoded elements, core councils. Creating any of these without the gates is a violation.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I16</div>
+      <div class="cl-main">
+        <div class="cl-title">Stale status / dynamic drift</div>
+        <div class="cl-body">Every artifact carries ACTIVE governance metadata (tag + status + wiring-state + owner) reflecting CURRENT reality, updated the moment reality changes. A stale or self-contradicting status is a violation. Wiring states: DECLARED → CONNECTED → ACCESSIBLE → LIVE.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I17</div>
+      <div class="cl-main">
+        <div class="cl-title">Freestyle governance (no pocket)</div>
+        <div class="cl-body">Opus governance / review / rulings run AS the Principal Engineer pocket (ARCH-00240) with a Pocket Declaration stated inline (reasoning_scope, inherited_constraints, output_contract, ai_cannot, recorded_at). Freestyle reasoning outside a declared pocket is a violation.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I18</div>
+      <div class="cl-main">
+        <div class="cl-title">Creation Triad incomplete</div>
+        <div class="cl-body">Every creation demonstrates ALL THREE as one gate (CLAUDE.md §3.7): hardcoding (§3 + invariants), AI pocket (declared, §3.3 / I17), AI oversight (RQC run + logged to <code>dna/quality-ledger.yaml</code>). Missing any leg is a violation.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I19</div>
+      <div class="cl-main">
+        <div class="cl-title">Duplication / no Existing-First search</div>
+        <div class="cl-body">Every plan / implement / create is preceded by an EXISTING-FIRST search (CLAUDE.md §3.2b): SSOT-registry → manifest + corespine-registry → archive → grep. A creation that duplicates an existing SSOT concept or re-proposes a ruled-out one is a violation. The search must be stated. Fires on ANY TOPIC CHANGE. Binds Opus + Sonnet, every tab.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I20</div>
+      <div class="cl-main">
+        <div class="cl-title">Context boundary without save-all</div>
+        <div class="cl-body">Before any compact or tab / session change, the repo MUST be a complete SSOT: continuity record (WITNESS COMPACT STATE) updated, chat-only content embedded to files, everything committed + pushed, handoffs prepped, resume path stated. A boundary crossed without save-all is a violation. Binds Opus + Sonnet.</div>
+        <span class="cl-badge auto">CAL pre-compact ENFORCED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I21</div>
+      <div class="cl-main">
+        <div class="cl-title">Instruction not self-contained (assembly-required)</div>
+        <div class="cl-body">Every handed-off instruction (one-click, Core Seeds, handoff, build-prompt) MUST be a SINGLE runnable block: all context + seeds + explicit order INLINE. No "see above", no placeholder, no cross-reference to assemble. The recipient runs it from ONE paste with zero back-reference. Governor-decreed 2026-07-18.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I22</div>
+      <div class="cl-main">
+        <div class="cl-title">Unverified done / wired / enforced claim</div>
+        <div class="cl-body">Any claim of done / wired / enforced / RATIFIED / COMPLETE MUST cite independently-verifiable evidence: a file path with the ACTUAL mechanism, a commit hash, or shown audit / test output. A "mechanical enforcement" claim requires the mechanism to EXIST and be SHOWN running. Self-attestation is not evidence. All tiers.</div>
+        <span class="cl-badge manual">MANUAL</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I23</div>
+      <div class="cl-main">
+        <div class="cl-title">EXISTS ≠ ACTIVE</div>
+        <div class="cl-body">No plan stage / capability / claim passes on EXISTENCE alone — it must prove ACTIVATION: the mechanism RUNS, shown, verified by an INDEPENDENT verifier. 4 Wiring States: DECLARED → CONNECTED → ACCESSIBLE → LIVE. Only LIVE counts. Binds all tiers.</div>
+        <span class="cl-badge auto">WARN plan-audit.sh + invariant-registry.yaml</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I24</div>
+      <div class="cl-main">
+        <div class="cl-title">Premature status promotion</div>
+        <div class="cl-body">A node's claimed STATUS implies a maturity level. Promotion requires that level's validation: RATIFIED needs a decree citation; LIVE needs its mechanism (I23); Validated-Principle needs independent confirmation. A high-status claim without the evidence is premature promotion (DIOS anti-pattern).</div>
+        <span class="cl-badge auto">WARN plan-audit.sh + invariant-registry.yaml</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">I25</div>
+      <div class="cl-main">
+        <div class="cl-title">Creation without a ratified plan (A4 unenforced)</div>
+        <div class="cl-body">A plan is MANDATORY — Governor decree 2026-07-18. NO governed creation (ARCH / protocol / check / agent / skill / axiom / vocab / corespine) may be built without a RATIFIED plan (A4). The ONLY exemptions: IBD raw-capture + SWIFT-safe zero-blast (ARCH-00190 §7). "Small / safe / dogfooding" is NOT an exemption. Binds all tiers.</div>
+        <span class="cl-badge manual">MANUAL (ARCH-00392 Phase 0 scope envelopes)</span>
+      </div>
+    </li>
   </ul>
 
-  <div class="sh">Always-Loaded Invariant Mirrors</div>
+  <div class="sh">Source Files</div>
   <ul class="fl">
-    <li class="fi"><a href="../../CLAUDE.md"><span class="ico">&#128196;</span>CLAUDE.md<span class="fp">repo root — §1.5 tier binding + §4 hard limits</span></a></li>
-  </ul>
-
-  <div class="sh">Automated Enforcement</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../dna/checks/plan-audit.sh"><span class="ico">&#9881;</span>plan-audit.sh<span class="fp">dna/checks/ — I1/I3/I6/I9/I13/I16 (WARN-ONLY; I13 also BLOCK)</span></a></li>
-  </ul>
-
-  <div class="sh">Run History (invariants added per run)</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../dna/quality-ledger.yaml"><span class="ico">&#128202;</span>quality-ledger.yaml<span class="fp">dna/ — invariants_added_last_15_runs: 14; total: 22</span></a></li>
-  </ul>
-
-  <div class="sh">Status Vocabulary</div>
-  <ul class="fl">
+    <li class="fi"><a href="../../dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md"><span class="ico">&#128196;</span>CISEM-ARCH-00320-prevention-and-plan-audit.md<span class="fp">dna/protocols/ — §4 I1–I25, §6 RQC (SSOT)</span></a></li>
+    <li class="fi"><a href="../../dna/checks/plan-audit.sh"><span class="ico">&#9881;</span>plan-audit.sh<span class="fp">dna/checks/ — automated checks I1/I3/I6/I9/I13/I16/I19/I23/I24 + [ZF] + [EDGE]</span></a></li>
+    <li class="fi"><a href="../../dna/checks/invariant-registry.yaml"><span class="ico">&#128202;</span>invariant-registry.yaml<span class="fp">dna/checks/ — scope envelopes for I19/I23/I24 (ARCH-00392 Phase 0)</span></a></li>
+    <li class="fi"><a href="../../CLAUDE.md"><span class="ico">&#128196;</span>CLAUDE.md<span class="fp">repo root — §1.5 tier binding + §4 hard limits (always-loaded)</span></a></li>
     <li class="fi"><a href="../../dna/vocabulary/CISEM-VOC-00002-status-library.md"><span class="ico">&#128196;</span>CISEM-VOC-00002-status-library.md<span class="fp">dna/vocabulary/ — 4 Wiring States + status enum</span></a></li>
+    <li class="fi"><a href="../../dna/quality-ledger.yaml"><span class="ico">&#128202;</span>quality-ledger.yaml<span class="fp">dna/ — invariants added per run; total I1–I25</span></a></li>
   </ul>
 
   <div id="no-result">No files match your search.</div>

@@ -40,21 +40,125 @@
     <a href="help.html" class="ni" title="Help">?</a>
   </div>
 </nav>
-<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button> 
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <a href="../index.html">Home</a><span class="sep">/</span><span>03 · Axioms</span>
 </div>
 <main>
   <h1>Axioms</h1>
-  <p class="pg-desc">Core Axioms A1&ndash;A7 (nothing stands alone; everything in a corespine; nothing without schema; no ad-hoc building; hardcoded protocol; context-focus; self-improvement) + Creation Doctrine D1&ndash;D6. SSOT: CISEM-FOUND-00001; mirror: CLAUDE.md §2.4.</p>
+  <p class="pg-desc">Core Axioms A1&ndash;A8 (the eight laws governing every CISEM creation) and Creation Doctrine D1&ndash;D6 (how ratification, prevention, and oversight work together). SSOT: CISEM-FOUND-00001; always-loaded mirror: CLAUDE.md §2.4&ndash;§2.5.</p>
 
-  <div class="sh">Foundational Node (SSOT for Axioms)</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../dna/CISEM-FOUND-00001-founding-node.md"><span class="ico">&#9733;</span>CISEM-FOUND-00001-founding-node.md<span class="fp">dna/ — A1–A8 source of truth</span></a></li>
+  <div class="sh">Core Axioms — A1&ndash;A8</div>
+  <ul class="cl">
+    <li class="cl-item">
+      <div class="cl-num">A1</div>
+      <div class="cl-main">
+        <div class="cl-title">Nothing stands alone</div>
+        <div class="cl-body">No orphans, no islands — everything connects. Every artifact has at least one explicit relationship to the rest of the system. References that cannot resolve are a violation (I1). Enforced by: Island Detection + Cross-Boundary Zero-Context.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A2</div>
+      <div class="cl-main">
+        <div class="cl-title">Everything is part of a corespine</div>
+        <div class="cl-body">Every artifact declares its governing corespine (Schema_anchor + Core_spine fields). No artifact may exist outside a corespine. Enforced by: §3.2a gate — corespine declaration is mandatory before creation.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A3</div>
+      <div class="cl-main">
+        <div class="cl-title">Nothing exists without a place in the schema</div>
+        <div class="cl-body">No floating or un-placed element. Every node has an assigned position in the CISEM schema (ARCH-00008 position + SCHEMA-00001). An artifact without a schema place is a violation.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A4</div>
+      <div class="cl-main">
+        <div class="cl-title">Nothing is implemented without a ratified plan</div>
+        <div class="cl-body">No ad-hoc building. The flow is: plan → ratify → implement. A ratified plan is mandatory for every governed creation (I25). The only exemptions are IBD raw-capture and SWIFT-safe zero-blast extractions (ARCH-00190 §7). "Small / safe / dogfooding" is NOT an exemption — Governor decree 2026-07-18.</div>
+        <span class="cl-badge auto">I25 ENFORCED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A5</div>
+      <div class="cl-main">
+        <div class="cl-title">EVERYTHING is created via hardcoded protocol</div>
+        <div class="cl-body">Files, documents, agents, skills, wizards, vocabulary, file-naming, QC of every type, changes to hardcoded elements, core councils — NO category is exempt from the §3 gates. Creating any of these without the gates is a violation (I15).</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A6</div>
+      <div class="cl-main">
+        <div class="cl-title">Context-focus over rigidity</div>
+        <div class="cl-body">Act with context focus; stay aware of the limits and dangers of rigid interpretation. Hardcoding is a respectful guardian, not a cage (D6). It fixes what was ratified and frees everything else. Rigidity is a failure mode, not a virtue.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A7</div>
+      <div class="cl-main">
+        <div class="cl-title">Constant self-improvement via an AI expert team</div>
+        <div class="cl-body">A brilliant holistic team of top-AI-expert pockets (the RQC — ARCH-00320 §6) oversees and critiques how CISEM works and finds PERMANENT improvements, presenting conclusions for human processing and ratification. A4 gates the implementation of any improvement.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">A8</div>
+      <div class="cl-main">
+        <div class="cl-title">One Source (SSOT / Consolidation)</div>
+        <div class="cl-body">Every concept, rule, and node has exactly ONE authoritative home registered in <code>dna/ssot-registry.yaml</code>. Related content CONSOLIDATES into that hub — never duplicates or forks. A mirror may summarize or reference but may NOT diverge from its source. On conflict, the SSOT wins. Governor-decreed 2026-07-18 (I10 one-home + I19 no-duplication).</div>
+        <span class="cl-badge ratified">ADDED 2026-07-18</span>
+      </div>
+    </li>
   </ul>
 
-  <div class="sh">Always-Loaded Mirror (CLAUDE.md §2.4 + §2.5)</div>
+  <div class="sh">Creation Doctrine — D1&ndash;D6</div>
+  <ul class="cl">
+    <li class="cl-item">
+      <div class="cl-num">D1</div>
+      <div class="cl-main">
+        <div class="cl-title">Ratified = Recurring</div>
+        <div class="cl-body">What the Governor ratified happens the same way every time. Fidelity to ratified truth is the guardian's first duty. Every governed creation re-runs the same §3 gates — no special-casing.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">D2</div>
+      <div class="cl-main">
+        <div class="cl-title">Guard boundaries, not paths</div>
+        <div class="cl-body">Hardcode WHAT must stay true (invariants), never HOW to get there. Fixed ends, free means. This is what stops stability from becoming rigidity. The invariant set constrains; the creative path inside those constraints is free.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">D3</div>
+      <div class="cl-main">
+        <div class="cl-title">Prevention is permanent + cumulative</div>
+        <div class="cl-body">Every unwanted outcome becomes a standing invariant (I1..In, ARCH-00320 §4). The set only GROWS — removing one requires a foundational decree. This is the system's immune memory. Each new session inherits all prior preventions.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">D4</div>
+      <div class="cl-main">
+        <div class="cl-title">Enhancement is permanent + named</div>
+        <div class="cl-body">Every wanted behavior is written INTO the creation protocol (ARCH-00230) so AI is reminded AT creation time — never left to memory. An enhancement not baked into the protocol is not permanent.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">D5</div>
+      <div class="cl-main">
+        <div class="cl-title">The guardian audits itself</div>
+        <div class="cl-body">Hardcoding ACTIVATES AI oversight: the Recurring Quality Cycle (ARCH-00320 §6) audits every creation and learns from each. Stability and self-evolution are ONE loop, not two forces. Every creation feeds the improvement loop (A7).</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">D6</div>
+      <div class="cl-main">
+        <div class="cl-title">Polarity, not contradiction</div>
+        <div class="cl-body">Stable-and-evolving are complementary poles, not opposing forces. Hold ratified truth firm while letting all else adapt. Lose the stable pole → drift; lose the evolving pole → ossify. The balance IS the design (A6).</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="sh">Source Files (SSOT + mirrors)</div>
   <ul class="fl">
-    <li class="fi"><a href="../../CLAUDE.md"><span class="ico">&#128196;</span>CLAUDE.md<span class="fp">repo root — §2.4 Axioms + §2.5 Doctrine D1–D6</span></a></li>
+    <li class="fi"><a href="../../dna/CISEM-FOUND-00001-founding-node.md"><span class="ico">&#9733;</span>CISEM-FOUND-00001-founding-node.md<span class="fp">dna/ — A1–A8 SSOT</span></a></li>
+    <li class="fi"><a href="../../CLAUDE.md"><span class="ico">&#128196;</span>CLAUDE.md<span class="fp">repo root — §2.4 Axioms + §2.5 Doctrine D1–D6 (always-loaded mirror)</span></a></li>
   </ul>
 
   <div id="no-result">No files match your search.</div>
