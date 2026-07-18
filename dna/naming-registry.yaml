@@ -28,6 +28,6 @@ REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself
 # namespaces below. Per-README indexes (dna/queue/, dna/ibd/) MIRROR this; they do NOT allocate.
 # No parallel numbering. BP-0005 wires the check that flags any ID not registered here.
 BP:      { next_seq: 5 }    # build-prompts (dna/queue/BP-*): 0001-0004 used
-IBD:     { next_seq: 7 }    # internal brain dumps (dna/ibd/IBD-*): 0001-0006 used (0005 = harvest-orchestrator, 0006 = node-deliberation-dossier; Opus 2026-07-18; README mirror pending)
+IBD:     { next_seq: 8 }    # internal brain dumps (dna/ibd/IBD-*): 0001-0007 used (0005 = harvest-orchestrator, 0006 = node-deliberation-dossier, 0007 = rigid-vs-context resolution / 6-persona synthesis; Opus 2026-07-18)
 HANDOFF: { next_seq: 3 }    # cross-tab handoffs (dna/queue/HANDOFF-*): opus-axioms, opus-comms used
 KL:      { next_seq: 2 }    # knowledge-library entries (dna/knowledge-library/index.yaml): KL-0001 = DIOS-0014 maturity framework (2026-07-18)
