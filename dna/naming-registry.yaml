@@ -28,4 +28,4 @@ REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself
 # No parallel numbering. BP-0005 wires the check that flags any ID not registered here.
 BP:      { next_seq: 5 }    # build-prompts (dna/queue/BP-*): 0001-0004 used
 IBD:     { next_seq: 5 }    # internal brain dumps (dna/ibd/IBD-*): 0001-0004 used
-HANDOFF: { next_seq: 2 }    # cross-tab handoffs (dna/queue/HANDOFF-*): opus-axioms used
+HANDOFF: { next_seq: 3 }    # cross-tab handoffs (dna/queue/HANDOFF-*): opus-axioms, opus-comms used
