@@ -64,7 +64,7 @@ sessions:
       - "RQC learning-application check not built."
       - "root_authority add for ARCH-00340 (I11) — Governor one-word."
       - "DECREE 1 tier-freeze wording — Governor confirm."
-    decisions_pending:
-      - { item: "root_authority set add (ARCH-00340)", owner: Governor }
-      - { item: "DECREE 1 tier-freeze wording", owner: Governor }
+    decisions_resolved:
+      - { item: "root_authority set add (ARCH-00340)", owner: Governor, resolved_2026-07-18: "ARCH-00340 added to root_authority closed set (§7, 4 nodes); per ratified Governor rec 1" }
+      - { item: "DECREE 1 tier-freeze wording", owner: Governor, resolved_2026-07-18: "DECREE 1 lifted (both conditions met; DECREE-2026-07-18-tier-freeze.md exists; TIER-1 OPEN)" }
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md

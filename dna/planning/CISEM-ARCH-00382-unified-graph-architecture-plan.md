@@ -18,6 +18,7 @@ consensus and adds scope-roles (specific/regular/meganode≡corespine), typed ed
 - **output_contract:** a phased plan; each phase = deliverable + stress test + NUMERIC pass criteria + gate
 - **ai_cannot:** self-ratify; start a phase before the prior gate passes; declare a phase done without shown stress-test output
 - **recorded_at:** 2026-07-18 (v2)
+**Independent Verifier:** cisem-opus-pe (independent RE-review, SOUND 2026-07-18)
 
 ## Executive Summary
 This plan builds the Node-as-Hub model (IBD-0004: every node = persistent SSOT hub, mini-tree, on-demand

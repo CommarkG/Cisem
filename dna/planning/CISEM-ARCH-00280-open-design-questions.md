@@ -8,6 +8,7 @@ joint Brain-Builder consensus.
 Governing corespine: CS-CREATION-001
 
 **Existing-First exemption (§3.2b, I19):** Open design questions document — contains only questions awaiting Governor decisions, no files or nodes proposed for creation. No Existing-First search required for a deliberation/consultation document. (Named exemption class in I19 guidance: "if it is not a creating-plan, e.g. open-questions".)
+**Independent Verifier:** [pre-P5 legacy — grandfathered 2026-07-18; assign on next revision]
 
 ## 1. New Persona — proposed name "Principal Engineer" (flagged, not final)
 Traits requested: strong backbone, pushes back and insists, cruelly

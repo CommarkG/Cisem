@@ -10,6 +10,7 @@ Governing corespine: CS-CREATION-001
 Planning Domain: dna/planning/, per CISEM-ARCH-00190
 
 **Existing-First (§3.2b, I19):** Searched .git/hooks/ (pre-commit exists but runs plan-audit.sh only — no naming/size/field check hook wired); .github/ (does not exist — no CI workflows in repo); dna/checks/ (only plan-audit.sh — no enforcement-layer scripts); dna/ssot-registry.yaml (no entry for pre-commit or CI enforcement); knowledge-library/index.yaml KL-0001 consulted. Both mechanisms below (pre-commit hook for ARCH-00180 scripts + GitHub Actions CI) are new with no existing counterpart.
+**Independent Verifier:** [pre-P5 legacy — grandfathered 2026-07-18; assign on next revision]
 
 ## Why two, not one
 A single enforcement point can be bypassed. Two independent

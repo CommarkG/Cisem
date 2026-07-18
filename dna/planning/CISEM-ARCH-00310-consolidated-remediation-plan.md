@@ -28,6 +28,7 @@ Haiku (enumeration). Tri-model authorship per CISEM-ARCH-00300.
 - **output_contract:** ordered steps with owner/blocker/state
 - **ai_cannot:** self-authorize execution, self-ratify any step
 - **recorded_at:** 2026-07-16
+**Independent Verifier:** [pre-P5 legacy — grandfathered 2026-07-18; assign on next revision]
 
 ---
 

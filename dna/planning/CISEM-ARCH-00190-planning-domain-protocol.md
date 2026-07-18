@@ -14,6 +14,7 @@
 - **output_contract:** full planning gate structure, double-ratification path, Planning Status enum, integration with PLAN-WIZARD
 - **ai_cannot:** self-ratify a plan (only Opus + Governor can); leave ambiguity about who decides consensus
 - **recorded_at:** 2026-07-18
+**Independent Verifier:** [pre-P5 legacy — grandfathered 2026-07-18; assign on next revision]
 
 ---
 
