@@ -58,6 +58,7 @@ SUPERSEDED (any state can transition here)
 [ ] Ratification Path (Opus soundness review → Governor authority decree)
 [ ] Self-compliance (against ARCH-00230 checklist + this protocol)
 [ ] Path Rejection Declaration (CLAUDE.md §2.8: what was rejected and why)
+[ ] CAL reference (CISEM-ARCH-00390): which autonomic trigger(s) enforce this plan — pre-commit / SessionStart / PreCompact
 [ ] Change log (version + date + author + what changed)
 ```
 

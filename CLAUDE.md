@@ -22,6 +22,10 @@ The binding lives in the REPO, not in memory — it persists with ZERO dependenc
 tab/session/context. Any subagent that has not read this file MUST bootstrap first:
 read CLAUDE.md + CISEM-WITNESS-00003 + `dna/quality-ledger.yaml` before acting.
 Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.md`.
+**CISEM AUTONOMIC LAYER (CAL — CISEM-ARCH-00390):** "hardwired" means MECHANICAL, not documented. CAL fires
+enforcement + learning with ZERO instruction via native hooks: `.git/hooks/pre-commit` (plan-audit + [ZF], LIVE),
+`.claude/hooks/session-start.sh` (injects inherited preventions), `.claude/hooks/pre-compact.sh` (save-all + [ZF]).
+CAL MUST be referenced in every plan, agent, skill, and QC element. If enforcement isn't wired into CAL, it is NOT hardwired.
 
 ## 2. NATIVE AI / BUILDER BEHAVIOR PRINCIPLES — active from message 1
 1. Transparency of Action — every step visible, inside a declared pocket
