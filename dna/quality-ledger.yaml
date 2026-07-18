@@ -327,6 +327,16 @@ runs:
       - "[SEED] check — seeds without APPLIES_TO flagged (WARN-only, not ZF)"
       - "concept-edge routing — reads concept-envelope-registry.yaml; small-patch commits → [EDGE] UNKNOWN"
       - "APPLIES_TO retrofitted on all seeds — scope declared for I13 enforcement"
+    opus_verification: >
+      Opus PE adversarially verified (default-refute) 2026-07-18: I13 additive-only confirmed (git diff shows every
+      seed '-' line reappears as '+' with only '| APPLIES_TO:' appended — zero MUST/WHY/VERIFY loss); [SEED] is
+      WARN-only (absent from zf_open formula, line 310); concept-edge routing reads concept-envelope-registry.yaml
+      by path (no fork); both stress states proven (seed-missing flagged; concept-edge → [EDGE] UNKNOWN); no
+      truth-fields written; WITNESS-00003 + ARCH-00392 untouched. Minor: 2 template/example seeds correctly marked
+      APPLIES_TO: UNKNOWN (ARCH-00300 syntax-example + BUILD-PROMPT-template placeholder). Open refinement: confirm the
+      [SEED] check handles a multi-line seed missing APPLIES_TO (current proof used single-line) — non-blocking.
+    verdict: SOUND — Phase-1 build COMPLETE (concept envelopes run 20 + seed applies_to/routing run 21); GATE 1→2 pending Governor sign-off
+    status: COMPLETE
 
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
