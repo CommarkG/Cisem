@@ -54,6 +54,19 @@ covers both prior uses: a "DECLARED corespine" (registered, not-enforceable) and
 — entered, not final. Distinct from `PROPOSED` (not yet entered) and `RATIFIED`
 (enforced/binding-final).
 
+**WIRING STATE — deployment maturity (a SEPARATE dimension from lifecycle status;
+adopted from the Gemini stack 2026-07-18):** every wired element also tracks
+`DECLARED (1) → CONNECTED (2) → ACCESSIBLE (3) → LIVE (4)`. Lifecycle status answers
+"is it agreed?"; wiring state answers "does it actually run?" — this is the
+EXISTS ≠ ACTIVE axiom made measurable.
+
+**STATUS CURRENCY — the dynamic updating system (invariant I16):** all CISEM state is
+DYNAMIC. Every artifact's `tag` + `status` + `wiring-state` + `owner` is ACTIVE
+governance/accountability metadata (never optional), and MUST reflect CURRENT reality —
+updated the MOMENT reality changes (a gate wired, a node ratified, a dependency
+resolved, a plan superseded). A status that contradicts reality (stale) is a violation.
+The plan-audit scans for stale/contradictory statuses each run.
+
 **Why mandatory, not optional:** bounded/scoped vocabulary (Option B, ratified) only
 works if a Pocket can filter "load L1 of corespine X" instead of opening every file
 to find out what's in it. Depth/tag/status ARE the retrieval mechanism for scoped

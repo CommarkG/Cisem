@@ -47,5 +47,15 @@ echo "[I6] recent closure-verb commits (verify each has a real check behind it):
 cv=$(git log --oneline -10 2>/dev/null | grep -iE "clos|resolv|complet| fix")
 [ -n "$cv" ] && echo "$cv" | sed 's/^/   /' || echo "   (none in last 10)"
 
-echo "── end — WARN-ONLY, not blocking. Full protocol: ARCH-00320 ──"
+# I16 — stale / self-contradicting status (header says RATIFIED but body says "not ratified")
+echo "[I16] status contradictions (dynamic-currency check):"
+found_i16=0
+for f in $(grep -rIlE "Status:\**[[:space:]]*RATIFIED" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+  if grep -qi "not ratified" "$f" 2>/dev/null; then
+    echo "   STALE?: $f (header RATIFIED but body contains 'not ratified')"; found_i16=1
+  fi
+done
+[ "$found_i16" = 0 ] && echo "   (none)"
+
+echo "── end — WARN-ONLY (except I13 seed-strip BLOCK in pre-commit). Full protocol: ARCH-00320 ──"
 exit 0

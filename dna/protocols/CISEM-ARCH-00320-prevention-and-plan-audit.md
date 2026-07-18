@@ -1,7 +1,9 @@
 # Prevention & Plan-Audit Protocol
 **Node ID:** CISEM-ARCH-00320
-**Type:** ARCH | **Status:** DECLARED — Governor "hardwire" instruction (this
-session). Not RATIFIED (Governor decree pending). Opus did not self-ratify.
+**Type:** ARCH | **Status:** RATIFIED — Governor decree 2026-07-18 ("I ratify
+ARCH-00320", to bring the core to a testable maturity). Invariants I1–I15 + the RQC
+are now BINDING. Validator-chain note: this is a direct Governor ratification; the
+CS-MASTER-VALIDATION-001 root decree will formally re-confirm it through the chain.
 **Version:** v1.0 (2026-07-16)
 **depth_level:** L2 | **Position in schema:** T-SYS, protocol layer
 **tags:** [prevention, plan-audit, invariants, recurring-check, mandatory]
@@ -49,6 +51,8 @@ planning template so prevention is the default, not a thing someone remembers.
 | I13 | Core-seed integrity | needed so Opus intent survives lower-tier execution | Every `[[CORE-SEED]]` is Opus-authored and immutable by lower tiers; it must be PRESENT and HONORED in the executed output. A missing, altered, or unhonored seed is a violation (ARCH-00300 Core Seeds) |
 | I14 | Silent thread-drop / drift | recurring: items presented → Governor pivots → threads silently dropped, completion abandoned (compounding waste) | Every presented decision-item stays OPEN until explicitly resolved / rejected / parked; SILENCE ≠ resolution. On a pivot the reply handles the new AND resurfaces open items. Applies to ALL tiers AND ALL tabs/sessions, no exceptions. A silently dropped thread is a violation (CLAUDE.md §2 principle 9) |
 | I15 | Category exempt from §3 (Axiom A5) | A5 says EVERYTHING is created via hardcoded protocol, but nothing checked that agents/skills/wizards/vocab/QC/etc. actually pass §3 | No category of creation is exempt from the §3 gates: files, documents, agents, skills, wizards, vocabulary, file-naming, QC of every type, changes to hardcoded elements, core councils. Creating any of these without the gates is a violation |
+| I16 | Stale status / dynamic drift | statuses go stale as the dynamic system evolves (CLAUDE.md §5-7 drifted; ARCH-00008 header/body contradiction) | Every artifact carries ACTIVE governance metadata (tag + status + wiring-state + owner) reflecting CURRENT reality; it is updated the moment reality changes. A stale or self-contradicting status is a violation. Wiring state uses DECLARED→CONNECTED→ACCESSIBLE→LIVE (ARCH-00011 §4) |
+| I17 | Freestyle governance (no pocket) | Opus was making rulings on raw deep-coding reasoning, NOT through a declared CISEM pocket — the Governor caught it | Opus governance / review / rulings run AS the Principal Engineer pocket (ARCH-00240) with a Pocket Declaration stated inline (reasoning_scope, inherited_constraints, output_contract, ai_cannot, recorded_at). Freestyle reasoning outside a declared pocket is a violation |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -82,6 +86,8 @@ Every plan node MUST now carry:
 [ ] I13 every [[CORE-SEED]] is Opus-authored, immutable, and present+honored in the executed output
 [ ] I14 no presented item silently dropped; open items resurfaced on every pivot; silence ≠ resolution
 [ ] I15 no creation category exempt from §3 (files/docs/agents/skills/wizards/vocab/naming/QC/hardcoded-changes/councils) — Axiom A5
+[ ] I16 every artifact's tag+status+wiring-state reflects CURRENT reality; no stale/self-contradicting status
+[ ] I17 Opus governance runs in a declared PE pocket (ARCH-00240), not freestyle reasoning
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)

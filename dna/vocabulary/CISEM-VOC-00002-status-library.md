@@ -16,6 +16,11 @@ authoritative enum, and had no definition or use — vocabulary drift, corrected
 not yet enforced/wired (corespine) or formally ratified (node). One definition,
 both uses. See ARCH-00011 §4.
 
+## Wiring State (MIRRORS CISEM-ARCH-00011 §4 — deployment maturity, a separate dimension)
+DECLARED (1) → CONNECTED (2) → ACCESSIBLE (3) → LIVE (4). Lifecycle status = "is it
+agreed?"; wiring state = "does it actually run?" (EXISTS ≠ ACTIVE). All state is DYNAMIC:
+tag + status + wiring-state must reflect CURRENT reality and update on change (I16).
+
 ## Planning Status (per CISEM-ARCH-00190 — separate lifecycle)
 AWAITING-BUILDER-REVIEW | COMMENTS-RECEIVED | CONSENSUS-REACHED |
 IN-PROGRESS | COMPLETE | SUPERSEDED

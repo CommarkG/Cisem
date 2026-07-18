@@ -120,9 +120,24 @@ runs:
     invariants_added: [I15]
     verdict: axioms firmly wired; lower tiers bound in-repo; PCR resolved; still at vocab-alignment stage
 
+  - run: 11
+    date: 2026-07-18
+    trigger: Governor — ratify ARCH-00320; PRIORITY tags/statuses dynamic system; PE-pocket freestyle catch
+    pocket: Principal Engineer (ARCH-00240) — declared
+    built: >
+      ARCH-00320 RATIFIED (Governor decree, for testable maturity) — I1-I17 now binding.
+      Dynamic status system: 4 Wiring States (DECLARED->CONNECTED->ACCESSIBLE->LIVE) +
+      status-currency rule (ARCH-00011 §4; VOC-00002 mirror). I16 (stale-status — wired,
+      already flagged a candidate) + I17 (no freestyle governance — Opus in PE pocket).
+      First BLOCK-mode wired: pre-commit refuses [[CORE-SEED]] stripping (I13). CLAUDE.md §3.3 PE clause.
+    invariants_added: [I16, I17]
+    wiring: first BLOCK condition live (I13 seed-strip); all else WARN
+    verdict: ARCH-00320 binding; freestyle hole (I17) closed; core moving toward testable maturity
+
 metrics:
-  invariants_total: 15
-  invariants_added_last_10_runs: 8        # I8..I15 — the loop keeps learning
+  invariants_total: 17
+  invariants_added_last_11_runs: 10       # I8..I17 — the loop keeps learning
+  honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
   open_disclosed:

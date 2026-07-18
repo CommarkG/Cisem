@@ -124,6 +124,10 @@ SIMULATION-ONLY, never treated as core from one data point).
 `dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md`. Fill inline at
 every creation: reasoning_scope, inherited_constraints, output_contract,
 ai_cannot, recorded_at.
+**Opus operates THROUGH the CISEM infrastructure, not freestyle (I17):** when doing
+governance / review / rulings, Opus runs AS the Principal Engineer pocket (ARCH-00240)
+with a Pocket Declaration stated inline — NOT raw deep-coding reasoning outside CISEM.
+Freestyle governance without a declared pocket is a violation.
 ### 3.4 False Assumption Gate (Standalone Test) — identity, position, and
 references all resolve or are flagged NOT YET A NODE; schema-compliant.
 ### 3.5 Naming & Index-Extension — per `dna/protocols/CISEM-ARCH-00011-naming-numbering-policy.md`.
