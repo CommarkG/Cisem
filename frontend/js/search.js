@@ -1,4 +1,4 @@
-/* CISEM Frontend — Search + Collapse + View Toggle */
+/* CISEM Frontend — Search + Collapse + View Toggle (CS-FRONTEND-001, FE-I2) */
 (function () {
 
   // ── SEARCH (works on .fi file rows AND .gc grid cards) ─────────────
@@ -36,7 +36,43 @@
     });
   }
 
-  // ── VIEW TOGGLE (index.html: grid ↔ grouped list) ──────────────────
+  // ── ROWS / WINDOW VIEW TOGGLE (auto-injected on group pages with .fi items) ──
+  function initPageViewToggle() {
+    var items = document.querySelectorAll('.fi');
+    if (!items.length) return; // placeholder / help pages — skip
+
+    // Build toggle bar and insert before the first .sh, or after pg-desc
+    var bar = document.createElement('div');
+    bar.className = 'view-bar';
+    bar.innerHTML =
+      '<button class="vbtn active" id="vbtn-rows">&#8801; Rows</button>' +
+      '<button class="vbtn" id="vbtn-window">&#9635; Window</button>';
+
+    var mainEl  = document.querySelector('main');
+    var firstSh = mainEl && mainEl.querySelector('.sh');
+    var pgDesc  = mainEl && mainEl.querySelector('.pg-desc');
+    if (firstSh) {
+      mainEl.insertBefore(bar, firstSh);
+    } else if (pgDesc && pgDesc.nextSibling) {
+      mainEl.insertBefore(bar, pgDesc.nextSibling);
+    } else if (mainEl) {
+      mainEl.appendChild(bar);
+    }
+
+    var btnR = bar.querySelector('#vbtn-rows');
+    var btnW = bar.querySelector('#vbtn-window');
+
+    btnR.addEventListener('click', function () {
+      document.body.classList.remove('view-window');
+      btnR.classList.add('active'); btnW.classList.remove('active');
+    });
+    btnW.addEventListener('click', function () {
+      document.body.classList.add('view-window');
+      btnW.classList.add('active'); btnR.classList.remove('active');
+    });
+  }
+
+  // ── VIEW TOGGLE (index.html home page: grid ↔ grouped list) ────────
   function initViewToggle() {
     var btnG = document.getElementById('vbtn-grid');
     var btnL = document.getElementById('vbtn-list');
@@ -69,7 +105,8 @@
   function init() {
     initSearch();
     initCollapse();
-    initViewToggle();
+    initPageViewToggle(); // group pages — auto-injects Rows/Window toggle
+    initViewToggle();     // home page only — Grid/List toggle
   }
 
   document.readyState === 'loading'

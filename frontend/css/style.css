@@ -112,6 +112,16 @@ ul.fl.sh-hidden { display: none; }
 .help-section ul { padding-left: 20px; }
 code { font-family: var(--mono); background: var(--nav); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; font-size: 12px; color: var(--accent); }
 
+/* ── WINDOW VIEW (group pages — body.view-window toggled by JS) ─────────── */
+body.view-window .fl { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; padding-top: 8px; border: none; }
+body.view-window .fi { border: 1px solid var(--border); border-radius: 6px; background: var(--nav); }
+body.view-window .fi:first-child,
+body.view-window .fi:last-child { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); border-radius: 6px; }
+body.view-window .fi a { flex-direction: column; align-items: flex-start; padding: 12px; gap: 6px; min-height: 88px; transition: border-color .12s; }
+body.view-window .fi:hover { border-color: var(--accent); }
+body.view-window .fi .ico { font-size: 20px; }
+body.view-window .fi .fp { margin-left: 0; padding-left: 0; font-size: 10px; margin-top: auto; }
+
 /* TO-BE-REVIEWED LIST */
 .tbr-item { border-top: 1px solid var(--border); padding: 10px 12px; }
 .tbr-item:last-child { border-bottom: 1px solid var(--border); }
