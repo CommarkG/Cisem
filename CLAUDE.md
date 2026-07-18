@@ -64,6 +64,16 @@ Concrete wiring: `.claude/agents/cisem-haiku.md`, `.claude/agents/cisem-sonnet.m
     conclusion has joined a discussion (I14). **VOCAB (do not conflate):** a detailed
     first-draft-of-a-topic is NOT a plan; a plan is a wizard-produced artifact.
 
+12. Pre-Boundary Save-All (ALL tiers — Opus + Sonnet) — BEFORE compacting OR moving to a new
+    tab/session, you MUST save-all so the repo is a COMPLETE SSOT (State-on-Disk Invariant —
+    nothing load-bearing lives only in volatile context): (1) update the continuity record
+    (WITNESS **COMPACT STATE**) with current state; (2) **EMBED any chat-only content into a file** —
+    designs, decisions, conclusions that exist only in conversation are lost otherwise (e.g. the
+    CS-COMMS 8-fork design was chat-only until embedded); (3) register every id through the ONE gate,
+    commit + push; (4) prep a self-contained HANDOFF (Cross-Boundary Zero-Context) for any domain
+    moving to a fresh tab; (5) state the resume path. The context boundary is the TRIGGER; save-all
+    fires BEFORE it. A compact/tab-change without save-all is a violation (I20).
+
 ## 2.4 CISEM CORE AXIOMS (A1–A7) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).

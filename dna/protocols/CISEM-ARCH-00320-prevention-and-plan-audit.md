@@ -55,6 +55,7 @@ planning template so prevention is the default, not a thing someone remembers.
 | I17 | Freestyle governance (no pocket) | Opus was making rulings on raw deep-coding reasoning, NOT through a declared CISEM pocket — the Governor caught it | Opus governance / review / rulings run AS the Principal Engineer pocket (ARCH-00240) with a Pocket Declaration stated inline (reasoning_scope, inherited_constraints, output_contract, ai_cannot, recorded_at). Freestyle reasoning outside a declared pocket is a violation |
 | I18 | Creation Triad incomplete | hardcoding, AI pocket, AI oversight existed SEPARATELY — a creation could skip a leg | Every creation demonstrates ALL THREE as one gate (CLAUDE.md §3.7): hardcoding (§3 + invariants), AI pocket (declared, §3.3/I17), AI oversight (RQC run + logged to `dna/quality-ledger.yaml`). Missing any leg is a violation; the triad feeds the improvement loop (A7/D5) |
 | I19 | Duplication / no Existing-First search | Sonnet's CS-INTAKE-BATCHING would have duplicated Threshold; naming had 3 parallel authorities; axioms lived in 2 files | Every plan/implement/create is preceded by an EXISTING-FIRST search (CLAUDE.md §3.2b): SSOT-registry → manifest + corespine-registry → archive → grep. A creation that DUPLICATES an existing SSOT concept, or RE-PROPOSES a ruled-out one, is a violation. The search must be stated. Binds Opus + Sonnet, every tab |
+| I20 | Context boundary without save-all | vast work (e.g. the CS-COMMS 8-fork design) lived only in chat and would vanish on compact | Before any compact or tab/session change, the repo MUST be a COMPLETE SSOT: continuity record (WITNESS COMPACT STATE) updated, chat-only content embedded to files, everything committed+pushed, handoffs prepped, resume path stated (CLAUDE.md §2 principle 12; State-on-Disk). A boundary crossed without save-all is a violation. Binds Opus + Sonnet |
 
 ## 2. Planning improvements (baked into the plan template — prevention by default)
 Every plan node MUST now carry:
@@ -92,6 +93,7 @@ Every plan node MUST now carry:
 [ ] I17 Opus governance runs in a declared PE pocket (ARCH-00240), not freestyle reasoning
 [ ] I18 Creation Triad complete: hardcoding + AI pocket + AI oversight all present + logged (§3.7)
 [ ] I19 Existing-First search done + stated before any create; no duplication, no re-proposing ruled-out (§3.2b)
+[ ] I20 before any compact/tab-change: save-all — continuity updated, chat-only content embedded, committed+pushed, handoffs prepped (§2 principle 12)
 ```
 
 ## 5. FIRST AUDIT — run by Opus, 2026-07-16 (proof-of-use, not aspirational)
