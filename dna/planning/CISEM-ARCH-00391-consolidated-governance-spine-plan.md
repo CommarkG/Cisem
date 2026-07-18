@@ -88,3 +88,11 @@ explicit change/no-change boundary; dependencies named; path-rejection below; go
 ## Change log
 - v1.0 — 2026-07-18: Opus draft via /cisem-plan (Governor "consolidate; use the threshold; make it mechanical for Sonnet;
   map AI-defaults + inject into protocols"). Planning Status AWAITING-BUILDER-REVIEW; independent soundness review next.
+- v1.0 UNSOUND — 2026-07-18: independent cisem-opus-pe review = UNSOUND. Blocking: (1) AI-Defaults Registry FORKS
+  CLAUDE.md §1.6 (the ONE home for the named biases — Governor-CONFIRMED §1.6 stays) + collides with IBD-0007's
+  invariant-registry, un-cited (the ARCH-00382 lesson recurring); (2) CS-THRESHOLD-001 mis-applied as a static-index
+  anchor — category error (it is an INTAKE gate; Governor CLARIFIES: "all processes START from the threshold" = its
+  correct entry-routing role, NOT an index anchor); (3) "mechanically consults" over-claims (Stage-0 is behavioral).
+  + soft Phase-1/3 gates + ssot-registry size-blast. RESOLUTION (Opus rec, awaiting Governor nod): SUPERSEDE this
+  standalone plan INTO the promotion of IBD-0007 — the two overlap; per A8 they become ONE plan (Context-Envelope +
+  Governance-Spine), MVP = invariant-registry.yaml; §1.6 stays the AI-defaults home (index-and-point, no new registry).
