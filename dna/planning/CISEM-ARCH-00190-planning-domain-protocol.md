@@ -1,5 +1,5 @@
 # Planning Domain Protocol (PLAN-PROTOCOL)
-**Node ID:** CISEM-ARCH-00190 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE (enhanced 2026-07-18, Opus-directed)  
+**Node ID:** CISEM-ARCH-00190 | **Type:** ARCH | **Status:** LIVE (ratified by Governor foundational decree 2026-07-18; plan-gate LIVE)  
 **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer  
 **tags:** [planning-domain, protocol, plan-creation, double-ratification, ssot]  
 **Goal:** The SSOT for "how a DRAFT becomes a PLAN" — defines the double-ratification path (Opus soundness + Governor authority), the gate structure, and the PLAN-WIZARD that executes it.  

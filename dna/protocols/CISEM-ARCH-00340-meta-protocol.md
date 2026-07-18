@@ -1,8 +1,7 @@
 # Meta-Protocol — how to create any CISEM protocol
 **Node ID:** CISEM-ARCH-00340
-**Type:** ARCH | **Status:** PROVISIONAL-ACTIVE — Opus high-quality DRAFT, IN USE to bootstrap the
-plan-gate; NOT ratified. Governor foundational decree pending. **The audit flags this every run until
-ratified + LIVE** (completion guardrail — ARCH-00011 §4). **tag:** top-priority-for-completion.
+**Type:** ARCH | **Status:** LIVE — ratified by Governor **foundational decree 2026-07-18** (blanket
+approval of all pending, this session). The plan-gate is now LIVE; the PROVISIONAL-ACTIVE leash is removed.
 **root_authority:** candidate — a root creation tool; added to ARCH-00011 §7 set on decree.
 **Version:** v0.1-provisional | **depth_level:** L2 | **Position in schema:** T-SYS, meta-governance
 **Wiring state:** DECLARED (drafted) → CONNECTED (when the meta-wizard implements it) → LIVE (on ratify).

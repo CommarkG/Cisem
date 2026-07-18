@@ -66,9 +66,16 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
 - **RATIFIED:** ARCH-00008, ARCH-00011, ARCH-00320, CS-MASTER-VALIDATION-001 (foundational).
 - **Engines:** `plan-audit.sh` (WARN + I13 seed-strip BLOCK, pre-commit); `dna/queue/` build-prompt intake.
 - **Agents:** cisem-haiku / cisem-sonnet / cisem-opus-pe (repo-resident, bootstrap + Existing-First bound).
-- **PLAN-GATE BOOTSTRAP (the unblocker):** ARCH-00340 meta-protocol + ARCH-00190 plan-protocol
-  (PROVISIONAL-ACTIVE) + `/cisem-plan` + `/cisem-meta` wizards — BP-0007 Opus-verified → CONNECTED.
-  Next: **Governor foundational decree → LIVE** (closes the PROVISIONAL-ACTIVE leash).
+- **PLAN-GATE BOOTSTRAP → LIVE (2026-07-18):** ARCH-00340 meta-protocol + ARCH-00190 plan-protocol
+  RATIFIED LIVE by Governor foundational decree (blanket approval of all pending). `/cisem-plan` +
+  `/cisem-meta` wizards active. PROVISIONAL-ACTIVE leash REMOVED. Open guarded act: adding ARCH-00340
+  to the ARCH-00011 §7 root_authority closed set (I11) — awaits explicit Governor confirm.
+- **HARVEST ORCHESTRATOR (IBD-0005):** dual-pole (D3 prevention / D4 enhancement) per-turn engine of the
+  RQC — design captured, PARKED, queued to be the FIRST plan through `/cisem-plan` (now LIVE). Subsumes
+  ai-oversight-layer3 (DROPPED — superseded, no parallel system, I19).
+- **ARCH-00360 (Haiku-audit-hardening):** Opus CONDITIONAL-APPROVE, PROVISIONAL-ACTIVE; registered (→370);
+  completion Core-Seeded to Sonnet (wire rules→cisem-haiku.md, fold RULE 1→I6, embed Haiku raw report,
+  drop stale row 6). DECREE 2 withdrawn (CS-MASTER already RATIFIED).
 - **CONSENSUS:** Node-as-Hub (the "Gem") = target architecture; it becomes the FIRST plan through
   the wizard once the meta-layer is LIVE. (IBD-0004.)
 - **Handoff standard:** ARCH-00350 ("I am…you are…" frame + WAIT-FOR-OPUS gate).
@@ -78,9 +85,12 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
   living index, APPROVED parallel), BP-0005 (naming gate + alignment), BP-0006 (raw lifecycle),
   BP-0008 (active archive of ruled-out ideas). BP-0003 (cisem-create) = has defects, NOT verified.
 - **PARKED (IBD):** 0001 native-vocab, 0002 accountability 4-routes/Rings, 0003 gemini-vocab, 0004 node-as-hub.
-- **PENDING GOVERNOR:** (1) foundational decree the meta-layer → LIVE; (2) Founding axioms (fresh tab,
-  HANDOFF-opus-axioms.md); (3) comms content (fresh tab; CS-COMMS-001 8-fork design); (4) ai-oversight-
-  layer3 build/drop; (5) ARCH-00280 Q4 template ruling.
+- **PENDING GOVERNOR (post blanket-approval 2026-07-18):** CLOSED — (1) meta-layer LIVE ✓; (4) ai-oversight-
+  layer3 DROPPED ✓; DECREE 2 withdrawn ✓. OPEN — root_authority set add for ARCH-00340 (I11, one-word confirm);
+  tier-freeze decree wording confirm (DECREE 1 draft); Founding axioms (fresh tab, HANDOFF-opus-axioms.md);
+  comms content (fresh tab, HANDOFF-opus-comms.md); ARCH-00280 Q4 template ruling (non-blocking).
+- **SONNET ONE-CLICK ISSUED 2026-07-18:** BP-0002 (orchestrate invariants + I16 field-vs-field + unregistered-ID
+  check) → ARCH-00360 completion → DECREE 3/4 fields → BP-0004 parallel. Core Seeds placed by Opus.
 - **KNOWN WARN (not a bug):** I16 flags ARCH-00011 (the words "not ratified" inside the PROVISIONAL-ACTIVE
   definition) + CS-COMMS-001 forward-ref — both disclosed; BP-0002 field-vs-field is the root fix.
 - **RESUME:** read CLAUDE.md → this file → quality-ledger.yaml → ssot-registry.yaml → queue/README.md.
