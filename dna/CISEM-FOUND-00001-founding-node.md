@@ -38,18 +38,37 @@ it — complete, optimized, firm; no axiom is decorative:
 
 | Axiom | Law | Enforced by (the FIRM connection) | Firmness |
 |---|---|---|---|
-| **A1** | Nothing stands alone | I1+I5 dangling scan (`plan-audit.sh`) + §3.4 Standalone Test + Island Detection | WIRED (WARN) |
-| **A2** | Everything is part of a corespine | §3.2a Corespine-First gate + ARCH-00008 "Governing corespine" field | GATE |
-| **A3** | Nothing exists without a place in the schema | §3.4 + ARCH-00008 "Position in schema" + SCHEMA-00001 | GATE |
-| **A4** | Nothing implemented without a ratified plan | §3.0 + Hard Line I7 + foundational decree + RULE-RAT quarantine | GATE + DECREE |
-| **A5** | EVERYTHING via hardcoded protocol (files, docs, agents, skills, wizards, vocab, naming, QC, hardcoded-changes, councils) | §3 gate suite + Template-First §3.2b + **invariant I15** (category completeness) | GATE + I15 |
-| **A6** | Context-focus over rigidity | Doctrine D6 (polarity, not rigid) + guardian-not-cage | DOCTRINE (behavioral) |
-| **A7** | Constant self-improvement via an AI expert team | RQC (ARCH-00320 §6) + multi-expert review + D5; conclusions → human ratify (Hard Line I7) | RQC (live, WARN) |
+| **A1** | Nothing stands alone | I1+I5 dangling scan (`plan-audit.sh`, live) + §3.4 Standalone Test + Island Detection + one-home-many-links (dossier IBD-0006) + knowledge-library cross-links (KL-0001) | WIRED (WARN) |
+| **A2** | Everything is part of a corespine | §3.2a Corespine-First gate + ARCH-00008 "Governing corespine" + **DIOS Branch/Sub-Branch/Core by scope** (meganode≡corespine) | GATE + DIOS |
+| **A3** | Nothing exists without a place in the schema | §3.4 + ARCH-00008 "Position in schema" + SCHEMA-00001 + **depth-levels = DIOS maturity levels** (Signal→Constitutional) | GATE + DIOS |
+| **A4** | Nothing implemented without a ratified plan | §3.0 + Hard Line I7 + **plan-gate LIVE** (ARCH-00340/00190 + `/cisem-plan` double-ratification, proven live: UNSOUND→SOUND→deferred on ARCH-00382) + **DIOS "promotion requires validation"** | GATE + LIVE |
+| **A5** | EVERYTHING via hardcoded protocol (files, docs, agents, skills, wizards, vocab, naming, QC, hardcoded-changes, councils) | §3 gate suite + §3.2b Existing-First (now **live check [I19]**) + naming ONE-gate + **I9 unregistered-ID check (live)** + I15 | GATE + I9/I15/I19 |
+| **A6** | Context-focus over rigidity | Doctrine D6 (polarity, not rigid) + guardian-not-cage + SWIFT + park-by-demand + **anti-bloat lens** (don't proliferate protocols) | DOCTRINE (behavioral) |
+| **A7** | Constant self-improvement via an AI expert team | RQC (§6) + **cross-tier spiral** (Haiku→Sonnet→Opus, proven live) + harvest loop (IBD-0005) + learning-registry + prevention invariants **I16–I23** + **DIOS "validation is the engine of maturity"** | RQC live; I19/I23 WIRED checks |
 
-**Honest firmness:** A1–A5 are wired to gates/invariants; A6 is behavioral (Doctrine);
-A7 is the live RQC loop. Full BLOCK-enforcement arrives when ARCH-00320 is ratified and
-ARCH-00180 wires the rest. **No axiom is unconnected** — the connection to the platform
-is complete.
+**Honest firmness (updated 2026-07-18):** A2/A3 now grounded in the DIOS maturity spine (KL-0001); A4 is
+**LIVE** (the plan-gate ran end-to-end on ARCH-00382); A5 gained two live checks (I9, I19); A7 gained the
+cross-tier spiral + the I16–I23 prevention set, of which **I19 and I23 are running checks** (the rest manual —
+BP-0002). **No axiom is unconnected**, and several moved from GATE to LIVE this session.
+
+## Axiom grounding — session 2026-07-18 (what we built, mapped to the axioms — NOT the founding definitions)
+The A1–A7 laws are Governor-set and unchanged. This section populates their *enforcement*, per "go over all we did":
+- **New prevention invariants (the immune memory, D3):** I16 stale-status · I17 PE-pocket-only governance ·
+  I18 Creation Triad · **I19 Existing-First (live check, fires on topic-change + every plan)** · I20 pre-boundary
+  save-all · I21 instruction zero-assembly · I22 no-unverified-done · **I23 EXISTS≠ACTIVE (live check)**.
+- **DIOS adoption (KL-0001) — the constitutional spine:** maturity levels Signal→Constitutional = the semantic
+  **depth axis** (A3); **promotion-requires-validation** = A4 + independent-verifier; the DIOS **anti-patterns**
+  (validation-avoidance, premature-principle, asset-addiction) are exactly what the invariants prevent (A7/D3).
+- **Root cause named (this session):** *plausibility-completion bias* — the model treats plausible OUTPUT as
+  completed OUTCOME. The preventions attack it structurally (independent verification, activation-proof).
+- **Plan-gate LIVE (A4 realized):** double-ratification proven on ARCH-00382 (independent review caught a real
+  Existing-First failure in Opus's own draft → revised → SOUND → Governor deferred).
+- **Knowledge library (A1):** research (DIOS) no longer stands alone/off-repo-only — indexed, tagged, status'd.
+
+## Honest gaps (still not done — no premature promotion, I23)
+- **TSA / CoreSpiral / Pocket** founding definitions: still PLACEHOLDER — Governor's to author.
+- **NOT yet wired:** the ZF closure gate, the session hooks, the harvest loop, most of I16–I23 (manual → BP-0002).
+- ARCH-00382 (the graph) is DEFERRED; DIOS-maturity-as-depth-axis resurrection is APPROVED, not yet built.
 
 ## The Sovereign Phrase (candidate genesis law — Gemini stack, Opus-accepted)
 > "Context is the palace, Alignment is the King, and Timing is the Queen."
