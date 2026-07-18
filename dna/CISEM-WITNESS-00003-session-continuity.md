@@ -98,6 +98,36 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
   definition) + CS-COMMS-001 forward-ref — both disclosed; BP-0002 field-vs-field is the root fix.
 - **RESUME:** read CLAUDE.md → this file → quality-ledger.yaml → ssot-registry.yaml → queue/README.md.
 
+## COMPACT STATE v2 — 2026-07-18 LATE (SUPERSEDES all above; the authoritative resume anchor)
+- **ZF: ✅ GREEN** — first-ever Zero-Findings achieved; the `[ZF]` aggregate gate runs every commit.
+- **Invariant set I1–I24.** LIVE checks in `plan-audit.sh` (~10 automated): I1, I3, I6, I9, I16, I19, I23, I24,
+  P3 (Gov-decision TTL), P5 (independent verifier) + the `[ZF]` aggregate + I13 seed-strip BLOCK.
+  New this session: I16 fix, I19 (Existing-First, live), I20 save-all, I21 zero-assembly, I22 no-unverified-done,
+  I23 EXISTS≠ACTIVE (live), I24 premature-promotion (live).
+- **CISEM AUTONOMIC LAYER (CAL, ARCH-00390) — the permanence layer:** `.claude/hooks/session-start.sh` (auto-injects
+  inherited preventions + resume path) + `pre-compact.sh` (save-all + `[ZF]`) + `.claude/settings.json`; `.git/hooks/pre-commit`
+  LIVE. Session hooks LIVE **next session** (built+tested). "Hardwired" now = wired into CAL, referenced in CLAUDE.md §1.5 +
+  plan template + all 3 agents.
+- **DIOS spine adopted:** Knowledge Library `dna/knowledge-library/index.yaml` (KL-0001 = DIOS-0014, off-repo);
+  VOC-00003 = the DIOS maturity ladder as CISEM's SEMANTIC depth axis (Signal→Constitutional; distinct from structural depth_level).
+- **Plan-process:** ARCH-00190 Stage 0 = iterative draft-review loop (prevention-during-planning, shift-left);
+  recurring **Haiku improvement** loop + `haiku_miss_rate` metric (cost-effective tier improvement).
+- **Ratified this session:** meta-layer LIVE (ARCH-00340/00190); root_authority ARCH-00340 → §7 closed set (4 nodes);
+  DECREE 1 tier-freeze LIFTED (TIER-1 OPEN); DIOS maturity resurrection APPROVED.
+- **FOUND-00001 axiom grounding POPULATED** (A1–A7 mapped to the session's mechanisms + DIOS). Founding definitions
+  (TSA/CoreSpiral/Pocket) STILL Governor-only — not fabricated.
+- **Frontend BP-0004:** done (25 files, search.js 22/22, Haiku-verified). **Persona:** platform-level + root-cause-extraction.
+- **ROOT IMPROVEMENT (persona-level, inherited via CAL):** named biases to self-check — DEFERRAL-AS-CAUTION +
+  DOCUMENTATION-AS-PROGRESS; root-cause analysis must generalize to the CLASS + set an improved path, balanced with context (D6).
+- **DEFERRED (not dropped):** graph ARCH-00382 (SUPERSEDED, resurrectable → re-anchor to DIOS maturity); harvest loop (IBD-0005);
+  SessionEnd hook + a registry-read-verify check (CAL roadmap); BLOCK-mode graduation.
+- **PENDING GOVERNOR:** (1) Founding axioms TSA/CoreSpiral/Pocket (the one keystone); (2) comms CS-COMMS-001 (HANDOFF ready);
+  (3) DIOS deep-dive / full-series ingestion (Governor: after axioms + the large parked issue).
+- **RESUME:** CLAUDE.md → this file (COMPACT STATE v2) → dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml
+  → dna/queue/README.md. (CAL SessionStart auto-injects the learning-registry next session.)
+
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
 - 2026-07-18: session-update + COMPACT STATE added for clean compact/tab resume (I1–I19, plan-gate bootstrap CONNECTED).
+- 2026-07-18 LATE: COMPACT STATE v2 (authoritative) — full arc: I1–I24, ZF green, CAL/hooks, DIOS axis + knowledge library,
+  iterative planning + Haiku improvement, axiom grounding, root-cause-extraction persona. Prepared for clean compact.
