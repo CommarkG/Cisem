@@ -40,24 +40,63 @@
     <a href="help.html" class="ni" title="Help">?</a>
   </div>
 </nav>
-<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button> 
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <a href="../index.html">Home</a><span class="sep">/</span><span>16 · Corespines</span>
 </div>
 <main>
   <h1>Corespines</h1>
-  <p class="pg-desc">Governing spines of CISEM. Every element belongs to a corespine (A2). Registry lists all corespines + their status (RATIFIED / DECLARED / PROPOSED / PLACEHOLDER).</p>
+  <p class="pg-desc">Governing spines of CISEM — every element belongs to a corespine (Axiom A2). A corespine is a named authority that governs a domain; its invariants, protocols, and artifacts are children of that spine. Creation protocol: ARCH-00394 (Universal Corespine Creation Wizard).</p>
+
+  <div class="sh">Known Corespines</div>
+  <ul class="cl">
+    <li class="cl-item">
+      <div class="cl-num">CS-MV</div>
+      <div class="cl-main">
+        <div class="cl-title">CS-MASTER-VALIDATION-001 — Root Ratification Authority</div>
+        <div class="cl-body">The highest ratification authority in CISEM. All governed creation ultimately chains up to this spine. It confirms that CS-MASTER-VALIDATION-001 is the root of the validation chain and that all ARCH nodes ratified under it are binding. SSOT for the ratification vocabulary.</div>
+        <span class="cl-badge ratified">RATIFIED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">CS-AIB</div>
+      <div class="cl-main">
+        <div class="cl-title">CS-AI-BEHAVIOR-001 — AI Behavior Governance</div>
+        <div class="cl-body">Governs how CISEM's AI tiers behave: tier routing (ARCH-00300), PE pocket definition (ARCH-00240), pocket mechanism, Core Seeds protocol. All agent definition files (<code>.claude/agents/</code>) are children of this spine.</div>
+        <span class="cl-badge declared">DECLARED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">CS-CRE</div>
+      <div class="cl-main">
+        <div class="cl-title">CS-CREATION-001 — Creation &amp; Planning Governance</div>
+        <div class="cl-body">Governs how every CISEM artifact is planned and created. Children include: ARCH-00190 (planning domain protocol), ARCH-00320 (prevention + plan-audit), ARCH-00392 (context-envelope + governance spine). All plan nodes are children of this spine.</div>
+        <span class="cl-badge declared">DECLARED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">CS-FE</div>
+      <div class="cl-main">
+        <div class="cl-title">CS-FRONTEND-001 — Frontend Web Artifacts</div>
+        <div class="cl-body">Governs all CISEM frontend web artifacts: this living index, all HTML group pages, the shared CSS + JS. Invariants FE-I1–FE-I10 (single stylesheet, standard nav, breadcrumb arrows, design tokens only, responsive, cell/mobile, dead-link-free, collapsible sections, view toggle). Creation manifest: ARCH-00393. Wizard: ARCH-00394.</div>
+        <span class="cl-badge ratified">RATIFIED — 2026-07-18</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">CS-TH</div>
+      <div class="cl-main">
+        <div class="cl-title">CS-THRESHOLD-001 — Intake Threshold &amp; Routing</div>
+        <div class="cl-body">Governs how new inputs are classified and routed: PROCESS-NOW / QUEUE(+build-prompt) / PARK(IBD) / REJECT. Implements the PARK-BY-DEMAND + SWIFT protocol (CLAUDE.md §2.7). Registry entry exists; manifest file not yet built.</div>
+        <span class="cl-badge ratified">RATIFIED (registry entry — bodiless)</span>
+      </div>
+    </li>
+  </ul>
 
   <div class="sh">Registry</div>
   <ul class="fl">
-    <li class="fi"><a href="../../dna/corespines/corespine-registry.yaml"><span class="ico">&#128202;</span>corespine-registry.yaml<span class="fp">dna/corespines/ — all corespines + status</span></a></li>
+    <li class="fi"><a href="../../dna/corespines/corespine-registry.yaml"><span class="ico">&#128202;</span>corespine-registry.yaml<span class="fp">dna/corespines/ — all corespines + status + wizard</span></a></li>
   </ul>
 
-  <div class="sh">RATIFIED Corespines</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../dna/corespines/CS-MASTER-VALIDATION-001.md"><span class="ico">&#9989;</span>CS-MASTER-VALIDATION-001.md<span class="fp">dna/corespines/ — RATIFIED root authority</span></a></li>
-  </ul>
-
-  <div class="sh">CS-AI-BEHAVIOR-001 (DECLARED) — Content Files</div>
+  <div class="sh">CS-AI-BEHAVIOR-001 Content Files</div>
   <ul class="fl">
     <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md"><span class="ico">&#128196;</span>CISEM-ARCH-00008-base-contract-node-dna.md<span class="fp">CS-AI-BEHAVIOR-001/ — node DNA schema</span></a></li>
     <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00240-pro-colleague-persona.md"><span class="ico">&#128196;</span>CISEM-ARCH-00240-pro-colleague-persona.md<span class="fp">CS-AI-BEHAVIOR-001/ — PE pocket definition</span></a></li>
@@ -65,7 +104,17 @@
     <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md"><span class="ico">&#128196;</span>pocket-mechanism.md<span class="fp">CS-AI-BEHAVIOR-001/ — pocket declaration spec</span></a></li>
   </ul>
 
-  <div class="sh">Coordination Nodes (filed under corespines/)</div>
+  <div class="sh">CS-FRONTEND-001 Content Files</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../dna/corespines/CS-FRONTEND-001/CISEM-ARCH-00393-frontend-corespine-manifest.md"><span class="ico">&#128196;</span>CISEM-ARCH-00393-frontend-corespine-manifest.md<span class="fp">CS-FRONTEND-001/ — manifest, FE-I1–I10</span></a></li>
+  </ul>
+
+  <div class="sh">Creation Protocol</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../dna/protocols/CISEM-ARCH-00394-corespine-creation-wizard.md"><span class="ico">&#128196;</span>CISEM-ARCH-00394-corespine-creation-wizard.md<span class="fp">dna/protocols/ — STEP 1–6 wizard for any new corespine</span></a></li>
+  </ul>
+
+  <div class="sh">Coordination Nodes</div>
   <ul class="fl">
     <li class="fi"><a href="../../dna/corespines/CISEM-ARCH-00150-brain-cisem-alignment-plan.md"><span class="ico">&#128196;</span>CISEM-ARCH-00150-brain-cisem-alignment-plan.md<span class="fp">dna/corespines/</span></a></li>
     <li class="fi"><a href="../../dna/corespines/CISEM-ARCH-00160-project-sync-manifest.md"><span class="ico">&#128196;</span>CISEM-ARCH-00160-project-sync-manifest.md<span class="fp">dna/corespines/</span></a></li>

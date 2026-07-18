@@ -40,23 +40,51 @@
     <a href="help.html" class="ni" title="Help">?</a>
   </div>
 </nav>
-<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button> 
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <a href="../index.html">Home</a><span class="sep">/</span><span>01 · Skills</span>
 </div>
 <main>
   <h1>Skills</h1>
-  <p class="pg-desc">Implemented Claude Code skills (.claude/skills/) and queued skill build-prompts</p>
+  <p class="pg-desc">Implemented Claude Code skills (<code>.claude/skills/</code>) — slash commands the Governor invokes directly in the Claude Code IDE. Each skill is a self-contained executor: it bootstraps its own CISEM context, runs the §3 gates, and returns a governed artifact. Governed by: CS-AI-BEHAVIOR-001.</p>
 
   <div class="sh">Implemented Skills</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../.claude/skills/cisem-create/SKILL.md"><span class="ico">&#128736;</span>cisem-create / SKILL.md<span class="fp">.claude/skills/cisem-create/</span></a></li>
-    <li class="fi"><a href="../../.claude/skills/cisem-meta/SKILL.md"><span class="ico">&#128736;</span>cisem-meta / SKILL.md<span class="fp">.claude/skills/cisem-meta/</span></a></li>
-    <li class="fi"><a href="../../.claude/skills/cisem-plan/SKILL.md"><span class="ico">&#128736;</span>cisem-plan / SKILL.md<span class="fp">.claude/skills/cisem-plan/</span></a></li>
+  <ul class="cl">
+    <li class="cl-item">
+      <div class="cl-num">/cisem-plan</div>
+      <div class="cl-main">
+        <div class="cl-title">cisem-plan — Plan Wizard</div>
+        <div class="cl-body">Runs the ARCH-00190 planning domain protocol to produce a Governor-ratifiable plan. Guides through: goal statement, corespine declaration, Existing-First search, Core-vs-Instance judgment, Pocket Declaration, naming + ID allocation, per-phase state tracking, independent verifier assignment. Returns a draft plan ready for Opus soundness review. Trigger: <code>/cisem-plan</code> in Claude Code IDE.</div>
+        <span class="cl-badge ratified">IMPLEMENTED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">/cisem-meta</div>
+      <div class="cl-main">
+        <div class="cl-title">cisem-meta — Meta / RQC Skill</div>
+        <div class="cl-body">Runs governance reviews, audits, and RQC cycles on CISEM itself. Use for: reviewing a plan before ratification, running a quality cycle on a node, auditing the invariant set for gaps, proposing systemic improvements. Operates as the PE pocket (ARCH-00240). Trigger: <code>/cisem-meta</code> in Claude Code IDE.</div>
+        <span class="cl-badge ratified">IMPLEMENTED</span>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">/cisem-create</div>
+      <div class="cl-main">
+        <div class="cl-title">cisem-create — Creation Wizard</div>
+        <div class="cl-body">Guides a new CISEM governed node through all §3 gates in order: Goal-First (§3.1) → Corespine-First (§3.2a) → Existing-First (§3.2b) → Core-vs-Instance (§3.2c) → Pocket Declaration (§3.3) → False Assumption / Standalone (§3.4) → Naming + Index Extension (§3.5) → Size Gate (§3.6) → Creation Triad (§3.7). Produces the node file and registers the ID. Trigger: <code>/cisem-create</code> in Claude Code IDE.</div>
+        <span class="cl-badge ratified">IMPLEMENTED</span>
+      </div>
+    </li>
   </ul>
 
   <div class="sh">Queued Skill Build-Prompts</div>
   <ul class="fl">
-    <li class="fi"><a href="../../dna/queue/BP-0003-cisem-create-skill.md"><span class="ico">&#128221;</span>BP-0003-cisem-create-skill.md<span class="fp">dna/queue/</span></a></li>
+    <li class="fi"><a href="../../dna/queue/BP-0003-cisem-create-skill.md"><span class="ico">&#128221;</span>BP-0003-cisem-create-skill.md<span class="fp">dna/queue/ — cisem-create enhancement build-prompt</span></a></li>
+  </ul>
+
+  <div class="sh">Skill Definition Files</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../.claude/skills/cisem-plan/SKILL.md"><span class="ico">&#128736;</span>cisem-plan / SKILL.md<span class="fp">.claude/skills/cisem-plan/</span></a></li>
+    <li class="fi"><a href="../../.claude/skills/cisem-meta/SKILL.md"><span class="ico">&#128736;</span>cisem-meta / SKILL.md<span class="fp">.claude/skills/cisem-meta/</span></a></li>
+    <li class="fi"><a href="../../.claude/skills/cisem-create/SKILL.md"><span class="ico">&#128736;</span>cisem-create / SKILL.md<span class="fp">.claude/skills/cisem-create/</span></a></li>
   </ul>
 
   <div id="no-result">No files match your search.</div>

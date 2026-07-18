@@ -40,24 +40,102 @@
     <a href="help.html" class="ni" title="Help">?</a>
   </div>
 </nav>
-<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button> 
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <a href="../index.html">Home</a><span class="sep">/</span><span>02 · Agents</span>
 </div>
 <main>
   <h1>Agents</h1>
-  <p class="pg-desc">CISEM tier workers — Haiku (gathering), Sonnet (execution), Opus PE (judge). Defined in .claude/agents/ and bound via repo, not session.</p>
+  <p class="pg-desc">CISEM tier workers — Haiku (gather), Sonnet (execute), Opus PE (judge + truth-stamp). Defined in <code>.claude/agents/</code> and bound via the repo, not session memory. The binding lives in CLAUDE.md §1.5, so any fresh agent tab picks it up immediately.</p>
 
-  <div class="sh">Agent Definitions</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../.claude/agents/cisem-haiku.md"><span class="ico">&#129302;</span>cisem-haiku.md<span class="fp">.claude/agents/ — gathering tier</span></a></li>
-    <li class="fi"><a href="../../.claude/agents/cisem-sonnet.md"><span class="ico">&#129302;</span>cisem-sonnet.md<span class="fp">.claude/agents/ — execution tier</span></a></li>
-    <li class="fi"><a href="../../.claude/agents/cisem-opus-pe.md"><span class="ico">&#129302;</span>cisem-opus-pe.md<span class="fp">.claude/agents/ — judge / Principal Engineer</span></a></li>
+  <div class="sh">Tier Overview</div>
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="tier-model">claude-haiku-4-5</div>
+      <div class="tier-name">cisem-haiku</div>
+      <div class="tier-role">Gathering Tier</div>
+      <div class="tier-body">Enumerates and gathers evidence only. Runs sweeps and returns raw structured data — never interprets, never judges, never writes governance fields. The fastest, cheapest tier; used for the widest coverage.</div>
+      <div class="tier-caps">
+        <span class="tier-cap can">grep sweeps</span>
+        <span class="tier-cap can">ref-scans</span>
+        <span class="tier-cap can">registry diffs</span>
+        <span class="tier-cap can">header extraction</span>
+        <span class="tier-cap cannot">no judgments</span>
+        <span class="tier-cap cannot">no truth-fields</span>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-model">claude-sonnet-4-6</div>
+      <div class="tier-name">cisem-sonnet</div>
+      <div class="tier-role">Execution Tier</div>
+      <div class="tier-body">Executes an Opus-approved plan exactly — applies agreed checklists, drafts from approved outlines, builds manifests, writes code. Honors Core Seeds verbatim and may not edit or remove them. Produces a Seed-Honor Report on every handoff.</div>
+      <div class="tier-caps">
+        <span class="tier-cap can">execute plans</span>
+        <span class="tier-cap can">write files</span>
+        <span class="tier-cap can">run checks</span>
+        <span class="tier-cap can">honor seeds</span>
+        <span class="tier-cap cannot">no ratification</span>
+        <span class="tier-cap cannot">no truth-fields (I7)</span>
+      </div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-model">claude-opus-4-8</div>
+      <div class="tier-name">cisem-opus-pe</div>
+      <div class="tier-role">Principal Engineer — Judge Tier</div>
+      <div class="tier-body">Adversarially verifies lower-tier output (default posture: refute). Makes rulings, writes Core Seeds, stamps truth-bearing fields (Status: RATIFIED, quality-ledger run entries). Operates through the PE pocket (ARCH-00240) with a Pocket Declaration — never freestyle. The ONLY tier that can close a found defect or ratify a node.</div>
+      <div class="tier-caps">
+        <span class="tier-cap can">rulings</span>
+        <span class="tier-cap can">ratification</span>
+        <span class="tier-cap can">truth-fields (I7)</span>
+        <span class="tier-cap can">Core Seeds</span>
+        <span class="tier-cap can">quality-ledger writes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sh">Tier Routing Rules (CISEM-ARCH-00300)</div>
+  <ul class="cl">
+    <li class="cl-item">
+      <div class="cl-num">R1</div>
+      <div class="cl-main">
+        <div class="cl-title">Declare before acting</div>
+        <div class="cl-body">Every creation / execution DECLARES its tier owner + why before starting (CLAUDE.md §3.0). Silent routing is a violation (I12).</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">R2</div>
+      <div class="cl-main">
+        <div class="cl-title">Opus reviews before lower-tier executes</div>
+        <div class="cl-body">When a lower tier will execute a plan, Opus MUST review it, code the sensitive parts, and place Core Seeds. The lower tier executes the seeds verbatim and may not edit or remove them (I13).</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">R3</div>
+      <div class="cl-main">
+        <div class="cl-title">Opus doing mechanical work = stated exception</div>
+        <div class="cl-body">Opus doing low-level mechanical work needs a stated exception (e.g. "trivial, in-context, routing overhead &gt; the work"). Without a stated exception, mechanical work routes to Sonnet.</div>
+      </div>
+    </li>
+    <li class="cl-item">
+      <div class="cl-num">R4</div>
+      <div class="cl-main">
+        <div class="cl-title">Binding is repo-based, not session-based</div>
+        <div class="cl-body">Tier rules live in CLAUDE.md + the <code>.claude/agents/</code> files, not in session memory. Any new tab picks up the full binding by bootstrapping from the repo. A tab that has not read CLAUDE.md is unbound and must bootstrap first.</div>
+      </div>
+    </li>
   </ul>
 
-  <div class="sh">Governing Specification</div>
+  <div class="sh">Agent Definition Files</div>
   <ul class="fl">
-    <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00240-pro-colleague-persona.md"><span class="ico">&#128196;</span>CISEM-ARCH-00240-pro-colleague-persona.md<span class="fp">dna/corespines/CS-AI-BEHAVIOR-001/</span></a></li>
-    <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00300-model-tier-routing.md"><span class="ico">&#128196;</span>CISEM-ARCH-00300-model-tier-routing.md<span class="fp">dna/corespines/CS-AI-BEHAVIOR-001/</span></a></li>
+    <li class="fi"><a href="../../.claude/agents/cisem-haiku.md"><span class="ico">&#129302;</span>cisem-haiku.md<span class="fp">.claude/agents/ — gathering tier definition</span></a></li>
+    <li class="fi"><a href="../../.claude/agents/cisem-sonnet.md"><span class="ico">&#129302;</span>cisem-sonnet.md<span class="fp">.claude/agents/ — execution tier definition</span></a></li>
+    <li class="fi"><a href="../../.claude/agents/cisem-opus-pe.md"><span class="ico">&#129302;</span>cisem-opus-pe.md<span class="fp">.claude/agents/ — judge / Principal Engineer definition</span></a></li>
+  </ul>
+
+  <div class="sh">Governing Protocols</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00300-model-tier-routing.md"><span class="ico">&#128196;</span>CISEM-ARCH-00300-model-tier-routing.md<span class="fp">CS-AI-BEHAVIOR-001/ — Core Seeds + routing spec</span></a></li>
+    <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00240-pro-colleague-persona.md"><span class="ico">&#128196;</span>CISEM-ARCH-00240-pro-colleague-persona.md<span class="fp">CS-AI-BEHAVIOR-001/ — PE pocket definition (I17)</span></a></li>
+    <li class="fi"><a href="../../CLAUDE.md"><span class="ico">&#128196;</span>CLAUDE.md<span class="fp">repo root — §1.5 tier binding + §3.0 tier-routing gate (always-loaded)</span></a></li>
   </ul>
 
   <div id="no-result">No files match your search.</div>
