@@ -133,6 +133,10 @@ process the Founding axioms (Governor to provide), then hand queued BPs to cisem
 - **FIRST POST-COMPACT ACTION:** dispatch the independent `cisem-opus-pe` soundness review of **ARCH-00392** (AWAITING-BUILDER-REVIEW) →
   Governor ratification → phased build (MVP first). Second queued Sonnet task: the A8-sweep. Lesson logged: Opus plan-authoring
   under-searches its OWN recent work (§1.6 fork caught by fresh-eyes review — 2nd time; Stage-0 must grep the author's own recent commits).
+- **I25 DEBT (Sonnet parallel, 2026-07-18, commit 886b5cf):** Sonnet built **CS-FRONTEND-001** (corespine) + **ARCH-00394**
+  (corespine-creation wizard) WITHOUT a plan — an I25 violation (now committed + ZF-green). This immediately VALIDATED why
+  ARCH-00392's MECHANICAL I25 check is needed: behavioral I25 did not stop a parallel agent with stale context. RECONCILE
+  next session — Governor rules ratify-with-retro-plan OR revert. Also fresh evidence for one-orchestrator (Model-B) vs parallel-tab (Model-A) collision.
 - **PENDING GOVERNOR:** (1) Founding axioms TSA/CoreSpiral/Pocket (the one keystone); (2) comms CS-COMMS-001 (HANDOFF ready);
   (3) DIOS deep-dive / full-series ingestion (Governor: after axioms + the large parked issue).
 - **RESUME:** CLAUDE.md → this file (COMPACT STATE v2) → dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml
