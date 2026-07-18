@@ -46,11 +46,21 @@ listed 00003 as pending-delivery; it was never registered — this is the first 
 4. **ARCH-00280 Q4** template ruling.
 5. **ai-oversight-layer3** build or drop.
 
-## NEXT SESSION START POINT
-Read this file + dna/quality-ledger.yaml + ARCH-00310 (plan) + CLAUDE.md §2.5 (Doctrine).
-The Builder side of the critical path is exhausted; all 5 remaining items need Governor
-input. Recommended first move: rule on the Founding Node (nothing above it is stable
-until it exists). Then decrees 2–3 together.
+## SESSION UPDATE — 2026-07-18 (major progress; supersedes the 07-16 PENDING list above)
+DECREED since: **CS-MASTER-VALIDATION-001 RATIFIED** (foundational decree) + **ARCH-00320 RATIFIED**
+→ freeze lifted; 2/14 corespines ratified. Invariant set now **I1–I18** (only 4 automated in
+`plan-audit.sh`; 14 manual → BP-0002). New: **Creation Triad §3.7** (hardcoding+pocket+oversight, I18);
+**park-by-demand + SWIFT + queue engine** (`dna/queue/`); **SSOT registry** (`dna/ssot-registry.yaml`);
+**AI-Team** = agents cisem-haiku/sonnet/opus-pe + skills (queued). **First Core Seed cycle DONE** (BP-0001).
+QUEUED build-prompts: BP-0002 (orchestrate invariants), BP-0003 (/cisem-create skill), BP-0004 (front-end = living index).
+**THE ONE KEYSTONE STILL ONLY THE GOVERNOR CAN SUPPLY: the Founding axioms (TSA/CoreSpiral/Pocket)** —
+FOUND-00001 is DRAFT with A1–A7 present, awaiting those definitions.
+
+## NEXT SESSION START POINT (fresh-tab bootstrap)
+Read: CLAUDE.md → this file → dna/quality-ledger.yaml (latest runs) → dna/ssot-registry.yaml →
+dna/queue/README.md. Then you have full context with zero conversation dependency. First move:
+process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
+- 2026-07-18: session-update added for clean fresh-tab handoff (many decrees + engines since).

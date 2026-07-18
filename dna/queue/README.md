@@ -25,4 +25,5 @@ Only ESSENTIAL jumps to PROCESS-NOW. In-flight completion is respected first (I1
 ## Queue index (next: BP-0004)
 - BP-0001 — harden plan-audit.sh — HIGH — status: DONE (Sonnet-executed, Opus-verified 2026-07-18; I3 + ARCH-00310 fixed; CS-MASTER-VALIDATION genuine stale-status fixed; I16 field-vs-prose residual disclosed)
 - BP-0002 — orchestrate ALL invariants into the engine (creation-learning; pivot step 3) — HIGH — essential: y — QUEUED (depends BP-0001); FOLD IN the I16 field-vs-field redesign
-- BP-0003 — /cisem-create skill (auto-delivers the Creation Triad; pattern-ratified) — HIGH — essential: y — QUEUED
+- BP-0003 — /cisem-create skill (auto-delivers the Creation Triad; pattern-ratified) — HIGH — essential: y — QUEUED (approved to hand to Sonnet)
+- BP-0004 — most-basic front-end "Index" (= the navigable living index / DNA-00001) — HIGH — essential: y — QUEUED (Governor-spec'd)
