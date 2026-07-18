@@ -35,6 +35,7 @@
       <a href="pages/rules.html"><span class="n">20</span>Rules</a>
     </div>
   </div>
+  <div class="nav-search"><input id="si" type="text" placeholder="Filter groups..." autocomplete="off"><span class="cnt" id="cnt"></span></div>
   <div class="nav-r">
     <a href="pages/to-be-reviewed.html" class="ni" title="To Be Reviewed &amp; Created">&#9998;</a>
     <a href="pages/help.html" class="ni" title="Help">?</a>
@@ -42,119 +43,179 @@
 </nav>
 
 <div class="bc">
+  <button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button>
+  <button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <span>Home</span>
 </div>
 
 <main>
   <div class="hero">
     <h1>CISEM Living Index</h1>
-    <p>Navigable index of the entire CISEM repository &mdash; all 20 groups, every real file.<br>
-    Hover <strong>Index</strong> in the nav to jump to any group. Double-click any group card below.</p>
+    <p>All 20 groups &mdash; hover <strong>Index</strong> in the nav to jump to any group directly.</p>
   </div>
 
-  <div class="grid">
-    <a href="pages/skills.html" class="gc">
-      <div class="gnum">01</div>
-      <div class="gtitle">Skills</div>
-      <div class="gdesc">Implemented skills (.claude/skills/) + queued skill build-prompts</div>
-    </a>
-    <a href="pages/agents.html" class="gc">
-      <div class="gnum">02</div>
-      <div class="gtitle">Agents</div>
-      <div class="gdesc">Tier workers: Haiku (gather), Sonnet (execute), Opus PE (judge)</div>
-    </a>
-    <a href="pages/axioms.html" class="gc">
-      <div class="gnum">03</div>
-      <div class="gtitle">Axioms</div>
-      <div class="gdesc">A1&ndash;A7 core axioms + Doctrine D1&ndash;D6 (CISEM founding law)</div>
-    </a>
-    <a href="pages/schema.html" class="gc">
-      <div class="gnum">04</div>
-      <div class="gtitle">Schema</div>
-      <div class="gdesc">Node DNA field contract (ARCH-00008) + placement engine (SCHEMA-00001)</div>
-    </a>
-    <a href="pages/nodes.html" class="gc">
-      <div class="gnum">05</div>
-      <div class="gtitle">Nodes</div>
-      <div class="gdesc">Every CISEM-*.md node across the repo (ARCH, FOUND, WITNESS, VOC, SCHEMA&hellip;)</div>
-    </a>
-    <a href="pages/qc.html" class="gc">
-      <div class="gnum">06</div>
-      <div class="gtitle">QC</div>
-      <div class="gdesc">Audits, plan-audit gate, CS-MASTER-VALIDATION, quality ledger</div>
-    </a>
-    <a href="pages/protocols.html" class="gc">
-      <div class="gnum">07</div>
-      <div class="gtitle">Protocols</div>
-      <div class="gdesc">Named procedures governing creation, naming, handoffs, hardening</div>
-    </a>
-    <a href="pages/wizards.html" class="gc">
-      <div class="gnum">08</div>
-      <div class="gtitle">Wizards</div>
-      <div class="gdesc">Executable wizard procedures &mdash; none built yet (placeholder)</div>
-    </a>
-    <a href="pages/front-page-types.html" class="gc">
-      <div class="gnum">09</div>
-      <div class="gtitle">Front-page types</div>
-      <div class="gdesc">This living index frontend + planned index surfaces</div>
-    </a>
-    <a href="pages/internal-file-types.html" class="gc">
-      <div class="gnum">10</div>
-      <div class="gtitle">Internal file types</div>
-      <div class="gdesc">Registries, build-prompts (BP-*), IBD entries</div>
-    </a>
-    <a href="pages/document-types.html" class="gc">
-      <div class="gnum">11</div>
-      <div class="gtitle">Document types</div>
-      <div class="gdesc">Witness records, plans, cross-tab handoffs</div>
-    </a>
-    <a href="pages/templates.html" class="gc">
-      <div class="gnum">12</div>
-      <div class="gtitle">Templates</div>
-      <div class="gdesc">File-creation templates + BUILD-PROMPT template + library draft</div>
-    </a>
-    <a href="pages/internal-audits.html" class="gc">
-      <div class="gnum">13</div>
-      <div class="gtitle">Internal audits</div>
-      <div class="gdesc">Haiku/Sonnet/Opus tier audit reports + RQC run history</div>
-    </a>
-    <a href="pages/learning-loops.html" class="gc">
-      <div class="gnum">14</div>
-      <div class="gtitle">Learning &amp; loops</div>
-      <div class="gdesc">RQC, session learning registry, improvement + quality ledger</div>
-    </a>
-    <a href="pages/engines.html" class="gc">
-      <div class="gnum">15</div>
-      <div class="gtitle">Engines</div>
-      <div class="gdesc">plan-audit.sh gate + build-prompt queue engine</div>
-    </a>
-    <a href="pages/corespines.html" class="gc">
-      <div class="gnum">16</div>
-      <div class="gtitle">Corespines</div>
-      <div class="gdesc">Governing spines of CISEM architecture (registry + content files)</div>
-    </a>
-    <a href="pages/pipelines.html" class="gc">
-      <div class="gnum">17</div>
-      <div class="gtitle">Pipelines</div>
-      <div class="gdesc">Ordered creation chains &mdash; none defined yet (placeholder)</div>
-    </a>
-    <a href="pages/processes.html" class="gc">
-      <div class="gnum">18</div>
-      <div class="gtitle">Processes</div>
-      <div class="gdesc">Threshold intake, park-by-demand, SWIFT, tier freeze decree</div>
-    </a>
-    <a href="pages/principles.html" class="gc">
-      <div class="gnum">19</div>
-      <div class="gtitle">Principles</div>
-      <div class="gdesc">§2 behavior principles (1&ndash;14) + Creation Doctrine D1&ndash;D6</div>
-    </a>
-    <a href="pages/rules.html" class="gc">
-      <div class="gnum">20</div>
-      <div class="gtitle">Rules</div>
-      <div class="gdesc">Invariants I1&ndash;I22 + enforcement state (WARN / BLOCK)</div>
-    </a>
+  <div class="view-bar">
+    <button class="vbtn active" id="vbtn-grid">&#9635; Grid</button>
+    <button class="vbtn" id="vbtn-list">&#8801; List</button>
   </div>
+
+  <!-- GRID VIEW (default) -->
+  <div id="grid-view">
+    <div class="grid">
+      <a href="pages/skills.html" class="gc">
+        <div class="gnum">01</div>
+        <div class="gtitle">Skills</div>
+        <div class="gdesc">Implemented skills + queued skill build-prompts</div>
+      </a>
+      <a href="pages/agents.html" class="gc">
+        <div class="gnum">02</div>
+        <div class="gtitle">Agents</div>
+        <div class="gdesc">Tier workers: Haiku (gather), Sonnet (execute), Opus PE (judge)</div>
+      </a>
+      <a href="pages/axioms.html" class="gc">
+        <div class="gnum">03</div>
+        <div class="gtitle">Axioms</div>
+        <div class="gdesc">A1&ndash;A7 + Doctrine D1&ndash;D6 (founding law)</div>
+      </a>
+      <a href="pages/schema.html" class="gc">
+        <div class="gnum">04</div>
+        <div class="gtitle">Schema</div>
+        <div class="gdesc">Node DNA contract + placement engine</div>
+      </a>
+      <a href="pages/nodes.html" class="gc">
+        <div class="gnum">05</div>
+        <div class="gtitle">Nodes</div>
+        <div class="gdesc">Every CISEM-*.md node across the repo</div>
+      </a>
+      <a href="pages/qc.html" class="gc">
+        <div class="gnum">06</div>
+        <div class="gtitle">QC</div>
+        <div class="gdesc">Audits, plan-audit gate, quality ledger</div>
+      </a>
+      <a href="pages/protocols.html" class="gc">
+        <div class="gnum">07</div>
+        <div class="gtitle">Protocols</div>
+        <div class="gdesc">Named procedures governing creation + handoffs</div>
+      </a>
+      <a href="pages/wizards.html" class="gc">
+        <div class="gnum">08</div>
+        <div class="gtitle">Wizards</div>
+        <div class="gdesc">Executable wizard procedures (placeholder)</div>
+      </a>
+      <a href="pages/front-page-types.html" class="gc">
+        <div class="gnum">09</div>
+        <div class="gtitle">Front-page types</div>
+        <div class="gdesc">This living index + planned index surfaces</div>
+      </a>
+      <a href="pages/internal-file-types.html" class="gc">
+        <div class="gnum">10</div>
+        <div class="gtitle">Internal file types</div>
+        <div class="gdesc">Registries, build-prompts (BP-*), IBD entries</div>
+      </a>
+      <a href="pages/document-types.html" class="gc">
+        <div class="gnum">11</div>
+        <div class="gtitle">Document types</div>
+        <div class="gdesc">Witness records, plans, cross-tab handoffs</div>
+      </a>
+      <a href="pages/templates.html" class="gc">
+        <div class="gnum">12</div>
+        <div class="gtitle">Templates</div>
+        <div class="gdesc">File-creation + build-prompt templates</div>
+      </a>
+      <a href="pages/internal-audits.html" class="gc">
+        <div class="gnum">13</div>
+        <div class="gtitle">Internal audits</div>
+        <div class="gdesc">Haiku/Opus audit reports + RQC run history</div>
+      </a>
+      <a href="pages/learning-loops.html" class="gc">
+        <div class="gnum">14</div>
+        <div class="gtitle">Learning &amp; loops</div>
+        <div class="gdesc">RQC, session learning, improvement registry</div>
+      </a>
+      <a href="pages/engines.html" class="gc">
+        <div class="gnum">15</div>
+        <div class="gtitle">Engines</div>
+        <div class="gdesc">plan-audit.sh + build-prompt queue engine</div>
+      </a>
+      <a href="pages/corespines.html" class="gc">
+        <div class="gnum">16</div>
+        <div class="gtitle">Corespines</div>
+        <div class="gdesc">Governing spines of CISEM architecture</div>
+      </a>
+      <a href="pages/pipelines.html" class="gc">
+        <div class="gnum">17</div>
+        <div class="gtitle">Pipelines</div>
+        <div class="gdesc">Ordered creation chains (placeholder)</div>
+      </a>
+      <a href="pages/processes.html" class="gc">
+        <div class="gnum">18</div>
+        <div class="gtitle">Processes</div>
+        <div class="gdesc">Threshold intake, park-by-demand, SWIFT</div>
+      </a>
+      <a href="pages/principles.html" class="gc">
+        <div class="gnum">19</div>
+        <div class="gtitle">Principles</div>
+        <div class="gdesc">§2 behavior principles + Creation Doctrine</div>
+      </a>
+      <a href="pages/rules.html" class="gc">
+        <div class="gnum">20</div>
+        <div class="gtitle">Rules</div>
+        <div class="gdesc">Invariants I1&ndash;I22 + enforcement state</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- LIST VIEW (grouped, collapsible) -->
+  <div id="list-view">
+
+    <div class="sg-block">
+      <div class="sg-hdr">Foundation &amp; Law</div>
+      <div class="sg-rows">
+        <a href="pages/axioms.html" class="sg-row"><span class="sg-num">03</span><span class="sg-name">Axioms</span><span class="sg-desc">A1&ndash;A7 + Doctrine D1&ndash;D6 (founding law)</span></a>
+        <a href="pages/principles.html" class="sg-row"><span class="sg-num">19</span><span class="sg-name">Principles</span><span class="sg-desc">§2 behavior principles 1&ndash;14 + Creation Doctrine</span></a>
+        <a href="pages/rules.html" class="sg-row"><span class="sg-num">20</span><span class="sg-name">Rules</span><span class="sg-desc">Invariants I1&ndash;I22 + enforcement state (WARN / BLOCK)</span></a>
+        <a href="pages/corespines.html" class="sg-row"><span class="sg-num">16</span><span class="sg-name">Corespines</span><span class="sg-desc">Governing spines of CISEM architecture + registry</span></a>
+        <a href="pages/schema.html" class="sg-row"><span class="sg-num">04</span><span class="sg-name">Schema</span><span class="sg-desc">Node DNA field contract + placement engine</span></a>
+      </div>
+    </div>
+
+    <div class="sg-block">
+      <div class="sg-hdr">AI Team &amp; Creation</div>
+      <div class="sg-rows">
+        <a href="pages/agents.html" class="sg-row"><span class="sg-num">02</span><span class="sg-name">Agents</span><span class="sg-desc">Haiku (gather) · Sonnet (execute) · Opus PE (judge)</span></a>
+        <a href="pages/skills.html" class="sg-row"><span class="sg-num">01</span><span class="sg-name">Skills</span><span class="sg-desc">Implemented skills + queued skill build-prompts</span></a>
+        <a href="pages/wizards.html" class="sg-row"><span class="sg-num">08</span><span class="sg-name">Wizards</span><span class="sg-desc">Executable wizard procedures (placeholder)</span></a>
+        <a href="pages/protocols.html" class="sg-row"><span class="sg-num">07</span><span class="sg-name">Protocols</span><span class="sg-desc">Named procedures governing creation + handoffs</span></a>
+        <a href="pages/templates.html" class="sg-row"><span class="sg-num">12</span><span class="sg-name">Templates</span><span class="sg-desc">File-creation + build-prompt templates</span></a>
+      </div>
+    </div>
+
+    <div class="sg-block">
+      <div class="sg-hdr">Quality &amp; Learning</div>
+      <div class="sg-rows">
+        <a href="pages/qc.html" class="sg-row"><span class="sg-num">06</span><span class="sg-name">QC</span><span class="sg-desc">Audits, plan-audit gate, CS-MASTER-VALIDATION, quality ledger</span></a>
+        <a href="pages/internal-audits.html" class="sg-row"><span class="sg-num">13</span><span class="sg-name">Internal audits</span><span class="sg-desc">Haiku / Opus tier audit reports + RQC run history</span></a>
+        <a href="pages/learning-loops.html" class="sg-row"><span class="sg-num">14</span><span class="sg-name">Learning &amp; loops</span><span class="sg-desc">RQC, session learning registry, improvement loop</span></a>
+        <a href="pages/engines.html" class="sg-row"><span class="sg-num">15</span><span class="sg-name">Engines</span><span class="sg-desc">plan-audit.sh + build-prompt queue engine</span></a>
+        <a href="pages/internal-file-types.html" class="sg-row"><span class="sg-num">10</span><span class="sg-name">Internal file types</span><span class="sg-desc">Registries, build-prompts, IBD entries</span></a>
+      </div>
+    </div>
+
+    <div class="sg-block">
+      <div class="sg-hdr">Structure &amp; Docs</div>
+      <div class="sg-rows">
+        <a href="pages/nodes.html" class="sg-row"><span class="sg-num">05</span><span class="sg-name">Nodes</span><span class="sg-desc">Every CISEM-*.md node across the repo</span></a>
+        <a href="pages/document-types.html" class="sg-row"><span class="sg-num">11</span><span class="sg-name">Document types</span><span class="sg-desc">Witness records, plans, cross-tab handoffs</span></a>
+        <a href="pages/processes.html" class="sg-row"><span class="sg-num">18</span><span class="sg-name">Processes</span><span class="sg-desc">Threshold intake, park-by-demand, SWIFT</span></a>
+        <a href="pages/front-page-types.html" class="sg-row"><span class="sg-num">09</span><span class="sg-name">Front-page types</span><span class="sg-desc">This living index + planned index surfaces</span></a>
+        <a href="pages/pipelines.html" class="sg-row"><span class="sg-num">17</span><span class="sg-name">Pipelines</span><span class="sg-desc">Ordered creation chains (placeholder)</span></a>
+      </div>
+    </div>
+
+  </div><!-- /list-view -->
+
 </main>
 
+<script src="js/search.js"></script>
 </body>
 </html>
