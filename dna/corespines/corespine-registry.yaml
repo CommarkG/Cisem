@@ -1,7 +1,7 @@
 # CISEM Corespine Registry — single index of every corespine's status
 # Full content lives in individual files only once a corespine moves past DRAFT.
 # Placeholders per Schema Placement Engine (CISEM-SCHEMA-00001) use status: PLACEHOLDER.
-# Creation protocol: ARCH-00393 (Universal Corespine Creation Wizard) — use for ALL new corespines.
+# Creation protocol: ARCH-00394 (Universal Corespine Creation Wizard) — use for ALL new corespines.
 
 CS-FRONTEND-001:
   status: DECLARED   # Governor-ordered 2026-07-18; Opus ratification pending

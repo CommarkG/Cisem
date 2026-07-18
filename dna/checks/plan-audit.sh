@@ -5,6 +5,8 @@
 #        I9 (unregistered IDs), I16 (status contradictions), I23 (activation / EXISTS≠ACTIVE),
 #        I24 (premature promotion), P3 (Governor-decision TTL), P5 (independent verifier),
 #        I6-SIZE (size gate — plans/protocols >200 lines without exception).
+# PHASE-0 (ARCH-00392): three-state I19/I23/I24 + [EDGE] channel (UNKNOWN/penumbra).
+#        Registry: dna/checks/invariant-registry.yaml (legal_kind/applies_to/core[]/penumbra[]).
 # WARN-ONLY by design: reports findings, NEVER blocks a commit (always exit 0).
 # Promote to BLOCK-mode only per ARCH-00270 after ARCH-00320 is RATIFIED.
 #
@@ -17,9 +19,15 @@
 #   ZF aggregation updated to include P3+P5. Grounds: session-learning-index P3/P5.
 #   v5 (2026-07-18): I6-SIZE (size gate §3.6 — plans+protocols >200 lines without declared exception).
 #   Grounds: Haiku audit finding (9 files exceeded without exemptions documented).
+#   v6 (2026-07-18): ARCH-00392 Phase-0 three-state output (PASS/FAIL/UNKNOWN) for I19/I23/I24.
+#   UNKNOWN → [EDGE] channel beside [ZF]. Scope envelopes in dna/checks/invariant-registry.yaml.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
+
+# Phase-0 (ARCH-00392): EDGE channel — UNKNOWN/penumbra findings from invariant-registry.yaml
+edge_findings=""; found_edge=0
+[ -f dna/checks/invariant-registry.yaml ] || echo "[WARN] invariant-registry.yaml missing — three-state checks cannot run"
 
 echo "── CISEM plan-audit (WARN-ONLY, ARCH-00320 §6) ──────────────"
 
@@ -77,8 +85,10 @@ for f in $(find . -name "*.md" -not -path './.git/*' 2>/dev/null); do
   header_status=$(head -20 "$f" | grep -iE "^\*\*Status:|^status:" | head -1 | sed -E 's/.*Status:\s*\*?\*?//i' | xargs)
   [ -z "$header_status" ] && continue
 
-  # check if body has a DIFFERENT Status field declaration (ignore prose "ratified" mentions)
-  body_status=$(tail -n +21 "$f" 2>/dev/null | grep -iE "^\*\*Status:|^status:" | head -1 | sed -E 's/.*Status:\s*\*?\*?//i' | xargs)
+  # check if body has a DIFFERENT Status field declaration (ignore prose; skip code fences)
+  body_status=$(tail -n +21 "$f" 2>/dev/null | \
+    awk 'BEGIN{f=0} /^```/{f=!f;next} !f && (tolower($0)~/^\*\*status:/ || tolower($0)~/^status:/){print;exit}' | \
+    sed -E 's/.*Status:\s*\*?\*?//i' | xargs)
 
   if [ -n "$body_status" ] && [ "$header_status" != "$body_status" ]; then
     echo "   STALE: $f (header Status: $header_status | body Status: $body_status)"; found_i16=1
@@ -108,6 +118,16 @@ if [ "$hooks_present" = 0 ]; then
   done
 fi
 [ "$found_i23" = 0 ] && echo "   (none — every activation claim has a mechanism on disk or an honest NOT-YET-BUILT marker)"
+# I23 EDGE (ARCH-00392 Phase-0): penumbra — hook files exist but not registered in settings.json
+if [ -d .claude/hooks ] && [ -n "$(find .claude/hooks -type f 2>/dev/null)" ]; then
+  while IFS= read -r hookfile; do
+    hbase=$(basename "$hookfile")
+    if ! grep -rqiE "$hbase" .claude/settings*.json 2>/dev/null; then
+      edge_findings="${edge_findings}   [I23-EDGE] $hookfile — EXISTS but not in settings*.json (invariant-registry I23.penumbra)\n"
+      found_edge=1
+    fi
+  done < <(find .claude/hooks -type f 2>/dev/null)
+fi
 
 # I19 — Existing-First is MANDATORY and now MACHINE-CHECKED (Governor 2026-07-18: "check what exists"
 #       must be enforced, not manual). Every plan (dna/planning/*.md) MUST state its Existing-First search
@@ -120,6 +140,13 @@ for f in $(find dna/planning -name "*.md" 2>/dev/null); do
   fi
 done
 [ "$found_i19" = 0 ] && echo "   (none — every plan states its Existing-First search)"
+# I19 EDGE (ARCH-00392 Phase-0): penumbra — Existing-First keyword present but no search evidence
+for f in $(find dna/planning -name "*.md" 2>/dev/null); do
+  grep -qiE "existing.first|EXISTS-FIRST|§?3\.2b|i searched|searched:|search order|Lineage \(I19\)|knowledge.library" "$f" || continue
+  grep -qiE "ssot-registry|corespine-registry|naming-registry|knowledge.library|\bgrep\b|archive|PROMOTES|IBD-[0-9]+|nothing found|no existing|lineage.*=|SUPERSEDES|§3\.2b.*done|\bsearched\b|dna/" "$f" && continue
+  edge_findings="${edge_findings}   [I19-EDGE] $(basename $f) — Existing-First present but no search evidence (invariant-registry I19.penumbra)\n"
+  found_edge=1
+done
 
 # I24 — premature promotion of status (DIOS anti-patterns "validation avoidance" / "premature principle").
 #       A node claiming RATIFIED (DIOS Constitutional/Validated level) MUST carry validation evidence for that
@@ -132,6 +159,13 @@ for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.m
   fi
 done
 [ "$found_i24" = 0 ] && echo "   (none — every RATIFIED node cites its validating decree)"
+# I24 EDGE (ARCH-00392 Phase-0): penumbra — RATIFIED + authorization word but no date/run reference
+for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+  grep -qiE "decree|ratified by|ratified —|ratified by governor|foundational|by governor" "$f" || continue
+  grep -qiE "[0-9]{4}-[0-9]{2}-[0-9]{2}|run [0-9]+|quality.ledger" "$f" && continue
+  edge_findings="${edge_findings}   [I24-EDGE] $(basename $f) — RATIFIED + auth word but no date/run ref (invariant-registry I24.penumbra)\n"
+  found_edge=1
+done
 
 # I6-SIZE — Size gate: plans + protocols exceeding 200 lines must declare a size exception or mini-tree split.
 #           Exempt by content: AUDIT, WITNESS, SKILL, LOAD, VOCAB, GOV types are contextually exempt (long by nature).
@@ -197,6 +231,14 @@ for f in $(find dna/planning -name "*.md" 2>/dev/null); do
   fi
 done
 [ "$found_p5" = 0 ] && echo "   (none — every plan names an independent verifier)"
+
+# EDGE — Phase-0 (ARCH-00392): UNKNOWN/penumbra channel. UNKNOWN ≠ FAIL; advisory for Opus judgment.
+echo "[EDGE] unknown/penumbra findings (invariant-registry.yaml I19/I23/I24 scope envelopes):"
+if [ "$found_edge" -eq 0 ]; then
+  echo "   (none — no penumbra cases this run)"
+else
+  printf "$edge_findings"
+fi
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).

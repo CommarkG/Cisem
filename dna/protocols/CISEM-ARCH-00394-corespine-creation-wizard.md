@@ -13,7 +13,7 @@ Last_verified: 2026-07-18
 **CISEM-ARCH-00394** | WIZARD | **Status: DECLARED**
 **Purpose:** Define, create, and register ANY CISEM corespine via a single YAML input block. Supports batch creation (N corespines at once). Subsumes ad-hoc corespine creation — all corespines go through this wizard from now on.
 
-**Size note:** 215 lines — exceeds 200-line gate. Exception: wizard-type node with mandated STEP 1–6 procedure + template blocks + YAML schema; structural content not reducible without losing executability.
+**Size note:** 233 lines — exceeds 200-line gate. Exception: wizard-type node with mandated STEP 1–6 procedure + template blocks + YAML schema; structural content not reducible without losing executability.
 
 ---
 
@@ -25,7 +25,7 @@ Last_verified: 2026-07-18
 **§3.3 Pocket:** `reasoning_scope: corespine creation protocol` | `inherited_constraints: §3 gates, A2, A5, I10, I19, I22` | `output_contract: corespine directory + manifest + registry entries` | `ai_cannot: ratify its own output` | `cal_reference: ARCH-00390`
 **§3.4 Standalone:** All refs resolve.
 **§3.5 Naming:** CISEM-ARCH-00394, seq 394.
-**§3.6 Size:** 215 lines — exception documented above.
+**§3.6 Size:** 233 lines — exception documented above.
 **§3.7 Creation Triad:** ✓ gates | ✓ pocket | ✓ oversight (RQC on each corespine created)
 
 ---
@@ -124,7 +124,7 @@ Resolve every finding before declaring DONE. ZF ACHIEVED = wizard run complete.
 ---
 Node_ID: CISEM-ARCH-{SEQ}
 Type: MANIFEST
-Doc-Status: {initial_status}
+Status: {initial_status}
 Corespine: {CS-NAME}
 Schema_anchor: CISEM-ARCH-00008
 Core_spine: {parent}
@@ -133,7 +133,7 @@ Last_verified: {date}
 
 # {CS-NAME} — CISEM {Domain} Corespine Manifest
 
-**CISEM-ARCH-{SEQ}** | MANIFEST | **Doc-Status: {initial_status}** (pending Opus ratification)
+**CISEM-ARCH-{SEQ}** | MANIFEST | **Status: {initial_status}** (pending Opus ratification)
 **Governs:** {scope}
 
 ---
@@ -231,3 +231,4 @@ Sonnet runs STEP 1–6 for EACH entry in sequence. All three corespines are crea
 | Date | Change | Author |
 |---|---|---|
 | 2026-07-18 | DECLARED — initial wizard, STEP 1–6 procedure, YAML schema, template | Sonnet (Governor-ordered) |
+| 2026-07-18 | D-1: corrected size note + §3.6 line count (215→233); D-4: template field Doc-Status→Status | Sonnet (defect fix pass, Opus PE ruling) |

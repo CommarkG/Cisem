@@ -24,7 +24,7 @@ Last_verified: 2026-07-18
 **§3.3 Pocket:** `reasoning_scope: corespine establishment + FE-I1–I10 definition` | `inherited_constraints: A2 (every artifact declares spine), §3 gates, I22` | `output_contract: DECLARED corespine node + registry entry + invariants` | `ai_cannot: ratify own declaration` | `recorded_at: 2026-07-18` | `cal_reference: ARCH-00390`
 **§3.4 Standalone:** No dangling refs — all files cited exist on disk.
 **§3.5 Naming:** `CISEM-ARCH-00393` (seq 393, ARCH type, naming-registry.yaml updated).
-**§3.6 Size:** ~190 lines — within 200-line gate.
+**§3.6 Size:** 108 lines — within 200-line gate.
 **§3.7 Creation Triad:** Hardcoding (this §I trace + FE-I1–I10) ✓ | AI Pocket (§3.3 declared) ✓ | AI Oversight (quality-ledger.yaml run to be logged by Opus on ratification) ✓
 
 ---
@@ -86,7 +86,7 @@ Last_verified: 2026-07-18
 | File | ARCH# | Purpose |
 |---|---|---|
 | This manifest | ARCH-00393 | Corespine declaration + invariants |
-| Universal Corespine Wizard | ARCH-00393 | Protocol for creating any corespine |
+| Universal Corespine Wizard | ARCH-00394 | Protocol for creating any corespine |
 
 ---
 
@@ -105,3 +105,4 @@ Last_verified: 2026-07-18
 | Date | Change | Author |
 |---|---|---|
 | 2026-07-18 | DECLARED — initial manifest, FE-I1–I10 established, ARCH-00393 assigned | Sonnet (Governor-ordered) |
+| 2026-07-18 | D-1: corrected §3.6 line count (~190→108); D-2: fixed §V wizard ID (00393→00394) | Sonnet (defect fix pass, Opus PE ruling) |
