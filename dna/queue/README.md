@@ -30,3 +30,4 @@ Only ESSENTIAL jumps to PROCESS-NOW. In-flight completion is respected first (I1
 - BP-0005 — wire the ONE naming/numbering gate (naming was EXISTS≠ACTIVE / 3 parallel authorities) — HIGH — essential: y — QUEUED (depends BP-0001)
 - BP-0006 — raw-input preservation + FULL value lifecycle (capture→extract→discuss→consensus→plan→create) — HIGH — essential: y — QUEUED (depends BP-0007)
 - BP-0007 — plan-gate BOOTSTRAP (meta-protocol/wizard + plan-protocol/wizard; ratified design) — HIGH — essential: y — QUEUED (root; foundational decree)
+- BP-0008 — Active Archive of ruled-out/superseded ideas (mechanically-enforced avoid-list; SWIFT-improves ARCH-00150) — HIGH — essential: y — QUEUED (depends BP-0001)

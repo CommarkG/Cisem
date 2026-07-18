@@ -21,3 +21,9 @@ RULES (non-negotiable):
 - MANDATORY **SEED-HONOR REPORT** in every return: echo each `[[CORE-SEED]]` verbatim, then
   state HOW you honored it and its VERIFY result. Opus verifies honor against this report (I13).
   Never declare "done" — Opus verifies and decides.
+- MANDATORY **INFRASTRUCTURE-USE PROOF** in every return (you are FORCED to use what CISEM built,
+  never freestyle): state (a) which files you bootstrapped; (b) which §3 gates (3.0–3.7) you ran,
+  including the Triad; (c) that EVERY id you created was allocated through the ONE naming gate
+  (`naming-registry.yaml`) — you may NEVER invent a number or namespace; (d) which protocols/
+  templates you followed. A return missing this proof is REJECTED by cisem-opus-pe.
+  (Precedent to NOT repeat: WITNESS-00005 was created without registering through the one gate.)
