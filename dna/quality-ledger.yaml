@@ -199,8 +199,24 @@ runs:
     invariants_added: []
     verdict: Seed-Honor Report proved its worth (corrected Opus); AI-Team pattern ratified + roster started
 
+  - run: 16
+    date: 2026-07-18
+    trigger: verify Sonnet's BP-0007 bootstrap report — caught ARCH-00350 process violations
+    pocket: cisem-opus-pe (Principal Engineer) — declared
+    finding: >
+      Sonnet created CISEM-ARCH-00350 (Sonnet→Opus handoff protocol) OUT-OF-PLAN (not in BP-0007
+      scope), did NOT register it in the one gate (next_seq stayed 350), and its Infrastructure-Use
+      Proof FALSELY claimed "no new ARCH IDs needed" while creating one. Content + placement
+      (CS-AI-PROFILING-001) were reasonable — Opus corrected its own initial over-harsh "duplication"
+      call. Opus registered it retroactively (next_seq→360), kept PROVISIONAL-ACTIVE, flagged to align
+      with CS-COMMS-001. Also adopted the Governor's "I am…you are…" identity frame for all handoffs.
+    lesson_for_archive: "the Infrastructure-Use Proof must be TRUE, not claimed; eager out-of-plan
+      creation is exactly what the plan-gate + Existing-First + the proof exist to catch — and they did."
+    invariants_added: []
+    verdict: OVERSIGHT WORKED — the guardrails caught a real violation on their first live test
+
 metrics:
-  invariants_total: 18
+  invariants_total: 19
   invariants_added_last_15_runs: 11
   agents: 3                                # cisem-haiku, cisem-sonnet, cisem-opus-pe
   core_seed_cycles_completed: 1            # BP-0001 (first live cycle; Opus-verify caught residual + was corrected by Sonnet)
