@@ -2,7 +2,8 @@
 # CISEM Recurring Quality Cycle — WARN-ONLY plan-audit
 # Governed by CISEM-ARCH-00320 §6 (Trigger) + §4 (invariants).
 # Wires: I1 (dangling refs), I3 (uncommitted truth-fields), I6 (closure-verb commits),
-#        I9 (unregistered IDs), I16 (status contradictions), I23 (activation / EXISTS≠ACTIVE).
+#        I9 (unregistered IDs), I16 (status contradictions), I23 (activation / EXISTS≠ACTIVE),
+#        I24 (premature promotion), P3 (Governor-decision TTL), P5 (independent verifier).
 # WARN-ONLY by design: reports findings, NEVER blocks a commit (always exit 0).
 # Promote to BLOCK-mode only per ARCH-00270 after ARCH-00320 is RATIFIED.
 #
@@ -10,6 +11,9 @@
 #   v2 (run 4, 2026-07-16): I1 now skips refs tagged example-only/NOT-YET-A-NODE/
 #   SIMULATION; I3 matches field-form (Status:/status:/last_verified:) not the bare
 #   word RATIFIED — kills two false-positive classes surfaced by v1's first run.
+#   v4 (2026-07-18): P3 (Governor-decision TTL — decisions_pending must carry
+#   owner+created_date+ttl_days) + P5 (independent verifier per ARCH-00190 §3);
+#   ZF aggregation updated to include P3+P5. Grounds: session-learning-index P3/P5.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -126,11 +130,60 @@ for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.m
 done
 [ "$found_i24" = 0 ] && echo "   (none — every RATIFIED node cites its validating decree)"
 
+# P3 — Governor-decision TTL (session-learning-index P3; ARCH-00360 Rule 5 escalation).
+#       Every decisions_pending entry in a governance YAML must carry {owner, created_date, ttl_days}.
+#       A missing-field entry is a structural violation; a past-TTL entry is a required-escalation finding.
+echo "[P3] Governor-decision TTL (decisions_pending must have owner+created_date+ttl_days; past TTL = finding):"
+found_p3=0
+today=$(date +%Y-%m-%d 2>/dev/null)
+_p3tmp=$(mktemp 2>/dev/null || echo "${TEMP:-/tmp}/cisem_p3_$$")
+> "$_p3tmp"
+for f in $(grep -rl "decisions_pending:" --include="*.yaml" . 2>/dev/null | grep -v '.git/'); do
+  # awk: enter block on "decisions_pending:", exit on a non-list non-empty non-comment line at same/lower indent
+  awk '/decisions_pending:/{in_b=1;next} in_b && /^[[:space:]]*-[[:space:]]*\{/{print} in_b && /^[[:space:]]*[a-zA-Z_][^{-]/{in_b=0}' "$f" 2>/dev/null \
+  | while IFS= read -r line; do
+    miss=""
+    echo "$line" | grep -q "owner:"        || miss="$miss owner"
+    echo "$line" | grep -q "created_date:" || miss="$miss created_date"
+    echo "$line" | grep -q "ttl_days:"     || miss="$miss ttl_days"
+    item=$(echo "$line" | grep -oE '"[^"]{1,60}"' | head -1 | tr -d '"')
+    if [ -n "$miss" ]; then
+      echo "   MISSING FIELDS: $f — '${item:-?}' lacks:$miss" >> "$_p3tmp"
+    else
+      c=$(echo "$line" | grep -oE 'created_date: *"[0-9-]+"' | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+      t=$(echo "$line" | grep -oE 'ttl_days: *[0-9]+' | grep -oE '[0-9]+$')
+      if [ -n "$c" ] && [ -n "$t" ] && [ -n "$today" ]; then
+        ts=$(date -d "$today" +%s 2>/dev/null); cs=$(date -d "$c" +%s 2>/dev/null)
+        if [ -n "$ts" ] && [ -n "$cs" ]; then
+          age=$(( (ts - cs) / 86400 ))
+          [ "$age" -gt "$t" ] && echo "   PAST TTL: $f — '${item:-?}' (${age}d > TTL ${t}d)" >> "$_p3tmp"
+        fi
+      fi
+    fi
+  done
+done
+[ -s "$_p3tmp" ] && { cat "$_p3tmp"; found_p3=1; } || echo "   (none — all decisions_pending entries have required fields and are within TTL)"
+rm -f "$_p3tmp"
+
+# P5 — Independent Verifier (session-learning-index P5). Every plan in dna/planning/ must name
+#       an independent verifier distinct from its implementer. Grounds: ARCH-00190 §3 (ratification path).
+#       A plan cannot reach ZF without a named verifier — the verifier is the activation-proof step.
+echo "[P5] plans missing an independent verifier (required per §3 ARCH-00190; must differ from implementer):"
+found_p5=0
+for f in $(find dna/planning -name "*.md" 2>/dev/null); do
+  # Require field-label form at line start: "**Independent Verifier" or "Independent Verifier:" or YAML key
+  # Prose mentions ("no Independent Verifier...") must NOT satisfy this check — only a declared field.
+  if ! grep -qiE "^\*\*independent[ _-]verifier|^independent[ _-]verifier:|^[[:space:]]*independent[ _-]verifier:[[:space:]]" "$f"; then
+    echo "   MISSING: $f (no independent verifier field declared)"; found_p5=1
+  fi
+done
+[ "$found_p5" = 0 ] && echo "   (none — every plan names an independent verifier)"
+
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.
-zf_open=$(( found_i1 + found_i9 + found_i16 + found_i19 + found_i23 + found_i24 ))
-echo "[ZF] zero-findings gate (I1+I9+I16+I19+I23+I24):"
+zf_open=$(( found_i1 + found_i9 + found_i16 + found_i19 + found_i23 + found_i24 + found_p3 + found_p5 ))
+echo "[ZF] zero-findings gate (I1+I9+I16+I19+I23+I24+P3+P5):"
 if [ "$zf_open" -eq 0 ]; then
   echo "   ✅ ZF ACHIEVED — zero un-routed findings this run"
 else
