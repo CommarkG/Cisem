@@ -19,7 +19,7 @@ A platform engineer wires the platform's automation primitives by default. CAL i
 |---|---|---|---|
 | **Commit** | `.git/hooks/pre-commit` → `plan-audit.sh` (8 checks + [ZF] + I13 BLOCK) | every commit | **LIVE** |
 | **SessionStart** | `.claude/hooks/session-start.sh` (registered in `settings.json`) — injects inherited preventions + resume path | every session start / resume / post-compact | **LIVE next session** (built+tested) |
-| **PreCompact** | `.claude/hooks/pre-compact.sh` — save-all reminder (I20) + runs the [ZF] gate | before every compaction | **LIVE next session** (built+tested) |
+| **PreCompact** | `.claude/hooks/pre-compact.sh` — DETAILED save-all status (dirty-tree / unpushed / [ZF] / I20 checklist) + auto-generates a paste-ready, self-contained RESUME ONE-CLICK (I21) | before every compaction | **LIVE next session** (built+tested) |
 
 Behavioral instructions (Core Seeds, agent BOOTSTRAP) still add value, but CAL makes the floor MECHANICAL:
 the inheritance + save-all + ZF gate now fire even if no agent is told.
