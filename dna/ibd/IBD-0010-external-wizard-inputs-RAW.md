@@ -55,5 +55,21 @@ Summary blocks-on per step: 1 no "what breaks" answer · 2 any conflict · 3 pri
 - Falsification test stated OUT LOUD at exit (CSP Step 9) — a ritual, not stored text. Curious if a spoken/echoed falsification belongs in our stress-test.
 - Q for us: does "corespine = constitutional constraint that applies to ALL decisions in its domain" tighten OUR definition (vs our looser "everything is part of a corespine")? Possible sharpening of A2 + the undebatable-core.
 
-## INPUT 3 — AWAITING (paste post-compact if not before)
+## INPUT 3 — (source: "CSPS") — VERBATIM-FAITHFUL, un-purified
+Thesis: the one decision never to get wrong = WHAT GOVERNS WHAT, and in which order it WINS when two disagree (PRECEDENCE).
+- Step 0 GROUND IN WHAT EXISTS: read the 5 sealed L1 core-spine files as READ-ONLY ground truth (never copy-modify as templates); precedence HARDCODED not user-editable (GVRN>VALD>ARCH>AI>OPER). Insight: "the wizard's FIRST JOB is REFUSAL — structurally incapable of creating a 6th spine or reordering precedence. That constraint IS the product."
+- Step 1 DEFINE WHAT A SPINE IS: a governance DOMAIN with a primary concern (governs-HOW-built / WHAT-built-on / AI-behavior / operations / standards-met), a sealed L1 doctrine file (changes = re-grounding event), an L2 domain layer, a fixed precedence rank (1-5, not per-spine assignable). First question: "which ONE concern is primary?"
+- Step 2 CLASSIFIER ENGINE (before creation): match description to the 5-spine table; check sealed L1 — does this concern already live in one of the 5? MOST "I need a new spine" = "new L2 domain under an existing spine" (single most common failure). Only if genuinely orthogonal → escalate to Governor (spine count sealed). "A wizard that makes new spines EASY will bypass sealing — the friction is a feature."
+- Step 3 ARTIFACT-AUTHORING (common case, artifact under existing spine): auto-pull frontmatter template (never hand-typed); auto-populate core_spine from classifier (empty = orphan); schema_anchor (offer existing first); template_used from registry not free-text (no fit → register a template first).
+- Step 4 CROSS-SPINE: ask "does this ALSO touch other spines?" → core_spines:[...] plural + primary core_spine; surface precedence consequence at save ("if ARCH conflicts with GVRN, GVRN wins — confirm"). Force declaration at creation (cheapest).
+- Step 5 VALIDATORS ATOMIC (Five-Surface Engraving): corespine-layer-compliance + nothing-stands-alone (schema_anchor, no orphan) + template-citation. File without registered validators = EXISTS-but-not-ACTIVE (the failure the wizard prevents).
+- Step 6 CLOSE WITH ACTIVATION PROOF: planted-violation test (does misclassifying get caught?) + positive-path confirm. DONE = wired+called+verified, not authored.
+- LEDGER — chosen: classifier-first, defaults to "you probably don't need a new spine", new-spine = rare Governor-gated event. Rejected: free "flexible spine wizard" (erodes sealed precedence); "schema-only wizard" (syntactically-valid-but-semantically-wrong core_spine — real historical failure).
+- Their OPTIMAL NEXT STEP: pick delivery form (CLI / Claude-skill / web) before the classifier; form decides validators-as-pre-commit-hooks vs async.
+
+## CURIOSITY (Opus, input 3 — the big one):
+- **PRECEDENCE ORDERING** (which spine WINS a conflict, fixed rank) = the EXACT conflict-resolution gap we hit (two-root validation-vs-creation; stress-test Q8 "which wins?"). CSPS hardcodes a precedence rank. Strong candidate for OUR model.
+- **"The wizard's first job is REFUSAL"** — the wizard's PRODUCT is the constraint (can't make a 6th spine / can't reorder). Refusal-as-feature.
+- **SEALED, bounded, precedence-ordered spine set** vs our OPEN corespine count — do WE want a sealed top-level set? Big architectural question.
+- All THREE colleagues CONVERGE: consolidation/uniqueness-gate-first · "most new-spine = branch under existing" · mechanical-not-documented · DONE=wired+called+verified · Cannot-Mean/exclusions mandatory. Convergence across 3 independent sources = strong validation of our direction.
 ## INPUT 3 — AWAITING (paste post-compact if not before)
