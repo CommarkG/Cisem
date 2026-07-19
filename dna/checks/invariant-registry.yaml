@@ -20,6 +20,7 @@ I19:
     - "IBD raw-capture files (dna/ibd/IBD-*) — capture-first by design, gate-exempt"
     - "HANDOFF files — pre-node coordination artifacts, not governed creation"
     - "retro-plan files that explicitly document a retroactive search result inline"
+    - "planning docs carrying an AUTHORED '§3.2b/I19 Existing-First exemption' clause — deliberation/open-questions or process-protocol docs that propose no new node (e.g. ARCH-00280, ARCH-00190). The exemption is disclosed + reasoned in-file, not silent (ARCH-00396 Phase D)"
   core:
     - "plan has 'Existing-First' AND cites at least one registry/grep/archive result explicitly"
     - "plan says 'nothing found' / 'no existing' AND names the source searched (registry/grep/archive) — 'nothing found' counts as evidence ONLY when paired with a named source"

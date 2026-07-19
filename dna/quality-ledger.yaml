@@ -533,6 +533,28 @@ runs:
       Not claiming Gate D — Opus judges soundness (mechanical hygiene; Governor sign-off optional per plan).
     status: IN-PROGRESS  # GATE D pending Opus soundness
 
+  - run: 28
+    date: 2026-07-18
+    trigger: "Opus PE: ARCH-00396 Phase D — Gate-D soundness + close the I19-tighten side-effect"
+    pocket: cisem-opus-pe (PE) — declared
+    verdict_soundness: SOUND
+    finding: >
+      Verified Sonnet's Phase D (f63cc44): 5 files, explicit git add, no truth-fields. All 3 fixes proven:
+      (1) penumbra-sweep counter now SEPARATES real-escapes (0) from planted-caught (2/2) — metric no longer
+      reports success as failure; (2) I19-P2 tightened — bare "nothing found" → UNKNOWN, "nothing found + named
+      source" → PASS (both planted-tested); (3) naming-registry BP next_seq 5→9 (drift closed). GATE D: PASS.
+    side_effect_closed: >
+      The I19 tighten correctly EXPOSED a latent bug: ARCH-00280 was passing I19 only because "no existing search
+      required" contains the substring "no existing". It then routed to [I19-EDGE] (three-state working as designed).
+      Opus judgment: ARCH-00280 is a deliberation/open-questions doc with an AUTHORED §3.2b exemption clause — genuinely
+      exempt. Recorded mechanically: plan-audit I19 now skips files with an authored "Existing-First exemption" clause
+      (disclosed, not silent — same class as the retro-plan silent_on case); invariant-registry I19.silent_on documents it.
+      Re-run: ARCH-00280 [I19-EDGE] cleared; [ZF] ACHIEVED.
+    opus_executor_note: "The exemption fix (2 check files) was done by Opus under the §3.0 stated exception (tiny + in-context + closing the gate); logged for the opus_executor_incidents metric honesty."
+    invariants_added: []
+    new_enhancements: ["penumbra-sweep true false-pass metric (real-escapes only)", "I19 recognizes authored exemption clauses (no false-EDGE on exempt deliberation docs)"]
+    status: COMPLETE   # Gate D cleared. ARCH-00396 fully executed (A+B+C+D) — pending Governor veto window on the two-root ruling.
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14

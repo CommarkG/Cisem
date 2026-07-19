@@ -155,6 +155,7 @@ done
 # with no named source (registry/grep/archive) is NOT evidence — it now falls through to [EDGE] UNKNOWN.
 for f in $(find dna/planning -name "*.md" 2>/dev/null); do
   grep -qiE "existing.first|EXISTS-FIRST|§?3\.2b|i searched|searched:|search order|Lineage \(I19\)|knowledge.library" "$f" || continue
+  grep -qiE "Existing-First exemption|I19 exemption|exempt from Existing-First" "$f" && continue   # ARCH-00396 Phase D: an AUTHORED §3.2b/I19 exemption clause (deliberation/open-questions or process-protocol doc proposing no new node — e.g. ARCH-00280, ARCH-00190) is a disclosed judgment, not a silent bypass — same class as the silent_on retro-plan case
   grep -qiE "ssot-registry|corespine-registry|naming-registry|knowledge.library|\bgrep\b|archive|PROMOTES|IBD-[0-9]+|lineage.*=|SUPERSEDES|§3\.2b.*done|\bsearched\b|dna/" "$f" && continue
   edge_findings="${edge_findings}   [I19-EDGE] $(basename $f) — Existing-First present but no search evidence (invariant-registry I19.penumbra)\n"
   found_edge=1
