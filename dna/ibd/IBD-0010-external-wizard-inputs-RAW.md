@@ -31,5 +31,29 @@ Step 9 — Exit Gate (does not close on optimism): same checklist as any new sch
 Why this way: every step already exists (Schema Lab, Schema Standard, Trigger Registry, consolidation gate). A Core Spine Wizard is not new invention — it is COMPOSITION: same primitives, sequenced with stricter gates, because a spine is trunk-level. Do not build two systems that do almost the same thing — compose the one you have into a guided flow for spine creation.
 
 ---
-## INPUT 2 — AWAITING (paste post-compact if not before)
+## INPUT 2 — (source: "CDS") — VERBATIM-FAITHFUL, un-purified
+Framing: a corespine is a CONSTITUTIONAL CONSTRAINT (not a document) — applies to all decisions, cannot be bypassed, mechanically enforced. Building one wrong is worse than not building it.
+- STEP 1 CONSTITUTIONAL JUSTIFICATION — collect "what problem / what fails if it doesn't exist?"; BLOCKING gate: is "what fails?" = "everything in this domain"? if not, it's a rule/config, not a corespine; must apply to ALL decisions in scope. Gate: no one-sentence "what breaks if removed" → stop. Output: locked justification.
+- STEP 2 UNIQUENESS AUDIT — cross-ref full CORESPINE-REGISTRY; does an existing spine own this domain (OSSOT violation) or conflict? 3-category check: mechanical | semantic | propagation overlap. Gate: ZF-0 across all three or halt + surface conflict. Output: uniqueness certificate + conflict scan.
+- STEP 3 IDENTITY BLOCK — cs_id (CS-[GROUP]-[SEQ]), display_name, group (META/GOVERNANCE/STRUCTURE/INTELLIGENCE/AI/OPERATIONS), root_goal (outcome not method), root_principle (constraint, falsifiable). Gate: root_principle must pass falsification — "violated when [observable condition]". Output: locked identity.
+- STEP 4 SPINE CONSTRAINTS — per constraint: id, statement (what CANNOT happen), enforcement_type TELL(documented/auditable)|RULE(mechanical/unbypassable), falsification. No advisory language ("should/try/ideally"). RULE must name the mechanism (hook/gate/schema-validation). Gate: >=1 constraint must be RULE (mechanical) — all-TELL = just a policy doc. Output: constraint registry.
+- STEP 5 TRUNK ELEMENTS — per element: trunk_position (T-model Root→Trunk→Branch), schema_position, corespine_context (points back to this CS-ID), definition, usage_boundaries (explicit exclusions, no open scope), inheritance_chain (up+down), falsification_test. Gate: inheritance-chain check — undefined parent → halt. No orphans.
+- STEP 6 ALLOWED/BLOCKED OPERATIONS — allowed: op + by-whom + trust-tier (ADMIN/TRUSTED); blocked: op + cited constraint (C1..) it violates. No "allowed by default" — every permission explicit. Gate: blocked op with no cited constraint → reject (cannot block without authority).
+- STEP 7 WIRING VALIDATION — 4 wiring states per connection: DEFINED (spine names it) → WIRED (receiver has field/ref) → REACHABLE (resolves) → CURRENT (references current ratified version). Gate: no connection left DEFINED-only; ≥WIRED before ratification package.
+- STEP 8 CONTRADICTION AUDIT (automated) — mechanical (constraint vs existing), semantic (term vs VOCABULARY registry), propagation (does enforcing break a ratified system?). Gate: ZF-0 across all three; one finding = full stop. Output: signed audit (timestamp + finding count=0).
+- STEP 9 RATIFICATION PACKAGE (auto-compiled) — full YAML: cs_id, status PROPOSED, identity, constraints, trunk, operations, wiring_map, contradiction_audit(ZF-0 signed). Each decision tagged FLEXIBLE (config-adjustable, no re-ratify) vs NOT-FLEXIBLE (constitutional, Governor approval to ever modify). No placeholder/TBD.
+- STEP 10 GOVERNOR RATIFICATION GATE (cannot automate) — present package + NOT-FLEXIBLE list + ZF-0 audit + wiring map to Governor; Governor approves each NOT-FLEXIBLE explicitly + signs "constitutional DNA", or rejects with reasoning → wizard returns to flagged step. State: PROPOSED→RATIFIED (date). Nothing proceeds without it.
+- STEP 11 PROPAGATION (auto after ratify) — write CS block to registry; update wiring-map systems → CURRENT; notify dependent schemas; audit trail (who/when/what); if existing behavior violates new spine → flag for remediation. Output: propagation report.
+Summary blocks-on per step: 1 no "what breaks" answer · 2 any conflict · 3 principle not falsifiable · 4 zero RULE constraints · 5 orphaned element · 6 block without cited constraint · 7 connection stuck DEFINED · 8 any finding · 9 any placeholder · 10 no human approval · 11 wiring not fully CURRENT.
+
+## CLARIFICATION / CURIOSITY QUESTIONS (Opus — for post-compact analysis; hints worth mining)
+- Both CSP + CDS lead with a CONSOLIDATION / UNIQUENESS gate BEFORE the wizard opens ("does this already exist? is it a branch not a spine?"). We have Existing-First but not fired as a hard pre-wizard ZF-0 uniqueness gate — adopt?
+- "What FAILS / what BREAKS if this doesn't exist?" as the root-goal test (CDS) + "no compound root goal, no 'also'" (CSP) — a sharper Goal-First than ours. Essence to steal.
+- TELL vs RULE constraint typing + "≥1 must be mechanical, else it's just a policy doc" — maps exactly to our EXISTS≠ACTIVE / hardwired-vs-documented. A cleaner vocabulary for it?
+- "Cannot Mean" / "usage_boundaries with explicit exclusions" (both) = our penumbra/silent_on made a MANDATORY declared field. Strong.
+- FLEXIBLE vs NOT-FLEXIBLE per decision (CDS) = our "which parts need Governor re-ratification" + the waivable/governed/absolute tiers we defined. Convergent — validate our 3-tier against their 2-tier.
+- Falsification test stated OUT LOUD at exit (CSP Step 9) — a ritual, not stored text. Curious if a spoken/echoed falsification belongs in our stress-test.
+- Q for us: does "corespine = constitutional constraint that applies to ALL decisions in its domain" tighten OUR definition (vs our looser "everything is part of a corespine")? Possible sharpening of A2 + the undebatable-core.
+
+## INPUT 3 — AWAITING (paste post-compact if not before)
 ## INPUT 3 — AWAITING (paste post-compact if not before)
