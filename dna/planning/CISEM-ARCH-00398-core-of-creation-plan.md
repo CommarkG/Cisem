@@ -2,7 +2,7 @@
 Node_ID: CISEM-ARCH-00398
 Type: ARCH
 Status: PROVISIONAL-ACTIVE
-Planning_Status: AWAITING-BUILDER-REVIEW
+Planning_Status: COMMENTS-RECEIVED — Stage-1 independent review returned UNSOUND. HALT-1 (model): D2 single-apex INVERTS doctrine-inheritance (doctrine lives at CS-CREATION-001, flows down; cannot be inherited from the validation root) + silently overrode STEP-0 §2c (two orthogonal inheritance types). HALT-2: change-set omits ARCH-00397 (would re-stamp a RATIFIED apex → needs Governor re-decree). HALT-3: plan uses both two-root + single-apex framings. CORRECTION (pending Governor consensus): TWO-AXIS model — parent-tree (apex CS-CREATION-001, doctrine down) + separate validated_by (CS-MASTER-VALIDATION-001). Revise + re-review before any implementation (I25).
 depth_level: L1
 tags: [planning-domain, core-of-creation, self-hosting, corespine-model, protocol, wizard, plan, cisem-way]
 ---
