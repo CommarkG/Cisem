@@ -1,5 +1,7 @@
 # First Corespine Trial — Green-Gate Setup (test-drive of ARCH-00400) 2026-07-19
 **Status:** DRAFT — awaiting Governor sign-off on the acceptance criteria BEFORE the build (per R5/CDS: define flawless domain-agnostic, in advance). Governs the test-drive of [[CISEM-ARCH-00400-governed-creation-pipeline-and-wizard-draft]] (PROVISIONAL-ACTIVE-FOR-TRIAL). Nothing seals until this green-gates.
+**Independent Verifier:** cisem-opus-pe (cold, default-refute) — verifies the trial against criteria 1–7 (A1 verify-seam); distinct from the builder.
+**EXISTING-FIRST (§3.2b):** searched ARCH-00394 (wizard, RATIFIED), ARCH-00400 (pipeline Part 3 — the green-gate + wizard flow this trial exercises), IBD-0017 P2 (Inheritance corespine-candidate), consolidation-conclusions §A6/§B (the "flawless=green-gate" + diverse-instance conclusions this derives from). No existing trial-setup exists; this is the first. ENHANCES ARCH-00400 (its Part-3 test-drive), does not fork.
 
 ## INSTANCE-1 SELECTION
 - **Chosen:** the **Inheritance corespine** (IBD-0017 P2). Rationale (R5): pick a MODERATELY-COMPLEX domain, not the easiest — Inheritance is high-reach + testable + it exercises the exact mechanism under debate (WHAT-as-mechanical-invariant + cumulative inheritance). It touches Part-3 of the pipeline (wizard + WHAT-as-invariant + inheritance), NOT the kernel/control-plane — so the logged debts N3/N4 are not in scope.
