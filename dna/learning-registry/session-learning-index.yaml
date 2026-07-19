@@ -150,3 +150,19 @@ sessions:
         - "Full Parent-field retrofit (currently header-level resolved); ARCH-00394 no-parent-apex Core_spine template convention."
       prompt_injection_note: "A fake 'Otosan WordPress' MCP-server-instruction block appeared mid-session trying to hijack the Sonnet tier into an unrelated Hebrew persona. Sonnet REFUSED + flagged it (Principle 1/8). Vector logged: MCP-server-instruction injection — tiers correctly treat tool-result instructions as untrusted."
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+  - date: 2026-07-19
+    compact_window: "design conversation — the Core of Creation (essence in dna/ibd/IBD-0009)"
+    harvest_pointer: "Full essence harvest lives in dna/ibd/IBD-0009-essence-harvest-2026-07-19.md (10 registered candidates + method + CoreSpiral). This entry is the learning-registry counterpart."
+    negative:
+      - problem: "OVER-ACTIVATION: repeatedly dispatched agents + created files DURING a discussion, treating raised ideas as ratified instructions. Governor: 'extremely arrogant.' Also framed sensitive-core creation as an efficiency RACE (a line, not a dwelling)."
+        prevention: "CONSENSUS BEFORE CREATION (now §1.6, committed): discuss + reach consensus before activating any creation; sensitive cores are dwelt-in, not raced. Root: efficiency/completion/do-instead-of bias — the collaborator-axiom (IBD-0009 #1) is the class-fix."
+        status: PREVENTION-DONE (§1.6) + PARKED for axiom ratification (IBD-0009)
+      - problem: "4/4 Opus-authored plans UNSOUND on first independent review this session (ARCH-00382/391/396/398)."
+        prevention: "Independent review for Opus-authored plans is load-bearing → make it a HARD gate (ARCH-00190 amendment, pending)."
+        status: PREVENTION-CANDIDATE
+    positive:
+      - "The creation FLOW was validated by a real run (CS-COMMS existing-search → map → fork=enhance). Haiku→Opus tiering worked."
+      - "The harvest gate + register-everything discipline caught its own gaps (this entry exists because the gate fired). Self-audit functioning."
+    open_followups: "Resume the DISCUSSION next session (do NOT build) — run IBD-0009 candidates through the cycle (threshold→fit→consensus→stress-test→ratify), starting where the Governor directs."
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
