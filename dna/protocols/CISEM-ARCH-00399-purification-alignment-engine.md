@@ -16,12 +16,14 @@ Searched ssot-registry (`ruled_out_decisions`, intake_routing), ARCH-00011 §3.5
 convention + import-saturation CONCEPT; nothing consolidates them into a named absorber with expert lenses + a comparison schema.
 The PAE ENHANCES (does not fork) §3.5 + IBD-0008 — it is their operational engine.
 
-## 1. THE FOUR PURIFICATION LENSES (Governor-decreed 2026-07-19 — run ALL FOUR on every input)
-Extract essence from four directions so no domain-relevant nuance is lost while foreign framing is stripped:
+## 1. THE SIX PURIFICATION LENSES (Governor-decreed 2026-07-19 — run ALL SIX on every input)
+Extract essence from six directions so no domain-relevant nuance is lost while foreign framing is stripped:
 - **UX lens** — essence about the human/user experience (Governor + downstream users): degradation behavior, notification, "we'll get back to you," queue-wait experience.
 - **UI lens** — essence about surfacing/interface: status flags, error codes, visible tags/badges, how state is shown.
 - **Architecture lens** — structural essence: determinism, versioning, scoping, schema, inheritance, precedence.
 - **Security lens** — safety essence AND the purification's OWN risk: safety-invariants, isolation, injection; and **guard against SEMANTIC DRIFT** — de-branding must NOT strip a safety-relevant semantic constraint (Gemini R2's own warning). If a term looks like mere vernacular but encodes a constraint, KEEP the constraint, rename the vernacular.
+- **Vocabulary / Naming / Numbering lens** (Governor-added 2026-07-19) — essence about TERMS + IDENTIFIERS. Foreign vocabulary is renamed to CISEM's SSOT vocab (VOC-00001 tag library, ARCH-00011 §4 status enum); any proposed IDs/naming/numbering are re-mapped through the ONE naming gate (ARCH-00011, naming-registry). Foreign naming/numbering conventions are stripped, never adopted — this is the direct anti-vocabulary-virus filter.
+- **Axiom lens** (Governor-added 2026-07-19) — essence about underlying PREMISES. Surface the input's foundational axioms (what it argues FROM), map each to CISEM's A1–A8 as AGREE / CONFLICT / NEW-CANDIDATE, and NEVER adopt a foreign axiom silently. This is the DEEPEST anti-virus layer: a foreign axiom is the most dangerous injection because it silently reshapes everything downstream. Map, do not adopt; a NEW-CANDIDATE routes to the 8-Q stress-test, never straight in.
 
 ## 2. THE MUTUAL-TITLES MINI-SCHEMA (Governor-requested — makes cross-review consolidation trivial)
 Every PURIFIED review maps its content under the SAME shared titles, so N reviews line up column-by-column:
@@ -49,3 +51,5 @@ Plus per review: **Reviewer AXIOMS** (the underlying premises they argue from) +
 - v0.1 — 2026-07-19: Opus draft, PROVISIONAL-ACTIVE. Consolidates ARCH-00011 §3.5 + IBD-0008 into a named 4-lens absorber
   with the Mutual-Titles schema. Governor-decreed ("purification is not a sidekick — it is the anti-virus; think it over
   from UX/UI/Architecture/Security; call it the purification and alignment engine"). Applied first to IBD-0015 (Gemini R2).
+- v0.2 — 2026-07-19: Governor-added two lenses → SIX total: Vocabulary/Naming/Numbering + Axiom (the deepest anti-virus
+  layers — foreign vocab + foreign axioms are the primary injection vectors). Applied to IBD-0016 (GPT R3).
