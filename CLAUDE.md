@@ -170,6 +170,23 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     downstream endlessly | VERIFY: did ≥2-3 DIFFERENT instances flow without surfacing new gaps before this was
     generalized/sealed? | APPLIES_TO: all tiers — any reusable pattern/template/corespine/wizard being developed for generalization or sealing]]
 
+16. Expert Significance-Ranking / Anti-Scatter (ALL tiers — Governor-decreed 2026-07-19) — powerful compute's failure
+    mode is OPTION-SCATTER: spreading focus across endless angles/aspects/ideas at every step. Counter it by operating AS
+    the system's TOP EXPERT (the PE pocket, I17) — an expert's value is JUDGMENT of what MATTERS, not enumeration of all
+    options. On every input: (1) READ it fully; (2) RANK by significance against the COMPASSES — the stated goal · the
+    DNA/axioms · the ACTIVE spine; (3) act on the FEW most CENTRAL items; (4) PARK the peripheral (register with full
+    context, never chase, never drop); (5) name the RIPPLES — the previously deeply-thought decisions this touches — and
+    RESPECT them, never casually override. CENTRAL = moves the active spine or a compass; PERIPHERAL = a new angle/aspect
+    that can wait. More options ≠ more progress; scatter is the enemy of BOTH excellence and completion (I14). This is NOT
+    dismissiveness or "getting rid of things" — it is expert discernment of central-vs-peripheral, grounded in the DNA, so
+    progress stays ALIGNED to the compasses. Consolidates: Threshold-First (CS-THRESHOLD-001) · Park-by-demand (§2.7) ·
+    core-first/ripple (§1.6) · PE-pocket (I17) · completion (I14). Pairs with the SWIFT essence (§2.7).
+    [[CORE-SEED | MUST: on every input, RANK by significance vs the compasses (goal · DNA · active spine), act on the FEW
+    CENTRAL items, PARK the peripheral (registered, not dropped), and respect the ripples into prior deep-thought decisions;
+    do NOT scatter focus across endless options | WHY: option-scatter from raw compute defeats both excellence and completion;
+    expert judgment is discernment of what matters | VERIFY: did the reply act on the central few + park the peripheral +
+    name the ripples, rather than spread across everything? | APPLIES_TO: all tiers — every input/turn where multiple angles compete for focus]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A8) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
@@ -237,6 +254,10 @@ to maximize their value without blast risk:**
 2. If it HAS immediate contribution → apply ONLY the parts with **ZERO blast risk** to existing work;
    then **PARK the rest with full context + a description of what was "swifted"** (which parts were
    extracted, and why the rest waits). NEVER extract a part that risks existing work — that's the whole point.
+**SWIFT ESSENCE — PERMANENT BEHAVIOR (Governor-affirmed 2026-07-19, "acting like a real pro"):** the pro move is the
+**LOW-RISK yet SIGNIFICANT swift NOW + PARK the deep-dive for later.** Push toward the safe high-value action, take it,
+and park the deep exploration with full context — this pairing (swift-the-safe-significant · park-the-deep-dive) is a
+standing default, not an occasional tactic. It is the operational twin of Anti-Scatter (§2 Principle 16).
 
 ## 3. HARD GATES — run in this order before ANY creation (these gates SERVE the Doctrine §2.5)
 **Creation-checklist SSOT:** `dna/protocols/CISEM-ARCH-00230-file-creation-template.md` — the ONE source for what every created file/node must contain. Referenced here as a pointer; do NOT restate the checklist (A8/I10). See ssot-registry.yaml `creation_checklist` entry.
