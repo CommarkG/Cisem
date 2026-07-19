@@ -2,13 +2,13 @@
 Node_ID: CISEM-ARCH-00396
 Type: ARCH
 Status: PROVISIONAL-ACTIVE
-Planning_Status: IN-PROGRESS — Governor DECREED v1.1 2026-07-18 (after Stage-1 UNSOUND → v1.1 closed HALT-1/2/3); fast confirmatory re-check of the 3 HALT-fixes dispatched as safety-net (execution HALTS on any residual); executing phase-gated A→D (Gate A + C = Governor decree; B = sign-off; D = Opus)
+Planning_Status: COMPLETE — Governor DECREED v1.1 2026-07-18; all 4 phases executed + gated, ZF green throughout: A (§1.7 OPERATING MODEL decree, 41f4143) · B (ARCH-00230 = RATIFIED creation-checklist SSOT, cisem-meta verified, 3d2c69a) · C (CS-CREATION-001 = RATIFIED creation apex + ARCH-00394 RATIFIED, c089acf) · D (Phase-2 fixes + naming drift, 316a73f). Two-root ruling (CS-MASTER-VALIDATION = validation root · CS-CREATION = creation apex) disclosed for Governor veto (runs 23-28)
 depth_level: L1
 tags: [planning-domain, operating-model, one-tab-orchestrator, git-ssot, creation-layer, consolidation, apex-corespine]
 ---
 
 # Operating-Model + Creation-Layer Consolidation — Plan
-**CISEM-ARCH-00396** | ARCH | **Status: PROVISIONAL-ACTIVE** | **Planning Status: IN-PROGRESS — Governor DECREED v1.1 2026-07-18; executing phase-gated (confirmatory re-check as safety-net)**
+**CISEM-ARCH-00396** | ARCH | **Status: RATIFIED** (Governor decree 2026-07-18) | **Planning Status: COMPLETE — all 4 phases executed + gated, ZF green (runs 23-28)**
 **Goal:** Fix the ROOT cause of CISEM's recurring gaps — parallel unsynced work — by (A) formalizing the
 one-tab-orchestrator + git-SSOT operating model, and (B) consolidating the scattered creation layer under the
 proven meta-root (ARCH-00340) with CS-CREATION-001 formalized as the apex "corespine-of-corespines". ONE plan,
