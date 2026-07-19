@@ -1,0 +1,47 @@
+# CISEM External Review — CONSOLIDATION & CONCLUSIONS (6 reviewers) 2026-07-19
+**Status:** SYNTHESIS · UN-RATIFIED — Opus conclusions for Governor. Sources (RAW↔PURIFIED pairs): R1 Claude/IBD-0014 · R2 Gemini/IBD-0015 · R3 GPT/IBD-0016 · R4 CSPS/IBD-0018 · R5 CDS/IBD-0020 · R6 CSP/IBD-0021. All mapped under the Mutual-Titles schema (PAE ARCH-00399).
+**Method:** convergence = strength of evidence (6 independent axiom-sets agreeing ≈ proof). Ranked by SIGNIFICANCE (Principle 16), most load-bearing first.
+
+## A. THE CONVERGENCE (what to adopt — near-certain)
+Six independent reviewers, five distinct base models, converged on the SAME handful of seams. That is the strongest signal the exercise could produce. Ranked:
+
+1. **THE VERIFY SEAM — insert a cold, independent verifier as a STANDING gate. [R1,R3,R4,R5,R6 — deepest risk].** The AI both produces the machinery and judges "done"; self-audit ≠ proof (R6's lived scar: a "✅ live" control was false in one independent read). A separate, no-stake instance must re-derive every "done" from source artifacts, tasked to find FALSE. → This is the single highest-leverage self-governance safeguard. (Our plan-audit is a checker the same tier wrote — it does NOT close this seam.)
+
+2. **WHAT-as-MECHANICAL-INVARIANT, not prose. [R4 — ✅ GOVERNOR-APPROVED].** Prose WHATs get reclassified as HOW to earn permission (looks like compliance; no reviewer catches it) = the #1 drift vector. Every inherited WHAT = a testable assertion. Cheapest highest-value fix.
+
+3. **Vault drain SLA — or it's a graveyard. [ALL 6].** Every vault-and-halt carries owner + typed disposition + timeout + DEFAULT-ACTION-ON-EXPIRY (auto-safe→park · needs-human→Governor-ping · blocked→HARD-BLOCK next cycle) + "open vaulted" as a release-blocking metric.
+
+4. **Mechanical triage — gates, not an inferred score, and audit the verdict. [ALL 6].** Triage is itself a governance decision; an AI avoiding a halt will down-classify into "provisional-proceed" (ships a wrong answer under the banner of determinism). Use GATES first (reversibility/blast/consequence/fallback…), FAIL-UP when unsure (R4), and SAMPLE-AUDIT provisional-proceed verdicts (R5,R6).
+
+5. **Significance = reach is necessary, NOT sufficient → add IRREDUCIBILITY + ORTHOGONALITY; the founding set is a GENESIS BLOCK. [R3,R4,R5,R6].** Reach is un-measurable at genesis (no descendants yet) and gameable (an abstract trunk "claims" everything). Nominate top-level by IRREDUCIBILITY (can't be derived from a combination of the others — R4,R5), confirm by reach at maturity (R4). ORTHOGONALITY as a health check (R4,R6). The first trunks are ratified once BY FIAT (genesis block); reach validates/prunes later (R6). Use a NON-DESTRUCTIVE reach proxy (transitive-inheritors × criticality — R6).
+
+6. **"Flawless" must be a GREEN GATE + a count ceiling. [ALL 6].** Redefine flawless as CONVERGENCE: fixed acceptance suite → ZERO findings on a clean re-run, N consecutive passes (R4,R6). Pre-declare count N(≈3) + a DIVERGENCE rule: if instances 1-3 don't converge, the pattern doesn't exist yet (R6). Instances must be adversarially DIVERSE + one MODERATELY COMPLEX (R4,R5); define criteria DOMAIN-AGNOSTIC before instance-1 (R5). Match method to reach: flawless-refine high-reach, ship-and-iterate low-reach leaves (R4).
+
+7. **Provisional must NOT propagate. [R2,R3,R4].** Non-propagating, version-pinned, expiry, rollback; may enable local execution but never normative inheritance.
+
+## B. IMPORTANT ADDITIONS (fewer reviewers, clearly right)
+- **Governor CAPACITY CEILING → throughput cap + batch-ratification lanes. [R5,R6].** The loop generates proposals faster than one human ratifies; appears on day 1 of real volume. Cap N/cycle (overflow queued as a governed artifact); separate batch-ratification lanes for Layer-3 codifications; decide BEFORE first live test whether to rate-limit or pre-delegate narrow authority per decision-class.
+- **Boundary-gaming BELOW the seal / upward WHAT-widening. [R5,R6].** A second-tier domain accrues top-level reach without crossing the seal, OR a trunk's WHAT is quietly widened to absorb a branch need — meaning drifts while checks pass. Periodically measure second-tier reach; guard the WHAT SEMANTICALLY (cannot-mean vs descendant behavior).
+- **Reopen bar must be MECHANICAL — a falsifiable artifact. [R3,R5,R6].** "Argument-weight" = claim-the-element-is-now-WRONG + evidence + a NAMED downstream harm; specify it ABSTRACTLY before the first contested case. AND be honest: the seal's real strength is the human's ratification discipline, not a mechanical weight-metric — don't dress a human gate as mechanical (R4).
+- **ROLLBACK / versioned atomic default-swap. [R4].** Append-only + cumulative inheritance means a wrong high-reach change cascades irrecoverably; need a forward-applied inverse + versioned blue-green swap of sealed elements/defaults, before the incident. Version defaults; L3 emits a NEW versioned default swapped atomically after ratification, never mutate in place.
+- **Purification is NOT neutral → claim-level preservation check + trace. [R3,R5].** A sophisticated source could craft language so purification yields a more favorable version. Check: does PURIFIED preserve ALL material claims of RAW and ONLY those? (claim-level, not vocabulary-level) + a purification_trace ledger (removed branding, substitutions, omissions, uncertainty/dissent preserved). RAW stays the evidentiary authority.
+- **Archive hygiene. [R3,R4,R6].** Disposition MUST appear in every search result (else a rejected option reads as support — R3); reopen-conditions EVALUATED on retrieval, not just stored (R4); periodically CLUSTER near-duplicate rejections into one principle (R6).
+- **Independent AUDIT not dependent on the AI's own reporting. [R5].** A second process, different instruction-set, no knowledge of the primary's proposal.
+- **STRUCTURAL-WRONGNESS protocol (wrong cardinality: 5 should be 3?) distinct from re-grounding. [R5].** Evidence is indirect (system strain, conflict patterns, unresolvable vault items).
+- **META-CONFLICT resolver — what decides which layer/rule-class applies? [R4]** Default: escalate. Name it or infinite regress.
+- **CONSTITUTIONAL ANCHOR — a human-ratified GENESIS BLOCK the AI cannot edit. [R6, w/ R5].** The machinery-for-amending-the-machinery must be beyond AI edit — "who governs the governor" in a doc the AI reads but cannot modify. INSTITUTIONALIZE periodic mandatory external review of the CONSTITUTION itself (partly seeded: our monthly cadence + graft machine).
+
+## C. THE ARCHITECTURAL FORK (Governor decision)
+- **Pure inheritance TREE vs TYPED GOVERNANCE GRAPH. [R3, echoed by R5/R6].** R3: separate the 4 problems (authority / classification / adjudication / safe-continuation); a small sealed CONSTITUTIONAL KERNEL + DOMAIN corespines + typed CROSS-CUTTING OVERLAYS (security/privacy/observability) + a separate conflict CONTROL-PLANE. Conflicts resolve between TYPED CLAIMS (rule_class combining logic), not by globally ranking whole corespines. Precedence = a typed SEQUENCE ending in INDETERMINATE, never a total order (a total order breeds a super-domain). → This reframes the whole top-level question and may dissolve the "which trunk owns security?" problem (security = an overlay, not a trunk).
+
+## D. THE AXIOM FORK (Governor decision)
+- **"Constant = temporarily valid" — 3 reviewers push back [R3,R5, w/ R4].** They mostly object to the VERIFICATION gap, not the intent: who verifies a replacement is "better"? AI-proposes + AI-evaluates = a closed loop (R5), dangerous for axioms governing the AI's OWN behavior. R3 prefers "binding invariant scoped to a governance EPOCH + controlled amendment (evidence, impact, migration, ratification)." **Likely reconciliation (not yet ratified):** KEEP the intent (nothing frozen; challengeable) + ADD (a) an independent verifier of "better," (b) epoch-scoping + migration, (c) the mechanical reopen-artifact (B above). This preserves your axiom's spirit while closing the closed-loop hole. CONFIRMED STRONG by R6 as intent — defend it, harden the verification.
+
+## E. CONFIRMED STRONG — defend explicitly (reviewers volunteered praise)
+RAW/PURIFIED quarantine + trust-tier · the disposition-status decision archive · "constant = temporarily valid" (intent) · refusal-first as the wizard's default posture. Multiple reviewers called these hard-won-correct.
+
+## F. REFLEXIVE NOTE — what this session already built that the reviewers validate or requested
+Built + validated: RAW/PURIFIED + trust-tier (praised R6/R3); disposition archive (praised, +hardening asked); PAE 6-lens (answers R3/R5 purification-neutrality — needs the claim-level check added); monthly external-review cadence + graft machine (= R6's "institutionalize external constitutional review", partly done). Parked + now reinforced: completion/queue-drain (IBD-0013 = the vault-SLA concern); inheritance corespine-candidate (= WHAT-as-invariant home); independent-review-mandatory (= the verify seam).
+
+## G. RECOMMENDED NEXT STEP (Governor's item 2)
+Ratify a DRAFT of the pipeline protocol + wizard that FOLDS A1-A7 + B + resolves C/D — with the VERIFY SEAM (A1) as a standing gate, since it is the deepest risk and everything else's trustworthiness depends on it. Then vocabulary alignment, then the external-AI onboarding package (item 3). Do NOT build fixes ad-hoc; author the draft, independent-review it (dogfooding A1), then Governor-ratify.
