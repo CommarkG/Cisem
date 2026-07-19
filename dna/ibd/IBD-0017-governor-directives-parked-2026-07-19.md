@@ -14,13 +14,16 @@
 - **P1 — External-AI onboarding package (Governor item 3).** A set of files to upload to external AI systems so that,
   whenever asked about CISEM, they hold maximum + CURRENT background. Route: BUILD-PROMPT, sequenced AFTER conclusions +
   ratified draft (the package must reflect the RATIFIED state, not the in-flux one). Priority: HIGH (but gated on 1+2).
-- **P2 — Inheritance-enforcement mechanism (Governor item 6: "co-seed the inheritance mechanism so everything created
-  inherits everything we decided").** WHAT EXISTS today (honest): cumulative binding inheritance (A2); the Creation Triad
-  (§3.7); CAL SessionStart injection of inherited preventions; Core Seeds ([[CORE-SEED]] verbatim); ARCH-00230 creation
-  checklist; the inheritance-evident axiom candidate (IBD-0013 #2). GAP: no single MECHANICAL gate proving a NEW creation
-  carries the full inherited DNA (esp. outward-facing apps — the "building outward = my own defaults" trigger). Route:
-  a Core-Seed + an inheritance-evidence CHECK (plan-audit) that every created governed artifact cites its inherited
-  corespine + doctrine + the park/completion discipline. Convergence: R3 typed-inheritance (mandatory_unless_waived) sharpens this. Priority: HIGH.
+- **P2 — Inheritance mechanism → CORESPINE CANDIDATE + possible FIRST TRIAL (Governor 2026-07-19: "park it as a corespine
+  candidate — could be our first trial!! make it happen and include it in checklist... consider an axiom adding or enhancing").**
+  Reclassified from a mechanism to a **top-level corespine candidate** ("Inheritance") — a strong first build-trial for the
+  wizard (Principle 15 / ARCH-00394), because it is testable and high-reach. WHAT EXISTS: cumulative binding inheritance (A2);
+  Creation Triad (§3.7); CAL SessionStart injection; Core Seeds; ARCH-00230 checklist; inheritance-evident axiom candidate
+  (IBD-0013 #2). GAP: no MECHANICAL gate proving a NEW creation carries the full inherited DNA (esp. outward-facing apps —
+  the "building outward = my own defaults" trigger). ROUTE: (a) build it as the first candidate corespine THROUGH the wizard;
+  (b) **include inheritance in the creation checklist (ARCH-00230)** — every created artifact must cite its inherited
+  corespine + doctrine + the park/completion discipline; (c) **consider a new/enhanced AXIOM** (inheritance-evident, IBD-0013 #2);
+  (d) an inheritance-evidence plan-audit CHECK. Convergence: R3 typed-inheritance (mandatory_unless_waived) + R4 WHAT-as-mechanical-invariant sharpen it. Priority: HIGH (first-trial candidate).
 - **P3 — Knowledge graph (Governor item 7: "all saved inputs must be part of a knowledge graph").** WHAT EXISTS: the repo
   is an IMPLICIT graph — [[wikilinks]] between nodes, the registries (naming/ssot/corespine), the DNA-00001 living index —
   plus ARCH-00382 (unified-graph-architecture plan, PROVISIONAL-ACTIVE) already drafted. GAP: it is not an EXPLICIT,
@@ -30,6 +33,16 @@
   Route: investigation task — identify the solution, verify the claim empirically (measure before/after), assess integration
   risk (it touches how the model consumes CISEM — SECURITY + import-saturation lens applies). Priority: URGENT-INVESTIGATE
   (Governor-tagged urgent) — but PARKED per his own instruction; surface at the next planning gate.
+
+- **P5 — Scheduling ability (daily / weekly / any) — DEADLINE: within 2 days (Governor 2026-07-19).** Solve durable
+  time-based scheduling (Claude Code hooks are event-based only; CronCreate is session-only + 7-day cap). Durable options:
+  OS cron / Task Scheduler, or Google-Calendar-events as reminders (already proven this session for the monthly cadence).
+  Route: BUILD within 2 days (by 2026-07-21). A one-shot calendar reminder is set for the deadline. Priority: HIGH / time-boxed.
+- **P6 — Zero-laptop-dependency / full GitHub backup — HARDWIRE + mechanically enforce (Governor 2026-07-19).** "Park = save
+  to disk AND push. Zero dependency on temp memory or my laptop; if I lose the laptop tomorrow, everything is safe in GitHub."
+  IMMEDIATE (done this turn): pushed 9 unpushed commits → 0 unpushed. HARDWIRE (2-day): a mechanism that guarantees every
+  commit is pushed — a post-commit auto-push hook, OR a pre-compact/session-end BLOCK on unpushed commits (upgrade the current
+  WARN), OR a periodic push (ties to P5 scheduling). Route: BUILD within 2 days. Priority: HIGH / time-boxed. (Interim rule: every "park" = commit + push + verify 0 unpushed.)
 
 ## NOTE — R3 (GPT) DIRECTLY reinforces several of these
 Purification_trace ledger (R3 §5B) ≈ strengthens PAE (ARCH-00399) + P2. Disposition-in-search (R3 §5F) ≈ strengthens the
