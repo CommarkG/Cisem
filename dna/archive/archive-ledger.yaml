@@ -59,8 +59,9 @@ entries:
     title: Two-root conflict — CREATION (CS-CREATION-001) vs VALIDATION (CS-MASTER-VALIDATION-001)
     what: "Which root wins when creation-permission and the validation-gate give conflicting instructions? (stress-test Q8)"
     disposition: VAULTED-CONFLICT
-    reopen_conditions: "Resolved + closed when the IBD-0012 three-layer conflict-protocol is ratified (a default precedence presumption between the two roots + the risk-tiered scale)."
-    why: "A fundamental clash between creation-permission (e.g. PROVISIONAL-ACTIVE bootstrap-escape; Existing-First reuse) and the validation authority (nothing binding until ratified; don't build on an invalid home). Being reconciled, not yet ratified — vaulted with full context per the 'we have an internal conflict, we'll get back to you' principle."
+    reopen_conditions: "Resolved + closed when the three-layer conflict-protocol is ratified (a default precedence between the two roots)."
+    resolution: "RESOLVED 2026-07-19 (Governor M2 ruling, ARCH-00400 v2): VALIDATION lives in the constitutional KERNEL; default precedence VALIDATION > CREATION (nothing validly created may bypass validation). The two-root clash is settled by placing validation as a kernel authority that the creation permission must satisfy."
+    why: "A fundamental clash between creation-permission (e.g. PROVISIONAL-ACTIVE bootstrap-escape; Existing-First reuse) and the validation authority (nothing binding until ratified; don't build on an invalid home). Now resolved via the kernel placement + VALIDATION>CREATION default."
     tags: [conflict-resolution, two-root, creation, validation, vaulted]
     date: "2026-07-19"
     ruled_by: "Opus (provisional)"
