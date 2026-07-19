@@ -247,6 +247,23 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 
 ---
 
+## COMPACT STATE v6 — 2026-07-19 (SUPERSEDES v5; authoritative resume anchor)
+**We are mid a deep DESIGN CONVERSATION defining the CORE OF CREATION — do NOT rush to build; we are in the soft/divergent front of the cycle.** All essence is REGISTERED (never leave things waiting) in **`dna/ibd/IBD-0009-essence-harvest-2026-07-19.md` — READ IT FIRST; it is the front of the queue.** Everything there is PARKED-RAW: each candidate must run *threshold → humble alignment (fit) → CONSENSUS → 8-question stress-test (validity) → ratify*. **Nothing is ratified.**
+
+**THE OPERATING RULE THIS SESSION (Governor, hard):** CONSENSUS BEFORE CREATION (§1.6, committed). Do NOT dispatch agents or create files during discussion — DISCUSS and reach consensus first. Do NOT frame sensitive-core work as an efficiency race; it is a *dwelling* until it settles. AI is a COLLABORATOR, not a replacer.
+
+**THE CREATION CYCLE (agreed essence, IBD-0009 #4):** present-conversationally → brainstorm → choose best-fit → humbly check FIT (goal · DNA · existing) → CONSENSUS → stress-test VALIDITY (the 8-question gate + 3 tiers: absolute/governed/waivable) → simulate (adversarially) → dwell until it holds still. Fit first, then validity. This is the **CoreSpiral** breath (expand→focus).
+
+**MODEL (flexible working consensus, NOT hardened):** ONE per-node `parent:` field (creation/inheritance tree, apex CS-CREATION-001, doctrine flows down) + **validation as a GLOBAL authority** (CS-MASTER-VALIDATION-001 validates all — not a per-node field). Corespine = cumulative binding chain (adapt HOW, never inherited WHAT); template = non-binding starting point. ARCH-00398 (Core-of-Creation plan) is **UNSOUND** pending this model — its single-apex D2 was wrong; the one-parent+global-validation refinement supersedes it.
+
+**REGISTERED CANDIDATES awaiting our cycle (IBD-0009):** collaborator-axiom (root) · questions-carry-context (→A6) · concept↔essence polarity (→D6) · creation-cycle (axiom+doctrine) · cumulative-inheritance (→A2)+vocab(template/corespine) · multi-classification virtue (→A8 clarify) · consensus-before-creation (done, §1.6) · repetition-as-virtue · register-everything axiom · deep-AI-coding-triggers-in-every-checklist (→ARCH-00230) · principle-format (statement+questions+2 good+2 bad examples) · CoreSpiral founding content (→FOUND-00001, Governor-only ratify).
+
+**FIRST MOVE NEXT SESSION:** read IBD-0009, then RESUME THE DISCUSSION (do not build). Ask the Governor which candidate to shape next through the cycle. The CS-COMMS existing-map (dna/audits/cs-comms-existing-map-2026-07-19.md) is our worked simulation example (verdict: enhance, not new).
+
+**ZF:** ✅ ACHIEVED · tree clean · pushed (3e1137a). **RESUME:** CLAUDE.md → this file (COMPACT STATE v6) → **dna/ibd/IBD-0009** → dna/quality-ledger.yaml → dna/learning-registry → dna/queue/README.md.
+
+---
+
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
 - 2026-07-18: session-update + COMPACT STATE added for clean compact/tab resume (I1–I19, plan-gate bootstrap CONNECTED).
