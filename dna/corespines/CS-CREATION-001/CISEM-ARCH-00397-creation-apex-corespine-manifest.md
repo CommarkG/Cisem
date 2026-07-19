@@ -1,7 +1,7 @@
 ---
 Node_ID: CISEM-ARCH-00397
 Type: MANIFEST
-Status: DECLARED
+Status: RATIFIED
 Corespine: CS-CREATION-001
 Schema_anchor: CISEM-ARCH-00008
 Core_spine: CS-MASTER-VALIDATION-001
@@ -10,7 +10,7 @@ Last_verified: 2026-07-19
 
 # CS-CREATION-001 — CISEM Creation Apex Corespine Manifest
 
-**CISEM-ARCH-00397** | MANIFEST | **Status: DECLARED** (pending Opus ratification — apex, ARCH-00396 Gate C)
+**CISEM-ARCH-00397** | MANIFEST | **Status: RATIFIED** (Governor foundational decree ARCH-00396 Gate C 2026-07-18; Opus Gate-C verified run 26 — the CREATION apex; validation-root = CS-MASTER-VALIDATION-001; two-root model)
 **Governs:** Every creation event in CISEM — the apex "corespine-of-corespines"; PARENT of every other
 corespine (vocabulary, templates, protocols, plans, wizards, and child corespines such as CS-FRONTEND-001).
 
@@ -55,7 +55,7 @@ disk — verified in §VI below.
 | **Scope** | Every creation event in CISEM: Corespine-First, Goal-First, Template-First, Core-vs-Instance checks all fire here; ENFORCES the Creation Doctrine D1–D6 |
 | **Goal** | Be the single apex "corespine-of-corespines" — the PARENT every vocabulary term, template, protocol, plan, wizard, and child corespine ultimately governs under |
 | **Depth** | L1 (apex) |
-| **Status** | DECLARED (Opus ratification pending — apex ratification is a foundational decree, ARCH-00396 Gate C) |
+| **Status** | RATIFIED (Governor foundational decree ARCH-00396 Gate C 2026-07-18; Opus run 26) |
 | **Root authority** | CS-MASTER-VALIDATION-001 (validates all corespines, including this apex) |
 | **Parent** | none — this IS the apex; every other corespine's Parent/Governing-corespine field resolves here (directly or via its own parent chain) |
 

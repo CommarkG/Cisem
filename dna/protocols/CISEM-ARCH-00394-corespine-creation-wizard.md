@@ -1,7 +1,7 @@
 ---
 Node_ID: CISEM-ARCH-00394
 Type: WIZARD
-Status: CONNECTED
+Status: RATIFIED
 Corespine: CS-CREATION-001
 Schema_anchor: CISEM-ARCH-00008
 Core_spine: CS-CREATION-001
@@ -10,7 +10,7 @@ Last_verified: 2026-07-18
 
 # CISEM Corespine Creation Wizard — Universal Protocol
 
-**CISEM-ARCH-00394** | WIZARD | **Status: CONNECTED** (not RATIFIED until first independently-verified end-to-end run — I24)
+**CISEM-ARCH-00394** | WIZARD | **Status: RATIFIED** (I24 satisfied — first clean independently-verified end-to-end run: ARCH-00396 Phase C produced the CS-CREATION-001 apex manifest via STEP 1–6; Opus-verified run 26, 2026-07-18)
 **Purpose:** Define, create, and register ANY CISEM corespine via a single YAML input block. Supports batch creation (N corespines at once). Subsumes ad-hoc corespine creation — all corespines go through this wizard from now on.
 **Architecture note (ARCH-00396 Phase B, concern 2):** This node embeds its corespine-creation protocol INLINE as STEP 1–6 (lines 70–117). This is a DECLARED COMBINED protocol+wizard node — an I10 exception, noted here explicitly. There is no separate corespine-creation protocol file; the protocol and wizard are intentionally unified in this single node. This exception is documented (not silent) and Opus-reviewable at Gate B.
 **Parent meta-root:** ARCH-00340 (meta-protocol — the root that every protocol/wizard derives from; ARCH-00396 Phase B pointer).
@@ -235,3 +235,4 @@ Sonnet runs STEP 1–6 for EACH entry in sequence. All three corespines are crea
 | 2026-07-18 | DECLARED — initial wizard, STEP 1–6 procedure, YAML schema, template | Sonnet (Governor-ordered) |
 | 2026-07-18 | D-1: corrected size note + §3.6 line count (215→233); D-4: template field Doc-Status→Status | Sonnet (defect fix pass, Opus PE ruling) |
 | 2026-07-18 | CONNECTED — per Governor decree "ratify-with-retro-plan" (ARCH-00395) + Opus PE stamp. I24 protection: earns RATIFIED only on first clean independently-verified run | Opus PE (cisem-opus-pe) |
+| 2026-07-18 | RATIFIED — I24 satisfied: first clean end-to-end run (ARCH-00396 Phase C built CS-CREATION-001 apex manifest via STEP 1–6, Sonnet; Opus-verified clean, run 26). Follow-up: refine §IV template's `Core_spine` convention for a no-parent apex | Opus PE (cisem-opus-pe) |

@@ -19,7 +19,7 @@ CS-THRESHOLD-001:
   depth_level: L2
 
 CS-CREATION-001:
-  status: DECLARED
+  status: RATIFIED   # Governor foundational decree ARCH-00396 Gate C 2026-07-18; Opus run 26 — the CREATION apex (validated by root CS-MASTER-VALIDATION-001; two-root model)
   goal: "Governs every creation event — Corespine-First, Goal-First, Template-First,
          Core-vs-Instance checks all fire here; ENFORCES the Creation Doctrine D1-D6 (CLAUDE.md §2.5).
          The apex corespine-of-corespines — PARENT of every other corespine."

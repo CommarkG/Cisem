@@ -462,6 +462,32 @@ runs:
       corespine-registry CS-CREATION-001 status left DECLARED (untouched) — only canonical_file + wizard fields added.
     status: IN-PROGRESS  # GATE C pending Opus soundness + Governor foundational decree (apex = foundational, per ARCH-00396)
 
+  - run: 26
+    date: 2026-07-18
+    trigger: "Opus PE: ARCH-00396 Phase C — Gate-C soundness + apex truth-stamps (Opus judges Sonnet's ARCH-00394 dogfood run)"
+    pocket: cisem-opus-pe (PE) — declared
+    verdict_soundness: SOUND
+    finding: >
+      Verified Sonnet's Phase C (commit 90d6dd0): 4 files, explicit git add, manifest ARCH-00397 is POINTERS-ONLY
+      (§VI cites CLAUDE.md §2.5 + ARCH-00230/00340/00190, zero copied doctrine — CORE-SEED 1 honored), ARCH-00394
+      STEP 1-6 run clean, ZF green, no truth-fields written by Sonnet. GATE C: PASS.
+    opus_ruling_two_root: >
+      The build surfaced the apex relationship. RULING (Opus, disclosed for Governor veto): TWO-ROOT model —
+      CS-MASTER-VALIDATION-001 = the VALIDATION root_authority (validates every corespine, INCLUDING the creation apex);
+      CS-CREATION-001 = the CREATION apex (parent-in-creation/inheritance + carries the Doctrine). Orthogonal axes, no cycle:
+      MASTER-VALIDATION validates CREATION; CREATION is the creation-parent of all. The manifest already expresses this
+      (Core_spine=CS-MASTER-VALIDATION-001; "Root authority: validates all incl. this apex").
+    truth_stamps: >
+      CS-CREATION-001 → RATIFIED (creation apex; Governor foundational decree ARCH-00396 Gate C); manifest ARCH-00397 → RATIFIED;
+      ARCH-00394 → RATIFIED (I24 first-clean-run earned).
+    honest_gaps: >
+      (1) "parent of EVERY corespine" is HEADER-LEVEL resolved (Governing-corespine lines), NOT a full Parent-field retrofit —
+      deferred as hygiene, not claimed done (I2). (2) ARCH-00394 §IV template lacks a Core_spine convention for a no-parent apex
+      (Sonnet used CS-MASTER-VALIDATION-001, mirroring ARCH-00008) — small template refinement follow-up.
+    invariants_added: []
+    new_enhancements: ["CS-CREATION-001 formalized as the RATIFIED creation apex (corespine-of-corespines)", "ARCH-00394 RATIFIED — first wizard to complete a clean independently-verified run (I24)"]
+    status: COMPLETE   # Gate C cleared (Opus soundness + Governor pre-decree); two-root ruling disclosed for veto; Phase D next
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
