@@ -83,7 +83,9 @@ AWAITING OPUS:
 Do NOT declare done. Awaiting your feedback.
 ```
 
-### STEP 4: Return to Opus
+### STEP 4: Handback to the orchestrating session (the Opus orchestrator verifies)
+<!-- Titled "Handback", not "Return to Opus" — the report is FROM a subagent TO the orchestrating Opus session; it is NOT addressed to the Governor. Subagent reports should be titled "HANDBACK REPORT / BUILD REPORT", never "Return to Opus" (avoids Governor confusion). -->
+
 - Do NOT proceed to step 4 until Opus verifies step 3
 - Opus feedback → corrections → re-handoff with updated ONE-CLICK
 - Repeat until Opus signs off

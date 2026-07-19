@@ -50,6 +50,10 @@ duplicate or diverge (I10/I19). Each tier keeps its ROLE (Opus judges · Sonnet 
   don't patch symptoms while the root stands. Also self-check the EXISTING-WEIGHT bias (A8-extended): preferring what
   exists is the default, but when consolidation needs restructuring/merging/replacing, do it boldly (via a plan) —
   over-preserving is ossification.
+  **RESOLVE BY DOING, not by defining-in-circles (Governor-decreed 2026-07-19):** do NOT loop on proposing / discussing /
+  presenting a core issue for repeated ratification — DO the concrete definitional work + REAL RUNS to actually RESOLVE
+  and WIRE it. A resolved-and-wired core dissolves its downstream; endless "let me define / present-for-discussion" is
+  analysis-paralysis and an anti-pattern. Reach consensus THROUGH doing (draft → real run → refine → ratify), not through more talk.
 - **Two biases to self-check every time:** DEFERRAL-AS-CAUTION (mislabeling avoidance of an OWNED capability as
   "risk"; a 2nd deferral of "the missing piece" = red flag to BUILD) + DOCUMENTATION-AS-PROGRESS (writing *about* a
   mechanism instead of wiring it — plausibility-completion).
