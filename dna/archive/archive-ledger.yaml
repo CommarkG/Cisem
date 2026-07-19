@@ -59,8 +59,11 @@ entries:
     title: Two-root conflict — CREATION (CS-CREATION-001) vs VALIDATION (CS-MASTER-VALIDATION-001)
     what: "Which root wins when creation-permission and the validation-gate give conflicting instructions? (stress-test Q8)"
     disposition: VAULTED-CONFLICT
-    reopen_conditions: "Resolved + closed when the three-layer conflict-protocol is ratified (a default precedence between the two roots)."
-    resolution: "RESOLVED 2026-07-19 (Governor M2 ruling, ARCH-00400 v2): VALIDATION lives in the constitutional KERNEL; default precedence VALIDATION > CREATION (nothing validly created may bypass validation). The two-root clash is settled by placing validation as a kernel authority that the creation permission must satisfy."
+    reopen_conditions: "Closes when ARCH-00400 SEALS (post-trial); the resolution DIRECTION is Governor-ruled, but the carrying protocol is only PROVISIONAL-ACTIVE-FOR-TRIAL, so this stays VAULTED (honestly) until seal."
+    disposition_history:
+      - "2026-07-19 vaulted (Opus, provisional) — awaiting the conflict-protocol."
+      - "2026-07-19 PROVISIONALLY-RESOLVED (Governor M2 ruling): VALIDATION lives in the constitutional KERNEL; default precedence VALIDATION > CREATION (nothing validly created may bypass validation). Direction settled; entry stays VAULTED until ARCH-00400 seals post-trial, then closes."
+    resolution_direction: "Governor M2 (2026-07-19): validation in kernel + VALIDATION>CREATION. Carried by ARCH-00400 v2; closes on seal."
     why: "A fundamental clash between creation-permission (e.g. PROVISIONAL-ACTIVE bootstrap-escape; Existing-First reuse) and the validation authority (nothing binding until ratified; don't build on an invalid home). Now resolved via the kernel placement + VALIDATION>CREATION default."
     tags: [conflict-resolution, two-root, creation, validation, vaulted]
     date: "2026-07-19"

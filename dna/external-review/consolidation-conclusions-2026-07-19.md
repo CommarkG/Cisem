@@ -1,5 +1,5 @@
 # CISEM External Review — CONSOLIDATION & CONCLUSIONS (6 reviewers) 2026-07-19
-**Status:** SYNTHESIS · UN-RATIFIED — Opus conclusions for Governor. Sources (RAW↔PURIFIED pairs): R1 Claude/IBD-0014 · R2 Gemini/IBD-0015 · R3 GPT/IBD-0016 · R4 CSPS/IBD-0018 · R5 CDS/IBD-0020 · R6 CSP/IBD-0021. All mapped under the Mutual-Titles schema (PAE ARCH-00399).
+**Status:** SYNTHESIS · **Governor-RATIFIED-AS-DESIGN-BASIS 2026-07-19** (decree: "I ratify all" + "I ratify all you suggested" — Forks C→graph / D→keep-and-harden + conclusions A1–A7 + §B adopted as the design basis; M2 validation-in-kernel + VALIDATION>CREATION; Mod3 seal-only-post-trial). Adopted as basis ≠ each mechanism sealed — mechanisms seal via ARCH-00400 post-trial. Sources (RAW↔PURIFIED pairs): R1 Claude/IBD-0014 · R2 Gemini/IBD-0015 · R3 GPT/IBD-0016 · R4 CSPS/IBD-0018 · R5 CDS/IBD-0020 · R6 CSP/IBD-0021. All mapped under the Mutual-Titles schema (PAE ARCH-00399).
 **Method:** convergence = strength of evidence (6 independent axiom-sets agreeing ≈ proof). Ranked by SIGNIFICANCE (Principle 16), most load-bearing first.
 
 ## A. THE CONVERGENCE (what to adopt — near-certain)
