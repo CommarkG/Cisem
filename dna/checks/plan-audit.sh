@@ -294,6 +294,40 @@ for f in $(find . -name "*-RAW.md" -not -path './.git/*' 2>/dev/null); do
 done
 [ "$found_rawpair" = 0 ] && echo "   (none — every RAW-EXTERNAL file has a PURIFIED sibling and no raw file is contaminated)"
 
+# ARCHIVE — Decision-archive integrity (BP-0008 execution + Governor decree 2026-07-19: tags+statuses are
+#           load-bearing). Every archive-ledger.yaml entry must carry required fields (disposition, why, tags,
+#           ruled_by, date) + conditional fields (replaced_by if SUPERSEDED; reopen_conditions if
+#           RULED-OUT-TEMPORARY/VAULTED-CONFLICT). Keeps the rejected/vaulted knowledge base queryable.
+#           WARN-ONLY (does NOT enter ZF) — same posture as [SEED]/[RAW-PAIR] at introduction.
+echo "[ARCHIVE] decision-archive integrity (BP-0008 / tags+statuses per ARCH-00011 — required fields per entry):"
+found_archive=0
+ledger="dna/archive/archive-ledger.yaml"
+if [ -f "$ledger" ]; then
+  arch_out=$(awk '
+    function chk(b, id,   miss){
+      miss=""
+      if (b !~ /disposition:/) miss=miss " disposition"
+      if (b !~ /why:/)         miss=miss " why"
+      if (b !~ /tags:/)        miss=miss " tags"
+      if (b !~ /ruled_by:/)    miss=miss " ruled_by"
+      if (b !~ /date:/)        miss=miss " date"
+      if (b ~ /disposition:[[:space:]]*SUPERSEDED/ && b !~ /replaced_by:/) miss=miss " replaced_by(SUPERSEDED)"
+      if (b ~ /disposition:[[:space:]]*(RULED-OUT-TEMPORARY|VAULTED-CONFLICT)/ && b !~ /reopen_conditions:/) miss=miss " reopen_conditions(TEMP/VAULTED)"
+      if (miss != "") printf "   INCOMPLETE: entry %s lacks:%s\n", id, miss
+    }
+    /^[[:space:]]*-[[:space:]]*id:/ {
+      if (started) chk(buf, cid)
+      started=1; buf=$0
+      cid=$0; sub(/.*id:[[:space:]]*/,"",cid)
+      next
+    }
+    started { buf=buf "\n" $0 }
+    END { if (started) chk(buf, cid) }
+  ' "$ledger")
+  if [ -n "$arch_out" ]; then echo "$arch_out"; found_archive=1; fi
+fi
+[ "$found_archive" = 0 ] && echo "   (none — every archive entry carries disposition+why+tags+ruled_by+date and its conditional fields)"
+
 # EDGE — Phase-0 (ARCH-00392): UNKNOWN/penumbra channel. UNKNOWN ≠ FAIL; advisory for Opus judgment.
 # Phase-1 enhancement: reads dna/checks/concept-envelope-registry.yaml by path to route concept-edge
 # cases to UNKNOWN instead of a false FAIL. Registry path: dna/checks/concept-envelope-registry.yaml.

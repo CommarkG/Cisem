@@ -21,6 +21,7 @@ concepts:
   validation_protocol: { ssot: dna/corespines/CS-MASTER-VALIDATION-001.md, note: "V1-V5; awaiting foundational decree" }
   session_state:       { ssot: dna/CISEM-WITNESS-00003-session-continuity.md, mirrors: ["CLAUDE.md §6"] }
   creation_checklist:  { ssot: dna/protocols/CISEM-ARCH-00230-file-creation-template.md, mirrors: ["CLAUDE.md §3 (pointer)", ".claude/skills/cisem-create/SKILL.md (pointer)"], note: "ONE SSOT for what every created file/node must contain (checklist). NOT plans (ARCH-00190) or node-DNA schema (ARCH-00008) — see ARCH-00230 Does-NOT-cover." }
+  ruled_out_decisions: { ssot: dna/archive/archive-ledger.yaml, note: "executes+extends BP-0008; ruled-out/superseded/vaulted decisions with reasoning+reopen-conditions; disposition vocabulary is ledger-scoped (global-enum reconciliation is a HIGH-PRIORITY open item). [ARCHIVE] plan-audit enforces per-entry field integrity." }
 
 # CONSOLIDATION ACTIONS (from the 2026-07-18 scan):
 # - axioms: CLAUDE.md §2.4 marked a MIRROR of FOUND-00001 (SSOT) — done.

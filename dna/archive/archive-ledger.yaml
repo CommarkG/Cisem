@@ -1,0 +1,72 @@
+# CISEM Decision Archive — ruled-out / superseded / vaulted decisions, with reasoning + reopen-conditions
+# Executes + EXTENDS BP-0008 (was: avoid-list only). Governor decree 2026-07-19: "save things we ruled out
+# temporarily, with reason + reasoning, so they become a useful knowledge base for when we handle it."
+# SSOT for concept `ruled_out_decisions` (dna/ssot-registry.yaml). Status: PROVISIONAL-ACTIVE (in-use, not ratified).
+#
+# WHY tags+statuses are load-bearing here (Governor emphasis 2026-07-19): the `disposition` IS what lets you
+# QUERY "what did we rule out?", "what is vaulted awaiting reconciliation?", "what is reopenable now?". Without
+# a governed disposition + tags, this file is a write-only graveyard with endless gaps. The [ARCHIVE] plan-audit
+# check mechanically enforces that every entry carries them (structural integrity).
+#
+# APPEND-ONLY (BP-0008 CORE-SEED 1): entries are never deleted; the `why` reasoning is immutable. A status change
+# (e.g. RULED-OUT-TEMPORARY → REOPENED) is recorded by APPENDING to `disposition_history`, never by rewriting `why`.
+#
+# DISPOSITION vocabulary (ledger-scoped; promotion into the global ARCH-00011 §4 status enum is a HIGH-PRIORITY
+# open question — do NOT assume it is part of the sealed enum yet):
+#   RULED-OUT-PERMANENT   — decided against; no foreseen reopening.
+#   RULED-OUT-TEMPORARY   — set aside for now; `reopen_conditions` REQUIRED (the reopenable knowledge base).
+#   SUPERSEDED            — replaced by a better, verified version; `replaced_by` REQUIRED (Governor axiom-candidate:
+#                           a "constant" holds only until a better version is presented AND verified).
+#   VAULTED-CONFLICT      — a hard/fundamental clash HALTED for future reconciliation ("we'll get back to you");
+#                           `reopen_conditions` REQUIRED. The high end of the conflict-scale (IBD-0012).
+#   REOPENED              — was ruled-out/vaulted, now back under active consideration (cite the argument-weight).
+#
+# Required fields per entry: id, title, what, disposition, why, tags, date, ruled_by.
+# Conditional: reopen_conditions (if TEMPORARY or VAULTED); replaced_by (if SUPERSEDED).
+
+entries:
+  - id: DEC-0001
+    title: Open-world corespine forest (unbounded top-level set)
+    what: "Allow any concept to become a new top-level corespine at will; no bounded/ranked set."
+    disposition: RULED-OUT-PERMANENT
+    why: "No deterministic conflict-resolution + trunk sprawl; A2 ('everything is part of a corespine') loses meaning if trunks multiply freely; a refusal-first wizard becomes impossible. Governor 2026-07-19: 'so idiotic it shouldn't be considered.'"
+    reopen_conditions: "None foreseen; would require a fundamentally new argument that also solves conflict-resolution + sprawl."
+    tags: [corespine-model, top-level-set, conflict-resolution]
+    date: "2026-07-19"
+    ruled_by: "Governor"
+
+  - id: DEC-0002
+    title: Static fixed precedence rank as the SOLE conflict resolver
+    what: "Resolve every corespine-vs-corespine conflict by one frozen precedence rank (higher always wins)."
+    disposition: SUPERSEDED
+    replaced_by: "IBD-0012 three-layer model (default presumption + risk-tiered defeasance + propose-then-ratify learning loop) with a conflict SCALE (rigid-default | provisional-proceed | vault-and-halt)."
+    why: "A static rank applied to a dynamic system is rigid (Governor challenge 2026-07-19): conflict resolution needs a SCALE that decides WHEN the rigid default fires vs WHEN a hard conflict is vaulted for reconciliation — not a frozen winner. My original 'seal + fixed rank' proposal was under-powered; the challenge improved it."
+    tags: [conflict-resolution, precedence, polarity, corespine-model]
+    date: "2026-07-19"
+    ruled_by: "Opus (Governor-driven)"
+
+  - id: DEC-0003
+    title: Single-apex D2 creation model (ARCH-00398 first design)
+    what: "One single apex node from which all creation + validation inherit (single parent-of-everything)."
+    disposition: SUPERSEDED
+    replaced_by: "One `parent:` field (creation tree, apex CS-CREATION-001) + validation as a GLOBAL authority, not a per-node parent field."
+    why: "Single-apex inverted doctrine-inheritance (violated D2 guard-boundaries-not-paths) and overrode STEP-0 §2c; independent review found ARCH-00398 UNSOUND. 4/4 Opus-authored plans went UNSOUND on first independent review → the fresh-eyes gate is load-bearing."
+    tags: [creation-model, apex, validation, independent-review]
+    date: "2026-07-19"
+    ruled_by: "Opus (independent review)"
+
+  - id: DEC-0004
+    title: Two-root conflict — CREATION (CS-CREATION-001) vs VALIDATION (CS-MASTER-VALIDATION-001)
+    what: "Which root wins when creation-permission and the validation-gate give conflicting instructions? (stress-test Q8)"
+    disposition: VAULTED-CONFLICT
+    reopen_conditions: "Resolved + closed when the IBD-0012 three-layer conflict-protocol is ratified (a default precedence presumption between the two roots + the risk-tiered scale)."
+    why: "A fundamental clash between creation-permission (e.g. PROVISIONAL-ACTIVE bootstrap-escape; Existing-First reuse) and the validation authority (nothing binding until ratified; don't build on an invalid home). Being reconciled, not yet ratified — vaulted with full context per the 'we have an internal conflict, we'll get back to you' principle."
+    tags: [conflict-resolution, two-root, creation, validation, vaulted]
+    date: "2026-07-19"
+    ruled_by: "Opus (provisional)"
+
+# HIGH-PRIORITY remaining (BP-0008 full execution — NOT done in this SWIFT MVP; needs a plan, blast-bearing):
+#   (1) migrate ARCH-00150 / CS-LOOPS-001 [rejected-idea] entries in (parallel CS-INTAKE-BATCHING, flat-big-file
+#       split, over-atomizing, etc.); (2) the harder SIGNATURE-MATCH check (flag a NEW creation that matches a
+#       ruled-out entry at creation-time + RQC, BP-0008 CORE-SEED 2/3); (3) wire into §3.7 Triad + RQC;
+#       (4) reconcile the disposition vocabulary with the global ARCH-00011 §4 status enum (Governor to rule).

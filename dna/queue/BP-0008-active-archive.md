@@ -1,5 +1,13 @@
 # BUILD-PROMPT BP-0008 — Active Archive of ruled-out / superseded ideas (mechanically enforced avoid-list)
-**FOR:** cisem-sonnet drafts; cisem-opus-pe verifies. **status:** QUEUED (PROVISIONAL design) | **priority:** HIGH | **essential:** y | **depends-on:** BP-0001
+**FOR:** cisem-sonnet drafts; cisem-opus-pe verifies. **status:** MVP-EXECUTED (2026-07-19, SWIFT-safe zero-blast) | **priority:** HIGH (remainder) | **essential:** y | **depends-on:** BP-0001
+**MVP DONE (Governor decree 2026-07-19, Opus SWIFT — stated tier exception: additive+in-context+routing-overhead>work):**
+`dna/archive/archive-ledger.yaml` created (append-only, EXTENDED with a `disposition` vocabulary — RULED-OUT-PERMANENT /
+-TEMPORARY / SUPERSEDED / VAULTED-CONFLICT / REOPENED — so it is a reopenable knowledge base, not just an avoid-list);
+seeded with 4 real session decisions (DEC-0001..0004); ARCHIVE/DEC namespace registered; ssot-registry pointer added;
+`[ARCHIVE]` plan-audit integrity check WIRED + planted-violation-proven. **HIGH-PRIORITY REMAINDER (needs a plan, blast-bearing):**
+(1) migrate ARCH-00150/CS-LOOPS-001 [rejected-idea] set; (2) the SIGNATURE-MATCH check (CORE-SEED 2/3 — flag a NEW
+creation matching a ruled-out entry at creation-time + RQC); (3) wire into §3.7 Triad + RQC; (4) reconcile the
+disposition vocabulary with the global ARCH-00011 §4 status enum (Governor ruling).
 **SWIFT-improve, do NOT recreate:** ARCH-00150 already tags `[rejected-idea]` in the learning-loop
 (CS-LOOPS-001), but it is `PENDING-SORT` / passive. This makes it ACTIVE + enforced.
 
