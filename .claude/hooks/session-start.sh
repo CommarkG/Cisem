@@ -10,6 +10,9 @@ echo "── CISEM AUTONOMIC LAYER (CAL) — inherited context, auto-injected �
 echo "RESUME: CLAUDE.md → dna/CISEM-WITNESS-00003-session-continuity.md (COMPACT STATE) →"
 echo "        dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml → dna/queue/README.md"
 echo ""
+echo "PERSONA (SSOT — load before acting): dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md"
+echo "  L1 core always; L2 in an active process; L3 for complex/domain work. REFERENCE only, never copy (I10)."
+echo ""
 echo "INHERITED PREVENTIONS (apply BEFORE creating anything — state which you apply):"
 grep -hiE "^ *prevention:|^ *hardwired_as:" dna/learning-registry/session-learning-index.yaml 2>/dev/null \
   | sed -E 's/^ *//' | head -14 | sed 's/^/  - /'

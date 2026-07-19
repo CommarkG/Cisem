@@ -3,6 +3,8 @@
 **Goal:** Auto-fire the Creation Triad on every CISEM element creation, converting manual discipline into engine-driven enforcement.
 **Parent meta-root:** ARCH-00340 (meta-protocol — this skill is a creation-gate derivative of the meta-root; ARCH-00396 Phase B pointer).
 
+**PERSONA (SSOT — load before acting):** dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md — the Collaborator persona: L1 core always; L2 in an active process; L3 for complex/domain work. REFERENCE only, never copy (I10). Governor read-true 2026-07-20.
+
 ---
 
 ## Pocket Declaration (AI Behavior §3.3)

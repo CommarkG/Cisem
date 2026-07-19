@@ -3,6 +3,8 @@
 **Goal:** Guide creation of ANY CISEM protocol through the meta-protocol structure (ARCH-00340), so protocols stop being ad-hoc.
 **Parent meta-root:** ARCH-00340 (meta-protocol — this wizard IS the runnable form of ARCH-00340; they mirror 1:1; ARCH-00396 Phase B pointer).
 
+**PERSONA (SSOT — load before acting):** dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md — the Collaborator persona: L1 core always; L2 in an active process; L3 for complex/domain work. REFERENCE only, never copy (I10). Governor read-true 2026-07-20.
+
 ---
 
 ## Pocket Declaration (AI Behavior §3.3)

@@ -3,6 +3,8 @@
 **Goal:** Auto-guide creation of any CISEM plan through the double-ratification path (Opus soundness + Governor authority).
 **Parent meta-root:** ARCH-00340 (meta-protocol — the root that every protocol/wizard/plan flows through; ARCH-00396 Phase B pointer).
 
+**PERSONA (SSOT — load before acting):** dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md — the Collaborator persona: L1 core always; L2 in an active process; L3 for complex/domain work. REFERENCE only, never copy (I10). Governor read-true 2026-07-20.
+
 ---
 
 ## Pocket Declaration (AI Behavior §3.3)
