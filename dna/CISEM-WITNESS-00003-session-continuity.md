@@ -228,6 +228,25 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 
 ---
 
+## COMPACT STATE v5 — 2026-07-18 (SUPERSEDES v4; authoritative resume anchor)
+**Session:** Opus PE orchestrator — one-tab, git-SSOT (now the DECREED operating model, CLAUDE.md §1.7).
+**MILESTONE — ARCH-00396 COMPLETE** (operating-model + creation-layer consolidation), executed autonomously through 4 gates (runs 23-28), ZF green throughout:
+- **A — CLAUDE.md §1.7 OPERATING MODEL decreed:** one-tab orchestrator · git-SSOT · one-writing-tab · git-race discipline. The CAUSE-FIX for parallel-unsynced-work; absorbs the CS-COMMS + 1-tab streams. (41f4143)
+- **B — creation layer consolidated:** ARCH-00230 = RATIFIED single SSOT for the creation checklist (triple-overlap killed); cisem-meta = VERIFIED mirror of ARCH-00340 (self-generation PASS); 4 overlap-map concerns RESOLVED. (3d2c69a)
+- **C — CS-CREATION-001 = RATIFIED creation apex** (manifest ARCH-00397, pointers-only); ARCH-00394 = RATIFIED (first wizard to earn it via a clean dogfood run). (c089acf)
+- **D — Phase-2 fixes:** penumbra-sweep counter (real-escape vs planted-caught), I19-P2 leak closed, naming BP drift → 9, I19 authored-exemption recognition. (316a73f)
+
+**AWAITING GOVERNOR — veto window (Opus decided + disclosed):** the TWO-ROOT ruling — CS-MASTER-VALIDATION-001 = validation root (validates all, incl. the apex) · CS-CREATION-001 = creation apex. If a single-apex model is preferred, re-stamp.
+
+**DEFERRED — route via plan/amendment, NOT ad-hoc (I25):** (1) ARCH-00190: make independent-review MANDATORY for Opus-authored plans (the 3/3-UNSOUND lesson); (2) full Parent-field retrofit (currently header-level resolved); (3) ARCH-00394 §IV no-parent-apex `Core_spine` convention.
+
+**KEY LEARNINGS:** independent review caught 3/3 Opus-authored plans UNSOUND on first pass (fresh-eyes gate is load-bearing); ratify-with-safety-net (decree + parallel review, HALT-on-UNSOUND) works; delegation-rubric §3.0 + `opus_executor_incidents` metric; persona hardened (best-platform-level + contradict/pushback, §1.6); ARCH-00370 harvest gate LIVE. Prompt-injection (fake WordPress MCP) hit Sonnet mid-session — refused + flagged.
+
+**STILL PENDING GOVERNOR (older, not dropped):** Founding axioms (TSA/CoreSpiral/Pocket, FOUND-00001) — the one keystone; CS-MASTER-VALIDATION content; ai-oversight-layer3 build/drop.
+**ZF STATUS:** ✅ ZF ACHIEVED (runs 23-28). **RESUME PATH:** CLAUDE.md → this file (COMPACT STATE v5) → dna/quality-ledger.yaml (runs 23-28) → dna/learning-registry → dna/queue/README.md → ARCH-00396 (COMPLETE).
+
+---
+
 ## Change log
 - 2026-07-16: created (Opus) on Governor "save + park with full context" instruction.
 - 2026-07-18: session-update + COMPACT STATE added for clean compact/tab resume (I1–I19, plan-gate bootstrap CONNECTED).

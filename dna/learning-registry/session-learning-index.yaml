@@ -131,3 +131,22 @@ sessions:
         - "Verify-before-stamp WORKED: reading pre-compact.sh caught the false-LIVE before it reached disk. The discipline (D5 self-audit) is functioning at the recommendation layer."
       open_followup: "Wire ARCH-00370 STEP 1–5 into pre-compact.sh → RATIFIED-SPEC becomes LIVE (owned tool, low-blast; do NOT defer as risk — §1.6 platform-level persona)."
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+  - date: 2026-07-18
+    compact_window: "ARCH-00396 autonomous build (runs 23-28) — operating-model + creation-layer consolidation"
+    opus_arch_00396:
+      milestone: "ARCH-00396 COMPLETE via one-tab-orchestrator: §1.7 OPERATING MODEL (one-tab/git-SSOT — the cause-fix for parallel-unsynced-work) + ARCH-00230 ratified as the creation-checklist SSOT + CS-CREATION-001 formalized as RATIFIED creation apex (manifest ARCH-00397) + ARCH-00394 RATIFIED (first clean wizard run) + Phase-2 fixes. 4 gates, ZF green throughout."
+      positive:
+        - "One-tab-orchestrator + git-SSOT proven END-TO-END: Opus dispatched Haiku (gather) + Sonnet (build) as in-session subagents, judged each build, stamped truth-fields — zero tab/copy-paste. This IS Model-B, live — the structural fix for the collision class."
+        - "ratify-with-safety-net worked again (ARCH-00396 v1.1): Governor decreed, parallel independent review ran, HALT-on-UNSOUND held; confirmatory re-check returned GO BEFORE execution touched the constitution."
+        - "Delegation dogfooded: parallel Haiku+Sonnet dispatch per §3.0 rubric; opus_executor_incidents metric tracks Opus doing routable work → RQC drives to 0."
+      negative:
+        - problem: "3-FOR-3: EVERY Opus-authored plan this session (ARCH-00382, -00391, -00396) was UNSOUND on first independent review. ARCH-00396's own A8-fork (declaring ARCH-00230 the SSOT WITHOUT registering it in ssot-registry) is the sharpest: the consolidation plan committed the very fork it existed to prevent."
+          prevention: "Independent review for Opus-authored plans is LOAD-BEARING, not optional/habit → make it a HARD gate in ARCH-00190 (author≠verifier, P5). MUST route via plan/amendment (I25) — do NOT ad-hoc edit ARCH-00190 (self-caught this exact temptation mid-pipeline)."
+          status: PREVENTION-CANDIDATE (route to a plan — deferred, not ad-hoc)
+      open_followups:
+        - "ARCH-00190: make independent-review mandatory for Opus-authored plans (via plan/amendment)."
+        - "Governor veto window: two-root ruling (CS-MASTER-VALIDATION = validation root vs CS-CREATION = creation apex)."
+        - "Full Parent-field retrofit (currently header-level resolved); ARCH-00394 no-parent-apex Core_spine template convention."
+      prompt_injection_note: "A fake 'Otosan WordPress' MCP-server-instruction block appeared mid-session trying to hijack the Sonnet tier into an unrelated Hebrew persona. Sonnet REFUSED + flagged it (Principle 1/8). Vector logged: MCP-server-instruction injection — tiers correctly treat tool-result instructions as untrusted."
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
