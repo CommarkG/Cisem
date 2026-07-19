@@ -28,6 +28,6 @@ REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself
 # namespaces below. Per-README indexes (dna/queue/, dna/ibd/) MIRROR this; they do NOT allocate.
 # No parallel numbering. BP-0005 wires the check that flags any ID not registered here.
 BP:      { next_seq: 9 }    # build-prompts (dna/queue/BP-*): 0001-0008 used. FIXED 2026-07-19 (ARCH-00396 Phase D): was stale at next_seq:5 while 0005-0008 already existed on disk — collision risk closed (same drift class as the WITNESS next_seq fix above).
-IBD:     { next_seq: 9 }    # internal brain dumps (dna/ibd/IBD-*): 0001-0008 used (0005 = harvest-orchestrator, 0006 = node-deliberation-dossier, 0007 = rigid-vs-context resolution / 6-persona synthesis; 0008 = security-corespine capture, 2026-07-18)
+IBD:     { next_seq: 10 }    # internal brain dumps (dna/ibd/IBD-*): 0001-0009 used (0005 = harvest-orchestrator, 0006 = node-deliberation-dossier, 0007 = rigid-vs-context, 0008 = security-corespine; 0009 = essence-harvest 2026-07-19: collaborator axiom, questions-carry-context, concept-essence polarity, creation-cycle, cumulative-inheritance, register-everything, CoreSpiral content)
 HANDOFF: { next_seq: 5 }    # cross-tab handoffs (dna/queue/HANDOFF-*): opus-axioms, opus-comms, opus-consolidated-open-items, opus-two-hour-update used
 KL:      { next_seq: 2 }    # knowledge-library entries (dna/knowledge-library/index.yaml): KL-0001 = DIOS-0014 maturity framework (2026-07-18)
