@@ -291,6 +291,10 @@ for f in $(find . -name "*-RAW.md" -not -path './.git/*' 2>/dev/null); do
   if grep -iE "^#{1,3}[[:space:]].*PURIFIED" "$f" | grep -qivE "un-?purif|verbatim"; then
     echo "   CONTAMINATED: $f (purified section header inside a RAW file — raw must stay raw)"; found_rawpair=1
   fi
+  # intake schema (Governor decree 2026-07-19): every external input must declare source + trust_tier (ARCH-00011 §3.5)
+  if ! grep -qiE "source:" "$f" || ! grep -qiE "trust_?tier:" "$f"; then
+    echo "   INTAKE-META: $f (RAW-EXTERNAL missing source: and/or trust_tier: — ARCH-00011 §3.5 intake schema)"; found_rawpair=1
+  fi
 done
 [ "$found_rawpair" = 0 ] && echo "   (none — every RAW-EXTERNAL file has a PURIFIED sibling and no raw file is contaminated)"
 

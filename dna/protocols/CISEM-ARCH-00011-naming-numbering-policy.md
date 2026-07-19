@@ -64,6 +64,14 @@ runs, a `-RAW` file tagged `RAW-EXTERNAL` MUST have a `-PURIFIED` sibling. **MEC
 and (b) any `*-RAW.md` whose body contains a `PURIFIED` section header (contamination — purified content leaking
 into the raw file). Both are WARN-level findings (I19-class: source-fidelity). First instance: [[IBD-0010-external-wizard-inputs-RAW]] ↔ [[IBD-0010-external-wizard-inputs-PURIFIED]].
 
+**INTAKE SCHEMA (Governor decree 2026-07-19 — "verify a hardwired protocol for saving inputs, tagging + statusing, automatically"):**
+every `RAW-EXTERNAL` file MUST declare two governance fields in its header, so the platform's *gathered wisdom* is
+queryable, not lost: **`source:`** (who/what it came from) and **`trust_tier:`** — one of `EXTERNAL-UNTRUSTED` (default
+for ALL external AI / MCP / web / imported content — a CLAIM to verify, never the Governor's voice; IBD-0008 security
+core seed), `GOVERNOR` (the trusted voice), or `REPO` (resident CISEM truth). **MECHANICAL:** `[RAW-PAIR]` flags any
+`RAW-EXTERNAL` file missing `source:` or `trust_tier:`. (Honest scope: this governs+verifies the *tagging/statusing* of
+captured inputs; fully-automatic *capture* is BP-0006, still a planned remainder — DECLARED, not yet wired.)
+
 ## 4. Depth / Tag / Status — mandatory retrieval index (not optional metadata)
 Every node MUST declare, at creation:
 - **depth_level:** L1 (exists/summary) | L2 (operational) | L3 (full architectural)

@@ -156,6 +156,20 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     WHY: assembly-required instructions leak steps and re-introduce the drift they were meant to prevent |
     VERIFY: could the recipient run it from ONE paste with zero back-reference? | (I21) | APPLIES_TO: any handoff, one-click instruction, Core Seed block, or build-prompt authored by any tier]]
 
+15. Divergent-Iteration to Flawless — ZF-Development (ALL tiers — Governor-decreed 2026-07-19) — when developing a
+    reusable pattern/template/corespine, do NOT generalize or seal it from ONE build. BUILD ONE → learn → refine →
+    then build ANOTHER that is DIFFERENT → learn → refine → then a THIRD, until an instance flows FLAWLESSLY; only a
+    flawless-flowing pattern earns generalization/sealing. This is **ZF applied to the development METHOD** (not one
+    artifact's audit): a pattern is "ready to apply" only when divergent trials stop surfacing new gaps. Governor's
+    saying (engrave): *"What's the point of applying something if the next trial could have things to improve? Doing
+    so is like a gap creation engine that will go on endlessly."* Applying-before-flawless AMPLIFIES the unresolved
+    gaps into every downstream use (the gap-creation engine). Consistent with §3.2c (core-vs-instance: no core from
+    one example) + ZF + the archive (each refined-away trial → SUPERSEDED entry, dna/archive/archive-ledger.yaml).
+    [[CORE-SEED | MUST: prove a pattern by DIVERGENT iteration to flawless-flow BEFORE generalizing/sealing it; never
+    promote from one build | WHY: premature generalization is a gap-creation engine — it amplifies unresolved gaps
+    downstream endlessly | VERIFY: did ≥2-3 DIFFERENT instances flow without surfacing new gaps before this was
+    generalized/sealed? | APPLIES_TO: all tiers — any reusable pattern/template/corespine/wizard being developed for generalization or sealing]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A8) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
