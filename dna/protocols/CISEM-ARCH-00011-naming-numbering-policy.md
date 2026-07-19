@@ -48,6 +48,22 @@ never inferred from filename alone.
 "PART" is reserved exclusively for governed mini-tree splits — never reused as
 general versioning (this is the direct fix for the original -L1 misuse).
 
+## 3.5 RAW ↔ PURIFIED pair (imported/external content — Governor decree 2026-07-19, MANDATORY + mechanically enforced)
+Any external/imported content captured into the vault is a **mandatory PAIR** sharing one ID stem — the raw
+input is kept as its OWN file, and a SEPARATE purified version is created; purified content NEVER lives inside
+the raw file. This protects native source vocabulary (D2, IBD capture-first) while producing a de-branded,
+CISEM-aligned essence to actually work from.
+```
+{ID}-{slug}-RAW.md       — verbatim quarantine. APPEND-ONLY. Never de-branded, never edited into with
+                            analysis. Header carries the RAW-EXTERNAL tag. Links forward to its PURIFIED sibling.
+{ID}-{slug}-PURIFIED.md  — the de-branded, CISEM-aligned essence. A SEPARATE file. Links back to RAW via [[…]].
+```
+**Rule:** purified/analysis content MUST NOT be written into a `-RAW` file (raw stays raw). Once purification
+runs, a `-RAW` file tagged `RAW-EXTERNAL` MUST have a `-PURIFIED` sibling. **MECHANICAL (plan-audit.sh, wired
+2026-07-19):** the audit flags (a) any `*-RAW.md` tagged `RAW-EXTERNAL` with no matching `*-PURIFIED.md` sibling,
+and (b) any `*-RAW.md` whose body contains a `PURIFIED` section header (contamination — purified content leaking
+into the raw file). Both are WARN-level findings (I19-class: source-fidelity). First instance: [[IBD-0010-external-wizard-inputs-RAW]] ↔ [[IBD-0010-external-wizard-inputs-PURIFIED]].
+
 ## 4. Depth / Tag / Status — mandatory retrieval index (not optional metadata)
 Every node MUST declare, at creation:
 - **depth_level:** L1 (exists/summary) | L2 (operational) | L3 (full architectural)

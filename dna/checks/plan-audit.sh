@@ -274,6 +274,26 @@ while IFS= read -r seedline; do
 done < <(grep -rn "\[\[CORE-SEED" --include="*.md" . 2>/dev/null | grep -v '.git/' | grep "MUST:")
 [ "$found_seed_missing" = 0 ] && echo "   (none — all [[CORE-SEED]] directives carry APPLIES_TO)"
 
+# RAW-PAIR — Source-fidelity (ARCH-00011 §3.5, Governor decree 2026-07-19): imported external content is a
+#            mandatory RAW↔PURIFIED PAIR. Every *-RAW.md tagged RAW-EXTERNAL must have a *-PURIFIED.md sibling,
+#            and no *-RAW.md may contain purified content (a "PURIFIED" section header = contamination).
+#            WARN-ONLY (does NOT enter ZF) — same posture as [SEED] at introduction.
+echo "[RAW-PAIR] source-fidelity: RAW-EXTERNAL files need a PURIFIED sibling; RAW must stay raw (ARCH-00011 §3.5):"
+found_rawpair=0
+for f in $(find . -name "*-RAW.md" -not -path './.git/*' 2>/dev/null); do
+  grep -qiE "RAW-EXTERNAL" "$f" || continue           # only imported/external RAW files are paired
+  sibling="${f%-RAW.md}-PURIFIED.md"
+  if [ ! -f "$sibling" ]; then
+    echo "   MISSING PURIFIED: $f (no $(basename "$sibling") sibling — ARCH-00011 §3.5)"; found_rawpair=1
+  fi
+  # contamination: a section header DECLARING purified content inside the RAW file itself.
+  # Exclude legitimate raw markers ("un-purified", "VERBATIM, un-purified") — only a real PURIFIED header counts.
+  if grep -iE "^#{1,3}[[:space:]].*PURIFIED" "$f" | grep -qivE "un-?purif|verbatim"; then
+    echo "   CONTAMINATED: $f (purified section header inside a RAW file — raw must stay raw)"; found_rawpair=1
+  fi
+done
+[ "$found_rawpair" = 0 ] && echo "   (none — every RAW-EXTERNAL file has a PURIFIED sibling and no raw file is contaminated)"
+
 # EDGE — Phase-0 (ARCH-00392): UNKNOWN/penumbra channel. UNKNOWN ≠ FAIL; advisory for Opus judgment.
 # Phase-1 enhancement: reads dna/checks/concept-envelope-registry.yaml by path to route concept-edge
 # cases to UNKNOWN instead of a false FAIL. Registry path: dna/checks/concept-envelope-registry.yaml.

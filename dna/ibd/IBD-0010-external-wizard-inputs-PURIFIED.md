@@ -1,0 +1,23 @@
+# IBD-0010 — External Wizard Inputs (PURIFIED ESSENCE) 2026-07-19
+**Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — runs the creation cycle (threshold → FIT → CONSENSUS → 8-Q stress-test) before anything here binds.
+**Source (raw quarantine):** [[IBD-0010-external-wizard-inputs-RAW]] — verbatim, de-brand-on-analysis. This file is the DERIVED purified version; the RAW file is never edited into. RAW/PURIFIED are a mandatory PAIR (see ARCH-00011 §RAW-PURIFIED convention).
+**Purification rule applied:** source names (three colleagues), their private machinery, their word "spine", and their sealed counts are STRIPPED. What remains is essence, mapped to existing CISEM vocab.
+**Triangulation note:** three INDEPENDENT sources converging on the same move = strong evidence, not proof (still verify each).
+
+## PART A — CONVERGENCE (all three independently agree → strong signal for OUR direction)
+- **A1. Uniqueness gate fires BEFORE the wizard opens** — hard pre-wizard question ("does this corespine already exist under another name? is this a BRANCH under an existing corespine, not a new one?"), HIGHER scrutiny than a normal element, because a corespine is trunk-level (expensive to make, costlier to deprecate). → CISEM: elevate Existing-First (§3.2b) into a hard ZF-0 pre-wizard uniqueness gate inside ARCH-00394.
+- **A2. Sharper root-goal test** — "what BREAKS / FAILS if this doesn't exist?" (if the honest answer isn't "≈everything in this domain," it's a rule/config, not a corespine) + one sentence, NO "also," NO compound goal (an "and it also handles X" = two corespines in one name, or a branch). → sharpens Goal-First (§3.1).
+- **A3. Mechanical-not-documented as a typed, MANDATORY field** — each constraint typed documented/auditable vs mechanical/unbypassable; AT LEAST ONE must be mechanical or the whole thing is "just a policy doc." → our EXISTS≠ACTIVE / hardwired-vs-documented (I23), cleaner constraint-level vocabulary; reinforces CAL.
+- **A4. "Cannot-Mean" / explicit exclusions = a MANDATORY declared field** (both call it the highest-leverage anti-drift field, never skip). → our penumbra / silent_on made a REQUIRED field.
+- **A5. Honest wiring-state at birth** — new corespine starts DECLARED, never LIVE; CONNECTED/REACHABLE/CURRENT are EARNED + verified. Born-LIVE = untrustworthy the first time someone checks. → our 4-wiring-states + STATUS-TRUTH banner.
+- **A6. Exit gate closes on PROOF, not optimism** — "done" = a STATED falsification/activation test (planted-violation test proving misclassification gets CAUGHT + the positive path). Not "authored" — wired+called+verified. → our [ZF] done-gate + I22.
+
+## PART B — GENUINELY NEW (the gifts to mine — real decisions for us)
+- **B1. PRECEDENCE ORDERING (the big one).** The one decision never to get wrong: WHAT governs WHAT, and in which ORDER it WINS when two disagree — a FIXED, hardcoded precedence rank across top-level domains, not case-by-case. → Directly answers our two-root "creation vs validation — which wins?" gap (stress-test Q8). Strong adopt candidate.
+- **B2. "The wizard's first job is REFUSAL."** The wizard's PRODUCT is the CONSTRAINT — structurally INCAPABLE of the wrong creation (can't casually mint a new top-level corespine, can't reorder precedence). A wizard that makes new corespines EASY defeats its purpose; the friction IS the feature. → reframes ARCH-00394: a REFUSER that rarely permits.
+- **B3. Classifier-first, defaulting to "you probably don't need a new corespine."** Common path = author an artifact/branch UNDER an existing corespine; most "I need a new corespine" = a new sub-domain under an existing one; only genuinely orthogonal concerns escalate to Governor. → shapes the wizard's default posture.
+- **B4. SEALED vs OPEN top-level set (the architectural fork).** One source treats the top-level corespine set as SEALED, bounded, precedence-ordered (new one = rare Governor-gated re-grounding event); we treat count as OPEN. → Real decision; touches CS-CREATION-001 apex + parent-field model. See the polarity reconciliation in the discussion (2026-07-19).
+- **B5. FLEXIBLE vs NOT-FLEXIBLE per decision** — each decision tagged config-adjustable (no re-ratify) vs constitutional (Governor approval to ever change). → convergent with our waivable/governed/absolute 3-tier; validates it + offers a 2-tier cut to compare.
+
+## REJECTED-ON-IMPORT (source machinery NOT adopted — de-branded away)
+Their private registries/labs/engines by name, their specific group taxonomies, their specific precedence letters, their sealed counts, their delivery-form debate, the word "spine". Essence kept; vocabulary is ours.
