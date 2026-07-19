@@ -488,6 +488,51 @@ runs:
     new_enhancements: ["CS-CREATION-001 formalized as the RATIFIED creation apex (corespine-of-corespines)", "ARCH-00394 RATIFIED — first wizard to complete a clean independently-verified run (I24)"]
     status: COMPLETE   # Gate C cleared (Opus soundness + Governor pre-decree); two-root ruling disclosed for veto; Phase D next
 
+  - run: 27
+    date: 2026-07-19
+    trigger: "Sonnet STRUCTURING tier: ARCH-00396 Phase D — mechanical fixes (Phase-2 defects + naming-registry drift)"
+    pocket: cisem-sonnet (STRUCTURING) — declared; executing Opus-approved plan exactly; Opus judges Gate D
+    tier_routing: "Sonnet executes per CLAUDE.md §3.0 under 5 Opus-authored Core Seeds (immutable); Opus judges Gate D"
+    finding: >
+      DELIVERABLE 1 — penumbra-sweep.sh: split the single conflated counter into REAL escapes (Sections 1+2,
+      genuine registry penumbra cases) vs PLANTED mis-scope PROBES (Section 3, deliberate — a catch is a SUCCESS).
+      Snapshot sec12_planted/sec12_caught taken before Section 3 runs; [SWEEP-SUMMARY] now reports both categories
+      distinctly. Re-run: REAL escapes 0/20 (target 0, MET); PLANTED probes DETECTED 2/2 (success signal, unchanged).
+      DELIVERABLE 2 — quality-ledger.yaml out_of_scope_false_pass_rate: definition rewritten to REAL-escapes-only;
+      baseline_run_22 reconciled (0/20 real escapes; 2/2 probe detections — was previously read as "2/22" conflating
+      both); added sibling mis_scope_detections metric tracked independently.
+      DELIVERABLE 3 — I19-P2 tightened: invariant-registry.yaml I19.check_pattern + core[]/penumbra[] updated so
+      "nothing found"/"no existing" is REMOVED as standalone-sufficient evidence — now requires co-occurrence with
+      a named source (ssot-registry/corespine-registry/naming-registry/grep/archive/PROMOTES/IBD-NNNN/SUPERSEDES).
+      plan-audit.sh I19-EDGE logic (line ~152) updated to match (v8). Planted-test PROOF: bare "nothing found" (no
+      source) in a test plan file → [I19-EDGE] fired, routed UNKNOWN (not PASS). "nothing found" + named source
+      ("searched the ssot-registry and grepped the repo") → no I19-EDGE flag, correctly PASSES.
+      DELIVERABLE 4 — naming-registry.yaml BP next_seq: 5 → 9 (BP-0005..0008 confirmed present on disk via ls);
+      comment corrected to note the drift-fix (same class as the prior WITNESS next_seq fix).
+    side_effect_disclosed: >
+      The I19-P2 tighten (Deliverable 3) revealed a PRE-EXISTING accidental pass: dna/planning/CISEM-ARCH-00280
+      -open-design-questions.md was silently passing I19 ONLY because "No Existing-First search required" contains
+      the substring "no existing" (which was in the old core pattern). With that pattern removed, ARCH-00280 now
+      correctly routes to [I19-EDGE] UNKNOWN — this is NOT a regression, it is the tightened check correctly
+      surfacing a case that was a genuine false-PASS before (exactly the class of leak CORE-SEED 2 targets). It
+      does NOT affect [ZF] (EDGE is a separate channel; [ZF] still ACHIEVED). ARCH-00280 has an explicit documented
+      "Existing-First exemption (§3.2b, I19)" clause (an open-questions/deliberation doc, not a creating-plan) —
+      the I19 silent_on[] list does not yet name this exemption class explicitly; flagged to Opus as a possible
+      follow-on (out of this Phase-D scope — not touched, no scope creep per plan discipline).
+      Also disclosed: \bsearched\b and dna/ remain in the I19-EDGE core pattern (untouched, out of the stated
+      Core-Seed-2 scope which named only "nothing found"/"no existing") — same LOOSE-MATCH risk class; flagged
+      for Opus's future consideration, not fixed here.
+    invariants_added: []
+    new_enhancements:
+      - "penumbra-sweep.sh — REAL escapes vs PLANTED probes now reported as two distinct counters (CORE-SEED 1)"
+      - "out_of_scope_false_pass_rate — reconciled to REAL-escapes-only; mis_scope_detections tracked as a separate success metric"
+      - "I19-P2 tightened — bare 'nothing found' (no named source) now routes UNKNOWN, not PASS (CORE-SEED 2)"
+      - "naming-registry BP next_seq drift fixed (5 → 9)"
+    honesty_scope: >
+      No truth-bearing Status/RATIFIED field written (I7/CORE-SEED 4). Staged only the 5 Phase-D files (no `git add -A`).
+      Not claiming Gate D — Opus judges soundness (mechanical hygiene; Governor sign-off optional per plan).
+    status: IN-PROGRESS  # GATE D pending Opus soundness
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
@@ -496,12 +541,29 @@ metrics:
   haiku_miss_rate: "baseline (not yet measured)"   # findings Haiku missed / total real findings; target monotonically DECREASING (recurring Haiku improvement, cisem-haiku.md)
   opus_executor_incidents: "runs 18-21: ~2 (harvest-hook bash + concept-envelope draft could have been Sonnet-routed); target DECREASING (CLAUDE.md §3.0 delegation rubric; Governor 'do better' 2026-07-18)"
   out_of_scope_false_pass_rate:            # ARCH-00392 Phase 2 — active surveillance metric
-    definition: "penumbra cases that route as PASS instead of UNKNOWN / total penumbra cases planted in sweep run"
-    baseline_run_22: "2/22 (2 simulated mis-scope detections; 20/22 confirmed UNKNOWN routing; mis-scope detection = intended)"
-    target: "0 — every penumbra case routes to UNKNOWN (not a false PASS)"
+    definition: >
+      REAL escapes ONLY: genuine penumbra cases (Sections 1+2 of penumbra-sweep.sh — the
+      registries' actual I19/I23/I24/concept-envelope penumbra[] entries) that route as PASS
+      instead of UNKNOWN, divided by the total REAL penumbra cases planted. This EXCLUDES the
+      sweep's own deliberate Section-3 mis-scope PROBES (a probe being detected is a SUCCESS,
+      not an escape — it proves the sweep can catch a mis-scoped registry entry). The two are
+      tracked as SEPARATE counters (real_escapes vs mis_scope_detections) — never summed.
+    baseline_run_22: >
+      RECONCILED run 27 (ARCH-00396 Phase D — the run-22 figure below pre-dates the counter
+      fix and conflated the two categories; corrected reading, same underlying sweep data):
+      0/20 REAL escapes (all 20 genuine Section-1/2 penumbra cases correctly routed UNKNOWN);
+      2/2 deliberate Section-3 mis-scope PROBES correctly DETECTED (a separate success metric,
+      see mis_scope_detections below) — NOT escapes. The original run-22 entry ("2/22") folded
+      the 2 successful probe-detections into the same denominator/numerator as real escapes,
+      which reads as 2 failures when both were actually correct catches.
+    mis_scope_detections:                  # separate success-signal metric (Section 3 of the sweep)
+      definition: "deliberate mis-scope probes the sweep correctly detected / total probes planted"
+      baseline_run_22: "2/2 detected (100% — the sweep's self-test of its own detection logic)"
+      target: "2/2 — every planted probe caught (a miss here means the sweep's detection logic itself is broken)"
+    target: "0 — every REAL penumbra case routes to UNKNOWN (not a false PASS)"
     measured_by: "dna/checks/penumbra-sweep.sh — reads both registries by path (A8); logs to this metric each cadence run"
     cadence: "every 5 plan-audit runs (test_cadence: 5 in invariant-registry.yaml + concept-envelope-registry.yaml)"
-    note: "a rising false_pass_rate signals mis-scoped registry entries; a mis-scope = a penumbra case moved to core[] → silently bypasses UNKNOWN routing"
+    note: "a rising REAL out_of_scope_false_pass_rate signals mis-scoped registry entries; a mis-scope = a penumbra case moved to core[] → silently bypasses UNKNOWN routing. mis_scope_detections dropping below its total signals the sweep's own probe logic has degraded — a distinct, unrelated failure mode."
   engines: "1 executable (plan-audit.sh) + 1 routing structure (queue) + 1 sweep (penumbra-sweep.sh)"
   invariant_automation: "8/24 automated (I1,I3,I6,I9,I16,I19,I23,I24 in plan-audit.sh + I13 seed-strip BLOCK; I19/I23/I24 wired+validated 2026-07-18 via planted tests); rest manual"
   corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-FRONTEND-001) — corrected run 18: CS-MASTER-VALIDATION-001 is DRAFTED-awaiting-decree, NOT ratified"

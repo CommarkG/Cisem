@@ -27,6 +27,9 @@
 #   WARN-only, not ZF); concept-edge routing reads dna/checks/concept-envelope-registry.yaml by
 #   path and routes small-patch commits (≤5 lines, 0 new files) to [EDGE] UNKNOWN per
 #   'creation_event' penumbra (A8 — registry path referenced, content not copied).
+#   v8 (2026-07-19, ARCH-00396 Phase D): I19-P2 tightened — "nothing found"/"no existing" REMOVED
+#   as standalone-sufficient in the I19-EDGE core-evidence pattern; a bare "nothing found" (no
+#   named registry/grep/archive source) now routes to [EDGE] UNKNOWN instead of silently passing.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -147,9 +150,12 @@ for f in $(find dna/planning -name "*.md" 2>/dev/null); do
 done
 [ "$found_i19" = 0 ] && echo "   (none — every plan states its Existing-First search)"
 # I19 EDGE (ARCH-00392 Phase-0): penumbra — Existing-First keyword present but no search evidence
+# ARCH-00396 Phase D (I19-P2 tighten, CORE-SEED 2): "nothing found"/"no existing" is REMOVED as a
+# standalone-sufficient pattern (invariant-registry.yaml I19.check_pattern). A bare "nothing found"
+# with no named source (registry/grep/archive) is NOT evidence — it now falls through to [EDGE] UNKNOWN.
 for f in $(find dna/planning -name "*.md" 2>/dev/null); do
   grep -qiE "existing.first|EXISTS-FIRST|§?3\.2b|i searched|searched:|search order|Lineage \(I19\)|knowledge.library" "$f" || continue
-  grep -qiE "ssot-registry|corespine-registry|naming-registry|knowledge.library|\bgrep\b|archive|PROMOTES|IBD-[0-9]+|nothing found|no existing|lineage.*=|SUPERSEDES|§3\.2b.*done|\bsearched\b|dna/" "$f" && continue
+  grep -qiE "ssot-registry|corespine-registry|naming-registry|knowledge.library|\bgrep\b|archive|PROMOTES|IBD-[0-9]+|lineage.*=|SUPERSEDES|§3\.2b.*done|\bsearched\b|dna/" "$f" && continue
   edge_findings="${edge_findings}   [I19-EDGE] $(basename $f) — Existing-First present but no search evidence (invariant-registry I19.penumbra)\n"
   found_edge=1
 done

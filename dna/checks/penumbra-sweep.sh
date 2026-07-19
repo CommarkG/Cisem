@@ -9,6 +9,10 @@
 # CADENCE: call this sweep every N plan-audit runs, where N = test_cadence in each
 #          penumbra[] group (currently 5 for all groups).
 # GOVERNS: ARCH-00392 Phase 2. Results feed out_of_scope_false_pass_rate in quality-ledger.yaml.
+# ARCH-00396 Phase D FIX: the summary now separates REAL escapes (Sections 1+2 — a genuine
+#          miss, target 0) from PLANTED mis-scope PROBES (Section 3 — deliberate, a catch is
+#          a SUCCESS). Previously both were folded into one "false-pass" count, which reported
+#          a success as a failure (I16/I22 signal-poisoning risk). See [SWEEP-SUMMARY].
 # WARN-ONLY by design (consistent with plan-audit.sh). Exit 0 always.
 # CORE-SEED 2 compliance: registry PATHS cited and read; content NOT copied here (A8).
 set -u
@@ -396,11 +400,23 @@ fi
 echo ""
 
 # ─────────────────────────────────────────────────────────────────────────────
+# COUNTER SPLIT (ARCH-00396 Phase D, CORE-SEED 1): snapshot the REAL-test totals
+# (Sections 1+2 — genuine penumbra cases) BEFORE Section 3's DELIBERATE mis-scope
+# probes are planted. Section 3 successes are a SUCCESS signal (the sweep caught
+# an induced false-PASS) — they must never be counted as "escapes" alongside a
+# genuine Section-1/2 miss. See [SWEEP-SUMMARY] below for the two distinct metrics.
+# ─────────────────────────────────────────────────────────────────────────────
+sec12_planted=$total_planted
+sec12_caught=$total_caught
+
+# ─────────────────────────────────────────────────────────────────────────────
 # SECTION 3: FALSE-PASS DETECTION (CORE-SEED 3 activation-proof)
 # Scenario: deliberately MIS-SCOPE one registry entry (move a penumbra case into core[])
 # The sweep must CATCH the resulting false PASS.
 # NOTE: The actual mis-scope is done to the LIVE registries by the caller (see task spec).
 #       Here we SIMULATE the detection logic to prove the sweep can catch it.
+# These are DELIBERATE PLANTED PROBES — a catch here is a SUCCESS, not a real escape
+# (counted separately from Sections 1+2, see [SWEEP-SUMMARY]).
 # ─────────────────────────────────────────────────────────────────────────────
 echo "=== SECTION 3: FALSE-PASS DETECTION (CORE-SEED 3 activation-proof) ==="
 echo "    Tests that the sweep CATCHES when a penumbra case is mis-scoped into core[]"
@@ -455,23 +471,35 @@ echo ""
 # ─────────────────────────────────────────────────────────────────────────────
 echo "──────────────────────────────────────────────────────────────"
 echo "[SWEEP-SUMMARY]"
-echo "   Total penumbra cases planted/tested: $total_planted"
-echo "   Cases confirmed → UNKNOWN routing:   $total_caught"
-false_routed=$(( total_planted - total_caught ))
-echo "   False-pass escape count (NOT caught): $false_routed"
-echo "   Mis-scope detections (false PASS caught): $false_pass_count"
 echo ""
+echo "   -- CATEGORY A: REAL penumbra tests (Sections 1+2 — genuine registry cases) --"
+echo "   REAL cases planted/tested:            $sec12_planted"
+echo "   REAL cases confirmed -> UNKNOWN:      $sec12_caught"
+real_escapes=$(( sec12_planted - sec12_caught ))
+echo "   REAL ESCAPES (NOT caught — genuine leak; target 0): $real_escapes"
+echo ""
+echo "   -- CATEGORY B: PLANTED mis-scope PROBES (Section 3 — deliberate, a catch = SUCCESS) --"
+planted_probes=$(( total_planted - sec12_planted ))
+echo "   PLANTED probes planted:               $planted_probes"
+echo "   PLANTED probes DETECTED (sweep caught the induced false-PASS): $false_pass_count"
+planted_missed=$(( planted_probes - false_pass_count ))
+echo "   PLANTED probes MISSED (sweep failed to catch; target 0): $planted_missed"
+echo ""
+if [ "$real_escapes" -gt 0 ]; then
+  echo "   WARNING: $real_escapes REAL escape(s) in Sections 1+2 — genuine penumbra leak, investigate"
+fi
 if [ "$false_pass_count" -gt 0 ]; then
-  echo "   ✅ MIS-SCOPE DETECTION: $false_pass_count mis-scope(s) detected — the sweep can catch false PASSes"
+  echo "   OK MIS-SCOPE DETECTION: $false_pass_count/$planted_probes deliberate probe(s) correctly detected (this is a SUCCESS signal, not an escape)"
 fi
 echo ""
-echo "   METRIC to log → out_of_scope_false_pass_rate:"
-echo "     false_pass_count: $false_routed"
-echo "     total_planted: $total_planted"
-if [ "$total_planted" -gt 0 ]; then
-  echo "     rate: $false_routed / $total_planted"
-  echo "     target: 0 false passes (every penumbra routes to UNKNOWN)"
+echo "   METRIC to log -> out_of_scope_false_pass_rate (REAL escapes ONLY — excludes the deliberate Section-3 probes):"
+echo "     real_escapes: $real_escapes"
+echo "     real_tests_total: $sec12_planted"
+if [ "$sec12_planted" -gt 0 ]; then
+  echo "     rate: $real_escapes / $sec12_planted"
+  echo "     target: 0 (every REAL penumbra case routes to UNKNOWN, never a false PASS)"
 fi
+echo "     (separate, NOT part of this metric) mis_scope_detections: $false_pass_count / $planted_probes — SUCCESSES, tracked independently"
 echo ""
 echo "   Registry sources confirmed by this sweep:"
 echo "     $INVARIANT_REGISTRY — $(grep -c 'penumbra:' "$INVARIANT_REGISTRY" 2>/dev/null || echo '?') penumbra[] groups, test_cadence: 5"

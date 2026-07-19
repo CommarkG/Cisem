@@ -22,11 +22,12 @@ I19:
     - "retro-plan files that explicitly document a retroactive search result inline"
   core:
     - "plan has 'Existing-First' AND cites at least one registry/grep/archive result explicitly"
+    - "plan says 'nothing found' / 'no existing' AND names the source searched (registry/grep/archive) — 'nothing found' counts as evidence ONLY when paired with a named source"
   penumbra:
     - "plan mentions 'Existing-First' but lists NO registries, grep, or search results"
-    - "plan says 'nothing found' without naming what was searched"
+    - "plan says 'nothing found' / 'no existing' WITHOUT naming what was searched (bare — no registry/grep/archive named) — ARCH-00396 Phase D: this now routes to UNKNOWN/[EDGE], it no longer passes as core evidence on its own"
   test_cadence: 5   # Phase-2: penumbra-sweep.sh plants each case above every 5 runs; asserts UNKNOWN (not PASS)
-  check_pattern: "grep -qiE 'ssot-registry|corespine-registry|naming-registry|grep|archive|PROMOTES|IBD-[0-9]+|nothing found|no existing|SUPERSEDES'"
+  check_pattern: "grep -qiE 'ssot-registry|corespine-registry|naming-registry|grep|archive|PROMOTES|IBD-[0-9]+|SUPERSEDES'  # ARCH-00396 Phase D: 'nothing found'/'no existing' REMOVED as standalone-sufficient — they only count when the same text also matches this named-source pattern"
 
 I23:
   label: "EXISTS≠ACTIVE — activation claims require disk-verifiable mechanism"
