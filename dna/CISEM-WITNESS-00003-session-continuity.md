@@ -258,7 +258,7 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 
 **REGISTERED CANDIDATES awaiting our cycle (IBD-0009):** collaborator-axiom (root) · questions-carry-context (→A6) · concept↔essence polarity (→D6) · creation-cycle (axiom+doctrine) · cumulative-inheritance (→A2)+vocab(template/corespine) · multi-classification virtue (→A8 clarify) · consensus-before-creation (done, §1.6) · repetition-as-virtue · register-everything axiom · deep-AI-coding-triggers-in-every-checklist (→ARCH-00230) · principle-format (statement+questions+2 good+2 bad examples) · CoreSpiral founding content (→FOUND-00001, Governor-only ratify).
 
-**FIRST MOVE NEXT SESSION:** read IBD-0009, then RESUME THE DISCUSSION (do not build). Ask the Governor which candidate to shape next through the cycle. The CS-COMMS existing-map (dna/audits/cs-comms-existing-map-2026-07-19.md) is our worked simulation example (verdict: enhance, not new).
+**FIRST MOVE NEXT SESSION (in order):** (1) **PURIFY `dna/ibd/IBD-0010-external-wizard-inputs-RAW.md`** — external inputs on building a corespine wizard, parked RAW; strip source vocab/branding/names, extract essence, align to CISEM, then feed to the CS-CREATION-001/ARCH-00394 wizard discussion (Governor may paste inputs 2 & 3 first). (2) read IBD-0009, then RESUME THE DISCUSSION (do not build). Ask the Governor which candidate to shape next through the cycle. The CS-COMMS existing-map (dna/audits/cs-comms-existing-map-2026-07-19.md) is our worked simulation example (verdict: enhance, not new).
 
 **ZF:** ✅ ACHIEVED · tree clean · pushed (3e1137a). **RESUME:** CLAUDE.md → this file (COMPACT STATE v6) → **dna/ibd/IBD-0009** → dna/quality-ledger.yaml → dna/learning-registry → dna/queue/README.md.
 
