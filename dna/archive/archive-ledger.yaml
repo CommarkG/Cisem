@@ -65,6 +65,26 @@ entries:
     date: "2026-07-19"
     ruled_by: "Opus (provisional)"
 
+  - id: DEC-0005
+    title: Inherited WHAT stated as PROSE
+    what: "Express an inherited constraint (the WHAT) as a prose sentence a descendant reads and honors."
+    disposition: SUPERSEDED
+    replaced_by: "WHAT-as-MECHANICAL-INVARIANT (a testable assertion, not a sentence) — Governor-APPROVED 2026-07-19."
+    why: "Prose WHATs get reclassified as HOW to earn permission ('just implementing differently') = the #1 drift vector (R4/CSPS); it looks exactly like compliance so no reviewer catches it (Liskov/abstraction-leak). A testable assertion cannot be reinterpreted."
+    tags: [inheritance, what-vs-how, drift, mechanical-invariant, external-review]
+    date: "2026-07-19"
+    ruled_by: "Governor"
+
+  - id: DEC-0006
+    title: Total-ordering precedence (one global rank, corespine A>B>C)
+    what: "Resolve all corespine conflicts by a single global precedence rank over whole corespines."
+    disposition: RULED-OUT-TEMPORARY
+    reopen_conditions: "Reopens if the Governor rules the tree-vs-graph fork toward a pure total-order model; currently set aside pending that ruling."
+    why: "A single total order turns the highest-ranked corespine into a de-facto constitutional super-domain (R3), and overlapping-reach trunks become precedence wars (R6). Set aside in favor of a TYPED precedence SEQUENCE (applicability→rule-class→constitutional→specificity→ratified-waiver→optimize→default→INDETERMINATE) resolving TYPED CLAIMS, not whole-corespine rank."
+    tags: [conflict-resolution, precedence, typed-claims, external-review, pending-fork]
+    date: "2026-07-19"
+    ruled_by: "Opus (provisional — from R3/R6 review; pending Governor fork ruling)"
+
 # HIGH-PRIORITY remaining (BP-0008 full execution — NOT done in this SWIFT MVP; needs a plan, blast-bearing):
 #   (1) migrate ARCH-00150 / CS-LOOPS-001 [rejected-idea] entries in (parallel CS-INTAKE-BATCHING, flat-big-file
 #       split, over-atomizing, etc.); (2) the harder SIGNATURE-MATCH check (flag a NEW creation that matches a
