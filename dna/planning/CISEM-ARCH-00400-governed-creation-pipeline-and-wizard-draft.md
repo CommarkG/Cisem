@@ -54,4 +54,16 @@ DOES NOT CHANGE (defend — conclusion E): RAW/PURIFIED + trust-tier; dispositio
 Pure inheritance tree (DEC-0003 class); total-order precedence (DEC-0006); "flawless as feeling"; prose WHAT (DEC-0005). Rationale: the 6-reviewer convergence (consolidation §A) + archive dispositions.
 
 ## REVIEW STATUS
-Authored by Opus (main loop). NEXT: independent adversarial review by cisem-opus-pe (Part 4, dogfooded) → route findings → Governor ratification. NOT done until the verifier returns zero unrouted findings (I22/A1).
+Authored by Opus (main loop). Independent review by cisem-opus-pe (default-refute, Part 4 dogfooded) — **VERDICT: UNSOUND 2026-07-19** (5/5 base rate held). Findings to route (D3/D4) before re-review:
+- **H1 (HALT):** "AI can read but not modify the kernel" is an unenforceable prose assertion (the AI writes the whole repo incl. hooks). Fix: honest framing — immutability rests on human ratification + git review + optional out-of-repo/human-signed seal; name the residual. Do NOT assert an unqualified "AI cannot modify."
+- **H2 (HALT):** the verify-seam overclaims — "closes" the judge-jury seam via the SAME base model (only reduces it; R1/R3/R4), and names no MECHANICAL TRIGGER that fires a cold instance per creation. Fix: "closes"→"reduces"; specify the dispatch trigger (events, blocking vs advisory); pair with the external-review cadence for real model-independence; state the shared-base-model residual.
+- **M1:** structural-wrongness protocol (wrong cardinality; §B/R5) dropped — and Part 1 "never births, only prunes" FORBIDS adding a needed domain. Add a genesis re-grounding-to-ADD path.
+- **M2 (needs Governor):** validation root (CS-MASTER-VALIDATION-001) is unplaced in the graph, and DEC-0004 (two-root CREATION-vs-VALIDATION) is silently ignored though Part 2 is exactly its reopen-trigger. Place validation + set the default precedence.
+- **M3:** overlays absent from the precedence sequence (Part 1⇄2 seam) — type overlay claims into precedence.
+- **M4:** Part 3 wizard diverges from RATIFIED ARCH-00394 without a supersede/re-ratify path (A8/I10). State the relationship + route the ratified-artifact change.
+- **M5:** rollback/versioned-atomic-default-swap (§B/R4) only name-dropped — give it a Part 2 home.
+- **M6:** boundary-gaming half-folded — add the second-tier-reach monitor (§B/R5-R6).
+- **M7:** downstream/deployed-app graceful-degrade halt contract dropped (R1 C9/R2; IBD-0012 baked it in) — add it.
+- **M8:** reopen-bar commits the named≠active sin — carry R4's caveat (the artifact structures human judgment, does not mechanize it).
+- **Mod1:** Existing-First missed ARCH-00382 (unified-graph plan) — search + relate. **Mod2:** kernel/control-plane vs A2/A3 — state the carve-out. **Mod3:** per our own green-gate (Principle 15), scope the ask to PROVISIONAL-ACTIVE-FOR-TRIAL, seal only after trials. **Mod4:** phasing seam (WHAT-as-invariant depends on the deferred graph). **Min1:** locate "institutionalize external constitutional review".
+NOT done until re-review returns zero unrouted findings (I22/A1). Full verdict: agent ad948bd54730633f8.
