@@ -222,3 +222,4 @@ RATIFIED, wiring-state LIVE (both approved)
 
 ## Change log
 - v1.0 — 2026-07-18: Sonnet draft (via BP-0007). Implements ARCH-00340 §1 checklist (7 items). Status: PROVISIONAL-ACTIVE (draft-in-use, awaiting Opus verification).
+- v1.1 — 2026-07-18: Opus VERIFIED mirror of ARCH-00340 §1 — self-generation test PASS (run 24, ARCH-00396 Gate B): applied to ARCH-00340 itself, the wizard's 7 steps regenerate the meta-protocol's own 7-item structure. Mirror confirmed 1:1 (I10); "awaiting-Opus-verification" cleared. Parent meta-root: ARCH-00340.

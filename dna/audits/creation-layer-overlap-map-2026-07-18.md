@@ -18,9 +18,9 @@ SSOT-ambiguities from the 4 flagged concerns") is independently checkable (State
 | Name | Mirrors | Mirror-verified? |
 |---|---|---|
 | cisem-plan | ARCH-00190 §2-5 (1:1, SKILL:148) | YES |
-| cisem-meta | ARCH-00340 §1 (1:1, SKILL:208) | claimed; **Opus self-generation test PASS 2026-07-18** (ARCH-00396 renders it) |
-| cisem-create | "§3 gates" (distributed) | **NO single SSOT** — unanchored |
-| ARCH-00394 | (embeds own protocol) | **NO separate protocol SSOT** |
+| cisem-meta | ARCH-00340 §1 (1:1, SKILL:208) | **VERIFIED** — Opus self-generation test PASS, run 24 (ARCH-00396 Gate B) |
+| cisem-create | ARCH-00230 (creation-checklist SSOT) | anchored Phase B — references ARCH-00230, no longer unanchored |
+| ARCH-00394 | embeds protocol (declared combined node) | resolved Phase B — I10 exception noted; parent ARCH-00340 |
 
 ## THE 4 FLAGGED CONCERNS (ARCH-00396 Phase B must resolve each → 0 unresolved)
 

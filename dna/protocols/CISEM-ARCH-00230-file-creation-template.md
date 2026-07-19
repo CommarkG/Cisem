@@ -1,7 +1,7 @@
 # File / Node Creation Checklist
 **SSOT:** This is the ONE authoritative source for what every created file/node must contain (the creation checklist). Referenced by CLAUDE.md §3 and cisem-create SKILL.md. Does NOT cover plans (ARCH-00190) or node-DNA schema (ARCH-00008) — see "Does NOT cover" below.
 Node ID: CISEM-ARCH-00230
-Type: ARCH | Status: DRAFT
+Type: ARCH | Status: RATIFIED (Governor decree ARCH-00396 Phase B 2026-07-18; Opus Gate-B verified run 24 — now the registered `creation_checklist` SSOT)
 depth_level: L1 | Position in schema: T-SYS
 tags: [checklist, file-creation, node-creation, mandatory, ssot]
 Goal: The canonical checklist every file/node must match at creation —

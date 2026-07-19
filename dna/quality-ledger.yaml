@@ -412,6 +412,24 @@ runs:
       Governor pre-decreed (A4/I25 already satisfied). ZF run pending (see [ZF] in return message).
     status: IN-PROGRESS  # GATE B pending Opus soundness; Governor pre-decreed per ARCH-00396 v1.1
 
+  - run: 24
+    date: 2026-07-18
+    trigger: "Opus PE: ARCH-00396 Phase B — Gate-B soundness + truth-stamps (Opus is the independent judge of Sonnet's build)"
+    pocket: cisem-opus-pe (PE) — declared
+    verdict_soundness: SOUND
+    finding: >
+      Adversarially verified Sonnet's Phase B (commit f2bbf13): 10 files, explicit git add (no -A), zero governed
+      Status fields changed, all 4 overlap-map concerns RESOLVED on disk with fix locations, ZF+I3 clean. GATE B: PASS.
+      Truth-stamps applied (Opus, I7): (1) ARCH-00230 DRAFT → RATIFIED — now the registered `creation_checklist` SSOT
+      (Governor decree ARCH-00396 Phase B; I24 citation present); (2) cisem-meta VERIFIED mirror of ARCH-00340 —
+      self-generation test PASS (the wizard applied to the meta-protocol regenerates its own 7-item structure);
+      (3) overlap-map mirror table updated (cisem-meta VERIFIED; cisem-create anchored; ARCH-00394 combined-node resolved).
+      Architectural rulings: ARCH-00394 declared-combined-node (I10 exception, documented) accepted as sound;
+      ARCH-00340 §1 (protocol structure) vs ARCH-00230 (file/node creation checklist) confirmed distinct scopes, not competing.
+    invariants_added: []
+    new_enhancements: ["ARCH-00230 = ratified single SSOT for the creation checklist (kills the triple-overlap)", "cisem-meta = verified meta-wizard (self-generation PASS)"]
+    status: COMPLETE   # Gate B cleared (Opus soundness + Governor pre-decree); Phase C next
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
