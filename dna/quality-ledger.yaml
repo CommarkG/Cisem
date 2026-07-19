@@ -430,6 +430,38 @@ runs:
     new_enhancements: ["ARCH-00230 = ratified single SSOT for the creation checklist (kills the triple-overlap)", "cisem-meta = verified meta-wizard (self-generation PASS)"]
     status: COMPLETE   # Gate B cleared (Opus soundness + Governor pre-decree); Phase C next
 
+  - run: 25
+    date: 2026-07-19
+    trigger: "Sonnet STRUCTURING tier: ARCH-00396 Phase C — formalize CS-CREATION-001 as the apex via ARCH-00394's FIRST clean end-to-end run (I24 activation-proof)"
+    pocket: cisem-sonnet (STRUCTURING) — declared; executing Opus-approved plan exactly; Opus judges Gate C
+    tier_routing: "Sonnet executes per CLAUDE.md §3.0 under 5 Opus-authored Core Seeds (immutable); Opus judges Gate C + I24 RATIFIED-eligibility for ARCH-00394"
+    finding: >
+      DOGFOOD RUN of ARCH-00394 STEP 1-6 (first-ever full run): STEP 1 Existing-First confirmed CS-CREATION-001
+      DECLARED with distributed_in pointers only, no canonical_file, no manifest on disk (grep 29 files citing it,
+      none claiming to BE it) — genuine gap-fill, not duplication. STEP 2 naming: ARCH next_seq 397 read clean.
+      STEP 3 created dna/corespines/CS-CREATION-001/CISEM-ARCH-00397-creation-apex-corespine-manifest.md (121 lines,
+      §IV manifest template followed exactly) — states the explicit apex/"corespine-of-corespines"/parent-of-every-corespine
+      role; §VI Mirrors+SSOT Map POINTS to CLAUDE.md §2.5 Doctrine, ARCH-00230, ARCH-00340, ARCH-00190 — zero doctrine
+      text copied (CORE-SEED 1). Status: DECLARED (CORE-SEED 2 — no RATIFIED stamp written). STEP 4 registered
+      corespine-registry.yaml CS-CREATION-001 `content_location.canonical_file` (kept existing `distributed_in`
+      unchanged — pointer preserved, not forked) + `wizard: ARCH-00394`. STEP 5 naming-registry.yaml ARCH next_seq
+      397->398 with comment. STEP 6 plan-audit.sh: [ZF] ACHIEVED, [EDGE] clean, [SEED] clean.
+    wizard_run_trace: >
+      STEP 1-6 ran in exact document order, no ambiguity encountered, no deviation from ARCH-00394's written
+      procedure. Minor observation (non-blocking): the §IV template's `Core_spine: {parent}` frontmatter field
+      has no defined value for an APEX corespine (no corespine sits above it) — resolved by setting it to
+      CS-MASTER-VALIDATION-001 (root_authority, per existing pattern in ARCH-00008's own header: "Governing
+      corespine: CS-MASTER-VALIDATION-001 (governs all corespines, itself...)"), not a NEEDS-OPUS-INPUT guess.
+      Flagging this for Opus: is CS-MASTER-VALIDATION-001-as-Core_spine-for-the-apex the right convention, or
+      should the wizard template gain an explicit APEX case?
+    invariants_added: []
+    new_enhancements: ["CS-CREATION-001 apex manifest — first canonical_file for the apex (was pointers-only)", "ARCH-00394 first clean end-to-end dogfood run recorded (I24 activation-proof evidence)"]
+    honesty_scope: >
+      No truth-bearing Status field stamped RATIFIED by Sonnet (I7/CORE-SEED 2) — manifest Status: DECLARED.
+      ARCH-00394 NOT stamped RATIFIED here — Opus judges whether this run is clean enough to earn it (I24).
+      corespine-registry CS-CREATION-001 status left DECLARED (untouched) — only canonical_file + wizard fields added.
+    status: IN-PROGRESS  # GATE C pending Opus soundness + Governor foundational decree (apex = foundational, per ARCH-00396)
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14

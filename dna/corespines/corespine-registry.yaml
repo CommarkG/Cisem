@@ -21,10 +21,13 @@ CS-THRESHOLD-001:
 CS-CREATION-001:
   status: DECLARED
   goal: "Governs every creation event — Corespine-First, Goal-First, Template-First,
-         Core-vs-Instance checks all fire here; ENFORCES the Creation Doctrine D1-D6 (CLAUDE.md §2.5)"
+         Core-vs-Instance checks all fire here; ENFORCES the Creation Doctrine D1-D6 (CLAUDE.md §2.5).
+         The apex corespine-of-corespines — PARENT of every other corespine."
   carries_doctrine: true   # D1-D6 fire through this corespine's gates (CLAUDE.md §3 + ARCH-00230)
   content_location:
-    distributed_in: [CLAUDE.md, ARCH-00230, ARCH-00340, ARCH-00190]  # gates, template, meta-protocol, plan-protocol
+    canonical_file: dna/corespines/CS-CREATION-001/CISEM-ARCH-00397-creation-apex-corespine-manifest.md   # ARCH-00396 Phase C, via ARCH-00394 wizard
+    distributed_in: [CLAUDE.md, ARCH-00230, ARCH-00340, ARCH-00190]  # gates, template, meta-protocol, plan-protocol (unchanged — canonical_file is the new content-home; pointers stay pointers, A8)
+  wizard: ARCH-00394   # corespine manifest was created via this wizard
   depth_level: L1
 
 CS-AI-BEHAVIOR-001:
