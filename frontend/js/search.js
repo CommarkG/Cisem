@@ -27,11 +27,16 @@
   // ── COLLAPSIBLE SECTION HEADERS (.sh toggles the next .fl list) ────
   function initCollapse() {
     document.querySelectorAll('.sh').forEach(function (sh) {
-      var next = sh.nextElementSibling;
-      if (!next || !next.classList.contains('fl')) return;
+      // Collapse ALL following siblings until the next .sh — works for any content
+      // type after the header (.fl lists, .cl-item rows, .tier-card/.card grids, etc.),
+      // not just a single .fl (fixed 2026-07-18: enriched pages broke the .fl-only assumption).
       sh.addEventListener('click', function () {
-        sh.classList.toggle('sh-closed');
-        next.classList.toggle('sh-hidden');
+        var closed = sh.classList.toggle('sh-closed');
+        var el = sh.nextElementSibling;
+        while (el && !el.classList.contains('sh')) {
+          el.classList.toggle('sh-hidden', closed); // force in sync with header state
+          el = el.nextElementSibling;
+        }
       });
     });
   }

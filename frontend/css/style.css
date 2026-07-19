@@ -66,7 +66,7 @@ ul.fl { list-style: none; }
 .sh { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 16px 0 6px; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; display: flex; align-items: center; gap: 6px; }
 .sh::before { content: '▾'; font-size: 10px; opacity: .7; transition: transform .15s; }
 .sh.sh-closed::before { content: '▸'; }
-ul.fl.sh-hidden { display: none; }
+.sh-hidden { display: none !important; }   /* generic — hides any element type after a collapsed .sh (overrides view-window grid on .fl) */
 
 /* HOME GRID */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; margin-top: 8px; }
