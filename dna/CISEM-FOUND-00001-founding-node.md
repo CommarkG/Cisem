@@ -45,9 +45,9 @@ it — complete, optimized, firm; no axiom is decorative:
 | **A5** | EVERYTHING via hardcoded protocol (files, docs, agents, skills, wizards, vocab, naming, QC, hardcoded-changes, councils) | §3 gate suite + §3.2b Existing-First (now **live check [I19]**) + naming ONE-gate + **I9 unregistered-ID check (live)** + I15 | GATE + I9/I15/I19 |
 | **A6** | Context-focus over rigidity | Doctrine D6 (polarity, not rigid) + guardian-not-cage + SWIFT + park-by-demand + **anti-bloat lens** (don't proliferate protocols) | DOCTRINE (behavioral) |
 | **A7** | Constant self-improvement via an AI expert team | RQC (§6) + **cross-tier spiral** (Haiku→Sonnet→Opus, proven live) + harvest loop (IBD-0005) + learning-registry + prevention invariants **I16–I23** + **DIOS "validation is the engine of maturity"** | RQC live; I19/I23 WIRED checks |
-| **A8** | One Source (SSOT / Consolidation) — every concept/rule/node has exactly ONE authoritative home; content CONSOLIDATES into its hub, never duplicates or forks; a mirror may not diverge from its source | I10 (one home) + I19 (no duplication) + Node-as-Hub (IBD-0004) + §1.6 shared-persona ONE-source + knowledge-library index; audited by `plan-audit.sh` I1/I9/I16 | GATE + I10/I19 (Governor-decreed 2026-07-18) |
+| **A8** | One Source (SSOT / Consolidation) — every concept/rule/node has exactly ONE authoritative home; content CONSOLIDATES into its hub, never duplicates or forks; a mirror may not diverge from its source. **EXTENDED (Governor 2026-07-19):** PREFER enhancing an existing home + COMPLETING low-blast/low-risk pending items into it, over creating new artifacts (Existing-First). BUT consolidation itself may require MERGING / restructuring / replacing existing artifacts — do NOT let "preserve what exists" ossify into blocking needed consolidation (D6 polarity: over-weighting the existing is as much a failure as forking). | I10 (one home) + I19 (no duplication) + Node-as-Hub (IBD-0004) + §1.6 shared-persona ONE-source + knowledge-library index; audited by `plan-audit.sh` I1/I9/I16; EXTENDED clause mirrored in §1.6 CORE-FIRST · RIPPLE bullet | GATE + I10/I19 (Governor-decreed 2026-07-18; EXTENDED 2026-07-19) |
 
-**Honest firmness (updated 2026-07-18):** A2/A3 now grounded in the DIOS maturity spine (KL-0001); A4 is
+**Honest firmness (updated 2026-07-19):** A2/A3 now grounded in the DIOS maturity spine (KL-0001); A4 is
 **LIVE** (the plan-gate ran end-to-end on ARCH-00382); A5 gained two live checks (I9, I19); A7 gained the
 cross-tier spiral + the I16–I23 prevention set, of which **I19 and I23 are running checks** (the rest manual —
 BP-0002). **No axiom is unconnected**, and several moved from GATE to LIVE this session.
@@ -95,3 +95,9 @@ This node is DRAFT (operating axioms present) — not ratified, not complete.
 - v0.0 — 2026-07-16: PLACEHOLDER created (Opus) on Governor "go ahead". Reserves
   CISEM-FOUND-00001, bounds it into root_authority (ARCH-00011 §7), converts the P0
   I8 dangling reference into a disclosed, sanctioned placeholder. Axioms pending Governor.
+- 2026-07-19 (Sonnet, STRUCTURING tier, mirror-sync): A8 row updated to carry the
+  2026-07-19 A8-EXTENDED clause (Governor decree, existing-weight-vs-consolidation
+  balance) — this SSOT was behind its own mirror (CLAUDE.md §2.4 line 156 / §1.6
+  CORE-FIRST·RIPPLE bullet already carried it); synced per I10 (mirror may not diverge
+  from SSOT, and SSOT may not silently lag its mirror). No new axiom added — text-parity
+  fix only. Part of the corespine-model-draft task (dna/audits/corespine-model-draft-2026-07-19.md).
