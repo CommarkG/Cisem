@@ -346,6 +346,64 @@
     </li>
   </ul>
 
+  <div class="sh">Corespine Routing — Axis 3 (distinct from Placement)</div>
+  <p class="pg-desc">Every governed element carries <strong>THREE distinct axes</strong> (A9 — each singly-homed, not a rewrite of the others): <strong>Axis 1</strong> base Node-DNA fields (ARCH-00008, Sections I&ndash;X, tree below) &middot; <strong>Axis 2</strong> PLACEMENT &mdash; where a node sits in the T-SYS/T-DOM schema tree (hierarchy above) &middot; <strong>Axis 3</strong> CORESPINE-ROUTING &mdash; which corespine GOVERNS a given artifact, independent of where that artifact is placed. Placement answers &ldquo;where does it sit&rdquo;; corespine routing answers &ldquo;who governs it&rdquo; &mdash; a page can sit under T-SYS while being governed by CS-FRONTEND-001, for example. The tree below reads real <code>Governed Artifacts</code> / <code>content_location</code> data straight from <code>corespine-registry.yaml</code> and the CS-FRONTEND-001 manifest &mdash; nothing invented.</p>
+  <ul class="tree">
+    <li class="tree-node">
+      <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">Governing Corespine &rarr; Routed Artifacts</span><span class="tree-tag">Axis 3 &mdash; corespine-registry.yaml content_location</span></div>
+      <ul class="tree-children">
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CS-FRONTEND-001</span><span class="tree-badge ratified">RATIFIED</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">frontend/css/style.css</span><span class="tree-note">— design system (SSOT for all visual tokens)</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">frontend/js/search.js</span><span class="tree-note">— behavior engine (SSOT for all interactive behavior)</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">frontend/index.html + frontend/pages/*.html</span><span class="tree-note">— home index + 22 group/utility pages</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">frontend/rebuild.sh</span><span class="tree-note">— dead-link verification + CAL integration</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CS-CREATION-001</span><span class="tree-badge ratified">RATIFIED</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">dna/corespines/CS-CREATION-001/CISEM-ARCH-00397-...</span><span class="tree-note">— canonical_file (the apex manifest)</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CLAUDE.md, ARCH-00230, ARCH-00340, ARCH-00190</span><span class="tree-note">— distributed_in (gates, creation checklist, meta-protocol, plan-protocol)</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CS-MASTER-VALIDATION-001</span><span class="tree-badge ratified">RATIFIED</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">ARCH-00008, ARCH-00320, quality-ledger.yaml</span><span class="tree-note">— distributed_in (root validator, V1&ndash;V5)</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CS-THRESHOLD-001</span><span class="tree-badge ratified">RATIFIED</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">ARCH-00320, CLAUDE.md</span><span class="tree-note">— distributed_in (Invariants I1&ndash;I21)</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CS-AI-BEHAVIOR-001</span><span class="tree-badge declared">DECLARED</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CLAUDE.md, ARCH-00008, .claude/agents/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md</span><span class="tree-note">— distributed_in (pocket protocol, node schema, pocket definition)</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CS-AI-PROFILING-001</span><span class="tree-badge declared">DECLARED</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">dna/corespines/CS-AI-PROFILING-001/CISEM-ARCH-00240-pe-pocket-definition.md</span><span class="tree-note">— canonical_file</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">.claude/agents/ (cisem-haiku, cisem-sonnet, cisem-opus-pe)</span><span class="tree-note">— team.agents</span></div></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+
   <div class="sh">Node DNA Contract — Sections I&ndash;X (CISEM-ARCH-00008)</div>
   <ul class="tree">
     <li class="tree-node">
