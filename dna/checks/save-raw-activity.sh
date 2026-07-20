@@ -19,8 +19,19 @@ snap="$outdir/raw-activity-${sid}.jsonl"
 
 # Snapshot the RECENT activity window verbatim. Heuristic for "~5 activity hours": keep the tail (recent turns).
 # A full session rarely exceeds this; if it does, the tail holds the most recent work. Verbatim, no summarization.
-LINES="${CISEM_RAW_ACTIVITY_LINES:-8000}"
-tail -n "$LINES" "$tx" > "$snap" 2>/dev/null
+LINES="${CISEM_RAW_ACTIVITY_LINES:-4000}"
+snap="${snap%.jsonl}.md"   # relevant-dialogue text, not raw JSONL noise
+if command -v jq >/dev/null 2>&1; then
+  # RELEVANT LINES ONLY (Governor decree 2026-07-21): keep user messages + assistant TEXT (reasoning/answers);
+  # DROP tool_use / tool_result / Bash IN-OUT / Read/Edit records / file dumps — they are useless noise.
+  jq -rc 'def txt: if (.message.content|type)=="string" then .message.content
+            else ([.message.content[]? | select(.type=="text") | .text] | join("\n")) end;
+          {r:(.message.role // .type), t: txt} | select(.t and ((.t|length)>0))
+          | "\n[" + (.r|ascii_upcase) + "] " + .t' "$tx" 2>/dev/null | tail -n "$LINES" > "$snap"
+else
+  echo "[SAVE-RAW-ACTIVITY] jq not found — falling back to raw tail (noise included; install jq for filtered dialogue-only)." >&2
+  tail -n "$LINES" "$tx" > "$snap" 2>/dev/null
+fi
 total="$(wc -l < "$tx" 2>/dev/null | tr -d ' ')"
 kept="$(wc -l < "$snap" 2>/dev/null | tr -d ' ')"
 echo "[SAVE-RAW-ACTIVITY] snapshotted VERBATIM ${kept}/${total} transcript lines -> $snap (session $sid)."
