@@ -32,6 +32,12 @@
 #   named registry/grep/archive source) now routes to [EDGE] UNKNOWN instead of silently passing.
 #   v9 (2026-07-20, Governor-approved): [DOD] check added — Definition-of-Done spot-checks (SSOT:
 #   dna/checks/definition-of-done.md). WARN-only, printed before [ZF], NOT part of the ZF formula.
+#   v10 (2026-07-20, ARCH-00402, Governor-approved): [ROUTING]/[ALIGN]/[TAG-STATUS] added — machine-check the
+#   3 ARCH-00401 gate requirements (Tier-Routing Declaration / Per-File Alignment Table / per-node tags+statuses)
+#   on plans CHANGED in the commit (staged+unstaged+untracked, matching [DOD]'s changed-file scope — the requirement
+#   is forward-looking, so the pre-00401 backlog is not retro-flagged). WARN-only, before [ZF], NOT in the ZF formula
+#   (BLOCK is ARCH-00270's track). Closes ARCH-00401 Trial-Obs 6. Deviation from the ARCH-00402 spec
+#   ("every dna/planning/*.md"): scoped to changed files for signal-to-noise (Opus implementer call).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -396,6 +402,50 @@ for f in $(git diff --cached --name-only --diff-filter=AM -- '*.md' '*.yaml' 2>/
   echo "   [DOD] $f: asserts enforcement without a mechanism ref or honesty tag (DoD item 2)"; found_dod=1
 done
 [ "$found_dod" = 0 ] && echo "   (none — DoD items 2/6 clean this run)"
+
+# ROUTING / ALIGN / TAG-STATUS — ARCH-00401 gate requirements, machine-checked (ARCH-00402, Governor-approved
+#   2026-07-20). Scoped to plans CHANGED in this commit (staged+unstaged+untracked) — forward-looking, so the
+#   pre-00401 backlog is not retro-flagged. All three WARN-only, NOT in the ZF formula (BLOCK is ARCH-00270's track).
+changed_plans=$( { git diff --cached --name-only 2>/dev/null; git diff --name-only 2>/dev/null; \
+                   git ls-files --others --exclude-standard 2>/dev/null; } \
+                 | grep -E '^dna/planning/.*\.md$' | sort -u )
+
+# [ROUTING] — a changed plan must declare a Tier-Routing Declaration (ARCH-00401 Enh.1)
+echo "[ROUTING] changed plans missing a Tier-Routing Declaration (ARCH-00401 Enh.1; WARN-only):"
+found_routing=0
+for f in $changed_plans; do
+  [ -f "$f" ] || continue
+  grep -qiE "Tier-Routing Declaration" "$f" || { echo "   MISSING: $f (no Tier-Routing Declaration)"; found_routing=1; }
+done
+[ "$found_routing" = 0 ] && echo "   (none — every changed plan declares tier-routing, or no plan changed)"
+
+# [ALIGN] — a changed plan must carry a Per-File Alignment Table (ARCH-00401 Enh.3)
+echo "[ALIGN] changed plans missing a Per-File Alignment Table (ARCH-00401 Enh.3; WARN-only):"
+found_align=0; align_missing=""
+for f in $changed_plans; do
+  [ -f "$f" ] || continue
+  if ! grep -qiE "Per-File Alignment Table" "$f"; then
+    echo "   MISSING: $f (no Per-File Alignment Table)"; found_align=1; align_missing="$align_missing $f "
+  fi
+done
+[ "$found_align" = 0 ] && echo "   (none — every changed plan has an alignment table, or no plan changed)"
+
+# [TAG-STATUS] — where the alignment table IS present, it must have a Status column with ≥1 status value
+#   (ARCH-00401 Enh.2). Skipped for files [ALIGN] already flagged (don't double-count the same root gap).
+echo "[TAG-STATUS] changed plans whose Per-File Alignment Table lacks a Status column/values (ARCH-00401 Enh.2; WARN-only):"
+found_tagstatus=0
+for f in $changed_plans; do
+  [ -f "$f" ] || continue
+  echo "$align_missing" | grep -qF " $f " && continue          # already flagged by [ALIGN] — skip
+  grep -qiE "Per-File Alignment Table" "$f" || continue        # only files that HAVE the table
+  block=$(awk '/Per-File Alignment Table/{f=1} f&&/^## /&&!/Per-File Alignment Table/{exit} f{print}' "$f")
+  if ! echo "$block" | grep -qiE "Status"; then
+    echo "   MISSING: $f (Per-File Alignment Table has no Status column)"; found_tagstatus=1
+  elif ! echo "$block" | grep -qiE "DRAFT|PROPOSED|DECLARED|RATIFIED|PROVISIONAL|PLACEHOLDER|SCHEDULED|SPLIT|LIVE|COMPLETE|unchanged|modified|present|follow-on"; then
+    echo "   MISSING: $f (Per-File Alignment Table Status column has no status values)"; found_tagstatus=1
+  fi
+done
+[ "$found_tagstatus" = 0 ] && echo "   (none — alignment tables carry Status, or no plan changed)"
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
