@@ -13,6 +13,24 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.6; min-height: 100vh; }
 
+/* ── LIGHT THEME OVERRIDE (single block, [data-theme] on <html>, FE-I5 tokens-only) ── */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --nav: #f6f8fa;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --muted: #57606a;
+  --accent: #0969da;
+  --hover: #0550ae;
+}
+
+/* ── LANGUAGE TOGGLE — basic RTL mechanism (content strings mostly EN passthrough) ── */
+html[dir="rtl"] nav, html[dir="rtl"] .bc { direction: rtl; }
+
+/* nav-injected toggle buttons (theme + lang) — reset to match the existing .ni <a> icons */
+.nav-r button.ni { background: none; border: none; font-family: inherit; cursor: pointer; }
+#lang-tgl { font-size: 11px; }
+
 /* NAV */
 nav { background: var(--nav); border-bottom: 1px solid var(--border); padding: 0 20px; height: 48px; display: flex; align-items: center; gap: 14px; position: sticky; top: 0; z-index: 100; }
 .logo { color: var(--accent); font-weight: 700; font-size: 16px; text-decoration: none; letter-spacing: .06em; flex-shrink: 0; }
@@ -122,6 +140,12 @@ body.view-window .fi:hover { border-color: var(--accent); }
 body.view-window .fi .ico { font-size: 20px; }
 body.view-window .fi .fp { margin-left: 0; padding-left: 0; font-size: 10px; margin-top: auto; }
 
+/* WINDOW VIEW — also covers inline content-list rows (principles/rules/qc/agents-rules pages) */
+body.view-window .cl { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; padding-top: 8px; }
+body.view-window .cl-item { border: 1px solid var(--border); border-radius: 6px; background: var(--nav); flex-direction: column; padding: 12px; }
+body.view-window .cl-item:last-child { border-bottom: 1px solid var(--border); }
+body.view-window .cl-num { padding-top: 0; margin-bottom: 4px; }
+
 /* CONTENT LIST ITEMS (inline axioms, principles, rules, agents on group pages) */
 ul.cl { list-style: none; }
 .cl-item { border-top: 1px solid var(--border); padding: 12px 10px; display: flex; gap: 12px; }
@@ -182,4 +206,31 @@ ul.tree, .tree ul { list-style: none; }
 @media (max-width: 480px) {
   .tree-children { margin-left: 10px; padding-left: 6px; }
   .tree-row { min-height: 44px; }
+}
+
+/* ── PHASE 2 — TREE ROW EDITOR (schema/vocabulary/corespines-set; CS-FRONTEND-001 FE-I2 single-JS) ── */
+.rt-tools { display: inline-flex; align-items: center; gap: 3px; margin-left: auto; opacity: 0; transition: opacity .12s; flex-shrink: 0; }
+.tree-row:hover .rt-tools, .tree-row:focus-within .rt-tools { opacity: 1; }
+@media (hover: none) { .rt-tools { opacity: 1; } }
+@media (max-width: 480px) { .rt-tools { display: none; } }
+.rt-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; line-height: 1; padding: 3px 5px; cursor: pointer; font-family: var(--mono); }
+.rt-btn:hover { color: var(--hover); border-color: var(--accent); }
+.rt-move-sel { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; padding: 2px 3px; max-width: 110px; }
+.rt-file-input { display: none; }
+.rt-panel { margin: 2px 0 4px 20px; display: none; }
+.rt-comment { font-size: 11px; color: var(--muted); padding: 3px 6px; border-left: 2px solid var(--border); margin-bottom: 2px; }
+.rt-comment.rt-parked { border-left-color: #d29922; }
+.rt-c-badge { font-family: var(--mono); font-size: 9px; text-transform: uppercase; color: var(--accent); margin-right: 4px; }
+.rt-c-ts { color: var(--muted); font-size: 9px; margin-left: 4px; }
+.rt-upload-chip { display: inline-block; background: var(--nav); border: 1px solid var(--border); border-radius: 3px; font-size: 10px; padding: 1px 6px; margin: 2px 4px 0 0; color: var(--muted); }
+.tree-badge.added { background: rgba(63,185,80,.15); border: 1px solid rgba(63,185,80,.4); color: #3fb950; }
+.cs-export-btn { margin-left: auto; }
+
+/* PRINT — scoped single-row / single-group export (window.print(), Phase 2) */
+#print-stage { display: none; }
+#print-stage h1 { font-size: 16px; margin-bottom: 10px; }
+#print-stage pre { white-space: pre-wrap; font-family: var(--mono); font-size: 12px; }
+@media print {
+  body.printing-scoped > *:not(#print-stage) { display: none !important; }
+  body.printing-scoped #print-stage { display: block !important; color: #000; background: #fff; }
 }
