@@ -1,6 +1,6 @@
 # Planning Protocol Self-Enhancement — DOGFOOD TRIAL Plan
 **Node ID:** CISEM-ARCH-00401 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 soundness = SOUND-FOR-TRIAL, 2026-07-20; awaiting Governor Stage 2) | **depth_level:** L1
+**Planning Status:** COMPLETE (Governor **RATIFIED 2026-07-20** — Stage 2 decree; implementation authorized) | **depth_level:** L1
 **tags:** [planning-domain, protocol, mandatory, gate, propagation, orchestration, review-required, checklist]
 **MISSING-TERM FLAG (§4):** no VOC-00001 tag exists yet for "self-enhancement" or "tier-routing-declaration" —
 flagging rather than inventing (CLAUDE.md §4). Candidate additions for Governor: `self-enhancement`, `tier-routing`.

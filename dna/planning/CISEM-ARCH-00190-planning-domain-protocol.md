@@ -5,6 +5,13 @@
 **Goal:** The SSOT for "how a DRAFT becomes a PLAN" — defines the double-ratification path (Opus soundness + Governor authority), the gate structure, and the PLAN-WIZARD that executes it.  
 **Governing corespine:** CS-CREATION-001  
 **SSOT declaration:** This protocol is the ONE authoritative source for plan creation; the PLAN-WIZARD mirrors it 1:1 (I10).
+**Amended by:** CISEM-ARCH-00401 (Governor-ratified 2026-07-20) — applied the 12 ordered enhancements below (see
+Change log v1.1). Status stays **LIVE** throughout — this line + the header ARE the single truth; the v1.0
+changelog's creation-time "PROVISIONAL-ACTIVE" wording is corrected in the changelog itself (no two-truth field, I10).
+**Size-gate exception (§3.6, documented):** this file exceeds 200 lines after the ARCH-00401 amendment (12 integral
+Governor-ratified enhancements to a single core protocol). Splitting a live core protocol mid-amendment was not
+requested and would fragment the SSOT the enhancements themselves strengthen — kept whole, flagged per §3.6's
+"documented exception," not "exceed and flag" silently.
 
 **Existing-First exemption (§3.2b, I19):** Governance protocol definition — not a creating-plan. This document defines the plan lifecycle process; it proposes no new nodes or files of its own. The PLAN-WIZARD skill it references was created under BP-0007. Exempt from Existing-First: process/protocol specifications are governance definitions analogous to the "open-questions" class, not artifact creation proposals.
 
@@ -14,7 +21,8 @@
 - **output_contract:** full planning gate structure, double-ratification path, Planning Status enum, integration with PLAN-WIZARD
 - **ai_cannot:** self-ratify a plan (only Opus + Governor can); leave ambiguity about who decides consensus
 - **recorded_at:** 2026-07-18
-**Independent Verifier:** [pre-P5 legacy — grandfathered 2026-07-18; assign on next revision]
+**Independent Verifier:** `cisem-opus-pe` (cold default-refute pass, author≠verifier per P5) — assigned by
+CISEM-ARCH-00401 Enhancement 4 (Governor-ratified 2026-07-20), closing the prior pre-P5-legacy placeholder.
 
 ---
 
@@ -50,10 +58,20 @@ SUPERSEDED (any state can transition here)
 **WHAT A PLAN CONTAINS:**
 ```
 [ ] Header (Node ID, Status, Planning Status, depth_level, tags, goal, corespine, pocket)
+[ ] Tier-Routing Declaration (which steps → Haiku/Sonnet/Opus/fable + why, per CLAUDE.md §3.0) — ARCH-00401 Enh.1
 [ ] Executive Summary (1 paragraph: what problem, why now, what changes)
+[ ] Anti-Scatter Ordering (rank the plan's own steps by significance vs the compasses — goal/DNA/active spine;
+    sequence infrastructure/completion-first, park the peripheral — CLAUDE.md §2 Principle 16) — ARCH-00401 Enh.10
 [ ] The Rule (executable procedure, not prose; step-by-step numbered)
+[ ] Tags + Statuses on EVERY node this plan creates (VOC-00001/VOC-00002 — not only the plan's own header) — ARCH-00401 Enh.2
+[ ] Per-File Alignment Table — for every file created/modified: name · number (via the ONE naming-registry gate)
+    · schema placement (SCHEMA-00001) · tag (VOC-00001) · status (VOC-00002) — ARCH-00401 Enh.3
 [ ] What DOES change (explicit list: files created, fields updated, commands run)
 [ ] What DOES NOT change (explicit boundary: what stays stable, what's out of scope)
+[ ] Definition-of-Done reference (dna/checks/definition-of-done.md — cited, not re-derived; verified at §4
+    implementation gate) — ARCH-00401 Enh.5
+[ ] Propagation Declaration — how any rule/nuance change reaches ALL surfaces BY-REFERENCE (never copy) + which
+    generated views regenerate — ARCH-00401 Enh.6
 [ ] Dependencies (blocks on / unblocks for: lists other plans or nodes)
 [ ] Ratification Path (Opus soundness review → Governor authority decree)
 [ ] Self-compliance (against ARCH-00230 checklist + this protocol)
@@ -76,6 +94,19 @@ preventions while they are CHEAP (planning time), not in implementation/audit (e
 3. **Opus** judges each (default-refute), folds accepted improvements into the draft, routes preventions (D3/D4).
 4. **Repeat** until a full pass yields NO new material finding (CONVERGED) OR max K passes (default K=3, residuals disclosed).
 Every pass LOGS its improvements + preventions to the plan's change log + `dna/learning-registry/` (the loop learns).
+
+**Two-model verify (ARCH-00401 Enh.7):** the Opus judge step (3, above) applies TWO orthogonal lenses per
+`persona-collaborator.md` `## DEVELOPMENT DISCIPLINE` — protocol-compliance × content-correctness, never a
+single-lens read. Each finding is classified **NEW-DRIFT** (a genuinely new gap this pass surfaces) vs
+**ALREADY-RESOLVED** (a finding a prior pass already folded in) — the classifier stops closed findings from
+being re-litigated as fresh, and stops a stale-context pass from missing what actually changed.
+
+**Synergetic Decision Protocol (SDP) hook (ARCH-00401 Enh.9):** when a pass surfaces a genuine polarity/conflict
+inside the plan (two real values that appear to compete), route it: assess → name the polarities → surface
+edge-options → ask the synergy question ("what holds both?", A9) — threshold-gated per CS-THRESHOLD-001 (not
+every disagreement triggers this; SDP is referenced here by name as a to-be-built protocol, not yet a canonical
+file — no content is inlined here, A8).
+
 A plan may NOT enter Stage 1 until the loop has CONVERGED. **Shift-left value:** a defect caught here costs a
 planning pass; the same defect in implementation/audit costs a rebuild. Iterate on the DRAFT, not the build.
 
@@ -88,9 +119,26 @@ planning pass; the same defect in implementation/audit costs a rebuild. Iterate 
 - Are all dependencies correctly mapped (blocks-on, unblocks-for)?
 - Does it respect invariants I1–I18 + I19 (no parallel protocols)?
 - Are all truth-fields clearly delegated (not assumed)?
+- Is the plan's Independent Verifier field filled with a NAMED verifier distinct from the author (P5,
+  author≠verifier — not left as a placeholder)? — ARCH-00401 Enh.4
+- Is the plan readable COLD, zero conversation dependency (node-as-context-carrier)? Where it holds a
+  complementary-facet decision, is each facet SINGLY-HOMED + CRISP per the A9 guardrail (never mushed,
+  never asserted-consistent outside a checkable language) — CLAUDE.md §2.4 A9? — ARCH-00401 Enh.11
 - **Opus verdict:** SOUND (proceed to Stage 2) or UNSOUND (return for revision)
 
 **Planning Status after Stage 1:** CONSENSUS-REACHED (Opus agrees on soundness)
+
+### STAGE 1.5: FABLE MENTOR GATE (ARCH-00401 Enhancement 8 — OPTIONAL, human-ratification-gated, never solo)
+AFTER Opus has prepared its Stage 1 verdict with Haiku + Sonnet + the best available insights, a plan MAY route
+through one final root-principle/permanence "fable mentor" pass — a check against first principles and
+long-term durability, distinct from Stage 1's mechanical/structural soundness check.
+- **Never automatic, never solo:** this stage REQUIRES explicit human (Governor) ratification to ACTIVATE for
+  a given plan, invoked case-by-case — it is not a standing default every plan runs.
+- **Cost-disclosed:** the activation REQUEST must state a token-consumption ESTIMATE (persona `## DEVELOPMENT
+  DISCIPLINE` cost-routing) before the Governor decides.
+- **Additive, not blocking:** if NOT activated, the plan proceeds Stage 1 → Stage 2 unchanged.
+- Planning Status is UNCHANGED by this stage alone — it stays CONSENSUS-REACHED (from Stage 1) until Stage 2,
+  whether or not Stage 1.5 ran.
 
 ### STAGE 2: GOVERNOR AUTHORITY RATIFICATION
 **Governor (Yariv Fink) decrees the plan:**
@@ -107,8 +155,12 @@ planning pass; the same defect in implementation/audit costs a rebuild. Iterate 
 
 **ONLY when Planning Status = COMPLETE (both Opus + Governor have ratified):**
 - Implementation begins (Sonnet executes, or lower tiers per tier-routing)
+- Implementation follows the plan's OWN Tier-Routing Declaration (§2) — no silent re-routing (CLAUDE.md §3.0;
+  ARCH-00401 Enh.1)
 - Each implementation step is tracked against the plan (no ad-hoc deviations)
-- Completion is verified against the plan's "what changes" list
+- Completion is verified against the plan's "what changes" list AND against `dna/checks/definition-of-done.md`
+  (the DoD gate) — "done" means wired + propagated + hooked + pushed + verified, or an honest NOT-YET-WIRED,
+  never "produced" alone (ARCH-00401 Enh.5)
 
 **NO EXCEPTION:** A plan at AWAITING-BUILDER-REVIEW, COMMENTS-RECEIVED, or CONSENSUS-REACHED is NOT binding. Implementation cannot start.
 
@@ -188,4 +240,16 @@ Revisions during COMMENTS-RECEIVED → CONSENSUS-REACHED loop do NOT require re-
 
 ## Change log
 - v0.1 — earlier: Planning Status enum + basic protocol (PROPOSED status)
-- v1.0 — 2026-07-18: Enhanced into full PLAN-PROTOCOL (Opus-directed, BP-0007). Double-ratification path, gate structure, PLAN-WIZARD integration. Status: PROVISIONAL-ACTIVE (draft-in-use, audit-flagged until ratified)
+- v1.0 — 2026-07-18: Enhanced into full PLAN-PROTOCOL (Opus-directed, BP-0007). Double-ratification path, gate
+  structure, PLAN-WIZARD integration. Status AT CREATION TIME: PROVISIONAL-ACTIVE (draft-in-use, audit-flagged
+  until ratified) — this was accurate THEN; it was SUPERSEDED by the Governor foundational decree the same day
+  (2026-07-18), which the header has stated since (`Status: LIVE`). This line is corrected 2026-07-20
+  (CISEM-ARCH-00401 Enh.12) to remove the two-truth contradiction — the header is the ONE current-status field (I10).
+- v1.1 — 2026-07-20 (Sonnet STRUCTURING tier, executing CISEM-ARCH-00401, Governor-ratified 2026-07-20): applied
+  the 12 ordered enhancements — Tier-Routing Declaration (§2/§4), per-node tags+statuses (§2), Per-File Alignment
+  Table (§2), Independent Verifier filled (header/§3 Stage 1), Definition-of-Done reference (§2/§4), Propagation
+  Declaration (§2), two-model Stage-0 verify + NEW-DRIFT-vs-ALREADY-RESOLVED classifier (§3 Stage 0), Synergetic
+  Decision Protocol hook (§3 Stage 0), new Stage 1.5 fable mentor gate (§3), anti-scatter ordering requirement
+  (§2), node-as-context-carrier + A9 soundness criteria (§3 Stage 1), header/changelog status contradiction
+  resolved (v1.0 entry above, this entry). Status: LIVE (unchanged — now internally consistent). Independent
+  Verifier: `cisem-opus-pe`. `.claude/skills/cisem-plan/SKILL.md` updated in the same pass to keep the I10 mirror.
