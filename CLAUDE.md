@@ -265,8 +265,10 @@ routed to a rigid pipeline): **is it connected to a defined goal?**
   SAVE the goal) until it EARNS `goal-connected`. No cycle starts before the stamp.
 The status (+ tags) drives the flow — tags/statuses are the governance surface, not hardcoded pipelines. **Honest form:**
 an input-time stamp can't be git-hook-enforced (no hook fires on a chat input); its hardwiring IS this always-loaded gate;
-a commit-time `[GOAL]` trace (a creation declares its goal-connection) is the git-enforceable follow-on. *Corecycle numbers
-Cc1/Cc2… map both ORDER and DEPTH — not yet rigidly defined (deep-dive later).*
+a commit-time `[GOAL]` trace (a creation declares its goal-connection) is the git-enforceable follow-on. *CoreCycles
+Cc1/Cc2… map both ORDER and DEPTH. **DECREE 2026-07-20: NO rigid definition, ever** (rigid = gap-creation engine, Principle 15);
+fixed points ONLY — **Cc1 places the fundamental pillar-stones**; each cycle **inherits all prior** (corespine-like); each cycle
+**enhances existing elements + adds new ones only at minimal maturity to be "born."** Full: FOUND-00001 CoreSpiral / GI-43.*
 
 Routing (Threshold-First, CS-THRESHOLD-001 — AFTER Gate 0): `PROCESS-NOW | QUEUE(+build-prompt) | PARK(IBD) | REJECT`.
 Engine + queue: `dna/queue/`.
