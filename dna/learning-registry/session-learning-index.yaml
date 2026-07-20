@@ -197,3 +197,29 @@ session_2026_07_20_late_corespine_corespiral:
   insights_home: "dna/governor-insights.yaml GI-37..45 (incl. WISHES: GI-44 north-star ratify+save; GI-45 creation-process dashboard, parked)."
   method_learning: "'Passes the gates' is a MEANS, not a goal — the goal is the OUTCOME the gates serve. Define the platform NORTH STAR first; sub-goals inherit + must serve it. Goal DO/DON'T + typed Role = new writing standard."
   resume: "Governor: ratify north-star draft + supply TSA/Pocket -> close FOUND-00001; confirm canonical corespine SET; approve ARCH-00405 Phase-1 build; continue CoreSpiral Cc1 simulation. Full state: WITNESS-00003 COMPACT STATE v8."
+
+# ═══════════════ SESSION HARVEST 2026-07-21 (creation-process arc + frontend/governance) — ARCH-00370 STEP 1-5 ═══════════════
+session_2026_07_21_creation_and_hardening:
+  date: "2026-07-21"
+  note: "Fruits captured RICHLY in dedicated files (A10); this is the INDEX + inheritance pointers. Verbatim SoT = the .jsonl transcript (see boundary-verbatim-index-2026-07-21)."
+  decisions_and_designs:
+    - "STEP 0 Understanding-Verification (restate-meaning-back + name-assumptions, Reflect-Until-Match) — prior to the goal; consensus-reached, formalize AFTER test-run. GI-55. Home: creation-process-merge-design-2026-07-21."
+    - "Depth levels D1 KERNEL/D2 DOMAIN/D3 INSTANCE (rigor scales to blast) + DEPTH ORCHESTRATOR gap (reads blast->picks depth->dispatches rigor+tier). GI-56. Consensus."
+    - "Creation process MERGED (our design + Brain IBD-0027): MUTUAL MANDATORY STEPS (Step0->Goal->Mapping/Research->Orchestrator) THEN FORK A-E; corespine-determination ONCE at Fork D + reach-back at B/C; Planning=child(handoff), Validating=independent SIBLING, Implementing=maybe-redundant. GI-57. Consensus."
+    - "External-input DEFAULT + permanent PCR (RAW-EXTERNAL->PURIFIED->absorb->consensus; ID-collision=content-merge not new-node; adopt concepts not IDs). GI-55b. DECLARED-WIRED ([RAW-PAIR]+[I1] proven on IBD-0027)."
+  preventions_wired_this_session:
+    - "RI-0003 ZF subset-pass-as-full-pass -> report FULL board (Principle 17 honest-reporting)."
+    - "RI-0004 Opus-freestyle (edits w/o pocket, self-review) -> ARCH-00406 Haiku-review-gate."
+    - "RI-0006 A8 fork (root-insights) -> find -name basename before create."
+    - "RI-0007 presence!=behavior -> FE-I11 + jsdom functional-check (BUILT)."
+    - "RI-0008 sample-tested-as-class -> enumerate-all functional-check (99->336)."
+    - "RI-0009 declared-universal-but-wired-narrow -> creation-gate.sh (tag+status on EVERY governed file, WIRED; swept 22 ungoverned files incl. agents/skills/wizard/schema-engine)."
+    - "RI-0010 no-collateral-deletion x3 (deletion-guard.sh WIRED + inventory-regression + revert-not-repair) + global-view x2 + wire-dont-document -> CLAUDE.md Principle 18."
+    - "RI-0011 MAPPED INNER DEFAULTS behind save-lossy/inline/summarize (summarization-reflex, in-context-is-safe, plausible-done, effort-minimize, not-modeling-blank-slate-reader; awareness insufficient -> mechanical counter). Route: CS-AI-PROFILING-001."
+  governor_remarks:
+    good: "intake gate caught external IDs; enumerate-all check (99->336); creation-gate swept 22 files; deletion-guard; Principle 18; honest ownership when caught; Step 0 applied live; archive gap caught+fixed (DEC-0011..0014)."
+    bad_recurring: "Opus doing Sonnet's lane (GI-58); NOT mentioning prevention per finding (now mandatory); documentation-without-wiring; narrow-scope missing whole classes (corespines-set, search, dna/ root files); saved SUMMARY not verbatim / left inline / didn't push (RI-0011)."
+  hardwired_mechanisms: "creation-gate.sh + deletion-guard.sh (both WIRED into plan-audit); FE-I11 functional-check jsdom; Principle 17 (prevention-first + presence!=behavior + defect->class-audit + prevention-must-propagate); Principle 18 (no-collateral-delete/global-view/wire-dont-document); §3.5b universal creation gate; pre-compact hook mandates fidelity+process-context+resume+verbatim-index; learning_outcomes SSOT=root-insights.yaml."
+  boundary_files: "creation-process-merge-design-2026-07-21 · creation-external-input-default-and-pcr-2026-07-21 · session-fidelity-2026-07-21-creation-process · boundary-verbatim-index-2026-07-21 · IBD-0027 RAW+PURIFIED · archive DEC-0011..0014."
+  resume: "Read boundary-verbatim-index (transcript verbatim + interpretations, BOTH). Consensus: Step0/depth/orchestrator-gap/merge-shape/Validating-sibling/corespine-at-D. Pending: arrange full merge + CS-CREATION-001=content-merge + orchestrator-owns-tier-routing? -> draft->TEST-RUN(walk)->consolidate->formalize. NO code until 'formalize'. Open queue: UI-catalog page, back-office CRUD rebuild, populate Node-DNA leaves, Stage-1 soundness ARCH-00408/409, ARCH-00407 P0 BLOCK, vocab/status-enum reconciliation."
+  open_governor_items: "confirm CS-CREATION-001=content-merge; orchestrator owns tier-routing (Opus rec: yes, one orchestrator two decisions); PCR#1-4 (ARCH-00396 two-root, ARCH-00190 location, §2.4 mirror-reduction, ARCH-00392 Gate); disable Otosan connector (2nd-tab/§1.7)."
