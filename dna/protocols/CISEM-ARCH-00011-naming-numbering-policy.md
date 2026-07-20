@@ -37,6 +37,20 @@ exception to the `{TYPE}-{SEQ5}-{slug}` format — not a violation. Audits (I1/I
 must treat it as compliant-by-exception. Any future harness-mandated filename is
 added here explicitly; an undeclared off-format filename remains a violation.
 
+## 2.5 CONSISTENT NAMING — one term, everywhere (Governor decree 2026-07-20)
+A concept has ONE canonical name, used IDENTICALLY across **every surface**: file names, vocabulary,
+instructions, wizards, protocols, skills, and agents. When a concept is (re)named, the name propagates to
+ALL its homes — no surface keeps a variant. This is the naming arm of A8 (one source) + reuse-before-coin
+(GI-15): a second spelling of the same concept is a drift trap exactly like a second SSOT.
+- **Canonical example (this decree's trigger):** the concept is **"AI Pocket"** → file `ai-pocket-mechanism.md`,
+  term "AI Pocket" in vocab (ssot-registry `concepts`), and identical wording in CLAUDE.md §3.3 / the registry /
+  every agent that declares one. The old `pocket-mechanism.md` / bare "Pocket" variants are retired.
+- **Rule:** before creating or renaming, check the concept's existing canonical name (ssot-registry `concepts`
+  + naming-manifest); reuse it verbatim. A rename is not done until every live surface carries the new name.
+- **Enforcement:** a `[NAMING]` consistency check in `plan-audit.sh` (PROPOSED here, built as the follow-on
+  bundle) flags a governed concept whose name appears in >1 spelling across surfaces. WARN first, BLOCK later
+  (ARCH-00270). Historical dated snapshots (audits/diagnostics) are exempt — they record the name as it was then.
+
 ## 3. Mini-tree split (index-extension rule — Governor-corrected, not corespine-style reference)
 A split child is not a new entity — it is a literal extension of its root's index,
 mirroring corespine inheritance at the naming layer.

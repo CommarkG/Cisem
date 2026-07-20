@@ -168,5 +168,5 @@ _anomaly_unregistered_type_prefix:
 # ── NO-ID FILE — present, no CISEM typed ID assigned ─────────────────
 _no_id:
   pocket-mechanism:
-    path: dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md
+    path: dna/corespines/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md
     note: governed by CS-AI-BEHAVIOR-001 corespine; no CISEM-{TYPE}-{SEQ} ID assigned

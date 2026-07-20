@@ -1,4 +1,5 @@
-# Pocket Mechanism — Full Spec
+# AI Pocket Mechanism — Full Spec
+> **Renamed 2026-07-20** (`pocket-mechanism.md` → `ai-pocket-mechanism.md`) per the CONSISTENT-NAMING decree (ARCH-00011 §8). "AI Pocket" is the canonical platform term; this file is its SSOT. Referenced by FOUND-00001 (Pocket founding slot, resolved-by-pointer), CLAUDE.md §3.3, and corespine-registry.yaml.
 **Parent corespine:** CS-AI-BEHAVIOR-001 (status: DECLARED — "Governs every
 AI instance — pocket mechanism, path-rejection, oversight")
 **Status:** DRAFT
@@ -14,7 +15,7 @@ This file is a corespine child, not a top-level CISEM node — it has no
 `CISEM-{TYPE}-{SEQ5}` ID because `CS` is not in the ARCH-00011 §1 TYPE
 registry; corespines and their children are governed by CS-CREATION-001 /
 the corespine registry, not the node-numbering scheme. It's referenced
-by the exact filename `pocket-mechanism.md` in both CLAUDE.md §3.3 and
+by the exact filename `ai-pocket-mechanism.md` in both CLAUDE.md §3.3 and
 `corespine-registry.yaml` — that filename is preserved here rather than
 renamed, so both existing references resolve without edits elsewhere.
 Template-First check: no template exists for a corespine mechanism-spec

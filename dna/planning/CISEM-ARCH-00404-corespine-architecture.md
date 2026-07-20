@@ -1,6 +1,6 @@
 # CISEM Corespine Architecture — Adopt the Purified CSP Blueprint, Phased Kernel-First
 **Node ID:** CISEM-ARCH-00404 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** COMPLETE (Governor RATIFIED 2026-07-20, "all approved") — DEC-0006 = **Path B** (within-tier tie-breaker, total-order stays ruled out). Phased implementation authorized. NOTE: the canonical corespine SET (Phase 1) is STILL a Governor founding choice — Phase-1 implementation will PROPOSE a set for the Governor's confirmation (surfaced, not presumed, per Core Seed 3). | **depth_level:** L1 | **Position in schema:** T-SYS, corespine-architecture layer
+**Planning Status:** COMPLETE (Governor RATIFIED 2026-07-20, "all approved" + re-confirmed "i ratify 00404") — DEC-0006 = **Path B** (within-tier tie-breaker, total-order stays ruled out). Phases 1/2/4 implementation authorized. **PHASE 3 (PRECEDENCE) is PARKED-FOR-DEEP-UNDERSTANDING (Governor decree 2026-07-20)** — must not float as a hidden priority; verify-before-activate (IBD-0026 / GI-48). NOTE: the canonical corespine SET (Phase 1) is STILL a Governor founding choice — Phase-1 implementation will PROPOSE a set for the Governor's confirmation (surfaced, not presumed, per Core Seed 3). | **depth_level:** L1 | **Position in schema:** T-SYS, corespine-architecture layer
 **tags:** [corespine, architecture, node-taxonomy, precedence, core-vs-instance, corespiral, kernel, phased]
 **Goal:** Adopt the PURIFIED CSP corespine architecture (IBD-0025) into CISEM — PHASED, CoreSpiral-kernel-first — resolving
 existing CISEM debts BY REFERENCE (never forking): core-vs-instance (§3.2c), DEC-0006 precedence, A2 (everything uses a
@@ -124,6 +124,11 @@ decisions) before the next begins — no phase implementation happens until THIS
   (same disclosed-deferral pattern as ARCH-00401 items 1–3), routed under §3.0 at build time.
 
 ### PHASE 3 — PRECEDENCE (surfaces, does not close, DEC-0006)
+> **⛔ PARKED-FOR-DEEP-UNDERSTANDING (Governor decree 2026-07-20).** Precedence is NOT to be implemented as part of
+> this ratification. "When two corespines conflict, which wins" must NOT become a floating, hidden priority: it is
+> parked for a deliberate deep-dive, and any precedence mechanism must be VERIFIED-TO-WORK (a real conflict run,
+> I23 EXISTS≠ACTIVE) BEFORE it is ever activated. Registered so it cannot silently drift back into scope: IBD-0026
+> + GI-48. Phases 1, 2, 4 proceed; Phase 3 stays PARKED until the Governor opens the deep-dive.
 - **(a) CSP element adopted:** an ordered canonical set of corespines + "lower defers to higher" — IBD-0025 §5.
 - **(b) CISEM home:** `dna/archive/archive-ledger.yaml` DEC-0006 ("Total-ordering precedence... `disposition:
   RULED-OUT-TEMPORARY`").

@@ -97,9 +97,9 @@ Propagation membership
   this schema — that's the point of a base contract once ratified, but
   today it's aspirational. Zero nodes are checked against it.
 - *Dependencies:* CISEM-SCHEMA-00001, CISEM-ARCH-00011, and — for the
-  Pocket Declaration fields specifically — `pocket-mechanism.md`, which
+  Pocket Declaration fields specifically — `ai-pocket-mechanism.md`, which
   CLAUDE.md §3.3 and corespine-registry.yaml both cite as living at
-  `dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md`. **Resolved:
+  `dna/corespines/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md`. **Resolved:
   file committed in 71b15fd (2026-07-15).** Pocket Declaration vocabulary
   (reasoning_scope, inherited_constraints, output_contract, ai_cannot)
   is now grounded.
@@ -114,7 +114,7 @@ Vocabulary alignment, Naming/numbering compliance, Tags, Statuses (incl. interna
   (Behavior Principles, Pocket Declaration fields), CISEM-ARCH-00011
   (depth_level, tags, status enum), and CISEM-SCHEMA-00001 (T-SYS/T-DOM,
   PLACEHOLDER). Introduces no new vocabulary of its own — see the
-  `pocket-mechanism.md` gap under §IV.
+  `ai-pocket-mechanism.md` gap under §IV.
 - *Naming/numbering compliance:* ID format matches ARCH-00011 §2.
   Sequence 00008 is recorded in `naming-registry.yaml` (migrated this
   session, no longer `pending_migration`).
@@ -130,7 +130,7 @@ ai_cannot), Path Rejection Declaration
 **Applied to this node:** Pocket declaration present above (see `##
 Pocket Declaration`). **Path Rejection Declaration is missing** — this
 document names what it does *not* yet resolve throughout (PLACEHOLDER
-positions, the missing `pocket-mechanism.md`, no dependents), but never
+positions, the missing `ai-pocket-mechanism.md`, no dependents), but never
 states it in the explicit "name what was rejected and why" form CLAUDE.md
 §2.8 requires. Flagged here rather than fabricated.
 
@@ -209,11 +209,11 @@ Ratified: Governor decree 2026-07-16
     Change protocol, measurable outcome to the header; added "Applied to
     this node" notes under all ten sections without altering their
     original definition text; flagged the missing Path Rejection
-    Declaration (§VI) and the missing `pocket-mechanism.md` dependency
+    Declaration (§VI) and the missing `ai-pocket-mechanism.md` dependency
     (§IV) instead of fabricating either.
   - v1.0 — 2026-07-16: Governor ratification. Status DRAFT → RATIFIED.
     Position in schema PLACEHOLDER → T-SYS (CISEM-SCHEMA-00001 now
-    committed). §IV pocket-mechanism.md gap resolved (committed 71b15fd).
+    committed). §IV ai-pocket-mechanism.md gap resolved (committed 71b15fd).
     §III Applied note updated to reflect resolved positions.
 
 ## What this document is NOT

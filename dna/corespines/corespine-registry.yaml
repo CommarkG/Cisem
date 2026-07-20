@@ -33,9 +33,9 @@ CS-CREATION-001:
 CS-AI-BEHAVIOR-001:
   status: DECLARED
   goal: "Governs every AI instance — pocket mechanism, path-rejection, oversight"
-  children: [pocket-mechanism.md]   # ai-oversight-layer3.md reclassified below (was a dangling I5 reference)
+  children: [ai-pocket-mechanism.md]   # ai-oversight-layer3.md reclassified below (was a dangling I5 reference)
   content_location:
-    distributed_in: [CLAUDE.md, ARCH-00008, .claude/agents/CS-AI-BEHAVIOR-001/pocket-mechanism.md]  # pocket protocol, node schema, pocket definition
+    distributed_in: [CLAUDE.md, ARCH-00008, .claude/agents/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md]  # pocket protocol, node schema, pocket definition
   pending_children:
     ai-oversight-layer3.md: { status: PLACEHOLDER, scheduled: true, note: "AI-supervision layer-3 — DECLARED intent, NOT built. Awaiting Governor design intent (build vs drop). Converted from dangling I5 reference 2026-07-16." }
   depth_level: L1

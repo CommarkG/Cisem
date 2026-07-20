@@ -126,7 +126,7 @@ to Haiku per §3):
 - **I3 — working-tree truth-fields:** only the known ARCH-00008 `RATIFIED` bump,
   deliberately held back. **VERDICT: clean.**
 - **I5 — dangling children:** none in corespine-registry after this session
-  (only `pocket-mechanism.md`, resolves). **VERDICT: pass.** (`ai-oversight-layer3.md`
+  (only `ai-pocket-mechanism.md`, resolves). **VERDICT: pass.** (`ai-oversight-layer3.md`
   is listed in a prior registry entry — recheck at next audit.)
 - **I4 — manifest:** built this session — `dna/naming-manifest.yaml` (Sonnet,
   Opus-verified: 15 ARCH present + 2 absent, all TYPEs mapped, off-repo IDs marked

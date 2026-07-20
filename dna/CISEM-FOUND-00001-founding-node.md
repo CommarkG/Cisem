@@ -1,6 +1,6 @@
 # CISEM Founding Node — Platform Goal / North Star (SEALED) · TSA / CoreSpiral / Pocket (PLACEHOLDER)
 **Node ID:** CISEM-FOUND-00001
-**Type:** FOUND | **Status:** DRAFT (partially ratified) — **PLATFORM GOAL / NORTH STAR SEALED + decreed 2026-07-20 (Governor: "SEAL IT NOW AND PLACE IT AT THE TOP OF THE SCHEMA")**; operating Axioms A1–A10 provided (**A10 Full-Fidelity Harvest decreed 2026-07-20**); **CoreSpiral founding definition FILLED + decreed 2026-07-20** (P0 keystone resolved for CoreSpiral). STILL PENDING: TSA + Pocket founding definitions + Gemini genesis content.
+**Type:** FOUND | **Status:** DRAFT (partially ratified) — **PLATFORM GOAL / NORTH STAR SEALED + decreed 2026-07-20 (Governor: "SEAL IT NOW AND PLACE IT AT THE TOP OF THE SCHEMA")**; operating Axioms A1–A10 provided (**A10 Full-Fidelity Harvest decreed 2026-07-20**); **CoreSpiral founding definition FILLED + decreed 2026-07-20** (P0 keystone resolved for CoreSpiral). **TSA RETIRED + Pocket RESOLVED-BY-POINTER (Governor 2026-07-20).** STILL PENDING: Gemini genesis content only (optional).
 
 ---
 
@@ -53,10 +53,9 @@ Fires when the Governor supplies the source OR rules it lost:
   is a new decision, not a recovery.
 
 ## What must eventually live here (the slots, empty)
-- **TSA** — [definition AWAITING-GOVERNOR]
+- **TSA** — **RETIRED (Governor decree 2026-07-20, "i approve to retire it").** Was an un-migrated Gemini-genesis term ("Total System Awareness"), never defined and not load-bearing in any mechanism. No longer a founding slot. If a real need for a "total system awareness" concept ever arises, it enters through the normal §3 gate as a real concept — never as a haunted placeholder.
 - **CoreSpiral** — **FILLED (Governor foundational decree 2026-07-20; source IBD-0023 philosophy + IBD-0024 engineering, purified via PAE).** CISEM's founding *physics of creation*: **one-shot does not exist in reality** — value is built in **cumulative, verified, maturity-gated cycles**. From the second cycle, each cycle holds two complementary polarities (D6/A9): it **inherits** the previous layer AND lays **infrastructure** for the next; and it is **verified-for-completion before the next begins** (problem-driven, not timeboxed). Load-bearing tenets: **the build cycle IS the validation cycle** (the platform proves itself before it builds itself); **the kernel is the minimum SELF-VALIDATING system**, not the minimum product (everything else is built inside its validation loop); **the Core is validated/consolidated before new elements are authorized** (core-first); each cycle's failures become **inherited gates** (dynamic tightening → complexity makes the system MORE secure); a critical finding unresolved after two attempts **halts + vaults + escalates**. CoreSpiral is the named **PARENT** of ZF, loop-until-ZF (ARCH-00403), divergent-iteration (Principle 15), infrastructure-first ordering, the maturation loop, and core-first. *Adopted:* the philosophy + self-validating-kernel + dynamic-tightening + cycle-failure-protocol + scaling-ladder. *Refined:* the core-priority principle WITHOUT the arbitrary 10× number. *Dropped (reuse-before-coin, GI-15):* external branding (CSEP / GS-codes / GPOW / V-CORE / Trace-IDs). **The GOAL is PRIOR to the cycles** (Governor 2026-07-20): CoreSpiral spirals *toward* an already-defined goal — goal-setting is the SHARED ROOT of both CoreSpiral (development) and CoreSpine (inheritance-chain), not a step inside either; Cc1 begins only after an input is stamped `goal-connected` (hardwired as threshold GATE 0). **CoreCycles (Cc1, Cc2…) — Governor decree 2026-07-20: there is NO rigid definition of a corecycle and there never will be** (a rigid definition would be a gap-creation engine — Principle 15). The ONLY fixed points: **(1) Cc1 has a clear role** — place the FUNDAMENTAL PILLAR STONES that whatever is to be built MUST have; **(2) each corecycle INHERITS all previous ones** (like a corespine — cumulative, monotonic); **(3) each corecycle serves exactly TWO things — (a) ENHANCE existing elements and their synergy, and (b) ADD new elements, but only when an element has reached the MINIMAL MATURITY needed to be "born"** (maturation-gated — an element is not added before it can validly exist). Cc# maps both ORDER and DEPTH. Full detail: IBD-0023 + IBD-0024.
-- **Pocket (founding sense)** — [definition AWAITING-GOVERNOR; note: `pocket-mechanism.md`
-  is the *mechanism*, not the founding axiom — do not conflate]
+- **Pocket** — **RESOLVED (Governor decree 2026-07-20): the founding-sense placeholder was a phantom; the real concept already has a home.** The SSOT for "AI Pocket" is [`ai-pocket-mechanism.md`](corespines/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md) (the 5-field bounded-reasoning envelope + §3.3 + the PE-pocket, ARCH-00240). No separate founding axiom is needed — this slot points to the mechanism as its definition. (Mechanism maturation DRAFT→enforced is tracked separately, not a founding gap.)
 
 ## Operating Axioms A1–A10 (Governor-provided 2026-07-18; A9 2026-07-20; A10 2026-07-20) — REAL CONTENT, firmly wired
 The platform's operating laws. Each is FIRMLY connected to the mechanism that enforces
@@ -97,7 +96,7 @@ The A1–A7 laws are Governor-set and unchanged. This section populates their *e
 - **Knowledge library (A1):** research (DIOS) no longer stands alone/off-repo-only — indexed, tagged, status'd.
 
 ## Honest gaps (still not done — no premature promotion, I23)
-- **TSA / CoreSpiral / Pocket** founding definitions: still PLACEHOLDER — Governor's to author.
+- **CoreSpiral** FILLED · **TSA** RETIRED · **Pocket** RESOLVED-BY-POINTER (→ ai-pocket-mechanism.md). No founding slot remains PLACEHOLDER.
 - **NOT yet wired:** the ZF closure gate, the session hooks, the harvest loop, most of I16–I23 (manual → BP-0002).
 - ARCH-00382 (the graph) is DEFERRED; DIOS-maturity-as-depth-axis resurrection is APPROVED, not yet built.
 
@@ -105,9 +104,10 @@ The A1–A7 laws are Governor-set and unchanged. This section populates their *e
 > "Context is the palace, Alignment is the King, and Timing is the Queen."
 Baseline diagnostic law for systemic failures; assigned to this genesis file.
 
-## STILL PENDING from the Governor (keystone not complete)
-TSA / CoreSpiral / Pocket definitions + Gemini's genesis content are NOT yet supplied.
-This node is DRAFT (operating axioms present) — not ratified, not complete.
+## STILL PENDING from the Governor (keystone effectively resolved)
+The three founding slots are now settled: CoreSpiral FILLED · TSA RETIRED · Pocket RESOLVED-BY-POINTER (2026-07-20).
+Only OPTIONAL Gemini genesis content remains un-migrated. The node holds the SEALED north star + Axioms A1–A10
++ CoreSpiral; it can move toward RATIFIED once the Governor confirms no further founding content is wanted.
 
 ## Pocket Declaration
 - **reasoning_scope:** reserve + honestly flag the founding slot only
@@ -122,6 +122,7 @@ This node is DRAFT (operating axioms present) — not ratified, not complete.
   as the foundation. A loudly-empty placeholder is honest; a full-looking fake is not.
 
 ## Change log
+- v0.5 — 2026-07-20 (Opus, Governor decrees): **TSA RETIRED** ("i approve to retire it") — un-migrated genesis term, never defined, not load-bearing. **Pocket RESOLVED-BY-POINTER** — the founding-sense placeholder was a phantom; SSOT is `ai-pocket-mechanism.md` (renamed from `pocket-mechanism.md` per the consistent-naming decree). Both founding slots settled; only optional Gemini genesis remains. Node can move toward RATIFIED on Governor confirm.
 - v0.4 — 2026-07-20 (Opus, Governor decree "hardwire it now"): **Axiom A10 — Full-Fidelity Harvest of the Session's Fruits** added to the axiom table (SSOT). Latest decisions/definitions + process/intents/core-seeds/nuances inherited at full content+context+reasoning, never flattened. Mirrored to CLAUDE.md §2.4 + Principle 12 full-fidelity clause; wired mechanically into the CAL PreCompact hook STEP 0 mandate; indexed as GI-46. Enforcement: hook fires the mandate, model performs the tiered harvest.
 - v0.3 — 2026-07-20 (Opus, recording Governor foundational decree "SEAL IT NOW AND PLACE IT AT THE TOP OF THE SCHEMA"): **PLATFORM GOAL / NORTH STAR SEALED at the schema apex** — Governor-authored + refined over four turns, RATIFIED by decree. A goal is a target to reach (Governor: "nothing to do with what exists or not"); wired-vs-target stays tracked separately (§5). Closes GI-44. Node stays DRAFT (partial) — TSA + Pocket + Gemini genesis still pending.
 - v0.2 — 2026-07-20 (Opus, recording Governor foundational decree): **CoreSpiral founding slot FILLED** — the P0 keystone (open every compact since 2026-07-16) is resolved for CoreSpiral. Definition purified from IBD-0023/0024 (adopt/refine/drop per Opus PCR, Governor-approved "all approved"). TSA + Pocket slots remain AWAITING-GOVERNOR. Node stays DRAFT (partial) until all three + Gemini genesis are supplied.

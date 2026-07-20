@@ -327,7 +327,7 @@ SPECIFIC INSTANCE?" Defaults to INSTANCE until a second real use case earns
 core status. Never assumed from one example (see: SOL-GIFTPRO-001, tagged
 SIMULATION-ONLY, never treated as core from one data point).
 ### 3.3 Pocket Declaration — full spec at
-`dna/corespines/CS-AI-BEHAVIOR-001/pocket-mechanism.md`. Fill inline at
+`dna/corespines/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md`. Fill inline at
 every creation: reasoning_scope, inherited_constraints, output_contract,
 ai_cannot, recorded_at.
 **Opus operates THROUGH the CISEM infrastructure, not freestyle (I17):** when doing
