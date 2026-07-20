@@ -307,3 +307,8 @@ Governor PARKED: make SCHEMA-00001 the SSOT for placement/naming/numbering (ever
 - CORESPINE CANDIDATES populated with status+tag in `corespine-registry.yaml` (CANDIDATES block): Inheritance(kernel) · Kernel · Epistemology · Security(overlay) · Privacy/Observability/Accessibility(overlays) · Priority(CS-PRIORITY-001) · Completion-Propagation-Layer.
 - NODE = CONTEXT CARRIER (Governor principle 2026-07-20): every node readable COLD, zero conversation dependency (axiom-candidate; boundary-update-grid §founding). Relates A1/A3 + context-envelope (ARCH-00392).
 - POST-COMPACT TEST: corespines aligned with schema (naming+numbering coherent) — folded into BP-0011 (alignment gate). Make everything coherent.
+
+### COMPACT STATE v7 — ADDENDUM 4 (2026-07-20): tag+status mechanical enforcement + permanents engraved
+- PERSONA permanents added: (a) TAGS+STATUSES = main governance surface — every node/file/PART carries tag+status, UNDEBATABLE in creation, mandatory in every plan/checklist/creation-protocol, enforcement MECHANICAL+DYNAMIC (BP-0012); (b) PROACTIVE boundary-awareness — I present the post-compact queue + run the boundary process (harvest/save-all/grid/resume/push) UNPROMPTED, permanently.
+- PARKED BP-0012: mechanical undebatable tag+status gate + granular part-of-file tagging (IBD-0013 #5) + naming/numbering deep-dive consistency (BP-0011 alignment) + WEEKLY agent-enrichment loop (accumulate per-turn ideas -> agent profile/checklist, AI-profiling §5).
+- Post-compact queue now: BP-0009 (RUN THE CYCLE) -> BP-0010 (two-model-verify) -> BP-0011 (schema-SSOT + HTML) -> BP-0012 (tag+status enforcement) -> CS-PRIORITY-001 test-drive -> 2-day deliverable.
