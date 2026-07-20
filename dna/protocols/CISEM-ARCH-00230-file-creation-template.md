@@ -25,6 +25,13 @@ Governor's direct catch, not treated as sacred.
 [ ] Self-compliance note if applicable
 [ ] Role, Who-serving, Pocket Declaration — present OR explicitly
     marked N/A, never silently absent
+[ ] INHERITANCE (Governor-directed enhancement 2026-07-20) — every created element DECLARES its parent
+    (corespine/element) and INHERITS its parent's WHAT (as testable assertions where applicable), and carries
+    the DNA it is born into: the persona SSOT (`dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md`,
+    reference not copy), the governing corespine, and this checklist. Nothing is created "bare." Mechanically
+    enforced today for agents/skills (pre-commit persona-inheritance BLOCK, `dna/checks/pre-commit-blocks.sh`);
+    comprehensive element-scope enforcement (inheritance covering EVERY checklist item across all element types)
+    is a PARKED build — IBD-0017 P2 (Inheritance = a kernel mechanic, to place when the kernel is defined).
 
 ## Self-compliance check, applied to this template itself
 Node ID/Type/Status/depth_level/tags present. Goal present. Governing

@@ -24,6 +24,15 @@
   (b) **include inheritance in the creation checklist (ARCH-00230)** — every created artifact must cite its inherited
   corespine + doctrine + the park/completion discipline; (c) **consider a new/enhanced AXIOM** (inheritance-evident, IBD-0013 #2);
   (d) an inheritance-evidence plan-audit CHECK. Convergence: R3 typed-inheritance (mandatory_unless_waived) + R4 WHAT-as-mechanical-invariant sharpen it. Priority: HIGH (first-trial candidate).
+  **UPDATE 2026-07-20 (trial finding + Governor directive):** the first test-drive built Inheritance as an overlay → cold
+  verifier UNSOUND (contradictory classification, F1). Revised: **Inheritance is a KERNEL mechanic** (propagation-invariance
+  of the whole tree) — neither a domain nor a policy overlay — and sits on the unresolved kernel/creation-apex seam (ARCH-00400
+  N4). PLACED when the kernel is defined; NOT a corespine trial instance (superseded as instance-1 by CS-PRIORITY-001).
+  DONE this turn (Governor-directed): inheritance wired into the ONE creation source (ARCH-00230 checklist item) +
+  mechanically enforced for agents/skills (pre-commit persona-inheritance BLOCK). **PARKED (Governor 2026-07-20 — the
+  scope-expansion issue):** expand the scope so inheritance covers EVERYTHING in the checklist across ALL element types
+  (typed inheritance + WHAT-as-testable-assertion per element kind + mechanical enforcement everywhere), not just
+  agents/skills→persona. This is the comprehensive kernel-level inheritance mechanism; build when the kernel lands.
 - **P3 — Knowledge graph (Governor item 7: "all saved inputs must be part of a knowledge graph").** WHAT EXISTS: the repo
   is an IMPLICIT graph — [[wikilinks]] between nodes, the registries (naming/ssot/corespine), the DNA-00001 living index —
   plus ARCH-00382 (unified-graph-architecture plan, PROVISIONAL-ACTIVE) already drafted. GAP: it is not an EXPLICIT,

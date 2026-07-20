@@ -4,7 +4,12 @@
 **EXISTING-FIRST (§3.2b):** searched ARCH-00394 (wizard, RATIFIED), ARCH-00400 (pipeline Part 3 — the green-gate + wizard flow this trial exercises), IBD-0017 P2 (Inheritance corespine-candidate), consolidation-conclusions §A6/§B (the "flawless=green-gate" + diverse-instance conclusions this derives from). No existing trial-setup exists; this is the first. ENHANCES ARCH-00400 (its Part-3 test-drive), does not fork.
 
 ## INSTANCE-1 SELECTION
-- **Chosen:** the **Inheritance corespine** (IBD-0017 P2). Rationale (R5): pick a MODERATELY-COMPLEX domain, not the easiest — Inheritance is high-reach + testable + it exercises the exact mechanism under debate (WHAT-as-mechanical-invariant + cumulative inheritance). It touches Part-3 of the pipeline (wizard + WHAT-as-invariant + inheritance), NOT the kernel/control-plane — so the logged debts N3/N4 are not in scope.
+- **Chosen (revised 2026-07-20, Governor-accepted):** **CS-PRIORITY-001** (priority assignment). The first pick (Inheritance)
+  went to cold verify and came back UNSOUND — it is a KERNEL mechanic on the unresolved N4 seam, a poor instance-1 (see
+  trial-inheritance-overlay-2026-07-20.md · IBD-0017 P2). CS-PRIORITY-001 is a clean, self-contained DOMAIN with naturally
+  TESTABLE WHATs (every item has a rank; rank ∈ the defined set; higher rank runs first) — it exercises the pipeline's
+  common-case domain path without kernel entanglement, keeping the trial's real purpose (validate the pipeline) unblocked.
+- ~~Inheritance corespine~~ — PARKED (kernel mechanic; place when the kernel is defined).
 - Instances 2 + 3 (later, adversarially DIVERSE): (2) a cross-cutting OVERLAY candidate (e.g. security → should classify as overlay, not trunk); (3) a candidate that SHOULD BE REJECTED (proves the wizard refuses). Diversity > count; N≈3, with a divergence rule.
 
 ## GREEN-GATE ACCEPTANCE CRITERIA (domain-agnostic — apply equally to clean + messy domains)
