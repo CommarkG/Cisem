@@ -172,6 +172,11 @@
 
   // ── ROWS / WINDOW VIEW TOGGLE (auto-injected on group pages with .fi items) ──
   function initPageViewToggle() {
+    // Rows/Window is a LIST-view concept (rows <-> card windows). It only injects where it
+    // MEANINGFULLY reshapes the MAIN content. Tree pages (schema/vocabulary/corespines-set)
+    // use collapse, not Rows/Window — a toggle there would be dead, so skip it (fixes the
+    // "Window/Rows does nothing on the tree pages" defect; no dead UI, FE-I11).
+    if (document.querySelector('.tree')) return;
     var items = document.querySelectorAll('.fi');
     if (!items.length) return; // placeholder / help pages — skip
 
