@@ -1,6 +1,32 @@
-# CISEM Founding Node — TSA / CoreSpiral / Pocket (PLACEHOLDER)
+# CISEM Founding Node — Platform Goal / North Star (SEALED) · TSA / CoreSpiral / Pocket (PLACEHOLDER)
 **Node ID:** CISEM-FOUND-00001
-**Type:** FOUND | **Status:** DRAFT (partially ratified) — operating Axioms A1–A9 provided; **CoreSpiral founding definition FILLED + decreed 2026-07-20** (P0 keystone resolved for CoreSpiral). STILL PENDING: TSA + Pocket founding definitions + Gemini genesis content.
+**Type:** FOUND | **Status:** DRAFT (partially ratified) — **PLATFORM GOAL / NORTH STAR SEALED + decreed 2026-07-20 (Governor: "SEAL IT NOW AND PLACE IT AT THE TOP OF THE SCHEMA")**; operating Axioms A1–A9 provided; **CoreSpiral founding definition FILLED + decreed 2026-07-20** (P0 keystone resolved for CoreSpiral). STILL PENDING: TSA + Pocket founding definitions + Gemini genesis content.
+
+---
+
+## 🌟 THE PLATFORM GOAL / NORTH STAR — SEALED (RATIFIED — Governor foundational decree, 2026-07-20)
+*The schema apex. A goal is a target to REACH — it names what CISEM aims to be, independent of what is or is not yet wired (Governor: "a goal is something to reach and has nothing to do with what exists or not"). Wired-vs-target is tracked separately (quality-ledger + §5); it never modulates the goal.* **The opening sentence is the one-line north star; the rest is the full goal definition that unpacks it.** This is SEALED — changes require a Governor foundational decree.
+
+CISEM is a **self-governing platform** whose goal is to create the most **intuitive, stable, scalable, and effective** digital solutions — systems, apps, and SaaS — for both **developers and end users**, by having **human and AI think together** to turn intent into excellent outcomes.
+
+It does this through a unique architecture: a **Hardcoded Shell**, **AI Pockets**, and **AI Oversight**, resting on the **Core Schema** as the single source of truth and the spine of the whole platform, with the **Threshold** as the sole gate through which all must pass to be **tagged, statused, and routed**. All elements are hardwired for **consistent inheritance and constant evolution** through dynamic learning-and-improvement loops — tags and statuses are CISEM's connecting **neuronal grid**.
+
+**Pillars** (unique methodologies): Complementary Polarities · CoreSpine · CoreSpiral · Depth Levels · Consolidated One-Source-of-Truth · AI active optimization through AI Profiling.
+
+**Edge-case resolutions:** *Swift* · *Balanced Rigid-and-Context-driven AI* · *Completion-as-top-priority with intelligent Park routing* · and the powerful *Zero-Finding iterative cycles (ZF)*.
+
+**Core principles:**
+- Nothing stands alone
+- Nothing is implemented without a **[RATIFIED]** plan
+- AI-built pipelines with minimum AI freestyling
+- Every **turn, session, and tab** are harvested and extracted
+
+**AI-behavior principles:**
+- Every AI system can be **mapped and managed optimally**, considering that mapping.
+- CISEM's unique mapping includes: **trigger words, automatic default reaction patterns, false assumptions, hidden satisfaction points, and a polarized point of view on almost everything** — all considered when communicating with the platform's native AI, AI personas, skills, agents, and external AI systems.
+- CISEM aims to optimize its **prompting, its creation of hardcoding, and all communication** so as to avoid triggering unwanted reactions from AI — and, by always presenting **context and reasoning respectfully**, have AI **collaborate rather than resist or merely obey**.
+
+---
 **root_authority:** true (reserved — ARCH-00011 §7 closed set)
 **Version:** v0.1 (operating axioms provided; founding definitions pending)
 **depth_level:** L1 | **Position in schema:** T-SYS, apex
@@ -95,6 +121,7 @@ This node is DRAFT (operating axioms present) — not ratified, not complete.
   as the foundation. A loudly-empty placeholder is honest; a full-looking fake is not.
 
 ## Change log
+- v0.3 — 2026-07-20 (Opus, recording Governor foundational decree "SEAL IT NOW AND PLACE IT AT THE TOP OF THE SCHEMA"): **PLATFORM GOAL / NORTH STAR SEALED at the schema apex** — Governor-authored + refined over four turns, RATIFIED by decree. A goal is a target to reach (Governor: "nothing to do with what exists or not"); wired-vs-target stays tracked separately (§5). Closes GI-44. Node stays DRAFT (partial) — TSA + Pocket + Gemini genesis still pending.
 - v0.2 — 2026-07-20 (Opus, recording Governor foundational decree): **CoreSpiral founding slot FILLED** — the P0 keystone (open every compact since 2026-07-16) is resolved for CoreSpiral. Definition purified from IBD-0023/0024 (adopt/refine/drop per Opus PCR, Governor-approved "all approved"). TSA + Pocket slots remain AWAITING-GOVERNOR. Node stays DRAFT (partial) until all three + Gemini genesis are supplied.
 - v0.0 — 2026-07-16: PLACEHOLDER created (Opus) on Governor "go ahead". Reserves
   CISEM-FOUND-00001, bounds it into root_authority (ARCH-00011 §7), converts the P0
