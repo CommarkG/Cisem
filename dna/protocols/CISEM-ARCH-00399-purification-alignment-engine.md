@@ -1,12 +1,19 @@
 # Purification & Alignment Engine (PAE)
 **Node ID:** CISEM-ARCH-00399 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE (in-use, NOT ratified — audit flags until ratified)
+**STAGE LABEL (ARCH-00405, Governor-accepted 2026-07-20):** this engine IS **Stage 2 — internal alignment** of the
+TWO-STAGE external-input intake gate. **Stage 1 — external de-pollution** (branding/scaffolding strip) now runs
+OUTSIDE CISEM, BEFORE intake, via the fixed prompt at `dna/checks/external-depollution-prompt.md`, and is
+provenance-stamped on the RAW file (`depollution_source:`/`depollution_pass:`, ARCH-00011 §3.5). PAE (this
+document) does the part Stage 1 CANNOT do — catching conflict with CISEM's own axioms/rulings, which is invisible
+from outside CISEM's context (e.g. a DEC-archive conflict). Nothing below this label changes what PAE does; it
+names what PAE always was.
 **Goal:** Absorb external input for its ESSENCE while stripping the "virus" — foreign vocabulary, foreign assumptions, foreign principles — so valuable content enters CISEM WITHOUT injecting another system's DNA. Measurable: every external input yields a PURIFIED sibling mapped under mutual titles + reviewer axioms, with zero un-aligned foreign vocab.
 **Governing corespine:** CS-THRESHOLD-001 (intake) | **Position:** protocol layer, intake/import arm
-**depth_level:** L2 | **tags:** intake, import-saturation, purification, alignment, security, external-review
+**depth_level:** L2 | **tags:** intake, import-saturation, purification, alignment, security, external-review, stage-2
 
 ## Pocket Declaration (§3.3)
-- **reasoning_scope:** de-brand + align external input to CISEM vocab/axioms; structure for cross-review comparison.
-- **inherited_constraints:** ARCH-00011 §3.5 (RAW↔PURIFIED pair + intake schema); IBD-0008 (import-saturation buffer, untrusted-input core seed); A8 (one-home); I22 (verify).
+- **reasoning_scope:** Stage 2 of the two-stage intake gate (ARCH-00405) — de-brand + align external input to CISEM vocab/axioms; structure for cross-review comparison. (Stage 1, external de-pollution, is out of this pocket's scope — it runs outside CISEM per ARCH-00405 Phase 2.)
+- **inherited_constraints:** ARCH-00011 §3.5 (RAW↔PURIFIED pair + intake schema, incl. de-pollution provenance fields); ARCH-00405 (two-stage design — this engine assumes Stage 1 already ran when a `depollution_pass:` stamp is present); IBD-0008 (import-saturation buffer, untrusted-input core seed); A8 (one-home); I22 (verify).
 - **output_contract:** a PURIFIED sibling structured by the Mutual-Titles schema + a reviewer axiom-map.
 - **ai_cannot:** adopt foreign content raw; ratify; treat external input as the Governor's voice.
 - **recorded_at:** 2026-07-19 | **cal_reference:** ARCH-00390 — `[RAW-PAIR]` enforces the pair + source/trust_tier mechanically.
@@ -17,7 +24,7 @@ Searched ssot-registry (`ruled_out_decisions`, intake_routing), ARCH-00011 §3.5
 convention + import-saturation CONCEPT; nothing consolidates them into a named absorber with expert lenses + a comparison schema.
 The PAE ENHANCES (does not fork) §3.5 + IBD-0008 — it is their operational engine.
 
-## 1. THE SIX PURIFICATION LENSES (Governor-decreed 2026-07-19 — run ALL SIX on every input)
+## 1. THE SIX PURIFICATION LENSES — Stage 2 (Governor-decreed 2026-07-19 — run ALL SIX on every input)
 Extract essence from six directions so no domain-relevant nuance is lost while foreign framing is stripped:
 - **UX lens** — essence about the human/user experience (Governor + downstream users): degradation behavior, notification, "we'll get back to you," queue-wait experience.
 - **UI lens** — essence about surfacing/interface: status flags, error codes, visible tags/badges, how state is shown.
@@ -36,9 +43,9 @@ Every PURIFIED review maps its content under the SAME shared titles, so N review
 - **T6 Governance mechanics** (intake / purification / archive / operational contracts)
 Plus per review: **Reviewer AXIOMS** (the underlying premises they argue from) + **Distinctive proposals** + **Convergence/Divergence vs other reviews**.
 
-## 3. PROCEDURE (per external input)
-1. Quarantine RAW verbatim (`*-RAW.md`, RAW-EXTERNAL + source + trust_tier) — never edited into.
-2. Run the 6 lenses over it; extract essence, strip foreign vocab/assumptions/principles, rename to CISEM vocab.
+## 3. PROCEDURE — Stage 2 (per external input; assumes Stage 1 already ran, ARCH-00405)
+1. Quarantine RAW verbatim (`*-RAW.md`, RAW-EXTERNAL + source + trust_tier + `depollution_source:`/`depollution_pass:` if Stage 1 ran) — never edited into.
+2. Run the 6 lenses over it (Stage 2's internal-alignment lenses); extract essence, strip foreign vocab/assumptions/principles, rename to CISEM vocab.
 3. Map essence under the Mutual-Titles schema; record reviewer axioms + distinctive proposals.
 4. Mark convergence/divergence vs prior reviews (do NOT yet consolidate — that is a later, all-at-once step).
 5. Write the `*-PURIFIED.md` sibling. Do NOT react/fold into design here (absorption ≠ reaction).
@@ -54,3 +61,7 @@ Plus per review: **Reviewer AXIOMS** (the underlying premises they argue from) +
   from UX/UI/Architecture/Security; call it the purification and alignment engine"). Applied first to IBD-0015 (Gemini R2).
 - v0.2 — 2026-07-19: Governor-added two lenses → SIX total: Vocabulary/Naming/Numbering + Axiom (the deepest anti-virus
   layers — foreign vocab + foreign axioms are the primary injection vectors). Applied to IBD-0016 (GPT R3).
+- v0.3 — 2026-07-20 (Sonnet, per ratified CISEM-ARCH-00405 Phase 3): LABEL-ONLY reframe — this engine explicitly
+  named Stage 2 (internal alignment) of the two-stage intake gate; Stage 1 (external de-pollution) now runs
+  outside CISEM per ARCH-00405. The 6 lenses and Mutual-Titles schema are UNCHANGED content — no renumbering, no
+  new lens, no procedure rewrite.

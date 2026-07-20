@@ -77,6 +77,30 @@
     });
   }
 
+  // ── COLLAPSIBLE TREE (VS-Code-explorer style — .tree-row.branch-row toggles ──
+  // the immediately-following .tree-children <ul>. Keyboard-friendly: focusable,
+  // Enter/Space toggles. Leaf rows (.leaf-row) are inert — no listener attached.
+  function initTreeToggle() {
+    document.querySelectorAll('.tree-row.branch-row').forEach(function (row) {
+      row.setAttribute('tabindex', '0');
+      row.setAttribute('role', 'button');
+      var kids = row.nextElementSibling;
+      row.setAttribute('aria-expanded', String(kids ? !kids.classList.contains('tree-collapsed') : false));
+      function toggle() {
+        var children = row.nextElementSibling;
+        if (!children || !children.classList.contains('tree-children')) return;
+        var collapsed = children.classList.toggle('tree-collapsed');
+        var tgl = row.querySelector('.tree-toggle');
+        if (tgl) tgl.textContent = collapsed ? '+' : '−'; // − (minus)
+        row.setAttribute('aria-expanded', String(!collapsed));
+      }
+      row.addEventListener('click', toggle);
+      row.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
+  }
+
   // ── VIEW TOGGLE (index.html home page: grid ↔ grouped list) ────────
   function initViewToggle() {
     var btnG = document.getElementById('vbtn-grid');
@@ -112,6 +136,7 @@
     initCollapse();
     initPageViewToggle(); // group pages — auto-injects Rows/Window toggle
     initViewToggle();     // home page only — Grid/List toggle
+    initTreeToggle();     // schema/vocabulary/corespines-set — collapsible tree rows
   }
 
   document.readyState === 'loading'

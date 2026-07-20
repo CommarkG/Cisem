@@ -6,6 +6,13 @@ and retrieval index — closes the root cause of the -L1 collision incident.
 **Governing corespine:** CS-MASTER-VALIDATION-001 (PRIO-BLOCKING, still open)
 **Position in schema:** T-SYS, protocol layer (sibling to Template Protocol)
 
+## Pocket Declaration (§3.3) — added 2026-07-20 (the new [POCKET] check surfaced this root_authority node had none)
+- **reasoning_scope:** the naming + numbering + consistent-naming policy for every CISEM id, file, and concept
+- **inherited_constraints:** A5 (hardcoded protocol), A8 (one source), I10/I19 (no fork/duplication); must not conflict with CS-MASTER-VALIDATION-001 once ratified
+- **output_contract:** the ONE-GATE naming rules + schema (TYPE registry · ID format · consistent-naming §2.5 · RAW↔PURIFIED §3.5)
+- **ai_cannot:** allocate a number outside naming-registry.yaml; coin a second name for an existing concept; self-ratify
+- **recorded_at:** 2026-07-20
+
 ## 1. TYPE registry (extensible, not closed — extension requires this node's own update)
 FOUND, DNA, GOV, ARCH, PARK, SES, WITNESS, VOC, LOAD, REG, SCHEMA, TEMPLATE-PROTOCOL
 (`SCHEMA`, `TEMPLATE-PROTOCOL` registered 2026-07-16 — I9 resolution for
@@ -85,6 +92,19 @@ for ALL external AI / MCP / web / imported content — a CLAIM to verify, never 
 core seed), `GOVERNOR` (the trusted voice), or `REPO` (resident CISEM truth). **MECHANICAL:** `[RAW-PAIR]` flags any
 `RAW-EXTERNAL` file missing `source:` or `trust_tier:`. (Honest scope: this governs+verifies the *tagging/statusing* of
 captured inputs; fully-automatic *capture* is BP-0006, still a planned remainder — DECLARED, not yet wired.)
+
+**DE-POLLUTION PROVENANCE (Governor decree 2026-07-20, ARCH-00405 Phase 1 — the two-stage external-input intake
+gate):** every `RAW-EXTERNAL` file additionally declares **`depollution_source:`** (which external project/model
+performed Stage 1 branding/scaffolding strip — e.g. "claude.ai project X", "Gemini project Y") and
+**`depollution_pass:`** (`yes` + a date, or absent if Stage 1 has not yet run). This is the SAME schema section as
+`source:`/`trust_tier:` above, not a parallel one — the two new fields are sibling fields on the same
+`RAW-EXTERNAL` header. Stage 1 (external de-pollution, done OUTSIDE CISEM per the fixed prompt at
+`dna/checks/external-depollution-prompt.md`) strips branding BEFORE intake; Stage 2 (PAE, `CISEM-ARCH-00399`,
+INSIDE CISEM) conflict-checks the de-polluted content against CISEM's own axioms/rulings WITH full internal
+context. **HONEST LIMIT:** CISEM hooks run inside this repo; they CANNOT verify a Stage-1 pass actually happened
+inside an external claude.ai/Gemini project — only that the provenance FIELD is present on intake. **MECHANICAL:**
+`[RAW-PAIR]` flags any `RAW-EXTERNAL` file missing `depollution_source:` or `depollution_pass:` (WARN-only, same
+posture as the `source:`/`trust_tier:` checks it sits beside).
 
 ## 4. Depth / Tag / Status — mandatory retrieval index (not optional metadata)
 Every node MUST declare, at creation:

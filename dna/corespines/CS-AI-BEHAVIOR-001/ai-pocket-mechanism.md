@@ -1,8 +1,8 @@
 # AI Pocket Mechanism — Full Spec
-> **Renamed 2026-07-20** (`pocket-mechanism.md` → `ai-pocket-mechanism.md`) per the CONSISTENT-NAMING decree (ARCH-00011 §8). "AI Pocket" is the canonical platform term; this file is its SSOT. Referenced by FOUND-00001 (Pocket founding slot, resolved-by-pointer), CLAUDE.md §3.3, and corespine-registry.yaml.
+> **Renamed 2026-07-20** (`pocket-mechanism.md` → `ai-pocket-mechanism.md`) per the CONSISTENT-NAMING decree (ARCH-00011 §2.5). "AI Pocket" is the canonical platform term; this file is its SSOT. Referenced by FOUND-00001 (Pocket founding slot, resolved-by-pointer), CLAUDE.md §3.3, and corespine-registry.yaml.
 **Parent corespine:** CS-AI-BEHAVIOR-001 (status: DECLARED — "Governs every
 AI instance — pocket mechanism, path-rejection, oversight")
-**Status:** DRAFT
+**Status:** PROVISIONAL-ACTIVE — high-quality DRAFT IN USE (ARCH-00011 §4 bootstrap-escape status); now WARN-enforced by the `[POCKET]` plan-audit check (§5). Not yet Governor-ratified.
 **Goal:** Give every AI (Builder) action a bounded, declared reasoning
 envelope at creation time, so no action runs "floating" — resolves the
 dependency CLAUDE.md §3.3 and corespine-registry.yaml's children list
@@ -73,6 +73,11 @@ CISEM-ARCH-00008, not to this file, and should be flagged to the Governor
 rather than silently patched as a side effect of writing this spec.
 
 ## 5. What this document is NOT
-Not ratified. Not enforced by tooling — no gate currently checks a Pocket
-Declaration against this spec at creation time (CLAUDE.md §5: gates
-DECLARED, none WIRED). Not a template — see §0.
+Not ratified. **WARN-enforced by tooling (updated 2026-07-20):** `dna/checks/plan-audit.sh` now runs a `[POCKET]`
+check that flags any CHANGED `dna/planning/` or `dna/protocols/` file lacking a `reasoning_scope` line (the field
+that anchors this spec's §2, mirroring how `[ROUTING]`/`[ALIGN]` scope to changed files). This is a PARTIAL,
+HONEST enforcement, not the full §2 five-field check: `[POCKET]` verifies ONE of the five fields
+(`reasoning_scope`) is present as a proxy signal, WARN-only, scoped to files CHANGED in the commit — it does not
+yet verify `inherited_constraints`/`output_contract`/`ai_cannot`/`recorded_at` individually, nor does it retro-flag
+the pre-existing backlog. That fuller five-field check is a follow-on, not claimed here (I23 EXISTS≠ACTIVE). Not
+a template — see §0.

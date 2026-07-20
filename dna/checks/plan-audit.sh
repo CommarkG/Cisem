@@ -38,6 +38,12 @@
 #   is forward-looking, so the pre-00401 backlog is not retro-flagged). WARN-only, before [ZF], NOT in the ZF formula
 #   (BLOCK is ARCH-00270's track). Closes ARCH-00401 Trial-Obs 6. Deviation from the ARCH-00402 spec
 #   ("every dna/planning/*.md"): scoped to changed files for signal-to-noise (Opus implementer call).
+#   v11 (2026-07-20, ARCH-00405 Phase 1 + Governor consistent-naming decree, Sonnet-built per ratified plan):
+#   [RAW-PAIR] extended to also require depollution_source:/depollution_pass: on RAW-EXTERNAL files (ARCH-00011
+#   §3.5 sibling fields to source:/trust_tier:). [NAMING] added — honest-limited slice flagging the retired bare
+#   'pocket-mechanism.md' filename in live (non-audit/diagnostics) files (ARCH-00011 §2.5). [POCKET] added —
+#   changed dna/planning|protocols files must carry a reasoning_scope proxy for a Pocket Declaration (CLAUDE.md
+#   §3.3). All three WARN-only, planted-test-verified, NOT in the ZF formula.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -303,6 +309,11 @@ for f in $(find . -name "*-RAW.md" -not -path './.git/*' 2>/dev/null); do
   if ! grep -qiE "source:" "$f" || ! grep -qiE "trust_?tier:" "$f"; then
     echo "   INTAKE-META: $f (RAW-EXTERNAL missing source: and/or trust_tier: — ARCH-00011 §3.5 intake schema)"; found_rawpair=1
   fi
+  # de-pollution provenance (ARCH-00405 Phase 1, Governor-accepted 2026-07-20): every external input additionally
+  # declares WHICH external project/model ran Stage-1 de-pollution and WHETHER it has (ARCH-00011 §3.5 sibling fields).
+  if ! grep -qiE "depollution_source:" "$f" || ! grep -qiE "depollution_pass:" "$f"; then
+    echo "   DEPOLLUTION-META: $f (RAW-EXTERNAL missing depollution_source: and/or depollution_pass: — ARCH-00011 §3.5 / ARCH-00405 Phase 1)"; found_rawpair=1
+  fi
 done
 [ "$found_rawpair" = 0 ] && echo "   (none — every RAW-EXTERNAL file has a PURIFIED sibling and no raw file is contaminated)"
 
@@ -339,6 +350,36 @@ if [ -f "$ledger" ]; then
   if [ -n "$arch_out" ]; then echo "$arch_out"; found_archive=1; fi
 fi
 [ "$found_archive" = 0 ] && echo "   (none — every archive entry carries disposition+why+tags+ruled_by+date and its conditional fields)"
+
+# NAMING — Consistent-Naming spot-check (ARCH-00011 §2.5, Governor decree 2026-07-20: "one concept, one spelling
+#          everywhere"). WARN-ONLY (does NOT enter ZF) — same posture as [SEED]/[RAW-PAIR]/[ARCHIVE] at introduction.
+#          HONEST LIMIT (I23): this is ONE concrete slice of the general "one concept, one spelling" rule, not a
+#          full multi-concept/multi-spelling detector — a general detector is NOT mechanically feasible right now
+#          (it would require a canonical-name registry cross-checked against free-text prose across every file
+#          type). This slice checks the ONE concept the decree names as its trigger: "AI Pocket" — flags any LIVE
+#          file that still references the retired bare filename `pocket-mechanism.md` (i.e. matched WITHOUT an
+#          `ai-` prefix). Exemptions (both narrow, not broad-coverage claims): (a) dna/audits/* and
+#          *DIAGNOSTICS*/*DORMANCY-AUDIT* files (historical snapshots — ARCH-00011 §2.5's own stated exemption);
+#          (b) a line that is itself narrating the retirement ("renamed from"/"retired"/"old `pocket-mechanism"),
+#          or that cites the corrected `ai-pocket-mechanism.md` name on the SAME line (rename-documentation
+#          context, not drift) — without this, the decree's own text about its rename would permanently self-flag.
+echo "[NAMING] retired bare filename 'pocket-mechanism.md' (not 'ai-pocket-mechanism.md') in live files (ARCH-00011 §2.5; WARN-only, honest-limited slice):"
+found_naming=0
+for f in $(find . -name "*.md" -not -path './.git/*' \
+             -not -path './dna/audits/*' \
+             -not -iname "*DIAGNOSTICS*" -not -iname "*DORMANCY-AUDIT*" 2>/dev/null); do
+  while IFS= read -r rawline; do
+    lineno="${rawline%%:*}"; content="${rawline#*:}"
+    echo "$content" | grep -qiE "renamed from|retired|old \`?pocket-mechanism" && continue
+    echo "$content" | grep -qi "ai-pocket-mechanism\.md" && continue
+    matches=$(echo "$content" | grep -oE "[A-Za-z0-9_-]*pocket-mechanism\.md")
+    bare=$(echo "$matches" | grep -viE "^ai-pocket-mechanism\.md$")
+    if [ -n "$bare" ]; then
+      echo "   BARE-NAME: $f:$lineno"; found_naming=1
+    fi
+  done < <(grep -n "pocket-mechanism\.md" "$f" 2>/dev/null)
+done
+[ "$found_naming" = 0 ] && echo "   (none — no live file references the bare retired filename)"
 
 # EDGE — Phase-0 (ARCH-00392): UNKNOWN/penumbra channel. UNKNOWN ≠ FAIL; advisory for Opus judgment.
 # Phase-1 enhancement: reads dna/checks/concept-envelope-registry.yaml by path to route concept-edge
@@ -446,6 +487,24 @@ for f in $changed_plans; do
   fi
 done
 [ "$found_tagstatus" = 0 ] && echo "   (none — alignment tables carry Status, or no plan changed)"
+
+# [POCKET] — a changed dna/planning/ or dna/protocols/ file must carry a Pocket Declaration (CLAUDE.md §3.3;
+#   SSOT: dna/corespines/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md). Scoped to CHANGED files (staged+unstaged+
+#   untracked), same pattern as [ROUTING]/[ALIGN] — forward-looking, does NOT retro-flag the pre-existing backlog.
+#   HONEST LIMIT (I23): checks for the presence of ONE proxy field (`reasoning_scope`) as evidence a Pocket
+#   Declaration exists — it does NOT individually verify the other four fields (inherited_constraints/
+#   output_contract/ai_cannot/recorded_at) are present or well-formed; that fuller five-field check is a follow-on.
+#   WARN-only, NOT in the ZF formula (BLOCK is ARCH-00270's track).
+changed_plan_proto=$( { git diff --cached --name-only 2>/dev/null; git diff --name-only 2>/dev/null; \
+                   git ls-files --others --exclude-standard 2>/dev/null; } \
+                 | grep -E '^dna/(planning|protocols)/.*\.md$' | sort -u )
+echo "[POCKET] changed dna/planning|protocols files missing a Pocket Declaration (reasoning_scope proxy; CLAUDE.md §3.3; WARN-only):"
+found_pocket=0
+for f in $changed_plan_proto; do
+  [ -f "$f" ] || continue
+  grep -qiE "reasoning_scope" "$f" || { echo "   MISSING: $f (no reasoning_scope / Pocket Declaration)"; found_pocket=1; }
+done
+[ "$found_pocket" = 0 ] && echo "   (none — every changed plan/protocol carries a Pocket Declaration, or none changed)"
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).

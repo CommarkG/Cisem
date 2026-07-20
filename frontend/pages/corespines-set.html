@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corespines Set — CISEM Index</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="logo">CISEM</a>
+  <div class="idx">
+    <span class="idx-lbl">Index &#9660;</span>
+    <div class="dd">
+      <a href="skills.html"><span class="n">01</span>Skills</a>
+      <a href="agents.html"><span class="n">02</span>Agents</a>
+      <a href="axioms.html"><span class="n">03</span>Axioms</a>
+      <a href="schema.html"><span class="n">04</span>Schema</a>
+      <a href="nodes.html"><span class="n">05</span>Nodes</a>
+      <a href="qc.html"><span class="n">06</span>QC</a>
+      <a href="protocols.html"><span class="n">07</span>Protocols</a>
+      <a href="wizards.html"><span class="n">08</span>Wizards</a>
+      <a href="front-page-types.html"><span class="n">09</span>Front-page types</a>
+      <a href="internal-file-types.html"><span class="n">10</span>Internal file types</a>
+      <a href="document-types.html"><span class="n">11</span>Document types</a>
+      <a href="templates.html"><span class="n">12</span>Templates</a>
+      <a href="internal-audits.html"><span class="n">13</span>Internal audits</a>
+      <a href="learning-loops.html"><span class="n">14</span>Learning &amp; loops</a>
+      <a href="engines.html"><span class="n">15</span>Engines</a>
+      <a href="corespines.html"><span class="n">16</span>Corespines</a>
+      <a href="pipelines.html"><span class="n">17</span>Pipelines</a>
+      <a href="processes.html"><span class="n">18</span>Processes</a>
+      <a href="principles.html"><span class="n">19</span>Principles</a>
+      <a href="rules.html"><span class="n">20</span>Rules</a>
+      <a href="vocabulary.html"><span class="n">21</span>Vocabulary</a>
+      <a href="corespines-set.html"><span class="n">22</span>Corespines Set</a>
+    </div>
+  </div>
+  <div class="nav-search"><input id="si" type="text" placeholder="Filter..." autocomplete="off"><span class="cnt" id="cnt"></span></div>
+  <div class="nav-r">
+    <a href="to-be-reviewed.html" class="ni" title="To Be Reviewed &amp; Created">&#9998;</a>
+    <a href="help.html" class="ni" title="Help">?</a>
+  </div>
+</nav>
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
+  <a href="../index.html">Home</a><span class="sep">/</span><a href="corespines.html">16 · Corespines</a><span class="sep">/</span><span>22 · Corespines Set</span>
+</div>
+<main>
+  <h1>Corespines Set</h1>
+  <p class="pg-desc">The 5 qualifying criteria for a canonical (L1) corespine, and every corespine currently in <code>corespine-registry.yaml</code> grouped by its ACTUAL registered status. No status here is invented — each badge mirrors the registry field directly. The canonical L1 SET itself is NOT yet finalized (ARCH-00404 Phase&nbsp;1 — Governor founding call, still open); this page shows the current registry, not a ruling on which entries are permanently canonical.</p>
+
+  <div class="sh">Canonical (L1) Corespine — the 5 Qualifying Criteria</div>
+  <ul class="tree">
+    <li class="tree-node">
+      <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">A corespine earns L1/canonical status only if it passes ALL 5</span><span class="tree-tag">ARCH-00404 + A8 + GI-26</span></div>
+      <ul class="tree-children">
+        <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">(a) Governing REACH, not element count</span><span class="tree-note">— what makes it canonical is what it GOVERNS, not how many files/nodes sit under it (GI-26, "top-level = governing REACH, not element count"; CLAUDE.md §3.2c).</span></div></li>
+        <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">(b) Passes the Branch Threshold + MEG</span><span class="tree-note">— earns its own governance boundary only if ALL of {distinct independently-evaluable goal &middot; &ge;N governing nodes an existing corespine can't cover &middot; internal heterogeneity &middot; sibling-uniqueness} AND passes MEG: "removes more architectural risk than the complexity it adds" (ARCH-00404 Phase 2).</span></div></li>
+        <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">(c) Authority-origin (Core Spine node)</span><span class="tree-note">— in the 3-type node model a Core Spine node ORIGINATES authority (has children, no parent) &mdash; distinct from a Branch (derived; parent AND children) or a Leaf (terminal) (ARCH-00404 Phase 2).</span></div></li>
+        <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">(d) L1-permanent / sealed</span><span class="tree-note">— sits in the sealed L1 layer: ratification-only amendment, as opposed to L2 (domain decomposition, normal review) or L3 (instances, updates freely) (ARCH-00404 Phase 1, 3-layer doctrine).</span></div></li>
+        <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">(e) Sole SSOT for its concern</span><span class="tree-note">— exactly ONE authoritative home for its governed concern; related content consolidates into it, never duplicates or forks (Axiom A8).</span></div></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="sh">Corespine Registry — grouped by registered status</div>
+  <ul class="tree">
+    <li class="tree-node">
+      <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">corespine-registry.yaml — top-level entries</span><span class="tree-tag">read verbatim, not invented</span></div>
+      <ul class="tree-children">
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">RATIFIED</span><span class="tree-badge ratified">4</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-MASTER-VALIDATION-001</span><span class="tree-badge ratified">RATIFIED</span><span class="tree-note">— root_authority: true. Governs all other corespines; foundational decree 2026-07-18.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-CREATION-001</span><span class="tree-badge ratified">RATIFIED</span><span class="tree-note">— the creation apex, corespine-of-corespines; parent of every other corespine (ARCH-00396 Gate C).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-THRESHOLD-001</span><span class="tree-badge ratified">RATIFIED</span><span class="tree-note">— Layer 1 mechanical input validation; registry entry exists, manifest file not yet built (bodiless, disclosed).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-FRONTEND-001</span><span class="tree-badge ratified">RATIFIED</span><span class="tree-note">— governs all CISEM web/frontend artifacts; invariants FE-I1&ndash;FE-I10.</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">DECLARED</span><span class="tree-badge declared">2</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-AI-BEHAVIOR-001</span><span class="tree-badge declared">DECLARED</span><span class="tree-note">— governs every AI instance: pocket mechanism, path-rejection, oversight.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-AI-PROFILING-001</span><span class="tree-badge declared">DECLARED</span><span class="tree-note">— the AI-TEAM corespine: agents + skills + how they deliver the Creation Triad.</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">DRAFT</span><span class="tree-badge draft">1</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-ACCOUNTABILITY-001</span><span class="tree-badge draft">DRAFT</span><span class="tree-note">— root ratified now; branches (core/development/internal/external) scoped per Governor's 4-part structure, each branch itself DRAFT or PLACEHOLDER.</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">PROPOSED</span><span class="tree-badge proposed">6</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-CONTROLPLANE-001</span><span class="tree-badge proposed">PROPOSED</span><span class="tree-note">— project/engine routing, mobile broker backend.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-SOLUTIONS-001</span><span class="tree-badge proposed">PROPOSED</span><span class="tree-note">— governs every tenant-facing Solution (child SOL-GIFTPRO-001 is SIMULATION-ONLY).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-AI-INTEGRATION-001</span><span class="tree-badge proposed">PROPOSED</span><span class="tree-note">— artifact-sandbox vs backend policy for AI API calls within Solutions.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-UNIVERSAL-001</span><span class="tree-badge proposed">PROPOSED</span><span class="tree-note">— root for cross-solution functional capability; children CS-DATA-PATTERNS-001 (PROPOSED) + CS-DOCGEN-001 (PROPOSED).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-LOOPS-001</span><span class="tree-badge proposed">PROPOSED</span><span class="tree-note">— root for improvement/learning/QC loops.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-PRIORITY-001</span><span class="tree-badge proposed">PROPOSED</span><span class="tree-note">— governs priority assignment across CISEM; ARCH-00400 test-drive target.</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">PLACEHOLDER</span><span class="tree-badge placeholder">1</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">CS-CORECOUNCIL-001</span><span class="tree-badge placeholder">PLACEHOLDER</span><span class="tree-note">— parked: Governor-described multi-model orchestration, awaiting core-basics completion before build.</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">SIMULATION-ONLY</span><span class="tree-tag">not a real build track</span><span class="tree-badge sim">1</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">SOL-GIFTPRO-001</span><span class="tree-badge sim">SIMULATION-ONLY</span><span class="tree-note">— virtual simulation/exercise tool for the schema and gates ONLY. Classical specific-vs-core example. Tag lifted only by explicit Governor instruction.</span></div></li>
+          </ul>
+        </li>
+
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">CANDIDATES</span><span class="tree-tag">populated 2026-07-20; NOT ratified — run each through ARCH-00400 before creating</span><span class="tree-badge candidate">7</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Inheritance</span><span class="tree-badge candidate">PARKED-AS-KERNEL-MECHANIC</span><span class="tree-note">— trial UNSOUND as overlay/domain; it is a KERNEL mechanic (IBD-0017 P2).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Kernel</span><span class="tree-badge candidate">CANDIDATE-KERNEL</span><span class="tree-note">— constitutional kernel: authority / validation / evidence / versioning / safety. N4 unresolved (ARCH-00400 Part 1).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Epistemology</span><span class="tree-badge candidate">CANDIDATE</span><span class="tree-note">— how CISEM establishes/verifies/transmits understanding (IBD-0011 §3).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Security</span><span class="tree-badge candidate">OVERLAY-CANDIDATE</span><span class="tree-note">— cross-cutting, NOT a domain trunk; universal invariant-core + context-modulated overlay facet (A9) (IBD-0008).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Privacy / Observability / Accessibility</span><span class="tree-badge candidate">OVERLAY-CANDIDATES</span><span class="tree-note">— graph-architecture overlays (R3); apply across domains.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Priority</span><span class="tree-badge candidate">PROPOSED-CS-PRIORITY-001-testdrive-instance1</span><span class="tree-note">— clean-domain test-drive target (ARCH-00400); may be a field/Threshold-branch, not a full corespine (STEP-0 open).</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Completion / Propagation Layer</span><span class="tree-badge candidate">PLAN-PENDING-BP-0009</span><span class="tree-note">— RIPL-v2 + propagation-network + tier-cycle; authored via BP-0009.</span></div></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+
+  <div class="sh">Source Files</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../dna/corespines/corespine-registry.yaml"><span class="ico">&#128202;</span>corespine-registry.yaml<span class="fp">dna/corespines/ — the ground truth for this page</span></a></li>
+    <li class="fi"><a href="../../dna/planning/CISEM-ARCH-00404-corespine-architecture.md"><span class="ico">&#128196;</span>CISEM-ARCH-00404-corespine-architecture.md<span class="fp">dna/planning/ — Branch Threshold + MEG, 3-type node model, L1/L2/L3</span></a></li>
+    <li class="fi"><a href="corespines.html"><span class="ico">&#128209;</span>corespines.html<span class="fp">pages/ — 16 · Corespines (narrative overview + content files)</span></a></li>
+  </ul>
+
+  <div id="no-result">No files match your search.</div>
+</main>
+<script src="../js/search.js"></script>
+</body>
+</html>

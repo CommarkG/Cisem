@@ -13,7 +13,7 @@ invisible to an outsider and can only be caught inside).
 > everything platform-specific and return the transferable essence as generic principles. Specifically: (1) remove all
 > internal IDs/codes (doc-numbers, PI-/CC-/SK-/session-IDs, version tags); (2) replace platform product/feature names with
 > plain descriptions; (3) flag every coined term and give its plain-industry equivalent; (4) preserve each underlying
-> principle's meaning exactly; (5) output a clean bulleted essence + a "stripped" list of what you removed. Do NOT judge
+> principle's meaning exactly; (5) output a clean bulleted essence + a 'stripped' list of what you removed. Do NOT judge
 > quality, do NOT recommend adoption, do NOT reference any other framework, do NOT add anything. Neutralize only.
 
 ## How to use it

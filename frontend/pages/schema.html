@@ -32,6 +32,8 @@
       <a href="processes.html"><span class="n">18</span>Processes</a>
       <a href="principles.html"><span class="n">19</span>Principles</a>
       <a href="rules.html"><span class="n">20</span>Rules</a>
+      <a href="vocabulary.html"><span class="n">21</span>Vocabulary</a>
+      <a href="corespines-set.html"><span class="n">22</span>Corespines Set</a>
     </div>
   </div>
   <div class="nav-search"><input id="si" type="text" placeholder="Filter..." autocomplete="off"><span class="cnt" id="cnt"></span></div>
@@ -40,20 +42,142 @@
     <a href="help.html" class="ni" title="Help">?</a>
   </div>
 </nav>
-<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button> 
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
   <a href="../index.html">Home</a><span class="sep">/</span><span>04 · Schema</span>
 </div>
 <main>
   <h1>Schema</h1>
-  <p class="pg-desc">Node DNA field contract (Sections I&ndash;X that every CISEM node must carry) and the schema placement engine (T-SYS / T-DOM taxonomy).</p>
+  <p class="pg-desc">Node DNA field contract (Sections I&ndash;X every CISEM node must carry) and the schema placement engine (T-SYS / T-DOM taxonomy). Click any row with a &#43;/&minus; toggle to expand or collapse its children &mdash; keyboard: Tab to focus, Enter/Space to toggle.</p>
 
-  <div class="sh">Node DNA Contract</div>
-  <ul class="fl">
-    <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md"><span class="ico">&#128196;</span>CISEM-ARCH-00008-base-contract-node-dna.md<span class="fp">dna/corespines/CS-AI-BEHAVIOR-001/</span></a></li>
+  <div class="sh">Placement Taxonomy — T-SYS / T-DOM (CISEM-SCHEMA-00001)</div>
+  <ul class="tree">
+    <li class="tree-node">
+      <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">T-SYS / T-DOM Trunks</span><span class="tree-tag">taxonomy root</span></div>
+      <ul class="tree-children">
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">T-SYS</span><span class="tree-tag">system trunk</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Definition</span><span class="tree-note">— the platform's own operational/structural trunk: corespines, protocols, gates, pipelines. Governs HOW the platform builds itself.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Rule of thumb</span><span class="tree-note">— if removing it would break the platform's ability to govern itself, it's T-SYS.</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">T-DOM</span><span class="tree-tag">domain trunk</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Definition</span><span class="tree-note">— domain trunks: Solutions and their content (e.g. SOL-GIFTPRO-001's Product/Supplier/Customer vocabulary, SIMULATION-ONLY). Governs WHAT the platform is used for.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Rule of thumb</span><span class="tree-note">— if it only affects one Solution, it's T-DOM.</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Missing-ancestor rule</span><span class="tree-tag">bottom-up growth</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Trigger</span><span class="tree-note">— a new element needs placement and its full T-SYS/T-DOM ancestor chain doesn't exist yet.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Step 1</span><span class="tree-note">— auto-generate placeholder nodes for the missing ancestors.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Step 2</span><span class="tree-note">— each tagged status: PLACEHOLDER, depth_level: L1.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Step 3</span><span class="tree-note">— Goal field: "reserved slot, pending definition".</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Step 4</span><span class="tree-note">— the triggering element's creation is NOT blocked waiting for the full branch to be designed top-down.</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Precedent</span><span class="tree-note">— CS-WEB-DESIGN-001 / CS-PHYSICAL-DESIGN-001 (example-only, NOT-YET-A-NODE) established this instinct informally before it was formalized here.</span></div></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 
-  <div class="sh">Placement Engine</div>
+  <div class="sh">Node DNA Contract — Sections I&ndash;X (CISEM-ARCH-00008)</div>
+  <ul class="tree">
+    <li class="tree-node">
+      <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">Node DNA — every CISEM node must carry Sections I&ndash;X</span><span class="tree-tag">RATIFIED contract</span></div>
+      <ul class="tree-children">
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">I. IDENTITY</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Node ID</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Node type / TYPE prefix</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Short description</span><span class="tree-note">— human + AI</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Status</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Version + Change protocol</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">II. GOAL &amp; PURPOSE</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Goal</span><span class="tree-note">— incl. measurable outcomes</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Role</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Who I am serving</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">III. POSITION IN THE ARCHITECTURE</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Position in schema</span><span class="tree-note">— T-SYS / T-DOM</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Position in corespine</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Position in pipeline(s)</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Connection to Threshold</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">IV. RELATIONSHIPS</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Who I inherit from / obligated by</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Who inherits from me / I deliver to</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Dependencies</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Propagation membership</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">V. GOVERNANCE / VOCABULARY / NAMING</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Vocabulary alignment</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Naming / numbering compliance</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tags</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Statuses</span><span class="tree-note">— incl. internal</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">VI. AI BEHAVIOR / POCKET</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Pocket declaration</span><span class="tree-note">— reasoning_scope, inherited_constraints, output_contract, ai_cannot</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Path Rejection Declaration</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">VII. STRUCTURE / SIZE GOVERNANCE</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Length / complexity compliance</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mini-tree split protocol</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mandatory depth levels</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">VIII. NOTIFICATION / MONITORING</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">What I notify</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">How I stay updated</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">IX. IMPROVEMENT / EVOLUTION</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Improvement loop membership</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Wisdom-entry hook</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Verification scenario</span><span class="tree-note">— + last_verified + owner</span></div></li>
+          </ul>
+        </li>
+        <li class="tree-node">
+          <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">X. AUDIT</span></div>
+          <ul class="tree-children tree-collapsed">
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Applicable checklist reference</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Gate Trace</span><span class="tree-note">— Phase 1 manual enforcement record</span></div></li>
+            <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Change log</span><span class="tree-note">— visible-change record</span></div></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="sh">Source Files</div>
   <ul class="fl">
+    <li class="fi"><a href="../../dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md"><span class="ico">&#128196;</span>CISEM-ARCH-00008-base-contract-node-dna.md<span class="fp">dna/corespines/CS-AI-BEHAVIOR-001/</span></a></li>
     <li class="fi"><a href="../../dna/schema/CISEM-SCHEMA-00001-placement-engine.md"><span class="ico">&#128196;</span>CISEM-SCHEMA-00001-placement-engine.md<span class="fp">dna/schema/</span></a></li>
   </ul>
 
