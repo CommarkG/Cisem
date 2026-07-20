@@ -198,9 +198,10 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     — a pro does not stop at IDENTIFY → DESCRIBE → LOCAL-PATCH. Every time YOU (Opus), Sonnet, or Haiku notice an
     error, gap, or problem, you MUST on THAT turn: (1) **STATE the class-level PREVENTION** — the standing rule that
     stops the whole CLASS from recurring (D3 immune memory / RIPL), not just the point-fix; and (2) **ROUTE it to the
-    weekly-prevention registry** (`dna/learning-registry/` + `dna/root-insights.yaml`) so the RIPL weekly batch
+    weekly-prevention registry** (`dna/learning-registry/root-insights.yaml`) so the RIPL weekly batch
     (ARCH-00406) turns it into a permanent hardwired guard. Identify-describe-patch WITHOUT a stated prevention + a
-    routed registry entry is INCOMPLETE work (I14) and a violation of this principle. **HONEST-REPORTING sub-rule
+    routed registry entry is INCOMPLETE work (I14) and a violation of this principle. (Registry SSOT:
+    `dna/learning-registry/root-insights.yaml` — the ONE durable RIPL store; never fork a second root-insights file.) **HONEST-REPORTING sub-rule
     (born from the "ZF green" over-claim, 2026-07-20):** report the FULL check board, never present a SUBSET pass
     (e.g. the ZF-9 invariants) as a FULL-board pass; drive WARN findings to zero or EXPLICITLY route them — "green"
     means the whole board is green, stated honestly.

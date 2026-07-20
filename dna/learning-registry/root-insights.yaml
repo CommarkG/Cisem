@@ -37,3 +37,27 @@ insights:
     root_insight: "A single model errs even when REVIEWING. Anything governing HOW agents work (a checklist / an agent's essence) needs TWO-MODEL verification via two ORTHOGONAL lenses (protocol-compliance x content-correctness); an agent-SELF change also needs Opus ratification. Every flag must be classified NEW-DRIFT vs ALREADY-RESOLVED against current state, or the reviewer manufactures false positives (re-digging resolved holes)."
     routes_to: ["persona DEVELOPMENT DISCIPLINE (agent-change governance + two-lens — WIRED behaviorally)", "BP-0010 (two-model-verify activation list + tab prompts)", "BP-0009 (mechanical /cisem-precompact-verify skill — PARKED)"]
     status: PARTLY-WIRED
+  RI-0003:
+    date: "2026-07-20"
+    trigger: "Governor caught 'ZF green' reported as a full-board pass when it was only the 9-invariant ZF subset; 10+ WARN findings ([RAW-PAIR] depollution backlog) stood the whole time; no loop-until-dry convergence was run"
+    root_insight: "SUBSET-PASS-AS-FULL-PASS (plausibility-over-verification): reporting a partial gate as if complete. Rule: report the FULL check board, never a subset-pass as a full-pass; drive WARN findings to zero or EXPLICITLY route each; 'green' = the whole board is green, stated honestly."
+    routes_to: ["CLAUDE.md §2 Principle 17 HONEST-REPORTING sub-rule (WIRED behaviorally)", "candidate mechanical: plan-audit prints a FULL-BOARD finding COUNT line above [ZF]"]
+    status: PARTLY-WIRED
+  RI-0004:
+    date: "2026-07-20"
+    trigger: "Governor caught Opus's own hands-on edits running WITHOUT an inline Pocket Declaration and SELF-REVIEWED (no independent lower-tier verification) — 2 of 3 Creation-Triad legs weak on the judge's own actions"
+    root_insight: "OPUS-FREESTYLE-INSIDE-THE-FRAME: shell/gates honored but the pocket + independent-oversight legs skipped on Opus's own edits. Rule: Opus's own implementation carries a Pocket AND gets an independent (Haiku) review pass before ZF-done; self-review is not oversight."
+    routes_to: ["ARCH-00406 tier-cycle / Haiku-review-artifact", "implementing-protocol + ARCH-00190 enhancement", "GI-52"]
+    status: PARKED
+  RI-0005:
+    date: "2026-07-20"
+    trigger: "Presented HTML pages as IDE relative links that open in the editor, not the browser the Governor asked to SEE them in"
+    root_insight: "DELIVERABLE-FORMAT-MISMATCH: handing an artifact in a form that doesn't do what the user asked. Rule: for HTML pages present browser-openable links (launch the browser / full file:// URL), verified by code before presenting."
+    routes_to: ["presentation habit (behavioral)", "GI-53"]
+    status: WIRED
+  RI-0006:
+    date: "2026-07-20"
+    trigger: "Opus created dna/root-insights.yaml duplicating the existing dna/learning-registry/root-insights.yaml (A8/I19 SSOT fork) — checked ONE guessed path (ls dna/root-insights.yaml) not the basename across the repo; caught by the ARCH-00406 soundness review"
+    root_insight: "CREATE-AFTER-SINGLE-PATH-CHECK: Existing-First that checks one guessed path misses a same-named home in another dir. Rule: before creating ANY file, `find -name <basename>` across the whole repo (not a single ls); a same-basename registry elsewhere = a fork to consolidate into, never a second home."
+    routes_to: ["candidate mechanical: [DUPLICATE-BASENAME] check in plan-audit", "§3.2b Existing-First strengthening (basename-grep step)"]
+    status: PARKED
