@@ -21,16 +21,24 @@ snap="$outdir/raw-activity-${sid}.jsonl"
 # A full session rarely exceeds this; if it does, the tail holds the most recent work. Verbatim, no summarization.
 LINES="${CISEM_RAW_ACTIVITY_LINES:-4000}"
 snap="${snap%.jsonl}.md"   # relevant-dialogue text, not raw JSONL noise
-if command -v jq >/dev/null 2>&1; then
-  # RELEVANT LINES ONLY (Governor decree 2026-07-21): keep user messages + assistant TEXT (reasoning/answers);
-  # DROP tool_use / tool_result / Bash IN-OUT / Read/Edit records / file dumps — they are useless noise.
-  jq -rc 'def txt: if (.message.content|type)=="string" then .message.content
-            else ([.message.content[]? | select(.type=="text") | .text] | join("\n")) end;
-          {r:(.message.role // .type), t: txt} | select(.t and ((.t|length)>0))
-          | "\n[" + (.r|ascii_upcase) + "] " + .t' "$tx" 2>/dev/null | tail -n "$LINES" > "$snap"
+# RELEVANT LINES ONLY (Governor decree 2026-07-21): keep user messages + assistant TEXT (reasoning/answers);
+# DROP tool_use / tool_result / Bash IN-OUT / Read/Edit records / file dumps — they are useless noise.
+if command -v node >/dev/null 2>&1; then
+  node -e '
+    const fs=require("fs"); const out=[];
+    for(const line of fs.readFileSync(process.argv[1],"utf8").split("\n")){
+      if(!line.trim())continue; let o; try{o=JSON.parse(line)}catch(e){continue}
+      const m=o.message||o; const role=String(m.role||o.type||"").toUpperCase(); const c=m.content;
+      let t=""; if(typeof c==="string")t=c;
+      else if(Array.isArray(c))t=c.filter(b=>b&&b.type==="text").map(b=>b.text).join("\n");
+      if(t&&t.trim()&&(role==="USER"||role==="ASSISTANT"))out.push("\n["+role+"] "+t.trim());
+    }
+    process.stdout.write(out.join("\n")+"\n");
+  ' "$tx" 2>/dev/null | tail -n "$LINES" > "$snap"
+elif command -v jq >/dev/null 2>&1; then
+  jq -rc '{r:(.message.role // .type), t:(if (.message.content|type)=="string" then .message.content else ([.message.content[]? | select(.type=="text") | .text] | join("\n")) end)} | select(.t and ((.t|length)>0)) | "\n["+(.r|ascii_upcase)+"] "+.t' "$tx" 2>/dev/null | tail -n "$LINES" > "$snap"
 else
-  echo "[SAVE-RAW-ACTIVITY] jq not found — falling back to raw tail (noise included; install jq for filtered dialogue-only)." >&2
-  tail -n "$LINES" "$tx" > "$snap" 2>/dev/null
+  echo "[SAVE-RAW-ACTIVITY] no node/jq — raw tail (noise incl.)." >&2; tail -n "$LINES" "$tx" > "$snap" 2>/dev/null
 fi
 total="$(wc -l < "$tx" 2>/dev/null | tr -d ' ')"
 kept="$(wc -l < "$snap" 2>/dev/null | tr -d ' ')"
