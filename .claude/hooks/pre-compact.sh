@@ -18,6 +18,11 @@ echo "STEP 0 — HARVEST GATE (ARCH-00370 Enforcement Point 1 — run BEFORE com
 echo "  MANDATE: run the STEP 1–5 learning harvest into $reg —"
 echo "    1 Scan session  2 Categorize (insight/solution/prevention/gap/decision)  3 Register"
 echo "    4 Verify nothing dropped (I14)  5 Hardwire for inheritance. This is NOT 'update COMPACT STATE' (that is save-all)."
+echo "  FULL-FIDELITY (Axiom A10 — Governor decree 2026-07-20): the harvest is TIERED, not flat."
+echo "    Capture PROCESS + INTENTS + [[CORE-SEED]]s + NUANCES, and give SPECIAL attention to the"
+echo "    LATEST DECISIONS + DEFINITIONS — inherit them with FULL content + context + reasoning,"
+echo "    rich enough to re-derive, NOT a one-line summary. They are the session's fruits; a shallow"
+echo "    capture of them is a professional failure, not a save. Routine items may be indexed; fruits are captured richly."
 # Mechanical freshness check: is the registry dirty (harvest in progress) or written in HEAD (fresh)?
 if [ -n "$(git status --porcelain -- "$reg" 2>/dev/null)" ]; then
   echo "  ✓ harvest IN PROGRESS this window (registry has uncommitted changes)"

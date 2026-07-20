@@ -15,7 +15,7 @@ Last_verified: 2026-07-18
 **Architecture note (ARCH-00396 Phase B, concern 2):** This node embeds its corespine-creation protocol INLINE as STEP 1–6 (lines 70–117). This is a DECLARED COMBINED protocol+wizard node — an I10 exception, noted here explicitly. There is no separate corespine-creation protocol file; the protocol and wizard are intentionally unified in this single node. This exception is documented (not silent) and Opus-reviewable at Gate B.
 **Parent meta-root:** ARCH-00340 (meta-protocol — the root that every protocol/wizard derives from; ARCH-00396 Phase B pointer).
 
-**Size note:** 233 lines — exceeds 200-line gate. Exception: wizard-type node with mandated STEP 1–6 procedure + template blocks + YAML schema; structural content not reducible without losing executability.
+**Size note:** 250 lines — exceeds 200-line gate. Exception: wizard-type node with mandated STEP 1–6 procedure + template blocks + YAML schema; structural content not reducible without losing executability.
 
 ---
 
@@ -27,7 +27,7 @@ Last_verified: 2026-07-18
 **§3.3 Pocket:** `reasoning_scope: corespine creation protocol` | `inherited_constraints: §3 gates, A2, A5, I10, I19, I22` | `output_contract: corespine directory + manifest + registry entries` | `ai_cannot: ratify its own output` | `cal_reference: ARCH-00390`
 **§3.4 Standalone:** All refs resolve.
 **§3.5 Naming:** CISEM-ARCH-00394, seq 394.
-**§3.6 Size:** 233 lines — exception documented above.
+**§3.6 Size:** 250 lines — exception documented above.
 **§3.7 Creation Triad:** ✓ gates | ✓ pocket | ✓ oversight (RQC on each corespine created)
 
 ---
@@ -67,7 +67,18 @@ corespines:
 
 ---
 
-## §III Execution — STEP 1–6 (Sonnet runs, Opus reviews §3.3 fields)
+## §III Execution — STEP 0–6 (Sonnet runs, Opus reviews §3.3 fields)
+
+### STEP 0 — GOAL-SETTING (MANDATORY, FIRST — Governor decree 2026-07-20; threshold GATE 0)
+
+**A corespine MUST begin by setting and SAVING its goal — this is prior to everything else.** The `goal:` YAML field is the OUTPUT of this step, never an assumption fed in. The SAME goal is mandatory for CoreSpiral development too — goal-setting is the **shared root** of both CoreSpine (inheritance) and CoreSpiral (development), not a step inside either (FOUND-00001 CoreSpiral; CLAUDE.md §2.7 GATE 0).
+
+Run the goal-setting DIALOGUE before touching STEP 1:
+1. **Ask the human to describe, in their own words, what this corespine is for** — do not draft the goal for them first.
+2. **Shape it to the Goal ground rules:** a goal is a **TARGET** (not the "why"); state the **DO** (positive desired outcome) first, then close with the **DON'T** (the opposite polarity). "Passes the gates" is a MEANS, never the goal.
+3. **Check it SERVES the north star** (FOUND-00001 apex) — every sub-goal inherits from and must serve the platform goal.
+4. **SAVE the defined goal** into the corespine's `goal:` field (STEP 4 registry + manifest §II) and stamp the input `goal-connected`.
+- Goal absent or not agreed → STAY here (loop the dialogue); **do NOT proceed to STEP 1** until the goal is defined, saved, and `goal-connected`.
 
 ### STEP 1 — Existing-First (MANDATORY, I19)
 
@@ -236,3 +247,4 @@ Sonnet runs STEP 1–6 for EACH entry in sequence. All three corespines are crea
 | 2026-07-18 | D-1: corrected size note + §3.6 line count (215→233); D-4: template field Doc-Status→Status | Sonnet (defect fix pass, Opus PE ruling) |
 | 2026-07-18 | CONNECTED — per Governor decree "ratify-with-retro-plan" (ARCH-00395) + Opus PE stamp. I24 protection: earns RATIFIED only on first clean independently-verified run | Opus PE (cisem-opus-pe) |
 | 2026-07-18 | RATIFIED — I24 satisfied: first clean end-to-end run (ARCH-00396 Phase C built CS-CREATION-001 apex manifest via STEP 1–6, Sonnet; Opus-verified clean, run 26). Follow-up: refine §IV template's `Core_spine` convention for a no-parent apex | Opus PE (cisem-opus-pe) |
+| 2026-07-20 | **STEP 0 — GOAL-SETTING added as the mandatory FIRST step** (Governor decree "corespine must begin with a goal setting step... this goal is a must for corespiral as well"). Dialogue → define (DO/DON'T target, serves north star) → SAVE → `goal-connected` before Existing-First. Wires the threshold GATE 0 into the wizard; closes the gap where the wizard started at STEP 1 with goal as a pre-filled field only. §III retitled STEP 0–6. | Opus PE (cisem-opus-pe) |
