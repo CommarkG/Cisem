@@ -166,3 +166,26 @@ sessions:
       - "The harvest gate + register-everything discipline caught its own gaps (this entry exists because the gate fired). Self-audit functioning."
     open_followups: "Resume the DISCUSSION next session (do NOT build) — run IBD-0009 candidates through the cycle (threshold→fit→consensus→stress-test→ratify), starting where the Governor directs."
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+  - date: 2026-07-20
+    compact_window: "persona re-founding + self-improvement engine (A9, RIPL, DoD, cost-routing) + 6 external reviews absorbed"
+    positive:
+      - "VERIFY-SEAM WORKS + is load-bearing: the independent cold reviewer caught 6/6 first-draft Opus artifacts UNSOUND (ARCH-00400 v1/v2, trial-inheritance-overlay) — the single highest-value mechanism; catches plausible-but-wrong before it becomes law."
+      - "6 external platform reviews (R1 Claude/R2 Gemini/R3 GPT/R4 CSPS/R5 CDS/R6 CSP) absorbed via PAE (RAW+PURIFIED, 6-lens); sextuple convergence on the seams; consolidation-conclusions Governor-ratified-as-design-basis (A1-A7 + graph architecture + hardened axiom)."
+      - "Persona re-founded: assistant-frame -> COLLABORATOR (SSOT persona-collaborator.md; L1/L2/L3 dynamic + DEVELOPMENT DISCIPLINE); wired by-reference into 3 agents + 3 skills + PAE + session-start + §1.6. A9 Optimal-Synergy axiom added. DoD gate + RIPL registry live."
+    negative:
+      - problem: "RECURRING (Governor 'shameful'): every turn re-hitting 'oh I forgot to wire / mechanically enforce / push'. Root: definition-of-done defaults to 'produced+committed', and completion-discipline lived in PROSE that must be remembered -> forgotten."
+        prevention: "DEFINITION-OF-DONE gate LIVE (dna/checks/definition-of-done.md SSOT + [DOD] plan-audit check, planted-proven): flags unpushed + enforcement-claims-without-mechanism. Consolidated list referenced not re-derived + persona default. Mechanical class-fix."
+        status: PREVENTION-DONE (DoD gate) + architecture PARKED (BP-0009 Completion & Propagation Layer)
+      - problem: "TIER-INERTIA: did routable mechanical work as Opus; the A9 workflow ran ~21 agents on Opus = 760,585 tokens (should have been Sonnet/Haiku). opus_executor_incidents, named + repeated across the session."
+        prevention: "Cost-aware tier flow wired into persona (Haiku->Sonnet->Opus default); workflow needs Governor permission + token-estimate-BEFORE + cost-AFTER. Demonstrated: DoD + persona builds routed to Sonnet (72k/121k) not Opus."
+        status: PREVENTION-DONE (persona) + mechanical enforcement PARKED (BP-0009)
+      - problem: "A9 first guardrail ('orthogonal facets, never contradict') flawed: too-loose, self-undermining, undecidable (violated I22/I23). First corespine trial (Inheritance-as-overlay) UNSOUND — classification self-contradictory; Inheritance is a KERNEL mechanic."
+        prevention: "A9 guardrail corrected (coherence-law + decidability-honesty) via 8-persona stress-panel; RIPL RI-0001 records the class insight ('asserted global-consistency over open prose is undecidable -> check-in-decidable-language or label ASSERTED'). Inheritance parked as kernel; instance-1 -> CS-PRIORITY-001."
+        status: PREVENTION-DONE + RI-0001 PARTLY-WIRED
+    open_followups:
+      - "FIRST MOVE post-compact: RUN THE CYCLE (dna/queue/BP-0009) — author the Completion & Propagation Layer plan (RIPL-v2 weekly-batch + propagation-network + tier-cycle + workflow-governance) via Haiku-gather->Sonnet-enrich->Opus-consolidate; PLAN not build."
+      - "CS-PRIORITY-001 test-drive (clean domain) through ARCH-00400 -> cold green-gate -> seal."
+      - "2-day deliverable due 2026-07-21: scheduling ability + auto-push backup hardwire."
+      - "Parked HIGH: P7 corespine-as-infrastructure rework (A2 refine + ARCH-00400 Part 1); Inheritance=kernel + scope-expansion; kernel/N4; 70%-token URGENT; knowledge-graph/ARCH-00382; disposition<->status-enum."
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md

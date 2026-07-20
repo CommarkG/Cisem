@@ -274,3 +274,23 @@ From a six-persona synthesis of rigid-vs-context governance (constitutional juri
 - 2026-07-18 run 18: COMPACT STATE v4 — ratification queue executed (Governor "accept all"): I25 debt CLOSED
   (393 RATIFIED / 394 CONNECTED / 395 RATIFIED), ARCH-00392 Phase-0 signed + 6a/6b folded, VOC-00003 LIVE,
   ARCH-00370 RATIFIED-SPEC (honesty correction: harvest not yet wired). ZF+EDGE green. Founding axioms still the keystone.
+
+## COMPACT STATE v7 — 2026-07-20 (SUPERSEDES all above; authoritative resume anchor)
+**FIRST MOVE:** RUN THE CYCLE (dna/queue/BP-0009) — author the "Completion & Propagation Layer" plan (RIPL-v2 weekly-batch + predefined propagation-network + Governor tier-cycle + workflow-governance) via Haiku-gather -> Sonnet-enrich -> Opus-consolidate -> present the PLAN for ratification (do NOT build; nothing without a ratified plan). Then: CS-PRIORITY-001 test-drive; then the 2-day deliverable (scheduling + auto-push backup, due 2026-07-21).
+
+**STATE (2026-07-20):**
+- PERSONA re-founded + LIVE: SSOT `dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md` (assistant-frame->COLLABORATOR; L1/L2/L3 dynamic; CENTER=shared understanding; CORE BALANCE=Lean<->Deep complementary-polarity; DEVELOPMENT DISCIPLINE = DoD + maturation-loop + RIPL + cost-routing + workflow-permission). Wired by-reference into 3 agents + 3 skills + PAE + session-start + §1.6. Artifact 2b872d03.
+- AXIOM A9 Optimal Synergy added (FOUND-00001 + §2.4); guardrail CORRECTED 2026-07-20 (dropped 'orthogonal' -> explicit coherence-law + decidability-honesty; now OBEYS I22/I23) via an 8-persona stress-panel (workflow; 760k tokens).
+- A2 REFRAME registered (a corespine is inheritance INFRASTRUCTURE elements USE, not a container / not a competitor); full rework PARKED (IBD-0017 P7, HIGH).
+- DoD GATE LIVE: `dna/checks/definition-of-done.md` (SSOT) + `[DOD]` plan-audit check (planted-proven) — 'done' = wired+propagated+hooked+pushed+verified OR honest NOT-YET-WIRED. Fixes the recurring 'I forgot to wire/push'.
+- RIPL registry LIVE: `dna/learning-registry/root-insights.yaml` (RI-0001 = A9 class insight). Enforcement mechanism = BP-0009 (NOT yet wired).
+- Prevention BLOCKs LIVE: `dna/checks/pre-commit-blocks.sh` (plan-fields + persona-inheritance, planted-proven) — new agents/skills born referencing the persona.
+- EXTERNAL REVIEW COMPLETE: R1-R6 (IBD-0014/0015/0016/0018/0020/0021, RAW+PURIFIED) -> `dna/external-review/consolidation-conclusions-2026-07-19.md` (Governor-ratified-as-design-basis).
+- ARCH-00400 (governed-creation pipeline + wizard) = v3 SOUND-FOR-TRIAL (cold-verified), PROVISIONAL-ACTIVE-FOR-TRIAL; trial-phase debts N3 (precedence double-counts rule_class) + N4 (CREATION-apex vs kernel) logged.
+- FIRST TRIAL: Inheritance-as-overlay UNSOUND (cold verifier 6/6) -> Inheritance is a KERNEL mechanic; instance-1 reassigned -> CS-PRIORITY-001 (`dna/planning/first-corespine-trial-2026-07-19.md`; green-gate criteria 1-8 Governor-signed).
+
+**OPERATING DEFAULTS NOW (persona-wired):** DoD before any 'done' · Haiku->Sonnet->Opus cost-routing · workflow needs Governor permission + token-estimate-before + cost-after · RIPL on every found-wrong->improved · nothing implemented without a plan · DON'T jump-to-conclusion from one event (accumulate -> weekly pattern-batch) · every park = commit + PUSH (0 unpushed; zero-laptop backup to GitHub CommarkG/Cisem).
+
+**PARKED (register: `dna/parked-and-rejected-register.md` + IBD-0017):** P7 corespine-infrastructure rework · Inheritance=kernel + scope-expansion · kernel/N4 · 70%-token URGENT-investigate · knowledge-graph/ARCH-00382 · disposition<->status-enum · onboarding package (after seal) · §B hardening (PAE claim-check + archive hygiene) · AI-profiling framework (IBD-0019).
+
+**RESUME PATH:** CLAUDE.md -> this file (COMPACT STATE v7) -> `dna/checks/definition-of-done.md` -> `dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md` -> `dna/learning-registry/session-learning-index.yaml` (2026-07-20 harvest) + `root-insights.yaml` -> `dna/queue/BP-0009` -> run `bash dna/checks/plan-audit.sh` (the [ZF] + [DOD] gate).
