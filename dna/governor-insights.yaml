@@ -52,3 +52,17 @@ groups:
 dna_cleanups_flagged:
   - { issue: "A1-A7 references scattered; A8 (2026-07-18) + A9 (2026-07-20) added — sweep 'A1-A7'/'A1-A8' refs to 'A1-A9'", route: "small Sonnet sweep, two-model verify", status: PARKED }
   - { issue: "persona §1.6 (always-loaded mirror) vs persona-collaborator.md (SSOT) — verify zero divergence (borders I10 edge)", route: "reference-integrity check (propagation plan)", status: PARKED }
+
+# ── Harvested 2026-07-20 (Haiku DB research; grouped by tag, pending physical merge into the groups above) ──
+harvested_2026_07_20:
+  - { id: GI-20, group: collaboration_and_governance, insight: "AI is a COLLABORATOR not a replacer — think WITH, not produce-for", home: "WITNESS-00003 v6 + persona", status: RATIFIED }
+  - { id: GI-21, group: collaboration_and_governance, insight: "Sensitive-core work is a DWELLING, not a race — don't efficiency-frame the constitution", home: "WITNESS-00003 v6", status: RATIFIED }
+  - { id: GI-22, group: creation_quality_and_completeness, insight: "Two-root model: validation != creation (orthogonal axes)", home: "quality-ledger run 26 (M2 ruling)", status: RATIFIED }
+  - { id: GI-23, group: design_rigor_and_verification, insight: "Vault-and-Halt — a hard conflict HALTS the platform, never forces a wrong answer", home: "IBD-0012 + consolidation-conclusions", status: RATIFIED-EXTERNAL-VALIDATED }
+  - { id: GI-24, group: design_rigor_and_verification, insight: "Self-verification seam — a cold independent verifier on every 'done'; self-audit != proof", home: "consolidation-conclusions A1", status: RATIFIED-WIRED }
+  - { id: GI-25, group: design_rigor_and_verification, insight: "Genesis block / constitutional anchor — human-ratified machinery-for-amendment beyond AI edit", home: "consolidation-conclusions B", status: RATIFIED }
+  - { id: GI-26, group: consolidation_and_ssot, insight: "Top-level = governing REACH, not element count (transitive-inheritance breadth)", home: "IBD-0012", status: RATIFIED }
+  - { id: GI-27, group: design_rigor_and_verification, insight: "Mechanical triage gates FIRST, FAIL-UP when unsure — gates before scores; never down-classify", home: "consolidation-conclusions A4", status: RATIFIED-EXTERNAL-VALIDATED }
+  - { id: GI-28, group: design_rigor_and_verification, insight: "Provisional must NOT propagate — version-pinned, expiry, rollback; local-only, never normative", home: "consolidation-conclusions A7", status: RATIFIED }
+  - { id: GI-29, group: core_first_resolution, insight: "A 'constant' is only temporarily valid — nothing frozen; challengeable via a dispute protocol + verification/migration gate", home: "IBD-0012 AX-CAND-A", status: AXIOM-CANDIDATE }
+  - { id: GI-30, group: creation_quality_and_completeness, insight: "Seven-day escalation — a 'pending' item past 7 days without a deadline is OVERDUE/INCOMPLETE", home: "ARCH-00360 RULE 5", status: RATIFIED-WIRED }

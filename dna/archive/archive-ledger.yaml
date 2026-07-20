@@ -89,6 +89,47 @@ entries:
     date: "2026-07-19"
     ruled_by: "Opus (provisional — from R3/R6 review; pending Governor fork ruling)"
 
+  # ── Archive-leak closure 2026-07-20 (Haiku actual-output audit found these ruled-out/deferred but unrecorded) ──
+  - id: DEC-0007
+    title: Inheritance modeled as a cross-cutting OVERLAY (first corespine-trial candidate)
+    what: "Treat Inheritance as an overlay facet (like security/privacy) for the first corespine trial via ARCH-00400."
+    disposition: SUPERSEDED
+    replaced_by: "Inheritance reclassified as a KERNEL mechanic (not an overlay); trial instance-1 reassigned to CS-PRIORITY-001."
+    why: "Cold verifier found the overlay classification UNSOUND 6/6 — STEP-0 classification was internally self-contradictory (argued reducible AND irreducible). Inheritance is the kernel's own mechanism, not a domain overlay. Recorded 2026-07-20 to close the archive leak the actual-output audit surfaced."
+    tags: [inheritance, overlay, kernel, corespine-trial, verify-seam]
+    date: "2026-07-20"
+    ruled_by: "Opus (cold verifier; Governor-accepted)"
+
+  - id: DEC-0008
+    title: ARCH-00382 unified-graph-architecture phased MVP (as an immediate build)
+    what: "Proceed now with the unified-graph-architecture plan (ARCH-00382)."
+    disposition: RULED-OUT-TEMPORARY
+    reopen_conditions: "Reopens after ARCH-00392 Phase-1 + VOC-00003 (maturity axis) land; then re-anchor and resume."
+    why: "Deferred pending the context-envelope (ARCH-00392) + maturity-axis foundations it depends on. Recorded 2026-07-20 (archive-leak closure)."
+    tags: [graph-architecture, deferred, dependencies]
+    date: "2026-07-20"
+    ruled_by: "Opus (provisional)"
+
+  - id: DEC-0009
+    title: ai-oversight-layer3 (build vs drop)
+    what: "Build a third AI-oversight layer, or drop it."
+    disposition: RULED-OUT-TEMPORARY
+    reopen_conditions: "Governor supplies the build-or-drop decision + design intent."
+    why: "Awaiting Governor design intent; neither built nor dropped. Long-standing PENDING-GOVERNOR item; recorded 2026-07-20 to stop it floating (archive-leak closure)."
+    tags: [ai-oversight, pending-governor, build-or-drop]
+    date: "2026-07-20"
+    ruled_by: "Opus (provisional)"
+
+  - id: DEC-0010
+    title: ARCH-00280 Q4 template ruling
+    what: "Ruling on the ARCH-00280 open-design-question Q4 (template)."
+    disposition: RULED-OUT-TEMPORARY
+    reopen_conditions: "Re-gate against the context-envelope model after ARCH-00392 Phase-1 completes."
+    why: "Deferred pending ARCH-00392 Phase-1. Long-standing pending item; recorded 2026-07-20 (archive-leak closure)."
+    tags: [open-question, template, deferred]
+    date: "2026-07-20"
+    ruled_by: "Opus (provisional)"
+
 # HIGH-PRIORITY remaining (BP-0008 full execution — NOT done in this SWIFT MVP; needs a plan, blast-bearing):
 #   (1) migrate ARCH-00150 / CS-LOOPS-001 [rejected-idea] entries in (parallel CS-INTAKE-BATCHING, flat-big-file
 #       split, over-atomizing, etc.); (2) the harder SIGNATURE-MATCH check (flag a NEW creation that matches a

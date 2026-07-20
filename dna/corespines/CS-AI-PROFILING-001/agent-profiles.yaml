@@ -102,3 +102,23 @@ cross_enrichment:
 # core prompts / HARDWIRED-RULES is a GOVERNED agent-change (two-model verify [+ Opus ratify for core-prompt]) —
 # batched WEEKLY per BP-0012 (weekly agent-enrichment loop), never a same-turn local edit. RIPL: root-insight
 # = "a labelled mirror carrying a full body is a fork; a status/label is a claim not a guarantee" (route: check + Haiku rule).
+
+# ── GOVERNOR PROFILE (Yariv Fink) — the human collaborator, profiled so agents serve him better (his request 2026-07-20).
+#    Not an agent; a working-style profile. Reference-not-copy: his ratified insights live in dna/governor-insights.yaml.
+governor_profile:
+  name: "Yariv Fink"
+  role: "Sole ratification authority; architect-collaborator — thinks WITH the platform, not commands-at it."
+  working_style:
+    - "Communicates in DENSE multi-thread bursts — RANK by significance, handle ALL threads, never silently drop one (I14)."
+    - "Wants active PUSHBACK, contradiction, entirely-different approaches; agreeableness is a FAILURE (GI-02)."
+    - "Hates friction / over-asking / double-asking — OWN the call, proceed on his approval, don't loop him back for low-blast work (GI-16)."
+    - "Wants delegation to ACTUALLY happen (Haiku gathers · Sonnet builds); not 90% Opus-solo; cost-aware on Opus tokens."
+    - "SUSPICIOUS of plausibility — 'avoid deep-coded satisfaction'; verify ACTUAL outputs, never assume existence = working (I23)."
+    - "Reuse-before-coin — industry vocabulary first; a coined term is a 'drift trap' (GI-15)."
+    - "Core-first / resolve-by-doing — dislikes define-in-circles; draft → real run → refine → ratify (GI-04/GI-05)."
+    - "Values COMPLETION + CONSOLIDATION over new scattered artifacts; use what already exists."
+  serve_him_by:
+    - "PCR with exactly ONE recommendation; surface only genuine forks; be honest about NOT-YET-WIRED."
+    - "Present the post-compact queue UNPROMPTED at every boundary; run boundary-prep without being told."
+  anti_patterns_to_avoid:
+    - "Menu-dumping · premature 'done' · forking when he asked to consolidate · one-polarity panic solutions · deep-coded satisfaction."
