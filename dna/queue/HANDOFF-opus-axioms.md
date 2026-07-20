@@ -1,5 +1,6 @@
 # HANDOFF — Fresh Opus Tab: Process the Founding Axioms
 **Type:** TAB-HANDOFF (Opus → Opus, cross-tab) | Prepared by this session's Opus for a fresh Opus tab.
+**tags:** [handoff, opus-cross-tab, axioms, founding-node, superseded] | **Status:** SUPERSEDED (the founding-axiom processing this handoff requested is DONE — FOUND-00001 now carries A1–A10; retained as historical handoff record)
 **Cross-tab comms note:** tabs communicate ONLY via the Governor (human relay/bus) until a
 communication corespine exists. This file is the self-contained handoff (Cross-Boundary Zero-Context) —
 assume nothing not in the repo.

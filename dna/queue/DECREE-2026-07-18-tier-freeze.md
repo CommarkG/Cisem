@@ -1,6 +1,7 @@
 # DECREE — Tier Freeze (formalize + lift): Infrastructure-First
 **Type:** DECREE (Governor) | **Issued:** 2026-07-18 | **Authority:** Governor (Yariv Fink), sole ratification.
 **Governs:** ARCH-00360 RULE 7 (freezes require a formal decree) + CLAUDE.md §4.
+**tags:** [decree, tier-freeze, infrastructure-first, governor, self-resolved] | **Status:** COMPLETE (self-resolved 2026-07-18 — both conditions met, freeze lifted; retained as the authoritative decree record)
 
 ## The rule
 **Infrastructure-First:** TIER-1 work (solution/feature building, `SOL-*`) was gated until the enforcement

@@ -1,5 +1,6 @@
 # HANDOFF — Fresh Opus Tab: the Communication Corespine (CS-COMMS-001)
 **Type:** TAB-HANDOFF (Opus → Opus, cross-tab) | Prepared by this session's cisem-opus-pe for a fresh Opus tab.
+**tags:** [handoff, opus-cross-tab, cs-comms, communication, parked] | **Status:** PARKED (CS-COMMS-001 design absorbed into §1.7 operating-model + parked; retained as the self-contained comms handoff)
 **Frame (mandatory, ARCH-00350):** open every handoff with "I am… you are…".
 **Cross-tab comms note:** tabs communicate ONLY via the Governor (human bus) until CS-COMMS-001 makes
 it less manual. This file is self-contained (Cross-Boundary Zero-Context) — assume nothing not in the repo.
