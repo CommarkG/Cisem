@@ -588,7 +588,7 @@ metrics:
     note: "a rising REAL out_of_scope_false_pass_rate signals mis-scoped registry entries; a mis-scope = a penumbra case moved to core[] → silently bypasses UNKNOWN routing. mis_scope_detections dropping below its total signals the sweep's own probe logic has degraded — a distinct, unrelated failure mode."
   engines: "1 executable (plan-audit.sh) + 1 routing structure (queue) + 1 sweep (penumbra-sweep.sh)"
   invariant_automation: "8/24 automated (I1,I3,I6,I9,I16,I19,I23,I24 in plan-audit.sh + I13 seed-strip BLOCK; I19/I23/I24 wired+validated 2026-07-18 via planted tests); rest manual"
-  corespines_ratified: "2/14 (CS-THRESHOLD-001, CS-FRONTEND-001) — corrected run 18: CS-MASTER-VALIDATION-001 is DRAFTED-awaiting-decree, NOT ratified"
+  corespines_ratified: "4/14 (CS-THRESHOLD-001, CS-FRONTEND-001, CS-CREATION-001, CS-MASTER-VALIDATION-001) — updated 2026-07-20 (Sonnet review caught stale '2/14'; verified against corespine-registry: 4 status:RATIFIED / 14 top-level entries)"
   honest_wiring_state: "~85% DECLARED, ~10% CONNECTED, ~5% LIVE — specs rich, wiring thin (EXISTS != ACTIVE)"
   checks_refined: 1                        # run 4 improved the gate instead of adding an invariant
   recurrence_count: 0                      # no resolved finding has re-appeared
