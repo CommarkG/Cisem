@@ -511,6 +511,9 @@ done
 # creations (skills/agents/templates/checks/registries) escaped [I9]/[I19]/[TAG-STATUS] and could be born ungoverned.
 bash dna/checks/creation-gate.sh 2>/dev/null
 
+# [DELETION-GUARD] — no collateral deletion (Governor decree 2026-07-21, RI-0010). WARN-only.
+bash dna/checks/deletion-guard.sh 2>/dev/null
+
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.

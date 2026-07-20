@@ -130,7 +130,11 @@
     });
   }
 
-  // ── SEARCH (works on .fi file rows AND .gc grid cards) ─────────────
+  // ── SEARCH (works on .fi file rows, .gc grid cards, AND .tree-node tree
+  // rows — feature-detected via `ul.tree` presence, never a curated page
+  // list; runs on schema/vocabulary/templates/corespines-set + any future
+  // tree page automatically. Governor fix 2026-07-21: search previously did
+  // NOT filter tree content at all — typing did nothing on tree pages.) ────
   function initSearch() {
     var inp = document.getElementById('si');
     var cnt = document.getElementById('cnt');
@@ -138,6 +142,35 @@
     if (!inp) return;
     var items = document.querySelectorAll('.fi, .gc, .cl-item, .tier-card');
     var total = items.length;
+    var treeRoots = document.querySelectorAll('ul.tree'); // 0 on non-tree pages — pure feature-detect
+
+    // Marks one tree-node (post-order): a leaf matches on its own row text;
+    // a branch is kept visible if it matches OR any descendant matches, so
+    // the match's position in the hierarchy stays legible (never orphaned).
+    // Uses inline style (always wins over the .tree-collapsed CSS class) so
+    // a match buried in a collapsed branch is still revealed while searching;
+    // clearing the query below restores the untouched class-driven state.
+    var treeMatchCount = 0;
+    function markTreeNode(li, q) {
+      var row = li.querySelector(':scope > .tree-row');
+      var selfMatch = !!row && row.textContent.toLowerCase().indexOf(q) !== -1;
+      if (selfMatch) treeMatchCount++;
+      var childUl = li.querySelector(':scope > ul.tree-children');
+      var childMatch = false;
+      if (childUl) {
+        Array.prototype.forEach.call(childUl.children, function (childLi) {
+          if (childLi.classList && childLi.classList.contains('tree-node')) {
+            if (markTreeNode(childLi, q)) childMatch = true;
+          }
+        });
+        childUl.style.display = childMatch ? '' : 'none';
+      }
+      var show = selfMatch || childMatch;
+      li.style.display = show ? '' : 'none';
+      return show;
+    }
+    var treeTotal = treeRoots.length ? document.querySelectorAll('.tree-node').length : 0;
+
     function upd() {
       var q = inp.value.toLowerCase().trim();
       var v = 0;
@@ -146,7 +179,22 @@
         el.style.display = show ? '' : 'none';
         if (show) v++;
       });
-      if (cnt) cnt.textContent = q ? v + ' / ' + total : (total ? total + ' items' : '');
+      treeMatchCount = 0;
+      treeRoots.forEach(function (ul) {
+        if (!q) {
+          // restore: clear inline overrides from a prior search; class-driven
+          // tree-collapsed state governs again, exactly as before the search.
+          ul.querySelectorAll('.tree-node').forEach(function (li) { li.style.display = ''; });
+          ul.querySelectorAll('.tree-children').forEach(function (childUl) { childUl.style.display = ''; });
+        } else {
+          Array.prototype.forEach.call(ul.children, function (li) {
+            if (li.classList && li.classList.contains('tree-node')) markTreeNode(li, q);
+          });
+        }
+      });
+      var totalAll = total + treeTotal;
+      if (q && treeTotal) v += treeMatchCount;
+      if (cnt) cnt.textContent = q ? v + ' / ' + totalAll : (totalAll ? totalAll + ' items' : '');
       if (nr)  nr.style.display = (v === 0 && q) ? 'block' : 'none';
     }
     inp.addEventListener('input', upd);
@@ -170,13 +218,16 @@
     });
   }
 
-  // ── ROWS / WINDOW VIEW TOGGLE (auto-injected on group pages with .fi items) ──
+  // ── ROWS / WINDOW VIEW TOGGLE (auto-injected on group pages with .fi items,
+  // AND on tree pages — schema/vocabulary/templates/corespines-set all carry a
+  // "Source Files" .fl/.fi block, so FE-I10 ("group pages with .fi items must
+  // expose the toggle") already covers them. Governor override 2026-07-21: the
+  // toggle must be PRESENT + WORKING on tree pages too — Window view reshapes
+  // the TREE ITSELF (leaves -> bordered cards, branches -> card-section headers,
+  // CSS `body.view-window .tree` / `.tree-children` in style.css), not just the
+  // Source Files list. The prior blanket `.tree` skip was itself the FE-I10/I11
+  // defect (a toggle that should exist, silently suppressed). ──
   function initPageViewToggle() {
-    // Rows/Window is a LIST-view concept (rows <-> card windows). It only injects where it
-    // MEANINGFULLY reshapes the MAIN content. Tree pages (schema/vocabulary/corespines-set)
-    // use collapse, not Rows/Window — a toggle there would be dead, so skip it (fixes the
-    // "Window/Rows does nothing on the tree pages" defect; no dead UI, FE-I11).
-    if (document.querySelector('.tree')) return;
     var items = document.querySelectorAll('.fi');
     if (!items.length) return; // placeholder / help pages — skip
 

@@ -34,6 +34,7 @@ function load(rel) {
   return w;
 }
 function click(w, el) { el.dispatchEvent(new w.window.Event('click', { bubbles: true, cancelable: true })); }
+function fireInput(w, el) { el.dispatchEvent(new w.window.Event('input', { bubbles: true })); }
 
 // ── schema.html — the page the Governor found broken ──
 const w = load('schema.html');
@@ -73,39 +74,145 @@ if (langBtn) {
 
 // ── Rows/Window toggle — FULL ENUMERATION of EVERY page (no sample; RI-0008/RI-0009) ──
 // The recurring defect: the toggle exists on a page but does nothing (no CSS reshapes that
-// page's content). Rule enforced on ALL 25 pages: if the toggle is present it MUST both
+// page's content). Rule enforced on ALL pages: if the toggle is present it MUST both
 // (a) apply+remove the body class AND (b) have real reshapeable content (a container type
 // that carries a body.view-window CSS rule). If it can't reshape, it MUST NOT be present.
 const CSS = fs.readFileSync(path.join(ROOT, 'frontend/css/style.css'), 'utf8');
 // content-container selectors that HAVE a body.view-window reshape rule:
-const RESHAPEABLE = ['.fl', '.fi', '.cl', '.cl-item', '.tier-grid', '.tier-card']
-  .filter(sel => new RegExp('body\\.view-window\\s+' + sel.replace('.', '\\.')).test(CSS));
+const RESHAPEABLE = ['.fl', '.fi', '.cl', '.cl-item', '.tier-grid', '.tier-card', '.tree', '.tree-children']
+  .filter(sel => new RegExp('body\\.view-window\\s+' + sel.replace('.', '\\.') + '\\b').test(CSS));
 ok('view-window CSS defines at least the core reshape rules (.fl/.cl/.tier-grid)',
   ['.fl', '.cl', '.tier-grid'].every(s => RESHAPEABLE.indexOf(s) !== -1));
+ok('view-window CSS defines a TREE reshape rule (leaves -> cards, branches -> headers; ' +
+   'Governor override 2026-07-21 — Rows/Window must be PRESENT + WORKING on tree pages)',
+  ['.tree', '.tree-children'].some(s => RESHAPEABLE.indexOf(s) !== -1));
 
 const PAGES_DIR = path.join(ROOT, 'frontend/pages');
 const ALL_PAGES = fs.readdirSync(PAGES_DIR).filter(f => f.endsWith('.html'));
 ok('enumerated ALL pages (>= 20, not a sample)', ALL_PAGES.length >= 20);
+
+// ── site-wide aggregate floors (Task 2 — anti-collateral-deletion net) ──
+// Not a curated PAGE list (Governor/Opus 2026-07-21: never gate behavior by page name) —
+// a single numeric regression floor computed from CURRENT enumeration. If a future edit to
+// fix element A collaterally deletes element B across the site, these totals drop and FAIL.
+let siteFiTotal = 0, siteTreeNodeTotal = 0, siteToggleCount = 0, siteTreeToggleCount = 0;
+
+function textFor(el) {
+  if (el.classList.contains('tree-node')) {
+    const row = el.querySelector(':scope > .tree-row');
+    return row ? row.textContent : el.textContent;
+  }
+  return el.textContent;
+}
+function countVisible(doc2) {
+  let v = 0;
+  doc2.querySelectorAll('.fi, .gc, .cl-item, .tier-card, .tree-node').forEach(function (el) {
+    if (el.style.display !== 'none') v++;
+  });
+  return v;
+}
+
 ALL_PAGES.forEach(function (page) {
   const wv = load(page);            // load() already asserts no-crash per page
-  const btns = wv.document.querySelectorAll('.vbtn');
+  const doc2 = wv.document;
+
+  // ── ELEMENT-INVENTORY REGRESSION (Task 2) — UNIVERSAL minimums every page must
+  // carry (FE-I3/I4): if a fix to one element collaterally deletes another, this
+  // fails on every page, every run — not a per-page curated list, the SAME rule enumerated.
+  ok(page + ': [inventory] nav present', !!doc2.querySelector('nav'));
+  ok(page + ': [inventory] breadcrumb present', !!doc2.querySelector('.bc'));
+  ok(page + ': [inventory] search input present', !!doc2.querySelector('#si'));
+  ok(page + ': [inventory] theme toggle present', !!doc2.querySelector('.theme-tgl'));
+  ok(page + ': [inventory] language toggle present', !!doc2.querySelector('.lang-tgl'));
+
+  const btns = doc2.querySelectorAll('.vbtn');
+  const win = Array.prototype.find.call(btns, b => /window/i.test(b.textContent));
+  const rows = Array.prototype.find.call(btns, b => /rows/i.test(b.textContent));
+  const fiCount = doc2.querySelectorAll('.fi').length;
+  const treeNodeCount = doc2.querySelectorAll('.tree-node').length;
+  siteFiTotal += fiCount;
+  siteTreeNodeTotal += treeNodeCount;
+
+  // CONDITIONAL minimum, derived from what THIS page actually contains (feature-detected,
+  // never a curated name list — Opus 2026-07-21): any page carrying .fi or tree content
+  // MUST also carry the Rows/Window toggle (FE-I10) — exactly the defect class just fixed
+  // (content present, toggle silently suppressed on tree pages).
+  if (fiCount > 0 || treeNodeCount > 0) {
+    ok(page + ': [inventory] has content (.fi=' + fiCount + ' tree-node=' + treeNodeCount + ') => view toggle present', !!win && !!rows);
+  }
+
   if (btns.length >= 2) {
-    const body = wv.document.body;
-    const win = Array.prototype.find.call(btns, b => /window/i.test(b.textContent));
-    const rows = Array.prototype.find.call(btns, b => /rows/i.test(b.textContent));
     ok(page + ': has both Rows and Window buttons', !!win && !!rows);
-    if (win && rows) {
-      click(wv, win);
-      ok(page + ': Window APPLIES view-window (behavioral)', /view-window/.test(body.className));
-      click(wv, rows);
-      ok(page + ': Rows REMOVES view-window (behavioral)', !/view-window/.test(body.className));
-    }
+  }
+  if (btns.length >= 2 && win && rows) {
+    siteToggleCount++;
+    click(wv, win);
+    ok(page + ': Window APPLIES view-window (behavioral)', /view-window/.test(doc2.body.className));
+    click(wv, rows);
+    ok(page + ': Rows REMOVES view-window (behavioral)', !/view-window/.test(doc2.body.className));
     // NO DEAD TOGGLE: a page carrying the toggle MUST have reshapeable content on it.
-    const hasReshapeable = RESHAPEABLE.some(sel => wv.document.querySelector(sel));
+    const hasReshapeable = RESHAPEABLE.some(sel => doc2.querySelector(sel));
     ok(page + ': toggle present => page has content a view-window rule reshapes (no dead toggle)', hasReshapeable);
   }
-  // pages WITHOUT the toggle (tree pages, placeholders) are fine — nothing to assert.
+
+  // ── TREE PAGES — enumerated via `.tree-node` PRESENCE, never a curated page list
+  // (Governor/Opus 2026-07-21: schema/vocabulary/templates/corespines-set + any future
+  // tree page all get covered automatically by this same feature-detected block). ──
+  if (treeNodeCount > 0) {
+    siteTreeToggleCount++;
+    ok(page + ': [tree] tree page has Rows/Window toggle (un-suppressed)', !!win && !!rows);
+    if (win && rows) {
+      click(wv, win);
+      ok(page + ': [tree] Window view visibly reshapes the tree (view-window applied)', /view-window/.test(doc2.body.className));
+      const leafEl = doc2.querySelector('.tree-row.leaf-row');
+      ok(page + ': [tree] tree still has its leaf rows in Window view (nothing deleted, just reshaped)', !!leafEl);
+      click(wv, rows);
+      ok(page + ': [tree] Rows view reverts (view-window removed)', !/view-window/.test(doc2.body.className));
+    }
+  }
+
+  // ── SEARCH — BEHAVIORAL, enumerated on every page that carries #si (FE-I3: every
+  // page does). Types a real substring from the page's own first item, then a
+  // guaranteed-non-matching string, and asserts the visible-item COUNT actually changes
+  // (Governor/Opus 2026-07-21: search previously did not filter .tree-node at all). ──
+  const si = doc2.getElementById('si');
+  if (si) {
+    const firstItem = doc2.querySelector('.fi, .gc, .cl-item, .tier-card, .tree-node');
+    if (firstItem) {
+      // A real user types a WORD, not raw HTML indentation/newlines — and a single-line
+      // <input> strips embedded newlines on value-assignment anyway, so a needle sliced
+      // straight from textContent (which is whitespace-heavy from HTML formatting) can
+      // silently fail to round-trip. Pull the first alnum token (>=3 chars) instead: a
+      // literal, whitespace-free substring of the item's own raw text, guaranteed to
+      // survive value-assignment and to indexOf-match search.js's un-normalized compare.
+      const rawText = textFor(firstItem) || '';
+      const wordMatch = rawText.match(/[a-z0-9][a-z0-9-]{2,19}/i);
+      const needle = wordMatch ? wordMatch[0].toLowerCase() : '';
+      if (needle.length >= 3) {
+        si.value = 'zzz-no-such-string-xyz-99912-nomatch';
+        fireInput(wv, si);
+        const afterNoMatch = countVisible(doc2);
+        si.value = needle;
+        fireInput(wv, si);
+        const afterMatch = countVisible(doc2);
+        ok(page + ': [search] behaviorally FILTERS (non-matching query -> 0 visible)', afterNoMatch === 0);
+        ok(page + ': [search] behaviorally MATCHES (real substring -> >=1 visible)', afterMatch >= 1);
+        ok(page + ': [search] visible count actually changes between queries (not a no-op)', afterMatch !== afterNoMatch);
+        si.value = '';
+        fireInput(wv, si);
+      }
+    }
+  }
 });
+
+console.log('  site totals — .fi=' + siteFiTotal + ' tree-node=' + siteTreeNodeTotal +
+  ' pages-with-toggle=' + siteToggleCount + ' tree-pages=' + siteTreeToggleCount);
+// Regression floors: numeric, computed from the current enumerated state — NOT a page-name
+// list. A future edit that collaterally deletes content across the site drops these below floor.
+ok('[floor] site-wide .fi total >= 60 (anti-deletion floor)', siteFiTotal >= 60);
+ok('[floor] site-wide tree-node total >= 250 (anti-deletion floor)', siteTreeNodeTotal >= 250);
+ok('[floor] at least 4 pages carry a working tree (schema/vocabulary/templates/corespines-set class)', siteTreeToggleCount >= 4);
+ok('[floor] at least 10 pages carry the Rows/Window toggle', siteToggleCount >= 10);
 
 console.log('CISEM FRONTEND FUNCTIONAL CHECK');
 console.log('  ' + pass + ' pass, ' + fail + ' fail');

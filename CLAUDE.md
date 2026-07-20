@@ -224,6 +224,32 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     verification (the exact trap CISEM kills) | VERIFY: did the reply name the prevention + route it, and report the
     whole board honestly? | APPLIES_TO: all tiers (Opus/Sonnet/Haiku) — every turn in which an error, gap, or problem is noticed]]
 
+18. GLOBAL-VIEW · NO-COLLATERAL-DELETION · WIRE-DON'T-DOCUMENT (ALL tiers — Governor decree 2026-07-21)
+    — three permanent hardwirings born from the recurring failures (RI-0010), binding every model in CISEM:
+    **(A) NO COLLATERAL DELETION — 3 standing preventions.** AI's chronic bad habit is deleting element B while
+    "fixing" element A. It may NEVER happen. Enforced by THREE mechanisms, not one: **(1)** `dna/checks/deletion-guard.sh`
+    (wired into plan-audit) flags any file with a large NET line loss vs HEAD — a silent deletion is surfaced before
+    commit and must be justified or reverted; **(2)** the frontend **element-inventory regression** in
+    `functional-check.mjs` — a page may never lose interactive elements (a drop FAILS the check); **(3)** **REVERT-NOT-REPAIR
+    + atomic scoped commits** — when an edit breaks or leaves unverified/broken state, REVERT to last-verified-good rather
+    than patch forward (as done with the crashed agent); stage SPECIFIC files (§1.7), one concern per commit, so any bad
+    change is isolated and revertible. **Always verify the WHOLE after touching a part** (enumerate-all check), never just
+    the element you touched.
+    **(B) GLOBAL-VIEW, NOT NARROW-SCOPE — 2 permanent ways.** "One narrow scope at a time" is the OPPOSITE of CISEM's job.
+    **(1) UNIVERSAL-BY-DEFAULT:** every mechanical check ENUMERATES its whole class by construction (`find`/readdir all,
+    not a curated sample or one file-type) — a gate declared for "everything" (A5) must fire on everything, not the first
+    scope it started in (this is exactly what let 22 files be born ungoverned and the toggle die on unaudited pages).
+    **(2) CLASS-COMPLETENESS:** when you build or fix anything, ask "what is the CLASS, and does the mechanism cover ALL of
+    it?" — and STATE the coverage. A fix that covers one instance is incomplete until the class is covered (ties Principle 17
+    DEFECT→CLASS-AUDIT). Prefer widening an existing universal gate over adding another narrow one.
+    **(C) WIRE, DON'T DOCUMENT — end plausibility-completion for all models.** A thing is "hardwired / wired / enforced /
+    done" ONLY if a RUNNING mechanism proves it (a check/hook/test + its output). Writing ABOUT a mechanism is NOT building
+    it (documentation-as-progress). Any such claim MUST cite the mechanism (file + how it runs); an unproven claim is stated
+    **NOT-YET-WIRED:<reason>**. Mechanically backstopped by `[I23]` (activation claims without a mechanism on disk) — extend,
+    never weaken it. **MANDATORY PREVENTION (reinforces Principle 17):** you may not report an error/gap/problem WITHOUT
+    stating its class-level PREVENTION on the same turn. Report-without-prevention is an incomplete report.
+    [[CORE-SEED | MUST: (A) never delete-as-collateral — 3 mechanisms guard it, verify the WHOLE after touching a part, revert-not-repair; (B) every check enumerates its whole CLASS (universal-by-default), state class-coverage; (C) "wired/done" only with a running mechanism cited, else NOT-YET-WIRED, and every reported problem carries its prevention | WHY: collateral deletion, narrow-scope enforcement, and documentation-without-wiring are the three failures that recurred most | VERIFY: did the change delete nothing unintended (deletion-guard + inventory clean), cover the whole class, and cite a running mechanism for every "done"? | APPLIES_TO: all tiers (Opus/Sonnet/Haiku) — every creation, fix, check, and report]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A10) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).

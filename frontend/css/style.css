@@ -212,6 +212,46 @@ ul.tree, .tree ul { list-style: none; }
   .tree-row { min-height: 44px; }
 }
 
+/* ── WINDOW VIEW — TREE PAGES (schema/vocabulary/templates/corespines-set, FE-I10/FE-I11) ──
+   Rows view (default, unchanged above): the indented collapsible VS-Code-explorer tree.
+   Window view (body.view-window): the SAME tree data reshaped — leaf rows become bordered
+   cards in a grid; branch rows become full-width card-section headers (still readable as
+   hierarchy, just windowed). `.tree-node` goes `display:contents` so its row + any nested
+   `.tree-children` become direct grid items of the enclosing tree/tree-children grid. */
+body.view-window .tree,
+body.view-window .tree-children {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+body.view-window .tree-children.tree-collapsed { display: none; } /* keep collapse working in window view too */
+body.view-window .tree-node { display: contents; }
+body.view-window .tree-node > ul.tree-children,
+body.view-window .tree-node > .rt-panel { grid-column: 1 / -1; }
+body.view-window .tree-row.leaf-row {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--nav);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 10px 12px;
+  min-height: 64px;
+  transition: border-color .12s;
+}
+body.view-window .tree-row.leaf-row:hover { border-color: var(--accent); }
+body.view-window .tree-row.branch-row {
+  grid-column: 1 / -1;
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0;
+  padding: 8px 6px;
+  background: transparent;
+}
+body.view-window .tree-toggle { display: none; } /* +/- collapse control reads as noise once rows are cards */
+
 /* ── PHASE 2 — TREE ROW EDITOR (schema/vocabulary/corespines-set; CS-FRONTEND-001 FE-I2 single-JS) ── */
 .rt-tools { display: inline-flex; align-items: center; gap: 3px; margin-left: auto; opacity: 0; transition: opacity .12s; flex-shrink: 0; }
 .tree-row:hover .rt-tools, .tree-row:focus-within .rt-tools { opacity: 1; }
