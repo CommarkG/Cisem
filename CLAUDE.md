@@ -250,6 +250,21 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     stating its class-level PREVENTION on the same turn. Report-without-prevention is an incomplete report.
     [[CORE-SEED | MUST: (A) never delete-as-collateral — 3 mechanisms guard it, verify the WHOLE after touching a part, revert-not-repair; (B) every check enumerates its whole CLASS (universal-by-default), state class-coverage; (C) "wired/done" only with a running mechanism cited, else NOT-YET-WIRED, and every reported problem carries its prevention | WHY: collateral deletion, narrow-scope enforcement, and documentation-without-wiring are the three failures that recurred most | VERIFY: did the change delete nothing unintended (deletion-guard + inventory clean), cover the whole class, and cite a running mechanism for every "done"? | APPLIES_TO: all tiers (Opus/Sonnet/Haiku) — every creation, fix, check, and report]]
 
+19. NOISE-VS-SIGNAL — keep the signal verbatim, strip the noise (ALL tiers — Governor decree 2026-07-21)
+    — at every SAVE / PERSIST / SUMMARIZE / HARVEST point, first SEPARATE the two, then act on the difference:
+    **NOISE** = mechanical/transient matter with no durable value — tool_use/tool_result records, Bash IN/OUT, file
+    dumps, command echoes, boilerplate, and the AI's own restatements/acknowledgements. **SIGNAL** = the durable value —
+    the Governor's intent + words, decisions, reasoning, nuances, novel content, the actual dialogue. **Rule: keep ALL the
+    SIGNAL verbatim (never a lossy summary), and DROP the noise entirely (never a huge noisy blob).** Both failure modes
+    are the same root — not discerning signal from noise (this session: a 14MB raw dump vs a 441KB dialogue-only snapshot;
+    and summarized-saves that threw away the reasoning). MECHANIZE the discernment where possible (e.g. `save-raw-activity.sh`
+    filters transcript → dialogue-only via node); make it the behavioral default everywhere else. Ties Principle 17
+    (full-fidelity of fruits) + A10 (fruits captured richly, routine merely indexed) + RI-0011 (the summarization reflex).
+    [[CORE-SEED | MUST: at every save/persist/summarize, separate SIGNAL (intent/decisions/reasoning/verbatim dialogue) from
+    NOISE (tool/bash/dumps/boilerplate/restatement); keep signal verbatim, drop noise; never a lossy summary, never a noisy blob |
+    WHY: both throwing-away-value and saving-noise stem from failing to discern the two — the recurring persistence failure |
+    VERIFY: does the saved artifact hold the full signal and none of the noise? | APPLIES_TO: all tiers — every save/harvest/summarize/snapshot]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A10) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).
