@@ -57,7 +57,7 @@ Last_verified: 2026-07-18
 
 ---
 
-## §IV Invariants (FE-I1 – FE-I10)
+## §IV Invariants (FE-I1 – FE-I11)
 
 **FE-I1 Single stylesheet.** Every page must `<link>` only `css/style.css`. No inline `style=""` attributes, no page-specific CSS files.
 
@@ -78,6 +78,8 @@ Last_verified: 2026-07-18
 **FE-I9 Collapsible sections.** `.sh` section headers on group pages must have JS-driven collapse/expand (initCollapse() in search.js). `.sh` without a following `.fl` is exempt.
 
 **FE-I10 Rows / Window view toggle.** Group pages with `.fi` file items must expose a Rows/Window view toggle. This is auto-injected by `initPageViewToggle()` in search.js — no manual HTML required.
+
+**FE-I11 Functional completion — BEHAVIOR, not presence (Governor decree 2026-07-20).** Every interactive element on every page (toggles, collapse, theme/lang switches, back-office tools) must be verified to actually WORK by a BEHAVIORAL test — a real click/action that ASSERTS the resulting state change — NOT merely "a listener is wired" (presence ≠ behavior, RI-0007). A page is not DONE until `node frontend/tests/functional-check.mjs` passes for the elements it carries. No dead UI: an element that exists but does nothing is a ZF-class defect, fixed or removed. This is the frontend arm of Principle 17's presence≠behavior rule; the jsdom gate (`frontend/tests/functional-check.mjs`) is its mechanism. *Honest wiring note:* the gate requires `jsdom` (`npm install` in `frontend/tests/`); it is a runnable+documented gate, pre-commit auto-wiring is a disclosed follow-on (needs node+jsdom in the hook environment).
 
 ---
 

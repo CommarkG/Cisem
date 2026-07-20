@@ -213,11 +213,13 @@
     document.querySelectorAll('.tree-row.branch-row').forEach(function (row) {
       row.setAttribute('tabindex', '0');
       row.setAttribute('role', 'button');
-      var kids = row.nextElementSibling;
+      // Robust child lookup: the editor inserts a .rt-panel after the row, so
+      // nextElementSibling is unreliable — always find the child <ul> via the parent <li>.
+      var kids = row.parentElement && row.parentElement.querySelector(':scope > ul.tree-children');
       row.setAttribute('aria-expanded', String(kids ? !kids.classList.contains('tree-collapsed') : false));
       function toggle() {
-        var children = row.nextElementSibling;
-        if (!children || !children.classList.contains('tree-children')) return;
+        var children = row.parentElement && row.parentElement.querySelector(':scope > ul.tree-children');
+        if (!children) return;
         var collapsed = children.classList.toggle('tree-collapsed');
         var tgl = row.querySelector('.tree-toggle');
         if (tgl) tgl.textContent = collapsed ? '+' : '−'; // − (minus)

@@ -204,7 +204,10 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     `dna/learning-registry/root-insights.yaml` — the ONE durable RIPL store; never fork a second root-insights file.) **HONEST-REPORTING sub-rule
     (born from the "ZF green" over-claim, 2026-07-20):** report the FULL check board, never present a SUBSET pass
     (e.g. the ZF-9 invariants) as a FULL-board pass; drive WARN findings to zero or EXPLICITLY route them — "green"
-    means the whole board is green, stated honestly.
+    means the whole board is green, stated honestly. **PRESENCE ≠ BEHAVIOR (born from the frontend "verified by
+    code" miss, 2026-07-20):** "a listener is wired / a field exists / a file is present" does NOT prove the thing
+    WORKS. Verify the BEHAVIOR — actually click/run and ASSERT the state change, especially for UI. A page or element
+    is not "done" until a BEHAVIORAL test passes (frontend: `frontend/tests/functional-check.mjs`, the jsdom gate).
     [[CORE-SEED | MUST: on every noticed error/gap/problem, STATE the class-level prevention on that turn AND route it
     to the weekly-prevention registry; report the FULL check board, never a subset-pass as a full-pass | WHY: local
     patches let the CLASS recur (the gap-creation engine); subset-passes dressed as full-passes are plausibility-over-
