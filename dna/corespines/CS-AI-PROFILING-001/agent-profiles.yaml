@@ -1,0 +1,83 @@
+# CISEM Agent Living-Profiles — the per-agent improvement store (CS-AI-PROFILING-001)
+# Governed by: CS-AI-PROFILING-001 (persona-collaborator.md § DEVELOPMENT DISCIPLINE "improve-and-preserve")
+# Status: PROVISIONAL-ACTIVE (first data point 2026-07-20) | tags: [ai-profiling, living-profile, monotonic, on-disk]
+#
+# WHY (Governor 2026-07-20): AI engines are UNSTABLE — this cycle's competence may not repeat next cycle.
+# So each agent's strengths / gaps / accreted-checklist-items live HERE, on disk, MONOTONIC (append-only, only grows).
+# Improvement is TWO-LEVEL (Governor): (1) CHECKLIST items = mechanical, hardcoded "find what was found before";
+# (2) CORE-PROMPT pointers = harness the agent toward the direction its DEFAULTS miss (permanent, not a local fix).
+# Cross-enrich: what ONE agent catches on a shared task becomes a standing checklist item for the OTHERS.
+# Profiling is by APPROACH, not sophistication (Governor): same task, different tier → compare what each catches.
+#
+# LEVELS an item can be wired at:
+#   checklist  -> a mechanical rule added to the agent's HARDWIRED-RULES (like Haiku RULE 1-7). Governed: two-model verify.
+#   core-prompt-> a pointer added to the agent's core prompt that redirects its default attention. Governed: two-model verify + Opus ratify.
+#   NOT-YET-WIRED until the governed change lands; captured here first (this store is the accretion buffer).
+
+agents:
+
+  cisem-haiku:
+    tier: gathering
+    approach_signature: "breadth + evidence-density; exhaustive enumeration; run-number/line tracing; correctly de-escalates false-duplications (citation-chains, layered-enforcement)."
+    strengths:
+      - id: HAI-S1
+        observed: 2026-07-20
+        task: "shared platform duplication/contradiction/consolidation audit (vs Sonnet, same prompt)"
+        strength: "23 findings across 6 categories, each cited to file:line + quality-ledger run; recognized that most 'duplications' are intentional distributed governance (A8 citation-chains) and that overlapping audits are LAYERED enforcement, not redundancy."
+    gaps:
+      - id: HAI-G1
+        observed: 2026-07-20
+        task: "same shared audit"
+        gap: "TRUSTED the 'MIRROR — may not diverge (I10)' LABEL at face value — concluded 'NO VIOLATION' for the axiom + doctrine mirrors. Did not see that a mirror carrying a FULL PROSE BODY (not a pointer) is a structural fork-in-waiting regardless of the label. Missed the label-vs-structure gap that Sonnet caught (D-1/D-2)."
+        cross_source: cisem-sonnet
+        proposed_item: "MIRROR-IS-NOT-A-POINTER: when a file is labelled a mirror of an SSOT, measure whether it carries a full prose body or a pointer. A full-body 'mirror' = drift risk → flag it EVEN IF the label says 'may not diverge'. A label is a claim, not a guarantee (extends 'NEVER trust a status field' to 'never trust a mirror label')."
+        wire_level: checklist
+        status: NOT-YET-WIRED
+
+  cisem-sonnet:
+    tier: structuring
+    approach_signature: "structural + semantic judgment; reads INTENT and RISK under the surface; asks 'what does this become over time?' — catches label-vs-reality and silent-drift gaps."
+    strengths:
+      - id: SON-S1
+        observed: 2026-07-20
+        task: "shared platform audit (vs Haiku, same prompt)"
+        strength: "saw that CLAUDE.md §2.4 (axioms) and §1.6 (persona) 'mirrors' are FULL COPIES, not pointers — 'functional mirror slides toward functional fork; drift is a near-certainty over time' (D-1/D-2). Also caught D-3: 'plan' defined in TWO registries with no formal mirror relationship (silent-drift risk). Reads the delicate hidden layer — intent over label."
+    gaps:
+      - id: SON-G1
+        observed: 2026-07-20
+        task: "same shared audit"
+        gap: "lower evidence-DENSITY than Haiku on the shared task — fewer findings enumerated, less systematic run-number/line tracing across the full dna/ tree (report truncated, so this is PROVISIONAL — confirm on next paired run)."
+        cross_source: cisem-haiku
+        proposed_item: "EVIDENCE-DENSITY SWEEP: before concluding an audit, trace every finding to file:line AND the quality-ledger run that created/last-touched it, and enumerate EXHAUSTIVELY across the whole tree (Haiku's breadth discipline) — not just the high-signal few."
+        wire_level: checklist
+        status: NOT-YET-WIRED
+        confidence: provisional  # Sonnet report was truncated; re-confirm on next paired run
+
+  cisem-opus-pe:
+    tier: judge
+    approach_signature: "adversarial verification, default-refute; truth-field authority; class-extraction (RIPL)."
+    strengths: []
+    gaps: []
+
+  cisem-fable:
+    tier: mentor
+    approach_signature: "root-principle / long-horizon; permanent·stable·scalable lens; Lean⇄Deep polarity."
+    strengths: []
+    gaps: []
+    note: "created 2026-07-20; no paired-run data yet."
+
+# CROSS-ENRICHMENT LEDGER (what one agent's catch becomes for the others) — the mechanical loop's output:
+cross_enrichment:
+  - date: 2026-07-20
+    source_catch: SON-S1 (Sonnet: mirror-is-a-full-copy)
+    routed_to: cisem-haiku
+    as_item: HAI-G1.proposed_item (MIRROR-IS-NOT-A-POINTER checklist rule)
+  - date: 2026-07-20
+    source_catch: HAI-S1 (Haiku: evidence-density + breadth)
+    routed_to: cisem-sonnet
+    as_item: SON-G1.proposed_item (EVIDENCE-DENSITY SWEEP checklist rule)
+
+# WIRING NOTE: these proposed_items are the ACCRETION BUFFER. Promoting them into the agents' actual
+# core prompts / HARDWIRED-RULES is a GOVERNED agent-change (two-model verify [+ Opus ratify for core-prompt]) —
+# batched WEEKLY per BP-0012 (weekly agent-enrichment loop), never a same-turn local edit. RIPL: root-insight
+# = "a labelled mirror carrying a full body is a fork; a status/label is a claim not a guarantee" (route: check + Haiku rule).
