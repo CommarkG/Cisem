@@ -2,7 +2,7 @@
 // not listener-presence. Catches the class of bug where a listener is wired but does nothing
 // (e.g. collapse toggle bailing because a panel broke nextElementSibling). Run: node functional-check.mjs
 // Governed by CS-FRONTEND-001; feeds the web-page completion learning loop (Principle 17 / RI-0007).
-import { JSDOM } from 'jsdom';
+import { JSDOM, VirtualConsole } from 'jsdom';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,13 +17,20 @@ function ok(name, cond) { if (cond) { pass++; } else { fail++; fails.push(name);
 
 function load(rel) {
   const html = fs.readFileSync(path.join(ROOT, 'frontend/pages', rel), 'utf8');
+  // Capture ANY uncaught error during init (jsdom routes listener exceptions to jsdomError).
+  // A crash on load must FAIL the check — it can no longer hide behind other passing assertions (RI-0008).
+  const loadErrors = [];
+  const vc = new VirtualConsole();
+  vc.on('jsdomError', e => loadErrors.push((e && e.message) || String(e)));
   const dom = new JSDOM(html, { runScripts: 'outside-only', pretendToBeVisual: true,
-    url: 'http://localhost/frontend/pages/' + rel });
+    url: 'http://localhost/frontend/pages/' + rel, virtualConsole: vc });
   const w = dom.window;
   w.matchMedia = w.matchMedia || function () { return { matches: false, addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {} }; };
   w.print = w.print || function () {};
   w.eval(JS);   // registers a DOMContentLoaded listener (jsdom stays in 'loading')
   w.document.dispatchEvent(new w.Event('DOMContentLoaded', { bubbles: true }));  // fire init()
+  w.__loadErrors = loadErrors;
+  ok(rel + ': loads with NO uncaught error (init did not crash)', loadErrors.length === 0);
   return w;
 }
 function click(w, el) { el.dispatchEvent(new w.window.Event('click', { bubbles: true, cancelable: true })); }
@@ -64,16 +71,32 @@ if (langBtn) {
   ok('language toggle flips dir', (doc.documentElement.getAttribute('dir') || 'ltr') !== d0);
 }
 
-// ── a content page (Rows/Window toggle must actually reshape, not be dead) ──
-const w2 = load('principles.html');
-const viewBtns = w2.document.querySelectorAll('.vbtn');
-ok('principles: Rows/Window view buttons exist', viewBtns.length >= 2);
-if (viewBtns.length >= 2) {
-  const body = w2.document.body;
-  const win = Array.prototype.find.call(viewBtns, b => /window/i.test(b.textContent));
-  if (win) { click(w2, win); ok('principles: Window view applies a body class (behavioral)', /view-window/.test(body.className)); }
-  else ok('principles: a Window view button is labelled', false);
-}
+// ── Rows/Window toggle — CLASS-AUDIT across representative pages (not one sample) ──
+// The Governor found it dead on agents.html though it "passed" on principles.html. Test BOTH,
+// and assert the toggle both applies AND removes the body class (full behavior), on each.
+['principles.html', 'agents.html', 'protocols.html'].forEach(function (page) {
+  const wv = load(page);
+  const btns = wv.document.querySelectorAll('.vbtn');
+  ok(page + ': Rows/Window buttons injected', btns.length >= 2);
+  if (btns.length >= 2) {
+    const body = wv.document.body;
+    const win = Array.prototype.find.call(btns, b => /window/i.test(b.textContent));
+    const rows = Array.prototype.find.call(btns, b => /rows/i.test(b.textContent));
+    if (win && rows) {
+      click(wv, win);
+      ok(page + ': Window view APPLIES view-window (behavioral)', /view-window/.test(body.className));
+      click(wv, rows);
+      ok(page + ': Rows view REMOVES view-window (behavioral)', !/view-window/.test(body.className));
+    } else ok(page + ': both Rows and Window buttons labelled', false);
+  }
+});
+// CSS coverage audit: every content-container type present must have a Window-view rule
+// (else the toggle applies the class but nothing visibly reshapes — the agents.html defect).
+const CSS = fs.readFileSync(path.join(ROOT, 'frontend/css/style.css'), 'utf8');
+['.fl', '.cl', '.tier-grid'].forEach(function (sel) {
+  ok('view-window CSS covers ' + sel + ' (visible reshape, not just body class)',
+    new RegExp('body\\.view-window\\s+' + sel.replace('.', '\\.')).test(CSS));
+});
 
 console.log('CISEM FRONTEND FUNCTIONAL CHECK');
 console.log('  ' + pass + ' pass, ' + fail + ' fail');

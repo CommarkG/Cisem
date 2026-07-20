@@ -162,7 +162,11 @@ ul.cl { list-style: none; }
 .cl-badge.declared { background: rgba(139,148,158,.1); border: 1px solid var(--border); color: var(--muted); }
 
 /* Tier cards (agents page) */
-.tier-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; margin-bottom: 20px; }
+/* Rows view (default): stacked single column — consistent with .fi/.cl list default.
+   Window view (body.view-window): the multi-column card grid. So the Rows/Window toggle
+   VISIBLY reshapes tier-cards too (fixes the "toggle does nothing on agents.html" defect). */
+.tier-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
+body.view-window .tier-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
 .tier-card { background: var(--nav); border: 1px solid var(--border); border-radius: 6px; padding: 16px; }
 .tier-model { font-size: 10px; font-family: var(--mono); color: var(--muted); margin-bottom: 4px; }
 .tier-name { color: var(--accent); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
@@ -225,6 +229,27 @@ ul.tree, .tree ul { list-style: none; }
 .rt-upload-chip { display: inline-block; background: var(--nav); border: 1px solid var(--border); border-radius: 3px; font-size: 10px; padding: 1px 6px; margin: 2px 4px 0 0; color: var(--muted); }
 .tree-badge.added { background: rgba(63,185,80,.15); border: 1px solid rgba(63,185,80,.4); color: #3fb950; }
 .cs-export-btn { margin-left: auto; }
+
+/* ── doc/created + lm/modified meta (enhancement 2) ── */
+.rt-meta { color: var(--muted); font-size: 9px; font-family: var(--mono); margin-left: 6px; opacity: .65; flex-shrink: 0; }
+
+/* ── sort control (enhancement 3) ── */
+.rt-sort-sel { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; padding: 2px 3px; max-width: 110px; }
+
+/* ── upload chip remove control (enhancement 4a) ── */
+.rt-chip-x { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 10px; margin-left: 4px; padding: 0 2px; line-height: 1; }
+.rt-chip-x:hover { color: #f85149; }
+
+/* ── multi-line comment text + attachments (enhancement 5) ── */
+.rt-c-text { font-family: inherit; white-space: pre-wrap; word-break: break-word; margin: 2px 0; font-size: 11px; color: var(--muted); }
+.rt-c-files { margin-top: 2px; }
+
+/* ── comment composer (enhancement 5) ── */
+.rt-composer { margin-bottom: 6px; }
+.rt-composer-text { width: 100%; min-height: 48px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-size: 12px; font-family: inherit; padding: 4px 6px; box-sizing: border-box; resize: vertical; }
+.rt-composer-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
+.rt-composer-file { font-size: 10px; color: var(--muted); max-width: 160px; }
+.rt-composer-chips { margin-top: 4px; }
 
 /* PRINT — scoped single-row / single-group export (window.print(), Phase 2) */
 #print-stage { display: none; }
