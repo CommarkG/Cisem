@@ -1,4 +1,5 @@
 # Inheritance Overlay — FIRST CORESPINE TRIAL (candidate)
+tags: [trial, inheritance, overlay, archive-candidate, governance]
 **Status:** DRAFT-UNSOUND (cold verifier 6/6 criteria FAIL, 2026-07-20; NOT active — rollback absent per F6). Parked pending rethink (Inheritance → kernel mechanic; pick a clean domain as instance-1). See GREEN-GATE STATUS below.
 **Governed by:** CS-CREATION-001 (built via the ARCH-00400 wizard flow) | **Kind:** cross-cutting OVERLAY (applies across ALL corespines; not a domain trunk)
 **Independent Verifier:** cisem-opus-pe (cold, default-refute) — green-gate criteria 1–7 (first-corespine-trial-2026-07-20.md)

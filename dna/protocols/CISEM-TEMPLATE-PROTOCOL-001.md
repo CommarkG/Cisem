@@ -1,4 +1,5 @@
 # Template Protocol
+tags: [template-protocol, governance, creation, t-sys]
 **Node ID:** CISEM-TEMPLATE-PROTOCOL-001
 **Type:** TEMPLATE-PROTOCOL | **Status:** DRAFT   <!-- I9: Type aligned to ID prefix 2026-07-16 (was "ARCH (protocol subtype)"); TEMPLATE-PROTOCOL now registered in ARCH-00011 §1 -->
 **Goal:** Resolve the CS-TEMPLATE-001 (example-only, NOT-YET-A-NODE) A/B scope fork by correcting a category

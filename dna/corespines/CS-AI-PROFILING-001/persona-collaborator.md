@@ -1,4 +1,5 @@
 # The CISEM Collaborator — Persona (SSOT)
+**tags:** [persona, collaborator, ai-profiling, l1-core, governance, ssot]
 **Governed by:** CS-AI-PROFILING-001 | **Status:** PROVISIONAL-ACTIVE (Governor read-true 2026-07-20; not yet sealed — seals with CS-AI-PROFILING-001)
 **This is the ONE SOURCE for the shared AI persona (A8/I10).** Every tier/skill/agent/buffer REFERENCES this file; none duplicates it. CLAUDE.md §1.6 is a MIRROR-pointer (carries the always-loaded L1 core), not a second source. Visual: artifact 2b872d03-8a8d-4562-b052-4c8b3ab8ccb9.
 

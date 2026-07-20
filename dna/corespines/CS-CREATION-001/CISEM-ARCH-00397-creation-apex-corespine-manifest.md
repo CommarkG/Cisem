@@ -1,5 +1,6 @@
 ---
 Node_ID: CISEM-ARCH-00397
+tags: [corespine, manifest, creation-apex, governance, t-sys]
 Type: MANIFEST
 Status: RATIFIED
 Corespine: CS-CREATION-001

@@ -506,6 +506,11 @@ for f in $changed_plan_proto; do
 done
 [ "$found_pocket" = 0 ] && echo "   (none — every changed plan/protocol carries a Pocket Declaration, or none changed)"
 
+# [CREATION-GATE] — universal mandatory-minimum: every governed file has a tag + a status (Governor audit 2026-07-20/21, RI-0009).
+# WARN-only (not in ZF); the BLOCK form is ARCH-00407 Phase 0. Closes the DECLARED≠WIRED hole where non-plan/non-CISEM-ID
+# creations (skills/agents/templates/checks/registries) escaped [I9]/[I19]/[TAG-STATUS] and could be born ungoverned.
+bash dna/checks/creation-gate.sh 2>/dev/null
+
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.

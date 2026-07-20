@@ -1,4 +1,5 @@
 # Schema Placement Engine — T-SYS / T-DOM First Real Content
+tags: [schema, placement, engine, governance, t-sys]
 **Node ID:** CISEM-SCHEMA-00001
 **Type:** SCHEMA | **Status:** DRAFT   <!-- I9: Type aligned to ID prefix 2026-07-16 (was ARCH); SCHEMA now registered in ARCH-00011 §1 -->
 **Goal:** Give T-SYS/T-DOM actual content instead of being a forward reference

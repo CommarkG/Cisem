@@ -367,6 +367,15 @@ Freestyle governance without a declared pocket is a violation.
 ### 3.4 False Assumption Gate (Standalone Test) — identity, position, and
 references all resolve or are flagged NOT YET A NODE; schema-compliant.
 ### 3.5 Naming & Index-Extension — per `dna/protocols/CISEM-ARCH-00011-naming-numbering-policy.md`.
+### 3.5b UNIVERSAL CREATION GATE — tag + status on EVERY governed file (Governor audit decree 2026-07-21)
+A5 says EVERYTHING is created via hardcoded protocol — but the mechanical checks were wired NARROW (naming [I9] only
+`CISEM-{TYPE}-{SEQ}` nodes; Existing-First [I19] + [TAG-STATUS] only plans), so skills, agents, templates, checks,
+registries, and ad-hoc files were being born UNGOVERNED (22 found in the audit, incl. the agents/skills/wizard). The
+MANDATORY MINIMUM on ANY governed creation (not just plans): a **`tags:` line + a `Status:` line** — enforced mechanically
+by **`dna/checks/creation-gate.sh`** (find-based, catches untracked NEW files; wired into `plan-audit.sh`, WARN now, BLOCK
+via ARCH-00407 Phase 0). Fix at creation, never after (RI-0009). Existing-First/pocket/naming enforcement beyond plans is
+the follow-on; vocabulary/status-VALIDITY (statuses are context-scoped across node/planning/archive/root-insights enums)
+needs the enum-reconciliation first.
 ### 3.6 Size Gate — 3,500 words / 200 lines; triggers mini-tree split, never "exceed and flag."
 ### 3.7 THE CREATION TRIAD (NEW, MANDATORY) — hardcoding + AI pocket + AI oversight, wired together
 Every creation demonstrates ALL THREE, as ONE gate, and feeds the improvement loop (I18):

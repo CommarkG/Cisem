@@ -16,6 +16,7 @@
 - **cal_reference:** CISEM-ARCH-00390 — enforcement fires mechanically; run `bash dna/checks/plan-audit.sh` and confirm [ZF] ACHIEVED before any done claim.
 
 ---
+**tags:** [skill, creation, governance] | **Status:** PROVISIONAL-ACTIVE (in-use governance infrastructure; added by creation-gate audit 2026-07-20)
 
 ## Invocation
 ```

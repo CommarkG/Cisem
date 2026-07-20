@@ -1,4 +1,5 @@
 # Meta-Protocol — how to create any CISEM protocol
+tags: [protocol, meta, root, governance, t-sys]
 **Node ID:** CISEM-ARCH-00340
 **Type:** ARCH | **Status:** LIVE — ratified by Governor **foundational decree 2026-07-18** (blanket
 approval of all pending, this session). The plan-gate is now LIVE; the PROVISIONAL-ACTIVE leash is removed.
