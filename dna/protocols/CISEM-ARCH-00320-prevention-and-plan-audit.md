@@ -1,7 +1,7 @@
 # Prevention & Plan-Audit Protocol
 **Node ID:** CISEM-ARCH-00320
 **Type:** ARCH | **Status:** RATIFIED — Governor decree 2026-07-18 ("I ratify
-ARCH-00320", to bring the core to a testable maturity). Invariants I1–I15 + the RQC
+ARCH-00320", to bring the core to a testable maturity). Invariants I1–I25 + the RQC
 are now BINDING. Validator-chain note: this is a direct Governor ratification; the
 CS-MASTER-VALIDATION-001 root decree will formally re-confirm it through the chain.
 **Version:** v1.0 (2026-07-16)

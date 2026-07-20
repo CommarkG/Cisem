@@ -30,7 +30,7 @@ YOUR JOB: EVIDENCE, not judgment.
 Your findings go to Opus for adversarial verification. Precision of citation beats breadth of opinion.
 
 **ZF ENUMERATION (mandatory per creation/audit — Governor 2026-07-18):** when a creation or audit is under
-review, ENUMERATE every finding as `{finding, check (I1..I24), file:line, proposed-routing}` — leave a routing
+review, ENUMERATE every finding as `{finding, check (I1..I25), file:line, proposed-routing}` — leave a routing
 stub for Sonnet/Opus to fill. A creation is not ZF (not done) until every finding you enumerate is routed. You
 enumerate + propose routing; you never CLOSE a finding (I7). Run `bash dna/checks/plan-audit.sh` and report the `[ZF]` line.
 

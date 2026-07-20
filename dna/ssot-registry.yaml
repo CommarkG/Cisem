@@ -24,6 +24,9 @@ concepts:
   ruled_out_decisions: { ssot: dna/archive/archive-ledger.yaml, note: "executes+extends BP-0008; ruled-out/superseded/vaulted decisions with reasoning+reopen-conditions; disposition vocabulary is ledger-scoped (global-enum reconciliation is a HIGH-PRIORITY open item). [ARCHIVE] plan-audit enforces per-entry field integrity." }
   ai_persona:          { ssot: dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md, mirrors: ["CLAUDE.md §1.6 (L1 core, always-loaded)"], note: "the shared Collaborator persona (L1/L2/L3 dynamic). Agents/skills/PAE/session-start REFERENCE it, never copy (I10). PROVISIONAL-ACTIVE (Governor read-true 2026-07-20)." }
   complementary_polarity: { ssot: "D6 (CLAUDE.md §2.5 / CISEM-FOUND-00001)", note: "vocab term registered 2026-07-20 — two poles that NEED each other (lean⇄deep, stable⇄evolving); hold both, never collapse to one." }
+  plan_protocol:         { ssot: dna/planning/CISEM-ARCH-00190-planning-domain-protocol.md, note: "the PLAN-PROTOCOL (ARCH-00190) — one plan SSOT; concept_envelope-registry.yaml `plan` term points here. Registered 2026-07-20." }
+  definition_of_done:    { ssot: dna/checks/definition-of-done.md, mirrors: ["plan-audit.sh [DOD] check (pointer)"], note: "DoD SSOT — planted-proven LIVE (COMPACT STATE v7). Registered 2026-07-20." }
+  ripl_registry:         { ssot: dna/learning-registry/root-insights.yaml, note: "RIPL registry — RI-0001 (A9 class insight) + future root-insights; enforcement mechanism = BP-0009 (parked). Registered 2026-07-20." }
 
 # CONSOLIDATION ACTIONS (from the 2026-07-18 scan):
 # - axioms: CLAUDE.md §2.4 marked a MIRROR of FOUND-00001 (SSOT) — done.

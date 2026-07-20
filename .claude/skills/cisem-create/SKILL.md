@@ -9,7 +9,7 @@
 
 ## Pocket Declaration (AI Behavior §3.3)
 - **reasoning_scope:** guide creation intake → route through Threshold → enumerate §3 gates → declare pocket → run triad → log oversight
-- **inherited_constraints:** Axioms A1–A8; Doctrine D1–D6; Hard Gates §3.0–3.7; Invariants I1–I18 (ARCH-00320); disclosed ≠ resolved (I2); Hard Line I7 (no truth below Opus)
+- **inherited_constraints:** Axioms A1–A9; Doctrine D1–D6; Hard Gates §3.0–3.7; Invariants I1–I25 (ARCH-00320); disclosed ≠ resolved (I2); Hard Line I7 (no truth below Opus)
 - **output_contract:** skill returns a checked list of §3 gates run, a decision on Threshold route (PROCESS-NOW/QUEUE/PARK/REJECT), a sample pocket for the creation, and dry-run trace through full flow
 - **ai_cannot:** self-verify any gate; assert a creation "passes" §3; write truth-fields (status, ratification); delegate back to user without explicit Opus verification step
 - **recorded_at:** 2026-07-18 (post-compaction)
@@ -219,7 +219,7 @@ Example (from ARCH-00320):
 #### Leg 1: HARDCODING
 ```
 [ ] Passes §3 gates (all 10 above) ✓
-[ ] Accumulated invariants (I1–I18) apply:
+[ ] Accumulated invariants (I1–I25) apply:
     - I1: no phantom refs (all resolve or tagged)
     - I2: no disclosed-as-resolved (closure verbs need last_verified + check)
     - I3: truth-fields committed atomically (never left dangling)
@@ -322,7 +322,7 @@ Echo each Core Seed verbatim, show how it was honored, and confirm verification.
 8. **Naming:** CISEM-ARCH-00330-time-boxing-constraints.md (TYPE=ARCH, seq via registry, slug descriptive) ✓
 9. **Size:** ~1500 words (OK, <3500) ✓
 10. **Triad:**
-    - Hardcoding: all 9 steps + I1–I18 audit → PASS ✓
+    - Hardcoding: all 9 steps + I1–I25 audit → PASS ✓
     - Pocket: declared inline ✓
     - Oversight: dna/checks/plan-audit.sh will run; findings logged to quality-ledger ✓
     - **Ready for Opus verification**
