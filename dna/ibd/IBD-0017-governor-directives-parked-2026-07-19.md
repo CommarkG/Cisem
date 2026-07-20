@@ -53,6 +53,15 @@
   commit is pushed — a post-commit auto-push hook, OR a pre-compact/session-end BLOCK on unpushed commits (upgrade the current
   WARN), OR a periodic push (ties to P5 scheduling). Route: BUILD within 2 days. Priority: HIGH / time-boxed. (Interim rule: every "park" = commit + push + verify 0 unpushed.)
 
+- **P7 — Corespine-as-INFRASTRUCTURE reframe + A2 refine (Governor insight 2026-07-20).** A corespine is the reusable
+  INHERITANCE INFRASTRUCTURE (efficient · consistent · mechanically-enforced) that elements USE — not a container everything
+  "belongs to," not an element competing for space; alone it has no essence. Elements are multi-facet (A9): a concern uses a
+  corespine for its universal invariant core, an overlay for cross-cutting reach, vocab for its term, a field for metadata —
+  each facet crisp + singly-homed. WORK: (a) refine A2 (FOUND-00001 + §2.4) from "everything IS a corespine" → "elements USE
+  corespines + overlays/vocab/fields as infrastructure"; (b) rework ARCH-00400 Part 1 (corespine = infrastructure) + the
+  wizard's first question → "does this element NEED the inheritance infrastructure?"; (c) 8-Q stress-test A9. Priority: HIGH
+  (core-first — reshapes the whole model; dissolves the "fighting for top-level space" problem). Ties to N4 (kernel) + P2 (inheritance).
+
 ## NOTE — R3 (GPT) DIRECTLY reinforces several of these
 Purification_trace ledger (R3 §5B) ≈ strengthens PAE (ARCH-00399) + P2. Disposition-in-search (R3 §5F) ≈ strengthens the
 archive (BP-0008). Coverage/detection (R3 §5D) ≈ new. These fold in at the consolidation step, not now.
