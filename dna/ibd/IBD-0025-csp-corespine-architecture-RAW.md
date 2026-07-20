@@ -3,7 +3,7 @@
 **source:** "Governor-supplied, 2026-07-20 — two CSP/CSPS platform docs: PLTF_CORE_SPINE_COMPREHENSIVE_GUIDE_S335.md (5-spine model + 3-layer doctrine + attribution chain) + CSP_2026-03-24_SPINE-DEFINITION-CANON.md (3-type node model Core-Spine/Branch/Leaf + Branch threshold T1-T4 + pillar-protection-line). Full text provided in-conversation."
 **trust_tier:** HIGH (Governor-authored, mature platform) | **PURIFIED sibling:** IBD-0025-csp-corespine-architecture-PURIFIED.md
 
-## Transferable skeleton (CSP-specific scaffolding dropped — see the purified sibling file)
+## Transferable skeleton (CSP-specific scaffolding dropped — see the sibling extract file)
 - **5 canonical spines** with precedence: CNST > GVRN > VALD > ARCH > OPER (Constitutional/Governance/Validation/Architecture/Operations). Lower defers on conflict. Every governed artifact declares ONE primary `core_spine:` (singular, required) + optional `core_spines:` (plural, cross-cutting).
 - **Pillars** (Context/Governance/Timing/Integrity) are ORTHOGONAL to spines — an artifact declares BOTH a spine and pillars.
 - **3-layer doctrine model:** L1_CORE (sealed essence, `do_not_expand`, council-only amendment) · L2_DOMAIN (decomposition, ~3/spine, normal review) · L3_INSTANCES (which artifacts instantiate the spine, per-session).
