@@ -249,7 +249,22 @@ drift and the protector of completion (I14) — the AI does NOT get to PROCESS-N
   BUILD-PROMPT for `cisem-sonnet` (bootstrap + goal + Core Seeds + plan) so it processes later
   with ZERO context loss and zero Opus re-work.
 - **Timeline:** parked items carry priority + essential(y/n) + timeframe + depends-on.
-Routing (Threshold-First, CS-THRESHOLD-001): `PROCESS-NOW | QUEUE(+build-prompt) | PARK(IBD) | REJECT`.
+**GATE 0 — GOAL-CONNECTION (hardwired FIRST question of the threshold; CS-THRESHOLD-001; Governor-decreed 2026-07-20).**
+EVERY input — whether ① a human PRESENTS something OR ② the AI SUGGESTS something — STOPS here first and answers ONE
+question before ANY other routing: **"Is this content connected to a defined goal?"**
+- **YES (goal-connected)** → the **goal-connected pipeline** (it can be FIT-checked + developed against that goal).
+- **NO (goalless)** → the **no-goal pipeline** (goal-setting FIRST — the CoreSpiral Seed / conversational dialogue that
+  DEFINES + SAVES the goal — before any development).
+This is CoreSpiral's Seed (the development METHOD — how things are built) made the mechanical router at the FRONT of
+CS-THRESHOLD-001 (the intake ARCHITECTURE — where inputs enter). It fires on every input, hardwired as the always-loaded
+first gate. **Honest form:** an input-time gate cannot be git-hook-enforced (no hook fires when a human presents in chat),
+so its hardwiring IS this always-loaded standing gate; a commit-time `[GOAL]` mechanical trace (a creation declares its
+goal-connection / which pipeline it came through) is the git-enforceable follow-on. **PROVISIONAL (mid-design):** the two
+pipeline internals + two open refinements are still being simulated — (a) does NO fork into *goal-setting-now* vs
+*park-raw-until-a-goal-emerges*? (b) does the ② AI-suggests path need a consensus-before-creation latch? Only the agreed
+core (goal-connected Y/N → two pipelines) is hardwired here; the refinements are flagged, not baked in.
+
+Routing (Threshold-First, CS-THRESHOLD-001 — AFTER Gate 0): `PROCESS-NOW | QUEUE(+build-prompt) | PARK(IBD) | REJECT`.
 Engine + queue: `dna/queue/`.
 **SWIFT (Governor-defined 2026-07-18) — assess inputs DURING active implementation/planning
 to maximize their value without blast risk:**
