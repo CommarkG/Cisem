@@ -2,6 +2,8 @@
 **Status:** PARKED-RAW | **tags:** [ibd, RAW-EXTERNAL, corespiral, engineering, csep, gpow, sibling-to-IBD-0023]
 **source:** "Governor-supplied, 2026-07-20 — CSEP Engineering Blueprint (5-phase pipeline) + CoreSpiral vocabulary (V-CORE-050..053) + canonical doc 0070 'Corespiral Implementation Protocol (8 sprints)' from the CSPS/CDS platform (Claude Sonnet 4.6 + Yariv Fink, 28/06/2026)."
 **trust_tier:** HIGH (Governor-authored) | **PURIFIED sibling:** IBD-0024-corespiral-engineering-input-PURIFIED.md
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **Note:** the exhaustive CSPS-specific 8-sprint deliverable tables + doc-IDs (0000–3030, SK-/AG-/2xxx codes) live in the Governor's source doc 0070; captured here as STRUCTURE, not transcribed line-by-line (they are CSPS implementation scaffolding, dropped for CISEM per the PURIFIED sibling).
 
 ## CSEP 5-phase technical pipeline (validation-gated)

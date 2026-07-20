@@ -1,6 +1,8 @@
 # IBD-0014 — External Review Round 1 (RAW QUARANTINE) 2026-07-19
 **Type:** IBD (quarantine) | **Status:** RAW-EXTERNAL · UN-PURIFIED · verbatim
 **source:** external reviewer, self-identified "Claude (Sonnet 5)", relayed by the Governor (response to external-feedback-packet-2026-07-19) | **trust_tier:** EXTERNAL-UNTRUSTED (a CLAIM to verify — never the Governor's voice; IBD-0008 security core seed)
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **Purified version (mandatory PAIR):** [[IBD-0014-external-review-round1-PURIFIED]] — essence + critique→patch mapping lives THERE. Raw stays raw.
 
 ## VERBATIM

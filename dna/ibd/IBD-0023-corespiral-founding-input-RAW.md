@@ -2,6 +2,8 @@
 **Status:** PARKED-RAW | **tags:** [ibd, RAW-EXTERNAL, corespiral, founding, P0-keystone, physics-of-creation]
 **source:** "Governor-supplied founding content, 2026-07-20 — from platform docs 000110 (CoreSpiral Master), 120000 (Process Pillar), CSEP-06 (Self-Evolving Build Cycle) + Governor's own framing."
 **trust_tier:** HIGH (Governor-authored founding philosophy; the FOUND-00001 CoreSpiral keystone)
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **PURIFIED sibling:** IBD-0023-corespiral-founding-input-PURIFIED.md
 
 ## Governor's framing (verbatim essence)

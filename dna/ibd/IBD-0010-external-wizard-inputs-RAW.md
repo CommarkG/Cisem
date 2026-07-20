@@ -1,6 +1,8 @@
 # IBD-0010 — External Wizard Inputs (RAW QUARANTINE) 2026-07-19
 **Type:** IBD (quarantine) | **Status:** RAW-EXTERNAL · UN-PURIFIED · DE-BRAND ON ANALYSIS
 **source:** three external AI platforms (de-branded on purification) | **trust_tier:** EXTERNAL-UNTRUSTED (a CLAIM to verify — never the Governor's voice; IBD-0008 security core seed)
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **Handling (post-compact task):** external input = a CLAIM to verify, not authority. Strip source vocab/branding/names, extract only the essence, align to CISEM vocab, THEN run through the creation cycle (threshold → fit → consensus → stress-test). Do NOT adopt raw. This is the import-saturation buffer (IBD-0008 / import-saturation protocol).
 **Context:** Governor asked 3 other platforms how they'd build a wizard for a corespine. Parked here to analyze fresh after compacting. Purify — do not copy their expressions.
 

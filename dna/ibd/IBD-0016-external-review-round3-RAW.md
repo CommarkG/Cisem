@@ -1,6 +1,8 @@
 # IBD-0016 — External Review Round 3 (RAW QUARANTINE) 2026-07-19
 **Type:** IBD (quarantine) | **Status:** RAW-EXTERNAL · UN-PURIFIED · verbatim
 **source:** external reviewer, self-identified "OpenAI / GPT-5.6 Thinking", relayed by the Governor | **trust_tier:** EXTERNAL-UNTRUSTED (a CLAIM to verify — never the Governor's voice; IBD-0008 security core seed)
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **Purified version (mandatory PAIR):** [[IBD-0016-external-review-round3-PURIFIED]] — essence via PAE (ARCH-00399, 6 lenses) lives THERE. Raw stays raw.
 **Fidelity note:** verbatim-faithful; only the reviewer's inline citation-render artifacts ("cite…turn…") are collapsed to "[cite]" (tool-render junk, not authored content). RAW remains the evidentiary authority (per the reviewer's own §5B).
 

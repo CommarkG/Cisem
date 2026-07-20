@@ -1,6 +1,8 @@
 # IBD-0018 — External Review Round 4 (RAW QUARANTINE) 2026-07-19
 **Type:** IBD (quarantine) | **Status:** RAW-EXTERNAL · UN-PURIFIED · verbatim
 **source:** external reviewer, self-identified "Opus — CSPS platform, Claude Opus 4.8", relayed by the Governor | **trust_tier:** EXTERNAL-UNTRUSTED (a CLAIM to verify — never the Governor's voice; IBD-0008 security core seed)
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **Purified version (mandatory PAIR):** [[IBD-0018-external-review-round4-PURIFIED]] — essence via PAE (ARCH-00399, 6 lenses) lives THERE. Raw stays raw.
 
 ## VERBATIM

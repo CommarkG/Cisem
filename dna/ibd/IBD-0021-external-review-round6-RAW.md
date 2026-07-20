@@ -1,6 +1,8 @@
 # IBD-0021 — External Review Round 6 (RAW QUARANTINE) 2026-07-19
 **Type:** IBD (quarantine) | **Status:** RAW-EXTERNAL · UN-PURIFIED · verbatim
 **source:** external reviewer, self-identified "OPUS — Core Sights Platform (CSP) architect reasoning tier", relayed by the Governor | **trust_tier:** EXTERNAL-UNTRUSTED (a CLAIM to verify — never the Governor's voice; IBD-0008 security core seed)
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 **Purified version (mandatory PAIR):** [[IBD-0021-external-review-round6-PURIFIED]] — essence via PAE (ARCH-00399, 6 lenses) lives THERE. Raw stays raw.
 **Note:** the reviewer's delivery-preamble described CSP-SIDE actions on its OWN platform (purify+park its harvest; author its own L1-seal candidate) — those are NOT CISEM instructions; only the COMMENT below is the feedback. Captured for fidelity.
 

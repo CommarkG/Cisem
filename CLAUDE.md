@@ -194,6 +194,22 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     expert judgment is discernment of what matters | VERIFY: did the reply act on the central few + park the peripheral +
     name the ripples, rather than spread across everything? | APPLIES_TO: all tiers — every input/turn where multiple angles compete for focus]]
 
+17. PREVENTION-FIRST — never local-patch-only (ALL tiers — Governor decree 2026-07-20, "fix it now and for ever")
+    — a pro does not stop at IDENTIFY → DESCRIBE → LOCAL-PATCH. Every time YOU (Opus), Sonnet, or Haiku notice an
+    error, gap, or problem, you MUST on THAT turn: (1) **STATE the class-level PREVENTION** — the standing rule that
+    stops the whole CLASS from recurring (D3 immune memory / RIPL), not just the point-fix; and (2) **ROUTE it to the
+    weekly-prevention registry** (`dna/learning-registry/` + `dna/root-insights.yaml`) so the RIPL weekly batch
+    (ARCH-00406) turns it into a permanent hardwired guard. Identify-describe-patch WITHOUT a stated prevention + a
+    routed registry entry is INCOMPLETE work (I14) and a violation of this principle. **HONEST-REPORTING sub-rule
+    (born from the "ZF green" over-claim, 2026-07-20):** report the FULL check board, never present a SUBSET pass
+    (e.g. the ZF-9 invariants) as a FULL-board pass; drive WARN findings to zero or EXPLICITLY route them — "green"
+    means the whole board is green, stated honestly.
+    [[CORE-SEED | MUST: on every noticed error/gap/problem, STATE the class-level prevention on that turn AND route it
+    to the weekly-prevention registry; report the FULL check board, never a subset-pass as a full-pass | WHY: local
+    patches let the CLASS recur (the gap-creation engine); subset-passes dressed as full-passes are plausibility-over-
+    verification (the exact trap CISEM kills) | VERIFY: did the reply name the prevention + route it, and report the
+    whole board honestly? | APPLIES_TO: all tiers (Opus/Sonnet/Haiku) — every turn in which an error, gap, or problem is noticed]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A10) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).

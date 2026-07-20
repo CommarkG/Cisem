@@ -2,6 +2,8 @@
 **Status:** PARKED-RAW | **tags:** [ibd, RAW-EXTERNAL, corespine, architecture, spine-tree, node-taxonomy, precedence, sibling-to-plan-ARCH-00404]
 **source:** "Governor-supplied, 2026-07-20 — two CSP/CSPS platform docs: PLTF_CORE_SPINE_COMPREHENSIVE_GUIDE_S335.md (5-spine model + 3-layer doctrine + attribution chain) + CSP_2026-03-24_SPINE-DEFINITION-CANON.md (3-type node model Core-Spine/Branch/Leaf + Branch threshold T1-T4 + pillar-protection-line). Full text provided in-conversation."
 **trust_tier:** HIGH (Governor-authored, mature platform) | **PURIFIED sibling:** IBD-0025-csp-corespine-architecture-PURIFIED.md
+**depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
+**depollution_pass:** no
 
 ## Transferable skeleton (CSP-specific scaffolding dropped — see the sibling extract file)
 - **5 canonical spines** with precedence: CNST > GVRN > VALD > ARCH > OPER (Constitutional/Governance/Validation/Architecture/Operations). Lower defers on conflict. Every governed artifact declares ONE primary `core_spine:` (singular, required) + optional `core_spines:` (plural, cross-cutting).
