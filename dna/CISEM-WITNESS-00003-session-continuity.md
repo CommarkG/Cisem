@@ -300,3 +300,10 @@ Governor-ratified rule: a change to a CHECKLIST or an agent's ESSENCE needs TWO-
 
 ### COMPACT STATE v7 — ADDENDUM 2 (2026-07-20): parked BP-0011 — Schema-as-SSOT + skills/agents HTML pages
 Governor PARKED: make SCHEMA-00001 the SSOT for placement/naming/numbering (every created element aligned + has a schema place, A3; wire the ARCH-00011 alignment gate); update/complete the HTML pages for skills + agents aligned to the schema; complete the schema page; AUTO-UPDATE the pages (generated from registries, never hand-authored). Home: `dna/queue/BP-0011`. Post-compact queue now: BP-0009 (RUN THE CYCLE / Completion&Propagation Layer) · BP-0010 (two-model-verify activation) · BP-0011 (schema+HTML).
+
+### COMPACT STATE v7 — ADDENDUM 3 (2026-07-20): updating grid + corespine candidates + node-as-context-carrier
+- TODO / post-compact queue SAVED on disk: BP-0009 (RUN THE CYCLE) -> BP-0010 (two-model-verify) -> BP-0011 (schema-SSOT + HTML pages) -> CS-PRIORITY-001 test-drive -> 2-day deliverable (scheduling+backup, due 2026-07-21).
+- UPDATING GRID created: `dna/checks/boundary-update-grid.md` — the standing checklist of lists to keep current at every boundary (axioms · schema · skills · agents · pipelines · corespines+candidates · parked · root-insights · continuity). Referenced by the DoD. This is the anti-30%-loss mechanism.
+- CORESPINE CANDIDATES populated with status+tag in `corespine-registry.yaml` (CANDIDATES block): Inheritance(kernel) · Kernel · Epistemology · Security(overlay) · Privacy/Observability/Accessibility(overlays) · Priority(CS-PRIORITY-001) · Completion-Propagation-Layer.
+- NODE = CONTEXT CARRIER (Governor principle 2026-07-20): every node readable COLD, zero conversation dependency (axiom-candidate; boundary-update-grid §founding). Relates A1/A3 + context-envelope (ARCH-00392).
+- POST-COMPACT TEST: corespines aligned with schema (naming+numbering coherent) — folded into BP-0011 (alignment gate). Make everything coherent.

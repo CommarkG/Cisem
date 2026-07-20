@@ -129,3 +129,15 @@ SOL-GIFTPRO-001:
          ONLY. Not a real build track. Classical specific-vs-core example.
          Tag lifted only by explicit Governor instruction."
   depth_level: L1
+
+# ── CORESPINE CANDIDATES (populated 2026-07-20; status + tag each; NOT ratified) ──
+# Surfaced this session; run each through the ARCH-00400 wizard (refusal-first) before creating.
+# Alignment to schema (naming+numbering) = a POST-COMPACT test (BP-0011).
+CANDIDATES:
+  Inheritance:   { status: PARKED-AS-KERNEL-MECHANIC, tag: [inheritance, kernel, parked], note: "trial UNSOUND as overlay/domain; it is a KERNEL mechanic — place when kernel (N4) defined. IBD-0017 P2." }
+  Kernel:        { status: CANDIDATE-KERNEL, tag: [kernel, constitutional, graph], note: "constitutional kernel: authority / validation(M2) / evidence / versioning / safety. N4 (CREATION-apex vs kernel) unresolved. ARCH-00400 Part 1." }
+  Epistemology:  { status: CANDIDATE, tag: [epistemology, knowledge-representation], note: "how CISEM establishes/verifies/transmits understanding; questions-carry-context + node-as-context-carrier cluster. IBD-0011 §3." }
+  Security:      { status: OVERLAY-CANDIDATE, tag: [security, overlay, cross-cutting], note: "cross-cutting, NOT a domain trunk; universal invariant-core (corespine facet) + context-modulated overlay facet (A9). IBD-0008." }
+  Privacy_Observability_Accessibility: { status: OVERLAY-CANDIDATES, tag: [overlay, cross-cutting], note: "graph-architecture overlays (R3); apply across domains." }
+  Priority:      { status: PROPOSED-CS-PRIORITY-001-testdrive-instance1, tag: [priority, domain, test-drive], note: "clean-domain test-drive target (ARCH-00400). May be a field/Threshold-branch, not a full corespine (STEP-0 open)." }
+  Completion_Propagation_Layer: { status: PLAN-PENDING-BP-0009, tag: [completion, propagation, mechanism], note: "RIPL-v2 + propagation-network + tier-cycle; author via BP-0009." }
