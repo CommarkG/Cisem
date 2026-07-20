@@ -28,7 +28,13 @@ echo "    Compaction summarizes and can distort INTENT. Before the boundary, ens
 echo "    (1) a FIDELITY record — WHAT the Governor asked + WHAT you understood (verbatim-in-essence), so intent survives;"
 echo "    (2) a PROCESS-CONTEXT file — the design + full reasoning + nuances of the open work;"
 echo "    (3) a RESUME PROMPT with LINKS to (1)+(2)+the relevant RAW/PURIFIED/design files, stating what is consensus vs pending."
-echo "    Precedent this session: dna/learning-registry/session-fidelity-*.md + dna/planning/*-merge-design-*.md."
+echo "    (4) a VERBATIM-INDEX (Governor decree 2026-07-21): point to the raw session .jsonl TRANSCRIPT as the VERBATIM"
+echo "        source of truth (NEVER reconstruct verbatim from memory — that is re-summarizing, the failure) + link the"
+echo "        interpretation files; the resume MUST read BOTH (verbatim transcript AND interpretations). Precedent:"
+echo "        dna/learning-registry/boundary-verbatim-index-*.md + session-fidelity-*.md + dna/planning/*-merge-design-*.md."
+echo "    WHY (RI-0011 — mapped defaults): a model's trained reflexes (summarize / in-context-feels-safe / plausible-done /"
+echo "        effort-minimize / not-modeling-the-blank-slate-reader) push AWAY from verbatim git persistence; awareness is"
+echo "        insufficient, so this MANDATE + the transcript pointer are the mechanical counter. Throwing away 1k-token work is the damage."
 # Mechanical freshness check: is the registry dirty (harvest in progress) or written in HEAD (fresh)?
 if [ -n "$(git status --porcelain -- "$reg" 2>/dev/null)" ]; then
   echo "  ✓ harvest IN PROGRESS this window (registry has uncommitted changes)"
