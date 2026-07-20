@@ -23,6 +23,12 @@ echo "    Capture PROCESS + INTENTS + [[CORE-SEED]]s + NUANCES, and give SPECIAL
 echo "    LATEST DECISIONS + DEFINITIONS — inherit them with FULL content + context + reasoning,"
 echo "    rich enough to re-derive, NOT a one-line summary. They are the session's fruits; a shallow"
 echo "    capture of them is a professional failure, not a save. Routine items may be indexed; fruits are captured richly."
+echo "  BOUNDARY-SURVIVAL ARTIFACTS (Governor decree 2026-07-21 — MANDATORY when in-flight DESIGN/PROCESS work is open):"
+echo "    Compaction summarizes and can distort INTENT. Before the boundary, ensure THREE artifacts exist on disk:"
+echo "    (1) a FIDELITY record — WHAT the Governor asked + WHAT you understood (verbatim-in-essence), so intent survives;"
+echo "    (2) a PROCESS-CONTEXT file — the design + full reasoning + nuances of the open work;"
+echo "    (3) a RESUME PROMPT with LINKS to (1)+(2)+the relevant RAW/PURIFIED/design files, stating what is consensus vs pending."
+echo "    Precedent this session: dna/learning-registry/session-fidelity-*.md + dna/planning/*-merge-design-*.md."
 # Mechanical freshness check: is the registry dirty (harvest in progress) or written in HEAD (fresh)?
 if [ -n "$(git status --porcelain -- "$reg" 2>/dev/null)" ]; then
   echo "  ✓ harvest IN PROGRESS this window (registry has uncommitted changes)"

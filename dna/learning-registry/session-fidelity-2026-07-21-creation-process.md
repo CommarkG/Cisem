@@ -1,0 +1,22 @@
+# Session Fidelity — Governor's asks + Opus's understanding (creation-process arc, 2026-07-21)
+**tags:** [fidelity, boundary-survival, governor-asks, understanding-record, creation-process, harvest]
+**Status:** ACTIVE (boundary-survival record — preserves dialogue INTENT across compaction, per Governor decree)
+**Purpose:** compaction summarizes; this file preserves, verbatim-in-essence, WHAT the Governor asked and WHAT Opus understood — so the intent survives, not just an outline. Companion to [[creation-process-merge-design-2026-07-21]] (the design) + [[creation-external-input-default-and-pcr-2026-07-21]] (the default/PCR).
+
+## The major asks this arc, and my confirmed understanding of each
+1. **Step 0 exists, before the goal** — "verify the listener understood what the source of communication MEANT; not trivial." → Understood: a mandatory FIRST act of confirming interpretation-against-INTENT (not words), via RESTATE-meaning-back + NAME-assumptions, loop until confirmed. It's the mechanical form of the persona's center (shared understanding IS the work; racing ahead is THE failure). Confirmed by Governor.
+2. **1234 = my own 4 points on Step 0** → extract permanent preventions: FELT-UNDERSTANDING ≠ ACTUAL-UNDERSTANDING (new AI-default, meaning-level plausibility trap); verify at the earliest/cheapest point; surface assumptions to catch false ones; racing-ahead is the root of the session's failures.
+3. **Depth levels** D1 KERNEL / D2 DOMAIN / D3 INSTANCE — rigor scales to blast. Confirmed.
+4. **Depth-orchestrator** — reads blast → picks depth → dispatches rigor+tier. Confirmed as a real GAP (not built).
+5. **Creation-process concepts** — protocol=law, wizard=runnable-face, pipeline=composition, corespine=inheritance-the-output-uses. Order: GOAL prior; protocol first among machinery; wizard depends on protocol; pipeline composes; corespine orthogonal.
+6. **The 5 Brain files** → "save as RAW + purify then absorb." → Done as IBD-0027 (dogfooded intake gate; it caught external IDs). Governor: MERGE the two drafts; "not loyal to previous decisions if a better path aligns with CISEM."
+7. **Merged process shape** (Governor-confirmed): MUTUAL MANDATORY STEPS (Step0 → Goal → Mapping/Research → Depth-Orchestrator) → then FORK A-E (Already-exists/Enhance/Wire/New/Out-of-scope) → corespine-determination (existing-vs-new-candidate, tested once at Fork D; reach-back at B/C) → output → inheritance → audit. Planning=child(handoff); Validating=independent sibling; Implementing=maybe-redundant-with-Build.
+8. **Corespine-determination** — Governor asked "you mean the decision whether an input is a corespine or not — relate to existing corespine or candidate for a new one?" → CONFIRMED: exactly that; asked once at the right moment.
+9. **Recurring BAD things the Governor caught (must prevent permanently):** felt-understanding raced-on (Step 0); ZF reported as full-board when subset (RI-0003); presence≠behavior (RI-0007 collapse; RI-0008 toggle sampled-not-classed); A8 fork of root-insights (RI-0006); narrow-scope enforcement missing whole classes (RI-0009 22 ungoverned files; corespines-set + search missed); collateral deletion risk (RI-0010); Opus doing Sonnet's work repeatedly; NOT mentioning prevention on findings; documentation-without-wiring.
+10. **GOOD things affirmed:** the intake gate working (caught external IDs); enumerate-all functional-check (99→336); creation-gate sweeping 22 files; deletion-guard; Principle 18; honest ownership when caught; Step 0 applied live.
+11. **Compaction-prep demand:** save this fidelity + the process-context + a resume prompt with links; HARDWIRE it as a permanent part of the pre-compact protocol. Hardwire the Opus→Sonnet routing improvement so it survives.
+
+## RESUME PATH (post-compaction, zero-context)
+- Read: this file + [[creation-process-merge-design-2026-07-21]] + [[creation-external-input-default-and-pcr-2026-07-21]] + [[IBD-0027-creation-core-spine-brain-PURIFIED]].
+- State: consensus reached on Step 0 + depth levels + orchestrator gap + merge-shape (mandatory-steps→forks) + Validating-as-sibling + corespine-determination-once-at-Fork-D. PENDING: arrange the full merge details, CS-CREATION-001 naming (recommend: content-merge, keep ID), then draft → TEST-RUN (walk it) → consolidate → formalize (only then code).
+- Do NOT re-formalize; do NOT code until the walk/test-run + Governor "formalize" permission.
