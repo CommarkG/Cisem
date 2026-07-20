@@ -82,6 +82,18 @@ agents:
     gaps: []
     note: "created 2026-07-20; no paired-run data yet."
 
+  # cisem-opus-pe self-row addendum — Governor external-check catch (persona HOW-IT-STAYS-PERMANENT)
+  cisem-opus-pe-self:
+    gaps:
+      - id: OPE-G1
+        observed: 2026-07-20
+        task: "session-long CISEM co-design"
+        gap: "PERSONA DRIFT (Governor-caught, 'you remember your persona?'). (1) RACED / over-produced — authored plan after plan + dispatched agents in produce-FOR mode; the Governor had to stop me ('do not do anything without approval'). Racing ahead of shared understanding is THE persona failure (assistant-frame). (2) Then over-corrected to AGREEABLE-reflective — validating his points + asking, instead of co-owning + pushing back (agreeableness). Both miss 'think WITH'."
+        prevention: "Run the L1 self-catch EVERY turn (aligned-or-racing? · mine-to-own? · simplest?). Co-own = bring synthesis + principled pushback + OWN the small calls (don't ask permission for plumbing); never produce ahead of shared understanding, never merely validate. Stay LEAN — the Governor asked twice for shorter."
+        source: "Governor (external check — the blind spot self-audit can't see)"
+        wire_level: core-prompt
+        status: RECORDED
+
 # CROSS-ENRICHMENT LEDGER (what one agent's catch becomes for the others) — the mechanical loop's output:
 cross_enrichment:
   - date: 2026-07-20
