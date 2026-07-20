@@ -84,6 +84,8 @@ entries:
     what: "Resolve all corespine conflicts by a single global precedence rank over whole corespines."
     disposition: RULED-OUT-TEMPORARY
     reopen_conditions: "Reopens if the Governor rules the tree-vs-graph fork toward a pure total-order model; currently set aside pending that ruling."
+    disposition_history:
+      - "2026-07-20 (Governor, via ARCH-00404 Path B, 'all approved'): total-order STAYS ruled out. CSP's 'lower defers' mechanism is adopted ONLY as a within-tier TIE-BREAKER inside the already-decided typed precedence sequence — NOT a reopening of this entry. reopen_conditions were NOT met (Path A, a pure total-order, was declined in favor of Path B). DEC-0006 remains RULED-OUT-TEMPORARY."
     why: "A single total order turns the highest-ranked corespine into a de-facto constitutional super-domain (R3), and overlapping-reach trunks become precedence wars (R6). Set aside in favor of a TYPED precedence SEQUENCE (applicability→rule-class→constitutional→specificity→ratified-waiver→optimize→default→INDETERMINATE) resolving TYPED CLAIMS, not whole-corespine rank."
     tags: [conflict-resolution, precedence, typed-claims, external-review, pending-fork]
     date: "2026-07-19"

@@ -1,6 +1,6 @@
 # CISEM Founding Node — TSA / CoreSpiral / Pocket (PLACEHOLDER)
 **Node ID:** CISEM-FOUND-00001
-**Type:** FOUND | **Status:** DRAFT — operating Axioms A1–A8 provided (A8 One-Source/Consolidation added by Governor decree 2026-07-18); TSA/CoreSpiral/Pocket definitions + Gemini genesis content still pending. Not ratified.
+**Type:** FOUND | **Status:** DRAFT (partially ratified) — operating Axioms A1–A9 provided; **CoreSpiral founding definition FILLED + decreed 2026-07-20** (P0 keystone resolved for CoreSpiral). STILL PENDING: TSA + Pocket founding definitions + Gemini genesis content.
 **root_authority:** true (reserved — ARCH-00011 §7 closed set)
 **Version:** v0.1 (operating axioms provided; founding definitions pending)
 **depth_level:** L1 | **Position in schema:** T-SYS, apex
@@ -28,7 +28,7 @@ Fires when the Governor supplies the source OR rules it lost:
 
 ## What must eventually live here (the slots, empty)
 - **TSA** — [definition AWAITING-GOVERNOR]
-- **CoreSpiral** — [definition AWAITING-GOVERNOR]
+- **CoreSpiral** — **FILLED (Governor foundational decree 2026-07-20; source IBD-0023 philosophy + IBD-0024 engineering, purified via PAE).** CISEM's founding *physics of creation*: **one-shot does not exist in reality** — value is built in **cumulative, verified, maturity-gated cycles**. From the second cycle, each cycle holds two complementary polarities (D6/A9): it **inherits** the previous layer AND lays **infrastructure** for the next; and it is **verified-for-completion before the next begins** (problem-driven, not timeboxed). Load-bearing tenets: **the build cycle IS the validation cycle** (the platform proves itself before it builds itself); **the kernel is the minimum SELF-VALIDATING system**, not the minimum product (everything else is built inside its validation loop); **the Core is validated/consolidated before new elements are authorized** (core-first); each cycle's failures become **inherited gates** (dynamic tightening → complexity makes the system MORE secure); a critical finding unresolved after two attempts **halts + vaults + escalates**. CoreSpiral is the named **PARENT** of ZF, loop-until-ZF (ARCH-00403), divergent-iteration (Principle 15), infrastructure-first ordering, the maturation loop, and core-first. *Adopted:* the philosophy + self-validating-kernel + dynamic-tightening + cycle-failure-protocol + scaling-ladder. *Refined:* the core-priority principle WITHOUT the arbitrary 10× number. *Dropped (reuse-before-coin, GI-15):* external branding (CSEP / GS-codes / GPOW / V-CORE / Trace-IDs). Full detail: IBD-0023 + IBD-0024.
 - **Pocket (founding sense)** — [definition AWAITING-GOVERNOR; note: `pocket-mechanism.md`
   is the *mechanism*, not the founding axiom — do not conflate]
 
@@ -95,6 +95,7 @@ This node is DRAFT (operating axioms present) — not ratified, not complete.
   as the foundation. A loudly-empty placeholder is honest; a full-looking fake is not.
 
 ## Change log
+- v0.2 — 2026-07-20 (Opus, recording Governor foundational decree): **CoreSpiral founding slot FILLED** — the P0 keystone (open every compact since 2026-07-16) is resolved for CoreSpiral. Definition purified from IBD-0023/0024 (adopt/refine/drop per Opus PCR, Governor-approved "all approved"). TSA + Pocket slots remain AWAITING-GOVERNOR. Node stays DRAFT (partial) until all three + Gemini genesis are supplied.
 - v0.0 — 2026-07-16: PLACEHOLDER created (Opus) on Governor "go ahead". Reserves
   CISEM-FOUND-00001, bounds it into root_authority (ARCH-00011 §7), converts the P0
   I8 dangling reference into a disclosed, sanctioned placeholder. Axioms pending Governor.

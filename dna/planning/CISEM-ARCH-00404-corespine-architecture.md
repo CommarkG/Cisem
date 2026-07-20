@@ -1,6 +1,6 @@
 # CISEM Corespine Architecture — Adopt the Purified CSP Blueprint, Phased Kernel-First
 **Node ID:** CISEM-ARCH-00404 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND after Cycle-2 iteration, 2026-07-20; awaiting Governor Stage 2) | **depth_level:** L1 | **Position in schema:** T-SYS, corespine-architecture layer
+**Planning Status:** COMPLETE (Governor RATIFIED 2026-07-20, "all approved") — DEC-0006 = **Path B** (within-tier tie-breaker, total-order stays ruled out). Phased implementation authorized. NOTE: the canonical corespine SET (Phase 1) is STILL a Governor founding choice — Phase-1 implementation will PROPOSE a set for the Governor's confirmation (surfaced, not presumed, per Core Seed 3). | **depth_level:** L1 | **Position in schema:** T-SYS, corespine-architecture layer
 **tags:** [corespine, architecture, node-taxonomy, precedence, core-vs-instance, corespiral, kernel, phased]
 **Goal:** Adopt the PURIFIED CSP corespine architecture (IBD-0025) into CISEM — PHASED, CoreSpiral-kernel-first — resolving
 existing CISEM debts BY REFERENCE (never forking): core-vs-instance (§3.2c), DEC-0006 precedence, A2 (everything uses a

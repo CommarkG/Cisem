@@ -1,6 +1,6 @@
 # ZF-Convergence (Loop-Until-Dry) as a Universal Discipline
 **Node ID:** CISEM-ARCH-00403 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 soundness = SOUND, 2026-07-20; awaiting Governor Stage 2) | **depth_level:** L1 | **Position in schema:** T-SYS, enforcement/CAL layer
+**Planning Status:** COMPLETE (Governor RATIFIED 2026-07-20, "all approved") — loop-until-ZF now has its home: it is a named INSTANCE of CoreSpiral (FOUND-00001, decreed 2026-07-20). Implementation authorized. | **depth_level:** L1 | **Position in schema:** T-SYS, enforcement/CAL layer
 **Size-gate exception (§3.6):** documented size exception — this plan sits at ~200 lines (one SSOT + 8 precise insertion points + full v1.1 §2 compliance); splitting one atomic change would fragment the SSOT it strengthens. Kept whole per §3.6.
 **tags:** [planning-domain, zf, convergence, propagation, mandatory, harvest]
 **Goal:** Wire ZF-CONVERGENCE — "a partial pass is never done; continue passes until a full pass surfaces NOTHING
