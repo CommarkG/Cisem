@@ -18,12 +18,16 @@ agents:
 
   cisem-haiku:
     tier: gathering
-    approach_signature: "breadth + evidence-density; exhaustive enumeration; run-number/line tracing; correctly de-escalates false-duplications (citation-chains, layered-enforcement)."
+    approach_signature: "breadth + evidence-density; exhaustive enumeration; run-number/line tracing; correctly de-escalates false-duplications (citation-chains, layered-enforcement). HIGH-RECALL / lower-precision: over-flags — surfaces real gaps AND false positives; needs a judge tier to filter."
     strengths:
       - id: HAI-S1
         observed: 2026-07-20
         task: "shared platform duplication/contradiction/consolidation audit (vs Sonnet, same prompt)"
         strength: "23 findings across 6 categories, each cited to file:line + quality-ledger run; recognized that most 'duplications' are intentional distributed governance (A8 citation-chains) and that overlapping audits are LAYERED enforcement, not redundancy."
+      - id: HAI-S2
+        observed: 2026-07-20
+        task: "propagation gap-map scan (10 recent nuances x all surfaces)"
+        strength: "exhaustive, high-recall sweep across agents+skills+11 protocols; surfaced the REAL structural gap Opus confirmed — pre-commit BLOCK 2 covers agents/skills but NOT protocols, so protocols are born persona/nuance-blind. Recall caught what precision would need many passes to find."
     gaps:
       - id: HAI-G1
         observed: 2026-07-20
@@ -31,6 +35,14 @@ agents:
         gap: "TRUSTED the 'MIRROR — may not diverge (I10)' LABEL at face value — concluded 'NO VIOLATION' for the axiom + doctrine mirrors. Did not see that a mirror carrying a FULL PROSE BODY (not a pointer) is a structural fork-in-waiting regardless of the label. Missed the label-vs-structure gap that Sonnet caught (D-1/D-2)."
         cross_source: cisem-sonnet
         proposed_item: "MIRROR-IS-NOT-A-POINTER: when a file is labelled a mirror of an SSOT, measure whether it carries a full prose body or a pointer. A full-body 'mirror' = drift risk → flag it EVEN IF the label says 'may not diverge'. A label is a claim, not a guarantee (extends 'NEVER trust a status field' to 'never trust a mirror label')."
+        wire_level: checklist
+        status: NOT-YET-WIRED
+      - id: HAI-G2
+        observed: 2026-07-20
+        task: "propagation gap-map scan"
+        gap: "OVER-FLAGGED: marked 8/10 nuances 'ABSENT' from cisem-opus-pe when they are REACHABLE — via always-loaded CLAUDE.md (A9 §2.4, anti-scatter P16, persona-L1 §1.6, cost-routing §3.0) or via the referenced persona SSOT (L2/L3). Also called a REFERENCED GLOSS (cisem-haiku L8 'embody §1.6 — [gloss]') a 'verbatim copy / I10 violation'. Did NOT trace the reference chain before declaring absence; conflated not-in-this-file with not-reachable."
+        cross_source: cisem-opus-pe
+        proposed_item: "REACHABILITY-TRACE before ABSENT: for each nuance, follow the surface's declared bootstrap chain (CLAUDE.md always-loaded + every referenced SSOT) before marking ABSENT. Report three states, not two: ALWAYS-LOADED (in CLAUDE.md) / REFERENCE-REACHABLE (in a referenced SSOT, load-depth caveat) / TRULY-ABSENT (in no reachable file). A referenced gloss (points to the SSOT) is NOT a copy-violation; only a divergent inline restatement is."
         wire_level: checklist
         status: NOT-YET-WIRED
 
@@ -55,8 +67,12 @@ agents:
 
   cisem-opus-pe:
     tier: judge
-    approach_signature: "adversarial verification, default-refute; truth-field authority; class-extraction (RIPL)."
-    strengths: []
+    approach_signature: "adversarial verification, default-refute; truth-field authority; class-extraction (RIPL); REACHABILITY/PRECISION — traces the reference chain to separate real gaps from surface-absence."
+    strengths:
+      - id: OPE-S1
+        observed: 2026-07-20
+        task: "judging Haiku's propagation gap-map (verify-seam)"
+        strength: "down-ranked Haiku's over-flag: distinguished ALWAYS-LOADED vs REFERENCE-REACHABLE vs TRULY-ABSENT by following each surface's bootstrap chain; preserved the ONE real structural gap (protocols outside BLOCK 2) instead of drowning it in 10 findings. Precision complements Haiku's recall."
     gaps: []
 
   cisem-fable:
@@ -76,6 +92,11 @@ cross_enrichment:
     source_catch: HAI-S1 (Haiku: evidence-density + breadth)
     routed_to: cisem-sonnet
     as_item: SON-G1.proposed_item (EVIDENCE-DENSITY SWEEP checklist rule)
+  - date: 2026-07-20
+    source_catch: OPE-S1 (Opus: reachability-trace / precision, verify-seam on the gap-map)
+    routed_to: cisem-haiku
+    as_item: HAI-G2.proposed_item (REACHABILITY-TRACE + 3-state ALWAYS-LOADED/REFERENCE-REACHABLE/TRULY-ABSENT before marking ABSENT)
+    note: "verify-seam works AGAIN — the judge tier caught the gather tier's over-flag, exactly as the 2-tier design intends. This is the profiling loop producing a permanent, verified improvement (Governor's aim: each loop => a verified inherited gain)."
 
 # WIRING NOTE: these proposed_items are the ACCRETION BUFFER. Promoting them into the agents' actual
 # core prompts / HARDWIRED-RULES is a GOVERNED agent-change (two-model verify [+ Opus ratify for core-prompt]) —
