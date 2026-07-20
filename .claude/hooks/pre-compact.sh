@@ -12,6 +12,9 @@ cd "$repo" 2>/dev/null || exit 0
 
 reg="dna/learning-registry/session-learning-index.yaml"
 
+# SAVE-RAW-ACTIVITY (Governor decree 2026-07-21) — snapshot the recent raw activity window (verbatim transcript) to disk FIRST.
+bash dna/checks/save-raw-activity.sh 2>/dev/null || true
+
 echo "══════════ CISEM AUTONOMIC LAYER (CAL) — PRE-COMPACT (auto-fired) ══════════"
 echo ""
 echo "STEP 0 — HARVEST GATE (ARCH-00370 Enforcement Point 1 — run BEFORE compacting):"
