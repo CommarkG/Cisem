@@ -30,6 +30,8 @@
 #   v8 (2026-07-19, ARCH-00396 Phase D): I19-P2 tightened — "nothing found"/"no existing" REMOVED
 #   as standalone-sufficient in the I19-EDGE core-evidence pattern; a bare "nothing found" (no
 #   named registry/grep/archive source) now routes to [EDGE] UNKNOWN instead of silently passing.
+#   v9 (2026-07-20, Governor-approved): [DOD] check added — Definition-of-Done spot-checks (SSOT:
+#   dna/checks/definition-of-done.md). WARN-only, printed before [ZF], NOT part of the ZF formula.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -368,6 +370,32 @@ if [ "$found_edge" -eq 0 ]; then
 else
   printf "$edge_findings"
 fi
+
+# DOD — Definition-of-Done gate (WARN-only; SSOT: dna/checks/definition-of-done.md). Consolidates
+#       the done-discipline as a standing reminder+flag (item 6 committed+PUSHED, item 2 WIRED),
+#       not a hard gate (a separate planned build). Does NOT enter the ZF formula.
+echo "[DOD] definition-of-done spot-checks (SSOT: dna/checks/definition-of-done.md; WARN-only, not in ZF):"
+found_dod=0
+# (a) UNPUSHED — DoD item 6 (committed+PUSHED / zero-laptop-dependency)
+if git rev-parse --abbrev-ref --symbolic-full-name '@{u}' >/dev/null 2>&1; then
+  unpushed=$(git log --oneline '@{u}..HEAD' 2>/dev/null | wc -l | tr -d ' ')
+  if [ "${unpushed:-0}" -gt 0 ]; then
+    echo "   [DOD] unpushed commits: ${unpushed} — DoD item 6 (committed+PUSHED) unmet"; found_dod=1
+  fi
+fi
+# (b) UNBACKED ENFORCEMENT CLAIM — DoD item 2 (WIRED / EXISTS≠ACTIVE family)
+enforce_re="hardwired|mechanically enforced|now enforced|now live|is wired|is enforced"
+mech_re="dna/checks/|\.git/hooks|\.claude/hooks|plan-audit"
+tag_re="NOT-YET-WIRED|PARTLY-WIRED|DECLARED|NOT YET BUILT"
+for f in $(git diff --cached --name-only --diff-filter=AM -- '*.md' '*.yaml' 2>/dev/null); do
+  [ -f "$f" ] || continue
+  added=$(git diff --cached -- "$f" 2>/dev/null | grep -E "^\+" | grep -vE "^\+\+\+")
+  echo "$added" | grep -qiE "$enforce_re" || continue
+  grep -qiE "$mech_re" "$f" 2>/dev/null && continue
+  grep -qiE "$tag_re" "$f" 2>/dev/null && continue
+  echo "   [DOD] $f: asserts enforcement without a mechanism ref or honesty tag (DoD item 2)"; found_dod=1
+done
+[ "$found_dod" = 0 ] && echo "   (none — DoD items 2/6 clean this run)"
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
