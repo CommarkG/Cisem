@@ -189,3 +189,11 @@ sessions:
       - "2-day deliverable due 2026-07-21: scheduling ability + auto-push backup hardwire."
       - "Parked HIGH: P7 corespine-as-infrastructure rework (A2 refine + ARCH-00400 Part 1); Inheritance=kernel + scope-expansion; kernel/N4; 70%-token URGENT; knowledge-graph/ARCH-00382; disposition<->status-enum."
     witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+# ── Session 2026-07-20 late (CoreSpine/CoreSpiral co-design) — harvest ──
+session_2026_07_20_late_corespine_corespiral:
+  headline: "P0 keystone resolved (CoreSpiral -> FOUND-00001). 5 plans authored+ratified (ARCH-00401..00405). GATE 0 goal-connection HARDWIRED into CS-THRESHOLD-001. CoreSpine(architecture) != CoreSpiral(development) clarified. Goal = TARGET, PRIOR, shared root of both. North-star drafted (awaiting Governor ratify)."
+  persona_learning: "OPE-G1 (agent-profiles.yaml): Governor external-check caught drift — raced/over-produced then agreeable-reflective. Correction = co-own (synthesis+pushback+own small calls) + LEAN + L1 self-catch every turn."
+  insights_home: "dna/governor-insights.yaml GI-37..45 (incl. WISHES: GI-44 north-star ratify+save; GI-45 creation-process dashboard, parked)."
+  method_learning: "'Passes the gates' is a MEANS, not a goal — the goal is the OUTCOME the gates serve. Define the platform NORTH STAR first; sub-goals inherit + must serve it. Goal DO/DON'T + typed Role = new writing standard."
+  resume: "Governor: ratify north-star draft + supply TSA/Pocket -> close FOUND-00001; confirm canonical corespine SET; approve ARCH-00405 Phase-1 build; continue CoreSpiral Cc1 simulation. Full state: WITNESS-00003 COMPACT STATE v8."
