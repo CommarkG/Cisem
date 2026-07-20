@@ -555,6 +555,35 @@ runs:
     new_enhancements: ["penumbra-sweep true false-pass metric (real-escapes only)", "I19 recognizes authored exemption clauses (no false-EDGE on exempt deliberation docs)"]
     status: COMPLETE   # Gate D cleared. ARCH-00396 fully executed (A+B+C+D) — pending Governor veto window on the two-root ruling.
 
+  - run: 29
+    date: 2026-07-20
+    trigger: "Opus PE: long Governor-driven session — founding decrees + resolve-all builds + frontend + plans + 4 Governor integrity catches"
+    pocket: cisem-opus-pe (PE) — declared
+    verdict_soundness: SOUND (all builds ZF-verified full-board; 4 real defects caught + fixed)
+    built_and_ratified_by_decree: >
+      NORTH STAR sealed at schema apex (FOUND-00001, GI-44 RATIFIED); Axiom A10 (Full-Fidelity Harvest);
+      goal-setting STEP 0 in ARCH-00394 wizard (GI-47); CoreCycle decree (no rigid def; Cc1=pillar-stones;
+      inherit+enhance+add-at-maturity, GI-43); TSA RETIRED + Pocket RESOLVED-BY-POINTER (rename
+      ai-pocket-mechanism.md); CONSISTENT-NAMING decree (ARCH-00011 §2.5, GI-49); precedence PARKED (IBD-0026);
+      ARCH-00405 resolve-all (depollution provenance fields + [RAW-PAIR] ext + PAE Stage-1/2 + [NAMING]+[POCKET]
+      checks, planted-tested); Principle 17 PREVENTION-FIRST + presence≠behavior; FE-I11 functional-completion;
+      frontend: 3 collapsible pages + vocabulary + corespines-set + nav sweep + theme/EN-HE/Rows-Window +
+      back-office CRUD (localStorage+export) across 25 pages; schema 6-level hierarchy; collapse bug fixed +
+      frontend/tests/functional-check.mjs (jsdom behavioral gate, 10/10).
+    plans_authored_not_built: >
+      ARCH-00406/407 folded with 3 mechanical items (PACK-CONTEXT + HAIKU-REVIEW-ARTIFACT-GATE + ROLE-ENFORCEMENT);
+      ARCH-00408 core-template principle; ARCH-00409 Node-DNA §XI drafts. All AWAITING-BUILDER-REVIEW — correctly
+      NOT built (A4/I25 respected; Governor asked and this was honored).
+    governor_catches_this_session:   # the session's most valuable output (D3 immune memory)
+      - "RI-0003 ZF SUBSET-PASS-AS-FULL-PASS: 'ZF green' reported as full-board while 10+ WARN [RAW-PAIR] findings stood; fixed by backfilling → TRUE full-board zero; hardwired Principle 17 honest-reporting."
+      - "RI-0004 OPUS-FREESTYLE-INSIDE-THE-FRAME: Opus's own edits ran without a Pocket + self-reviewed (2/3 Triad legs weak on the judge); routed to ARCH-00406 Haiku-review-gate."
+      - "RI-0006 A8 FORK: Opus created dna/root-insights.yaml duplicating dna/learning-registry/root-insights.yaml (checked one path, not the basename); consolidated + [DUPLICATE-BASENAME] check candidate."
+      - "RI-0007 PRESENCE≠BEHAVIOR: schema '-' collapse dead though 'verified by code' (listener present, behavior failed — .rt-panel broke nextElementSibling); fixed + jsdom behavioral gate built + FE-I11 + Principle 17."
+    opus_executor_note: "Opus did executor-lane work (frontend collapse fix, constitution edits, backfills) under Governor 'do it now' decrees; logged for opus_executor_incidents honesty — the decree-vs-plan-gate pattern surfaced for Governor (decreed builds bypass the plan-wizard; auditable-trace suggested)."
+    invariants_added: []
+    new_enhancements: ["Axiom A10 full-fidelity harvest", "Principle 17 PREVENTION-FIRST + presence≠behavior", "FE-I11 functional-completion (jsdom behavioral gate)", "ARCH-00011 §2.5 consistent-naming + [NAMING] check", "[POCKET] check", "root-insights consolidated to one SSOT (RI-0001..0007)"]
+    status: COMPLETE   # all decreed builds committed+pushed, full board clean; 4 plans await Stage-1 soundness + Governor ratification.
+
 metrics:
   invariants_total: 25                     # +I25 (a plan is MANDATORY — no governed creation without a ratified plan; A4 enforced; Governor decree 2026-07-18)
   invariants_added_last_15_runs: 14
