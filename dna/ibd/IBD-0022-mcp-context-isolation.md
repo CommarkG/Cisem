@@ -19,3 +19,13 @@ MCP servers connected to Claude are **account-scoped**, not project-scoped — s
 ## RIPPLE
 - This is a real instance for the **actual-output monitor** (a boundary breach that recurs silently = exactly what a heartbeat/staleness check + an injection-log should surface).
 - Relates to §1.7 (one-tab / git-SSOT) — a domain-scoped repo boundary is consistent with it; a second WRITING surface is not (see the coworker-answer).
+
+## COWORKER FOLLOW-UP — 3 gaps answered + owner/trigger (Governor-relayed 2026-07-20)
+The coworker (correctly) said IBD-0022 must not stay a floating backlog slot. Answers:
+1. **Owner + trigger.** OWNER = Opus (authors the structural plan) + Governor (account action + ratify). TRIGGER: the Otosan bleed recurs EVERY session, so the SWIFT fires NOW — **Governor disables the Otosan connector in claude.ai → Connectors** (10s, zero-blast, his account action). The structural restructure (repo `.mcp.json` + launcher) triggers when the Governor prioritizes it into the plan-gate. Not left dateless: SWIFT = this session; plan = next-prioritized.
+2. **Authorized MCP list — does CISEM need any external MCP?** **NO — CISEM runs CLEAN.** It operates entirely on the local git repo + Claude Code native tools (Read/Edit/Bash) + CAL hooks. It requires ZERO external MCP servers. So CISEM's `.mcp.json` is **empty**, run under `--strict-mcp-config` → no Otosan/Gmail/Calendar/Canva/Drive bleed possible. This is the authoritative answer the coworker asked for.
+3. **Cross-session relay surface.** Per §1.7 CISEM does NOT do live cross-session/instance relay — **git is the only bus**; state lives on disk (SSOT). A "relayed message" is not a live channel; each session bootstraps from the repo and carries its OWN fence (its repo `.mcp.json`). So there is no shared-MCP surface across sessions to leak — the relay is git commits, which carry no connector config. Surface named, closed.
+4. **"concurs" vs "ratifies".** This is **PRELIMINARY (concurs)**, not ratified. The structural repo/launcher restructure is a governed creation → needs the plan-gate (A4). The SWIFT (disable connector) is a Governor account action, not a governed creation → needs no plan. So: SWIFT now; structure ratifies later via /cisem-plan.
+
+## STATUS
+PARKED-RAW → **PARK-WITH-OWNER-AND-TRIGGER** (2026-07-20). SWIFT is live-actionable by the Governor; the structural plan is the parked deep-dive. GI-51 indexes this.
