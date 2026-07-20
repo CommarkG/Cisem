@@ -17,6 +17,20 @@
 #
 # Append-only, like session-learning-index.yaml and quality-ledger.yaml — do not rewrite prior entries;
 # a later entry may SUPERSEDE an earlier one by reference, never by silent edit.
+#
+# ═══ SSOT DECLARATION (Governor decree 2026-07-20) — the ONE schema-aligned home for LEARNING-LOOP OUTCOMES ═══
+# This file is the SINGLE SOURCE OF TRUTH for the OUTCOMES of every CISEM learning loop — the class-level
+# PREVENTIONS/root-insights the loops produce (RIPL, RQC, session-harvest, agent-profiling, page-functional).
+# Schema position: T-SYS, learning-loop layer. Registered in dna/ssot-registry.yaml as `learning_outcomes`.
+# Field contract (RI-NNNN): date · trigger · root_insight (the CLASS) · routes_to (all surfaces it wires into) · status.
+# Relationship to the sibling stores (each has ONE crisp role, A9 — they FEED outcomes here, they are not second homes):
+#   - dna/governor-insights.yaml (GI-NNNN)          = INDEX of Governor DECREES (points to each decree's home).
+#   - dna/learning-registry/session-learning-index.yaml = per-SESSION log (raw capture; its distilled CLASSES land here).
+#   - dna/quality-ledger.yaml (run N)               = per-run METRICS + verdicts (its recurring findings distill to RI here).
+#   - dna/corespines/CS-AI-PROFILING-001/agent-profiles.yaml = per-AGENT improvements (cross-enrichment; class-level ones route here).
+# RULE: any learning loop's OUTCOME (a prevention/class-lesson) is not "captured" until it has an RI-NNNN entry here
+# with routes_to naming EVERY surface it wires into (Principle 17 PREVENTION-MUST-PROPAGATE). This is the closest
+# schema-aligned consolidation of learning outcomes; the RIPL weekly batch (ARCH-00406) promotes mature RIs to wired guards.
 
 insights:
   RI-0001:
@@ -67,3 +81,9 @@ insights:
     root_insight: "PRESENCE-CHECK IS NOT A BEHAVIOR-CHECK: 'a listener is wired' / 'a field exists' / 'a file is present' does NOT prove the thing WORKS. Rule: verify BEHAVIOR — actually click/run and ASSERT the state change — especially for UI. A page/element is not 'done' until a behavioral test passes."
     routes_to: ["CLAUDE.md Principle 17 honest-reporting (presence != behavior — WIRED)", "CS-FRONTEND-001 FE-I11 functional-completion invariant", "dna/checks + frontend/tests/functional-check.mjs (jsdom behavioral gate — BUILT 2026-07-20)", "definition-of-done.md frontend clause"]
     status: WIRED
+  RI-0008:
+    date: "2026-07-20"
+    trigger: "Governor found the Rows/Window view toggle dead on agents.html AFTER functional-check tested it only on principles.html and Opus generalized 'works' to all 25 pages. Third repeat of the same class (RI-0003 ZF-subset, RI-0007 presence-not-behavior)."
+    root_insight: "SAMPLE-TESTED-AS-CLASS-TESTED + FIX-THE-INSTANCE-NOT-THE-CLASS: verifying ONE instance and generalizing to the whole kind is a false completion; and fixing only the found instance leaves the class broken. Rule: DEFECT -> CLASS-AUDIT — on any found defect, audit EVERY sibling of the same kind across all pages/files and fix/verify the whole class; the behavioral test must cover EVERY instance, not a sample. AND: a prevention is not done until it PROPAGATES to planning (ARCH-00190) + implementation + checking agents (haiku/sonnet) + skills."
+    routes_to: ["CLAUDE.md Principle 17 DEFECT->CLASS-AUDIT + PREVENTION-MUST-PROPAGATE (WIRED)", "frontend/tests/functional-check.mjs extended to test the view toggle on EVERY page (class-wide)", "cisem-haiku/cisem-sonnet + cisem-create/cisem-plan (pointer to Principle 17)", "ARCH-00406 propagation-network = the mechanism"]
+    status: PARTLY-WIRED

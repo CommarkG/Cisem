@@ -208,6 +208,16 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     code" miss, 2026-07-20):** "a listener is wired / a field exists / a file is present" does NOT prove the thing
     WORKS. Verify the BEHAVIOR — actually click/run and ASSERT the state change, especially for UI. A page or element
     is not "done" until a BEHAVIORAL test passes (frontend: `frontend/tests/functional-check.mjs`, the jsdom gate).
+    **DEFECT → CLASS-AUDIT (Governor decree 2026-07-20 — after a view toggle worked on one page but not another):**
+    the moment ANY element is found broken, you do NOT fix only that instance — you IMMEDIATELY audit **every
+    sibling element of the same KIND** across ALL pages/files (every view toggle, every collapse, every check of
+    that class) and fix/verify the WHOLE class. Testing ONE instance and generalizing to the class is the recurring
+    failure (sample-tested-as-class-tested). The behavioral test must cover EVERY instance of the kind, not a sample.
+    **PREVENTION MUST PROPAGATE (Governor decree 2026-07-20):** a prevention is not "recorded" until it is wired into
+    (1) the PLANNING protocol (ARCH-00190 — a plan self-checks against known preventions), (2) the IMPLEMENTATION
+    discipline (the build verifies against them), (3) the CHECKING AGENTS (cisem-haiku/cisem-sonnet apply it when
+    they audit), and (4) the SKILLS (cisem-create/cisem-plan). Recording in root-insights alone is INCOMPLETE — route
+    it to all four surfaces (the ARCH-00406 propagation-network is the mechanism).
     [[CORE-SEED | MUST: on every noticed error/gap/problem, STATE the class-level prevention on that turn AND route it
     to the weekly-prevention registry; report the FULL check board, never a subset-pass as a full-pass | WHY: local
     patches let the CLASS recur (the gap-creation engine); subset-passes dressed as full-passes are plausibility-over-

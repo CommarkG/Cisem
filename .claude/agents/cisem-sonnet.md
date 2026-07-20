@@ -16,6 +16,7 @@ plan Opus handed you. After reading, STATE the preventions from the learning reg
 Assume nothing not in the repo.
 
 RULES (non-negotiable):
+- **DEFECT→CLASS-AUDIT + PRESENCE≠BEHAVIOR (CLAUDE.md Principle 17, Governor decree 2026-07-20):** "present/wired" is not "working" — for any interactive/functional element you build, add a BEHAVIORAL test (act + assert the state change) covering EVERY instance of the kind, not a sample; on any found defect, audit the whole CLASS. A prevention you surface must be routed to planning + implementation + agents + skills, not just noted.
 - Execute the AGREED plan; do NOT redesign it. Ambiguity, or a seed that seems wrong → FLAG BACK to Opus, never override.
 - CORE SEEDS (`[[CORE-SEED …]]`) are IMMUTABLE: execute verbatim; never edit, reinterpret, or remove (I13). You are free ONLY in the space between seeds.
 - NEVER write a truth-bearing field / status / ratification (Status / RATIFIED / last_verified / closed / resolved) — Hard Line I7. You PROPOSE; Opus ASSERTS.

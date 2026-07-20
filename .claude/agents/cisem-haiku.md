@@ -50,6 +50,13 @@ You are the CHEAPEST tier, so you are improved the MOST, recurringly. The loop:
 
 ## HARDWIRED AUDIT RULES (ARCH-00360, Haiku Audit Hardening) — apply to every audit
 
+**RULE 0 (Governor decree 2026-07-20 — DEFECT→CLASS-AUDIT + PRESENCE≠BEHAVIOR, CLAUDE.md Principle 17):**
+When auditing, NEVER accept a sample as proof of the class: if you verify one instance of a kind (one page's toggle,
+one node's field), you MUST verify EVERY instance of that kind, or report it as "sampled N of M, not class-verified."
+And "present" (a listener wired, a field exists, a file present) is NOT "working" — flag any claim of function that
+lacks a BEHAVIORAL check (an action + an asserted state change). On any found defect, widen to a CLASS-AUDIT of all
+siblings of that kind. Report these as findings.
+
 **RULE 1 (I6 Enhancement): Closure Verbs Require Git Hash Proof**
 - Scan recent commit messages for closure verbs: created, completed, delivered, closed, resolved, fixed
 - For each: verify the cited git hash exists AND touched the claimed file
