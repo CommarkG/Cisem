@@ -131,6 +131,42 @@ entries:
     tags: [open-question, template, deferred]
     date: "2026-07-20"
     ruled_by: "Opus (provisional)"
+  - id: DEC-0011
+    title: Validating as a CHILD of Creation
+    what: "Proposal: make Validating a child corespine under Creation (alongside Planning, Implementing)."
+    disposition: RULED-OUT-TEMPORARY
+    reopen_conditions: "Reopens only if Validating's independence can be otherwise guaranteed while nested under Creation."
+    why: "Conflict of interest — a checker must not derive its authority from the thing it checks (Zero-Findings second-actor). Better: Validating is an INDEPENDENT SIBLING invoked after Creation/Planning/Build, reporting above Creation / to Governor (also fixes CS-MASTER-VALIDATION-001's recurrence defect). From IBD-0027 reasoning; creation-process-merge-design."
+    tags: [creation-process, hierarchy, validating, conflict-of-interest, rejected-alternative]
+    date: "2026-07-21"
+    ruled_by: "Opus recommendation (Governor-pending ratification)"
+  - id: DEC-0012
+    title: Merge Creation and Planning into one process
+    what: "Proposal: fuse Creation and Planning rather than keep them distinct."
+    disposition: RULED-OUT-PERMANENT
+    reopen_conditions: "None expected — foundational."
+    why: "Planning requires a SECOND actor (Builder) to independently reach CONSENSUS-REACHED (Zero-Findings, no self-certification). Merging collapses that independent-verification. Kept as a HANDOFF (Creation produces a Draft Plan → Planning Domain intake), not a fusion. ARCH-00190 already declares CS-CREATION-001 as Planning's corespine (Planning is a child)."
+    tags: [creation-process, planning, second-actor, zero-findings, rejected-alternative]
+    date: "2026-07-21"
+    ruled_by: "Opus (from prior CISEM work + IBD-0027); Governor-leaning"
+  - id: DEC-0013
+    title: Adopt an external draft (IDs + design) wholesale
+    what: "Proposal implied by importing the Claude-Brain Creation-Core-Spine: adopt its design and cite its IDs as CISEM-authoritative."
+    disposition: RULED-OUT-PERMANENT
+    reopen_conditions: "None — external content is always a claim to verify (IBD-0008)."
+    why: "External input is EXTERNAL-UNTRUSTED — adopt CONCEPTS, not IDs; every external ID is not-in-repo until grep-verified ([I1] caught CS-COMM-* on IBD-0027). Wholesale adoption fabricates references. Governed by the external-input DEFAULT + PCR (creation-external-input-default-and-pcr-2026-07-21)."
+    tags: [external-input, intake, untrusted, id-collision, rejected-alternative]
+    date: "2026-07-21"
+    ruled_by: "Governor decree (external-input PCR) 2026-07-21"
+  - id: DEC-0014
+    title: CS-CREATION-001 as a NEW node from the Brain draft
+    what: "Proposal: the Brain 'Creation Core Spine ROOT' becomes a new node claiming/near the CS-CREATION-001 ID."
+    disposition: RULED-OUT-TEMPORARY
+    reopen_conditions: "Reopens if the Governor rules the Brain draft is a genuinely separate node rather than content for the existing CS-CREATION-001."
+    why: "CS-CREATION-001 already exists as the ratified apex corespine (ARCH-00397). An external artifact claiming an existing ratified ID is CONTENT-FOR-MERGE into that node, never a silent 2nd node (A8/I19). Recommended: content-merge, keep the ID + ratification."
+    tags: [external-input, id-collision, cs-creation-001, a8, rejected-alternative]
+    date: "2026-07-21"
+    ruled_by: "Opus recommendation (Governor-pending confirm)"
 
 # HIGH-PRIORITY remaining (BP-0008 full execution — NOT done in this SWIFT MVP; needs a plan, blast-bearing):
 #   (1) migrate ARCH-00150 / CS-LOOPS-001 [rejected-idea] entries in (parallel CS-INTAKE-BATCHING, flat-big-file
