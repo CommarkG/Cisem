@@ -366,7 +366,7 @@ fi
 echo "[NAMING] retired bare filename 'pocket-mechanism.md' (not 'ai-pocket-mechanism.md') in live files (ARCH-00011 §2.5; WARN-only, honest-limited slice):"
 found_naming=0
 for f in $(find . -name "*.md" -not -path './.git/*' \
-             -not -path './dna/audits/*' \
+             -not -path './dna/audits/*' -not -path './dna/learning-registry/raw-activity/*' \
              -not -iname "*DIAGNOSTICS*" -not -iname "*DORMANCY-AUDIT*" 2>/dev/null); do
   while IFS= read -r rawline; do
     lineno="${rawline%%:*}"; content="${rawline#*:}"

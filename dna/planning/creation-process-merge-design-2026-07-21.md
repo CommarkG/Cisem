@@ -2,6 +2,7 @@
 **tags:** [creation-process, design, merge, step-0, depth-levels, orchestrator, fork, corespine-gate, boundary-survival]
 **Status:** DRAFT (Governor + Opus reaching consensus 2026-07-21; NOT formalized/coded — awaits draft→test-run→formalize)
 **Sources merged:** this session's design (Step 0, depth levels, orchestrator) + [[IBD-0027-creation-core-spine-brain-PURIFIED]] (Claude-Brain draft: Step-1 Verified-Understanding/Reflect-Until-Match, Fork A-E, corespine-gate-at-D, Validating-as-sibling). Governor: "we don't have to be loyal to previous decisions if a better path aligns with CISEM."
+**Existing-First (§3.2b):** searched — this MERGES existing work (this session's design + IBD-0027 + the already-built creation-gate/depth-orchestrator concepts), enhancing the pending ARCH-00400 governed-creation-pipeline; no new fork. **Independent Verifier:** cisem-opus-pe (cold pass, pre-formalization). **NOTE (Haiku audit 2026-07-21):** this is a DESIGN working-doc, NOT a ratifiable plan — it carries no ARCH-ID and does not run the plan gates until it becomes a plan post-test-run (per the agreed discuss→draft→test-run→formalize path). Size-exempt as a consensus-in-progress design.
 
 ## SHAPE (Governor-confirmed): MUTUAL MANDATORY STEPS → then FORKS
 Every input runs the mandatory steps in order; then forks by what it resolves to. Depth/blast scales the RIGOR of each, but the SEQUENCE is universal.
