@@ -58,8 +58,19 @@ Per-File Alignment Table; kept whole per the ARCH-00190/ARCH-00406 documented-ex
     `persona-collaborator.md`'s Tier-Cycle line / a new `output-liveness-monitor.md`; THIS plan touches
     `pre-commit-blocks.sh` / `plan-audit.sh`'s tag-status surface / `agent-profiles.yaml` / the alignment gate. Zero
     file collision between the two plans' "What DOES change" lists.
+13. **(v0.2 fold-in, Opus-directed 2026-07-20) For ROLE-ENFORCEMENT (Phase 4):** `dna/checks/plan-audit.sh`'s
+    already-live `[POCKET]` check (confirmed by direct read, lines ~491–506) is the EXACT pattern to reuse — scoped
+    to CHANGED files, a presence/identity proxy, WARN-only, planted-test-verified, forward-looking (no retro-flag
+    flood). The I13 seed-strip BLOCK (confirmed live — `.git/hooks/pre-commit`, per CLAUDE.md §1.5/quality-ledger
+    run 11: "first BLOCK-mode wired") is the existing BLOCK-vs-WARN precedent this phase stays WARN-only against
+    (self-review is a governance smell, not a seed-integrity violation — does not warrant BLOCK). `quality-ledger.
+    yaml`'s `metrics.opus_executor_incidents` field ALREADY EXISTS (confirmed by direct read: "runs 18-21: ~2...")
+    but is a narrative string never surfaced at commit time — **genuine gap**: no check echoes it. CLAUDE.md §3.0's
+    delegation rubric ("Opus judges·Sonnet builds·Haiku gathers") is the RULE SOURCE for the self-review check — no
+    new role taxonomy invented.
 **VERDICT:** every deliverable below ENHANCES a named, already-existing (often already-spec'd-but-unbuilt) home. No
-new script, no new vocabulary store, no new profile store, no new alignment-gate design is invented.
+new script, no new vocabulary store, no new profile store, no new alignment-gate design is invented. Phase 4 (v0.2)
+is likewise a pure ENHANCEMENT — reuses `[POCKET]`'s exact check shape + an already-existing, already-written metric.
 
 ## Pocket Declaration
 - **reasoning_scope:** specify the mechanical tag+status gate + granular tagging + the (already-spec'd, never-built)
@@ -149,23 +160,52 @@ dropped, per Principle 9).
 - Stress test: plant a profile with `last_batch_review` 8+ days stale → flagged; 3 days → silent.
 - Pass criteria: all 3 current agent profiles (haiku/sonnet/opus-pe) carry the field; planted stale/fresh cases
   behave correctly.
-- **GATE 3→LIVE:** Opus review + Governor sign-off (lower blast than Phase 2; standard sign-off, not foundational).
+- **GATE 3→4:** Opus review + Governor sign-off (lower blast than Phase 2; standard sign-off, not foundational).
+  (Relabeled from the v0.1 draft's `GATE 3→LIVE` — Phase 3 is no longer terminal now that Phase 4 is folded in
+  below; v0.2, disclosed in the change log.)
+
+**PHASE 4 — ROLE-ENFORCEMENT (mechanical Opus/Sonnet/Haiku role checks; v0.2 fold-in, Opus-directed 2026-07-20,
+Governor-approved)**
+- Deliverable: (a) new WARN check `[SELF-REVIEW]` in `plan-audit.sh`, SAME shape/scope as the already-live
+  `[POCKET]` check (changed-files scoped, presence/identity proxy, WARN-only, planted-test-verified — no new check
+  architecture invented, §Existing-First item 13): for a changed `dna/quality-ledger.yaml` run entry (or a
+  `dna/reviews/` note per the sibling plan ARCH-00406 Phase 5) that carries BOTH an implementer/author-tier field
+  (`pocket:`/`tier_routing:`) AND a verifier/reviewer field (`verdict_soundness:`/`ratified_by:`), flag when the two
+  name the SAME tier (e.g. `pocket: cisem-sonnet` alongside its own `verdict_soundness:` claim — a self-review) —
+  reusing CLAUDE.md §3.0's "Opus judges·Sonnet builds·Haiku gathers" rubric as the RULE SOURCE, no new role
+  taxonomy invented. (b) surface the ALREADY-EXISTING `quality-ledger.yaml` `metrics.opus_executor_incidents`
+  narrative field in the `plan-audit.sh` output banner every run — an ECHO of an existing, already-written metric
+  (today it is written but never displayed at commit time, so CLAUDE.md §3.0's "do better" delegation rubric has no
+  per-commit visibility surface; this closes that visibility gap, it does not re-derive or re-measure the metric).
+- Stress test: plant a `quality-ledger.yaml` run entry with `pocket: cisem-sonnet` and `verdict_soundness: SOUND`
+  (no distinct reviewer field) → `[SELF-REVIEW]` fires; the same entry with `ratified_by: "cisem-opus-pe"` (a
+  distinct tier) → silent. Run `[SELF-REVIEW]` as a NEGATIVE CONTROL against the CURRENT `quality-ledger.yaml`
+  (runs 1–28) → confirms 0 false-flags against the real, already-disclosed Opus-PE-reviews-Sonnet pattern already
+  in use (same negative-control discipline as the sibling plan's Phase 5). Confirm the metric echo prints the
+  CURRENT `metrics.opus_executor_incidents` string unmodified (a read, not a re-derivation) on every run.
+- Pass criteria (numeric): `[SELF-REVIEW]` fires 1/1 on the planted same-tier case, clears 1/1 on the distinct-tier
+  case; 0/N false-flags against N real historical entries in the current `quality-ledger.yaml`; the metric echo
+  matches `metrics.opus_executor_incidents`'s on-disk string byte-for-byte on every run (no drift between the
+  registry value and what the check surfaces).
+- **GATE 4→LIVE:** Opus review + Governor sign-off (lower blast — a WARN-only self-review/visibility check, same
+  class as Phase 3, not foundational).
 
 ## Tags + Statuses on every node this plan creates (ARCH-00401 Enh.2)
 This plan creates ONE new file (`dna/checks/naming-alignment.sh`, Phase 2, disclosed as NOT built here) — see the
-Per-File Alignment Table for its planned tag/status. Every other touched file is an ENHANCE to an already-tagged,
-already-statused existing artifact (row-listed below).
+Per-File Alignment Table for its planned tag/status. Every other touched file (including Phase 4's targets) is an
+ENHANCE to an already-tagged, already-statused existing artifact (row-listed below).
 
 ## Per-File Alignment Table (ARCH-00401 Enh.3)
 | File | ID / Number | Schema Placement (SCHEMA-00001) | Tag (VOC-00001) | Status (VOC-00002) |
 |---|---|---|---|---|
 | `dna/planning/CISEM-ARCH-00407-mechanical-tag-status-enforcement.md` (this file) | CISEM-ARCH-00407 (naming-registry.yaml ARCH next_seq 407→408, Sonnet-allocated per the one gate) | T-SYS, planning-governance layer | planning-domain, tag-status, gate, mandatory, naming, numbering, alignment | Status: PROVISIONAL-ACTIVE / Planning Status: AWAITING-BUILDER-REVIEW |
 | `dna/checks/pre-commit-blocks.sh` (Phase 0 target — NOT edited here) | no ID — executable script, governed by ARCH-00270 | T-SYS, enforcement/CAL layer | gate, block, mandatory (existing, unchanged) | present, unchanged status by this plan |
-| `dna/checks/plan-audit.sh` (Phase 0 target — NOT edited here) | no ID — executable script, governed by ARCH-00320 §6 | T-SYS, enforcement/CAL layer | gate, audit, mandatory (existing, unchanged) | present, unchanged status by this plan |
+| `dna/checks/plan-audit.sh` (Phase 0 + Phase 4 target — NOT edited here) | no ID — executable script, governed by ARCH-00320 §6 | T-SYS, enforcement/CAL layer | gate, audit, mandatory (existing, unchanged) | present, unchanged status by this plan |
 | `dna/vocabulary/CISEM-VOC-00001-tag-library.md` (Phase 1 target — NOT edited here) | CISEM-VOC-00001 (existing) | T-SYS | tag-library, vocabulary, draft (existing) | DRAFT (existing, unchanged by this plan) |
 | `dna/checks/naming-alignment.sh` (Phase 2 — NEW, NOT created by this drafting task) | no ID yet — script, governed by ARCH-00011 §2 pattern | T-SYS, enforcement/CAL layer | naming, numbering, alignment, gate, mandatory (planned) | NOT-YET-BUILT (honest) |
 | `dna/corespines/CS-AI-PROFILING-001/agent-profiles.yaml` (Phase 3 target — NOT edited here) | no ID — existing profile store | T-SYS, AI-Team/persona layer | ai-profiling, living-profile, monotonic (existing, unchanged) | PROVISIONAL-ACTIVE (existing, unchanged by this plan) |
 | `dna/naming-registry.yaml` (already modified — ARCH next_seq 407→408, comment pre-registers this title) | REG type, self-exempt | T-SYS, naming-allocation layer | naming, numbering, mandatory | present, unchanged status |
+| `dna/quality-ledger.yaml` (Phase 4 target — NOT edited here) | no ID — RQC learning memory, governed by ARCH-00320 §6 | T-SYS, learning-loop layer | quality-ledger, rqc, mandatory (existing, unchanged) | present, unchanged status by this plan |
 
 ## What DOES change (upon ratification — implementation is a LATER, separate step; NOTHING here executes now)
 - `dna/checks/pre-commit-blocks.sh` — new BLOCK 3 (Phase 0).
@@ -173,6 +213,7 @@ already-statused existing artifact (row-listed below).
   standalone `dna/checks/naming-alignment.sh` (Phase 2, implementer's choice disclosed).
 - `dna/vocabulary/CISEM-VOC-00001-tag-library.md` — new "Granular / part-of-file tags" section (Phase 1).
 - `dna/corespines/CS-AI-PROFILING-001/agent-profiles.yaml` — `last_batch_review:` field per agent (Phase 3).
+- `dna/checks/plan-audit.sh` — new `[SELF-REVIEW]` WARN check + `opus_executor_incidents` metric echo (Phase 4).
 
 ## What does NOT change
 - ARCH-00190 §2 / ARCH-00401 Enh.2 (plan-scoped tag+status mandate) — already satisfied, untouched.
@@ -209,8 +250,8 @@ pointing to this ARCH number once ratified.
 ## Ratification Path
 Stage 0 (iterative Haiku→Sonnet→Opus draft-review loop, ARCH-00190 §3, incl. two-model verify + SDP hook where a
 polarity surfaces) → Stage 1 (Opus soundness, cold default-refute, `cisem-opus-pe`) → Stage 1.5 (not invoked) →
-Stage 2 (Governor decree). Each Phase additionally carries its own Gate (0→1→2→3→LIVE), reusing the ARCH-00392/
-ARCH-00406 phased-plan gate pattern (A8, no new ratification shape invented).
+Stage 2 (Governor decree). Each Phase additionally carries its own Gate (0→1→2→3→4→LIVE, v0.2), reusing the
+ARCH-00392/ARCH-00406 phased-plan gate pattern (A8, no new ratification shape invented).
 
 ## Self-Compliance (against ARCH-00230 checklist + ARCH-00190 §2, ARCH-00401-amended)
 ✓ Header (ID/Type/Status/Planning-Status/depth_level/tags/goal/corespine/pocket) ✓ Tier-Routing Declaration (honest)
@@ -230,12 +271,19 @@ Change log.
   disclosed limitation as the sibling plan; not silently promised.
 - ❌ Rejected: folding BP-0011 items 2–4 (HTML generation) "for completeness" — explicitly out of scope, flagged for
   a separate future plan instead of padding.
+- ❌ Rejected (v0.2): a new BLOCK-mode escalation for self-review — Phase 4 stays WARN-only (same class as
+  `[POCKET]`); self-review is a governance smell, not a seed-integrity violation, and does not warrant I13's BLOCK.
+- ❌ Rejected (v0.2): re-deriving/re-measuring `opus_executor_incidents` — the metric already exists and is
+  correctly maintained in `quality-ledger.yaml`; Phase 4 only ECHOES it at commit time, it does not recompute it.
 
 ## CAL reference (CISEM-ARCH-00390)
 Pre-commit `[ZF]` + `[DOD]` + `[ROUTING]`/`[ALIGN]`/`[TAG-STATUS]` (already live) run on this plan file at commit
 time. Once implemented, BLOCK 3 joins `pre-commit-blocks.sh`'s existing pre-commit surface (sourced by
 `.git/hooks/pre-commit`, already LIVE); `[TAG-STATUS-REPO]`/`[ALIGN-NUM]` join the same `plan-audit.sh` invocation
 every commit already runs through — no new hook, no new trigger point.
+(v0.2) `[SELF-REVIEW]` (Phase 4) joins the SAME `plan-audit.sh` invocation too — no new hook, no new trigger point;
+it reads `quality-ledger.yaml`/`dna/reviews/` (the sibling plan ARCH-00406 Phase 5's convention) by reference, never
+copies their content inline (A8).
 
 ## Change log
 - v0.1 — 2026-07-20 (Sonnet, STRUCTURING tier, dispatched by Opus via BP-0012): initial draft. 4-phase plan
@@ -244,3 +292,11 @@ every commit already runs through — no new hook, no new trigger point.
   against BP-0012's 5-item scope. Confirmed non-overlapping with the sibling plan ARCH-00406 (Existing-First item
   12). Per-File Alignment Table + all ARCH-00401/00402 mandatory sections populated per Core Seeds 1–3. NOT
   committed by Sonnet (Opus commits after judging, per dispatch instructions).
+- v0.2 — 2026-07-20 (Sonnet, STRUCTURING tier, Opus-directed fold-in per Governor approval): added **Phase 4
+  (ROLE-ENFORCEMENT)** — mechanical checks for the Opus/Sonnet/Haiku roles (new `[SELF-REVIEW]` WARN check reusing
+  the already-live `[POCKET]` check's exact shape; surfaces the already-existing `opus_executor_incidents` metric
+  in the plan-audit output banner). PLAN-ONLY (Core Seed 1 — nothing implemented this pass); Existing-First item 13
+  added; Phase 3's terminal gate relabeled `GATE 3→LIVE` → `GATE 3→4` (no longer terminal); gate chain updated to
+  `0→1→2→3→4→LIVE`; Per-File Alignment Table + "What DOES change" + Path Rejection + CAL reference sections
+  extended accordingly. Status remains PROVISIONAL-ACTIVE / Planning Status AWAITING-BUILDER-REVIEW — still
+  awaiting Opus re-review + Governor ratify; no truth-bearing field written by Sonnet (I7).

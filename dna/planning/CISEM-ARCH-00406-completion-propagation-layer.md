@@ -54,8 +54,31 @@ documented-exception precedent as ARCH-00190), not "exceed and flag" silently.
    both REUSED by name below (Pillar 5's cadence; no new cadence mechanic invented).
 10. `dna/corespines/corespine-registry.yaml` CANDIDATES block — `Completion_Propagation_Layer: { status:
     PLAN-PENDING-BP-0009, ... }` — confirms this exact plan was the expected next step; no competing candidate exists.
+11. **(v0.2 fold-in, Opus-directed 2026-07-20) For PACK-CONTEXT (Phase 4):** `.claude/hooks/session-start.sh` —
+    **ALREADY injects a bootstrap block** (RESUME path + PERSONA SSOT pointer + inherited preventions + `[ZF]`
+    gate) every session, but its printed RESUME list (`CLAUDE.md → WITNESS-00003 → quality-ledger → learning-registry
+    → queue/README`) is genuinely NARROWER than what the 4 agent files already hard-require in their own `MANDATORY
+    BOOTSTRAP` blocks (confirmed by direct read: `.claude/agents/cisem-{haiku,sonnet,opus-pe,fable}.md` each also
+    require `dna/corespines/corespine-registry.yaml` + `dna/naming-manifest.yaml` — a genuine, disclosed DRIFT
+    between the hook's echo and the agents' own requirement, not assumed). Also confirmed: all 4 `.claude/agents/*.md`
+    files ALREADY carry a `MANDATORY BOOTSTRAP` block + `PERSONA (SSOT...)` line (grep-verified, zero missing) — this
+    is the PROVEN pattern to REUSE, not redesign. Confirmed GAP: the 3 `.claude/skills/{cisem-plan,cisem-create,
+    cisem-meta}/SKILL.md` files carry ONLY the `PERSONA (SSOT — load before acting)` line — NONE carry a `MANDATORY
+    BOOTSTRAP` block (grep-verified, 0/3 present). **ENHANCE** the hook + retrofit the 3 skills with the agents'
+    already-proven block; do not invent a second bootstrap format (A8/I19).
+12. **(v0.2 fold-in) For HAIKU-REVIEW-ARTIFACT-AS-GATE (Phase 5):** `dna/checks/definition-of-done.md` step 7
+    ("independently verified (I22), not asserted") already states the REQUIREMENT in prose; `quality-ledger.yaml`
+    ALREADY carries a `pocket:`/author-tier field alongside a `verdict_soundness:`/`ratified_by:` reviewer field on
+    every Gate-review run (runs 17/18/24/26/28 are real precedent of reviewer≠implementer, already on disk) — this
+    is the artifact SHAPE to reuse, not a new format. **Genuine gap** (confirmed by reading `plan-audit.sh`): no
+    check currently cross-references an implementation commit against a recorded review artifact — DoD step 7 and
+    P5 (Independent Verifier named at plan CREATION) are both prose/one-time, neither RE-checks per completed
+    IMPLEMENTATION commit. Distinct from this SAME plan's own Phase 2c `/cisem-precompact-verify` skill (which
+    PERFORMS a two-model review on demand) — Phase 5 is the GATE that checks a review artifact EXISTS, not the tool
+    that produces one; complementary, not competing (disclosed to avoid an I19 misread).
 **VERDICT:** nothing here forks an existing home. Every pillar ENHANCES a named, disclosed existing artifact; the one
 genuinely new file is `dna/checks/output-liveness-monitor.md` (Pillar 5's SSOT — confirmed novel, §Existing-First 4–6).
+Phases 4–5 (v0.2 fold-in) are likewise pure ENHANCEMENTS — no new bootstrap format, no new review-artifact shape.
 
 ## Pocket Declaration
 - **reasoning_scope:** sequence the 5 pillars (RIPL-v2, Propagation Network, Tier-Cycle, Workflow Governance,
@@ -102,6 +125,11 @@ builds on Phase 0's map to know who touches what. **Phase 3 (Output-Liveness Mon
 scope; it monitors the artifacts the first three phases produce, so it is sequenced to have something real to watch.
 Peripheral items (BP-0011's HTML-generation piece; the overnight-scheduler infrastructure IBD-0013 §6 flags as
 needing OS-level cron) are PARKED below (Dependencies), not built here, not dropped.
+**v0.2 fold-in (Opus-directed, Governor-approved 2026-07-20):** Phase 4 (PACK-CONTEXT) and Phase 5
+(HAIKU-REVIEW-ARTIFACT-AS-GATE) are APPENDED after Phase 3, not interleaved — both are cross-cutting enforcement
+concerns (every agent/skill has full context; every implementation has a recorded review) that depend on nothing
+Phases 0–3 produce, but are sequenced last so they audit a repo that already has Phases 0–3's real artifacts to
+check against (same "have something real to watch" logic Phase 3 itself uses, reused not reinvented).
 
 ## The Rule (phases — each BLOCKED until the prior gate passes; implementation is a LATER step, per Core Seed 1)
 
@@ -174,13 +202,63 @@ needing OS-level cron) are PARKED below (Dependencies), not built here, not drop
   `BLOCKED` after exactly 2 failed attempts (not 1, not 3 — GI-34's exact number); vault entry is well-formed
   (id/title/what/disposition/why/tags/date/ruled_by/reopen_conditions, matching the ledger's existing required-fields
   contract, I10).
-- **GATE 3→LIVE:** Opus review + Governor foundational decree (this is the highest-blast phase — repo-wide watching
-  power — foundational decree, not a routine sign-off, matches the ARCH-00392 precedent for its own Phase 3).
+- **GATE 3→4:** Opus review + Governor sign-off. (Relabeled from the v0.1 draft's `GATE 3→LIVE` — Phase 3 is no
+  longer terminal now that Phases 4–5 are folded in below; its own foundational-decree requirement for repo-wide
+  watching power is UNCHANGED, only the chain position moved. v0.2, disclosed in the change log.)
+
+**PHASE 4 — PACK-CONTEXT (mechanical bootstrap-completeness for every agent/skill; v0.2 fold-in, Opus-directed
+2026-07-20, Governor-approved)**
+- Deliverable: (a) ENHANCE `.claude/hooks/session-start.sh`'s printed RESUME line to match the 4 agent files'
+  already-proven `MANDATORY BOOTSTRAP` set exactly — add `dna/corespines/corespine-registry.yaml` +
+  `dna/naming-manifest.yaml` (currently echoed nowhere in the hook, confirmed drift, §Existing-First item 11), and
+  explicitly LABEL the block `MANDATORY BOOTSTRAP` (same wording the agent files already use, so a human/agent
+  scanning either surface recognizes the SAME requirement, not two dialects — A8/I10). (b) RETROFIT the 3
+  `.claude/skills/{cisem-plan,cisem-create,cisem-meta}/SKILL.md` files with the SAME `MANDATORY BOOTSTRAP (first
+  action, every run — Cross-Boundary Zero-Context): read CLAUDE.md, dna/CISEM-WITNESS-00003-session-continuity.md,
+  dna/quality-ledger.yaml, dna/corespines/corespine-registry.yaml, dna/naming-manifest.yaml,
+  dna/learning-registry/session-learning-index.yaml` block already proven in the 4 agent files — REUSE verbatim
+  wording, no new bootstrap format invented (I10/I19). (c) new WARN check `[BOOTSTRAP]` in `plan-audit.sh`: scans
+  `.claude/agents/*.md` + `.claude/skills/**/SKILL.md` for BOTH a `MANDATORY BOOTSTRAP` marker AND a `PERSONA (SSOT`
+  marker; reports `MISSING: <file> (no bootstrap block)` for any that lack either — same shape as the already-live
+  `[POCKET]` check (presence-proxy, WARN-only, forward-looking on changed files, not a retro-flag flood).
+- Stress test: run `[BOOTSTRAP]` against the CURRENT repo BEFORE the retrofit → confirms 4/4 agent files pass
+  silently and 3/3 skill files are flagged (the real, pre-existing, disclosed gap this phase closes — not a
+  regression the check introduces, same honesty class as run 27's I19-tighten side-effect); plant a NEW skill/agent
+  file with neither marker → `[BOOTSTRAP]` fires; add both markers → clears.
+- Pass criteria (numeric): post-retrofit, 7/7 (`4 agents + 3 skills`) pass `[BOOTSTRAP]` silently; the planted
+  missing-both-markers case fires 1/1 and clears 1/1 once fixed; `session-start.sh`'s echoed list matches the
+  agents' 6-item `MANDATORY BOOTSTRAP` set exactly (byte-for-byte file-path list, not just count).
+- **GATE 4→5:** Opus review + Governor sign-off.
+
+**PHASE 5 — HAIKU-REVIEW-ARTIFACT-AS-GATE (independent review becomes a mechanical gate, not prose; v0.2 fold-in,
+Opus-directed 2026-07-20, Governor-approved)**
+- Deliverable: (a) formalize the CONVENTION already visible in `quality-ledger.yaml`'s real run entries (17/18/24/
+  26/28: a `pocket:`/author-tier field distinct from a `verdict_soundness:`/`ratified_by:` reviewer field) as the
+  REQUIRED artifact shape for any commit claiming DoD step 7 ("independently verified"); for implementation work not
+  tied to a numbered RQC run, the SAME shape may live in a `dna/reviews/` note (new minimal directory, reusing the
+  quality-ledger run-entry's own field names — `pocket:`/`verdict_soundness:`/`ratified_by:` — not a new schema).
+  (b) new WARN check `[REVIEW-GATE]` in `plan-audit.sh`: for a commit that touches implementation surfaces
+  (`dna/checks/`, `dna/protocols/`, `.claude/agents/`, `.claude/skills/`) and is NOT itself a `dna/planning/*.md`
+  plan file, scan the latest matching `quality-ledger.yaml` run entry (or a `dna/reviews/` note) for a
+  reviewer-tier field that is DISTINCT from the recorded implementer/`pocket:` tier; if none is found, flag
+  `[REVIEW-GATE] no independent-review reference found for this implementation commit`. (c) ties to THIS plan's own
+  Phase 2a 8-step Tier-Cycle: steps 6–7 (Haiku-review → Sonnet-review) are the CANONICAL producers of this artifact
+  for a workflow-launched build — Phase 5's check is what makes their omission VISIBLE instead of silently
+  skippable, not a new review PROCESS (the 8-step cycle already names the steps; this phase only gates their trace).
+- Stress test: plant an implementation-surface commit with NO matching quality-ledger entry / `dna/reviews/` note →
+  `[REVIEW-GATE]` fires; add a `dna/reviews/` note with a reviewer tier distinct from the implementer → clears; run
+  `[REVIEW-GATE]` as a NEGATIVE CONTROL against the repo's real historical Opus-PE gate-review commits (runs 24, 26,
+  28 in `quality-ledger.yaml`, already reviewer≠implementer on disk) → confirms 0 false-flags against real data, not
+  only a planted case.
+- Pass criteria (numeric): `[REVIEW-GATE]` fires 1/1 on the planted no-review case, clears 1/1 once a
+  distinct-reviewer artifact exists; 0/3 false-flags against the 3 named historical negative-control commits.
+- **GATE 5→LIVE:** Opus review + Governor sign-off.
 
 ## Tags + Statuses on every node this plan creates (ARCH-00401 Enh.2)
 See Per-File Alignment Table below — every file this plan will touch/create carries its tag+status row; no child node
-is created without one (this plan creates ONE new file, `output-liveness-monitor.md`; all others are enhancements to
-already-tagged/already-statused existing files).
+is created without one (this plan creates TWO new artifacts across all 5 phases — `output-liveness-monitor.md`
+(Phase 3) and the `dna/reviews/` convention seed (Phase 5); all others are enhancements to already-tagged/
+already-statused existing files).
 
 ## Per-File Alignment Table (ARCH-00401 Enh.3)
 | File | ID / Number | Schema Placement (SCHEMA-00001) | Tag (VOC-00001) | Status (VOC-00002) |
@@ -193,6 +271,10 @@ already-tagged/already-statused existing files).
 | `dna/checks/output-liveness-monitor.md` (Phase 3 — NEW, NOT created by this drafting task) | no ID yet — script/SSOT artifact, governed by ARCH-00320 §6 pattern (like `definition-of-done.md`) | T-SYS, enforcement/CAL layer | output-liveness, monitor, gate, mandatory (planned) | NOT-YET-BUILT (honest — this plan only specs it) |
 | `dna/archive/archive-ledger.yaml` (Phase 3 — proposed new disposition value `LIVENESS-FAILED`, NOT added by this drafting task) | REG-governed, no ID (existing) | T-SYS, decision-archive layer | archive, disposition, mandatory (existing, unchanged; new enum value flagged for Governor) | PROVISIONAL-ACTIVE (existing, unchanged by this plan) |
 | `dna/naming-registry.yaml` (already modified — ARCH next_seq 406→407, comment pre-registers this title) | REG type, self-exempt | T-SYS, naming-allocation layer | naming, numbering, mandatory | present, unchanged status |
+| `dna/checks/plan-audit.sh` (Phase 0/1/4/5 target — NOT edited by this drafting task) | no ID — executable script, governed by ARCH-00320 §6 | T-SYS, enforcement/CAL layer | gate, audit, mandatory (existing, unchanged) | present, unchanged status by this plan |
+| `.claude/hooks/session-start.sh` (Phase 4 target — NOT edited here) | no ID — CAL hook, governed by ARCH-00390 | T-SYS, enforcement/CAL layer | cal, hook, bootstrap, mandatory (existing, unchanged) | present, unchanged status by this plan |
+| `.claude/skills/{cisem-plan,cisem-create,cisem-meta}/SKILL.md` (Phase 4 targets — NOT edited here) | no ID — governed by ARCH-00340/CS-AI-PROFILING-001 | T-SYS, AI-Team/skills layer | skill, bootstrap (existing, unchanged) | present, unchanged status by this plan |
+| `dna/reviews/` (Phase 5 — NEW directory/convention seed, NOT created by this drafting task) | no ID — minimal convention, governed by ARCH-00320 §6 pattern (like `output-liveness-monitor.md`) | T-SYS, learning-loop/review layer | review-gate, independent-verification, mandatory (planned) | NOT-YET-BUILT (honest — this plan only specs it) |
 
 ## What DOES change (upon ratification — implementation is a LATER, separate step; NOTHING here executes now)
 - `dna/ssot-registry.yaml` — `regenerates:` field per concept (Phase 0).
@@ -205,6 +287,12 @@ already-tagged/already-statused existing files).
   a standalone `dna/checks/output-liveness-monitor.sh` runner (build is a follow-on, disclosed).
 - `dna/archive/archive-ledger.yaml` — proposed new disposition `LIVENESS-FAILED` (Governor confirms the enum addition
   at Phase 3's foundational-decree gate; not added silently).
+- `.claude/hooks/session-start.sh` — RESUME line enhanced to match the agents' 6-item `MANDATORY BOOTSTRAP` set
+  (Phase 4).
+- `.claude/skills/{cisem-plan,cisem-create,cisem-meta}/SKILL.md` — retrofit with a `MANDATORY BOOTSTRAP` block
+  (Phase 4).
+- `dna/checks/plan-audit.sh` — new `[BOOTSTRAP]` WARN check (Phase 4); new `[REVIEW-GATE]` WARN check (Phase 5).
+- New: `dna/reviews/` convention seed (Phase 5, spec in this plan, build is a follow-on).
 
 ## What does NOT change
 - No ratified invariant/decree/axiom is altered. `ssot-registry.yaml`'s existing `ssot`/`mirrors` fields are
@@ -247,9 +335,9 @@ gets a completion note pointing to this ARCH number once ratified (queue index s
 Stage 0 (iterative Haiku→Sonnet→Opus draft-review loop, per ARCH-00190 §3 as it exists TODAY, including the
 Two-model-verify + NEW-DRIFT-vs-ALREADY-RESOLVED classifier and the SDP hook where a polarity surfaces) → Stage 1
 (Opus soundness, cold default-refute, `cisem-opus-pe`) → Stage 1.5 (fable mentor — not invoked, no Governor
-activation requested) → Stage 2 (Governor decree). Each PHASE additionally carries its own Gate (0→1→2→3→LIVE) —
-implementation of a later phase cannot start before the earlier phase's Gate clears, per the ARCH-00392 phased-plan
-precedent (reused pattern, A8).
+activation requested) → Stage 2 (Governor decree). Each PHASE additionally carries its own Gate
+(0→1→2→3→4→5→LIVE, v0.2) — implementation of a later phase cannot start before the earlier phase's Gate clears, per
+the ARCH-00392 phased-plan precedent (reused pattern, A8).
 
 ## Self-Compliance (against ARCH-00230 checklist + ARCH-00190 §2, ARCH-00401-amended)
 ✓ Header (ID/Type/Status/Planning-Status/depth_level/tags/goal/corespine/pocket) ✓ Tier-Routing Declaration (honest,
@@ -272,6 +360,12 @@ CAL reference ✓ Change log.
   TTL + the 2-attempt rule verbatim from the already-purified IBD-0024/GI-33/34 material (reuse-before-coin, GI-15).
 - ❌ Rejected: folding BP-0011's HTML-generation scope in "for completeness" — would pad this plan past its stated
   subject; explicitly flagged as needing its own future plan instead.
+- ❌ Rejected (v0.2): a second bootstrap-block format for Phase 4 — the 4 agent files' `MANDATORY BOOTSTRAP` wording
+  is REUSED verbatim for the 3 skills + the hook echo; no new dialect invented.
+- ❌ Rejected (v0.2): a new review-artifact schema for Phase 5 — the `pocket:`/`verdict_soundness:`/`ratified_by:`
+  field shape already live in `quality-ledger.yaml` is REUSED for `dna/reviews/` notes, not redesigned.
+- ❌ Rejected (v0.2): merging Phase 5 into Phase 2c's `/cisem-precompact-verify` skill spec — Phase 2c PERFORMS a
+  review on demand; Phase 5 GATES that a review artifact EXISTS before a done-claim. Complementary, kept distinct.
 
 ## CAL reference (CISEM-ARCH-00390)
 Pre-commit `[ZF]` + `[DOD]` + `[ROUTING]`/`[ALIGN]`/`[TAG-STATUS]` (ARCH-00402, already live) all run on this plan
@@ -279,6 +373,9 @@ file itself at commit time. Once implemented, `[PROPAGATE]`/`[RIPL-BATCH]` join 
 invocation (no new hook, no new trigger point); the Output-Liveness Monitor (Phase 3) is the first mechanism in CISEM
 whose OWN job is to re-run other CAL checks on a cadence — it sits ON TOP of CAL, not beside it (disclosed distinction
 for Opus's Stage-1 review: this is a mechanism ABOUT other mechanisms' aliveness, not a new independent hook).
+(v0.2) `[BOOTSTRAP]` (Phase 4) and `[REVIEW-GATE]` (Phase 5) join the SAME `plan-audit.sh` invocation too — no new
+hook, no new trigger point; `[BOOTSTRAP]` also enhances the EXISTING `.claude/hooks/session-start.sh` CAL surface
+(SessionStart) rather than adding a second one.
 
 ## Change log
 - v0.1 — 2026-07-20 (Sonnet, STRUCTURING tier, dispatched by Opus via BP-0009): initial draft. 5-pillar phased plan
@@ -287,3 +384,14 @@ for Opus's Stage-1 review: this is a mechanism ABOUT other mechanisms' aliveness
   IBD-0024/GI-33/34 material, discovered via Existing-First rather than invented). BP-0010's mechanical-enforcement
   fold-in honors RI-0002's existing routing. Per-File Alignment Table + all ARCH-00401/00402 mandatory sections
   populated per Core Seeds 1–3. NOT committed by Sonnet (Opus commits after judging, per dispatch instructions).
+- v0.2 — 2026-07-20 (Sonnet, STRUCTURING tier, Opus-directed fold-in per Governor approval): added **Phase 4
+  (PACK-CONTEXT)** — mechanical bootstrap-completeness for every agent/skill (enhances the proven 4-agent
+  `MANDATORY BOOTSTRAP` pattern + `.claude/hooks/session-start.sh`; retrofits the 3 currently-gapped SKILL.md files;
+  new `[BOOTSTRAP]` WARN check) — and **Phase 5 (HAIKU-REVIEW-ARTIFACT-AS-GATE)** — makes independent review a
+  mechanical gate (enhances the review-artifact shape already real in `quality-ledger.yaml`'s Gate-review runs; new
+  `[REVIEW-GATE]` WARN check; ties to Phase 2a's 8-step Tier-Cycle). Both PLAN-ONLY (Core Seed 1 — nothing
+  implemented this pass); Existing-First items 11–12 added; Phase 3's terminal gate relabeled `GATE 3→LIVE` →
+  `GATE 3→4` (no longer terminal); gate chain updated to `0→1→2→3→4→5→LIVE`; Per-File Alignment Table + "What DOES
+  change" + Path Rejection + CAL reference sections extended accordingly. Status remains PROVISIONAL-ACTIVE /
+  Planning Status AWAITING-BUILDER-REVIEW — still awaiting Opus re-review + Governor ratify; no truth-bearing field
+  written by Sonnet (I7).
