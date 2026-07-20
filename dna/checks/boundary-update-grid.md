@@ -16,6 +16,7 @@ Each node carries its own context — goal, status, tag, governing corespine, pa
 | **Parked / rejected / decisions** | parked-and-rejected-register.md · archive-ledger.yaml · IBD-0017 | all routed, none floating |
 | **Root insights** | root-insights.yaml (RIPL) | each found-wrong→improved event extracted |
 | **Learning + continuity** | learning-registry + WITNESS COMPACT STATE | harvest run; resume path stated |
+| **Governor Insights** | dna/governor-insights.yaml | every decree indexed to its home + grouped; new insights land here first (reference-not-copy) |
 
 ## DO-AT-EVERY-BOUNDARY
 1. Harvest (STEP 1–5) → learning-registry. 2. Update COMPACT STATE (+ the grid above). 3. Every list current + coherent (schema-aligned, status+tag on each). 4. Commit + PUSH (0 unpushed; DoD item 6). 5. State resume path.

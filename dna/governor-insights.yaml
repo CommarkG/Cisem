@@ -1,0 +1,54 @@
+# CISEM Governor Insights — consolidated INDEX of the Governor's decrees (reference-not-copy)
+# Governed by: CS-AI-PROFILING-001 (governance surface) | Status: PROVISIONAL-ACTIVE (2026-07-20)
+# tags: [governor-insights, index, consolidation, reference-not-copy, ever-updating]
+#
+# WHY: the Governor felt his insights were scattered. FINDING (Haiku DNA-map 2026-07-20): they are MOSTLY
+#   already homed — CLAUDE.md §2 (Principles 1-16) + §2.4 (Axioms) + the persona. The gap was a consolidated
+#   VIEW, not scattered content. This file is that INDEX: it POINTS to each insight's home, never copies it
+#   (A8/I10). It feeds the ever-updating Governor Insights page and is refreshed at every boundary
+#   (dna/checks/boundary-update-grid.md). New insights land here first, then wire to their home.
+#
+# STATUS values: RATIFIED-WIRED (decreed + mechanically live) · RATIFIED (decreed, honored behaviorally) ·
+#   DECREED-NOT-YET-WIRED (decreed this session, wiring is a queued plan) · AWAITING-GOVERNOR (needs his definition).
+
+groups:
+
+  platform_level:
+    - { id: GI-01, insight: "Platform-level, not app-builder — wire native primitives (CAL) by default; 'hardwired' = mechanical, never a document", home: "CLAUDE.md §1.6 + persona DEVELOPMENT DISCIPLINE", status: RATIFIED-WIRED, date: 2026-07-18 }
+
+  collaboration_and_governance:
+    - { id: GI-02, insight: "Contradict · push back · offer alternatives — agreeableness that suppresses a better idea is a FAILURE; frame dissent as PCR", home: "CLAUDE.md §1.6 + Principle 10 (PCR)", status: RATIFIED-WIRED, date: 2026-07-18 }
+    - { id: GI-03, insight: "Consensus before creation — do NOT auto-activate creations mentioned in discussion; reach consensus first (exception: compaction, and even then ask)", home: "CLAUDE.md §1.6", status: RATIFIED, date: 2026-07-19 }
+    - { id: GI-07, insight: "One writing tab · git-SSOT — Opus is sole orchestrator; git is the only source of truth; a 2nd writing tab or copy-paste bus is forbidden (Model-A collision)", home: "CLAUDE.md §1.7 (Operating Model)", status: RATIFIED-WIRED, date: 2026-07-18 }
+
+  core_first_resolution:
+    - { id: GI-04, insight: "Core-first · ripple — resolve the root; a core resolution auto-aligns downstream; sequence the core first, don't patch symptoms", home: "CLAUDE.md §1.6", status: RATIFIED-WIRED, date: 2026-07-19 }
+    - { id: GI-05, insight: "Resolve by doing, not defining-in-circles — draft → real run → refine → ratify; endless 'let me define' is analysis-paralysis", home: "CLAUDE.md §1.6", status: RATIFIED-WIRED, date: 2026-07-19 }
+    - { id: GI-06, insight: "Harvest before any boundary — run the STEP 1-5 learning harvest before compact/tab-switch; save-all is a different act", home: "CLAUDE.md Principle 12 + ARCH-00370", status: RATIFIED-WIRED, date: 2026-07-18 }
+
+  consolidation_and_ssot:
+    - { id: GI-08, insight: "A8 One Source — every concept has exactly ONE authoritative home; consolidate, never duplicate or fork; a mirror may not diverge", home: "CLAUDE.md §2.4 A8 + FOUND-00001", status: RATIFIED-WIRED, date: 2026-07-18 }
+    - { id: GI-09, insight: "A9 Optimal Synergy — hold complementary polarities; an element can be more than one thing (singly-homed + crisp facets + coherence law)", home: "CLAUDE.md §2.4 A9 + FOUND-00001", status: RATIFIED, date: 2026-07-20 }
+    - { id: GI-10, insight: "Existing-First (I19) — search what exists before planning/creating; STATE the search; mechanically enforced in plan-audit", home: "CLAUDE.md §3.2b", status: RATIFIED-WIRED, date: 2026-07-18 }
+
+  creation_quality_and_completeness:
+    - { id: GI-11, insight: "Plan is mandatory (I25 / A4) — no governed creation without a ratified plan; 'small/safe/dogfooding' is not an excuse", home: "CLAUDE.md A4 + ARCH-00190", status: RATIFIED-WIRED, date: 2026-07-18 }
+    - { id: GI-12, insight: "Instruction completeness / zero-assembly (I21) — a handoff is a SINGLE runnable block; no 'see above', no placeholder to fill", home: "CLAUDE.md Principle 14", status: RATIFIED-WIRED, date: 2026-07-18 }
+    - { id: GI-14, insight: "Definition-of-Done — done = wired + propagated + hooked + pushed + verified, OR an honest NOT-YET-WIRED tag; 'produced' is never done", home: "dna/checks/definition-of-done.md + [DOD] check", status: RATIFIED-WIRED, date: 2026-07-20 }
+
+  design_rigor_and_verification:
+    - { id: GI-13, insight: "Divergent-iteration to flawless (ZF-development) — prove a reusable pattern by 2-3 DIFFERENT builds before generalizing; premature generalization is a gap-creation engine", home: "CLAUDE.md Principle 15", status: RATIFIED-WIRED, date: 2026-07-19 }
+    - { id: GI-16, insight: "Anti-scatter / expert significance-ranking — rank by significance vs the compasses, act on the central few, park the peripheral, name the ripples", home: "CLAUDE.md Principle 16", status: RATIFIED-WIRED, date: 2026-07-19 }
+    - { id: GI-17, insight: "Two-model verify — a checklist/agent-essence change needs two-model verification; an agent-itself change needs two-model verify + Opus ratify", home: "persona DEVELOPMENT DISCIPLINE", status: RATIFIED, date: 2026-07-20 }
+
+  vocabulary_discipline:
+    - { id: GI-15, insight: "Reuse-before-coin — industry vocabulary is FIRST priority; a CISEM term is allowed ONLY if registered in the vocabulary AND it cites its industry equivalent; unregistered coinage = drift debt", home: "TO WIRE: CLAUDE.md Principle (new) + ARCH-00011/VOC + persona + agents/skills by-reference", status: DECREED-NOT-YET-WIRED, date: 2026-07-20, note: "top-priority AI governance; wiring is the propagation plan (item 5). First application: loop-until-ZF rename." }
+
+  loops_and_corespiral:
+    - { id: GI-18, insight: "loop-until-ZF — iterate passes until a full pass surfaces nothing new (Zero-Findings); a partial pass is never done (industry: iterate to a fixpoint)", home: "dna/planning/CISEM-ARCH-00403 (SOUND, awaiting Stage-2) → dna/checks/zf-convergence.md on implementation", status: DECREED-NOT-YET-WIRED, date: 2026-07-20, note: "renamed from the coined 'loop-until-dry' per GI-15." }
+    - { id: GI-19, insight: "CoreSpiral — the self-improving spine; the expand→focus breath (the creation/refinement loop); the home for loops and high-blast handling", home: "dna/CISEM-FOUND-00001 [definition AWAITING-GOVERNOR]; essence captured in WITNESS-00003 + IBD-0009", status: AWAITING-GOVERNOR, date: 2026-07-20, note: "P0 founding keystone; Governor-only to author. loop-until-ZF (GI-18) is an instance of it." }
+
+# REAL DNA overlaps Haiku flagged (route as small cleanups, not forks):
+dna_cleanups_flagged:
+  - { issue: "A1-A7 references scattered; A8 (2026-07-18) + A9 (2026-07-20) added — sweep 'A1-A7'/'A1-A8' refs to 'A1-A9'", route: "small Sonnet sweep, two-model verify", status: PARKED }
+  - { issue: "persona §1.6 (always-loaded mirror) vs persona-collaborator.md (SSOT) — verify zero divergence (borders I10 edge)", route: "reference-integrity check (propagation plan)", status: PARKED }
