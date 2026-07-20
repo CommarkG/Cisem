@@ -22,4 +22,19 @@ if [ -n "$planmiss" ]; then
   echo "   Add them (ARCH-00190) — or, if intentional: git commit --no-verify (then log in quality-ledger)."
   exit 1
 fi
+
+# BLOCK 2 — every new/changed AGENT or SKILL must REFERENCE the persona SSOT (Governor 2026-07-20: hardwire the
+#           persona into new creations of agents + skills, so each is BORN inheriting it — prevention, not detection).
+personamiss=""
+for f in $(git diff --cached --name-only --diff-filter=AM 2>/dev/null | grep -E '^\.claude/(agents/[^/]+\.md|skills/.+/SKILL\.md)$'); do
+  git show ":$f" 2>/dev/null | grep -q "persona-collaborator" \
+    || personamiss="${personamiss}
+   $f — missing persona SSOT reference"
+done
+if [ -n "$personamiss" ]; then
+  echo "── BLOCKED (persona-inheritance): a new/changed agent or skill does not reference the persona SSOT:${personamiss}"
+  echo "   Add:  **PERSONA (SSOT — load before acting):** dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md"
+  echo "   (reference only, never copy — I10) — or, if intentional: git commit --no-verify (log it)."
+  exit 1
+fi
 exit 0
