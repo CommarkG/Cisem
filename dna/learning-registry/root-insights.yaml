@@ -1,0 +1,33 @@
+# CISEM Root Insights Registry — the durable RIPL (Root-Insight Propagation Loop) store.
+# Governed by: CS-AI-PROFILING-001 (persona SSOT dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md,
+#   "## DEVELOPMENT DISCIPLINE" section) — mirrored one-line in CLAUDE.md §1.6.
+# Sibling to dna/learning-registry/session-learning-index.yaml (session-scoped log); this registry is
+# CONCEPT-scoped — one durable entry per found-wrong→improved ROOT INSIGHT (the class, not the local fix).
+#
+# RIPL, in one line: on every found-wrong→improved event, EXTRACT the root-core insight (the CLASS) →
+# ROUTE it (Axiom / Planning / Creation / Behavior / Persona / check) → WIRE-or-PARK → RECORD here.
+# Never fix locally without extracting the class, or the gap repeats elsewhere under a different name.
+#
+# Field contract per entry (RI-NNNN):
+#   date          — when the insight was extracted
+#   trigger       — the found-wrong event that surfaced it
+#   root_insight  — the CLASS-level lesson (not the point-fix)
+#   routes_to     — where the insight was/will be routed (axiom / check / plan / park, named)
+#   status        — WIRED | PARTLY-WIRED | PARKED | PROPOSED (truth-bearing; only Opus stamps WIRED, I7)
+#
+# Append-only, like session-learning-index.yaml and quality-ledger.yaml — do not rewrite prior entries;
+# a later entry may SUPERSEDE an earlier one by reference, never by silent edit.
+
+insights:
+  RI-0001:
+    date: "2026-07-20"
+    trigger: "A9 orthogonal-facets guardrail found flawed by 8-persona stress-panel"
+    root_insight: >
+      An ASSERTED global-consistency claim over open-ended prose is undecidable and violates
+      I22/I23 (assertion-over-verification). Rule: check consistency inside a fixed DECIDABLE
+      language, else label it ASSERTED (refutation-testable, never "verified").
+    routes_to:
+      - "A9 guardrail (WIRED 2026-07-20)"
+      - "candidate general principle: assert-vs-decide honesty → propose as invariant"
+      - "PAE + creation checks (park)"
+    status: PARTLY-WIRED
