@@ -35,3 +35,11 @@ most important: it is the anti-drift mirror).
 - Promote to CS-AI-PROFILING-001 corespine? (candidate; ties to the inheritance-mechanism first-trial + the graft machine IBD-0013 #8.)
 - Governor offered to participate + complete — co-author the self-profile especially (external eyes on my blind spots).
 - Add a mechanical hook: PAE intake → profile-delta (currently manual).
+
+## 5. ONGOING PER-AGENT IMPROVEMENT + STABILITY (Governor 2026-07-20)
+Each agent (Haiku · Sonnet · cisem-opus-pe/cold-verifier · self) keeps a LIVING PROFILE that only GROWS: its known gaps, strengths, and the checklist-items it ACCRETED from what it (or its cross-checker) missed on the same task. Rules:
+- **Monotonic + on-disk:** improvements accrete and are PRESERVED — AI engines are unstable, so this cycle's competence may not repeat next cycle; the gain must live on disk (the profile / a checklist file), never in a model's memory.
+- **Cross-enrichment:** when two models run the same task, each one's MISSES become new profile/checklist items for BOTH (Haiku missed metrics → "cross-validate metrics vs registry" becomes a standing item; Sonnet missed protocol-clause-vs-disk → becomes one too).
+- **Safe form (guardrail):** the DATA grows (profile/checklist); the agent's ratified CORE instructions do NOT self-rewrite. Agent-essence changes need two-model verify + Opus ratification (persona DEVELOPMENT DISCIPLINE).
+- **Long-run out-of-tab:** for heavy runs, the Governor opens a dedicated Sonnet/Haiku tab, gives it an extensive task, and Opus reviews + consolidates the outcome (cost + parallelism; connects each model's engine to the platform).
+Route: mechanical wiring (profile files per agent + accretion on each cycle) = BP-0009/BP-0010; NOT-YET-WIRED (behavioral until built).

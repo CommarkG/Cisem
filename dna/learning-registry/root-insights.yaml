@@ -31,3 +31,9 @@ insights:
       - "candidate general principle: assert-vs-decide honesty → propose as invariant"
       - "PAE + creation checks (park)"
     status: PARTLY-WIRED
+  RI-0002:
+    date: "2026-07-20"
+    trigger: "Haiku+Sonnet cross-review of compaction-prep — each caught the other's blind spot; even the 'correct' reviewer (Sonnet) had a wrong denominator (4/15 vs actual 4/14)"
+    root_insight: "A single model errs even when REVIEWING. Anything governing HOW agents work (a checklist / an agent's essence) needs TWO-MODEL verification via two ORTHOGONAL lenses (protocol-compliance x content-correctness); an agent-SELF change also needs Opus ratification. Every flag must be classified NEW-DRIFT vs ALREADY-RESOLVED against current state, or the reviewer manufactures false positives (re-digging resolved holes)."
+    routes_to: ["persona DEVELOPMENT DISCIPLINE (agent-change governance + two-lens — WIRED behaviorally)", "BP-0010 (two-model-verify activation list + tab prompts)", "BP-0009 (mechanical /cisem-precompact-verify skill — PARKED)"]
+    status: PARTLY-WIRED
