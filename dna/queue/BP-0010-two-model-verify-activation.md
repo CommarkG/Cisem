@@ -1,5 +1,6 @@
 # BUILD-PROMPT BP-0010 — Two-Model-Verify: activation list + paste-ready tab prompts
 **FOR:** Governor (paste to Haiku tab + Sonnet tab) → Opus consolidates | **status:** QUEUED — post-compact | **priority:** HIGH | **essential:** y
+**tags:** [build-prompt, two-model-verify, activation, agents]
 **Goal:** run the two-orthogonal-lens verification (protocol-compliance × content-correctness) on the things that govern HOW CISEM works, and stand up new agents that pass this test. Governor-ratified rule (2026-07-20): a checklist/agent-essence change needs TWO-MODEL verify; an agent-itself change needs two-model verify + Opus ratification.
 
 ## WHERE THE CHECK APPLIES — target list (prioritized; "multiple things")

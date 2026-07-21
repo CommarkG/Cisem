@@ -1,5 +1,6 @@
 # BUILD-PROMPT BP-0008 — Active Archive of ruled-out / superseded ideas (mechanically enforced avoid-list)
 **FOR:** cisem-sonnet drafts; cisem-opus-pe verifies. **status:** MVP-EXECUTED (2026-07-19, SWIFT-safe zero-blast) | **priority:** HIGH (remainder) | **essential:** y | **depends-on:** BP-0001
+**tags:** [build-prompt, active-archive, ruled-out-ideas, mechanical-avoid-list]
 **MVP DONE (Governor decree 2026-07-19, Opus SWIFT — stated tier exception: additive+in-context+routing-overhead>work):**
 `dna/archive/archive-ledger.yaml` created (append-only, EXTENDED with a `disposition` vocabulary — RULED-OUT-PERMANENT /
 -TEMPORARY / SUPERSEDED / VAULTED-CONFLICT / REOPENED — so it is a reopenable knowledge base, not just an avoid-list);

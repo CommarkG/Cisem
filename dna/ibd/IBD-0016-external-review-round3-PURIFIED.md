@@ -1,5 +1,6 @@
 # IBD-0016 — External Review Round 3 (PURIFIED via PAE 6-lens) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — absorption only, NOT folded/reacted-to. Claims to verify.
+**tags:** [ibd, purified, external-review, typed-governance-graph]
 **Source (raw):** [[IBD-0016-external-review-round3-RAW]] (reviewer R3, EXTERNAL-UNTRUSTED). Engine: [[CISEM-ARCH-00399-purification-alignment-engine]] (6 lenses).
 **De-brand note (Vocab + Security lenses):** stripped house references (XACML/OPA/Temporal/NASA/NIST/SRE named authorities, their exact YAML key-style) BUT preserved the semantic constraint each encodes, renamed to CISEM vocab. Their citations = supporting evidence, not adopted authority.
 

@@ -1,6 +1,7 @@
 # BUILD-PROMPT BP-0002 — Orchestrate ALL invariants into the one engine (creation-learning loop)
 **FOR:** cisem-sonnet (execute exactly; honor Core Seeds verbatim; never write truth-fields — I7)
 **status:** QUEUED | **priority:** HIGH | **essential:** y | **timeframe:** pivot step 3 | **depends-on:** BP-0001
+**tags:** [build-prompt, invariants, creation-learning-loop]
 
 ## BOOTSTRAP (mandatory first)
 Read: CLAUDE.md, dna/checks/plan-audit.sh, dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md (invariant table I1–I17), dna/ssot-registry.yaml.

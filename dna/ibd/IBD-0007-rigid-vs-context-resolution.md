@@ -1,5 +1,6 @@
 # IBD-0007 — Rigid-vs-Context Resolution: Context-Envelope + Three-State Edge-Flag (6-persona synthesis)
 **Type:** IBD (design capture — six-persona dossier + Opus synthesis) | **Status:** PARKED — plan-gate-bound | completion-priority HIGH
+**tags:** [ibd, rigid-vs-context, context-envelope, three-state-edge-flag]
 **Origin:** Governor 2026-07-18 — "resolve the contrast between rigid definitions and context-focused AI governance; add (1) mandatory context, (2) edge-case flagging = practical active AI oversight; explore by six personas; must be resolved."
 **Existing-First:** ENHANCES A6/D6/D2 (doctrine → mechanism); REUSES I23 pattern, exempt-tags, `found_iN` aggregation, P3 TTL, the ZF gate, PCR (§2 principle 10), §3.4 Standalone Test; EXTENDS ARCH-00320 checks + ARCH-00008 node fields + IBD-0006 dossier. NOT a parallel system.
 

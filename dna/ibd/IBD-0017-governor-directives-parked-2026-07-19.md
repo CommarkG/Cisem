@@ -1,5 +1,6 @@
 # IBD-0017 — Governor Directives Parked (R3 turn) 2026-07-19
 **Type:** IBD (vault park) | **Status:** PARKED-RAW — each routed below; NOTHING built this turn (protect the active spine + feedback round).
+**tags:** [ibd, governor-directives, routing, onboarding-package]
 **source:** Governor (this session) | **trust_tier:** GOVERNOR
 **Why parked:** these arrived mid-absorption. Per completion (I14) + the practice-discipline the Governor is testing, they are REGISTERED with routing + priority, not chased. Active work = absorb the review set → consolidate → ratify draft pipeline+wizard.
 

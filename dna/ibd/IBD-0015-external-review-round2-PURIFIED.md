@@ -1,5 +1,6 @@
 # IBD-0015 — External Review Round 2 (PURIFIED via PAE) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — essence extracted, NOT folded/reacted-to (absorption only, per Governor). Claims to verify.
+**tags:** [ibd, purified, external-review, deterministic-layer2]
 **Source (raw):** [[IBD-0015-external-review-round2-RAW]] (reviewer R2, EXTERNAL-UNTRUSTED). Engine: [[CISEM-ARCH-00399-purification-alignment-engine]].
 **De-brand note (Security lens):** stripped R2's house vocabulary (LMDX/Gemini framing, "matrix rule", their error-string format) BUT PRESERVED the safety-bearing semantics beneath it (renamed, not dropped) — guarding the semantic-drift risk R2 itself raised.
 

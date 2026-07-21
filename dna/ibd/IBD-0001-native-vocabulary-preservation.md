@@ -1,6 +1,7 @@
 ---
 IBD: 0001
 tag: ai-behavior / premature-structuring-destroys-native-vocabulary
+tags: [ibd, ai-behavior, native-vocabulary, premature-structuring]
 status: PARKED-RAW — unprocessed; tag AWAITING-GOVERNOR-RATIFY (silence = kept as-is)
 captured: 2026-07-18
 processing: NONE — verbatim. Promotion to a governed node is a separate, later step.

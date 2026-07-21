@@ -1,6 +1,7 @@
 # HANDOFF — Opus: Consolidated Open Items (2026-07-18)
 **Type:** TAB-HANDOFF (Sonnet → Opus) | Cross-Boundary Zero-Context
 **Prepared:** 2026-07-18 post A8-sweep | **Status:** CURRENT
+**tags:** [handoff, consolidated-open-items, tab-handoff]
 
 Cross-tab comms: tabs communicate ONLY via the Governor. Paste this file as the Opus tab opener.
 

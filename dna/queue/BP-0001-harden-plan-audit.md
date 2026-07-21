@@ -1,6 +1,7 @@
 # BUILD-PROMPT BP-0001 — Harden plan-audit.sh (kill false positives)
 **FOR:** cisem-sonnet (execute exactly; honor Core Seeds verbatim; never write truth-fields — Hard Line I7)
 **status:** QUEUED | **priority:** HIGH | **essential:** y | **timeframe:** pivot step 1 | **depends-on:** none
+**tags:** [build-prompt, plan-audit, false-positives]
 
 ## BOOTSTRAP (mandatory first)
 Read: CLAUDE.md, dna/checks/plan-audit.sh, dna/quality-ledger.yaml, dna/protocols/CISEM-ARCH-00320-prevention-and-plan-audit.md.

@@ -1,5 +1,6 @@
 # IBD-0010 — External Wizard Inputs (PURIFIED ESSENCE) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — runs the creation cycle (threshold → FIT → CONSENSUS → 8-Q stress-test) before anything here binds.
+**tags:** [ibd, purified, external-wizard-inputs, corespine-wizard]
 **Source (raw quarantine):** [[IBD-0010-external-wizard-inputs-RAW]] — verbatim, de-brand-on-analysis. This file is the DERIVED purified version; the RAW file is never edited into. RAW/PURIFIED are a mandatory PAIR (see ARCH-00011 §RAW-PURIFIED convention).
 **Purification rule applied:** source names (three colleagues), their private machinery, their word "spine", and their sealed counts are STRIPPED. What remains is essence, mapped to existing CISEM vocab.
 **Triangulation note:** three INDEPENDENT sources converging on the same move = strong evidence, not proof (still verify each).

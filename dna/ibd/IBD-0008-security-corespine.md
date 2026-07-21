@@ -1,5 +1,6 @@
 # IBD-0008 — Security Corespine (raw capture)
 **Type:** IBD | **Status:** PARKED-RAW | **Proposed tag:** security, corespine-candidate, fierce-protection
+**tags:** [ibd, security, corespine-candidate, prompt-injection]
 **Captured:** 2026-07-18 (Governor directive) | **Gate-exempt:** §2.6 (capture-first; promotion runs the full gates later)
 
 ## Governor directive (verbatim intent)

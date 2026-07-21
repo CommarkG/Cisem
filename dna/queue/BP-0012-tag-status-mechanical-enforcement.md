@@ -1,5 +1,6 @@
 # BUILD-PROMPT BP-0012 — Mechanical tag+status enforcement (undebatable) + granular + naming/numbering + weekly agent-enrichment
 **FOR:** the tier-cycle (Haiku-gather → Sonnet-build → Opus-consolidate) | **status:** QUEUED — post-compact | **priority:** HIGH | **essential:** y
+**tags:** [build-prompt, tag-status-enforcement, mechanical-gate, naming]
 **Goal (Governor 2026-07-20):** make TAGS + STATUSES — the main governance surface — MECHANICALLY + DYNAMICALLY enforced everywhere, as an UNDEBATABLE stage of creation/identification, so the bundling engines + PE engine run smoothly and nothing is created untagged/unstatused.
 
 ## SCOPE

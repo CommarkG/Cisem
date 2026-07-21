@@ -1,5 +1,6 @@
 # Corespine Model — Draft for Governor Consensus (STEP 0 of ARCH-00396's successor foundation)
 **Type:** AUDIT ARTIFACT / DRAFT-FOR-CONSENSUS (NOT a plan, NOT a ratified model — GATHER+DRAFT only) | **Tier:** cisem-sonnet (STRUCTURING), executing Opus's exact task under 5 Opus-authored Core Seeds
+**tags:** [audit, corespine-model, consensus-draft]
 **Status:** DRAFT — no truth-field stamped. Opus refines this; the Governor ratifies later (CORE-SEED 2).
 **Governing corespine:** none yet — this artifact drafts a MODEL for how corespines themselves connect; it is
 explicitly NOT a corespine and creates none (CORE-SEED 2). Filed in `dna/audits/` per the existing audit-artifact

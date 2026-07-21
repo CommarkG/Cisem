@@ -1,5 +1,6 @@
 # IBD-0021 — External Review Round 6 (PURIFIED via PAE 6-lens) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — absorption only. Claims to verify. LAST of the review set (R1-R6 complete).
+**tags:** [ibd, purified, external-review, vault-drain-sla]
 **Source (raw):** [[IBD-0021-external-review-round6-RAW]] (reviewer R6 = CSP/Opus-architect, EXTERNAL-UNTRUSTED — sibling self-hosting platform, "scars not theory"). Engine: [[CISEM-ARCH-00399-purification-alignment-engine]] (6 lenses).
 
 ## REVIEWER R6 — UNDERLYING AXIOMS (Axiom lens — map, do NOT adopt)

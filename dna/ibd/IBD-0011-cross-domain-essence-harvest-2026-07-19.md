@@ -1,5 +1,6 @@
 # IBD-0011 — Cross-Domain Essence Harvest (where the wizard essences apply beyond corespines) 2026-07-19
 **Type:** IBD (vault park) | **Status:** PARKED-RAW — each item runs THRESHOLD → FIT → CONSENSUS → 8-Q stress-test. NOTHING here is ratified.
+**tags:** [ibd, essence-harvest, cross-domain, sealed-set]
 **Why this exists:** Governor decree — "extract and park as many issues worth exploring in OTHER domains; deep-dive the essence of what we describe and see where else it's useful; and decide whether 'questions as context/DNA carriers' are corespine material." Register everything; never leave a thought waiting.
 **Source of essences:** [[IBD-0010-external-wizard-inputs-PURIFIED]] (A1–A6 convergence, B1–B5 new) + this session's discussion.
 

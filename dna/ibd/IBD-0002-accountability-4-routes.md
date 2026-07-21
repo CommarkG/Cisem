@@ -1,6 +1,7 @@
 ---
 IBD: 0002
 tag: accountability / core-spine / 4-route-fork
+tags: [ibd, accountability, core-spine, 4-route-fork]
 status: PARKED-RAW — Governor parked; Opus drafted core content (DRAFT, not ratified)
 captured: 2026-07-18
 processing: parked for later promotion into CS-ACCOUNTABILITY-001 (which already exists as DRAFT/PRIO-BLOCKING with a 4-branch structure)

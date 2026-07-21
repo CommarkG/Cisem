@@ -2,6 +2,7 @@
 **FOR:** cisem-sonnet drafts; cisem-opus-pe verifies. **status:** QUEUED | **priority:** HIGH | **essential:** y | **depends-on:** BP-0001
 **Prior art to ALIGN (not copy):** Csps `.claude/hooks/depth-marker-creation-gate.sh` is a WIRED
 creation gate — study its pattern for the naming check.
+**tags:** [build-prompt, naming-gate, numbering, one-gate]
 
 ## BOOTSTRAP
 Read: CLAUDE.md, dna/naming-registry.yaml (the ONE gate, now incl. BP/IBD/HANDOFF namespaces),

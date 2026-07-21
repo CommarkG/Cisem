@@ -1,5 +1,6 @@
 # Creation-Layer Overlap Map — 2026-07-18 (Haiku gather, Opus-judged)
 **Type:** AUDIT ARTIFACT (evidence for ARCH-00396 Phase B gate) | **Tier:** cisem-haiku enumerated · cisem-opus-pe judged
+**tags:** [audit, creation-layer, overlap-map]
 **Purpose:** On-disk record of the CISEM "creation layer" so ARCH-00396 Phase B's numeric gate ("0 unresolved
 SSOT-ambiguities from the 4 flagged concerns") is independently checkable (State-on-Disk, Principle 13). Evidence only.
 

@@ -1,5 +1,6 @@
 # IBD-0019 — AI Profiling Framework (DRAFT + core-seed) 2026-07-19
 **Type:** IBD (vault park) | **Status:** PARKED-DRAFT — a framework + first-pass profiles; runs the cycle before ratifying. Candidate home: CS-AI-PROFILING-001 (future corespine; named in CLAUDE.md §1.6).
+**tags:** [ibd, ai-profiling, learning-loop, framework]
 **source:** Governor (this session) | **trust_tier:** GOVERNOR
 **Why:** Governor decree — profile self + the platforms (CSP, CSPS, CDS, Gemini, GPT, Claude.ai) as part of the LEARNING & IMPROVING loop: map each AI's triggers/patterns/POV/blind-spots/strongholds/weak-spots so CISEM optimizes how it uses (and guards against) each system. "We can learn huge amounts about AI communication + behavior."
 

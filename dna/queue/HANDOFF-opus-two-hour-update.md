@@ -1,5 +1,6 @@
 # ONE-CLICK FOR OPUS — Two-Hour Session Update (2026-07-18)
 **Type:** ONE-CLICK (complete, zero-assembly) | Prepared by Sonnet 2026-07-18
+**tags:** [handoff, one-click, two-hour-update]
 **Cross-tab comms:** tabs communicate ONLY via the Governor. Paste this entire block as the Opus tab opener.
 
 ---

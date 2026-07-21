@@ -1,5 +1,6 @@
 # BUILD-PROMPT BP-0006 — Raw-input preservation + FULL value lifecycle (completed, not partial)
 **FOR:** cisem-sonnet drafts; cisem-opus-pe verifies. **status:** QUEUED | **priority:** HIGH | **essential:** y | **depends-on:** BP-0007 (plan-wizard must exist for the "→ PLAN" step)
+**tags:** [build-prompt, raw-input, value-lifecycle, completion]
 
 ## GOAL (measurable)
 Wire raw-input preservation AND the full pipeline that extracts all value from it — so nothing is

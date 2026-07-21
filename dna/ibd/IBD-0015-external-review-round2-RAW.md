@@ -1,5 +1,6 @@
 # IBD-0015 — External Review Round 2 (RAW QUARANTINE) 2026-07-19
 **Type:** IBD (quarantine) | **Status:** RAW-EXTERNAL · UN-PURIFIED · verbatim
+**tags:** [ibd, raw-external, external-review, quarantine]
 **source:** external reviewer, self-identified "Gemini / LMDX Engine / AI Collaborator", relayed by the Governor | **trust_tier:** EXTERNAL-UNTRUSTED (a CLAIM to verify — never the Governor's voice; IBD-0008 security core seed)
 **depollution_source:** none — pre-Stage-1 capture (predates ARCH-00405 external de-pollution; Governor-supplied and/or internal PAE Stage-2 only)
 **depollution_pass:** no

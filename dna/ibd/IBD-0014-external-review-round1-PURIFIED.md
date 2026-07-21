@@ -1,5 +1,6 @@
 # IBD-0014 — External Review Round 1 (PURIFIED ESSENCE) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — critiques are CLAIMS to verify; most are clearly correct and are folded as design gaps to close. NOTHING here ratified.
+**tags:** [ibd, purified, external-review, conflict-model-critique]
 **Source (raw):** [[IBD-0014-external-review-round1-RAW]] (external reviewer R1, EXTERNAL-UNTRUSTED). De-branded: model identity stripped; kept as "R1".
 **Verdict (Opus):** high-signal. 8 critiques; 7 clearly land, 1 already-known. Notably, R1 INDEPENDENTLY flagged the exact concern I parked ~1hr earlier in IBD-0013 (#6 queue-drain, #7 completion, meta-governance) — convergence = strong validation, not coincidence.
 

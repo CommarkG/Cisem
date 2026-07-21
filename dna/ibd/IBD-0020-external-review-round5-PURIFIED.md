@@ -1,5 +1,6 @@
 # IBD-0020 — External Review Round 5 (PURIFIED via PAE 6-lens) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — absorption only, NOT folded/reacted-to. Claims to verify.
+**tags:** [ibd, purified, external-review, throughput-ceiling]
 **Source (raw):** [[IBD-0020-external-review-round5-RAW]] (reviewer R5 = CDS/Sonnet, EXTERNAL-UNTRUSTED). Engine: [[CISEM-ARCH-00399-purification-alignment-engine]] (6 lenses).
 
 ## REVIEWER R5 — UNDERLYING AXIOMS (Axiom lens — map, do NOT adopt)

@@ -1,6 +1,7 @@
 ---
 IBD: 0003
 tag: vocabulary / gemini-crosswalk / founding-alignment
+tags: [ibd, vocabulary, gemini-crosswalk, founding-alignment]
 status: PARKED — Opus STRUCTURED alignment feedback (not raw); PROPOSED, awaiting Governor. Feeds Founding Node + VOC-00001/00003.
 captured: 2026-07-18
 processing: reconcile Gemini's raw vocab stack against current CISEM DNA before the Founding axioms are finalized

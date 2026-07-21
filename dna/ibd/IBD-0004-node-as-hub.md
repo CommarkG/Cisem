@@ -1,6 +1,7 @@
 ---
 IBD: 0004
 tag: architecture / node-as-hub / gem / persistent-topic-tree
+tags: [ibd, architecture, node-as-hub, persistent-topic-tree]
 status: CONSENSUS-REACHED (2026-07-18) — target architecture agreed; NOT a plan yet. Becomes the FIRST plan via the plan-wizard once the meta-layer (ARCH-00340 + BP-0007) ratifies.
 captured: 2026-07-18
 processing: this is the value-pipeline in action (principle 11): raw vision → Opus conclusions → this discussion → consensus → plan(wizard) → build.

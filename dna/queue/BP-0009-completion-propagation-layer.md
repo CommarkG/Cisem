@@ -1,5 +1,6 @@
 # BUILD-PROMPT BP-0009 — RUN THE CYCLE: author the "Completion & Propagation Layer" plan
 **FOR:** the Haiku→Sonnet→Opus tier-cycle | **status:** QUEUED — FIRST MOVE post-compact | **priority:** HIGH | **essential:** y
+**tags:** [build-prompt, completion-propagation, ripl-v2, tier-cycle]
 **Goal:** AUTHOR (not build) a ratifiable PLAN for the Completion & Propagation Layer — the mechanical system that ends the recurring "I forgot to wire / propagate / push" class and makes root-insight handling disciplined (accumulate → weekly pattern-batch → plan → ratify → auto-propagate).
 **Why parked to a build-prompt:** authored at a compaction boundary; the harvest had to win. This is self-contained so the cycle runs post-compact with zero context loss.
 

@@ -1,5 +1,6 @@
 # IBD-0018 — External Review Round 4 (PURIFIED via PAE 6-lens) 2026-07-19
 **Type:** IBD (analysis layer) | **Status:** PURIFIED · UN-RATIFIED — absorption only, NOT folded/reacted-to. Claims to verify.
+**tags:** [ibd, purified, external-review, mechanical-invariant]
 **Source (raw):** [[IBD-0018-external-review-round4-RAW]] (reviewer R4 = CSPS/Opus-4.8, EXTERNAL-UNTRUSTED — a peer running the same architecture). Engine: [[CISEM-ARCH-00399-purification-alignment-engine]] (6 lenses).
 **De-brand note (Vocab lens):** kept CISEM vocab; "sealed L1 / two-party seal / blue-green" renamed to our terms (sealed-boundary / Governor-ratification / versioned-atomic-swap), constraint preserved.
 

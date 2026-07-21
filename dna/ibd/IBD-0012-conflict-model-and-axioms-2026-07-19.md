@@ -1,5 +1,6 @@
 # IBD-0012 — Conflict-Resolution Model (APPROVED) + Axiom Candidates + Top-Level-Significance (2026-07-19)
 **Type:** IBD (vault park) | **Status:** MIXED — the conflict MODEL is Governor-APPROVED (2026-07-19) as the direction, NOT yet a ratified plan; the axiom candidates + the top-level question are PARKED-RAW (run the 8-Q stress-test before ratifying).
+**tags:** [ibd, conflict-model, axioms, top-level-significance]
 **Why this exists:** Governor approved parking this ("2 you can place it in IBD"). Register everything; never leave it in chat.
 **Feeds:** the top-level-corespine-set decision + the future conflict-protocol plan + the axiom set (FOUND-00001 / A-series).
 

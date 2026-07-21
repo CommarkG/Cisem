@@ -1,6 +1,7 @@
 # BUILD-PROMPT BP-0003 — /cisem-create skill (delivers the Creation Triad automatically)
 **FOR:** cisem-sonnet drafts; cisem-opus-pe verifies (sensitive parts = Opus)
 **status:** QUEUED | **priority:** HIGH | **essential:** y | **timeframe:** team phase | **depends-on:** BP-0001
+**tags:** [build-prompt, cisem-create, creation-triad, skill]
 
 ## BOOTSTRAP
 Read: CLAUDE.md (§3 gates incl. §3.7 Triad, §2.7 Threshold/SWIFT), dna/ssot-registry.yaml,

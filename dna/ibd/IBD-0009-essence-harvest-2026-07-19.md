@@ -1,5 +1,6 @@
 # IBD-0009 — Essence Harvest: axioms, defaults, CoreSpiral (2026-07-19)
 **Type:** IBD (vault park) | **Status:** PARKED-RAW — each item runs THRESHOLD → humble alignment → CONSENSUS → 8-question stress-test → ratify. NOTHING here is ratified.
+**tags:** [ibd, essence-harvest, axioms, corespiral]
 **Why this exists:** Governor decree — "anything said here must become something valuable in the platform; never leave things waiting for someone never notified." This file registers the whole design conversation so it is not lost.
 
 ## Registered candidates (WHAT + WHY; the HOW comes after consensus)

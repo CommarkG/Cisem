@@ -1,5 +1,6 @@
 # IBD-0013 — Meta-Defaults Cluster (permanency · inheritance · ZF · SSOT · retro-engine · completion · graft) 2026-07-19
 **Type:** IBD (vault park) | **Status:** PARKED-RAW — axiom candidates run the 8-Q stress-test; mechanisms need build-prompts/plan. NOTHING here is ratified. Opus CANNOT ratify.
+**tags:** [ibd, meta-defaults, permanency, mechanical-by-default]
 **source:** Governor (this session) | **trust_tier:** GOVERNOR
 **Why parked, not built:** these are 8 large threads dropped while the SPINE (corespine model + first candidate corespine) is in-flight AND gated on the external-feedback round. Per completion (I14) + PARK-BY-DEMAND (§2.7) + Principle 15 (build ONE to flawless before spreading), the disciplined move is to REGISTER all of it with full context + routing, protect the spine, and pick ONE deliberately. "Don't let it sleep" = registered here, each with a route + priority.
 

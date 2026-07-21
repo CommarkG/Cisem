@@ -1,5 +1,6 @@
 # BUILD-PROMPT BP-0011 — Schema as SSOT + skills/agents HTML pages (auto-updated)
 **FOR:** the tier-cycle (Haiku-gather → Sonnet-build → Opus-consolidate) | **status:** QUEUED — post-compact | **priority:** MEDIUM-HIGH | **essential:** y
+**tags:** [build-prompt, schema-ssot, html-pages, auto-update]
 **Goal (Governor 2026-07-20, PARKED):** make the SCHEMA the ONE SOURCE OF TRUTH for placement + naming + numbering — every created element is aligned and HAS a schema place (A3) — and update/complete the HTML pages for skills + agents so they reflect the schema, kept current AUTOMATICALLY.
 
 ## SCOPE

@@ -1,6 +1,7 @@
 # BUILD-PROMPT BP-0007 — The plan-gate bootstrap (meta-layer + plan protocol/wizard)
 **FOR:** Opus drafts (sensitive/root governance); Governor foundational-decrees. **status:** QUEUED | **priority:** HIGH | **essential:** y | **depends-on:** none (this IS the root)
 **Ratified design:** tiered double-ratification plan-gate; wizard-mirrors-protocol; bootstrap-by-decree; consolidated into ARCH-00190.
+**tags:** [build-prompt, plan-gate, meta-protocol, foundational-decree]
 
 ## THE EDGE CASE (Governor's question) — where do the wizard/protocol for creating wizards/protocols come from?
 They are the ROOT. They cannot go through themselves (infinite regress). Escape = **foundational
