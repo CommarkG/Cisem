@@ -41,5 +41,15 @@ The Brain doc + Haiku both surface the ONE blocking question: **does this become
 - **`cisem-frontend` wizard** (PROVISIONAL) — the doc's §7/§8 checklists are candidate wizard steps; wizard is awaiting Governor ratification + divergent trials (Principle 15).
 - **Last session's open items** — the 3 preview pages, dynamic-menu differentiation, wizard ratification (all in WITNESS COMPACT STATE) intersect P2's responsive work.
 
+## UPDATE 2026-07-21 (Brain final batch arrived — KL-0003 + consultation sent)
+The Governor's "more content" = the full Brain batch (6 mockups + incident log + Admin 6-issue review + self-reflection +
+stale Sonnet one-click). Saved as **[[KL-0003]]**; outbound consult drafted at
+`dna/external-review/brain-consultation-uxui-2026-07-21.md` (reuses the feedback-packet format + ARCH-00150 §8).
+**The P0 HOME decision is now SHARPER — it is a TWO-WORLDS question, blocked on Brain's answer:**
+- **World A** = Brain's "CISEM Build" customer product (onboarding→CRM→admin, outward-facing/T-DOM) — reality-status UNKNOWN (real product? or SIMULATION-ONLY like SOL-GIFTPRO-001?). NOT in the repo.
+- **World B** = CISEM's own governance frontend (schema browser, T-SYS, CS-FRONTEND-001).
+- **Opus lean:** a small **media-neutral universal-principles core** that BOTH worlds inherit; CS-FRONTEND-001 stays World B's home; "CISEM Build" gets its own status ruling (A9 optimal-synergy, no fork). CANNOT finalize until Brain answers §4 Q1–Q4 (consensus-before-creation).
+**New sub-parks:** (a) formalize the 5-axis input-tag model (incl. the NEW `alignment` axis) registry-wide — Governor PCR pending; (b) token-drift finding (Brain schema-mockup uses pre-fix broken tokens) = evidence for the shared-SSOT decision.
+
 ## RESUME
-When the Governor's remaining content arrives: read it FIRST, re-rank against these parked items (anti-scatter), then take the P0 scope decision WITH him (consensus-before-creation) before any FE-invariant / corespine creation (A4 — needs a ratified plan; the /cisem-plan wizard is the path).
+When the Governor's remaining content arrives: read it FIRST, re-rank against these parked items (anti-scatter), then take the P0 scope decision WITH him (consensus-before-creation) before any FE-invariant / corespine creation (A4 — needs a ratified plan; the /cisem-plan wizard is the path). **Next external step: send the Brain consultation packet, get §4 answers, THEN /cisem-plan the convergence.**

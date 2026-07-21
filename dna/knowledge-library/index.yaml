@@ -4,8 +4,31 @@
 # internal_parts (part → tags), summary — so any AI can find relevant knowledge fast (Governor requirement).
 # Maturity status uses the DIOS 0014 scale (Signal … Constitutional).
 
-next_seq: KL-0003
+next_seq: KL-0004
 entries:
+  - id: KL-0003
+    title: "Brain UX/UI artifact batch — 6 mockups + incident log + Admin 6-issue review + self-reflection"
+    source: "In-repo: dna/knowledge-library/KL-0003-brain-uxui-artifact-batch-2026-07-21.md (Governor-supplied 2026-07-21, Claude.ai 'Brain')"
+    source_trust: EXTERNAL-REVIEWED
+    maturity: "INSIGHT / PATTERN-EVIDENCE"
+    disposition: CATALOGED
+    alignment: PREDATES-CHANGES   # NEW axis (this session) — Brain has not synced this week's CISEM changes
+    status: "CATALOGED · EXTERNAL-REVIEWED · PREDATES-CHANGES (reviewed, not inherited — I22/I23)"
+    total_tags: [ux-ui, frontend, mockups, incident-log, ai-builder-traps, two-worlds, token-drift, representative-example-bias, external-source]
+    internal_parts:
+      - part: "TWO WORLDS: World A = 'CISEM Build' customer product (onboarding→CRM→admin, T-DOM); World B = CISEM's own schema-browser frontend (T-SYS, CS-FRONTEND-001)"
+        tags: [scope, t-dom-vs-t-sys, corespine-home-decision]
+      - part: "6 mockups catalog with per-file disposition (3 SUPERSEDED by the merged full-cycle file; schema-mockup CONFLICTS via old broken tokens)"
+        tags: [supersession, token-drift, ssot-evidence]
+      - part: "Brain self-reflection (verbatim): token-not-instance beyond CSS · engineer≠UX completeness · unearned-UI-claim = unearned-fact"
+        tags: [signal, independent-rediscovery, validation]
+      - part: "Admin 6-issue review: representative-example bias (build-one-extend-visually) + the novel 'how to tell an AI so it collaborates' column"
+        tags: [ai-traps, presence-not-behavior, decorative-governance]
+      - part: "Sonnet visualization one-click — STALE (ARCH-00410 already shipped); its 4 Core Seeds still sound"
+        tags: [stale, superseded, visualization]
+    summary: "The final Brain batch, purified (Principle 19). Central finding: two applications (customer product vs internal frontend) sharing a borrowed visual language — both should inherit a media-neutral universal-principles core. Independent rediscovery of Principle 17/18, FE-I11, I22/I23 = strong validation of CISEM's universal processes. Outbound consult: dna/external-review/brain-consultation-uxui-2026-07-21.md."
+    consulted_by: "ALL tiers on UX/UI + before any frontend/product plan (§3.2b). Feeds CS-FRONTEND-001 + PARK-UXUI-INTEGRATION + the Brain consultation."
+
   - id: KL-0002
     title: "UX/UI Principles — CISEM Build Platform (Brain source, Claude.ai)"
     source: "In-repo: dna/knowledge-library/KL-0002-brain-ux-ui-principles-2026-07-21.md (Governor-supplied 2026-07-21, produced by Claude.ai 'Brain')"
