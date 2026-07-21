@@ -84,8 +84,10 @@ each time"):** the repo is PRIVATE → Brain cannot fetch links + manual sync is
 CARRY the state inline, not point to it. Build a Builder-side **brain-packet assembler** that concatenates, from the LIVE
 repo at send time, the alignment essentials (DNA contract ARCH-00413) + the referenced file slices + the consult → ONE
 self-contained paste. Result: the Governor's ONLY action is the single paste; packets are always current; zero fetch,
-zero manual sync. (The GitHub-connector-on-Brain's-project is the ideal permanent zero-touch, if the environment supports
-it — one-time setup, then Brain reads live; flagged as an alternative, MCP-isolation caveat per Brain's own note.)
+zero manual sync. (The Claude.ai Projects GitHub connector [verified 2026-07-22]: one-time setup connects the private repo
+to Brain's project knowledge, BUT sync is MANUAL "Sync now" per session, NOT auto-refresh — so it reduces the per-time
+burden to one Sync-click + question-only, not true zero-touch. Private personal-account repos have a known edge-case auth
+failure → .zip-upload fallback. The self-contained packet stays the zero-setup path; the two are complementary.)
 
 ### Phase 5 — Haiku permanent validator (trial → permanent)
 Run rounds 2–3; wire the **Haiku-finds → Sonnet-fixes** loop; **hardwire prompt-improvement** so a miss never repeats
