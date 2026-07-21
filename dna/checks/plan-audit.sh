@@ -514,6 +514,25 @@ bash dna/checks/creation-gate.sh 2>/dev/null
 # [DELETION-GUARD] — no collateral deletion (Governor decree 2026-07-21, RI-0010). WARN-only.
 bash dna/checks/deletion-guard.sh 2>/dev/null
 
+# [CHECK-LINT] — meta-guard against the substring-vs-field anti-pattern in the check files THEMSELVES
+# (RI-0012 class; 2 instances 2026-07-21 — the mini-tree -index filename collision + the I24 regex that matched a
+# value word ANYWHERE on a status line, so a negation like "not ratified" false-flagged a PARKED file). A status/
+# type/membership regex MUST anchor on the field VALUE right after the field marker, never match the value word as
+# a bare substring. This lint would have caught the I24 bug at authoring time. Comment lines are excluded (they may
+# legitimately describe a bad pattern). WARN-only, NOT in ZF. Wire-don't-document (Principle 18C / Governor decree).
+echo "[CHECK-LINT] status/type/membership regexes must anchor on the field VALUE, not a bare substring (RI-0012 class; WARN-only):"
+found_lint=0
+for cf in dna/checks/*.sh; do
+  [ -f "$cf" ] || continue
+  hits="$(grep -nE '(status|type|tags?):[^"]*\.\*(ratified|split|draft|parked|placeholder|complete|live|declared|proposed|scheduled|provisional)' "$cf" 2>/dev/null | grep -vE '^[0-9]+:[[:space:]]*#')"
+  if [ -n "$hits" ]; then
+    echo "   LOOSE-REGEX ('field:.*<value>' matches the value anywhere on the line — anchor it after the field marker): $cf"
+    echo "$hits" | sed 's/^/      /'
+    found_lint=1
+  fi
+done
+[ "$found_lint" = 0 ] && echo "   (none — every status/type/membership regex anchors on the field value)"
+
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.
