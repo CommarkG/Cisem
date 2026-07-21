@@ -70,7 +70,7 @@ echo "── CISEM plan-audit (WARN-ONLY, ARCH-00320 §6) ───────�
 echo "[I1] dangling references (excludes example-only / off-repo-tagged):"
 found_i1=0
 refs=$(grep -rhoE "CISEM-[A-Z]+-[0-9]{5}|CS-[A-Z-]+-[0-9]{3}|SOL-[A-Z]+-[0-9]{3}" \
-        --include="*.md" --include="*.yaml" . 2>/dev/null | grep -v '.git/' | sort -u)
+        --include="*.md" --include="*.yaml" --exclude-dir=raw-activity . 2>/dev/null | grep -v '.git/' | sort -u)
 for id in $refs; do
   # resolved on disk or as a registry key -> fine
   if find . -name "*$id*" -not -path './.git/*' 2>/dev/null | grep -q . \
