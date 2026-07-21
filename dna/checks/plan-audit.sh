@@ -533,6 +533,22 @@ for cf in dna/checks/*.sh; do
 done
 [ "$found_lint" = 0 ] && echo "   (none — every status/type/membership regex anchors on the field value)"
 
+# [RATIFY-GATE] — Principle 20 backstop (Governor decree 2026-07-21 "don't let 'proceed' harm quality"): a plan in
+# dna/planning/ at Status RATIFIED MUST cite its Opus Stage-1 soundness verdict (contains "Stage-1" AND "sound").
+# Surfaces a plan rushed to RATIFIED without the soundness gate visibly satisfied — the exact hole a terse approval
+# opens. Keys on the Status VALUE (RI-0012: value-anchored, not a bare substring). WARN-only, NOT in ZF (BLOCK is ARCH-00270).
+echo "[RATIFY-GATE] RATIFIED plans must cite an Opus Stage-1 soundness verdict (Principle 20; WARN-only):"
+found_ratgate=0
+for f in dna/planning/*.md; do
+  [ -f "$f" ] || continue
+  grep -qiE "status:\**[[:space:]]*ratified" "$f" || continue
+  if ! { grep -qiE "stage.?1" "$f" && grep -qiE "sound" "$f"; }; then
+    echo "   PREMATURE-RATIFY: $f (Status RATIFIED but no Opus Stage-1 soundness verdict cited — informed-ratification, Principle 20)"
+    found_ratgate=1
+  fi
+done
+[ "$found_ratgate" = 0 ] && echo "   (none — every RATIFIED plan cites its Stage-1 soundness verdict)"
+
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.

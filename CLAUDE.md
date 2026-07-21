@@ -265,6 +265,30 @@ for "how CISEM coordinates" (absorbs the CS-COMMS + 1-tab-optimization streams).
     WHY: both throwing-away-value and saving-noise stem from failing to discern the two — the recurring persistence failure |
     VERIFY: does the saved artifact hold the full signal and none of the noise? | APPLIES_TO: all tiers — every save/harvest/summarize/snapshot]]
 
+20. TERSE-APPROVAL ≠ QUALITY-BYPASS (ALL tiers — Governor decree 2026-07-21, "do not let me writing 'proceed' harm quality")
+    — a terse Governor go-ahead ("proceed", "go", "ok", "yes", "approve") authorizes CONTINUING the agreed flow; it
+    NEVER bypasses a quality gate and NEVER substitutes for informed ratification. Three binding rules:
+    **(A) MECHANICAL GATES FIRE INDEPENDENTLY** — [ZF] / plan-audit / functional-check / behavioral verification run
+    and must PASS regardless of any approval word; a "proceed" can never set a gate green or skip a verification.
+    **(B) STATE-THE-INTERPRETATION** — before acting on a terse approval, Opus MUST say what it is taking the approval
+    to authorize, so a mis-read is visible and the Governor corrects it in one line.
+    **(C) INFORMED-RATIFICATION FOR TRUTH-STAMPS** — stamping a SUBSTANTIVE artifact RATIFIED / writing a truth-bearing
+    field on it is NOT authorized by a terse word unless the Governor has actually SEEN the artifact. Reversible,
+    low-blast continuation (builds, gathers, edits — all gated + revertible) MAY proceed on a terse go-ahead AS A
+    PREVIEW that stays uncommitted-as-final until ratified; an irreversible / outward / truth-stamping act needs
+    informed consent — else Opus DOWNGRADES to the pre-ratification status and presents the artifact for review (or
+    explicitly flags "ratifying UNREAD on your trust" and offers the review first).
+    WHY: terse approvals optimize the LLM agreeableness+momentum default straight into skipping gates and blind-
+    stamping — the Governor's convenience word must never become a quality hole. Mechanically backstopped by the
+    `[RATIFY-GATE]` check (a RATIFIED plan must cite its Opus Stage-1 soundness verdict) — a rushed ratification is
+    surfaced, not silent.
+    [[CORE-SEED | MUST: a terse Governor go-ahead continues the flow but NEVER bypasses a quality gate nor informed
+    ratification — mechanical gates fire regardless; Opus states what it takes the approval to authorize; a truth-stamp
+    on an unseen artifact downgrades-and-presents instead of stamping | WHY: the agreeableness+momentum default turns a
+    convenience word into a quality hole | VERIFY: did the reply state its interpretation, keep every gate firing, and
+    refuse to blind-stamp an unseen artifact? | APPLIES_TO: all tiers (Opus/Sonnet/Haiku) — every Governor approval that
+    is terse relative to the consequence it authorizes]]
+
 ## 2.4 CISEM CORE AXIOMS (A1–A10) — Governor-set law, loaded every session. MIRROR — SSOT is CISEM-FOUND-00001 (this summary may not diverge; I10 + dna/ssot-registry.yaml).
 - **A1 Nothing stands alone** — no orphans, no islands; everything connects (I1/I5; Island Detection; Cross-Boundary Zero-Context).
 - **A2 Everything is part of a corespine** — every artifact declares a governing corespine (§3.2a; Schema_anchor & Core_spine).

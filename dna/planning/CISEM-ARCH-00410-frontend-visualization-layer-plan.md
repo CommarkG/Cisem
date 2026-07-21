@@ -1,6 +1,6 @@
 # Frontend Visualization Layer — Vanilla-JS SVG Mindmap (Registry-Generated), Phase 1 = schema.html
-**Node ID:** CISEM-ARCH-00410 | **Type:** ARCH | **Status:** RATIFIED — Governor go-ahead ("proceed") 2026-07-21; Opus Stage-1 SOUND
-**Planning Status:** COMPLETE (Opus Stage-1 SOUND + Governor go-ahead 2026-07-21 — Phase-1 build authorized under A4/I25; Governor holds rendered-page acceptance as Stage 3) | **depth_level:** L2 | **Position in schema:** T-SYS, frontend layer
+**Node ID:** CISEM-ARCH-00410 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE (Opus Stage-1 SOUND; NOT stamped RATIFIED on a terse "proceed" — awaiting Governor INFORMED ratification, Principle 20)
+**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND 2026-07-21; DOWNGRADED from a premature RATIFIED per Principle 20 — Phase-1 build proceeds as an uncommitted-as-final PREVIEW; the Governor's informed Stage-2 = reviewing the rendered page, after which it ratifies) | **depth_level:** L2 | **Position in schema:** T-SYS, frontend layer
 **tags:** [planning-domain, frontend, visualization, mindmap, schema-html, registry-generated]
 **Goal:** Add a companion SVG mindmap view to `frontend/pages/schema.html` — zero-dependency, vanilla JS, node-graph
 data GENERATED from the registries, theme-aware, native-link-click-navigates — WITHOUT losing the existing 512-line
