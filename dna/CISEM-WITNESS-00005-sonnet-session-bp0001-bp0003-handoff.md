@@ -223,3 +223,5 @@ This node is a **learning-loop artifact** (CS-LOOPS-001 LEARN stage). Sonnet is:
 The goal: **By next month, "Sonnet missed Q7" should be impossible — the question should fire mechanically every time.**
 
 Awaiting Opus review + instructions on wiring permanence.
+
+**tags:** [witness, sonnet-handoff, bp0001-bp0003, superseded] | **Status:** SUPERSEDED (historical handoff, 2026-07-18 — governance-tagged 2026-07-21 per Governor)

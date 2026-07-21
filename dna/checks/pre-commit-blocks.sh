@@ -53,4 +53,23 @@ if [ -n "$delmiss" ]; then
   echo "   (one per line, exact) to dna/checks/ratified-deletions.txt and re-commit — or, if intentional: git commit --no-verify (log it)."
   exit 1
 fi
+
+# BLOCK 4 — TAG+STATUS is now a HARD BLOCK (Governor decree 2026-07-21: graduate [CREATION-GATE] WARN -> BLOCK,
+#           ARCH-00407 Phase 0). A governed .md ADDED/MODIFIED in THIS commit, in the primary CREATION dirs, MUST
+#           carry a tags: line AND a status: line. Forward-looking + creation-dir-scoped: the pre-existing backlog and
+#           the looser parking dirs (ibd/queue/audits/learning-registry) are NOT retro-blocked (the WARN [CREATION-GATE]
+#           still surfaces those). Escape (logged): --no-verify.
+tsmiss=""
+for f in $(git diff --cached --name-only --diff-filter=AM 2>/dev/null | grep -E '^(dna/(corespines|protocols|planning|schema|vocabulary)/|\.claude/(agents|skills)/).*\.md$'); do
+  case "$f" in */README.md|*-template.md|*-index.md|*BUILD-PROMPT-template.md) continue;; esac
+  case "$f" in *dna/templates/*) continue;; esac
+  c=$(git show ":$f" 2>/dev/null)
+  { echo "$c" | grep -qiE 'tags:' && echo "$c" | grep -qiE 'status:'; } || tsmiss="${tsmiss}
+   $f"
+done
+if [ -n "$tsmiss" ]; then
+  echo "── BLOCKED (tag+status, ARCH-00407 Phase 0, Governor decree 2026-07-21): a governed file changed in this commit lacks a tags: and/or Status: line:${tsmiss}"
+  echo "   Add a tags: line AND a Status: line (§3.5b) — or, if intentional: git commit --no-verify (log it)."
+  exit 1
+fi
 exit 0

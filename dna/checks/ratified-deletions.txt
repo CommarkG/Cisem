@@ -3,3 +3,5 @@
 # One path per line, exact (e.g. dna/ibd/IBD-0099-superseded.md). Comment lines (#) are ignored.
 # The Governor (or Opus on his explicit ratification) adds a path here to authorize its deletion; remove it after.
 # This is the mechanical form of "AI may not delete things without human ratifying it".
+CISEM-DIAGNOSTICS-REPORT.md
+CISEM-DORMANCY-AUDIT.md

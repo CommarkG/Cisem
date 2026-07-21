@@ -40,3 +40,5 @@ genesis-block-the-AI-can't-edit (constitutional anchor) · institutionalize exte
 - monthly (1st): refresh external-AI onboarding package (IBD-0017 P1)
 
 **Invariant:** everything above is committed + pushed. If the laptop is lost, this register + all targets are recoverable from GitHub (CommarkG/Cisem).
+
+**tags:** [register, parked, rejected, index] | **Status:** ACTIVE (living register — governance-tagged 2026-07-21 per Governor)

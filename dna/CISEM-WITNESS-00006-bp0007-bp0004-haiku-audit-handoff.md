@@ -234,3 +234,5 @@ Do NOT commit. Do NOT declare done — Opus verifies.
 
 ## Change log
 - v1.0 — 2026-07-18: Sonnet extraction. BP-0007 delivered (3 files), BP-0004 scoped, Haiku audit reviewed + hardened. 4 critical decisions extracted. One-click ready for post-compaction. Status: DRAFT (ready for Opus + Governor review).
+
+**tags:** [witness, haiku-handoff, audit, superseded] | **Status:** SUPERSEDED (historical handoff, 2026-07-18 — governance-tagged 2026-07-21 per Governor)

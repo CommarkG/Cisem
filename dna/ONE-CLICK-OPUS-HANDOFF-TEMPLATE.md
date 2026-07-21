@@ -172,3 +172,5 @@ YOU ARE: cisem-opus-pe (JUDGE tier) + Governor (ratification authority)
 **END OF ONE-CLICK**  
 **Ready to present to Opus + Governor.**  
 **Ready for TASK 4 build (Sonnet can start immediately post-compaction).**
+
+**tags:** [handoff, template, one-click, opus] | **Status:** ACTIVE (reusable handoff template — governance-tagged 2026-07-21 per Governor)

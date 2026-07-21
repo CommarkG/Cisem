@@ -159,3 +159,5 @@ Governor: Decide on phantom batch (create or prune) — does not block TASK 4.
 
 ## Change log
 - v1.0 — 2026-07-18: Sonnet compaction witness. Tasks 1-3 complete + activated. Task 4 queued. All Core Seeds honored. Repository in SSOT state. Status: DRAFT (ready for Opus ratification + post-compaction resume).
+
+**tags:** [witness, compaction-handoff, session-continuity, superseded] | **Status:** SUPERSEDED (historical session witness, 2026-07-18; superseded by later WITNESS/COMPACT-STATE — governance-tagged 2026-07-21 per Governor)
