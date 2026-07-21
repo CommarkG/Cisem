@@ -1,0 +1,142 @@
+# CISEM Frontend Page Registry — the companion catalog of every frontend page's tag/status/wiring state.
+# Node_ID: none (frontend/ path-prefix naming exception — see dna/checks/naming-exceptions.yaml:44, this
+# subtree is governed by CS-FRONTEND-001's own conventions, not CISEM-{TYPE}-{SEQ}).
+# tags: [frontend, registry, page-catalog]
+# Status: DRAFT
+# last_verified: 2026-07-21
+# freshness: FRESH
+# Governing corespine: CS-FRONTEND-001 (CISEM-ARCH-00393)
+# Goal: catalog EVERY frontend/**/*.html page (28/28, enumerated by glob — Principle 18-B universal-by-
+#   default) with observed tag/status/wiring-state, drawn ONLY from CISEM-VOC-00001 + CISEM-VOC-00002
+#   (CORE-SEED 1). Does NOT edit any HTML page (CORE-SEED 2). Writes NO truth-bearing ratification —
+#   every Status below is an OBSERVATION of current reality, never a stamp (CORE-SEED 3, I7).
+#
+# §3.2b Existing-First: searched dna/ssot-registry.yaml, dna/corespines/corespine-registry.yaml, and the
+#   frontend/ dir itself for an existing page-registry/catalog — NONE found. This is the first one.
+# §3.3 Pocket: reasoning_scope: catalog-only, read-only audit of frontend/**/*.html | inherited_constraints:
+#   CORE-SEED 1-3, I7, Principle 18-A/B | output_contract: this YAML + gaps: section | ai_cannot: edit HTML,
+#   write Status:RATIFIED, invent tag/status values | recorded_at: 2026-07-21 | cal_reference: ARCH-00390
+#
+# HONESTY NOTE on `Status` below: only 3 of 28 pages carry an inline `<!-- tags: -->` / `<!-- Status: -->`
+# HTML-comment header on disk today (dynamic-menu.html, gallery.html, uxui.html — all "PREVIEW / DRAFT").
+# The remaining 25 pages carry NO inline header at all. For those, `status_source: floor-inferred` and the
+# value recorded is the most conservative VOC-00002 value (DRAFT) — NOT a claim the page was reviewed; it
+# is the compliance gap this registry exists to surface (see gaps: below). `status_source: inline` marks
+# the pages that DO self-declare (their raw inline text is also quoted in `inline_raw`).
+
+pages:
+  - {file: "index.html", page_kind: index, status: DRAFT, status_source: floor-inferred, wiring_state: ACCESSIBLE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Root living index — Grid/List view toggle over all 27 group pages."}
+  - {file: "pages/agents.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of CISEM agents (cisem-haiku/sonnet/opus-pe/fable)."}
+  - {file: "pages/axioms.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of CISEM axioms A1-A10."}
+  - {file: "pages/corespines-set.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of the canonical corespine SET (candidates + ratified)."}
+  - {file: "pages/corespines.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of ratified/declared corespines."}
+  - {file: "pages/document-types.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of governed document types."}
+  - {file: "pages/dynamic-menu.html", page_kind: dynamic-menu, status: DRAFT, status_source: inline, inline_raw: "PREVIEW / DRAFT", wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Dynamic/accountability-aware navigation menu prototype; PREVIEW awaiting Governor tier/responsive differentiation."}
+  - {file: "pages/engines.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of engines & orchestrators."}
+  - {file: "pages/front-page-types.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of front-page/entry-point type patterns."}
+  - {file: "pages/gallery.html", page_kind: gallery, status: DRAFT, status_source: inline, inline_raw: "PREVIEW / DRAFT", wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Media gallery — collapsed catalog list + legacy metadata tree preserved; PREVIEW awaiting Governor acceptance."}
+  - {file: "pages/help.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Help/utility page for the frontend index. VOCAB GAP: no dedicated help/utility page_kind exists (see gaps)."}
+  - {file: "pages/internal-audits.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of internal audits."}
+  - {file: "pages/internal-file-types.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of internal file types."}
+  - {file: "pages/learning-loops.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of learning & loop mechanisms."}
+  - {file: "pages/nodes.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of governed nodes."}
+  - {file: "pages/pipelines.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of pipelines."}
+  - {file: "pages/principles.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of CLAUDE.md behavior principles."}
+  - {file: "pages/processes.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of processes."}
+  - {file: "pages/protocols.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of protocols."}
+  - {file: "pages/qc.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of QC (quality-control) mechanisms."}
+  - {file: "pages/rules.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of rules."}
+  - {file: "pages/schema.html", page_kind: schema-view, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "SVG schema mindmap (ARCH-00410 Phase-1). NOTE: commit a97edf0 message says PREVIEW pending Governor rendered-page acceptance, but the page itself carries NO inline tags:/Status: header — see gaps."}
+  - {file: "pages/skills.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of skills."}
+  - {file: "pages/templates.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of templates."}
+  - {file: "pages/to-be-reviewed.html", page_kind: admin, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Admin/triage queue — items to be reviewed & created."}
+  - {file: "pages/uxui.html", page_kind: dashboard, status: DRAFT, status_source: inline, inline_raw: "PREVIEW / DRAFT", wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "UX/UI Platform DNA overview. VOCAB GAP: dashboard is a best-fit stretch, no dedicated design-system-overview kind exists (see gaps). PREVIEW awaiting Governor acceptance."}
+  - {file: "pages/vocabulary.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of controlled vocabulary (VOC nodes)."}
+  - {file: "pages/wizards.html", page_kind: page, status: DRAFT, status_source: floor-inferred, wiring_state: LIVE, last_verified: "2026-07-21", freshness: FRESH, governing_corespine: CS-FRONTEND-001, purpose: "Catalog listing of wizards."}
+
+# ── functional-check.mjs RESULT (FE-I11 presence≠behavior gate, run 2026-07-21) ──
+# `node frontend/tests/functional-check.mjs` → real run, jsdom present (frontend/tests/node_modules installed):
+#   RESULT: 600 pass, 0 fail — "ALL INTERACTIVE ELEMENTS BEHAVIORALLY VERIFIED"
+#   COVERAGE: the harness's ALL_PAGES loop = fs.readdirSync(frontend/pages) — this covers all 27 pages/*.html
+#   (wiring_state: LIVE above). It does NOT load or test frontend/index.html (confirmed: zero reference to
+#   "index.html" anywhere in functional-check.mjs) — hence index.html above is wiring_state: ACCESSIBLE, not
+#   LIVE (honest; behavior claimed only where a behavioral test actually ran it). See gaps: below.
+
+gaps:
+  # 1. Orphan-page check (A1 nothing stands alone) — REAL FINDING: none found.
+  orphans: []
+  orphans_note: >
+    Checked frontend/index.html <a href> targets against the 27 pages/*.html files (grep-diffed, whole
+    class) — every one of the 27 IS linked from index.html's nav/grid. No orphan pages exist today. This
+    is a genuinely clean result, not a gap; recorded for completeness per the task's ask.
+
+  # 2. Behavioral-test coverage gap (FE-I11) — REAL FINDING.
+  behavioral_coverage_gap:
+    - page: "index.html"
+      finding: >
+        frontend/tests/functional-check.mjs enumerates ONLY frontend/pages/*.html (via readdirSync on that
+        one directory); frontend/index.html lives one level up and is never loaded or asserted, despite
+        carrying its own interactive Grid/List view toggle (the exact element-class FE-I11 exists to gate).
+      class_level_prevention: >
+        CLASS: FE-I11's ALL_PAGES enumeration is not truly universal-by-default (Principle 18-B) — it is
+        scoped to one subdirectory instead of the whole frontend/**/*.html class. PREVENTION: widen the
+        existing enumeration (fs.readdirSync(frontend/pages) → also load ../index.html, or glob frontend
+        recursively) rather than add a second narrow check. Routed to dna/learning-registry/agent-findings.md
+        this run for RIPL distillation; Opus to fold into CS-FRONTEND-001 FE-I11 wording + functional-check.mjs.
+      status: OPEN-ROUTED
+
+  # 3. Vocabulary gaps (CORE-SEED 1 — named, never invented) — REAL FINDINGS.
+  vocabulary_gaps:
+    - gap: "Status enum missing PREVIEW"
+      detail: >
+        4 pages use/reference "PREVIEW" as a page state (dynamic-menu.html, gallery.html, uxui.html — inline
+        HTML comment "Status: PREVIEW / DRAFT"; schema.html — only in commit message a97edf0, not inline).
+        CISEM-VOC-00002's Node Status enum is DRAFT|PROPOSED|DECLARED|RATIFIED|PLACEHOLDER|SCHEDULED|SPLIT|
+        PROVISIONAL-ACTIVE — PREVIEW is NOT a member. Meanwhile CISEM-VOC-00001 DOES list "preview" as a
+        page-kind TAG value, which conflates a lifecycle-state word with a kind-tag word. Per CORE-SEED 1,
+        this registry recorded the enum-safe DRAFT (the other half of the inline "PREVIEW / DRAFT" pair) and
+        flags PREVIEW here rather than inventing/adding it silently. Needs Opus/Governor: either add PREVIEW
+        to the VOC-00002 Node Status enum (distinct from PROVISIONAL-ACTIVE), or rule that pages should say
+        "PROVISIONAL-ACTIVE" instead of "PREVIEW" and correct the 3 inline HTML comments (would be an HTML
+        edit — out of this registry's low-blast scope; a follow-on for whoever owns the ratification).
+    - gap: "page_kind missing a help/utility category"
+      detail: >
+        help.html has no clean VOC-00001 page-kind fit (page/dashboard/index/gallery/dynamic-menu/schema-view/
+        admin/preview). Recorded as generic "page" (the catch-all value) pending a possible dedicated "help" or
+        "utility" kind.
+    - gap: "page_kind missing a catalog/listing category distinct from index"
+      detail: >
+        21 of 28 pages are catalog/listing surfaces for a governed-artifact TYPE (agents, axioms, corespines,
+        document-types, engines, front-page-types, internal-audits, internal-file-types, learning-loops, nodes,
+        pipelines, principles, processes, protocols, qc, rules, skills, templates, vocabulary, wizards). All 21
+        collapse into the single generic "page" value because VOC-00001 has no dedicated "catalog"/"listing"
+        kind distinct from the root "index" — flattening a meaningful distinction (root home vs artifact-type
+        catalog). Naming this for Opus/Governor consideration.
+    - gap: "uxui.html page_kind is a stretch-fit"
+      detail: >
+        Classified as "dashboard" (closest existing value) but it is really a design-system/platform-DNA
+        overview page — no exact VOC-00001 match exists.
+
+  # 4. Pages still PREVIEW awaiting Governor acceptance — REAL FINDING (from COMPACT STATE v9 + inline markers).
+  preview_awaiting_governor:
+    - dynamic-menu.html   # inline "PREVIEW / DRAFT"; per WITNESS v9, awaiting tier/responsive differentiation
+    - gallery.html        # inline "PREVIEW / DRAFT"; per WITNESS v9, awaiting Governor acceptance
+    - uxui.html           # inline "PREVIEW / DRAFT"; per WITNESS v9, awaiting Governor acceptance
+    - schema.html         # PREVIEW per commit a97edf0 message ONLY — page itself has no inline header (see
+                           #   vocabulary_gaps + behavioral_coverage_gap notes); a header-propagation gap.
+
+  # 5. Header-compliance gap — THE CENTRAL FINDING this registry exists to surface.
+  header_compliance:
+    pages_with_inline_header: 3    # dynamic-menu.html, gallery.html, uxui.html
+    pages_without_inline_header: 25
+    total_pages: 28
+    finding: >
+      Only 3 of 28 frontend pages (11%) currently carry an inline <!-- tags: --> / <!-- Status: --> HTML-
+      comment header on disk. This IS the compliance gap the Governor directive ("every CISEM frontend page
+      must now carry tags + statuses") was aimed at surfacing. This registry catalogs the CURRENT reality;
+      it does not itself add headers to any page (CORE-SEED 2 — no HTML edits).
+      CLASS-LEVEL PREVENTION (Principle 17): any NEW frontend page should be required, at creation, to carry
+      an inline tags:/Status: header — extend dna/checks/creation-gate.sh (or a new FE-invariant under
+      CS-FRONTEND-001) to check for it specifically on frontend/**/*.html, so page #29 does not silently join
+      the 25 that lack one. Routed to dna/learning-registry/agent-findings.md this run.
+    status: OPEN-ROUTED
