@@ -202,6 +202,36 @@ if (mmBtnTree && mmBtnMap) {
   }
 }
 
+// ── SORT CONTROL (BUILD 2, Governor 2026-07-21) — a page-wide Sort button in the SAME
+// .view-bar, reusing sortChildren() (CORE-SEED 1 — no second sort mechanism). Behavioral:
+// assert a REAL order change (Principle 17), using schema.html's RATIFIED corespine group —
+// a genuine, already-non-alphabetical fixture (M,C,T,F in source), not a planted probe. ──
+{
+  const sortBtn = doc.querySelector('#vbtn-sort-all');
+  ok('schema: Sort control injected into the shared .view-bar (FE-I12 — same bar, one line)',
+    !!sortBtn && !!doc.querySelector('main .view-bar') && sortBtn.closest('.view-bar') === doc.querySelector('main .view-bar'));
+  const ratifiedLabel = Array.prototype.find.call(
+    doc.querySelectorAll('.tree-row.branch-row .tree-label'), l => l.textContent.trim() === 'RATIFIED');
+  const ratifiedGroup = ratifiedLabel ? ratifiedLabel.closest('li.tree-node') : null;
+  const ratifiedUl = ratifiedGroup ? ratifiedGroup.querySelector(':scope > ul.tree-children') : null;
+  if (sortBtn && ratifiedUl) {
+    const childLis = Array.prototype.filter.call(ratifiedUl.children, c => c.classList.contains('tree-node'));
+    const label = li => li.querySelector(':scope > .tree-row .tree-label').textContent.trim();
+    const before = childLis.map(label);
+    const ascExpected = before.slice().sort();
+    ok('schema: RATIFIED corespine group starts in a non-alphabetical order (real fixture, not planted)',
+      before.join(',') !== ascExpected.join(','));
+    click(w, sortBtn);
+    const after = childLis.map ? Array.prototype.filter.call(ratifiedUl.children, c => c.classList.contains('tree-node')).map(label) : [];
+    ok('schema: clicking Sort REORDERS the RATIFIED group alphabetically (behavioral, not decorative)',
+      after.join(',') === ascExpected.join(','));
+    click(w, sortBtn); // second click — reverse direction, round-trip proof (not a one-shot no-op)
+    const after2 = Array.prototype.filter.call(ratifiedUl.children, c => c.classList.contains('tree-node')).map(label);
+    ok('schema: second Sort click reverses to Z->A (round-trip)',
+      after2.join(',') === ascExpected.slice().reverse().join(','));
+  }
+}
+
 // ── universal chrome toggles (present + behavioral) on schema.html ──
 const themeBtn = doc.querySelector('.theme-tgl');
 ok('theme toggle injected', !!themeBtn);
@@ -238,11 +268,83 @@ if (langBtn) {
     click(wu, tabUx);
     ok('uxui: clicking UX tab reverts (round-trip, nothing stuck)', !panelUx.hidden && panelUi.hidden);
   }
-  // both tabs' checklists carry ALL 5/8 items (enumerate-all, not a sample — RI-0008)
-  const uxItems = panelUx ? panelUx.querySelectorAll('.tree-node .tree-node').length : 0;
-  const uiItems = panelUi ? panelUi.querySelectorAll('.tree-node .tree-node').length : 0;
-  ok('uxui: UX checklist has all 5 items', uxItems === 5);
-  ok('uxui: UI checklist has all 8 items', uiItems === 8);
+  // ── STRUCTURE: group -> sub-group -> row nesting, matching schema.html (Governor: "all the
+  // features you built in the schema page ... present in each row, sub-group and group") ──
+  function findBranchByLabel(root, text) {
+    if (!root) return null;
+    const lbls = root.querySelectorAll('.tree-row.branch-row .tree-label');
+    for (let i = 0; i < lbls.length; i++) if (lbls[i].textContent.trim() === text) return lbls[i].closest('li.tree-node');
+    return null;
+  }
+  const uxGroup = findBranchByLabel(panelUx, 'UX Principles');
+  const uxSubgroupSD = uxGroup ? findBranchByLabel(uxGroup, 'Structure & Disclosure') : null;
+  const uxSubgroupTC = uxGroup ? findBranchByLabel(uxGroup, 'Trust & Consistency') : null;
+  const uxRow = uxSubgroupSD ? findBranchByLabel(uxSubgroupSD, 'Zero-wall / progressive disclosure') : null;
+  ok('uxui: UX panel has group -> sub-group -> row nesting (3+ levels, matches schema.html depth)',
+    !!uxGroup && !!uxSubgroupSD && !!uxRow);
+
+  const uiGroup = findBranchByLabel(panelUi, 'UI Defaults');
+  const uiSubgroup = uiGroup ? findBranchByLabel(uiGroup, 'Visual System') : null;
+  const uiRow = uiSubgroup ? findBranchByLabel(uiSubgroup, 'Theme-aware via tokens') : null;
+  ok('uxui: UI panel has group -> sub-group -> row nesting (3+ levels, matches schema.html depth)',
+    !!uiGroup && !!uiSubgroup && !!uiRow);
+
+  // ── content preservation: all 5 original UX + 8 original UI principles still present
+  // (enumerate-all, not a sample — RI-0008; guards collateral content loss, Principle 18A) ──
+  const uxLabels = ['Zero-wall / progressive disclosure', 'Wide-view-first, drill-down', 'Consistency', 'Honest state', 'User owns scope'];
+  const uiLabels = ['Dependency-free / offline-first', 'Single JS file', 'Theme-aware via tokens', 'Controls on ONE line', 'WCAG AA contrast minimum', 'Native links', 'Registry-generated data', 'Behavioral verification'];
+  uxLabels.forEach(l => ok('uxui: UX principle preserved — "' + l + '"', !!findBranchByLabel(panelUx, l)));
+  uiLabels.forEach(l => ok('uxui: UI default preserved — "' + l + '"', !!findBranchByLabel(panelUi, l)));
+
+  // ── ROW-LEVEL CONTROL BAR — EVERY group/sub-group/row/leaf in BOTH uxui panels carries the
+  // SAME .rt-tools bar schema.html rows carry (enumerate-all, not a sample; the Governor's exact ask) ──
+  const uxNodes = panelUx ? Array.prototype.slice.call(panelUx.querySelectorAll('li.tree-node')) : [];
+  const uiNodes = panelUi ? Array.prototype.slice.call(panelUi.querySelectorAll('li.tree-node')) : [];
+  ok('uxui: UX panel has tree-nodes to check (19 expected: 1 group + 3 sub-groups + 5 rows + 10 leaves)', uxNodes.length === 19);
+  ok('uxui: UI panel has tree-nodes to check (26 expected: 1 group + 4 sub-groups + 8 rows + 13 leaves)', uiNodes.length === 26);
+  const uxMissingTools = uxNodes.filter(li => !li.querySelector(':scope > .tree-row > .rt-tools')).length;
+  const uiMissingTools = uiNodes.filter(li => !li.querySelector(':scope > .tree-row > .rt-tools')).length;
+  ok('uxui: EVERY UX-tab tree-node (group/sub-group/row/leaf) carries the row control bar (' + (uxNodes.length - uxMissingTools) + '/' + uxNodes.length + ')', uxMissingTools === 0);
+  ok('uxui: EVERY UI-tab tree-node (group/sub-group/row/leaf) carries the row control bar (' + (uiNodes.length - uiMissingTools) + '/' + uiNodes.length + ')', uiMissingTools === 0);
+
+  // ── BEHAVIORAL: the reused Move-up control actually reorders uxui rows (presence != behavior,
+  // Principle 17) — uses a DIFFERENT sub-group than the sort test below, to avoid interference ──
+  if (uxSubgroupTC) {
+    const rowsUl = uxSubgroupTC.querySelector(':scope > ul.tree-children');
+    const kids = Array.prototype.filter.call(rowsUl.children, c => c.classList.contains('tree-node'));
+    const label = li => li.querySelector(':scope > .tree-row .tree-label').textContent.trim();
+    const beforeOrder = kids.map(label); // ['Consistency', 'Honest state']
+    const secondRow = kids[1];
+    const upBtn = secondRow ? Array.prototype.find.call(secondRow.querySelectorAll(':scope > .tree-row .rt-btn'), b => b.title === 'Move up') : null;
+    ok('uxui: reused Move-up (↑) control present on a uxui row (same mechanism as schema.html)', !!upBtn);
+    if (upBtn) {
+      click(wu, upBtn);
+      const afterKids = Array.prototype.filter.call(rowsUl.children, c => c.classList.contains('tree-node'));
+      const afterOrder = afterKids.map(label);
+      ok('uxui: clicking the reused Move-up control REORDERS the rows (behavioral, not decorative)',
+        afterOrder[0] === beforeOrder[1] && afterOrder[1] === beforeOrder[0]);
+    }
+  }
+
+  // ── SORT CONTROL (BUILD 2) on uxui.html — same page-wide button, different sub-group fixture
+  // than the Move-up test above. "Structure & Disclosure" starts Z,W (non-alphabetical). ──
+  if (uxSubgroupSD) {
+    const sortBtnU = du.querySelector('#vbtn-sort-all');
+    ok('uxui: Sort control injected into the shared .view-bar (same mechanism as schema.html)', !!sortBtnU);
+    const rowsUl2 = uxSubgroupSD.querySelector(':scope > ul.tree-children');
+    const label2 = li => li.querySelector(':scope > .tree-row .tree-label').textContent.trim();
+    const before2 = Array.prototype.filter.call(rowsUl2.children, c => c.classList.contains('tree-node')).map(label2);
+    const asc2 = before2.slice().sort();
+    ok('uxui: "Structure & Disclosure" starts in a non-alphabetical order (real fixture, not planted)',
+      before2.join(',') !== asc2.join(','));
+    if (sortBtnU) {
+      click(wu, sortBtnU);
+      const after3 = Array.prototype.filter.call(rowsUl2.children, c => c.classList.contains('tree-node')).map(label2);
+      ok('uxui: clicking Sort REORDERS uxui rows alphabetically (behavioral, not decorative)',
+        after3.join(',') === asc2.join(','));
+    }
+  }
+
   // theme/lang/search/collapse/Rows-Window/Export — same shared abilities as schema.html
   ok('uxui: theme toggle injected', !!du.querySelector('.theme-tgl'));
   ok('uxui: language toggle injected', !!du.querySelector('.lang-tgl'));

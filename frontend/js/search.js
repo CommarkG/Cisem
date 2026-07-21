@@ -1145,11 +1145,15 @@
       wireRowToolbar(newLi);
     }
 
-    function sortChildren(li) {
+    // forceDir ('asc'|'desc') lets a page-level control (addSortButton) drive an EXPLICIT
+    // direction across every group in one action; called with no arg (the original per-row
+    // ⇅ button) it keeps its own toggle behavior unchanged (backward-compatible, A8 — same
+    // function, not a second sort implementation per CORE-SEED 1).
+    function sortChildren(li, forceDir) {
       var ul = li.querySelector(':scope > ul.tree-children');
       if (!ul) return;
       var items = Array.prototype.filter.call(ul.children, function (c) { return c.classList.contains('tree-node'); });
-      var asc = ul.getAttribute('data-sort') !== 'asc';
+      var asc = forceDir ? (forceDir === 'asc') : (ul.getAttribute('data-sort') !== 'asc');
       items.sort(function (a, b) {
         var la = (a.querySelector('.tree-label') || {}).textContent || '';
         var lb = (b.querySelector('.tree-label') || {}).textContent || '';
@@ -1158,6 +1162,31 @@
       items.forEach(function (it) { ul.appendChild(it); });
       ul.setAttribute('data-sort', asc ? 'asc' : 'desc');
       persistOrder(ul);
+    }
+
+    // ── PAGE-LEVEL SORT CONTROL (shared .view-bar, ARCH-00410-follow / Governor 2026-07-21) ──
+    // Reuses sortChildren() (CORE-SEED 1 — no second sort mechanism) applied to EVERY group on
+    // the page (every li.tree-node with children), in one explicit, page-wide direction so the
+    // result is deterministic regardless of any prior per-row ⇅ state. Appended into the SAME
+    // `.view-bar` the Rows/Window/Export/Tree-Mindmap controls already share (FE-I12 — controls
+    // stay on one line; same insert-before-export idiom as initMindmap()).
+    function addSortButton() {
+      var bar = document.querySelector('main .view-bar');
+      if (!bar) return; // no view-bar on this page — nothing to attach to (no orphan control)
+      var dir = 'asc';
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'vbtn'; btn.id = 'vbtn-sort-all';
+      btn.textContent = '⇅ Sort A→Z';
+      btn.title = 'Sort every group’s rows alphabetically by label (toggles A→Z / Z→A)';
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('li.tree-node').forEach(function (li) {
+          if (li.querySelector(':scope > ul.tree-children')) sortChildren(li, dir);
+        });
+        btn.textContent = dir === 'asc' ? '⇅ Sort A→Z (applied)' : '⇅ Sort Z→A (applied)';
+        dir = dir === 'asc' ? 'desc' : 'asc';
+      });
+      var exportBtn = bar.querySelector('.cs-export-btn');
+      if (exportBtn) bar.insertBefore(btn, exportBtn); else bar.appendChild(btn);
     }
 
     function renderRowPanel(li) {
@@ -1410,6 +1439,7 @@
     applyAdds(cs0);
     document.querySelectorAll('li.tree-node').forEach(function (li) { wireRowToolbar(li); });
     applyOrder(cs0);
+    addSortButton();
     addChangesetButton();
   }
 

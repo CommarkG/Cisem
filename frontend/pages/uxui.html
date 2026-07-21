@@ -63,13 +63,70 @@
     <div class="sh">Core approach to UX</div>
     <ul class="tree">
       <li class="tree-node">
-        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">UX Checklist</span><span class="tree-badge draft">DRAFT</span></div>
+        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">UX Principles</span><span class="tree-tag">5 principles &middot; 3 categories</span><span class="tree-badge draft">DRAFT</span></div>
         <ul class="tree-children">
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">1. Zero-wall / progressive disclosure</span><span class="tree-note">&mdash; structure reveals on demand (collapse/expand, toggles); the user controls depth, never a wall of text.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">2. Wide-view-first, drill-down</span><span class="tree-note">&mdash; see the whole, then dive.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">3. Consistency</span><span class="tree-note">&mdash; the same abilities on every surface; learn once.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">4. Honest state</span><span class="tree-note">&mdash; nothing fake; presence&ne;behavior; every control does exactly what it says.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">5. User owns scope</span><span class="tree-note">&mdash; the platform asks before expanding an action (mirrors the AI wide-view/ask-scope default, IBD-0028).</span></div></li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Structure &amp; Disclosure</span><span class="tree-tag">how content reveals</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Zero-wall / progressive disclosure</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; structure reveals on demand (collapse/expand, toggles); the user controls depth, never a wall of text.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mechanism</span><span class="tree-note">&mdash; <code>initCollapse()</code> + <code>initTreeToggle()</code> + the Rows/Window toggle (<code>frontend/js/search.js</code>).</span></div></li>
+                </ul>
+              </li>
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Wide-view-first, drill-down</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; see the whole, then dive.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mechanism</span><span class="tree-note">&mdash; tree sections start collapsed at depth and expand on demand (<code>initTreeToggle()</code>).</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Trust &amp; Consistency</span><span class="tree-tag">same abilities everywhere</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Consistency</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; the same abilities on every surface; learn once.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mechanism</span><span class="tree-note">&mdash; FE-I1&ndash;FE-I13 invariants (one stylesheet, one JS, standard nav/toolbar) &mdash; CS-FRONTEND-001.</span></div></li>
+                </ul>
+              </li>
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Honest state</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; nothing fake; presence&ne;behavior; every control does exactly what it says.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mechanism</span><span class="tree-note">&mdash; Principle 17 (presence&ne;behavior) + <code>frontend/tests/functional-check.mjs</code> behavioral gate.</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">User Agency</span><span class="tree-tag">the platform asks, never assumes</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">User owns scope</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; the platform asks before expanding an action.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mechanism</span><span class="tree-note">&mdash; mirrors the AI wide-view/ask-scope default (<code>IBD-0028-wide-view-ask-scope-ai-default.md</code>).</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
         </ul>
       </li>
     </ul>
@@ -79,16 +136,98 @@
     <div class="sh">Core approach to UI &mdash; the UI-defaults checklist</div>
     <ul class="tree">
       <li class="tree-node">
-        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">UI Defaults Checklist</span><span class="tree-badge draft">DRAFT</span></div>
+        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">UI Defaults</span><span class="tree-tag">8 defaults &middot; 4 categories</span><span class="tree-badge draft">DRAFT</span></div>
         <ul class="tree-children">
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">1. Dependency-free / offline-first</span><span class="tree-note">&mdash; no CDN, no framework, no build; opens on file://.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">2. Theme-aware via tokens</span><span class="tree-note">&mdash; dark/light, single stylesheet (<code>frontend/css/style.css</code> <code>:root</code>).</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">3. Controls on ONE line</span><span class="tree-note">&mdash; the toolbar is a single compact row, not stacked.</span><span class="tree-tag">fixed on schema.html 2026-07-21</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">4. WCAG AA contrast minimum</span><span class="tree-note">&mdash; every text &ge; 4.5:1 (normal) / 3:1 (large); MEASURED, never taste-judged.</span><span class="tree-tag">audited 2026-07-21 &mdash; see build report</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">5. Native links</span><span class="tree-note">&mdash; real <code>&lt;a href&gt;</code> elements, not DOM overlays.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">6. Registry-generated data</span><span class="tree-note">&mdash; never hand-authored (can't go stale).</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">7. Single JS file</span><span class="tree-note">&mdash; FE-I2; additive edits, zero collateral deletion.</span></div></li>
-          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">8. Behavioral verification</span><span class="tree-note">&mdash; <code>functional-check.mjs</code> asserts a real state change, not "looks wired".</span></div></li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Runtime &amp; Delivery</span><span class="tree-tag">how the page loads and behaves</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Dependency-free / offline-first</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; no CDN, no framework, no build; opens on file://.</span></div></li>
+                </ul>
+              </li>
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Single JS file</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; FE-I2; additive edits, zero collateral deletion.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Invariant</span><span class="tree-note">&mdash; FE-I2 &mdash; <code>frontend/js/search.js</code> is the one behavior engine.</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Visual System</span><span class="tree-tag">tokens, layout, contrast</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Theme-aware via tokens</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; dark/light, single stylesheet.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Location</span><span class="tree-note">&mdash; <code>frontend/css/style.css</code> <code>:root</code>.</span></div></li>
+                </ul>
+              </li>
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Controls on ONE line</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; the toolbar is a single compact row, not stacked.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Invariant</span><span class="tree-note">&mdash; FE-I12 &mdash; fixed on schema.html 2026-07-21.</span></div></li>
+                </ul>
+              </li>
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">WCAG AA contrast minimum</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; every text &ge; 4.5:1 (normal) / 3:1 (large); MEASURED, never taste-judged.</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Invariant</span><span class="tree-note">&mdash; FE-I13 &mdash; audited 2026-07-21, see <code>functional-check.mjs</code> GATE A.</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Data &amp; Links</span><span class="tree-tag">no invented content, no fake navigation</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Native links</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; real <code>&lt;a href&gt;</code> elements, not DOM overlays.</span></div></li>
+                </ul>
+              </li>
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Registry-generated data</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; never hand-authored (can't go stale).</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="tree-node">
+            <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Verification</span><span class="tree-tag">presence is not proof</span></div>
+            <ul class="tree-children tree-collapsed">
+
+              <li class="tree-node">
+                <div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">Behavioral verification</span></div>
+                <ul class="tree-children tree-collapsed">
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Description</span><span class="tree-note">&mdash; <code>functional-check.mjs</code> asserts a real state change, not "looks wired".</span></div></li>
+                  <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mechanism</span><span class="tree-note">&mdash; FE-I11 + jsdom behavioral gate.</span></div></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
         </ul>
       </li>
     </ul>

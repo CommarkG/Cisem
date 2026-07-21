@@ -31,3 +31,20 @@ Entry format (append, newest at bottom):
 - [2026-07-21 · cisem-haiku · last-day audit] minitree CLEAN; one real finding (creation-process design-doc tripped
   I19/P5 in dna/planning) → resolved by relocation. CLASS: a design working-doc in dna/planning/ is treated as a plan.
   → captured; ties RI-0012 (surfaced the [RATIFY-GATE] family).
+- [2026-07-21 · cisem-sonnet · uxui.html tree-restructure + sort-control build] **Edit old_string mismatch from
+  retyped-from-memory HTML:** reconstructing a large dense-HTML block from a prior Read (rather than copy-exact) silently
+  dropped an inline `<code>` wrapper around `&lt;a href&gt;`, causing the Edit tool's exact-match to fail with no useful
+  diagnostic beyond "not found." Root fix: on ANY large-block Edit failure, immediately diff the ACTUAL bytes (`sed -n
+  'N,Mp' file`) against the intended old_string rather than re-guessing by eye — found the exact byte in one pass. CLASS:
+  never retype dense markup from visual memory of a Read output when it will be used as an Edit old_string — either
+  quote the exact substring or verify via a byte-level diff before the second attempt. → DISTILL-PENDING (candidate: a
+  standing habit for all tiers, not yet a mechanical check — Edit tool failures are self-diagnosing if you diff first).
+- [2026-07-21 · cisem-sonnet · uxui.html tree-restructure + sort-control build] **POSITIVE — self-detecting mechanism
+  validated live:** `initTreeEditor()`/`wireRowToolbar()` in search.js self-detect `.tree-row` presence and wire EVERY
+  `li.tree-node` on the page, with zero page-specific code. Restructuring uxui.html's flat checklist into a
+  group→sub-group→row `.tree`/`.tree-node` hierarchy (matching schema.html's markup) caused the FULL row-control bar
+  (+/×/↑/↓/move-to/comment/park/upload/MD/PDF/sort) to appear on all 45 new nodes automatically — zero JS edits needed
+  for Build 1. CLASS: this is the platform-level pattern working exactly as designed (CLAUDE.md §1.6) — when a NEW page
+  needs an EXISTING page's interactive feature set, first check whether the existing JS already self-detects a shared
+  markup class before writing ANY new per-page wiring. → confirms existing prevention (no new RI needed; reinforces
+  RI-0016's "reuse existing container" class at the markup-detection layer, not just the container layer).
