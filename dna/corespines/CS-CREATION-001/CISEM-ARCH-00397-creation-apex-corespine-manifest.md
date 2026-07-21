@@ -77,6 +77,8 @@ disk — verified in §VI below.
 ---
 
 ## §IV Invariants
+**AI-default guard (Governor decree 2026-07-21, parked [[IBD-0028-wide-view-ask-scope-ai-default]]):** creation PERCEIVES wide (the class an input belongs to, the objective standard) but ASKS the human about action scope before expanding — *see the whole, act on the agreed part.* First-cut pointer; deep integration pending.
+
 
 **CR-I1** Every creation event MUST pass CLAUDE.md §3 gates in order (Tier-Routing, Goal-First,
 Corespine-First, Existing-First, Core-vs-Instance, Pocket, Standalone, Naming, Size, Creation Triad)

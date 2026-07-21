@@ -208,6 +208,8 @@ The wizard MIRRORS this protocol exactly:
 ---
 
 ## 7. Special Cases
+**AI-default guard (Governor decree 2026-07-21, parked [[IBD-0028-wide-view-ask-scope-ai-default]]):** WIDE-VIEW DEFAULT + ASK-SCOPE-BEFORE-EXPANDING. A plan PERCEIVES the whole class/scope a reported issue implies (never just the pointed-at instance; measure the objective standard), but the plan's ACTION scope is CONFIRMED with the human before expanding the blast — *see the whole, act on the agreed part.* First-cut pointer; deep integration pending the Governor's later processing.
+
 
 ### Raw Capture (IBD) — EXEMPT from double-ratification
 A Governor/Opus PARK-BY-DEMAND capture (dna/ibd/IBD-*.md) is exempt: it's a raw thought, not a plan. When promoted from IBD → plan, it goes through §3–5 above.
