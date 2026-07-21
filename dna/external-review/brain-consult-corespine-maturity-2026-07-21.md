@@ -30,6 +30,14 @@ CS-FRONTEND-001 ratified (FE-I1–14) · knowledge-library holds your work (KL-0
 status libraries (VOC-00001/2) with NEW **alignment** + **freshness** axes · a **CISEM DNA Alignment Contract (ARCH-00413)**
 now exists as the one-page onboarding for any external AI (git=SSOT, scoped sync, handoff-proof — read it first next sync).
 
+## References (live git links — private repo; open directly or via your scoped Project-Knowledge sync)
+- DNA Alignment Contract (read first): https://github.com/CommarkG/Cisem/blob/main/dna/corespines/CISEM-ARCH-00413-cisem-dna-alignment.md
+- Brain–CISEM alignment plan (where your protocol folds): https://github.com/CommarkG/Cisem/blob/main/dna/corespines/CISEM-ARCH-00150-brain-cisem-alignment-plan.md
+- Tag library: https://github.com/CommarkG/Cisem/blob/main/dna/vocabulary/CISEM-VOC-00001-tag-library.md
+- Status library (alignment + freshness axes): https://github.com/CommarkG/Cisem/blob/main/dna/vocabulary/CISEM-VOC-00002-status-library.md
+- Corespine registry (the 7 homeless + maturity picture): https://github.com/CommarkG/Cisem/blob/main/dna/corespines/corespine-registry.yaml
+- Consolidation plan (Phase 1 = this maturity work): https://github.com/CommarkG/Cisem/blob/main/dna/planning/CISEM-ARCH-00414-session-consolidation-plan.md
+
 ## 3. The consult — corespine maturity (the real question)
 CISEM ran a validator pass (Haiku) over all corespines. Finding: **only 3 of 15 are complete + sealed** (CS-FRONTEND-001,
 CS-CREATION-001, CS-MASTER-VALIDATION-001); **7 are registered but homeless** (no manifest, no content); 2 had dangling
