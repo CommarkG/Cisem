@@ -162,9 +162,10 @@ Entry format (append, newest at bottom):
   22-card content preservation, and universal chrome — sanity-verified by planting a deliberate failing assert
   and confirming it surfaced before reverting. 623 pass / 0 fail (was 600). (2) `dna/checks/plan-audit.sh` [I1]
   now excludes `dna/knowledge-library/` (RI-0012 substring-vs-field class, 3rd confirmed instance this week) —
-  `CS-CRM-BILLING-001` in KL-0002 is a quoted external-source example id, not a real governance reference; same
-  `--exclude-dir` pattern already used for `raw-activity/`. Planted-tested both directions (false-positive gone;
-  a genuine planted dangling ref `CISEM-ARCH-99999` outside knowledge-library/ still caught, then removed).
+  `CS-CRM-BILLING-001` (example-only id, quoted in KL-0002 from an external source, not a real governance reference)
+  is now correctly excluded; same `--exclude-dir` pattern already used for `raw-activity/`. Planted-tested both
+  directions (false-positive gone; a genuine planted dangling ref `CISEM-ARCH-99999` (example-only, temporary
+  planted-test id, deleted immediately after verification) outside knowledge-library/ still caught, then removed).
   CLASS (new, routable): **RI-0012 is now a repeating class (3 instances)** — any mechanical scan that matches a
   bare substring/id pattern across `.md`/`.yaml` content needs a STANDING "external-source / quotes-examples"
   exemption category (knowledge-library, raw-activity, and likely future `dna/external-review/` +
