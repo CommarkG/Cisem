@@ -1,5 +1,5 @@
 # CISEM Comprehensive Diagnostics & Gap Analysis
-**Node ID:** CISEM-ARCH-00380 | **Type:** AUDIT | **Status:** PROVISIONAL-ACTIVE  
+**Node ID:** CISEM-ARCH-00380 | **Type:** ARCH | **Sub_type:** AUDIT | **Status:** PROVISIONAL-ACTIVE  
 **depth_level:** L2 | **Position in schema:** T-SYS, RQC output layer  
 **tags:** [audit, haiku, rqc-output, evidence-only, 2026-07-18]  
 **Goal:** Enumerate all governance gaps, phantom references, registry mismatches, and compliance gaps across CISEM; evidence-only findings for Opus/Governor review.

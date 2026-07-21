@@ -1,7 +1,7 @@
 ---
 Node_ID: CISEM-ARCH-00393
 tags: [corespine, manifest, frontend, governance, t-sys]
-Type: MANIFEST
+Type: ARCH | Sub_type: MANIFEST
 Status: RATIFIED
 Corespine: CS-FRONTEND-001
 Schema_anchor: CISEM-ARCH-00008

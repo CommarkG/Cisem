@@ -1,7 +1,7 @@
 ---
 tags: [wizard, corespine, creation, governance, t-sys]
 Node_ID: CISEM-ARCH-00394
-Type: WIZARD
+Type: ARCH | Sub_type: WIZARD
 Status: RATIFIED
 Corespine: CS-CREATION-001
 Schema_anchor: CISEM-ARCH-00008

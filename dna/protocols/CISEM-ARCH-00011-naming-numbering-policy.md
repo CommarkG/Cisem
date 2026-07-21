@@ -19,6 +19,11 @@ FOUND, DNA, GOV, ARCH, PARK, SES, WITNESS, VOC, LOAD, REG, SCHEMA, TEMPLATE-PROT
 CISEM-SCHEMA-00001 and CISEM-TEMPLATE-PROTOCOL-001.) **Rule:** a node's `Type`
 field MUST equal its ID prefix — no `Type: ARCH` on a `CISEM-SCHEMA-*` node.
 Mismatch is an I9 violation.
+**Sub_type (Governor decree 2026-07-21, PCR-ratified):** an ARCH-numbered (or any `{TYPE}`-numbered) node MAY declare a
+**`Sub_type:`** field for its functional KIND (e.g. AUDIT/WIZARD/MANIFEST/PLAN) — a SEPARATE facet from the ID-prefix
+`Type:`, which stays STRICTLY == the prefix (A9: one facet, one home). This keeps the kind-signal without loosening the
+match rule. Mechanically: `[TYPE-MATCH]` (plan-audit.sh v13) enforces `Type` == prefix; `Sub_type` is a distinct
+registered vocab. Applied: ARCH-00380/00381 = `Sub_type: AUDIT`, ARCH-00393/00397 = `MANIFEST`, ARCH-00394 = `WIZARD`.
 
 ## 2. ID format
 **ONE-GATE RULE (2026-07-18):** `naming-registry.yaml` is the SINGLE naming/numbering gate for

@@ -1,5 +1,5 @@
 # CISEM Dormancy Audit — Declared But Not Done
-**Node ID:** CISEM-ARCH-00381 | **Type:** AUDIT | **Status:** PROVISIONAL-ACTIVE  
+**Node ID:** CISEM-ARCH-00381 | **Type:** ARCH | **Sub_type:** AUDIT | **Status:** PROVISIONAL-ACTIVE  
 **depth_level:** L2 | **Position in schema:** T-SYS, RQC output layer  
 **tags:** [audit, haiku, dormancy, rqc-output, 2026-07-18]  
 **Goal:** Identify declared items (PROPOSED/QUEUED/PROVISIONAL-ACTIVE/DRAFT) that have not moved to execution or completion; evidence-only pattern analysis.
