@@ -76,3 +76,27 @@ Entry format (append, newest at bottom):
   may warrant a standing INJECTION-SCAN pattern entry for this specific "Otosan/Hebrew-persona" signature (the
   existing `[INJECTION-SCAN]` check in plan-audit.sh scans RAW-EXTERNAL/IBD intake files, not live tool-result
   channels — this is a DIFFERENT vector than what that check covers). → DISTILL-PENDING.
+- [2026-07-21 · cisem-sonnet · TAC Stage 4 naming/numbering enforcement build] **A universal-by-default check
+  finds MORE than its author anticipated, and that is the point:** building [TYPE-MATCH] to the dispatch's stated
+  4 expected findings (ARCH-00380/381/394/397) surfaced a genuine 5th sibling (ARCH-00393, CS-FRONTEND-001's
+  manifest, same MANIFEST-vs-ARCH mismatch) purely because the check enumerates ALL `.md` files, not the 4 named
+  ones. Same for [NAMING-FORMAT]: built for the one pre-declared expected flag (TEMPLATE-PROTOCOL-001, which
+  correctly cleared via the new exceptions registry), it ALSO caught 2 ids [I1]'s own regex is structurally BLIND
+  to (`CISEM-BASE-CONTRACT-001`, `CISEM-PROTOCOL-TEMPLATE-001` — both 3-digit SEQ; [I1]'s pattern hardcodes
+  `{5}` digits, so non-5-digit ids never even enter its match set). CLASS: when a NEW check is built "to confirm
+  N known findings," it must still be built to enumerate the WHOLE class (Principle 18B) — the pre-declared
+  findings are a MINIMUM verification, not the check's ceiling; a check that only matched the anticipated set
+  would silently hide the same kind of blind-spot [I1] itself had for 16+ months. Also confirms a related class:
+  a sibling check ([I1]) can have a narrow REGEX (not just a narrow SCOPE, RI-0009's class) that makes it blind to
+  a whole shape of id (non-5-digit) — a distinct sub-class of "declared-universal-but-wired-narrow" worth folding
+  into RI-0009's family. Same pattern repeated in [CREATION-GATE]'s V10 fix: widening the enumeration (adding
+  repo-root + dna/-root `-maxdepth 1`) surfaced 4 MORE real ungoverned files (CISEM-WITNESS-00004/5/6,
+  parked-and-rejected-register.md) beyond the 3 the dispatch pre-named. → DISTILL-PENDING (candidate: fold into
+  RI-0009 as "narrow-regex" sub-class, alongside the existing "narrow-scope" class).
+- [2026-07-21 · cisem-sonnet · TAC Stage 4 naming/numbering enforcement build] **Declared-exception registries
+  need BOTH id-match and path-match suppression, not just one:** `naming-exceptions.yaml` needed an id-exact-match
+  path (for `CISEM-TEMPLATE-PROTOCOL-001`, a single irregular node) AND a path-prefix path (for the `frontend/`
+  blanket clause, which has no single id to match against — it exempts an entire governed subtree by a different
+  corespine's authority). A check that only supports one suppression shape will force future exceptions into the
+  wrong shape to fit it. CLASS: an exceptions/allowlist registry feeding a mechanical check should support both
+  id-scoped and path-scoped entries from the start, not retrofit the second shape later. → DISTILL-PENDING.

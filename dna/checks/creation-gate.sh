@@ -21,9 +21,18 @@ missing=0
 # parked item missing tag/status is flagged MECHANICALLY, not left to the model's memory. HONEST LIMIT: this is
 # a presence-FLAG at commit, not an auto-INJECTOR — the model still chooses the correct tag+status (a machine
 # cannot guess the right ones); the hardwire is that a miss can no longer pass silently.
-for f in $(find dna/corespines dna/protocols dna/planning dna/schema dna/vocabulary .claude/agents .claude/skills \
+# V10 FIX (creation-gate blind-spot, Governor audit 2026-07-21): the enumeration previously omitted
+# repo-root and dna/-root LOOSE files (-maxdepth 1 on both), so files born directly in those two spots
+# (not under any of the named governed subdirectories) escaped the gate entirely — a false clean bill.
+# Universal-by-default (Principle 18B): every governed dir is enumerated, AND both root levels that can
+# hold loose governed .md files. CLAUDE.md's declared exception (ARCH-00011 §2) is preserved: it is NOT
+# added to the case-exemption list below because it already carries real Tags:/Status: fields and passes
+# the presence check on its own merits — no special-case needed.
+for f in $( { find dna/corespines dna/protocols dna/planning dna/schema dna/vocabulary .claude/agents .claude/skills \
              dna/ibd dna/queue dna/audits dna/learning-registry \
-             -type f -name '*.md' 2>/dev/null | sort -u); do
+             -type f -name '*.md' 2>/dev/null; \
+             find . -maxdepth 1 -type f -name '*.md' 2>/dev/null; \
+             find dna -maxdepth 1 -type f -name '*.md' 2>/dev/null; } | sort -u); do
   base="$(basename "$f")"
   # Exemptions (declared, not silent): READMEs, templates (own PLACEHOLDER convention), split-index stubs.
   case "$base" in README.md|*-template.md|*-index.md|BUILD-PROMPT-template.md) continue;; esac

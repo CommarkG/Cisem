@@ -48,6 +48,14 @@
 #   skill-ingestion route; scans every RAW-EXTERNAL *-RAW.md + dna/ibd/*.md for 5 value-anchored override/
 #   injection pattern classes (persona-hijack, forced-format, MCP-block-marker, truth-write-attempt, non-Latin
 #   persona block). WARN-only, planted-test-verified, NOT in the ZF formula.
+#   v13 (2026-07-21, TAC Stage 4 naming/numbering enforcement, Sonnet-built per Opus Core Seeds): three new
+#   WARN checks wired — [NAMING-FORMAT] (CISEM-{TYPE}-{SEQ} ids must have a 5-digit SEQ, reads the new
+#   dna/checks/naming-exceptions.yaml one-gate for declared exceptions), [TYPE-MATCH] (a node's Type: field
+#   must STRICTLY equal its own id prefix — Sub_type carries the kind, per Governor decree 2026-07-21), and
+#   [CS-NAMES] (a CS-{NAME}-{SEQ} corespine NAME must be registered in naming-registry.yaml's new CS:
+#   allowlist; flags an unregistered NAME or a NAME registered twice). All three planted-test-verified,
+#   NOT in the ZF formula. Also fixed [CREATION-GATE]'s V10 blind-spot (repo-root + dna/-root loose files
+#   were never enumerated — see creation-gate.sh comment).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -562,6 +570,12 @@ done
 # [INJECTION-SCAN] — guard #5 of the skill-ingestion route (CISEM-ARCH-00411, Sonnet-built per ratified dispatch).
 # WARN-only, NOT in the ZF formula (same posture as [SEED]/[RAW-PAIR]/[ARCHIVE]/[NAMING]/[CHECK-LINT] at introduction).
 bash dna/checks/injection-scanner.sh 2>/dev/null
+
+# [NAMING-FORMAT] / [TYPE-MATCH] / [CS-NAMES] — TAC Stage 4 naming/numbering enforcement (Sonnet-built per
+# Opus Core Seeds, 2026-07-21). All three WARN-only, NOT in the ZF formula (same posture as the checks above).
+bash dna/checks/naming-format.sh 2>/dev/null
+bash dna/checks/type-match.sh 2>/dev/null
+bash dna/checks/cs-names.sh 2>/dev/null
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).

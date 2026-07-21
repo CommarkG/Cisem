@@ -1,0 +1,52 @@
+# CISEM Naming Exceptions Registry — declared, one-gate exceptions to ARCH-00011 naming rules
+# Purpose: the naming-format.sh + type-match.sh checks (TAC Stage 4, naming/numbering enforcement,
+# Sonnet-built 2026-07-21 per Opus Core Seeds) read THIS file to suppress a KNOWN, already-ratified
+# irregularity — never a silent pass, always a named + reasoned exception (D6 guardian-not-cage:
+# hardcoding fixes what was ratified and frees everything else; an undeclared off-format id remains
+# a real violation). Existing-First: this is a NEW file — ARCH-00011 §2 already NAMES the CLAUDE.md
+# exception in prose ("Declared naming exceptions (D6)") but no machine-readable registry existed for
+# checks to read; this is the first one, following the naming-registry.yaml one-gate PATTERN (A8 — same
+# shape, sibling registry, not a fork of naming-registry.yaml itself).
+# tags: [naming, exceptions, one-gate, enforcement, arch-00011]
+# Status: PROVISIONAL-ACTIVE
+
+exceptions:
+  - path: CLAUDE.md
+    id: CISEM-LOAD-00001
+    reason: >
+      Harness-mandated literal filename "CLAUDE.md" — the runtime loads exactly this filename, so it
+      cannot follow the {TYPE}-{SEQ5}-{slug}.md format. Declared exception per ARCH-00011 §2
+      ("Declared naming exceptions (D6)"): audits (I1/I9 and now NAMING-FORMAT/TYPE-MATCH) must treat
+      it as compliant-by-exception, not a violation. Permanent.
+    declared_by: "CISEM-ARCH-00011 §2 (Governor-ratified 2026-07-16)"
+
+  - path: dna/protocols/CISEM-TEMPLATE-PROTOCOL-001.md
+    id: CISEM-TEMPLATE-PROTOCOL-001
+    reason: >
+      Legacy 3-digit SEQ ("001"), not the 5-digit SEQ the naming policy now requires — created
+      2026-07-16 during the SAME session the 5-digit convention was formalized, before it was
+      retroactively applied. Its Type: field (TEMPLATE-PROTOCOL) is already correctly aligned to its
+      own ID prefix (I9 fix, same date — see the file's own inline comment). Re-numbering it now would
+      break every existing cross-reference across the repo for a purely cosmetic gain; kept as a named,
+      permanent exception (D6: hardcode WHAT must stay true, not a rigid renumber-everything path).
+    declared_by: "TAC Stage 4 naming/numbering enforcement (Sonnet-declared exception, Opus dispatch 2026-07-21) — flagged for Governor confirmation, not self-ratified (I7)"
+
+  - path: dna/corespines/CS-MASTER-VALIDATION-001
+    id: CS-MASTER-VALIDATION-001
+    reason: >
+      A flat-file / pointers-only corespine by explicit architecture choice (corespine-registry.yaml:
+      content_location.distributed_in: [ARCH-00008, ARCH-00320, quality-ledger.yaml] — it has NO
+      canonical_file of its own under dna/corespines/CS-MASTER-VALIDATION-001/). This is a declared
+      root_authority design (ARCH-00011 §7 closed set), not a naming defect — there is no single node
+      file whose Type:/ID pair could ever mismatch, because the corespine deliberately has no body file.
+    declared_by: "CS-MASTER-VALIDATION-001 foundational decree (Governor 2026-07-18) — architecture already ratified; this entry only documents it for the mechanical checks"
+
+  - path: "frontend/"
+    id: null
+    reason: >
+      Blanket clause — the entire frontend/ tree (HTML/CSS/JS pages) is governed by CS-FRONTEND-001
+      (FE-I1..FE-I11, ARCH-00393, RATIFIED), which defines its OWN naming/structure conventions for web
+      artifacts. CISEM-ARCH-00011's CISEM-{TYPE}-{SEQ} node-naming scheme was never meant to apply to
+      generated/served frontend files (they are not governance nodes). This entry exempts the whole
+      subtree by path prefix so format/type-match checks do not false-flag every HTML/CSS/JS filename.
+    declared_by: "CS-FRONTEND-001 RATIFIED scope (ARCH-00393/00395, Governor decree 2026-07-18) — this entry only documents the existing scope boundary for the mechanical checks"

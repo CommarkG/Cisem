@@ -40,3 +40,34 @@ IBD:     { next_seq: 28 }    # internal brain dumps (dna/ibd/IBD-*): 0027 = Crea
 DEC:     { next_seq: 15 }    # decision-archive entries (dna/archive/archive-ledger.yaml, DEC-*): 0001-0010 used (0007-0010 = archive-leak closure 2026-07-20: Inheritance-overlay SUPERSEDED · ARCH-00382/ai-oversight-layer3/ARCH-00280-Q4 RULED-OUT-TEMPORARY). 0001-0006 used (0005 = prose-WHAT SUPERSEDED by mechanical-invariant · 0006 = total-ordering precedence RULED-OUT-TEMPORARY pending fork) (executes+extends BP-0008; ARCHIVE namespace, one gate). 0001 = open-world forest RULED-OUT-PERMANENT · 0002 = static precedence rank SUPERSEDED · 0003 = single-apex D2 SUPERSEDED · 0004 = two-root conflict VAULTED-CONFLICT (0005 = harvest-orchestrator, 0006 = node-deliberation-dossier, 0007 = rigid-vs-context, 0008 = security-corespine; 0009 = essence-harvest 2026-07-19: collaborator axiom, questions-carry-context, concept-essence polarity, creation-cycle, cumulative-inheritance, register-everything, CoreSpiral content)
 HANDOFF: { next_seq: 5 }    # cross-tab handoffs (dna/queue/HANDOFF-*): opus-axioms, opus-comms, opus-consolidated-open-items, opus-two-hour-update used
 KL:      { next_seq: 2 }    # knowledge-library entries (dna/knowledge-library/index.yaml): KL-0001 = DIOS-0014 maturity framework (2026-07-18)
+
+# ── CS (corespine) NAME allowlist — registered-names one-gate for CS-{NAME}-{SEQ} ids ──
+# Governed by CISEM-ARCH-00011 §1 TYPE registry, extended to corespine NAMEs (TAC Stage 4, naming/
+# numbering enforcement, Sonnet-built per Opus Core Seeds, 2026-07-21). Source of truth for "real"
+# names = dna/corespines/corespine-registry.yaml's top-level + child entries (enumerated from disk,
+# not guessed). dna/checks/cs-names.sh reads this block to flag an unregistered NAME or a NAME
+# registered twice (collision). Does NOT include SOL-GIFTPRO-001 (different prefix SOL, not CS;
+# SIMULATION-ONLY) or example-only/NOT-YET-A-NODE ids (CS-DESIGN-001, CS-UXUI-001, CS-TEMPLATE-001,
+# CS-WEB-DESIGN-001, CS-PHYSICAL-DESIGN-001, CS-REJECTED-IDEAS-001, CS-CI-PIPELINE-001,
+# CS-EXAMPLE-*-001, CS-CORESPINE-MODEL-001 — all explicitly tagged example-only/NOT-YET-A-NODE in
+# their source files; exempted by cs-names.sh's tag-scan, same exemption classes as plan-audit's
+# [I1]) or not-in-repo external ids (CS-COMM-INTENT-CRYSTALLIZATION-001, CS-COMMUNICATION-001 —
+# Brain-coined, explicitly marked "not-in-repo, external" in IBD-0027-PURIFIED).
+CS:
+  AI-BEHAVIOR:        { registered: true, source: corespine-registry.yaml }
+  FRONTEND:           { registered: true, source: corespine-registry.yaml }
+  CREATION:           { registered: true, source: corespine-registry.yaml }
+  MASTER-VALIDATION:  { registered: true, source: corespine-registry.yaml }
+  ACCOUNTABILITY:     { registered: true, source: corespine-registry.yaml }
+  AI-PROFILING:       { registered: true, source: corespine-registry.yaml }
+  CONTROLPLANE:       { registered: true, source: corespine-registry.yaml }
+  SOLUTIONS:          { registered: true, source: corespine-registry.yaml }
+  AI-INTEGRATION:     { registered: true, source: corespine-registry.yaml }
+  UNIVERSAL:          { registered: true, source: corespine-registry.yaml }
+  DATA-PATTERNS:      { registered: true, source: "corespine-registry.yaml (child of CS-UNIVERSAL-001)" }
+  DOCGEN:             { registered: true, source: "corespine-registry.yaml (child of CS-UNIVERSAL-001)" }
+  LOOPS:               { registered: true, source: corespine-registry.yaml }
+  PRIORITY:            { registered: true, source: corespine-registry.yaml }
+  CORECOUNCIL:         { registered: true, source: corespine-registry.yaml }
+  THRESHOLD:           { registered: true, source: corespine-registry.yaml }
+  COMMS:               { registered: true, source: "reserved — forward-ref, no manifest/registry entry yet (dna/audits/cs-comms-existing-map-2026-07-19.md GAP finding; CISEM-WITNESS-00003 pending-Governor list); NAME reserved so future CS-COMMS-001 build is not blocked by this gate, pending: true", pending: true }
