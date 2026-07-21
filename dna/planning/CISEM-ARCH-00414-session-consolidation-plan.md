@@ -58,6 +58,19 @@ invariants defined · registry↔disk resolves · markers=0); (c) **GENERALIZE t
 especially context-heavy ones (Governor); (d) **Governor decision** on the 7 orphans: promote / reclassify-as-CANDIDATE /
 park-in-IBD (Opus lean: reclassify most, give CS-CONTROLPLANE a real home since it holds ARCH-00150 + ARCH-00413); (e) fix
 ARCH-00413's parent as part of (d).
+**Brain-consult refinements (accepted 2026-07-22 — Opus-verified against doctrine):** the draft seal-check was all
+INTERNAL-completeness; add three: (b1) **NON-ISOLATION** — ≥1 inbound/outbound reference resolves at seal (a corespine
+can pass every internal box and still be an island — A1/A9); (b2) **SIBLING-COHERENCE** — a coherence check vs parent/
+sibling corespines BEFORE sealing, not after (A9 coherence law); (b3) **EVIDENCED-TRIAL** — "zero DRAFT/TODO markers" is
+gameable (delete markers ≠ resolve substance = registered≠exists); the real defense is the divergent-trial, but only if it
+cites a REAL trial artifact (behavior, I17), never a boolean "trial: yes". For (c) generalize = ONE model, KIND-
+PARAMETERIZED (universal core: existence + substance + non-isolation + sibling-coherence + evidenced-trial; the SLOT LIST
+varies per kind — corespine=invariants+registry-resolve, registry=schema-conformance, protocol=ratified-plan-trace).
+**Edge (accepted):** static reference content (an index page) has no natural divergent-trial → substitute "consumed by ≥2
+real downstream reads without correction" as the trial-equivalent — a named exception, not a papered-over exemption. For
+(d) Brain's discipline: reclassify-as-CANDIDATE is the correct DEFAULT (core-vs-instance §3.2c); giving CS-CONTROLPLANE a
+home is the EXCEPTION that must state WHY it clears the 2nd-use-case bar (it holds ARCH-00150 + ARCH-00413 = 2 real uses —
+state that explicitly at ruling, don't assume from "sounds important").
 
 ### Phase 2 — Depth-level orchestrator as a MECHANISM (Governor-ordered)
 Today L1/L2/L3 loads by my judgment (persona), not a mechanism. Build a real per-task depth bundler: a task declares
@@ -88,6 +101,16 @@ zero manual sync. (The Claude.ai Projects GitHub connector [verified 2026-07-22]
 to Brain's project knowledge, BUT sync is MANUAL "Sync now" per session, NOT auto-refresh — so it reduces the per-time
 burden to one Sync-click + question-only, not true zero-touch. Private personal-account repos have a known edge-case auth
 failure → .zip-upload fallback. The self-contained packet stays the zero-setup path; the two are complementary.)
+(f) **BRAIN PROJECT STABILIZATION (Brain-consult answer, accepted 2026-07-22):** stabilize at the PROJECT level (persists
+across all Brain chats). **Custom instructions** = a SHORT pointer-form paragraph (stance: colleague/never-self-ratify;
+git=SSOT; state assumed-state confirmed/inferred/assumed before acting; pointer to the pinned DNA contract) — NOT a
+restatement of the DNA (A8). **Pinned/scoped file set (minimal, RAG-retrieved):** ARCH-00413 DNA contract · CLAUDE.md ·
+corespine-registry (INDEX layer — names/status/seal-state, bodies pulled on demand) · naming-numbering policy · WITNESS
+compact-state. EXCLUDE full corespine bodies, knowledge-library, transcripts (pull-on-demand, avoids lost-in-the-middle).
+**Freshness = commit-time discipline** (not a Brain-side check Brain can't run): ratifying a change to any of the 5 files
+adds "re-push to the Brain project" as a ratification checklist step; each file carries a visible last_verified stamp so
+Brain states "this file is dated X" at session start. **Brain's open question — RULED:** yes, the 5 files inherit the
+VOC-00002 alignment+freshness axes (one schema, A8), NOT a separate stamp format.
 
 ### Phase 5 — Haiku permanent validator (trial → permanent)
 Run rounds 2–3; wire the **Haiku-finds → Sonnet-fixes** loop; **hardwire prompt-improvement** so a miss never repeats
