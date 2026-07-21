@@ -180,14 +180,14 @@ done
 #       level: a decree / ratified-by / foundational citation. Missing = premature promotion. (VOC-00003 axis.)
 echo "[I24] RATIFIED status without validation evidence (premature promotion, DIOS anti-pattern):"
 found_i24=0
-for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+for f in $(grep -rliE "^\*\*status:\*\*[[:space:]]*ratified|^status:[[:space:]]*ratified" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
   if ! grep -qiE "decree|ratified by|ratified —|ratified by governor|foundational|by governor" "$f"; then
     echo "   PREMATURE: $f (Status RATIFIED but no decree/ratification citation — validation avoidance)"; found_i24=1
   fi
 done
 [ "$found_i24" = 0 ] && echo "   (none — every RATIFIED node cites its validating decree)"
 # I24 EDGE (ARCH-00392 Phase-0): penumbra — RATIFIED + authorization word but no date/run reference
-for f in $(grep -rliE "^\*\*status:.*ratified|^status:.*ratified" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
+for f in $(grep -rliE "^\*\*status:\*\*[[:space:]]*ratified|^status:[[:space:]]*ratified" --include="*.md" . 2>/dev/null | grep -v '.git/'); do
   grep -qiE "decree|ratified by|ratified —|ratified by governor|foundational|by governor" "$f" || continue
   grep -qiE "[0-9]{4}-[0-9]{2}-[0-9]{2}|run [0-9]+|quality.ledger" "$f" && continue
   edge_findings="${edge_findings}   [I24-EDGE] $(basename $f) — RATIFIED + auth word but no date/run ref (invariant-registry I24.penumbra)\n"

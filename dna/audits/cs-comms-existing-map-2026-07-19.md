@@ -1,6 +1,6 @@
 # CS-COMMS — What-Exists Relevance Map (worked example of the creation flow)
 **Type:** AUDIT ARTIFACT / DRAFT (flexible — model conversation in progress; NOT ratified) | **Tier:** Haiku searched · Opus mapped
-**Status:** PARKED (completed worked-example of the creation-flow simulation; retained for the reusable lesson, not ratified content)
+**Status:** PARKED (completed worked-example of the creation-flow simulation; retained for the reusable lesson — a worked artifact, never a governed/decreed one)
 **Purpose:** First real run of the creation FLOW (Goal → complete existing-search → grouped mother-child map WITH context → fork).
 Simulated on the Communication corespine to learn the process. Every element carries a **fork tag** so the fork is judged PER-ELEMENT, not globally.
 
