@@ -876,10 +876,17 @@
     var mainEl  = document.querySelector('main');
     var firstSh = mainEl && mainEl.querySelector('.sh');
     var pgDesc  = mainEl && mainEl.querySelector('.pg-desc');
-    if (firstSh) {
-      mainEl.insertBefore(bar, firstSh);
-    } else if (pgDesc && pgDesc.nextSibling) {
-      mainEl.insertBefore(bar, pgDesc.nextSibling);
+    // Anchor via pg-desc FIRST (2026-07-21 fix — was firstSh-first, which broke on uxui.html:
+    // its first .sh sits INSIDE a tabbable .uxui-panel that gets `hidden` on tab-switch, so a
+    // bar anchored there would vanish when that tab isn't active AND insertBefore(bar, firstSh)
+    // against mainEl threw "child can not be found in the parent" since firstSh's real parent
+    // is the panel div, not <main>). pg-desc is always a direct <main> child on every page, so
+    // this keeps the EXACT same visual slot on every existing page (firstSh was always pg-desc's
+    // next sibling there) while staying correct on pages with nested/togglable .sh sections.
+    if (pgDesc) {
+      pgDesc.parentNode.insertBefore(bar, pgDesc.nextSibling);
+    } else if (firstSh) {
+      firstSh.parentNode.insertBefore(bar, firstSh);
     } else if (mainEl) {
       mainEl.appendChild(bar);
     }
@@ -1434,13 +1441,40 @@
       (n.children || []).forEach(seed);
     })(CISEM_SCHEMA_GRAPH.root);
 
-    // ── toggle bar (Tree <-> Mindmap) — reuses .view-bar/.vbtn, same styling as Rows/Window ──
-    var bar = document.createElement('div');
-    bar.className = 'view-bar mm-toggle-bar';
-    bar.innerHTML =
-      '<button type="button" class="vbtn active" id="mm-btn-tree">&#8801; Tree</button>' +
-      '<button type="button" class="vbtn" id="mm-btn-mindmap">&#9737; Mindmap</button>';
-    firstSh.parentNode.insertBefore(bar, firstSh);
+    // ── toggle bar (Tree <-> Mindmap) — CONTROLS-ON-ONE-LINE (UI-default #3 / Core Seed 3,
+    // 2026-07-21): initPageViewToggle() + initTreeEditor() (both run earlier in init()) already
+    // built ONE `.view-bar` carrying [Rows][Window][...Export]; reuse THAT SAME bar (append into
+    // it, inserted before the Export button if present) instead of creating a second sibling
+    // <div> — the prior version created its own bar, which stacked as a second row. Only if no
+    // `.view-bar` exists yet (a schema-like page with no `.fi` items) do we fall back to a new one.
+    var existingBar = document.querySelector('main .view-bar');
+    var sep = null;
+    var mmTreeBtn = document.createElement('button');
+    mmTreeBtn.type = 'button'; mmTreeBtn.className = 'vbtn active'; mmTreeBtn.id = 'mm-btn-tree';
+    mmTreeBtn.innerHTML = '&#8801; Tree';
+    var mmMapBtn = document.createElement('button');
+    mmMapBtn.type = 'button'; mmMapBtn.className = 'vbtn'; mmMapBtn.id = 'mm-btn-mindmap';
+    mmMapBtn.innerHTML = '&#9737; Mindmap';
+    if (existingBar) {
+      sep = document.createElement('span');
+      sep.className = 'view-bar-sep';
+      var exportBtn = existingBar.querySelector('.cs-export-btn');
+      if (exportBtn) {
+        existingBar.insertBefore(sep, exportBtn);
+        existingBar.insertBefore(mmTreeBtn, exportBtn);
+        existingBar.insertBefore(mmMapBtn, exportBtn);
+      } else {
+        existingBar.appendChild(sep);
+        existingBar.appendChild(mmTreeBtn);
+        existingBar.appendChild(mmMapBtn);
+      }
+    } else {
+      var bar = document.createElement('div');
+      bar.className = 'view-bar mm-toggle-bar';
+      bar.appendChild(mmTreeBtn);
+      bar.appendChild(mmMapBtn);
+      firstSh.parentNode.insertBefore(bar, firstSh);
+    }
 
     var wrap = document.createElement('div');
     wrap.id = 'mm-wrap';
@@ -1614,6 +1648,28 @@
     applyTransform();
   }
 
+  // ── UX/UI TABS (uxui.html — self-detects via .uxui-tabbar presence, no-op elsewhere;
+  // FE-I2 single-JS: this behavior lives here, not a new per-page <script>). Toggles the
+  // `hidden` attribute on the matching .uxui-panel; every other ability on the page (theme,
+  // lang, search, collapse, Rows/Window, Export) is the SAME shared init* code above — nothing
+  // tab-specific was needed for those, they already operate on whatever is in the DOM. ──
+  function initUxUiTabs() {
+    var bar = document.querySelector('.uxui-tabbar');
+    if (!bar) return; // no-op on every page except uxui.html
+    var tabs = bar.querySelectorAll('.uxui-tab');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('active', active);
+          t.setAttribute('aria-selected', String(active));
+          var panel = document.getElementById(t.getAttribute('aria-controls'));
+          if (panel) panel.hidden = !active;
+        });
+      });
+    });
+  }
+
   function init() {
     initTheme();
     initLang();
@@ -1624,6 +1680,7 @@
     initTreeToggle();     // schema/vocabulary/corespines-set — collapsible tree rows
     initTreeEditor();     // Phase 2 — self-detects .tree-row (same 3 pages), no-op elsewhere
     initMindmap();        // ARCH-00410 — schema.html only, companion SVG mindmap view
+    initUxUiTabs();       // uxui.html only — UX/UI tab switch, self-detected
   }
 
   document.readyState === 'loading'

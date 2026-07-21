@@ -128,6 +128,24 @@ if (mmBtnTree && mmBtnMap) {
     treeBefore && treeBefore.style.display === '');
 }
 
+// ── ONE-LINE TOOLBAR (Core Seed 3, 2026-07-21) — schema.html's Rows/Window/Export AND
+// Tree/Mindmap toggles must live in the SAME .view-bar element (one row), not two separate
+// sibling bars (the defect Opus found: two visually-stacked rows). Behavioral, not just a
+// visual/CSS claim — assert the actual DOM parent-of-node relationship. ──
+{
+  const bars = doc.querySelectorAll('main .view-bar');
+  ok('schema: exactly ONE .view-bar element (not two stacked bars)', bars.length === 1);
+  if (bars.length === 1) {
+    const bar = bars[0];
+    const hasRows = !!bar.querySelector('#vbtn-rows');
+    const hasWindow = !!bar.querySelector('#vbtn-window');
+    const hasTree = !!bar.querySelector('#mm-btn-tree');
+    const hasMap = !!bar.querySelector('#mm-btn-mindmap');
+    ok('schema: Rows/Window AND Tree/Mindmap buttons are children of the SAME .view-bar (one line)',
+      hasRows && hasWindow && hasTree && hasMap);
+  }
+}
+
 // ── universal chrome toggles (present + behavioral) on schema.html ──
 const themeBtn = doc.querySelector('.theme-tgl');
 ok('theme toggle injected', !!themeBtn);
@@ -142,6 +160,52 @@ if (langBtn) {
   const d0 = doc.documentElement.getAttribute('dir') || 'ltr';
   click(w, langBtn);
   ok('language toggle flips dir', (doc.documentElement.getAttribute('dir') || 'ltr') !== d0);
+}
+
+// ── uxui.html — UX/UI TAB SWITCH (behavioral, not presence — Principle 17/FE-I11) ──
+{
+  const wu = load('uxui.html');
+  const du = wu.document;
+  const tabUx = du.querySelector('#uxui-tab-ux');
+  const tabUi = du.querySelector('#uxui-tab-ui');
+  const panelUx = du.querySelector('#uxui-panel-ux');
+  const panelUi = du.querySelector('#uxui-panel-ui');
+  ok('uxui: both tabs present', !!tabUx && !!tabUi);
+  ok('uxui: both panels present', !!panelUx && !!panelUi);
+  if (tabUx && tabUi && panelUx && panelUi) {
+    ok('uxui: UX panel starts visible, UI panel starts hidden', !panelUx.hidden && panelUi.hidden);
+    click(wu, tabUi);
+    ok('uxui: clicking UI tab HIDES the UX panel (behavioral)', panelUx.hidden === true);
+    ok('uxui: clicking UI tab SHOWS the UI panel (behavioral)', panelUi.hidden === false);
+    ok('uxui: UI tab gets aria-selected=true', tabUi.getAttribute('aria-selected') === 'true');
+    ok('uxui: UX tab gets aria-selected=false', tabUx.getAttribute('aria-selected') === 'false');
+    click(wu, tabUx);
+    ok('uxui: clicking UX tab reverts (round-trip, nothing stuck)', !panelUx.hidden && panelUi.hidden);
+  }
+  // both tabs' checklists carry ALL 5/8 items (enumerate-all, not a sample — RI-0008)
+  const uxItems = panelUx ? panelUx.querySelectorAll('.tree-node .tree-node').length : 0;
+  const uiItems = panelUi ? panelUi.querySelectorAll('.tree-node .tree-node').length : 0;
+  ok('uxui: UX checklist has all 5 items', uxItems === 5);
+  ok('uxui: UI checklist has all 8 items', uiItems === 8);
+  // theme/lang/search/collapse/Rows-Window/Export — same shared abilities as schema.html
+  ok('uxui: theme toggle injected', !!du.querySelector('.theme-tgl'));
+  ok('uxui: language toggle injected', !!du.querySelector('.lang-tgl'));
+  const uxuiBar = du.querySelector('main .view-bar');
+  ok('uxui: view-bar (Rows/Window) present (triggered by the Source Files .fi block)', !!uxuiBar);
+  if (uxuiBar) {
+    ok('uxui: Export button present in the SAME bar (Rows/Window/Export on one line, Core Seed 3)',
+      !!uxuiBar.querySelector('#export-changeset-btn'));
+  }
+  const uxuiBranch = du.querySelector('.tree-row.branch-row');
+  if (uxuiBranch) {
+    const li = uxuiBranch.parentElement;
+    const kids = li.querySelector(':scope > ul.tree-children');
+    if (kids) {
+      const before = kids.classList.contains('tree-collapsed');
+      click(wu, uxuiBranch);
+      ok('uxui: collapse/expand works (behavioral)', kids.classList.contains('tree-collapsed') !== before);
+    }
+  }
 }
 
 // ── Rows/Window toggle — FULL ENUMERATION of EVERY page (no sample; RI-0008/RI-0009) ──

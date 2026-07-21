@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UX/UI Platform DNA — CISEM Index</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- tags: [frontend, ux, ui, platform-dna, design-system, t-sys] -->
+<!-- Status: PREVIEW / DRAFT — Governor to refine (Governor-directed build under CS-FRONTEND-001; not yet ratified content) -->
+<nav>
+  <a href="../index.html" class="logo">CISEM</a>
+  <div class="idx">
+    <span class="idx-lbl">Index &#9660;</span>
+    <div class="dd">
+      <a href="skills.html"><span class="n">01</span>Skills</a>
+      <a href="agents.html"><span class="n">02</span>Agents</a>
+      <a href="axioms.html"><span class="n">03</span>Axioms</a>
+      <a href="schema.html"><span class="n">04</span>Schema</a>
+      <a href="nodes.html"><span class="n">05</span>Nodes</a>
+      <a href="qc.html"><span class="n">06</span>QC</a>
+      <a href="protocols.html"><span class="n">07</span>Protocols</a>
+      <a href="wizards.html"><span class="n">08</span>Wizards</a>
+      <a href="front-page-types.html"><span class="n">09</span>Front-page types</a>
+      <a href="internal-file-types.html"><span class="n">10</span>Internal file types</a>
+      <a href="document-types.html"><span class="n">11</span>Document types</a>
+      <a href="templates.html"><span class="n">12</span>Templates</a>
+      <a href="internal-audits.html"><span class="n">13</span>Internal audits</a>
+      <a href="learning-loops.html"><span class="n">14</span>Learning &amp; loops</a>
+      <a href="engines.html"><span class="n">15</span>Engines</a>
+      <a href="corespines.html"><span class="n">16</span>Corespines</a>
+      <a href="pipelines.html"><span class="n">17</span>Pipelines</a>
+      <a href="processes.html"><span class="n">18</span>Processes</a>
+      <a href="principles.html"><span class="n">19</span>Principles</a>
+      <a href="rules.html"><span class="n">20</span>Rules</a>
+      <a href="vocabulary.html"><span class="n">21</span>Vocabulary</a>
+      <a href="corespines-set.html"><span class="n">22</span>Corespines Set</a>
+      <a href="uxui.html"><span class="n">23</span>UX/UI</a>
+    </div>
+  </div>
+  <div class="nav-search"><input id="si" type="text" placeholder="Filter..." autocomplete="off"><span class="cnt" id="cnt"></span></div>
+  <div class="nav-r">
+    <a href="to-be-reviewed.html" class="ni" title="To Be Reviewed &amp; Created">&#9998;</a>
+    <a href="help.html" class="ni" title="Help">?</a>
+  </div>
+</nav>
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
+  <a href="../index.html">Home</a><span class="sep">/</span><span>23 · UX/UI</span>
+</div>
+<main>
+  <h1>UX/UI Platform DNA</h1>
+  <p class="pg-desc">CISEM's UX/UI is platform DNA, not decoration. Two complementary poles &mdash; <strong>UX</strong> (how it feels to think here) and <strong>UI</strong> (how it's built) &mdash; held together (A9 optimal synergy). Switch tabs below; both carry the full toolbar (theme, language, search, Rows/Window view, collapse/expand, Export) &mdash; the same abilities as every other tree page in this index.</p>
+
+  <div class="draft-banner"><strong>DRAFT &mdash; Governor to refine.</strong> Everything below is Opus's first-pass draft content, built under CS-FRONTEND-001 as a PREVIEW pending Governor review (Principle 20 &mdash; a terse go-ahead continues the build, it does not ratify the content).</div>
+
+  <div class="uxui-tabbar" role="tablist">
+    <button type="button" class="uxui-tab active" id="uxui-tab-ux" role="tab" aria-selected="true" aria-controls="uxui-panel-ux">UX</button>
+    <button type="button" class="uxui-tab" id="uxui-tab-ui" role="tab" aria-selected="false" aria-controls="uxui-panel-ui">UI</button>
+  </div>
+
+  <div id="uxui-panel-ux" class="uxui-panel" role="tabpanel" aria-labelledby="uxui-tab-ux">
+    <div class="sh">Core approach to UX</div>
+    <ul class="tree">
+      <li class="tree-node">
+        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">UX Checklist</span><span class="tree-badge draft">DRAFT</span></div>
+        <ul class="tree-children">
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">1. Zero-wall / progressive disclosure</span><span class="tree-note">&mdash; structure reveals on demand (collapse/expand, toggles); the user controls depth, never a wall of text.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">2. Wide-view-first, drill-down</span><span class="tree-note">&mdash; see the whole, then dive.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">3. Consistency</span><span class="tree-note">&mdash; the same abilities on every surface; learn once.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">4. Honest state</span><span class="tree-note">&mdash; nothing fake; presence&ne;behavior; every control does exactly what it says.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">5. User owns scope</span><span class="tree-note">&mdash; the platform asks before expanding an action (mirrors the AI wide-view/ask-scope default, IBD-0028).</span></div></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="uxui-panel-ui" class="uxui-panel" role="tabpanel" aria-labelledby="uxui-tab-ui" hidden>
+    <div class="sh">Core approach to UI &mdash; the UI-defaults checklist</div>
+    <ul class="tree">
+      <li class="tree-node">
+        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">UI Defaults Checklist</span><span class="tree-badge draft">DRAFT</span></div>
+        <ul class="tree-children">
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">1. Dependency-free / offline-first</span><span class="tree-note">&mdash; no CDN, no framework, no build; opens on file://.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">2. Theme-aware via tokens</span><span class="tree-note">&mdash; dark/light, single stylesheet (<code>frontend/css/style.css</code> <code>:root</code>).</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">3. Controls on ONE line</span><span class="tree-note">&mdash; the toolbar is a single compact row, not stacked.</span><span class="tree-tag">fixed on schema.html 2026-07-21</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">4. WCAG AA contrast minimum</span><span class="tree-note">&mdash; every text &ge; 4.5:1 (normal) / 3:1 (large); MEASURED, never taste-judged.</span><span class="tree-tag">audited 2026-07-21 &mdash; see build report</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">5. Native links</span><span class="tree-note">&mdash; real <code>&lt;a href&gt;</code> elements, not DOM overlays.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">6. Registry-generated data</span><span class="tree-note">&mdash; never hand-authored (can't go stale).</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">7. Single JS file</span><span class="tree-note">&mdash; FE-I2; additive edits, zero collateral deletion.</span></div></li>
+          <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">8. Behavioral verification</span><span class="tree-note">&mdash; <code>functional-check.mjs</code> asserts a real state change, not "looks wired".</span></div></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sh">Source Files</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../CLAUDE.md"><span class="ico">&#128196;</span>CLAUDE.md<span class="fp">repo root &mdash; §1.6 shared persona (platform-level UX/UI defaults)</span></a></li>
+    <li class="fi"><a href="../../dna/corespines/CS-FRONTEND-001/CISEM-ARCH-00393-frontend-corespine-manifest.md"><span class="ico">&#128196;</span>CISEM-ARCH-00393-frontend-corespine-manifest.md<span class="fp">dna/corespines/CS-FRONTEND-001/ &mdash; invariants FE-I1&ndash;FE-I11</span></a></li>
+    <li class="fi"><a href="../../dna/ibd/IBD-0028-wide-view-ask-scope-ai-default.md"><span class="ico">&#128196;</span>IBD-0028-wide-view-ask-scope-ai-default.md<span class="fp">dna/ibd/ &mdash; the wide-view/ask-scope AI default this page's UX item 5 mirrors</span></a></li>
+    <li class="fi"><a href="../css/style.css"><span class="ico">&#128202;</span>style.css<span class="fp">frontend/css/ &mdash; design-token SSOT (incl. the --warn/--success/--danger AA-audited tokens)</span></a></li>
+  </ul>
+
+  <div id="no-result">No files match your search.</div>
+</main>
+<script src="../js/search.js"></script>
+</body>
+</html>

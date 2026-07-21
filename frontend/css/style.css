@@ -7,6 +7,14 @@
   --muted: #8b949e;
   --accent: #58a6ff;
   --hover: #79c0ff;
+  /* status-color tokens (WCAG AA audit, 2026-07-21 — Core Seed 4 / IBD-0028 wide-view lesson):
+     these were literal hex (#d29922/#3fb950/#f85149) duplicated at every badge/dot use site
+     (FE-I5 deviation, disclosed precedent). Promoted to tokens so ONE change (here) fixes the
+     whole class everywhere they're used, and so the light theme can carry its OWN measured-AA
+     values below instead of reusing the dark-theme literals (which fail AA on a near-white chip). */
+  --warn: #d29922;
+  --success: #3fb950;
+  --danger: #f85149;
   --mono: 'Consolas', 'Courier New', monospace;
   --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -22,6 +30,11 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
   --muted: #57606a;
   --accent: #0969da;
   --hover: #0550ae;
+  /* darker than the dark-theme literals — measured >=4.5:1 against their own tinted badge
+     background on white/--nav (dark-theme values fail AA here: 2.28-2.90:1, see build report) */
+  --warn: #7d5700;
+  --success: #116329;
+  --danger: #a40e26;
 }
 
 /* ── LANGUAGE TOGGLE — basic RTL mechanism (content strings mostly EN passthrough) ── */
@@ -95,7 +108,8 @@ ul.fl { list-style: none; }
 .gc .gdesc { color: var(--muted); font-size: 12px; line-height: 1.4; }
 
 /* VIEW TOGGLE (home page) */
-.view-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.view-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px; }
+.view-bar-sep { width: 1px; align-self: stretch; background: var(--border); margin: 0 2px; flex-shrink: 0; }
 .vbtn { background: var(--nav); border: 1px solid var(--border); border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 12px; padding: 4px 12px; }
 .vbtn.active { border-color: var(--accent); color: var(--accent); }
 
@@ -155,8 +169,8 @@ ul.cl { list-style: none; }
 .cl-title { color: var(--text); font-weight: 600; font-size: 13px; margin-bottom: 3px; }
 .cl-body { color: var(--muted); font-size: 12px; line-height: 1.6; }
 .cl-badge { display: inline-block; border-radius: 3px; font-size: 10px; padding: 1px 6px; margin-top: 6px; margin-right: 4px; font-family: var(--mono); }
-.cl-badge.auto { background: rgba(63,185,80,.12); border: 1px solid rgba(63,185,80,.3); color: #3fb950; }
-.cl-badge.auto-block { background: rgba(248,81,73,.12); border: 1px solid rgba(248,81,73,.3); color: #f85149; }
+.cl-badge.auto { background: rgba(63,185,80,.12); border: 1px solid rgba(63,185,80,.3); color: var(--success); }
+.cl-badge.auto-block { background: rgba(248,81,73,.12); border: 1px solid rgba(248,81,73,.3); color: var(--danger); }
 .cl-badge.manual { background: rgba(139,148,158,.1); border: 1px solid var(--border); color: var(--muted); }
 .cl-badge.ratified { background: rgba(88,166,255,.12); border: 1px solid rgba(88,166,255,.3); color: var(--accent); }
 .cl-badge.declared { background: rgba(139,148,158,.1); border: 1px solid var(--border); color: var(--muted); }
@@ -174,8 +188,8 @@ body.view-window .tier-grid { grid-template-columns: repeat(auto-fill, minmax(25
 .tier-body { color: var(--muted); font-size: 12px; line-height: 1.6; margin-bottom: 8px; }
 .tier-caps { display: flex; flex-wrap: wrap; gap: 4px; }
 .tier-cap { background: rgba(139,148,158,.1); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; padding: 1px 6px; font-family: var(--mono); }
-.tier-cap.can { border-color: rgba(63,185,80,.3); color: #3fb950; background: rgba(63,185,80,.08); }
-.tier-cap.cannot { border-color: rgba(248,81,73,.3); color: #f85149; background: rgba(248,81,73,.08); }
+.tier-cap.can { border-color: rgba(63,185,80,.3); color: var(--success); background: rgba(63,185,80,.08); }
+.tier-cap.cannot { border-color: rgba(248,81,73,.3); color: var(--danger); background: rgba(248,81,73,.08); }
 
 /* TO-BE-REVIEWED LIST */
 .tbr-item { border-top: 1px solid var(--border); padding: 10px 12px; }
@@ -202,11 +216,11 @@ ul.tree, .tree ul { list-style: none; }
 .tree-badge { display: inline-block; border-radius: 3px; font-size: 10px; padding: 1px 6px; font-family: var(--mono); flex-shrink: 0; }
 .tree-badge.ratified { background: rgba(88,166,255,.12); border: 1px solid rgba(88,166,255,.3); color: var(--accent); }
 .tree-badge.declared { background: rgba(139,148,158,.1); border: 1px solid var(--border); color: var(--muted); }
-.tree-badge.proposed { background: rgba(210,153,34,.12); border: 1px solid rgba(210,153,34,.35); color: #d29922; }
+.tree-badge.proposed { background: rgba(210,153,34,.12); border: 1px solid rgba(210,153,34,.35); color: var(--warn); }
 .tree-badge.draft { background: rgba(139,148,158,.1); border: 1px dashed var(--border); color: var(--muted); }
 .tree-badge.placeholder { background: rgba(139,148,158,.06); border: 1px dashed var(--border); color: var(--muted); }
-.tree-badge.candidate { background: rgba(63,185,80,.10); border: 1px solid rgba(63,185,80,.3); color: #3fb950; }
-.tree-badge.sim { background: rgba(248,81,73,.12); border: 1px solid rgba(248,81,73,.3); color: #f85149; }
+.tree-badge.candidate { background: rgba(63,185,80,.10); border: 1px solid rgba(63,185,80,.3); color: var(--success); }
+.tree-badge.sim { background: rgba(248,81,73,.12); border: 1px solid rgba(248,81,73,.3); color: var(--danger); }
 @media (max-width: 480px) {
   .tree-children { margin-left: 10px; padding-left: 6px; }
   .tree-row { min-height: 44px; }
@@ -253,9 +267,9 @@ body.view-window .tree-row.branch-row {
 body.view-window .tree-toggle { display: none; } /* +/- collapse control reads as noise once rows are cards */
 
 /* ── MINDMAP (schema.html companion view — ARCH-00410, CS-FRONTEND-001; tokens reused from
-   :root above, FE-I5). Status-dot colors reuse the SAME literal values already established by
-   .tree-badge.{proposed,candidate,sim} above (#d29922/#3fb950/#f85149) rather than inventing new
-   ones — an existing (imperfect, hardcoded) precedent in this file, not a new deviation. ── */
+   :root above, FE-I5). Status-dot colors reuse the SAME --warn/--success/--danger tokens as
+   .tree-badge.{proposed,candidate,sim} above (promoted from literal hex to tokens 2026-07-21,
+   WCAG AA contrast audit — Core Seed 4) rather than inventing new ones. ── */
 .mm-toggle-bar { margin-bottom: 10px; }
 #mm-wrap { position: relative; border: 1px solid var(--border); border-radius: 6px; background: var(--nav); overflow: hidden; margin-top: 4px; }
 .mm-controls { position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; z-index: 5; }
@@ -267,11 +281,11 @@ body.view-window .tree-toggle { display: none; } /* +/- collapse control reads a
 .mm-node .mm-dot { fill: var(--muted); }
 .mm-node.mm-status-ratified .mm-dot { fill: var(--accent); }
 .mm-node.mm-status-declared .mm-dot { fill: var(--muted); }
-.mm-node.mm-status-proposed .mm-dot { fill: #d29922; }
+.mm-node.mm-status-proposed .mm-dot { fill: var(--warn); }
 .mm-node.mm-status-draft .mm-dot { fill: var(--muted); }
 .mm-node.mm-status-placeholder .mm-dot { fill: var(--muted); }
-.mm-node.mm-status-candidate .mm-dot { fill: #3fb950; }
-.mm-node.mm-status-sim .mm-dot { fill: #f85149; }
+.mm-node.mm-status-candidate .mm-dot { fill: var(--success); }
+.mm-node.mm-status-sim .mm-dot { fill: var(--danger); }
 .mm-toggle { fill: var(--bg); stroke: var(--border); stroke-width: 1; cursor: pointer; }
 .mm-toggle:hover { stroke: var(--accent); }
 .mm-toggle-txt { font-family: var(--mono); font-size: 10px; fill: var(--muted); pointer-events: none; user-select: none; }
@@ -293,11 +307,11 @@ a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
 .rt-file-input { display: none; }
 .rt-panel { margin: 2px 0 4px 20px; display: none; }
 .rt-comment { font-size: 11px; color: var(--muted); padding: 3px 6px; border-left: 2px solid var(--border); margin-bottom: 2px; }
-.rt-comment.rt-parked { border-left-color: #d29922; }
+.rt-comment.rt-parked { border-left-color: var(--warn); }
 .rt-c-badge { font-family: var(--mono); font-size: 9px; text-transform: uppercase; color: var(--accent); margin-right: 4px; }
 .rt-c-ts { color: var(--muted); font-size: 9px; margin-left: 4px; }
 .rt-upload-chip { display: inline-block; background: var(--nav); border: 1px solid var(--border); border-radius: 3px; font-size: 10px; padding: 1px 6px; margin: 2px 4px 0 0; color: var(--muted); }
-.tree-badge.added { background: rgba(63,185,80,.15); border: 1px solid rgba(63,185,80,.4); color: #3fb950; }
+.tree-badge.added { background: rgba(63,185,80,.15); border: 1px solid rgba(63,185,80,.4); color: var(--success); }
 .cs-export-btn { margin-left: auto; }
 
 /* ── doc/created + lm/modified meta (enhancement 2) ── */
@@ -308,7 +322,7 @@ a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
 
 /* ── upload chip remove control (enhancement 4a) ── */
 .rt-chip-x { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 10px; margin-left: 4px; padding: 0 2px; line-height: 1; }
-.rt-chip-x:hover { color: #f85149; }
+.rt-chip-x:hover { color: var(--danger); }
 
 /* ── multi-line comment text + attachments (enhancement 5) ── */
 .rt-c-text { font-family: inherit; white-space: pre-wrap; word-break: break-word; margin: 2px 0; font-size: 11px; color: var(--muted); }
@@ -320,6 +334,17 @@ a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
 .rt-composer-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; flex-wrap: wrap; }
 .rt-composer-file { font-size: 10px; color: var(--muted); max-width: 160px; }
 .rt-composer-chips { margin-top: 4px; }
+
+/* ── UX/UI TABS (uxui.html; CS-FRONTEND-001) — feature-detected in search.js via .uxui-tabbar ── */
+.uxui-tabbar { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; border-bottom: 1px solid var(--border); }
+.uxui-tab { background: none; border: none; border-bottom: 2px solid transparent; color: var(--muted); cursor: pointer; font-size: 13px; font-weight: 600; padding: 8px 14px; }
+.uxui-tab:hover { color: var(--hover); }
+.uxui-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.uxui-panel[hidden] { display: none; }
+
+/* ── DRAFT / status banner (used on uxui.html; generic — any page may reuse) ── */
+.draft-banner { background: rgba(210,153,34,.08); border: 1px solid rgba(210,153,34,.3); border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--warn); margin-bottom: 16px; }
+.draft-banner strong { color: var(--warn); }
 
 /* PRINT — scoped single-row / single-group export (window.print(), Phase 2) */
 #print-stage { display: none; }
