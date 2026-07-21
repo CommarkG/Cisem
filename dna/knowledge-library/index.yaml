@@ -4,8 +4,35 @@
 # internal_parts (part → tags), summary — so any AI can find relevant knowledge fast (Governor requirement).
 # Maturity status uses the DIOS 0014 scale (Signal … Constitutional).
 
-next_seq: KL-0002
+next_seq: KL-0003
 entries:
+  - id: KL-0002
+    title: "UX/UI Principles — CISEM Build Platform (Brain source, Claude.ai)"
+    source: "In-repo: dna/knowledge-library/KL-0002-brain-ux-ui-principles-2026-07-21.md (Governor-supplied 2026-07-21, produced by Claude.ai 'Brain')"
+    status: "PRINCIPLE-CANDIDATE (DIOS) · NOT-YET-RATIFIED as a CISEM artifact · EXTERNAL source (reviewed, not inherited-as-fact, I22/I23)"
+    total_tags: [ux-ui, design-principles, contrast-wcag, first-run-orientation, user-shoes, accessibility, state-completeness, edge-cases, ai-builder-traps, incident-log, frontend]
+    internal_parts:
+      - part: "§2/§6 Color tokens + contrast-check procedure (WCAG-AA, token-level, both themes)"
+        tags: [contrast, design-tokens, wcag, measured-not-eyeballed]
+      - part: "§4 Component patterns (chip grouping, tooltip, theme toggle, feature toggles, tabs, nav chrome)"
+        tags: [components, interaction-patterns, navigation]
+      - part: "§5 Copy/tone (mentor tone, benefit-over-mechanism, no-jargon, labels)"
+        tags: [copy, voice-tone, plain-language]
+      - part: "§7/§7.1 Four+Five orientation questions — the USER-SHOES walkthrough discipline (maps to FE-I14)"
+        tags: [first-run, orientation, user-shoes, FE-I14]
+      - part: "§7.2 Edge-case checklist (8 categories: state/temporal/input/concurrency/a11y/trust/reversibility/cognitive-load)"
+        tags: [edge-cases, state-completeness, resilience, robustness]
+      - part: "§8 Audit checklist (viewport/jargon/tooltip-dependency/primary-action/continuity/zero-decision/component-states)"
+        tags: [audit, qc-method]
+      - part: "§9 AI-builder default-trap table (controls-first, jargon-leak, tooltip-as-explanation, below-fold, fabricated-personalization, orphaned-input, cold-start)"
+        tags: [ai-traps, prevention, presence-not-behavior]
+      - part: "§10 Incident log (5 confirmed incidents) + §11 proactive QC pass (10 findings)"
+        tags: [incident-log, evidence, class-audit]
+      - part: "§12 GAP-01..GAP-09 open gaps (not fixed) + §13 open/undecided (corespine promotion, responsive, motion)"
+        tags: [open-gaps, pending-decision, roadmap]
+    summary: "The Brain's living UX/UI reference for the CISEM Build MVP — 5 incidents + a proactive QC pass distilled into orientation questions, an edge-case checklist, and an AI-trap table. Its universal media-independent core converges into CS-FRONTEND-001 (FE-I14 user-shoes already mirrors §7.1). Promotion to a ratified artifact is the Governor's pending call (see PARK-UXUI-INTEGRATION)."
+    consulted_by: "ALL tiers, on any UX/UI topic + before any frontend plan/create (§3.2b). Universal-principle extraction + branch map = PARK-UXUI-INTEGRATION."
+
   - id: KL-0001
     title: "DIOS Knowledge Maturity & Transformation Framework (0014)"
     source: "Google Drive (off-repo, I8), fileId: 1mx0n0DG4x7GCfu8Vcgh1iS3FFexn8cnw"
