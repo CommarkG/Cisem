@@ -17,6 +17,7 @@ Governor's direct catch, not treated as sacred.
 
 ## Mandatory checklist — every protocol file must have ALL of:
 - **CLOSED + VERIFIED NOW (Principle 21, Governor decree 2026-07-21):** the creation is FINISHED and its "done" PROVEN this turn — wired + verified with shown evidence (DoD; I22/I23), not "will be done later". Any genuine deferral is a REGISTERED park (IBD/BP/RI/queue id + status), never a vague "later". Backstopped mechanically by `[DEFER-SCAN]`.
+- **INHERITED GUARDS (every creation, non-negotiable — Governor decree 2026-07-21 "hardwire it, inherited by each new creation"):** every governed creation AUTOMATICALLY inherits, and is audited against, the always-loaded + always-run guard set — do NOT re-derive, they apply by construction: CLAUDE.md **Principles 1–21** (loaded every session — incl. P17 prevention-first, P18 no-collateral/global-view, P19 noise-vs-signal, P20 terse-approval≠bypass, P21 immediacy+verify-done) · the **plan-audit checks** run at every commit ([ZF] core + [CREATION-GATE] tag+status + [TYPE-MATCH]/[NAMING-FORMAT]/[CS-NAMES] naming + [DEFER-SCAN] + [AGENT-PASS] + [RATIFY-GATE] + [INJECTION-SCAN] + [DOD]) · the **pre-commit hard BLOCKs** (I13 seed-strip · plan-fields · persona-inheritance · **no-delete-without-ratification**). A new creation is not compliant until it passes this whole set. Reference (A8/I10), never copy.
 [ ] Node ID, Type, Status, depth_level, tags — header complete
 [ ] Goal — stated, one sentence, what this protocol governs
 [ ] Governing corespine — named, or explicit "none yet" with reason

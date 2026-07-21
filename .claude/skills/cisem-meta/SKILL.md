@@ -226,3 +226,6 @@ RATIFIED, wiring-state LIVE (both approved)
 ## Change log
 - v1.0 — 2026-07-18: Sonnet draft (via BP-0007). Implements ARCH-00340 §1 checklist (7 items). Status: PROVISIONAL-ACTIVE (draft-in-use, awaiting Opus verification).
 - v1.1 — 2026-07-18: Opus VERIFIED mirror of ARCH-00340 §1 — self-generation test PASS (run 24, ARCH-00396 Gate B): applied to ARCH-00340 itself, the wizard's 7 steps regenerate the meta-protocol's own 7-item structure. Mirror confirmed 1:1 (I10); "awaiting-Opus-verification" cleared. Parent meta-root: ARCH-00340.
+
+## INHERITED GUARDS (every creation — Governor decree 2026-07-21, ref ARCH-00230)
+Any element this skill creates AUTOMATICALLY inherits + is audited against the always-loaded/always-run guard set (do NOT re-derive; reference only, I10): CLAUDE.md **Principles 1–21** · the **plan-audit checks** at every commit (`[ZF]` core + `[CREATION-GATE]`/`[TYPE-MATCH]`/`[NAMING-FORMAT]`/`[CS-NAMES]`/`[DEFER-SCAN]`/`[AGENT-PASS]`/`[RATIFY-GATE]`/`[INJECTION-SCAN]`) · the **pre-commit hard BLOCKs** (I13 seed-strip · plan-fields · persona-inheritance · no-delete-without-ratification). Not done until it passes the whole set (§3.7 Triad + Principle 21 verify-done-now).

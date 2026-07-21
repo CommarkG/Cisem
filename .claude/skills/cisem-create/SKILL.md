@@ -358,3 +358,6 @@ Returns:
 
 ## Change Log
 - v1.0 — 2026-07-18: Sonnet draft (via BP-0003). Enumerates §3.0–3.7 gates + Triad leg-by-leg. Threshold routes FIRST. Truth-fields delegated to Opus. Ready for cisem-opus-pe verification.
+
+## INHERITED GUARDS (every creation — Governor decree 2026-07-21, ref ARCH-00230)
+Any element this skill creates AUTOMATICALLY inherits + is audited against the always-loaded/always-run guard set (do NOT re-derive; reference only, I10): CLAUDE.md **Principles 1–21** · the **plan-audit checks** at every commit (`[ZF]` core + `[CREATION-GATE]`/`[TYPE-MATCH]`/`[NAMING-FORMAT]`/`[CS-NAMES]`/`[DEFER-SCAN]`/`[AGENT-PASS]`/`[RATIFY-GATE]`/`[INJECTION-SCAN]`) · the **pre-commit hard BLOCKs** (I13 seed-strip · plan-fields · persona-inheritance · no-delete-without-ratification). Not done until it passes the whole set (§3.7 Triad + Principle 21 verify-done-now).
