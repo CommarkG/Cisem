@@ -79,6 +79,13 @@ add the missing page_kind vocab to VOC-00001. *(3d routed to Sonnet now — safe
 **persona-merger — REJECT** (Brain serves CISEM, is not CISEM; merging kills the Zero-Findings independent-review check);
 **daily-sync — Builder-side scheduled script, one-direction git→Drive, not "Brain checks daily"** (Brain correctly admits it
 can't schedule); **update-cadence (R2) — A+C now, B after Drive backfill**; (d) ratify ARCH-00413 DNA-alignment.
+(e) **SELF-CONTAINED BRAIN PACKETS (Governor decree 2026-07-22 — "one click provides Brain all it needs, no manual action
+each time"):** the repo is PRIVATE → Brain cannot fetch links + manual sync is fragile, so every Brain communication must
+CARRY the state inline, not point to it. Build a Builder-side **brain-packet assembler** that concatenates, from the LIVE
+repo at send time, the alignment essentials (DNA contract ARCH-00413) + the referenced file slices + the consult → ONE
+self-contained paste. Result: the Governor's ONLY action is the single paste; packets are always current; zero fetch,
+zero manual sync. (The GitHub-connector-on-Brain's-project is the ideal permanent zero-touch, if the environment supports
+it — one-time setup, then Brain reads live; flagged as an alternative, MCP-isolation caveat per Brain's own note.)
 
 ### Phase 5 — Haiku permanent validator (trial → permanent)
 Run rounds 2–3; wire the **Haiku-finds → Sonnet-fixes** loop; **hardwire prompt-improvement** so a miss never repeats
