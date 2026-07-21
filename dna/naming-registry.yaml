@@ -13,7 +13,10 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 410 }  # 00409 = Node-DNA Drafts/Pending-Ideas Extension plan (optional ARCH-00008 §XI — per-node
+ARCH:    { next_seq: 411 }  # 00410 = Frontend Visualization Layer plan (vanilla-JS SVG mindmap in frontend/js/, node-graph
+# data GENERATED from the registries per Core Seed 3, Phase 1 = schema.html companion view only; Governor-chosen
+# Option B (zero-dependency, over inline-Mermaid/hybrid); Sonnet 2026-07-21, AWAITING-BUILDER-REVIEW).
+# 00409 = Node-DNA Drafts/Pending-Ideas Extension plan (optional ARCH-00008 §XI — per-node
 # tagged+statused draft sub-items, DRAFT-RAW->PARKED->PROMOTED local lifecycle, promotion through the full §3
 # gates; Sonnet 2026-07-20, AWAITING-BUILDER-REVIEW). 00408 = Core-Template Principle plan (ONE core template =
 # SSOT, instance = duplicate declaring core_template:+disabled_capabilities:+name/tag/status; enhances
