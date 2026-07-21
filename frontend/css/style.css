@@ -346,6 +346,18 @@ a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
 .draft-banner { background: rgba(210,153,34,.08); border: 1px solid rgba(210,153,34,.3); border-radius: 6px; padding: 8px 12px; font-size: 12px; color: var(--warn); margin-bottom: 16px; }
 .draft-banner strong { color: var(--warn); }
 
+/* ── MEDIA THUMBNAIL PLACEHOLDER (gallery.html; CS-FRONTEND-001, additive to the ONE stylesheet
+   per FE-I1 — no new CSS file). A bordered box standing in for a real image/video thumbnail;
+   no binary assets are shipped, this is an honest placeholder (never a fake real thumbnail). ── */
+.thumb-ph { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 28px; border: 1px dashed var(--border); border-radius: 4px; background: var(--nav); color: var(--muted); font-size: 13px; flex-shrink: 0; }
+
+/* ── RESPONSIVE / TIER MATRIX CHIP (dynamic-menu.html; CS-FRONTEND-001) — small inline state
+   chip reused for per-tier / per-breakpoint values inside tree leaves; tokens-only (FE-I5). ── */
+.rule-chip { display: inline-block; border-radius: 3px; font-size: 10px; padding: 1px 7px; font-family: var(--mono); border: 1px solid var(--border); color: var(--muted); }
+.rule-chip.visible { border-color: rgba(63,185,80,.35); color: var(--success); background: rgba(63,185,80,.10); }
+.rule-chip.more { border-color: rgba(210,153,34,.35); color: var(--warn); background: rgba(210,153,34,.10); }
+.rule-chip.hidden { border-color: rgba(248,81,73,.35); color: var(--danger); background: rgba(248,81,73,.10); }
+
 /* PRINT — scoped single-row / single-group export (window.print(), Phase 2) */
 #print-stage { display: none; }
 #print-stage h1 { font-size: 16px; margin-bottom: 10px; }

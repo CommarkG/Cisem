@@ -366,6 +366,109 @@ if (langBtn) {
   }
 }
 
+// ── gallery.html — Pictures/Videos TAB SWITCH (behavioral, not presence — Principle 17/FE-I11) ──
+{
+  const wg = load('gallery.html');
+  const dg = wg.document;
+  const tabPics = dg.querySelector('#gal-tab-pictures');
+  const tabVids = dg.querySelector('#gal-tab-videos');
+  const panelPics = dg.querySelector('#gal-panel-pictures');
+  const panelVids = dg.querySelector('#gal-panel-videos');
+  ok('gallery: both tabs present', !!tabPics && !!tabVids);
+  ok('gallery: both panels present', !!panelPics && !!panelVids);
+  if (tabPics && tabVids && panelPics && panelVids) {
+    ok('gallery: Pictures panel starts visible, Videos panel starts hidden', !panelPics.hidden && panelVids.hidden);
+    click(wg, tabVids);
+    ok('gallery: clicking Videos tab HIDES the Pictures panel (behavioral)', panelPics.hidden === true);
+    ok('gallery: clicking Videos tab SHOWS the Videos panel (behavioral)', panelVids.hidden === false);
+    click(wg, tabPics);
+    ok('gallery: clicking Pictures tab reverts (round-trip, nothing stuck)', !panelPics.hidden && panelVids.hidden);
+  }
+
+  // ── enumerate-all: EVERY tree-node (group/item/metadata-group/SEO-group/leaf) in BOTH
+  // panels carries the SAME .rt-tools row control bar as schema.html (Core Seed 1/4) ──
+  const picNodes = panelPics ? Array.prototype.slice.call(panelPics.querySelectorAll('li.tree-node')) : [];
+  const vidNodes = panelVids ? Array.prototype.slice.call(panelVids.querySelectorAll('li.tree-node')) : [];
+  ok('gallery: Pictures panel has tree-nodes to check', picNodes.length > 0);
+  ok('gallery: Videos panel has tree-nodes to check', vidNodes.length > 0);
+  const picMissing = picNodes.filter(li => !li.querySelector(':scope > .tree-row > .rt-tools')).length;
+  const vidMissing = vidNodes.filter(li => !li.querySelector(':scope > .tree-row > .rt-tools')).length;
+  ok('gallery: EVERY Pictures-tab tree-node carries the row control bar (' + (picNodes.length - picMissing) + '/' + picNodes.length + ')', picMissing === 0);
+  ok('gallery: EVERY Videos-tab tree-node carries the row control bar (' + (vidNodes.length - vidMissing) + '/' + vidNodes.length + ')', vidMissing === 0);
+
+  // ── media/SEO metadata leaves present on the first picture item (content check, not just structure) ──
+  const firstPic = panelPics ? panelPics.querySelector('li.tree-node > ul.tree-children > li.tree-node') : null;
+  const picLabels = firstPic ? Array.prototype.map.call(firstPic.querySelectorAll('.tree-label'), l => l.textContent.trim()) : [];
+  ['Metadata', 'SEO'].forEach(l => ok('gallery: first picture item has a "' + l + '" sub-group', picLabels.indexOf(l) !== -1));
+
+  // ── SORT — reuses sortChildren() (Core Seed 1, no second sort mechanism); Sample Pictures
+  // group is intentionally non-alphabetical (hero-banner, schema-diagram, agent-team) ──
+  const sortBtnG = dg.querySelector('#vbtn-sort-all');
+  ok('gallery: Sort control injected into the shared .view-bar', !!sortBtnG);
+  const picGroupLabel = Array.prototype.find.call(dg.querySelectorAll('.tree-row.branch-row .tree-label'), l => l.textContent.trim() === 'Sample Pictures');
+  const picGroupLi = picGroupLabel ? picGroupLabel.closest('li.tree-node') : null;
+  const picGroupUl = picGroupLi ? picGroupLi.querySelector(':scope > ul.tree-children') : null;
+  if (sortBtnG && picGroupUl) {
+    const label = li => li.querySelector(':scope > .tree-row .tree-label').textContent.trim();
+    const beforeSort = Array.prototype.filter.call(picGroupUl.children, c => c.classList.contains('tree-node')).map(label);
+    const ascSort = beforeSort.slice().sort();
+    ok('gallery: Sample Pictures starts non-alphabetical (real fixture)', beforeSort.join(',') !== ascSort.join(','));
+    click(wg, sortBtnG);
+    const afterSort = Array.prototype.filter.call(picGroupUl.children, c => c.classList.contains('tree-node')).map(label);
+    ok('gallery: clicking Sort REORDERS Sample Pictures alphabetically (behavioral)', afterSort.join(',') === ascSort.join(','));
+  }
+}
+
+// ── dynamic-menu.html — Tiers/Responsive TAB SWITCH (behavioral) ──
+{
+  const wd = load('dynamic-menu.html');
+  const dd2 = wd.document;
+  const tabTiers = dd2.querySelector('#dm-tab-tiers');
+  const tabResp = dd2.querySelector('#dm-tab-responsive');
+  const panelTiers = dd2.querySelector('#dm-panel-tiers');
+  const panelResp = dd2.querySelector('#dm-panel-responsive');
+  ok('dynamic-menu: both tabs present', !!tabTiers && !!tabResp);
+  ok('dynamic-menu: both panels present', !!panelTiers && !!panelResp);
+  if (tabTiers && tabResp && panelTiers && panelResp) {
+    ok('dynamic-menu: Tiers panel starts visible, Responsive panel starts hidden', !panelTiers.hidden && panelResp.hidden);
+    click(wd, tabResp);
+    ok('dynamic-menu: clicking Responsive tab HIDES the Tiers panel (behavioral)', panelTiers.hidden === true);
+    ok('dynamic-menu: clicking Responsive tab SHOWS the Responsive panel (behavioral)', panelResp.hidden === false);
+    click(wd, tabTiers);
+    ok('dynamic-menu: clicking Tiers tab reverts (round-trip, nothing stuck)', !panelTiers.hidden && panelResp.hidden);
+  }
+
+  // ── enumerate-all: EVERY menu-item row (25 rows) in BOTH tabs carries the row control bar ──
+  const tierNodes = panelTiers ? Array.prototype.slice.call(panelTiers.querySelectorAll('li.tree-node')) : [];
+  const respNodes = panelResp ? Array.prototype.slice.call(panelResp.querySelectorAll('li.tree-node')) : [];
+  ok('dynamic-menu: Tiers panel has 25 menu-item rows (+ leaves + group header)', tierNodes.length > 25);
+  ok('dynamic-menu: Responsive panel has 25 menu-item rows (+ leaves + group header)', respNodes.length > 25);
+  const tierMissing = tierNodes.filter(li => !li.querySelector(':scope > .tree-row > .rt-tools')).length;
+  const respMissing = respNodes.filter(li => !li.querySelector(':scope > .tree-row > .rt-tools')).length;
+  ok('dynamic-menu: EVERY Tiers-tab tree-node carries the row control bar (' + (tierNodes.length - tierMissing) + '/' + tierNodes.length + ')', tierMissing === 0);
+  ok('dynamic-menu: EVERY Responsive-tab tree-node carries the row control bar (' + (respNodes.length - respMissing) + '/' + respNodes.length + ')', respMissing === 0);
+
+  // ── SORT — reuses sortChildren(); "Menu Items × Tier Visibility" group is in numeric-string
+  // order (01..25) which is ALSO alphabetical for zero-padded 2-digit labels, so this asserts
+  // the mechanism fires and round-trips (Z->A reverses it) rather than asserting a reorder from
+  // an already-sorted fixture (would be a false negative, not a real defect). ──
+  const sortBtnD = dd2.querySelector('#vbtn-sort-all');
+  ok('dynamic-menu: Sort control injected into the shared .view-bar', !!sortBtnD);
+  const menuGroupLabel = Array.prototype.find.call(dd2.querySelectorAll('.tree-row.branch-row .tree-label'), l => l.textContent.trim() === 'Menu Items × Tier Visibility');
+  const menuGroupLi = menuGroupLabel ? menuGroupLabel.closest('li.tree-node') : null;
+  const menuGroupUl = menuGroupLi ? menuGroupLi.querySelector(':scope > ul.tree-children') : null;
+  if (sortBtnD && menuGroupUl) {
+    const label = li => li.querySelector(':scope > .tree-row .tree-label').textContent.trim();
+    const before = Array.prototype.filter.call(menuGroupUl.children, c => c.classList.contains('tree-node')).map(label);
+    click(wd, sortBtnD);
+    const afterAsc = Array.prototype.filter.call(menuGroupUl.children, c => c.classList.contains('tree-node')).map(label);
+    ok('dynamic-menu: clicking Sort applies an explicit A→Z order (behavioral)', afterAsc.join(',') === before.slice().sort().join(','));
+    click(wd, sortBtnD);
+    const afterDesc = Array.prototype.filter.call(menuGroupUl.children, c => c.classList.contains('tree-node')).map(label);
+    ok('dynamic-menu: second Sort click reverses to Z→A (round-trip)', afterDesc.join(',') === before.slice().sort().reverse().join(','));
+  }
+}
+
 // ── Rows/Window toggle — FULL ENUMERATION of EVERY page (no sample; RI-0008/RI-0009) ──
 // The recurring defect: the toggle exists on a page but does nothing (no CSS reshapes that
 // page's content). Rule enforced on ALL pages: if the toggle is present it MUST both

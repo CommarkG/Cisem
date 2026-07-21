@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Menu — CISEM Index</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- tags: [frontend, dynamic-menu, navigation, accountability, responsive, t-sys] -->
+<!-- Status: PREVIEW / DRAFT — Governor to refine (Governor-directed build under CS-FRONTEND-001; not yet ratified content) -->
+<nav>
+  <a href="../index.html" class="logo">CISEM</a>
+  <div class="idx">
+    <span class="idx-lbl">Index &#9660;</span>
+    <div class="dd">
+      <a href="skills.html"><span class="n">01</span>Skills</a>
+      <a href="agents.html"><span class="n">02</span>Agents</a>
+      <a href="axioms.html"><span class="n">03</span>Axioms</a>
+      <a href="schema.html"><span class="n">04</span>Schema</a>
+      <a href="nodes.html"><span class="n">05</span>Nodes</a>
+      <a href="qc.html"><span class="n">06</span>QC</a>
+      <a href="protocols.html"><span class="n">07</span>Protocols</a>
+      <a href="wizards.html"><span class="n">08</span>Wizards</a>
+      <a href="front-page-types.html"><span class="n">09</span>Front-page types</a>
+      <a href="internal-file-types.html"><span class="n">10</span>Internal file types</a>
+      <a href="document-types.html"><span class="n">11</span>Document types</a>
+      <a href="templates.html"><span class="n">12</span>Templates</a>
+      <a href="internal-audits.html"><span class="n">13</span>Internal audits</a>
+      <a href="learning-loops.html"><span class="n">14</span>Learning &amp; loops</a>
+      <a href="engines.html"><span class="n">15</span>Engines</a>
+      <a href="corespines.html"><span class="n">16</span>Corespines</a>
+      <a href="pipelines.html"><span class="n">17</span>Pipelines</a>
+      <a href="processes.html"><span class="n">18</span>Processes</a>
+      <a href="principles.html"><span class="n">19</span>Principles</a>
+      <a href="rules.html"><span class="n">20</span>Rules</a>
+      <a href="vocabulary.html"><span class="n">21</span>Vocabulary</a>
+      <a href="corespines-set.html"><span class="n">22</span>Corespines Set</a>
+      <a href="uxui.html"><span class="n">23</span>UX/UI</a>
+      <a href="gallery.html"><span class="n">24</span>Gallery</a>
+      <a href="dynamic-menu.html"><span class="n">25</span>Dynamic Menu</a>
+    </div>
+  </div>
+  <div class="nav-search"><input id="si" type="text" placeholder="Filter..." autocomplete="off"><span class="cnt" id="cnt"></span></div>
+  <div class="nav-r">
+    <a href="to-be-reviewed.html" class="ni" title="To Be Reviewed &amp; Created">&#9998;</a>
+    <a href="help.html" class="ni" title="Help">?</a>
+  </div>
+</nav>
+<div class="bc"><button class="bc-arr" onclick="history.back()" title="Back">&#9664;</button><button class="bc-arr" onclick="history.forward()" title="Forward">&#9654;</button>
+  <a href="../index.html">Home</a><span class="sep">/</span><span>25 · Dynamic Menu</span>
+</div>
+<main>
+  <h1>Dynamic Menu</h1>
+  <p class="pg-desc">Where the Governor DEFINES how the nav menu renders, in two dimensions: <strong>who sees what</strong> (Tab A, by accountability Ring/tier) and <strong>how it degrades</strong> (Tab B, across breakpoints). Rows = the 25 current Index-dropdown menu items (<code>01&ndash;23</code> existing groups + <code>24</code> Gallery + <code>25</code> this page). This is a DEFINITION/config surface &mdash; static representation only, no live menu-engine reads these rows yet. Same collapsible tree, per-row control bar, and shared toolbar as every other tree page in this index.</p>
+
+  <div class="draft-banner"><strong>DRAFT &mdash; Governor to refine.</strong> The Ring model (CS-ACCOUNTABILITY-001 is still DRAFT/branches PLACEHOLDER) and the responsive-rule vocabulary below are Opus's first-pass reading; both are flagged for Governor confirmation. Built under CS-FRONTEND-001 as a PREVIEW pending review (Principle 20).</div>
+
+  <div class="uxui-tabbar" role="tablist">
+    <button type="button" class="uxui-tab active" id="dm-tab-tiers" role="tab" aria-selected="true" aria-controls="dm-panel-tiers">Tiers &amp; Permissions</button>
+    <button type="button" class="uxui-tab" id="dm-tab-responsive" role="tab" aria-selected="false" aria-controls="dm-panel-responsive">Responsive Situations</button>
+  </div>
+
+  <div id="dm-panel-tiers" class="uxui-panel" role="tabpanel" aria-labelledby="dm-tab-tiers">
+    <div class="sh">Tiers &amp; Permissions — visibility per accountability Ring</div>
+    <p class="pg-desc">Ring model per CS-ACCOUNTABILITY-001 (DRAFT) / the CS-COMMS Ring architecture: <strong>Ring 0</strong> Governor &middot; <strong>Ring 1</strong> internal (platform devs / AI team) &middot; <strong>Ring 2</strong> external-dev &middot; <strong>Ring 3</strong> external-user. Current reading: every existing menu item is an INTERNAL governance surface &mdash; visible to Ring 0/1, not yet exposed to Ring 2/3. Per-row leaves below carry that default; Governor may override any row.</p>
+    <ul class="tree">
+      <li class="tree-node">
+        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">Menu Items &times; Tier Visibility</span><span class="tree-tag">25 items</span></div>
+        <ul class="tree-children">
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">01 &middot; Skills</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">02 &middot; Agents</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">03 &middot; Axioms</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">04 &middot; Schema</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">05 &middot; Nodes</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">06 &middot; QC</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">07 &middot; Protocols</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">08 &middot; Wizards</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">09 &middot; Front-page types</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">10 &middot; Internal file types</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">11 &middot; Document types</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">12 &middot; Templates</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">13 &middot; Internal audits</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">14 &middot; Learning &amp; loops</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">15 &middot; Engines</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">16 &middot; Corespines</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">17 &middot; Pipelines</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">18 &middot; Processes</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">19 &middot; Principles</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">20 &middot; Rules</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">21 &middot; Vocabulary</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">22 &middot; Corespines Set</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">23 &middot; UX/UI</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">24 &middot; Gallery</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">25 &middot; Dynamic Menu</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 0 (Governor)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 1 (Internal)</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 2 (External-dev)</span><span class="rule-chip hidden">hidden</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Ring 3 (External-user)</span><span class="rule-chip hidden">hidden</span></div></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="dm-panel-responsive" class="uxui-panel" role="tabpanel" aria-labelledby="dm-tab-responsive" hidden>
+    <div class="sh">Responsive Situations — visibility per breakpoint</div>
+    <p class="pg-desc">Three states per item, per breakpoint: <span class="rule-chip visible">visible</span> shown directly &middot; <span class="rule-chip more">more</span> collapsed under a "more" affordance (today: the single Index dropdown itself, which already acts as the compact/collapsed form on every breakpoint) &middot; <span class="rule-chip hidden">not-available</span> not shown at all. Current reading: every item is reachable via the Index dropdown at all three breakpoints, so Desktop/Tablet show it as directly visible-in-dropdown and Mobile shows it collapsed under that same dropdown (the existing "more" pattern) &mdash; no item is presently NOT-AVAILABLE at any breakpoint. Governor may assign per-item exceptions.</p>
+    <ul class="tree">
+      <li class="tree-node">
+        <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">Menu Items &times; Breakpoint Rule</span><span class="tree-tag">25 items</span></div>
+        <ul class="tree-children">
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">01 &middot; Skills</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">02 &middot; Agents</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">03 &middot; Axioms</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">04 &middot; Schema</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">05 &middot; Nodes</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">06 &middot; QC</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">07 &middot; Protocols</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">08 &middot; Wizards</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">09 &middot; Front-page types</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">10 &middot; Internal file types</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">11 &middot; Document types</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">12 &middot; Templates</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">13 &middot; Internal audits</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">14 &middot; Learning &amp; loops</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">15 &middot; Engines</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">16 &middot; Corespines</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">17 &middot; Pipelines</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">18 &middot; Processes</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">19 &middot; Principles</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">20 &middot; Rules</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">21 &middot; Vocabulary</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">22 &middot; Corespines Set</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">23 &middot; UX/UI</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">24 &middot; Gallery</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+          <li class="tree-node"><div class="tree-row branch-row"><span class="tree-toggle">+</span><span class="tree-label branch">25 &middot; Dynamic Menu</span></div>
+            <ul class="tree-children tree-collapsed">
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Desktop</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Tablet</span><span class="rule-chip visible">visible</span></div></li>
+              <li class="tree-node"><div class="tree-row leaf-row"><span class="tree-toggle leaf">&middot;</span><span class="tree-label">Mobile</span><span class="rule-chip more">more</span></div></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sh">Source Files</div>
+  <ul class="fl">
+    <li class="fi"><a href="../../dna/ibd/IBD-0002-accountability-4-routes.md"><span class="ico">&#128196;</span>IBD-0002-accountability-4-routes.md<span class="fp">dna/ibd/ &mdash; Governor's 4-route/Ring fork this page's Tiers tab reads (DRAFT, not yet promoted)</span></a></li>
+    <li class="fi"><a href="../../dna/corespines/corespine-registry.yaml"><span class="ico">&#128202;</span>corespine-registry.yaml<span class="fp">dna/corespines/ &mdash; CS-ACCOUNTABILITY-001 entry (DRAFT/PLACEHOLDER branches)</span></a></li>
+    <li class="fi"><a href="../js/search.js"><span class="ico">&#128202;</span>search.js<span class="fp">frontend/js/ &mdash; initTreeEditor / wireRowToolbar / initUxUiTabs (self-detected, no new JS)</span></a></li>
+  </ul>
+
+  <div id="no-result">No files match your search.</div>
+</main>
+<script src="../js/search.js"></script>
+</body>
+</html>
