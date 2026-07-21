@@ -223,3 +223,79 @@ session_2026_07_21_creation_and_hardening:
   boundary_files: "creation-process-merge-design-2026-07-21 · creation-external-input-default-and-pcr-2026-07-21 · session-fidelity-2026-07-21-creation-process · boundary-verbatim-index-2026-07-21 · IBD-0027 RAW+PURIFIED · archive DEC-0011..0014."
   resume: "Read boundary-verbatim-index (transcript verbatim + interpretations, BOTH). Consensus: Step0/depth/orchestrator-gap/merge-shape/Validating-sibling/corespine-at-D. Pending: arrange full merge + CS-CREATION-001=content-merge + orchestrator-owns-tier-routing? -> draft->TEST-RUN(walk)->consolidate->formalize. NO code until 'formalize'. Open queue: UI-catalog page, back-office CRUD rebuild, populate Node-DNA leaves, Stage-1 soundness ARCH-00408/409, ARCH-00407 P0 BLOCK, vocab/status-enum reconciliation."
   open_governor_items: "confirm CS-CREATION-001=content-merge; orchestrator owns tier-routing (Opus rec: yes, one orchestrator two decisions); PCR#1-4 (ARCH-00396 two-root, ARCH-00190 location, §2.4 mirror-reduction, ARCH-00392 Gate); disable Otosan connector (2nd-tab/§1.7)."
+
+  - date: 2026-07-21
+    compact_window: "Comprehensive platform audits + coherence analysis + UX/UI governance planning"
+    tiers_active: [opus-pe, cisem-fable]
+    # ── POSITIVE pole (preserve → D4) ──
+    positive:
+      - insight: "Verify-seam is genuinely load-bearing (rollbacks caught fast + corrected on-the-spot). Dishonesty corrections (run 18) work. System self-corrects plausibility before it ossifies."
+        hardwired_as: "I22 + I23 gate LIVE; verification-before-stamp discipline functional"
+      - insight: "Quality-ledger is high-quality SSOT (all 28 runs substantive, no empties/duplicates). RQC learning loop is capturing AND refining per run."
+        hardwired_as: "quality-ledger.yaml as the learning memory; RQC working end-to-end"
+      - insight: "Haiku's independent audit findings correct Opus oversights (Seed-Honor Report cycle + tier-agnostic verification working). Single highest-value mechanism."
+        hardwired_as: "cisem-haiku independent audit role; preserve Seed-Honor cross-tier correction"
+      - insight: "PAE (ARCH-00399 Purification & Alignment Engine) successfully absorbed 6 external platform inputs (R1-R6: Claude/Gemini/GPT/CSPS/CDS/CSP) via RAW↔PURIFIED quarantine + consolidation-conclusions. Sextuple convergence validated. Reusable pattern for external wisdom."
+        hardwired_as: "ARCH-00399 PAE protocol LIVE; external-input default via IBD quarantine"
+      - insight: "Fable (MENTOR tier) analysis found root causes, not point-fixes. Three classes extracted: (1) derived-views hand-authored → no generated/unranged; (2) decisions lack single-homing → resurrection risk; (3) CANDIDATE-state aging → already queued (BP-0009)."
+        hardwired_as: "cisem-fable MENTOR tier role; strategic root-cause analysis valuable"
+      - insight: "Principle 9 (I14 Completion Insistence) + Seed-Honor report disciplines prevent silent-thread-drops. ARCH-00392 silently dropped was the TEST CASE — re-queuing it enforces the principle."
+        hardwired_as: "Principle 9 + I14 LIVE enforcement; re-queue ARCH-00392 as validation"
+      - insight: "Anti-scatter (Principle 16 Expert Significance-Ranking) + SWIFT discipline (low-risk-significant now) are active and effective. Central-vs-peripheral discernment working."
+        hardwired_as: "Principle 16 + SWIFT permanent behavior (CLAUDE.md §2.7)"
+    # ── NEGATIVE pole (prevent → D3) ──
+    negative:
+      - problem: "ZF cycles not formally logged in quality-ledger despite learning captured (gap E1 from pre-compaction audit)"
+        prevention: "Every session learning-registry HARVEST must also create a quality-ledger RQC run entry logging the harvest (even if not a detection run, it's a learning run). Closes the logging gap."
+        status: PREVENTION-CANDIDATE
+      - problem: "Session-start hook inheritance of learned preventions declared LIVE NEXT SESSION but not wired THIS session (gap E2)"
+        prevention: "SessionStart hook injection is wired (CAL LIVE); test it live with inheritance VERIFIED before next compact."
+        status: PREVENTION-CANDIDATE
+      - problem: "9 files EXCEED 200-line Size Gate (§3.6) without documented type exceptions (AUDIT-TYPE, SKILL, WITNESS, LOAD exempt?)"
+        prevention: "Type-based exceptions must be documented in ARCH-00008 §Type field + CLAUDE.md §4; OR apply mini-tree split per ARCH-00330. No ambiguous EXCEEDS-NO-EXCEPTION cases."
+        status: PREVENTION-CANDIDATE
+      - problem: "ARCH-00008 self-claims compliance with Size Gate (line 141/194) but IS 223 lines, exceeds 200. False claim caught by audit (I22 violation)."
+        prevention: "ARCH-00008 line count must be corrected + exception status clarified before next ratification. Truth-field integrity per I7."
+        status: PREVENTION-CANDIDATE
+      - problem: "Status enum frozen in SSOT (ARCH-00011 §4: 8 values) but active practice has 15+ values (RATIFIED-SPEC, SOUND-FOR-TRIAL, PROVISIONAL-ACTIVE-FOR-TRIAL, PARKED-AS-KERNEL, etc.). Divergence will cause BP-0012 (mechanical gate) to enforce stale enum."
+        prevention: "Reconcile status enum BEFORE BP-0012 builds; survey all live values (corespine-registry, learning-index, definition-of-done) + consolidate into one authoritative enum + update VOC-00002 mirror."
+        status: PREVENTION-CANDIDATE (sequencing: must precede BP-0012)
+      - problem: "A2 reframe (corespine = infrastructure-used-by, not container) registered but NOT ratified (IBD-0017 P7); actively shapes work while old A2 (container frame) remains law. Ambiguous platform noun."
+        prevention: "Governor decides: accept A2 reframe (restructure corespine-registry + rebuild wizard assumptions) OR reject (stick with hierarchy). Pending Governor."
+        status: GOVERNOR-PENDING
+      - problem: "ARCH-00392 (flagship context-envelope plan, half-landed with open Phase-2/Phase-3 gates) silently dropped from active queue; no BP item references it. Principle 9 (I14 Completion Insistence) violated."
+        prevention: "ARCH-00392 open gates → BP-0014 'ARCH-00392 Phase 2→3 completion'. Re-queue explicitly."
+        status: PREVENTION-CANDIDATE
+      - problem: "CS-THRESHOLD-001 marked RATIFIED but BODILESS (no manifest file exists); load-bearing PROCESS-ENTRY gate with empty body (I23 EXISTS≠ACTIVE violation, disclosed but unresolved)."
+        prevention: "Route: either build CS-THRESHOLD-001 manifest via plan, OR change status to RATIFIED-SPEC-ONLY (awaiting manifestation). Honesty + closure."
+        status: PREVENTION-CANDIDATE
+      - problem: "Derived views are hand-authored prose (A1–A8, I1–I22, counts in CLAUDE.md §§5–7, status enums). A8-sweep (07-18) → A9 added (07-20) → NO A9-sweep fired. Same class recurs every axiom addition (ROOT CAUSE #1 from Fable)."
+        prevention: "DERIVED-VIEW invariant (new): any count/range/state-summary literal must be GENERATED from registry OR written as UNRANGED (open pointer). No hand-authored ranges in always-loaded constitution. Instance sweep: CLAUDE.md:20/192/340+§§5–7, FOUND-00001:3/35, quality-ledger:590/597, ssot-registry:21, ARCH-00399:27, SKILL/agent range literals."
+        status: PREVENTION-CANDIDATE (route via BP-0011 enhancement, consolidation not creation)
+      - problem: "Decisions lack single-homing: ai-oversight-layer3 dropped (07-18), resurrected as 'build-or-drop' (WITNESS v4); two-root ruling lacks closure record (3 partial records, no explicit veto). Governance amnesia (ROOT CAUSE #2 from Fable)."
+        prevention: "One home for decision closure: create DECISION-CLOSURE-REGISTRY (or extend archive-ledger) with explicit veto/accept/park + date + ratification reference. ai-oversight-layer3 + two-root both need explicit closure before next compact."
+        status: PREVENTION-CANDIDATE
+      - problem: "Prevention candidates stuck in CANDIDATE state (independent review = HARD gate, plan lineage = MUST cite search, SessionStart injects top-3 ARCH) with no TTL/aging. Already queued as BP-0009 (ROOT CAUSE #3 from Fable); confirm priority."
+        prevention: "BP-0009 (Completion & Propagation Layer): age CANDIDATE items on schedule + wire propagation-network so preventions become live predictably."
+        status: PREVENTION-CANDIDATE (already diagnosed; route confirms priority)
+    # ── CONSOLIDATION OPPORTUNITIES ──
+    consolidation_wired:
+      - "External-input default + RAW-PAIR quarantine: default pattern for absorbing external reviews + concepts; reduce collision risk + ensure purification; wired via IBD quorum + PAE + consolidation-conclusions."
+      - "Existing-First gate (I19) APPLIED in all 6 audits; cross-checked for CSP/CSPS/CDS contamination. Zero accidental bleed; all cross-project refs are governed external inputs. Scope-clarity proven."
+      - "Consolidation via BP-0011 (enhancement, not new coerspine): fold DERIVED-VIEW invariant + schema-dedup (invariant/concept registries share schema)."
+    open_followups:
+      - "BP-0011 enhancement: DERIVED-VIEW invariant + instance sweep (prose ranges -> generated or unranged)."
+      - "BP-0014: ARCH-00392 Phase 2→3 completion (re-queue, Principle 9 enforcement)."
+      - "BP-0012 sequencing: reconcile status enum BEFORE gate builds."
+      - "BP-0009 priority: CANDIDATE-state aging + prevention propagation (already queued; confirm high)."
+      - "Governance decisions: DECISION-CLOSURE-REGISTRY (ai-oversight-layer3, two-root veto explicit); A2 reframe (Governor decide accept/reject); ARCH-00008 correction (line count, exception status)."
+      - "NEW PLAN: UX/UI pipeline + internal wisdom framework (corespine CS-UX-001 candidate) — deferred to fresh session post-compact."
+    preventions_inherited_next_session:
+      - "Derived views hand-authored (ROOT 1) → DERIVED-VIEW invariant into BP-0011"
+      - "Decisions lack single-homing (ROOT 2) → DECISION-CLOSURE-REGISTRY + explicit veto/accept"
+      - "CANDIDATE-state aging (ROOT 3) → BP-0009 priority confirmation"
+      - "Reconcile status enum before BP-0012 enforcement"
+      - "Re-queue ARCH-00392 Phase gates (Principle 9 validation)"
+      - "CSP/CSPS/CDS refs: all governed via PAE; no pure contamination found (reference: contamination scan 2026-07-21)"
+    witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+    session_note: "Comprehensive audit session. 6 major reports (ZF cycles, Size Gate, SSOT, pre-compaction readiness, platform coherence, coherence+drift+alignment + CSP scan). All work written to disk as findings (evidence-only, no action yet). Haiku + Fable tiers applied. Learnings captured richly per A10 (full fidelity, not summary). Ready for compaction."

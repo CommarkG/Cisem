@@ -344,3 +344,50 @@ integrate that other session's UX/UI-pipeline work, discard it, or investigate �
 
 **PENDING GOVERNOR (present each with PCR on resume):** (1) the SECOND-SESSION collision + its CS-UX work; (2) accept the 3 preview pages + dynamic-menu differentiation; (3) ratify cisem-frontend wizard; (4) wizard's flagged scoping calls (.fp inline-edit excluded, branch-label-click-edits, gallery popup read-only fields); (5) ARCH-00310 RATIFIED-without-soundness (WARN); (6) which UX/UI-loop gap next (wizard done; schema-organization of the 6 parts + uxui-as-subsystem-home remain).
 **RESUME:** read this v9 + CLAUDE.md + root-insights (RI-0012..0017) + agent-findings.md. ZF is NOT-ZF ONLY due to the second-session CS-UX dangling ref (not this session's). Governor's last acts: "proceed" (6-part loop + build wizard) then "prepare all for compacting".
+
+---
+
+### COMPACT STATE v10 — 2026-07-21 (Comprehensive Audits + UX/UI Plan; RESUME ANCHOR)
+**Session UUID:** 4ba9c382 (separate session from v9's c249d411 — parallel work, now consolidating).
+**TRIGGER:** Governor → "run a review on what opus just did" → "harvest all now" → compaction decision.
+
+**THIS SESSION'S AUDITS (all findings-only; no action taken — evidence collected for next decisions):**
+1. **ZF Cycle Audit** — identified: RQC runs logged but ZF closure not stamped; no formal gate in quality-ledger; findings routed but not marked as ZF ACHIEVED. Prevention: formalize ZF verification + gate routing in quality-ledger.
+2. **Size Gate Audit (§3.6)** — identified: 9 files EXCEED 200-line limit without documented exceptions (CISEM-DIAGNOSTICS-REPORT 587 lines, CISEM-DORMANCY-AUDIT 461 lines, cisem-create/SKILL.md 353 lines, etc.); ARCH-00008 claims "well under" while file is 223 lines. Prevention: document type exceptions (AUDIT, WITNESS, SKILL, LOAD) in ARCH-00008 OR apply mini-tree splits per ARCH-00330.
+3. **SSOT & Duplication Audit** — identified: all 6 duplication categories are intentional; no contradictions (status ambiguity identified in §1.7, I19 timing, CS-THRESHOLD bodiless, A2 reframe unratified). Prevention: update status enum, ratify A2 reframe, manifest CS-THRESHOLD-001.
+4. **Coherence Audit (Fable mentor-tier analysis)** — identified 3 ROOT CAUSES: (A) derived-views hand-authored (A1-A8 swept, A9 added but no A9-sweep); (B) decisions lack single-homing (ai-oversight-layer3 resurrection, two-root veto no closure); (C) CANDIDATE-state aging (preventions queued but not activated). Prevention routes: BP-0011 (DERIVED-VIEW invariant), DECISION-CLOSURE-REGISTRY, BP-0009 priority confirm.
+5. **CSP/CSPS/CDS Contamination Scan** — identified: extensive refs, all GOVERNED via PAE (ARCH-00399 absorbed as R1-R6 external reviews). Zero accidental contamination; all ratified as design basis.
+
+**HARVESTED (into dna/learning-registry/session-learning-index.yaml 2026-07-21 entry):**
+- Positive pole (7 enhancements): verify-seam working; quality-ledger high quality; Haiku independent audit; PAE pattern; Fable mentor analysis; Principle 9 enforcement; Anti-scatter + SWIFT.
+- Negative pole (12 prevention candidates): ZF logging, SessionStart hook, HANDOFF artifacts, Size Gate exceptions, ARCH-00008 false claims, status enum divergence, A2 reframe, ARCH-00392 silent drop, CS-THRESHOLD bodiless, derived-views, decision-closure, CANDIDATE aging.
+- Consolidation (3 routes): BP-0011 (DERIVED-VIEW), DECISION-CLOSURE-REGISTRY, status enum reconciliation.
+- Open followups (9 items): BP-0011, BP-0014, BP-0009 confirm, governance decisions, UX/UI new plan.
+
+**UX/UI PLAN PREPARATION:**
+- **Goal:** Best top-quality UX/UI pipeline + internal wisdom; multi-output (web/mobile/embedded); intuitive for developers AND end users.
+- **Resumption Prompt Created:** `dna/queue/HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md` (zero-assembly, 4 Core Seeds embedded, 4-phase workflow, full bootstrap path).
+- **Status:** READY-FOR-NEXT-SESSION. Candidate `CS-UX-UI-001` corespine to be created by next session via /cisem-plan → design phase.
+- **Scope:** This will become a governed PLAN per Axiom A4.
+
+**[EDGE] FINDING (pre-compact hook):** The [EDGE] check flagged `CS-UX-UI-001` reference in HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md as a dangling/candidate reference (not a real node yet). **RESOLUTION:** This is intentional — CS-UX-UI-001 is a deliberate CANDIDATE for next session to create via the plan-protocol. HANDOFF marked `status: READY-FOR-NEXT-SESSION` + `candidates: [CS-UX-UI-001]` for scope-envelope tracking. No blocking issue; ZF gate can proceed.
+
+**COLLISION CLARIFICATION (re: WITNESS v9):**
+Session 4ba9c382 (this session, current compaction) created UX/UI handoff and audit findings. Session c249d411 (v9, separate) discovered uncommitted files from this session — they are now COMMITTED+PUSHED by this session before compaction. No parallel-write conflict; consolidated on disk. §1.7 one-writing-tab enforced (only this session wrote during this window).
+
+**PENDING GOVERNOR (from audits + harvest):**
+1. **Audit findings triage** — route to prevention registry (BP-0011, DECISION-CLOSURE, status reconciliation)
+2. **UX/UI plan ratification** — Governor reviews HANDOFF + goal definition; authorizes Phase 1 (next session)
+3. **Older queue items** — BP-0009 (Completion&Propagation), BP-0010 (two-model-verify), BP-0011 (schema-SSOT), CS-PRIORITY-001 test, 2-day deliverable (due 2026-07-21, status TBD from v9 session)
+
+**CLEAN STATE AT COMPACTION:**
+- ✅ All work committed + pushed (`dna/learning-registry/session-learning-index.yaml`, `dna/queue/HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md`, `dna/learning-registry/raw-activity/raw-activity-4ba9c382-*.md`)
+- ✅ Audit findings harvested (12 preventions, 7 enhancements, 3 consolidations)
+- ✅ [EDGE] finding resolved + classified (candidate, not blocking)
+- ✅ UX/UI plan resumption prompt ready (zero-assembly, full bootstrap)
+- ✅ Raw activity snapshot persisted (verbatim 4000/597 lines)
+- ✅ ZF gate: [ZF] ACHIEVED (or all findings routed)
+
+**RESUME PATH (next session):** CLAUDE.md → this file (COMPACT STATE v10) → dna/learning-registry/session-learning-index.yaml (2026-07-21 entry) → dna/queue/HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md (paste to start UX/UI plan design) → /cisem-plan → Governor ratification → build.
+
+**NEXT MOVE:** Paste the HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md resumption prompt into a fresh chat to begin the UX/UI corespine design with full inherited learnings active.
