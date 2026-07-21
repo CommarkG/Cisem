@@ -56,6 +56,11 @@
 #   allowlist; flags an unregistered NAME or a NAME registered twice). All three planted-test-verified,
 #   NOT in the ZF formula. Also fixed [CREATION-GATE]'s V10 blind-spot (repo-root + dna/-root loose files
 #   were never enumerated — see creation-gate.sh comment).
+#   v14 (2026-07-21, RI-0012 substring-vs-field class, Sonnet-built per Opus dispatch ARCH-00414 Phase 3d):
+#   [I1] now excludes dna/knowledge-library/ (--exclude-dir=knowledge-library, same pattern as raw-activity) —
+#   knowledge-library files are external source material that legitimately QUOTE example node-like ids (e.g.
+#   "CS-CRM-BILLING-001" cited as an illustrative tag in KL-0002); they are not governance references and must
+#   not be flagged as dangling. Real dangling refs elsewhere are still caught (planted-tested both directions).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -70,7 +75,7 @@ echo "── CISEM plan-audit (WARN-ONLY, ARCH-00320 §6) ───────�
 echo "[I1] dangling references (excludes example-only / off-repo-tagged):"
 found_i1=0
 refs=$(grep -rhoE "CISEM-[A-Z]+-[0-9]{5}|CS-[A-Z-]+-[0-9]{3}|SOL-[A-Z]+-[0-9]{3}" \
-        --include="*.md" --include="*.yaml" --exclude-dir=raw-activity . 2>/dev/null | grep -v '.git/' | sort -u)
+        --include="*.md" --include="*.yaml" --exclude-dir=raw-activity --exclude-dir=knowledge-library . 2>/dev/null | grep -v '.git/' | sort -u)
 for id in $refs; do
   # resolved on disk or as a registry key -> fine
   if find . -name "*$id*" -not -path './.git/*' 2>/dev/null | grep -q . \
