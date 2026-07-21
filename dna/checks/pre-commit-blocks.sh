@@ -37,4 +37,20 @@ if [ -n "$personamiss" ]; then
   echo "   (reference only, never copy — I10) — or, if intentional: git commit --no-verify (log it)."
   exit 1
 fi
+
+# BLOCK 3 — NO DELETION WITHOUT HUMAN RATIFICATION (Governor decree 2026-07-21: "block your ability to delete
+#           things without human ratifying it"). Collateral deletion is AI's chronic failure (Principle 18A) — now a
+#           HARD BLOCK, not a WARN. Any staged file DELETION (diff-filter=D) is REFUSED unless the file's exact path
+#           is listed in dna/checks/ratified-deletions.txt (the human ratification allowlist). Escape (logged): --no-verify.
+delmiss=""
+for f in $(git diff --cached --name-only --diff-filter=D 2>/dev/null); do
+  grep -qxF "$f" "$root/dna/checks/ratified-deletions.txt" 2>/dev/null || delmiss="${delmiss}
+   $f"
+done
+if [ -n "$delmiss" ]; then
+  echo "── BLOCKED (no-delete-without-ratification, Governor decree 2026-07-21): staged deletion of file(s):${delmiss}"
+  echo "   AI may NOT delete files without human ratification. If the Governor ratified this deletion, add each path"
+  echo "   (one per line, exact) to dna/checks/ratified-deletions.txt and re-commit — or, if intentional: git commit --no-verify (log it)."
+  exit 1
+fi
 exit 0
