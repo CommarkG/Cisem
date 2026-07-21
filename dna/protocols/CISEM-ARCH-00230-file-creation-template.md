@@ -16,6 +16,7 @@ Renamed 2026-07-15: was "Protocol File Template" / mis-titled
 Governor's direct catch, not treated as sacred.
 
 ## Mandatory checklist — every protocol file must have ALL of:
+- **CLOSED + VERIFIED NOW (Principle 21, Governor decree 2026-07-21):** the creation is FINISHED and its "done" PROVEN this turn — wired + verified with shown evidence (DoD; I22/I23), not "will be done later". Any genuine deferral is a REGISTERED park (IBD/BP/RI/queue id + status), never a vague "later". Backstopped mechanically by `[DEFER-SCAN]`.
 [ ] Node ID, Type, Status, depth_level, tags — header complete
 [ ] Goal — stated, one sentence, what this protocol governs
 [ ] Governing corespine — named, or explicit "none yet" with reason

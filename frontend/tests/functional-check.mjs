@@ -36,6 +36,62 @@ function load(rel) {
 function click(w, el) { el.dispatchEvent(new w.window.Event('click', { bubbles: true, cancelable: true })); }
 function fireInput(w, el) { el.dispatchEvent(new w.window.Event('input', { bubbles: true })); }
 
+// ── GATE A — FE-I13 WCAG-AA CONTRAST (measured, permanent) ─────────────────────────────
+// Computes the REAL WCAG contrast ratio (relative-luminance formula) for every text/foreground
+// design token in style.css against every background token it renders on, in BOTH themes
+// (:root dark + :root[data-theme="light"]). No taste-exemption for badge/label tokens (the
+// 2026-07-21 lesson) — warn/success/danger are tested as normal text (>= 4.5:1), same as
+// text/muted/accent/hover. Reads hex values FROM style.css so it stays in sync with any future
+// token edit — a future token change that drops below AA fails THIS gate, permanently.
+const CSS_CONTRAST = fs.readFileSync(path.join(ROOT, 'frontend/css/style.css'), 'utf8');
+
+function hexToRgb(hex) {
+  let h = hex.replace('#', '');
+  if (h.length === 3) h = h.split('').map(c => c + c).join('');
+  return [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16));
+}
+function relLuminance(hex) {
+  const [r, g, b] = hexToRgb(hex).map(v => v / 255);
+  const lin = c => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+}
+function contrastRatio(hex1, hex2) {
+  const L1 = relLuminance(hex1), L2 = relLuminance(hex2);
+  const lighter = Math.max(L1, L2), darker = Math.min(L1, L2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+// Extract ONLY the first-level `--token: #hex;` declarations inside a given :root block —
+// scoped to the FIRST matching `{...}` so :root and :root[data-theme="light"] never cross-read.
+function extractTokenBlock(css, blockRe) {
+  const m = css.match(blockRe);
+  const tokens = {};
+  if (!m) return tokens;
+  const tokRe = /--([a-z][a-z0-9-]*)\s*:\s*(#[0-9a-fA-F]{3,8})\s*;/g;
+  let t;
+  while ((t = tokRe.exec(m[1]))) tokens[t[1]] = t[2];
+  return tokens;
+}
+const darkTokens = extractTokenBlock(CSS_CONTRAST, /:root\s*\{([^}]*)\}/);
+const lightTokens = extractTokenBlock(CSS_CONTRAST, /:root\[data-theme="light"\]\s*\{([^}]*)\}/);
+
+// FG_TOKENS = every color token used as text/foreground anywhere in style.css (incl. badge/
+// label tokens warn/success/danger — no exemption). BG_TOKENS = the two surfaces text renders
+// on (page bg, nav/card bg). Enumerated from the token set itself, not a curated sample.
+const FG_TOKENS = ['text', 'muted', 'accent', 'hover', 'warn', 'success', 'danger'];
+const BG_TOKENS = ['bg', 'nav'];
+
+console.log('WCAG-AA CONTRAST TABLE (FE-I13, measured live from style.css tokens):');
+[['dark', darkTokens], ['light', lightTokens]].forEach(([theme, tok]) => {
+  FG_TOKENS.forEach(fg => {
+    BG_TOKENS.forEach(bg => {
+      if (!tok[fg] || !tok[bg]) { ok('[FE-I13] ' + theme + ': token --' + fg + ' or --' + bg + ' missing (cannot measure)', false); return; }
+      const ratio = contrastRatio(tok[fg], tok[bg]);
+      console.log('  [' + theme + '] --' + fg + ' (' + tok[fg] + ') on --' + bg + ' (' + tok[bg] + ') = ' + ratio.toFixed(2) + ':1' + (ratio < 4.5 ? '  <-- FAIL' : ''));
+      ok('[FE-I13] ' + theme + ' theme: --' + fg + ' on --' + bg + ' >= 4.5:1 WCAG AA (measured ' + ratio.toFixed(2) + ':1)', ratio >= 4.5);
+    });
+  });
+});
+
 // ── schema.html — the page the Governor found broken ──
 const w = load('schema.html');
 const doc = w.document;
@@ -260,6 +316,14 @@ ALL_PAGES.forEach(function (page) {
   ok(page + ': [inventory] search input present', !!doc2.querySelector('#si'));
   ok(page + ': [inventory] theme toggle present', !!doc2.querySelector('.theme-tgl'));
   ok(page + ': [inventory] language toggle present', !!doc2.querySelector('.lang-tgl'));
+
+  // ── GATE B — FE-I12 CONTROLS-ON-ONE-LINE (permanent, ALL pages) ──────────────────────
+  // Generalizes the schema.html-only single-.view-bar assertion (above) to the WHOLE class:
+  // enumerated via ALL_PAGES (every page, not a sample — RI-0008/Principle 18B). The primary
+  // control row (Rows/Window/Export/Tree/Mindmap...) must sit in ONE .view-bar container, never
+  // stacked as separate sibling bars — regardless of which page or which controls it carries.
+  const toolbarBars = doc2.querySelectorAll('main .view-bar');
+  ok(page + ': [FE-I12] at most ONE .view-bar container in main (controls on one line, not stacked siblings)', toolbarBars.length <= 1);
 
   const btns = doc2.querySelectorAll('.vbtn');
   const win = Array.prototype.find.call(btns, b => /window/i.test(b.textContent));

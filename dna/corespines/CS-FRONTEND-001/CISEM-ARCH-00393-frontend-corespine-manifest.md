@@ -58,7 +58,7 @@ Last_verified: 2026-07-18
 
 ---
 
-## §IV Invariants (FE-I1 – FE-I11)
+## §IV Invariants (FE-I1 – FE-I13)
 
 **FE-I1 Single stylesheet.** Every page must `<link>` only `css/style.css`. No inline `style=""` attributes, no page-specific CSS files.
 
@@ -81,6 +81,10 @@ Last_verified: 2026-07-18
 **FE-I10 Rows / Window view toggle.** Group pages with `.fi` file items must expose a Rows/Window view toggle. This is auto-injected by `initPageViewToggle()` in search.js — no manual HTML required.
 
 **FE-I11 Functional completion — BEHAVIOR, not presence (Governor decree 2026-07-20).** Every interactive element on every page (toggles, collapse, theme/lang switches, back-office tools) must be verified to actually WORK by a BEHAVIORAL test — a real click/action that ASSERTS the resulting state change — NOT merely "a listener is wired" (presence ≠ behavior, RI-0007). A page is not DONE until `node frontend/tests/functional-check.mjs` passes for the elements it carries. No dead UI: an element that exists but does nothing is a ZF-class defect, fixed or removed. This is the frontend arm of Principle 17's presence≠behavior rule; the jsdom gate (`frontend/tests/functional-check.mjs`) is its mechanism. *Honest wiring note:* the gate requires `jsdom` (`npm install` in `frontend/tests/`); it is a runnable+documented gate, pre-commit auto-wiring is a disclosed follow-on (needs node+jsdom in the hook environment).
+
+**FE-I12 Controls on ONE line (Governor decree 2026-07-21).** A page's primary controls / view toggles must sit in a SINGLE row container (one `main .view-bar` / toolbar), never stacked sibling bars. *Mechanism (wired):* `frontend/tests/functional-check.mjs` GATE B asserts `main .view-bar` count ≤ 1 on EVERY page (class-enumerated, not sampled); planted-fail-proven (a second bar → FAIL). Formalizes RI-0016.
+
+**FE-I13 WCAG-AA contrast — measured, no taste-exemption (Governor decree 2026-07-21).** Every text/foreground token must meet ≥ 4.5:1 contrast (normal text) against every background it renders on, in BOTH themes; colors are per-theme TOKENS, never a hex reused across themes, and labels/badges get NO exemption. *Mechanism (wired):* `functional-check.mjs` GATE A reads the `:root` token hex from `style.css`, computes the real WCAG relative-luminance ratio for all pairs in both themes, and FAILS below AA; planted-fail-proven (a token below AA → FAIL). Ties RI-0016 + IBD-0028 (measure-don't-proxy).
 
 ---
 
