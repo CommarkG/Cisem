@@ -3,6 +3,14 @@
 **Tags:** [handoff, resumption, plan-prep, ux-ui]
 **Status:** READY-FOR-NEXT-SESSION
 **Candidates:** [CS-UX-UI-001]
+**Reconciliation (Opus integration 2026-07-21, Governor "integrate this"):** `CS-UX-001` / `CS-UX-UI-001` are
+**NOT-YET-A-NODE** candidates (not real nodes — I1-exempt). Existing-First (which THIS handoff's own Core Seed 1
+mandates) resolves them: **CS-FRONTEND-001 already IS the frontend/UX-UI governance corespine** (FE-I1–FE-I14, incl.
+FE-I14 user-shoes review), and this session built the **6-part UX/UI improvement loop** (ARCH-00412 TAC + the
+`cisem-frontend` wizard + the agent-findings→RIPL loop). So this "UX/UI pipeline" work **CONVERGES INTO
+CS-FRONTEND-001 (A8, no fork)** — it is an ENHANCEMENT of the existing corespine, not a sibling. The Governor's
+incoming UX/UI content (to be requested on resume) will decide whether it stays an enhancement or later earns its
+own sibling. This handoff is preserved as the resumption prompt; its Phase-1 Existing-First is now answered.
 
 **Paste this block into a fresh chat after compaction to resume the UX/UI plan work.**
 

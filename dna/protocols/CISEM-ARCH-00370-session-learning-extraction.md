@@ -3,6 +3,10 @@
 **depth_level:** L2 | **Position in schema:** T-SYS, learning-loop + memory layer  
 **tags:** [learning, extraction, session-end, harvest, dual-pole, anti-loss]  
 **Goal:** Capture — at every session/tab boundary AND (per IBD-0005) each turn — both NEGATIVE value (→ D3 preventions) and POSITIVE value (→ D4 named enhancements) into ONE parking place (dna/learning-registry/), so learnings are INHERITED (not re-discovered), never silently lost.
+**HARVEST ALL — WITH ALL NUANCES AND INTENT (Governor decree 2026-07-21):** the harvest captures ALL of it — not just
+facts, but the **reasoning, the NUANCES, and the INTENT** behind every decision, definition, and Governor word. Each
+must survive richly enough to re-derive (A10 full-fidelity). A fact-only or summarized harvest that flattens away the
+nuance/intent is a professional failure, not a save — capture the *why* and the *shade of meaning*, not just the *what*.
 **Size exception (§3.6):** 270 lines — exceeds 200-line gate. Exception: protocol-type node with mandated STEP 1–5 procedure + STATUS TRUTH block + change log; structural content not reducible without losing executability. Mini-tree deferred until §3 wiring is complete (this node governs that process).
 
 ## ⚠️ STATUS TRUTH (Opus PE, updated run 18 2026-07-18) — read before trusting any ✅ below

@@ -391,3 +391,13 @@ Session 4ba9c382 (this session, current compaction) created UX/UI handoff and au
 **RESUME PATH (next session):** CLAUDE.md → this file (COMPACT STATE v10) → dna/learning-registry/session-learning-index.yaml (2026-07-21 entry) → dna/queue/HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md (paste to start UX/UI plan design) → /cisem-plan → Governor ratification → build.
 
 **NEXT MOVE:** Paste the HANDOFF-UX-UI-PIPELINE-PLAN-2026-07-21.md resumption prompt into a fresh chat to begin the UX/UI corespine design with full inherited learnings active.
+
+### COMPACT STATE v9 — ADDENDUM (2026-07-21, final pre-compact): integrations + Governor's 3 last instructions
+- ⭐ **ASK THE GOVERNOR FOR HIS UX/UI CONTENT — FIRST THING ON RESUME.** He said: "I have very interesting content on
+  UX/UI for after compacting — see that you ask for it." The resuming session MUST proactively request it before other UX/UI work.
+- **SECOND-SESSION INTEGRATED (Governor "integrate this"):** the CS-UX-UI-001 pipeline work (HANDOFF-UX-UI-PIPELINE-PLAN)
+  is RECONCILED — CS-UX-001/CS-UX-UI-001 = NOT-YET-A-NODE candidates that CONVERGE INTO CS-FRONTEND-001 (A8, no fork; it
+  already governs frontend/UX-UI via FE-I1-I14 + the 6-part loop + cisem-frontend wizard). The 3 other-session files are
+  now committed; the CS-UX dangling ref is resolved (I1-exempt via the reconciliation note). §1.7: enforce one-writing-tab going forward.
+- **HARVEST discipline reinforced (Governor decree):** the harvest must capture "ALL with all NUANCES and INTENT" — added
+  to ARCH-00370 (the harvest protocol) + A10. Not just facts: the reasoning, the nuance, the intent behind each decision.
