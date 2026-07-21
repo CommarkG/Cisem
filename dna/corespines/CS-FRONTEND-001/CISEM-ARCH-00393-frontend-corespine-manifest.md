@@ -58,7 +58,7 @@ Last_verified: 2026-07-18
 
 ---
 
-## §IV Invariants (FE-I1 – FE-I13)
+## §IV Invariants (FE-I1 – FE-I14)
 
 **FE-I1 Single stylesheet.** Every page must `<link>` only `css/style.css`. No inline `style=""` attributes, no page-specific CSS files.
 
@@ -85,6 +85,24 @@ Last_verified: 2026-07-18
 **FE-I12 Controls on ONE line (Governor decree 2026-07-21).** A page's primary controls / view toggles must sit in a SINGLE row container (one `main .view-bar` / toolbar), never stacked sibling bars. *Mechanism (wired):* `frontend/tests/functional-check.mjs` GATE B asserts `main .view-bar` count ≤ 1 on EVERY page (class-enumerated, not sampled); planted-fail-proven (a second bar → FAIL). Formalizes RI-0016.
 
 **FE-I13 WCAG-AA contrast — measured, no taste-exemption (Governor decree 2026-07-21).** Every text/foreground token must meet ≥ 4.5:1 contrast (normal text) against every background it renders on, in BOTH themes; colors are per-theme TOKENS, never a hex reused across themes, and labels/badges get NO exemption. *Mechanism (wired):* `functional-check.mjs` GATE A reads the `:root` token hex from `style.css`, computes the real WCAG relative-luminance ratio for all pairs in both themes, and FAILS below AA; planted-fail-proven (a token below AA → FAIL). Ties RI-0016 + IBD-0028 (measure-don't-proxy).
+
+**FE-I14 USER-SHOES REVIEW — design from the user's seat, not the engineer's (Governor decree 2026-07-21).** CISEM's
+recurring frontend failure is engineer-perception: building what's *technically correct* while ignoring what a
+first-time user *understands and is guided to do*. A UX/UI expert sits in the user's shoes at EVERY surface. So before
+any page leaves PREVIEW, the builder AND reviewer answer these FIVE questions, per page and per major surface, and the
+page must make each answer clear (via color / size / position / text / arrow — not by explanation elsewhere):
+  1. **First glance** — what will a user understand looking at this page for the FIRST time?
+  2. **Continuity** — is the connection to the previous page/stage clear (where did I come from, where am I)?
+  3. **Options + recommendation** — is there a clear, intuitive indication of the options AND the RECOMMENDED next
+     action, signalled by color/size/position/text/arrow?
+  4. **Benefit** — is the BENEFIT of the next step clear (why would I click it)?
+  5. **Next step** — is the next step INDICATED (not hidden)?
+A page that renders + behaves correctly (FE-I11) but fails the user-shoes questions is NOT done. This is the UX arm of
+presence≠behavior: legible+guiding, not just wired. *Enforcement:* a REVIEW LENS applied by the builder (self-answer the
+5 in the report) + the Governor's rendered-page acceptance — honest limit: judgment, not a mechanical gate (jsdom can't
+score legibility). **Companion hard rule (Governor decree 2026-07-21):** NO element (control/button/field/row) may be
+REMOVED from a page without explicit Governor permission — the element-inventory regression in functional-check.mjs
+enforces the floor mechanically; a builder that would drop an element must STOP and ask.
 
 ---
 
