@@ -35,7 +35,7 @@ CS-AI-BEHAVIOR-001:
   goal: "Governs every AI instance — pocket mechanism, path-rejection, oversight"
   children: [ai-pocket-mechanism.md]   # ai-oversight-layer3.md reclassified below (was a dangling I5 reference)
   content_location:
-    distributed_in: [CLAUDE.md, ARCH-00008, .claude/agents/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md]  # pocket protocol, node schema, pocket definition
+    distributed_in: [CLAUDE.md, ARCH-00008, dna/corespines/CS-AI-BEHAVIOR-001/ai-pocket-mechanism.md]  # pocket protocol, node schema, pocket mechanism (path corrected 2026-07-21: was .claude/agents/..., real file is in dna/corespines/; Haiku round-1 evidence, Opus-verified)
   pending_children:
     ai-oversight-layer3.md: { status: PLACEHOLDER, scheduled: true, note: "AI-supervision layer-3 — DECLARED intent, NOT built. Awaiting Governor design intent (build vs drop). Converted from dangling I5 reference 2026-07-16." }
   depth_level: L1
@@ -68,7 +68,7 @@ CS-AI-PROFILING-001:
          Creation Triad (hardcoding + AI pockets + oversight, §3.7) automatically each time.
          Includes the original persona / review-mode behavioral contracts."
   content_location:
-    canonical_file: dna/corespines/CS-AI-PROFILING-001/CISEM-ARCH-00240-pe-pocket-definition.md  # PE pocket definition
+    canonical_file: dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md  # persona SSOT (corrected 2026-07-21: was a dangling pointer to a nonexistent ARCH-00240-pe-pocket-definition.md; Haiku round-1 evidence, Opus-verified)
   team:
     agents: [cisem-haiku, cisem-sonnet, cisem-opus-pe]                       # .claude/agents/ — bound, bootstrapped
     skills: [cisem-create, cisem-audit, cisem-consolidate, cisem-park, cisem-promote]  # pre-created verbs; queued via build-prompts
