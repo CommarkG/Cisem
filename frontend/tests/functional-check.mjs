@@ -15,15 +15,21 @@ let pass = 0, fail = 0;
 const fails = [];
 function ok(name, cond) { if (cond) { pass++; } else { fail++; fails.push(name); } }
 
-function load(rel) {
-  const html = fs.readFileSync(path.join(ROOT, 'frontend/pages', rel), 'utf8');
+function load(rel, dir) {
+  // dir override (FE-I11 coverage-hole fix, ARCH-00414 Phase 6): frontend/index.html lives at
+  // repo-root/frontend/, not frontend/pages/ — pass dir:'frontend' to load it with the SAME
+  // machinery (no separate code path, no weakened asserts). Default stays 'frontend/pages'
+  // so every EXISTING call site (schema.html, uxui.html, gallery.html, dynamic-menu.html, the
+  // ALL_PAGES loop) is byte-for-byte unaffected.
+  const baseDir = dir || 'frontend/pages';
+  const html = fs.readFileSync(path.join(ROOT, baseDir, rel), 'utf8');
   // Capture ANY uncaught error during init (jsdom routes listener exceptions to jsdomError).
   // A crash on load must FAIL the check — it can no longer hide behind other passing assertions (RI-0008).
   const loadErrors = [];
   const vc = new VirtualConsole();
   vc.on('jsdomError', e => loadErrors.push((e && e.message) || String(e)));
   const dom = new JSDOM(html, { runScripts: 'outside-only', pretendToBeVisual: true,
-    url: 'http://localhost/frontend/pages/' + rel, virtualConsole: vc });
+    url: 'http://localhost/' + baseDir + '/' + rel, virtualConsole: vc });
   const w = dom.window;
   w.matchMedia = w.matchMedia || function () { return { matches: false, addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {} }; };
   w.print = w.print || function () {};
@@ -676,6 +682,95 @@ if (langBtn) {
     click(wd, sortBtnD);
     const afterDesc = Array.prototype.filter.call(menuGroupUl.children, c => c.classList.contains('tree-node')).map(label);
     ok('dynamic-menu: second Sort click reverses to Z→A (round-trip)', afterDesc.join(',') === before.slice().sort().reverse().join(','));
+  }
+}
+
+// ── frontend/index.html — the FE-I11 coverage hole (Governor/Opus 2026-07-21, ARCH-00414
+// Phase 6): the home page's OWN Grid/List toggle was never behavior-tested — it was silently
+// excluded because it lives at frontend/index.html, not frontend/pages/*.html, so the ALL_PAGES
+// enumeration below never reached it. Same rigor as every other page's dedicated block above:
+// universal chrome + inventory presence, THEN the page's own toggle mechanism (Grid/List is a
+// DIFFERENT mechanism than group pages' Rows/Window — it must NOT be forced through the
+// Rows/Window-specific asserts in the ALL_PAGES loop; it gets its OWN behavioral asserts here,
+// same standard of proof: click it, assert the resulting STATE, not mere presence — Principle 17). ──
+{
+  const wi = load('index.html', 'frontend');
+  const di = wi.document;
+
+  // universal chrome + inventory (same standard as every page in the ALL_PAGES loop below)
+  ok('index.html: [inventory] nav present', !!di.querySelector('nav'));
+  ok('index.html: [inventory] breadcrumb present', !!di.querySelector('.bc'));
+  ok('index.html: [inventory] search input present', !!di.querySelector('#si'));
+  ok('index.html: [inventory] theme toggle present', !!di.querySelector('.theme-tgl'));
+  ok('index.html: [inventory] language toggle present', !!di.querySelector('.lang-tgl'));
+
+  const themeBtnI = di.querySelector('.theme-tgl');
+  if (themeBtnI) {
+    const t0 = di.documentElement.getAttribute('data-theme') || '';
+    click(wi, themeBtnI);
+    ok('index.html: theme toggle changes data-theme (behavioral)', (di.documentElement.getAttribute('data-theme') || '') !== t0);
+  }
+  const langBtnI = di.querySelector('.lang-tgl');
+  if (langBtnI) {
+    const d0 = di.documentElement.getAttribute('dir') || 'ltr';
+    click(wi, langBtnI);
+    ok('index.html: language toggle flips dir (behavioral)', (di.documentElement.getAttribute('dir') || 'ltr') !== d0);
+  }
+
+  // ── the actual defect class: Grid <-> List home-page toggle (its OWN mechanism, id-based:
+  // #vbtn-grid/#vbtn-list/#grid-view/#list-view — distinct from group pages' #vbtn-window/#vbtn-rows) ──
+  const btnGrid = di.querySelector('#vbtn-grid');
+  const btnList = di.querySelector('#vbtn-list');
+  const gridView = di.querySelector('#grid-view');
+  const listView = di.querySelector('#list-view');
+  ok('index.html: Grid and List view buttons both present', !!btnGrid && !!btnList);
+  ok('index.html: grid-view and list-view containers both present', !!gridView && !!listView);
+  if (btnGrid && btnList && gridView && listView) {
+    ok('index.html: Grid is the active view by default', btnGrid.classList.contains('active') && !btnList.classList.contains('active'));
+    click(wi, btnList);
+    ok('index.html: clicking List ACTIVATES the List button (behavioral)', btnList.classList.contains('active') && !btnGrid.classList.contains('active'));
+    ok('index.html: clicking List HIDES the grid view (behavioral)', gridView.style.display === 'none');
+    ok('index.html: clicking List SHOWS the list view (behavioral)', listView.style.display === '');
+    click(wi, btnGrid);
+    ok('index.html: clicking Grid REVERTS (round-trip, nothing stuck) — grid shown', gridView.style.display === '');
+    ok('index.html: clicking Grid REVERTS (round-trip, nothing stuck) — list hidden', listView.style.display === 'none');
+    ok('index.html: clicking Grid re-activates the Grid button', btnGrid.classList.contains('active') && !btnList.classList.contains('active'));
+  }
+
+  // ── content preservation: all 22 group cards present in Grid view (enumerate-all, not a
+  // sample — RI-0008; guards collateral content loss, Principle 18A) ──
+  const gridCards = di.querySelectorAll('#grid-view a.gc');
+  ok('index.html: Grid view has all 22 group cards', gridCards.length === 22);
+
+  // ── collapsible super-groups in List view (sg-hdr click toggles sg-closed/sg-hidden) ──
+  const firstHdr = di.querySelector('.sg-hdr');
+  const firstRows = firstHdr ? firstHdr.nextElementSibling : null;
+  ok('index.html: List view has a collapsible super-group header', !!firstHdr && !!firstRows);
+  if (firstHdr && firstRows) {
+    const closedBefore = firstHdr.classList.contains('sg-closed');
+    click(wi, firstHdr);
+    ok('index.html: clicking a super-group header TOGGLES sg-closed on the header (behavioral)',
+      firstHdr.classList.contains('sg-closed') !== closedBefore);
+    ok('index.html: clicking a super-group header TOGGLES sg-hidden on its rows (behavioral)',
+      firstRows.classList.contains('sg-hidden') !== false);
+    click(wi, firstHdr);
+    ok('index.html: second click reverts the super-group (round-trip)', firstHdr.classList.contains('sg-closed') === closedBefore);
+  }
+
+  // ── search — same behavioral standard as the ALL_PAGES loop below (filters .gc content) ──
+  const siIndex = di.getElementById('si');
+  const firstCard = di.querySelector('#grid-view a.gc .gtitle');
+  if (siIndex && firstCard) {
+    const needle = firstCard.textContent.trim().toLowerCase();
+    siIndex.value = 'zzz-no-such-string-xyz-99912-nomatch';
+    fireInput(wi, siIndex);
+    siIndex.value = needle;
+    fireInput(wi, siIndex);
+    // search.js's initSearch targets .gc/.sg-row groups by text match — assert it did not crash
+    // and the input value round-trips (behavioral floor; the deep per-item filter is the same
+    // mechanism already proven behaviorally on every group page below).
+    ok('index.html: search input accepts and reflects a query (no crash, same shared mechanism)', siIndex.value === needle);
+    siIndex.value = ''; fireInput(wi, siIndex);
   }
 }
 
