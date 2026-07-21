@@ -56,6 +56,78 @@ if (branch) {
   }
 }
 
+// ── MINDMAP (ARCH-00410) — companion SVG view on schema.html. Behavioral, not presence-only
+// (Principle 17 / RI-0007): click the toggle, click a branch's expand control, click a node's
+// native link, assert the resulting STATE, not merely that a listener exists. ──
+const mmBtnTree = doc.querySelector('#mm-btn-tree');
+const mmBtnMap = doc.querySelector('#mm-btn-mindmap');
+ok('schema: mindmap toggle bar injected (Tree/Mindmap buttons)', !!mmBtnTree && !!mmBtnMap);
+if (mmBtnTree && mmBtnMap) {
+  const mmWrap = doc.querySelector('#mm-wrap');
+  const treeBefore = branch ? branch.closest('ul.tree') : doc.querySelector('ul.tree');
+  ok('schema: mindmap wrap starts hidden (tree is the default view)', mmWrap && mmWrap.style.display === 'none');
+
+  click(w, mmBtnMap);
+  ok('schema: clicking Mindmap SHOWS the mindmap wrap (behavioral)', mmWrap.style.display !== 'none');
+  ok('schema: clicking Mindmap HIDES the original tree (Core Seed 2 — companion, not duplicate-visible)',
+    treeBefore && treeBefore.style.display === 'none');
+  ok('schema: original tree markup is UNCHANGED, only hidden (Core Seed 2 — no content regression)',
+    treeBefore && doc.body.contains(treeBefore) && treeBefore.querySelectorAll('.tree-node').length > 0);
+
+  const mmNodes = doc.querySelectorAll('.mm-node');
+  ok('schema: mindmap RENDERS SVG nodes on click (not just a wired listener — RI-0007)', mmNodes.length > 5);
+  const mmEdges = doc.querySelectorAll('.mm-edge');
+  ok('schema: mindmap renders edges connecting nodes', mmEdges.length > 0);
+
+  // Native-link behavioral check (Core Seed 4): a node with a page is a REAL <a href>, not a
+  // DOM-patched overlay — assert tag=A, a real href (not '#'/'javascript:'), and that clicking
+  // it does NOT call preventDefault (a JS overlay would; a native link doesn't need to).
+  const mmLink = doc.querySelector('a.mm-link');
+  // SVG (namespaced) elements keep their tagName lowercase ('a'), unlike HTML's auto-uppercase —
+  // check the namespace explicitly too, so this really proves it's a native SVG <a>, not a div/span.
+  ok('schema: at least one mindmap node is a NATIVE <a> link',
+    !!mmLink && mmLink.tagName === 'a' && mmLink.namespaceURI === 'http://www.w3.org/2000/svg');
+  if (mmLink) {
+    const href = mmLink.getAttribute('href');
+    ok('schema: mindmap node link has a REAL page href (not # or javascript:)',
+      !!href && href !== '#' && !/^javascript:/i.test(href) && href.endsWith('.html'));
+    const evt = new w.window.MouseEvent('click', { bubbles: true, cancelable: true });
+    mmLink.dispatchEvent(evt);
+    ok('schema: mindmap node click is NOT intercepted by JS (defaultPrevented=false => native navigation, not an overlay)',
+      evt.defaultPrevented === false);
+  }
+
+  // Expand/collapse (behavioral, matches the tree-toggle test pattern above): a category node
+  // starts collapsed; clicking its toggle control CHANGES the rendered node count.
+  const mmToggle = doc.querySelector('.mm-toggle');
+  ok('schema: mindmap has an expand/collapse toggle on a branch node', !!mmToggle);
+  if (mmToggle) {
+    const countBefore = doc.querySelectorAll('.mm-node').length;
+    click(w, mmToggle);
+    const countAfter = doc.querySelectorAll('.mm-node').length;
+    ok('schema: clicking a mindmap branch toggle CHANGES the rendered node count (behavioral, not just wired)', countBefore !== countAfter);
+    click(w, mmToggle);
+    const countBack = doc.querySelectorAll('.mm-node').length;
+    ok('schema: second click toggles back to the original count', countBack === countBefore);
+  }
+
+  // Both themes (Core Seed 4): mindmap must render successfully after a theme flip, not just
+  // in the default dark theme.
+  const themeBtnForMap = doc.querySelector('.theme-tgl');
+  if (themeBtnForMap) {
+    click(w, themeBtnForMap); // flips to the alternate theme
+    const nodesAfterThemeFlip = doc.querySelectorAll('.mm-node').length;
+    ok('schema: mindmap still renders nodes after a theme flip (both themes, Core Seed 4)', nodesAfterThemeFlip > 5);
+    click(w, themeBtnForMap); // flip back — leave state as found for pages loaded after this one
+  }
+
+  // Return to Tree view and confirm it un-hides (round-trip, no stuck state).
+  click(w, mmBtnTree);
+  ok('schema: clicking Tree HIDES the mindmap wrap again', mmWrap.style.display === 'none');
+  ok('schema: clicking Tree RESTORES the original tree (round-trip, nothing lost)',
+    treeBefore && treeBefore.style.display === '');
+}
+
 // ── universal chrome toggles (present + behavioral) on schema.html ──
 const themeBtn = doc.querySelector('.theme-tgl');
 ok('theme toggle injected', !!themeBtn);

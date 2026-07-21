@@ -10,6 +10,15 @@ cd "$repo" || exit 1
 mode="${1:-}"
 echo "── CISEM frontend rebuild ──────────────────────────────────────────"
 
+# Regenerate the schema.html mindmap's node-graph data from the registries (Core Seed 3,
+# ARCH-00410) — never hand-authored. Splices into frontend/js/search.js's marker block; the
+# generator itself is a reusable module (Core Seed 8: frontend/tools/generate-schema-graph.mjs).
+if command -v node >/dev/null 2>&1; then
+  node frontend/tools/generate-schema-graph.mjs || echo "  WARN: schema graph regeneration failed (non-blocking; run node frontend/tools/generate-schema-graph.mjs directly to debug)"
+else
+  echo "  WARN: node not found — skipped schema graph regeneration (frontend/tools/generate-schema-graph.mjs)"
+fi
+
 # Verify every href="../../..." link in pages/*.html resolves on disk
 dead=0; total=0
 for html in frontend/pages/*.html; do

@@ -252,6 +252,36 @@ body.view-window .tree-row.branch-row {
 }
 body.view-window .tree-toggle { display: none; } /* +/- collapse control reads as noise once rows are cards */
 
+/* ── MINDMAP (schema.html companion view — ARCH-00410, CS-FRONTEND-001; tokens reused from
+   :root above, FE-I5). Status-dot colors reuse the SAME literal values already established by
+   .tree-badge.{proposed,candidate,sim} above (#d29922/#3fb950/#f85149) rather than inventing new
+   ones — an existing (imperfect, hardcoded) precedent in this file, not a new deviation. ── */
+.mm-toggle-bar { margin-bottom: 10px; }
+#mm-wrap { position: relative; border: 1px solid var(--border); border-radius: 6px; background: var(--nav); overflow: hidden; margin-top: 4px; }
+.mm-controls { position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; z-index: 5; }
+.mm-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 12px; padding: 3px 8px; }
+.mm-btn:hover { color: var(--hover); border-color: var(--accent); }
+#mm-svg { display: block; width: 100%; cursor: grab; }
+#mm-svg:active { cursor: grabbing; }
+.mm-edge { stroke: var(--border); stroke-width: 1.4; }
+.mm-node .mm-dot { fill: var(--muted); }
+.mm-node.mm-status-ratified .mm-dot { fill: var(--accent); }
+.mm-node.mm-status-declared .mm-dot { fill: var(--muted); }
+.mm-node.mm-status-proposed .mm-dot { fill: #d29922; }
+.mm-node.mm-status-draft .mm-dot { fill: var(--muted); }
+.mm-node.mm-status-placeholder .mm-dot { fill: var(--muted); }
+.mm-node.mm-status-candidate .mm-dot { fill: #3fb950; }
+.mm-node.mm-status-sim .mm-dot { fill: #f85149; }
+.mm-toggle { fill: var(--bg); stroke: var(--border); stroke-width: 1; cursor: pointer; }
+.mm-toggle:hover { stroke: var(--accent); }
+.mm-toggle-txt { font-family: var(--mono); font-size: 10px; fill: var(--muted); pointer-events: none; user-select: none; }
+.mm-label { font-family: var(--mono); font-size: 11px; fill: var(--text); }
+a.mm-link .mm-label { fill: var(--accent); cursor: pointer; }
+a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
+@media (max-width: 480px) {
+  #mm-svg { height: 320px !important; }
+}
+
 /* ── PHASE 2 — TREE ROW EDITOR (schema/vocabulary/corespines-set; CS-FRONTEND-001 FE-I2 single-JS) ── */
 .rt-tools { display: inline-flex; align-items: center; gap: 3px; margin-left: auto; opacity: 0; transition: opacity .12s; flex-shrink: 0; }
 .tree-row:hover .rt-tools, .tree-row:focus-within .rt-tools { opacity: 1; }

@@ -3,6 +3,641 @@
    auto-injected by feature-detection, never by hand-editing per-page HTML.) */
 (function () {
 
+  // ═══════════ AUTO-GENERATED: SCHEMA GRAPH DATA (Core Seeds 3/7/8, ARCH-00410) ═══════════
+  // Regenerate: node frontend/tools/generate-schema-graph.mjs — reads corespine-registry.yaml
+  // + naming-registry.yaml + dna/protocols|checks|schema + .claude/agents|hooks|skills via
+  // targeted field extraction (no YAML lib in this env; Core Seed 7) and rewrites ONLY the
+  // block between the markers below, byte-exact outside them (idempotent on re-run with no
+  // registry changes). DO NOT HAND-EDIT this block — a hand-typed node list is a Core-Seed-3
+  // finding. Embedded here (not a separate file, not fetch()) to keep CS-FRONTEND-001 FE-I2
+  // (single JS file) literally honored — no new <script> tag on schema.html, no runtime fetch.
+  /* CISEM:SCHEMA-GRAPH:START */
+  var CISEM_SCHEMA_GRAPH = {
+  "meta": {
+    "generated": "2026-07-21T01:06:16.263Z",
+    "generator": "frontend/tools/generate-schema-graph.mjs",
+    "sources": [
+      "dna/corespines/corespine-registry.yaml",
+      "dna/naming-registry.yaml",
+      "dna/protocols/",
+      "dna/checks/",
+      ".claude/hooks/",
+      ".claude/agents/",
+      ".claude/skills/",
+      "dna/schema/"
+    ]
+  },
+  "root": {
+    "id": "root",
+    "label": "CISEM",
+    "type": "root",
+    "href": "../index.html",
+    "children": [
+      {
+        "id": "t-sys",
+        "label": "T-SYS",
+        "type": "tier",
+        "href": null,
+        "children": [
+          {
+            "id": "cat-corespines",
+            "label": "Corespines",
+            "type": "category",
+            "href": "corespines.html",
+            "children": [
+              {
+                "id": "cs-cs-frontend-001",
+                "label": "CS-FRONTEND-001",
+                "status": "RATIFIED",
+                "goal": "Governs all CISEM web/frontend artifacts — HTML pages, CSS design system, JS behaviors, responsive/cell layouts, rebuild engine. Invariants FE-I1–FE-I10.",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-threshold-001",
+                "label": "CS-THRESHOLD-001",
+                "status": "RATIFIED",
+                "goal": "Layer 1 mechanical input validation — the only fully closed corespine",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-creation-001",
+                "label": "CS-CREATION-001",
+                "status": "RATIFIED",
+                "goal": "\"Governs every creation event — Corespine-First, Goal-First, Template-First,",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-ai-behavior-001",
+                "label": "CS-AI-BEHAVIOR-001",
+                "status": "DECLARED",
+                "goal": "Governs every AI instance — pocket mechanism, path-rejection, oversight",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-master-validation-001",
+                "label": "CS-MASTER-VALIDATION-001",
+                "status": "RATIFIED",
+                "goal": "Governs all other corespines — defines the corespine validation protocol V1–V5 and the foundational-decree escape",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-accountability-001",
+                "label": "CS-ACCOUNTABILITY-001",
+                "status": "DRAFT",
+                "goal": "Root ratified now; branches below scoped per Governor's 4-part structure",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-ai-profiling-001",
+                "label": "CS-AI-PROFILING-001",
+                "status": "DECLARED",
+                "goal": "\"The AI-TEAM corespine (broadened 2026-07-18, Governor-ratified): governs AGENTS",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-controlplane-001",
+                "label": "CS-CONTROLPLANE-001",
+                "status": "PROPOSED",
+                "goal": "Project/engine routing, mobile broker backend — distinct from Threshold",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-solutions-001",
+                "label": "CS-SOLUTIONS-001",
+                "status": "PROPOSED",
+                "goal": "Governs every tenant-facing Solution",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-ai-integration-001",
+                "label": "CS-AI-INTEGRATION-001",
+                "status": "PROPOSED",
+                "goal": "Artifact-sandbox vs backend policy for AI API calls within Solutions",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-universal-001",
+                "label": "CS-UNIVERSAL-001",
+                "status": "PROPOSED",
+                "goal": "Root for cross-solution functional capability",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-loops-001",
+                "label": "CS-LOOPS-001",
+                "status": "PROPOSED",
+                "goal": "Root for improvement/learning/QC loops",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-priority-001",
+                "label": "CS-PRIORITY-001",
+                "status": "PROPOSED",
+                "goal": "\"Governs priority assignment across CISEM — built this session,",
+                "href": "corespines.html",
+                "children": []
+              },
+              {
+                "id": "cs-cs-corecouncil-001",
+                "label": "CS-CORECOUNCIL-001",
+                "status": "PLACEHOLDER",
+                "goal": "\"PARKED — Governor-described multi-model orchestration, weight",
+                "href": "corespines.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-corespine-candidates",
+            "label": "Corespine Candidates",
+            "type": "category",
+            "href": "corespines-set.html",
+            "children": [
+              {
+                "id": "cs-cand-inheritance",
+                "label": "Inheritance",
+                "status": "PARKED-AS-KERNEL-MECHANIC",
+                "href": "corespines-set.html",
+                "children": []
+              },
+              {
+                "id": "cs-cand-kernel",
+                "label": "Kernel",
+                "status": "CANDIDATE-KERNEL",
+                "href": "corespines-set.html",
+                "children": []
+              },
+              {
+                "id": "cs-cand-epistemology",
+                "label": "Epistemology",
+                "status": "CANDIDATE",
+                "href": "corespines-set.html",
+                "children": []
+              },
+              {
+                "id": "cs-cand-security",
+                "label": "Security",
+                "status": "OVERLAY-CANDIDATE",
+                "href": "corespines-set.html",
+                "children": []
+              },
+              {
+                "id": "cs-cand-privacy-observability-accessibility",
+                "label": "Privacy_Observability_Accessibility",
+                "status": "OVERLAY-CANDIDATES",
+                "href": "corespines-set.html",
+                "children": []
+              },
+              {
+                "id": "cs-cand-priority",
+                "label": "Priority",
+                "status": "PROPOSED-CS-PRIORITY-001-testdrive-instance1",
+                "href": "corespines-set.html",
+                "children": []
+              },
+              {
+                "id": "cs-cand-completion-propagation-layer",
+                "label": "Completion_Propagation_Layer",
+                "status": "PLAN-PENDING-BP-0009",
+                "href": "corespines-set.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-protocols",
+            "label": "Protocols",
+            "type": "category",
+            "href": "protocols.html",
+            "children": [
+              {
+                "id": "proto-cisem-arch-00011-naming-numbering-policy-md",
+                "label": "CISEM-ARCH-00011-naming-numbering-policy.md",
+                "status": "RATIFIED",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00230-file-creation-template-md",
+                "label": "CISEM-ARCH-00230-file-creation-template.md",
+                "status": "file",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00320-prevention-and-plan-audit-md",
+                "label": "CISEM-ARCH-00320-prevention-and-plan-audit.md",
+                "status": "RATIFIED",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00330-mini-tree-protocol-md",
+                "label": "CISEM-ARCH-00330-mini-tree-protocol.md",
+                "status": "DRAFT",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00340-meta-protocol-md",
+                "label": "CISEM-ARCH-00340-meta-protocol.md",
+                "status": "LIVE",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00350-sonnet-opus-handoff-protocol-md",
+                "label": "CISEM-ARCH-00350-sonnet-opus-handoff-protocol.md",
+                "status": "PROVISIONAL",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00360-haiku-audit-hardening-md",
+                "label": "CISEM-ARCH-00360-haiku-audit-hardening.md",
+                "status": "PROVISIONAL",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00370-session-learning-extraction-md",
+                "label": "CISEM-ARCH-00370-session-learning-extraction.md",
+                "status": "LIVE (Governor decree 2026",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00390-cisem-autonomic-layer-md",
+                "label": "CISEM-ARCH-00390-cisem-autonomic-layer.md",
+                "status": "PROVISIONAL",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00394-corespine-creation-wizard-md",
+                "label": "CISEM-ARCH-00394-corespine-creation-wizard.md",
+                "status": "RATIFIED",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-arch-00399-purification-alignment-engine-md",
+                "label": "CISEM-ARCH-00399-purification-alignment-engine.md",
+                "status": "PROVISIONAL",
+                "href": "protocols.html",
+                "children": []
+              },
+              {
+                "id": "proto-cisem-template-protocol-001-md",
+                "label": "CISEM-TEMPLATE-PROTOCOL-001.md",
+                "status": "DRAFT   <!",
+                "href": "protocols.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-schema",
+            "label": "Schema",
+            "type": "category",
+            "href": "schema.html",
+            "children": [
+              {
+                "id": "schema-cisem-schema-00001-placement-engine-md",
+                "label": "CISEM-SCHEMA-00001-placement-engine.md",
+                "status": "DRAFT   <!",
+                "href": "schema.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-enforcement",
+            "label": "Enforcement / CAL",
+            "type": "category",
+            "href": "engines.html",
+            "children": [
+              {
+                "id": "chk-boundary-update-grid-md",
+                "label": "boundary-update-grid.md",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-concept-envelope-registry-yaml",
+                "label": "concept-envelope-registry.yaml",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-creation-gate-sh",
+                "label": "creation-gate.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-definition-of-done-md",
+                "label": "definition-of-done.md",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-deletion-guard-sh",
+                "label": "deletion-guard.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-external-depollution-prompt-md",
+                "label": "external-depollution-prompt.md",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-invariant-registry-yaml",
+                "label": "invariant-registry.yaml",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-penumbra-sweep-sh",
+                "label": "penumbra-sweep.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-plan-audit-sh",
+                "label": "plan-audit.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-pre-commit-blocks-sh",
+                "label": "pre-commit-blocks.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "chk-save-raw-activity-sh",
+                "label": "save-raw-activity.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "hook-pre-compact-sh",
+                "label": "pre-compact.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              },
+              {
+                "id": "hook-session-start-sh",
+                "label": "session-start.sh",
+                "status": "file",
+                "href": "engines.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-agents",
+            "label": "Agents",
+            "type": "category",
+            "href": "agents.html",
+            "children": [
+              {
+                "id": "agent-cisem-fable-md",
+                "label": "cisem-fable.md",
+                "status": "file",
+                "href": "agents.html",
+                "children": []
+              },
+              {
+                "id": "agent-cisem-haiku-md",
+                "label": "cisem-haiku.md",
+                "status": "file",
+                "href": "agents.html",
+                "children": []
+              },
+              {
+                "id": "agent-cisem-opus-pe-md",
+                "label": "cisem-opus-pe.md",
+                "status": "file",
+                "href": "agents.html",
+                "children": []
+              },
+              {
+                "id": "agent-cisem-sonnet-md",
+                "label": "cisem-sonnet.md",
+                "status": "file",
+                "href": "agents.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-skills",
+            "label": "Skills",
+            "type": "category",
+            "href": "skills.html",
+            "children": [
+              {
+                "id": "skill-cisem-create",
+                "label": "cisem-create",
+                "status": "skill",
+                "href": "skills.html",
+                "children": []
+              },
+              {
+                "id": "skill-cisem-meta",
+                "label": "cisem-meta",
+                "status": "skill",
+                "href": "skills.html",
+                "children": []
+              },
+              {
+                "id": "skill-cisem-plan",
+                "label": "cisem-plan",
+                "status": "skill",
+                "href": "skills.html",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "cat-node-types",
+            "label": "Node Types",
+            "type": "category",
+            "href": "nodes.html",
+            "children": [
+              {
+                "id": "type-found",
+                "label": "CISEM-FOUND",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-dna",
+                "label": "CISEM-DNA",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-gov",
+                "label": "CISEM-GOV",
+                "status": "next_seq 27",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-arch",
+                "label": "CISEM-ARCH",
+                "status": "next_seq 411",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-park",
+                "label": "CISEM-PARK",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-ses",
+                "label": "CISEM-SES",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-witness",
+                "label": "CISEM-WITNESS",
+                "status": "next_seq 7",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-voc",
+                "label": "CISEM-VOC",
+                "status": "next_seq 4",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-load",
+                "label": "CISEM-LOAD",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-schema",
+                "label": "CISEM-SCHEMA",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-reg",
+                "label": "CISEM-REG",
+                "status": "next_seq 1",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-bp",
+                "label": "CISEM-BP",
+                "status": "next_seq 13",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-ibd",
+                "label": "CISEM-IBD",
+                "status": "next_seq 28",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-dec",
+                "label": "CISEM-DEC",
+                "status": "next_seq 15",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-handoff",
+                "label": "CISEM-HANDOFF",
+                "status": "next_seq 5",
+                "href": "nodes.html",
+                "children": []
+              },
+              {
+                "id": "type-kl",
+                "label": "CISEM-KL",
+                "status": "next_seq 2",
+                "href": "nodes.html",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "t-dom",
+        "label": "T-DOM",
+        "type": "tier",
+        "href": null,
+        "children": [
+          {
+            "id": "cat-solutions",
+            "label": "Solutions",
+            "type": "category",
+            "href": "corespines.html",
+            "children": [
+              {
+                "id": "cs-sol-giftpro-001",
+                "label": "SOL-GIFTPRO-001",
+                "status": "SIMULATION-ONLY",
+                "goal": "\"Engraved: virtual simulation/exercise tool for the schema and gates",
+                "href": "corespines.html",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+};
+  /* CISEM:SCHEMA-GRAPH:END */
+
   // ── THEME TOGGLE (Dark/Bright — Phase 1.2) ──────────────────────────
   // Persists in localStorage; applies a [data-theme="light"] override on <html>
   // (single CSS block in style.css, FE-I5 tokens-only). Injected into .nav-r
@@ -771,6 +1406,214 @@
     addChangesetButton();
   }
 
+  // ═════════════════════════════════════════════════════════════════
+  // MINDMAP (schema.html companion view — ARCH-00410, Core Seeds 1-8).
+  // Vanilla-JS SVG renderer over CISEM_SCHEMA_GRAPH (generated above).
+  // Self-detects via location.pathname containing "schema.html" — the
+  // graph data is schema-specific (not a generic tree behavior like
+  // initTreeToggle/initTreeEditor above, which apply to ANY tree page);
+  // page-path detection here is deliberate and correct for that reason,
+  // not a name-based special-case of a generic feature. No-op elsewhere.
+  // Zero HTML edits to schema.html — toggle bar + <svg> are JS-injected,
+  // same auto-inject idiom as initPageViewToggle() (Core Seed 2: the
+  // existing collapsible tree is untouched, only hidden/shown by class).
+  // ═════════════════════════════════════════════════════════════════
+  function initMindmap() {
+    if (!/schema\.html/.test(location.pathname)) return;
+    if (!CISEM_SCHEMA_GRAPH || !CISEM_SCHEMA_GRAPH.root) return;
+    var shHeaders = document.querySelectorAll('.sh');
+    var treeRoots = document.querySelectorAll('ul.tree');
+    if (!shHeaders.length || !treeRoots.length) return;
+    var firstSh = shHeaders[0];
+    var firstTree = treeRoots[0];
+
+    // ── collapse state: categories start collapsed (compact initial view); root + tiers open ──
+    var collapsed = {};
+    (function seed(n) {
+      if (n.type === 'category') collapsed[n.id] = true;
+      (n.children || []).forEach(seed);
+    })(CISEM_SCHEMA_GRAPH.root);
+
+    // ── toggle bar (Tree <-> Mindmap) — reuses .view-bar/.vbtn, same styling as Rows/Window ──
+    var bar = document.createElement('div');
+    bar.className = 'view-bar mm-toggle-bar';
+    bar.innerHTML =
+      '<button type="button" class="vbtn active" id="mm-btn-tree">&#8801; Tree</button>' +
+      '<button type="button" class="vbtn" id="mm-btn-mindmap">&#9737; Mindmap</button>';
+    firstSh.parentNode.insertBefore(bar, firstSh);
+
+    var wrap = document.createElement('div');
+    wrap.id = 'mm-wrap';
+    wrap.style.display = 'none';
+    wrap.innerHTML =
+      '<div class="mm-controls">' +
+        '<button type="button" class="mm-btn" id="mm-zoom-in" title="Zoom in">+</button>' +
+        '<button type="button" class="mm-btn" id="mm-zoom-out" title="Zoom out">&minus;</button>' +
+        '<button type="button" class="mm-btn" id="mm-zoom-reset" title="Reset view">Reset</button>' +
+      '</div>' +
+      '<svg id="mm-svg" xmlns="http://www.w3.org/2000/svg"><g id="mm-viewport"><g id="mm-edges"></g><g id="mm-nodes"></g></g></svg>';
+    firstTree.parentNode.insertBefore(wrap, firstTree.nextSibling);
+
+    var btnTree = document.getElementById('mm-btn-tree');
+    var btnMap = document.getElementById('mm-btn-mindmap');
+    var rendered = false;
+    btnTree.addEventListener('click', function () {
+      firstTree.style.display = '';
+      wrap.style.display = 'none';
+      btnTree.classList.add('active'); btnMap.classList.remove('active');
+    });
+    btnMap.addEventListener('click', function () {
+      firstTree.style.display = 'none';
+      wrap.style.display = '';
+      btnMap.classList.add('active'); btnTree.classList.remove('active');
+      render();
+      rendered = true;
+    });
+
+    var scale = 1, panX = 40, panY = 20;
+    var svg = document.getElementById('mm-svg');
+    var viewport = document.getElementById('mm-viewport');
+    var SVGNS = 'http://www.w3.org/2000/svg';
+
+    function applyTransform() {
+      viewport.setAttribute('transform', 'translate(' + panX + ',' + panY + ') scale(' + scale + ')');
+    }
+
+    function statusClass(s) {
+      if (!s) return 'plain';
+      s = String(s).toUpperCase();
+      if (s.indexOf('RATIFIED') !== -1) return 'ratified';
+      if (s.indexOf('SIMULATION') !== -1) return 'sim';
+      if (s.indexOf('CANDIDATE') !== -1 || s.indexOf('PARKED') !== -1) return 'candidate';
+      if (s.indexOf('DECLARED') !== -1 || s.indexOf('CONNECTED') !== -1) return 'declared';
+      if (s.indexOf('PROPOSED') !== -1) return 'proposed';
+      if (s.indexOf('DRAFT') !== -1) return 'draft';
+      if (s.indexOf('PLACEHOLDER') !== -1) return 'placeholder';
+      return 'plain';
+    }
+
+    function render() {
+      var edgesG = document.getElementById('mm-edges');
+      var nodesG = document.getElementById('mm-nodes');
+      edgesG.innerHTML = '';
+      nodesG.innerHTML = '';
+
+      var COL_W = 210, ROW_H = 30, yCounter = 0;
+      var positioned = [];
+
+      function layout(node, depth, parent) {
+        var isCollapsed = !!collapsed[node.id];
+        var kids = (!isCollapsed && node.children) ? node.children : [];
+        var x = depth * COL_W, y;
+        if (!kids.length) {
+          y = yCounter * ROW_H; yCounter++;
+        } else {
+          var startY = yCounter;
+          kids.forEach(function (ch) { layout(ch, depth + 1, node); });
+          var endY = yCounter - 1;
+          y = ((startY + endY) / 2) * ROW_H;
+        }
+        positioned.push({ node: node, x: x, y: y, parent: parent, hasKids: !!(node.children && node.children.length) });
+      }
+      layout(CISEM_SCHEMA_GRAPH.root, 0, null);
+
+      var byId = {};
+      positioned.forEach(function (p) { byId[p.node.id] = p; });
+
+      positioned.forEach(function (p) {
+        if (!p.parent) return;
+        var pp = byId[p.parent.id];
+        if (!pp) return;
+        var line = document.createElementNS(SVGNS, 'line');
+        line.setAttribute('class', 'mm-edge');
+        line.setAttribute('x1', pp.x + 6); line.setAttribute('y1', pp.y);
+        line.setAttribute('x2', p.x); line.setAttribute('y2', p.y);
+        edgesG.appendChild(line);
+      });
+
+      positioned.forEach(function (p) {
+        var n = p.node;
+        var g = document.createElementNS(SVGNS, 'g');
+        g.setAttribute('class', 'mm-node mm-status-' + statusClass(n.status));
+        g.setAttribute('transform', 'translate(' + p.x + ',' + p.y + ')');
+        g.setAttribute('data-nid', n.id);
+
+        var dot = document.createElementNS(SVGNS, 'circle');
+        dot.setAttribute('class', 'mm-dot'); dot.setAttribute('r', '6');
+        g.appendChild(dot);
+
+        if (p.hasKids) {
+          var tgl = document.createElementNS(SVGNS, 'circle');
+          tgl.setAttribute('class', 'mm-toggle'); tgl.setAttribute('r', '8'); tgl.setAttribute('cx', '-16');
+          tgl.setAttribute('data-nid', n.id);
+          g.appendChild(tgl);
+          var tglTxt = document.createElementNS(SVGNS, 'text');
+          tglTxt.setAttribute('class', 'mm-toggle-txt'); tglTxt.setAttribute('x', '-16'); tglTxt.setAttribute('y', '3');
+          tglTxt.setAttribute('text-anchor', 'middle');
+          tglTxt.textContent = collapsed[n.id] ? '+' : '−';
+          g.appendChild(tglTxt);
+          var doToggle = function (e) { e.stopPropagation(); collapsed[n.id] = !collapsed[n.id]; render(); };
+          tgl.addEventListener('click', doToggle);
+          tglTxt.addEventListener('click', doToggle);
+        }
+
+        var labelHolder;
+        if (n.href) {
+          labelHolder = document.createElementNS(SVGNS, 'a');
+          labelHolder.setAttribute('href', n.href);
+          labelHolder.setAttribute('class', 'mm-link');
+        } else {
+          labelHolder = document.createElementNS(SVGNS, 'g');
+        }
+        var text = document.createElementNS(SVGNS, 'text');
+        text.setAttribute('class', 'mm-label'); text.setAttribute('x', '12'); text.setAttribute('y', '4');
+        text.textContent = n.label;
+        labelHolder.appendChild(text);
+        g.appendChild(labelHolder);
+
+        var titleParts = [n.label];
+        if (n.status) titleParts.push('status: ' + n.status);
+        if (n.goal) titleParts.push(n.goal);
+        var title = document.createElementNS(SVGNS, 'title');
+        title.textContent = titleParts.join(' — ');
+        g.appendChild(title);
+
+        nodesG.appendChild(g);
+      });
+
+      var maxX = 0, maxY = 0;
+      positioned.forEach(function (p) { if (p.x > maxX) maxX = p.x; if (p.y > maxY) maxY = p.y; });
+      svg.setAttribute('viewBox', '0 0 ' + (maxX + 260) + ' ' + (maxY + 60));
+      svg.setAttribute('width', '100%');
+      svg.setAttribute('height', String(Math.max(420, Math.min(maxY + 80, 760))));
+    }
+
+    // ── pan (drag) + zoom (wheel + buttons) ──
+    var dragging = false, lastX = 0, lastY = 0;
+    svg.addEventListener('mousedown', function (e) {
+      if (e.target && e.target.closest && (e.target.closest('.mm-toggle') || e.target.closest('.mm-link'))) return;
+      dragging = true; lastX = e.clientX; lastY = e.clientY;
+    });
+    window.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      panX += (e.clientX - lastX); panY += (e.clientY - lastY);
+      lastX = e.clientX; lastY = e.clientY;
+      applyTransform();
+    });
+    window.addEventListener('mouseup', function () { dragging = false; });
+    svg.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      scale = Math.max(0.3, Math.min(2.5, scale * (e.deltaY > 0 ? 0.9 : 1.1)));
+      applyTransform();
+    }, { passive: false });
+
+    document.getElementById('mm-zoom-in').addEventListener('click', function () { scale = Math.min(2.5, scale * 1.2); applyTransform(); });
+    document.getElementById('mm-zoom-out').addEventListener('click', function () { scale = Math.max(0.3, scale / 1.2); applyTransform(); });
+    document.getElementById('mm-zoom-reset').addEventListener('click', function () { scale = 1; panX = 40; panY = 20; applyTransform(); });
+
+    applyTransform();
+  }
+
   function init() {
     initTheme();
     initLang();
@@ -780,6 +1623,7 @@
     initViewToggle();     // home page only — Grid/List toggle
     initTreeToggle();     // schema/vocabulary/corespines-set — collapsible tree rows
     initTreeEditor();     // Phase 2 — self-detects .tree-row (same 3 pages), no-op elsewhere
+    initMindmap();        // ARCH-00410 — schema.html only, companion SVG mindmap view
   }
 
   document.readyState === 'loading'
