@@ -775,7 +775,9 @@
     var cnt = document.getElementById('cnt');
     var nr  = document.getElementById('no-result');
     if (!inp) return;
-    var items = document.querySelectorAll('.fi, .gc, .cl-item, .tier-card');
+    // .gal-row added (BUILD 6, Governor 2026-07-21 — gallery catalog rows join the SAME
+    // shared search mechanism, no second search implementation, CORE-SEED 1/A8).
+    var items = document.querySelectorAll('.fi, .gc, .cl-item, .tier-card, .gal-row');
     var total = items.length;
     var treeRoots = document.querySelectorAll('ul.tree'); // 0 on non-tree pages — pure feature-detect
 
@@ -850,6 +852,34 @@
           el = el.nextElementSibling;
         }
       });
+    });
+  }
+
+  // ── PLACEHOLDER DATES (BUILD 1 support, Governor 2026-07-21) — every row/group carries
+  // data-created / data-modified so the enhanced Sort control (below) has real fields to sort
+  // by even where no real per-file date exists. Deterministic + derived from existing DOM
+  // order (never random, so a re-run/test is reproducible): data-created runs the OPPOSITE of
+  // DOM order (first-in-document = most-recently-created), so an ascending Created-date sort
+  // visibly differs from an A->Z Name sort on the same fixture; data-modified is a distinct
+  // deterministic hash of the row's own label, giving a THIRD distinct order. Skips any element
+  // that already carries a real date (gallery.html rows set their OWN real Upload-date values
+  // in markup — this never overwrites a real date with a placeholder). ──
+  function assignPlaceholderDates() {
+    var BASE = Date.UTC(2026, 0, 1); // 2026-01-01, arbitrary stable epoch
+    var DAY = 86400000;
+    var all = document.querySelectorAll('li.tree-node, .fi, .gal-row');
+    var n = all.length;
+    all.forEach(function (el, i) {
+      if (!el.hasAttribute('data-created')) {
+        el.setAttribute('data-created', new Date(BASE + (n - i) * DAY).toISOString().slice(0, 10));
+      }
+      if (!el.hasAttribute('data-modified')) {
+        var lbl = el.querySelector(':scope > .tree-row .tree-label') || el.querySelector('.gal-filename') || el;
+        var text = (lbl.textContent || '').trim();
+        var hash = 0;
+        for (var c = 0; c < text.length; c++) hash = (hash * 31 + text.charCodeAt(c)) >>> 0;
+        el.setAttribute('data-modified', new Date(BASE + (hash % 90) * DAY).toISOString().slice(0, 10));
+      }
     });
   }
 
@@ -986,6 +1016,65 @@
     setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
   }
 
+  // ═════════════════════════════════════════════════════════════════
+  // GENERIC MODAL ENGINE (BUILD 4 edit popup + BUILD 6 gallery "+" popup, Governor 2026-07-21)
+  // ONE shared mechanism — module-level so BOTH initTreeEditor()'s edit popup AND
+  // initGalleryCatalog()'s detail popup reuse it (CORE-SEED 1/A8, no duplicate modal code).
+  // Escape + outside-click close (wired once, here); Save/Cancel are per-caller content.
+  // ═════════════════════════════════════════════════════════════════
+  var _modalEscWired = false;
+  function ensureModalHost() {
+    var host = document.getElementById('cisem-modal-host');
+    if (host) return host;
+    host = document.createElement('div');
+    host.id = 'cisem-modal-host';
+    host.className = 'cisem-modal-overlay';
+    host.style.display = 'none';
+    host.innerHTML =
+      '<div class="cisem-modal" role="dialog" aria-modal="true">' +
+        '<div class="cisem-modal-hdr"><span class="cisem-modal-title"></span>' +
+          '<button type="button" class="cisem-modal-x" title="Close">&times;</button></div>' +
+        '<div class="cisem-modal-body"></div>' +
+      '</div>';
+    document.body.appendChild(host);
+    host.addEventListener('click', function (e) { if (e.target === host) closeModal(); });
+    host.querySelector('.cisem-modal-x').addEventListener('click', closeModal);
+    if (!_modalEscWired) {
+      _modalEscWired = true;
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && host.style.display !== 'none') closeModal();
+      });
+    }
+    return host;
+  }
+  function openModal(title, bodyEl) {
+    var host = ensureModalHost();
+    host.querySelector('.cisem-modal-title').textContent = title;
+    var body = host.querySelector('.cisem-modal-body');
+    body.innerHTML = '';
+    body.appendChild(bodyEl);
+    host.style.display = 'flex';
+    host.setAttribute('data-open', '1');
+    var firstField = body.querySelector('input, textarea, select');
+    if (firstField) firstField.focus();
+  }
+  function closeModal() {
+    var host = document.getElementById('cisem-modal-host');
+    if (host) { host.style.display = 'none'; host.removeAttribute('data-open'); }
+  }
+  function mkField(labelText, tagName, value) {
+    var wrap = document.createElement('div');
+    wrap.className = 'cm-field';
+    var lbl = document.createElement('label');
+    lbl.textContent = labelText;
+    wrap.appendChild(lbl);
+    var field = document.createElement(tagName || 'input');
+    if (tagName !== 'textarea') field.type = 'text';
+    field.value = value || '';
+    wrap.appendChild(field);
+    return { wrap: wrap, field: field };
+  }
+
   function initTreeEditor() {
     if (!document.querySelector('.tree-row')) return; // only tree pages
 
@@ -998,7 +1087,7 @@
       } catch (e) { return defaultChangeset(); }
     }
     function defaultChangeset() {
-      return { adds: [], deletes: [], order: {}, comments: {}, uploads: {}, moved: [] };
+      return { adds: [], deletes: [], order: {}, comments: {}, uploads: {}, moved: [], edits: {} };
     }
     function saveChangeset(cs) {
       try { localStorage.setItem(CHKEY, JSON.stringify(cs)); }
@@ -1145,48 +1234,92 @@
       wireRowToolbar(newLi);
     }
 
+    // BUILD 1 (Governor 2026-07-21) — sort key resolver: 'name' reads the visible label,
+    // 'created'/'modified' read the data-* attributes assignPlaceholderDates() guarantees on
+    // every row (real dates where gallery.html supplies them, deterministic placeholders
+    // elsewhere). ONE resolver used by every sortable container (tree groups, .fl lists,
+    // gal-catalog lists) — no per-container-type second implementation (CORE-SEED 1/A8).
+    function getSortKeyValue(el, key) {
+      if (key === 'created') return el.getAttribute('data-created') || '';
+      if (key === 'modified') return el.getAttribute('data-modified') || '';
+      var lbl = el.querySelector(':scope > .tree-row .tree-label') || el.querySelector('.gal-filename');
+      if (lbl) return lbl.textContent.trim().toLowerCase();
+      return (el.getAttribute('data-name') || el.textContent || '').trim().toLowerCase();
+    }
+
     // forceDir ('asc'|'desc') lets a page-level control (addSortButton) drive an EXPLICIT
     // direction across every group in one action; called with no arg (the original per-row
     // ⇅ button) it keeps its own toggle behavior unchanged (backward-compatible, A8 — same
-    // function, not a second sort implementation per CORE-SEED 1).
-    function sortChildren(li, forceDir) {
+    // function, not a second sort implementation per CORE-SEED 1). `key` ('name'|'created'|
+    // 'modified', BUILD 1 enhancement) defaults to 'name' so the original per-row ⇅ behavior
+    // is byte-for-byte unchanged when no key is passed.
+    function sortChildren(li, forceDir, key) {
+      key = key || 'name';
       var ul = li.querySelector(':scope > ul.tree-children');
       if (!ul) return;
       var items = Array.prototype.filter.call(ul.children, function (c) { return c.classList.contains('tree-node'); });
       var asc = forceDir ? (forceDir === 'asc') : (ul.getAttribute('data-sort') !== 'asc');
       items.sort(function (a, b) {
-        var la = (a.querySelector('.tree-label') || {}).textContent || '';
-        var lb = (b.querySelector('.tree-label') || {}).textContent || '';
-        return asc ? la.localeCompare(lb) : lb.localeCompare(la);
+        var va = getSortKeyValue(a, key), vb = getSortKeyValue(b, key);
+        var cmp = va < vb ? -1 : va > vb ? 1 : 0;
+        return asc ? cmp : -cmp;
       });
       items.forEach(function (it) { ul.appendChild(it); });
       ul.setAttribute('data-sort', asc ? 'asc' : 'desc');
       persistOrder(ul);
     }
 
+    // BUILD 1 — sorts a flat `.fi`/`.gal-row` list (Source Files blocks, gallery catalog) by the
+    // same 3 keys. Separate from sortChildren() only because these containers are NOT
+    // li.tree-node trees (no nested ul.tree-children) — same getSortKeyValue resolver, same
+    // asc/desc convention, no independent sort logic (CORE-SEED 1).
+    function sortSimpleList(ul, itemSelector, dir, key) {
+      var items = Array.prototype.filter.call(ul.children, function (c) { return c.matches && c.matches(itemSelector); });
+      if (!items.length) return;
+      items.sort(function (a, b) {
+        var va = getSortKeyValue(a, key), vb = getSortKeyValue(b, key);
+        var cmp = va < vb ? -1 : va > vb ? 1 : 0;
+        return dir === 'asc' ? cmp : -cmp;
+      });
+      items.forEach(function (it) { ul.appendChild(it); });
+    }
+
     // ── PAGE-LEVEL SORT CONTROL (shared .view-bar, ARCH-00410-follow / Governor 2026-07-21) ──
-    // Reuses sortChildren() (CORE-SEED 1 — no second sort mechanism) applied to EVERY group on
-    // the page (every li.tree-node with children), in one explicit, page-wide direction so the
-    // result is deterministic regardless of any prior per-row ⇅ state. Appended into the SAME
-    // `.view-bar` the Rows/Window/Export/Tree-Mindmap controls already share (FE-I12 — controls
-    // stay on one line; same insert-before-export idiom as initMindmap()).
+    // Reuses sortChildren()/sortSimpleList() (CORE-SEED 1 — no second sort mechanism) applied to
+    // EVERY group on the page (every li.tree-node with children, every .fl and .gal-catalog
+    // list), in one explicit, page-wide direction so the result is deterministic regardless of
+    // any prior per-row ⇅ state. Appended into the SAME `.view-bar` the Rows/Window/Export/
+    // Tree-Mindmap controls already share (FE-I12 — controls stay on one line; same
+    // insert-before-export idiom as initMindmap()). BUILD 1 (Governor 2026-07-21): the button
+    // is now paired with a <select> offering Name (A<->Z) / Creation date / Last modified.
     function addSortButton() {
       var bar = document.querySelector('main .view-bar');
       if (!bar) return; // no view-bar on this page — nothing to attach to (no orphan control)
       var dir = 'asc';
+      var sel = document.createElement('select');
+      sel.className = 'sort-key-sel'; sel.id = 'sort-key-sel';
+      sel.title = 'Choose which field to sort by';
+      [['name', 'Name (A↔Z)'], ['created', 'Creation date'], ['modified', 'Last modified']].forEach(function (o) {
+        var opt = document.createElement('option'); opt.value = o[0]; opt.textContent = o[1]; sel.appendChild(opt);
+      });
       var btn = document.createElement('button');
       btn.type = 'button'; btn.className = 'vbtn'; btn.id = 'vbtn-sort-all';
       btn.textContent = '⇅ Sort A→Z';
-      btn.title = 'Sort every group’s rows alphabetically by label (toggles A→Z / Z→A)';
+      btn.title = 'Sort every group/list by the selected field (toggles ascending/descending)';
       btn.addEventListener('click', function () {
+        var key = sel.value;
         document.querySelectorAll('li.tree-node').forEach(function (li) {
-          if (li.querySelector(':scope > ul.tree-children')) sortChildren(li, dir);
+          if (li.querySelector(':scope > ul.tree-children')) sortChildren(li, dir, key);
         });
-        btn.textContent = dir === 'asc' ? '⇅ Sort A→Z (applied)' : '⇅ Sort Z→A (applied)';
+        document.querySelectorAll('main ul.fl').forEach(function (ul) { sortSimpleList(ul, '.fi', dir, key); });
+        document.querySelectorAll('main ul.gal-catalog').forEach(function (ul) { sortSimpleList(ul, '.gal-row', dir, key); });
+        var keyLbl = sel.options[sel.selectedIndex].textContent;
+        btn.textContent = dir === 'asc' ? '⇅ Sorted ' + keyLbl + ' ↑' : '⇅ Sorted ' + keyLbl + ' ↓';
         dir = dir === 'asc' ? 'desc' : 'asc';
       });
       var exportBtn = bar.querySelector('.cs-export-btn');
-      if (exportBtn) bar.insertBefore(btn, exportBtn); else bar.appendChild(btn);
+      if (exportBtn) { bar.insertBefore(sel, exportBtn); bar.insertBefore(btn, exportBtn); }
+      else { bar.appendChild(sel); bar.appendChild(btn); }
     }
 
     function renderRowPanel(li) {
@@ -1295,6 +1428,62 @@
       stage.innerHTML = '';
     }
 
+    // BUILD 4 (Governor 2026-07-21) — Edit popup: Name / Description / Tags / Status always;
+    // on gallery.html (media rows) ALSO Alt-text / Caption / Date, per the Governor's spec
+    // ("the sensible relevant fields ... for media: alt-text/caption/date"). Reuses the ONE
+    // shared modal engine (openModal/closeModal, module-level) — not a second popup mechanism.
+    function openEditPopup(li) {
+      var nid = li.getAttribute('data-nid');
+      var row = li.querySelector(':scope > .tree-row');
+      var labelEl = row.querySelector('.tree-label');
+      var noteEl = row.querySelector('.tree-note');
+      var tagEl = row.querySelector('.tree-tag');
+      var cs = loadChangeset();
+      cs.edits = cs.edits || {};
+      var ex = cs.edits[nid] || {};
+
+      var form = document.createElement('div');
+      var fName = mkField('Name', 'input', ex.name || (labelEl ? labelEl.textContent.trim() : ''));
+      var fDesc = mkField('Description', 'textarea', ex.description || (noteEl ? noteEl.textContent.replace(/^—\s*/, '').trim() : ''));
+      var fTags = mkField('Tags', 'input', ex.tags || (tagEl ? tagEl.textContent.trim() : ''));
+      var fStatus = mkField('Status', 'input', ex.status || '');
+      form.appendChild(fName.wrap); form.appendChild(fDesc.wrap); form.appendChild(fTags.wrap); form.appendChild(fStatus.wrap);
+
+      var isMedia = /gallery\.html/.test(location.pathname);
+      var fAlt, fCaption, fDate;
+      if (isMedia) {
+        fAlt = mkField('Alt text', 'input', ex.alt || '');
+        fCaption = mkField('Caption', 'textarea', ex.caption || '');
+        fDate = mkField('Date', 'input', ex.date || li.getAttribute('data-created') || '');
+        form.appendChild(fAlt.wrap); form.appendChild(fCaption.wrap); form.appendChild(fDate.wrap);
+      }
+
+      var actions = document.createElement('div');
+      actions.className = 'cm-actions';
+      var cancelBtn = document.createElement('button');
+      cancelBtn.type = 'button'; cancelBtn.className = 'cm-btn'; cancelBtn.textContent = 'Cancel';
+      cancelBtn.addEventListener('click', closeModal);
+      var saveBtn = document.createElement('button');
+      saveBtn.type = 'button'; saveBtn.className = 'cm-btn primary'; saveBtn.textContent = 'Save';
+      saveBtn.addEventListener('click', function () {
+        var cs2 = loadChangeset();
+        cs2.edits = cs2.edits || {};
+        var entry = { name: fName.field.value, description: fDesc.field.value, tags: fTags.field.value, status: fStatus.field.value };
+        if (isMedia) { entry.alt = fAlt.field.value; entry.caption = fCaption.field.value; entry.date = fDate.field.value; }
+        cs2.edits[nid] = entry;
+        saveChangeset(cs2);
+        // reflect in the DOM immediately (behavioral — not just stored)
+        if (labelEl && entry.name) labelEl.textContent = entry.name;
+        if (noteEl) noteEl.textContent = entry.description ? '— ' + entry.description : noteEl.textContent;
+        if (tagEl && entry.tags) tagEl.textContent = entry.tags;
+        closeModal();
+      });
+      actions.appendChild(cancelBtn); actions.appendChild(saveBtn);
+      form.appendChild(actions);
+
+      openModal('Edit Row', form);
+    }
+
     function wireRowToolbar(li) {
       var row = li.querySelector(':scope > .tree-row');
       if (!row) return;
@@ -1314,7 +1503,13 @@
       }
 
       mkBtn('+', 'Add child row', function () { addChild(li); });
-      mkBtn('×', 'Delete this row', function () { deleteRow(li); });
+      // BUILD 4 (Governor 2026-07-21) — Edit control, MANDATORY on every row/sub-group/group.
+      // wireRowToolbar() already runs on EVERY li.tree-node (rows, sub-groups, groups alike),
+      // so adding it here covers the whole class in one place (DEFECT->CLASS-AUDIT satisfied
+      // by construction — one function, every instance).
+      mkBtn('✎', 'Edit this row', function () { openEditPopup(li); }).classList.add('rt-btn-edit');
+      // BUILD 3 (Governor 2026-07-21) — delete is RED, consistently, everywhere it's created.
+      mkBtn('×', 'Delete this row', function () { deleteRow(li); }).classList.add('rt-btn-danger');
       mkBtn('↑', 'Move up', function () { moveRow(li, 'up'); });
       mkBtn('↓', 'Move down', function () { moveRow(li, 'down'); });
 
@@ -1382,6 +1577,23 @@
         renderAddedChild(parent, a);
       });
     }
+    // BUILD 4 — restore saved Edit-popup values on page load (Name/Tags reflected in the DOM
+    // labels; Description prefixes with "— " to match the existing .tree-note convention).
+    function applyEdits(cs) {
+      Object.keys(cs.edits || {}).forEach(function (nid) {
+        var li = document.querySelector('li[data-nid="' + nid + '"]');
+        if (!li) return;
+        var row = li.querySelector(':scope > .tree-row');
+        if (!row) return;
+        var entry = cs.edits[nid];
+        var labelEl = row.querySelector('.tree-label');
+        var noteEl = row.querySelector('.tree-note');
+        var tagEl = row.querySelector('.tree-tag');
+        if (labelEl && entry.name) labelEl.textContent = entry.name;
+        if (noteEl && entry.description) noteEl.textContent = '— ' + entry.description;
+        if (tagEl && entry.tags) tagEl.textContent = entry.tags;
+      });
+    }
     function applyOrder(cs) {
       Object.keys(cs.order || {}).forEach(function (parentNid) {
         var parentUl = document.querySelector('ul[data-nid="' + parentNid + '"]');
@@ -1439,6 +1651,7 @@
     applyAdds(cs0);
     document.querySelectorAll('li.tree-node').forEach(function (li) { wireRowToolbar(li); });
     applyOrder(cs0);
+    applyEdits(cs0);
     addSortButton();
     addChangesetButton();
   }
@@ -1700,6 +1913,246 @@
     });
   }
 
+  // ═════════════════════════════════════════════════════════════════
+  // GALLERY CATALOG (BUILD 6, Governor 2026-07-21) — self-detects via `.gal-catalog`
+  // presence, no-op elsewhere (same feature-detect idiom as initTreeEditor/initMindmap,
+  // FE-I2 single-JS, no HTML-edit-per-page assumptions beyond gallery.html's own markup).
+  // Collapsed-list rows -> "+" opens a popup with the larger view + full metadata (title,
+  // alt, caption, dimensions, format, size, date, SEO) + a ♥ favorite toggle + editable
+  // tags/status — this SAME popup doubles as BUILD 4's mandatory per-row Edit control for
+  // these rows (they are not li.tree-node, so wireRowToolbar's ✎ doesn't reach them; giving
+  // them their own edit-capable popup here satisfies Build 4 without a second popup engine —
+  // reuses openModal/closeModal/mkField, CORE-SEED 1/A8).
+  // ═════════════════════════════════════════════════════════════════
+  function initGalleryCatalog() {
+    var catalogs = document.querySelectorAll('.gal-catalog');
+    if (!catalogs.length) return;
+
+    var PAGE = location.pathname.split('/').pop() || 'page';
+    function loadJSON(key) { try { return JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { return {}; } }
+    function saveJSON(key, obj) { try { localStorage.setItem(key, JSON.stringify(obj)); } catch (e) { /* storage full — non-fatal */ } }
+    var favs = loadJSON('cisem-gallery-fav:' + PAGE);
+    var edits = loadJSON('cisem-gallery-edits:' + PAGE);
+    var thumbs = loadJSON('cisem-gallery-thumbs:' + PAGE);
+
+    function getMeta(row) {
+      var m = {};
+      try { m = JSON.parse(row.getAttribute('data-meta') || '{}'); } catch (e) { /* malformed data-meta — fall back to {} */ }
+      var catno = row.getAttribute('data-catno');
+      var ov = edits[catno];
+      if (ov) for (var k in ov) m[k] = ov[k];
+      return m;
+    }
+    function applyFav(row) {
+      var catno = row.getAttribute('data-catno');
+      var btn = row.querySelector('.gal-fav-btn');
+      var active = !!favs[catno];
+      if (btn) { btn.classList.toggle('active', active); btn.textContent = active ? '♥' : '♡'; }
+      return active;
+    }
+    function toggleFav(row) {
+      var catno = row.getAttribute('data-catno');
+      favs[catno] = !favs[catno];
+      saveJSON('cisem-gallery-fav:' + PAGE, favs);
+      applyFav(row);
+    }
+    function applyThumb(row) {
+      var catno = row.getAttribute('data-catno');
+      var el = row.querySelector('.gal-thumb');
+      if (el && thumbs[catno]) {
+        el.style.backgroundImage = 'url(' + thumbs[catno] + ')';
+        el.style.backgroundSize = 'cover'; el.style.backgroundPosition = 'center';
+        el.textContent = '';
+      }
+    }
+
+    function openDetailPopup(row) {
+      var meta = getMeta(row);
+      var catno = row.getAttribute('data-catno');
+      var form = document.createElement('div');
+
+      var thumbLg = document.createElement('div');
+      thumbLg.className = 'gal-detail-thumb-lg';
+      var srcThumb = row.querySelector('.gal-thumb');
+      thumbLg.textContent = srcThumb ? srcThumb.textContent || '\u{1F5BC}' : '\u{1F5BC}';
+      form.appendChild(thumbLg);
+
+      var favBtn = document.createElement('button');
+      favBtn.type = 'button'; favBtn.className = 'cm-btn' + (favs[catno] ? ' primary' : '');
+      favBtn.textContent = favs[catno] ? '♥ Favorited' : '♡ Add to favorites';
+      favBtn.style.marginBottom = '12px';
+      favBtn.addEventListener('click', function () {
+        toggleFav(row);
+        favBtn.textContent = favs[catno] ? '♥ Favorited' : '♡ Add to favorites';
+        favBtn.classList.toggle('primary', !!favs[catno]);
+      });
+      form.appendChild(favBtn);
+
+      var grid = document.createElement('div');
+      grid.className = 'cm-detail-grid';
+      var fTitle = mkField('Title', 'input', meta.title || '');
+      var fAlt = mkField('Alt text', 'input', meta.alt || '');
+      var fCaption = mkField('Caption', 'textarea', meta.caption || '');
+      var fDate = mkField('Date of creation', 'input', meta.date || row.getAttribute('data-created') || '');
+      var fTags = mkField('Tags', 'input', row.getAttribute('data-tags') || '');
+      var fStatus = mkField('Status', 'input', row.getAttribute('data-status') || '');
+      [fTitle, fAlt, fCaption, fDate, fTags, fStatus].forEach(function (f) { grid.appendChild(f.wrap); });
+      form.appendChild(grid);
+
+      var infoLines = [
+        ['Filename', meta.filename], ['Catalog #', catno], ['Dimensions', meta.dimensions],
+        ['Format', meta.format], ['File size', meta.size],
+        ['SEO title', meta.seo_title], ['SEO description', meta.seo_desc],
+        ['schema.org type', meta.seo_type], ['Filename slug', meta.seo_slug], ['Keywords', meta.seo_keywords]
+      ].filter(function (p) { return p[1]; });
+      var info = document.createElement('div');
+      info.className = 'gal-legacy-note';
+      info.innerHTML = infoLines.map(function (p) {
+        return '<div style="margin-bottom:3px;"><strong style="color:var(--text)">' + escapeHtml(p[0]) + ':</strong> ' + escapeHtml(p[1]) + '</div>';
+      }).join('');
+      form.appendChild(info);
+
+      var actions = document.createElement('div');
+      actions.className = 'cm-actions';
+      var cancelBtn = document.createElement('button');
+      cancelBtn.type = 'button'; cancelBtn.className = 'cm-btn'; cancelBtn.textContent = 'Close';
+      cancelBtn.addEventListener('click', closeModal);
+      var saveBtn = document.createElement('button');
+      saveBtn.type = 'button'; saveBtn.className = 'cm-btn primary'; saveBtn.textContent = 'Save';
+      saveBtn.addEventListener('click', function () {
+        edits[catno] = edits[catno] || {};
+        edits[catno].title = fTitle.field.value;
+        edits[catno].alt = fAlt.field.value;
+        edits[catno].caption = fCaption.field.value;
+        edits[catno].date = fDate.field.value;
+        saveJSON('cisem-gallery-edits:' + PAGE, edits);
+        row.setAttribute('data-tags', fTags.field.value);
+        row.setAttribute('data-status', fStatus.field.value);
+        closeModal();
+      });
+      actions.appendChild(cancelBtn); actions.appendChild(saveBtn);
+      form.appendChild(actions);
+
+      openModal('Media Details — ' + catno, form);
+    }
+
+    document.querySelectorAll('.gal-row').forEach(function (row) {
+      applyFav(row);
+      applyThumb(row);
+      var favBtn = row.querySelector('.gal-fav-btn');
+      if (favBtn) favBtn.addEventListener('click', function () { toggleFav(row); });
+      var plusBtn = row.querySelector('.gal-plus-btn');
+      if (plusBtn) plusBtn.addEventListener('click', function () { openDetailPopup(row); });
+
+      // BUILD 5 — "allow changing/adding a thumbnail where media rows exist"
+      var thumbEl = row.querySelector('.gal-thumb');
+      if (thumbEl) {
+        var fileInput = document.createElement('input');
+        fileInput.type = 'file'; fileInput.accept = 'image/*'; fileInput.className = 'rt-file-input';
+        row.appendChild(fileInput);
+        thumbEl.title = 'Click to change thumbnail';
+        thumbEl.style.cursor = 'pointer';
+        thumbEl.addEventListener('click', function (e) { e.stopPropagation(); fileInput.click(); });
+        fileInput.addEventListener('click', function (e) { e.stopPropagation(); });
+        fileInput.addEventListener('change', function () {
+          var file = fileInput.files && fileInput.files[0];
+          if (!file) return;
+          var reader = new FileReader();
+          reader.onload = function () {
+            thumbs[row.getAttribute('data-catno')] = reader.result;
+            saveJSON('cisem-gallery-thumbs:' + PAGE, thumbs);
+            applyThumb(row);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    });
+
+    // ── view-mode (Collapsed / Details) + thumbnail-size (S/M/L) controls, per panel ──
+    document.querySelectorAll('.gal-toolbar').forEach(function (bar) {
+      var catalog = bar.nextElementSibling;
+      while (catalog && !catalog.classList.contains('gal-catalog')) catalog = catalog.nextElementSibling;
+      if (!catalog) return;
+      var modeBtns = bar.querySelectorAll('.gal-mode-btn');
+      modeBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          modeBtns.forEach(function (x) { x.classList.remove('active'); });
+          b.classList.add('active');
+          var mode = b.getAttribute('data-mode');
+          catalog.classList.toggle('gal-mode-collapsed', mode === 'collapsed');
+          catalog.classList.toggle('gal-mode-details', mode === 'details');
+        });
+      });
+      var sizeBtns = bar.querySelectorAll('.gal-size-btn');
+      sizeBtns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          sizeBtns.forEach(function (x) { x.classList.remove('active'); });
+          b.classList.add('active');
+          catalog.setAttribute('data-size', b.getAttribute('data-size'));
+        });
+      });
+    });
+  }
+
+  // ═════════════════════════════════════════════════════════════════
+  // INLINE TEXT EDIT (BUILD 5, Governor 2026-07-21) — clicking a registered text element
+  // makes it editable in place (contenteditable), with a subtle hover affordance (CSS
+  // .inline-editable). Scope is deliberately the NON-navigational, NON-toggle-controlling
+  // text surfaces (page titles/descriptions, tree leaf/branch labels+notes+tags, gallery
+  // filenames/catalog numbers) — `.fp`/file-list link text is EXCLUDED (it is the sole
+  // navigation target inside an `<a>`; overloading it would make a real repo-file link
+  // ambiguous between "navigate" and "edit", flagged in the build report rather than
+  // guessed). Persists per-page via localStorage (same auto-inject idiom as the rest of
+  // this file — zero HTML edits). ──
+  function initInlineEdit() {
+    var KEY = 'cisem-inline-edits:' + (location.pathname.split('/').pop() || 'page');
+    function loadEdits() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+    function saveEdits(obj) { try { localStorage.setItem(KEY, JSON.stringify(obj)); } catch (e) { /* storage full — non-fatal */ } }
+
+    var SELECTOR = 'h1, .pg-desc, .tree-label, .tree-note, .tree-tag, .gal-filename, .gal-catno-lbl';
+    var matches = Array.prototype.slice.call(document.querySelectorAll(SELECTOR));
+    var edits = loadEdits();
+
+    function pathFor(el, idx) {
+      var li = el.closest && el.closest('li[data-nid]');
+      var cls = (el.className && String(el.className).split(' ')[0]) || el.tagName.toLowerCase();
+      return li ? ('nid:' + li.getAttribute('data-nid') + ':' + cls) : ('idx:' + idx + ':' + cls);
+    }
+
+    matches.forEach(function (el, idx) {
+      var key = pathFor(el, idx);
+      if (edits[key] !== undefined) el.textContent = edits[key];
+      el.classList.add('inline-editable');
+      if (!el.hasAttribute('title')) el.title = 'Click to edit';
+
+      el.addEventListener('click', function (e) {
+        if (el.isContentEditable) return; // already editing — let normal text-caret click through
+        e.preventDefault();
+        e.stopPropagation(); // don't also trigger a parent branch-row's collapse/expand toggle
+        el.setAttribute('contenteditable', 'true');
+        el.classList.add('inline-editing');
+        el.focus();
+        try {
+          var range = document.createRange();
+          range.selectNodeContents(el);
+          var sel = window.getSelection();
+          if (sel) { sel.removeAllRanges(); sel.addRange(range); }
+        } catch (selErr) { /* Selection API unavailable in this environment — edit still works */ }
+      });
+      el.addEventListener('blur', function () {
+        el.setAttribute('contenteditable', 'false');
+        el.classList.remove('inline-editing');
+        var e2 = loadEdits();
+        e2[pathFor(el, idx)] = el.textContent;
+        saveEdits(e2);
+      });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); el.blur(); }
+        if (e.key === 'Escape') { e.preventDefault(); el.blur(); }
+      });
+    });
+  }
+
   function init() {
     initTheme();
     initLang();
@@ -1711,6 +2164,9 @@
     initTreeEditor();     // Phase 2 — self-detects .tree-row (same 3 pages), no-op elsewhere
     initMindmap();        // ARCH-00410 — schema.html only, companion SVG mindmap view
     initUxUiTabs();       // uxui.html only — UX/UI tab switch, self-detected
+    assignPlaceholderDates(); // BUILD 1 — data-created/data-modified on every row/group/gal-row
+    initGalleryCatalog(); // BUILD 6 — gallery.html only, self-detected via .gal-catalog
+    initInlineEdit();     // BUILD 5 — click-to-edit text, all pages (runs last: data-nid + gal markup must exist first)
   }
 
   document.readyState === 'loading'

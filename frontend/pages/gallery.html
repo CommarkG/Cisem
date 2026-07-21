@@ -62,8 +62,55 @@
   </div>
 
   <div id="gal-panel-pictures" class="uxui-panel" role="tabpanel" aria-labelledby="gal-tab-pictures">
-    <div class="sh">Sample Pictures</div>
-    <ul class="tree">
+    <!-- BUILD 6 (Governor 2026-07-21) — a gallery is a MEDIA CATALOG, not a photo grid.
+         Default view = collapsed compact rows (filename + catalog number only); a "+" opens
+         the full detail popup (larger view + all metadata + SEO + a heart favorite + editable
+         tags/status — search.js initGalleryCatalog()). Thumbnail-size + Details view below.
+         Search + Sort are the SAME shared mechanisms as every other page (Build 1/FE-I2). -->
+    <div class="gal-toolbar">
+      <div class="gal-view-modes"><span class="gal-toolbar-lbl">View</span>
+        <button type="button" class="gal-mode-btn active" data-mode="collapsed">Collapsed List</button>
+        <button type="button" class="gal-mode-btn" data-mode="details">Details</button>
+      </div>
+      <div class="gal-thumb-sizes"><span class="gal-toolbar-lbl">Thumbnail size</span>
+        <button type="button" class="gal-size-btn" data-size="s">S</button>
+        <button type="button" class="gal-size-btn active" data-size="m">M</button>
+        <button type="button" class="gal-size-btn" data-size="l">L</button>
+      </div>
+    </div>
+    <ul class="gal-catalog gal-mode-collapsed" data-size="m">
+      <li class="gal-row" data-catno="CAT-P001" data-tags="hero, homepage, dark-theme" data-status="PREVIEW"
+          data-created="2026-07-15" data-modified="2026-07-16"
+          data-meta='{"filename":"hero-banner-2026.jpg","title":"Hero Banner — CISEM Platform","alt":"CISEM platform hero banner showing the schema dashboard","caption":"Homepage hero image, dark theme","dimensions":"1920×640","size":"184 KB","format":"JPEG","date":"2026-07-15","seo_title":"CISEM — Self-Governing AI Platform","seo_desc":"The self-governing creation platform for AI-built systems.","seo_type":"ImageObject","seo_slug":"hero-banner-2026","seo_keywords":"cisem, platform, hero, governance"}'>
+        <span class="thumb-ph gal-thumb" title="placeholder — no real file shipped">&#128247;</span>
+        <span class="gal-filename">hero-banner-2026.jpg</span>
+        <span class="gal-catno-lbl">CAT-P001</span>
+        <button type="button" class="gal-fav-btn" title="Toggle favorite">&#9825;</button>
+        <button type="button" class="gal-plus-btn" title="View full details">+</button>
+      </li>
+      <li class="gal-row" data-catno="CAT-P002" data-tags="schema, diagram" data-status="PREVIEW"
+          data-created="2026-07-18" data-modified="2026-07-19"
+          data-meta='{"filename":"schema-diagram.png","title":"Schema Placement Diagram","alt":"Diagram of the T-SYS/T-DOM schema hierarchy","caption":"Full schema tree, generated from corespine-registry.yaml","dimensions":"1200×900","size":"96 KB","format":"PNG","date":"2026-07-18","seo_title":"CISEM Schema Placement Diagram","seo_desc":"Visual map of every node&#39;s position in T-SYS/T-DOM.","seo_type":"ImageObject","seo_slug":"schema-diagram","seo_keywords":"schema, t-sys, t-dom, hierarchy"}'>
+        <span class="thumb-ph gal-thumb" title="placeholder — no real file shipped">&#128247;</span>
+        <span class="gal-filename">schema-diagram.png</span>
+        <span class="gal-catno-lbl">CAT-P002</span>
+        <button type="button" class="gal-fav-btn" title="Toggle favorite">&#9825;</button>
+        <button type="button" class="gal-plus-btn" title="View full details">+</button>
+      </li>
+      <li class="gal-row" data-catno="CAT-P003" data-tags="agents, haiku, sonnet, opus" data-status="PREVIEW"
+          data-created="2026-07-19" data-modified="2026-07-20"
+          data-meta='{"filename":"agent-team-icons.svg","title":"Agent Team Iconset","alt":"Icons representing Haiku, Sonnet, and Opus agent tiers","caption":"Used on the Agents index page","dimensions":"512×512","size":"22 KB","format":"SVG","date":"2026-07-19","seo_title":"CISEM Agent Team","seo_desc":"Haiku gathers, Sonnet builds, Opus judges.","seo_type":"ImageObject","seo_slug":"agent-team-icons","seo_keywords":"agents, haiku, sonnet, opus"}'>
+        <span class="thumb-ph gal-thumb" title="placeholder — no real file shipped">&#128247;</span>
+        <span class="gal-filename">agent-team-icons.svg</span>
+        <span class="gal-catno-lbl">CAT-P003</span>
+        <button type="button" class="gal-fav-btn" title="Toggle favorite">&#9825;</button>
+        <button type="button" class="gal-plus-btn" title="View full details">+</button>
+      </li>
+    </ul>
+
+    <div class="sh sh-closed">Full Metadata Tree (legacy view — unchanged, kept per Hard Constraint: nothing removed)</div>
+    <p class="gal-legacy-note sh-hidden">The pre-existing collapsible Metadata/SEO tree, preserved exactly as built — same content, same per-row control bar (⇅ sort, ✎ edit, × delete, comments, exports). The catalog above is the new default surface; this stays reachable, not deleted.</p>
+    <ul class="tree sh-hidden">
       <li class="tree-node">
         <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">Sample Pictures</span><span class="tree-tag">3 items</span></div>
         <ul class="tree-children">
@@ -161,8 +208,50 @@
   </div>
 
   <div id="gal-panel-videos" class="uxui-panel" role="tabpanel" aria-labelledby="gal-tab-videos" hidden>
-    <div class="sh">Sample Videos</div>
-    <ul class="tree">
+    <div class="gal-toolbar">
+      <div class="gal-view-modes"><span class="gal-toolbar-lbl">View</span>
+        <button type="button" class="gal-mode-btn active" data-mode="collapsed">Collapsed List</button>
+        <button type="button" class="gal-mode-btn" data-mode="details">Details</button>
+      </div>
+      <div class="gal-thumb-sizes"><span class="gal-toolbar-lbl">Thumbnail size</span>
+        <button type="button" class="gal-size-btn" data-size="s">S</button>
+        <button type="button" class="gal-size-btn active" data-size="m">M</button>
+        <button type="button" class="gal-size-btn" data-size="l">L</button>
+      </div>
+    </div>
+    <ul class="gal-catalog gal-mode-collapsed" data-size="m">
+      <li class="gal-row" data-catno="CAT-V001" data-tags="onboarding, walkthrough, tutorial" data-status="PREVIEW"
+          data-created="2026-07-20" data-modified="2026-07-20"
+          data-meta='{"filename":"onboarding-walkthrough.mp4","title":"CISEM Onboarding Walkthrough","alt":"Screen recording walking through the CISEM living index","caption":"4-minute tour of the schema, corespines, and agent pages","dimensions":"1920×1080","size":"18.4 MB","format":"MP4","date":"2026-07-20","seo_title":"CISEM Onboarding Walkthrough","seo_desc":"A guided tour of the CISEM platform for new collaborators.","seo_type":"VideoObject","seo_slug":"onboarding-walkthrough","seo_keywords":"onboarding, walkthrough, tutorial"}'>
+        <span class="thumb-ph gal-thumb" title="placeholder — no real file shipped">&#127909;</span>
+        <span class="gal-filename">onboarding-walkthrough.mp4</span>
+        <span class="gal-catno-lbl">CAT-V001</span>
+        <button type="button" class="gal-fav-btn" title="Toggle favorite">&#9825;</button>
+        <button type="button" class="gal-plus-btn" title="View full details">+</button>
+      </li>
+      <li class="gal-row" data-catno="CAT-V002" data-tags="creation-triad, hardcoding, pocket, oversight" data-status="PREVIEW"
+          data-created="2026-07-20" data-modified="2026-07-21"
+          data-meta='{"filename":"creation-triad-explainer.mp4","title":"The Creation Triad Explained","alt":"Short explainer on hardcoding + AI pocket + AI oversight","caption":"§3.7 Creation Triad, animated walkthrough","dimensions":"1280×720","size":"9.1 MB","format":"MP4","date":"2026-07-20","seo_title":"The CISEM Creation Triad","seo_desc":"How hardcoding, AI pockets, and oversight combine on every creation.","seo_type":"VideoObject","seo_slug":"creation-triad-explainer","seo_keywords":"creation-triad, hardcoding, pocket, oversight"}'>
+        <span class="thumb-ph gal-thumb" title="placeholder — no real file shipped">&#127909;</span>
+        <span class="gal-filename">creation-triad-explainer.mp4</span>
+        <span class="gal-catno-lbl">CAT-V002</span>
+        <button type="button" class="gal-fav-btn" title="Toggle favorite">&#9825;</button>
+        <button type="button" class="gal-plus-btn" title="View full details">+</button>
+      </li>
+      <li class="gal-row" data-catno="CAT-V003" data-tags="zero-findings, plan-audit, zf, gate" data-status="PREVIEW"
+          data-created="2026-07-21" data-modified="2026-07-21"
+          data-meta='{"filename":"zf-gate-demo.webm","title":"Zero-Findings Gate Demo","alt":"Terminal recording of a plan-audit run reaching [ZF] ACHIEVED","caption":"Live run of dna/checks/plan-audit.sh","dimensions":"1600×900","size":"6.7 MB","format":"WEBM","date":"2026-07-21","seo_title":"CISEM Zero-Findings Gate","seo_desc":"Watch the plan-audit.sh gate reach ZF ACHIEVED.","seo_type":"VideoObject","seo_slug":"zf-gate-demo","seo_keywords":"zero-findings, plan-audit, zf, gate"}'>
+        <span class="thumb-ph gal-thumb" title="placeholder — no real file shipped">&#127909;</span>
+        <span class="gal-filename">zf-gate-demo.webm</span>
+        <span class="gal-catno-lbl">CAT-V003</span>
+        <button type="button" class="gal-fav-btn" title="Toggle favorite">&#9825;</button>
+        <button type="button" class="gal-plus-btn" title="View full details">+</button>
+      </li>
+    </ul>
+
+    <div class="sh sh-closed">Full Metadata Tree (legacy view — unchanged, kept per Hard Constraint: nothing removed)</div>
+    <p class="gal-legacy-note sh-hidden">The pre-existing collapsible Metadata/SEO tree, preserved exactly as built. The catalog above is the new default surface; this stays reachable, not deleted.</p>
+    <ul class="tree sh-hidden">
       <li class="tree-node">
         <div class="tree-row branch-row"><span class="tree-toggle">&minus;</span><span class="tree-label branch">Sample Videos</span><span class="tree-tag">3 items</span></div>
         <ul class="tree-children">
@@ -262,8 +351,8 @@
   <div class="sh">Source Files</div>
   <ul class="fl">
     <li class="fi"><a href="../../dna/corespines/CS-FRONTEND-001/CISEM-ARCH-00393-frontend-corespine-manifest.md"><span class="ico">&#128196;</span>CISEM-ARCH-00393-frontend-corespine-manifest.md<span class="fp">dna/corespines/CS-FRONTEND-001/ &mdash; invariants FE-I1&ndash;FE-I13, the tree + control-bar pattern this page reuses</span></a></li>
-    <li class="fi"><a href="../js/search.js"><span class="ico">&#128202;</span>search.js<span class="fp">frontend/js/ &mdash; initTreeEditor / wireRowToolbar / initUxUiTabs (self-detected, no new JS)</span></a></li>
-    <li class="fi"><a href="../css/style.css"><span class="ico">&#128202;</span>style.css<span class="fp">frontend/css/ &mdash; .thumb-ph placeholder box token (additive, FE-I1 single stylesheet)</span></a></li>
+    <li class="fi"><a href="../js/search.js"><span class="ico">&#128202;</span>search.js<span class="fp">frontend/js/ &mdash; initTreeEditor / wireRowToolbar / initUxUiTabs / initGalleryCatalog / initInlineEdit (self-detected, no new JS)</span></a></li>
+    <li class="fi"><a href="../css/style.css"><span class="ico">&#128202;</span>style.css<span class="fp">frontend/css/ &mdash; .thumb-ph, .gal-catalog, .cisem-modal-* tokens (additive, FE-I1 single stylesheet)</span></a></li>
   </ul>
 
   <div id="no-result">No files match your search.</div>

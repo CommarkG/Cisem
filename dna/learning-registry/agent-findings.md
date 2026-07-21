@@ -100,3 +100,34 @@ Entry format (append, newest at bottom):
   corespine's authority). A check that only supports one suppression shape will force future exceptions into the
   wrong shape to fit it. CLASS: an exceptions/allowlist registry feeding a mechanical check should support both
   id-scoped and path-scoped entries from the start, not retrofit the second shape later. → DISTILL-PENDING.
+- [2026-07-21 · cisem-sonnet · CS-FRONTEND-001 UX build (BUILD 1–6, Governor dispatch via Opus)] **A literal
+  "redefine the page" instruction can collide with the Hard Constraint "never remove an element without flagging"
+  — the resolution is ADD-a-new-default-view + demote-the-old-to-collapsed-and-labeled-legacy, not delete-and-
+  replace.** Build 6 asked to "redefine" gallery.html's tabs from a deep Metadata/SEO tree into a collapsed
+  filename+catalog-number list. Deleting the tree to build the new view would have violated the Hard Constraint
+  and Principle 18A (no collateral deletion). Instead: the new collapsed-list catalog became the prominent DEFAULT
+  surface; the pre-existing tree was wrapped under a `.sh sh-closed` header retitled "Full Metadata Tree (legacy
+  view — unchanged, kept per Hard Constraint)" and left byte-identical underneath, still fully functional (search/
+  sort/edit/delete all still reach it). CLASS: whenever a dispatch says "redefine/replace X" AND a standing
+  no-removal constraint applies, the correct resolution is ADDITIVE-default-swap (new content becomes primary,
+  old content is demoted+labeled+preserved, never deleted) — this should be a named pattern (candidate: "additive
+  redefinition") folded into CLAUDE.md Principle 18A alongside deletion-guard/element-inventory, so future dispatches
+  phrase "redefine" instructions with this resolution pre-agreed rather than leaving the tension implicit. →
+  DISTILL-PENDING.
+- [2026-07-21 · cisem-sonnet · CS-FRONTEND-001 UX build] **jsdom does not implement the `.contentEditable` IDL
+  property reflection** (only the underlying `contenteditable` DOM ATTRIBUTE works via getAttribute/setAttribute)
+  — a behavioral test asserting `el.contentEditable === 'true'` after `el.setAttribute('contenteditable','true')`
+  silently returns `undefined` and fails, even though the real behavior (and real-browser behavior) is correct.
+  CLASS: any FUTURE contenteditable/inline-edit behavioral test in `functional-check.mjs` (this frontend's jsdom
+  gate) MUST assert via `el.getAttribute('contenteditable')`, never the `.contentEditable` property — a general
+  jsdom-gap note worth adding to the functional-check.mjs file header so the next builder doesn't re-lose the same
+  hour re-discovering it. → DISTILL-PENDING (candidate: fold into FE-I11's jsdom-gate documentation).
+- [2026-07-21 · cisem-sonnet · CS-FRONTEND-001 UX build] **Extending a SHARED mechanism (one Sort button now
+  covering tree groups + `.fl` lists + the new `.gal-catalog`) can silently invalidate a sibling test's assumption
+  of stable DOM position.** The pre-existing gallery sort test clicked the SAME `#vbtn-sort-all` button my Build-1
+  enhancement now also wires to `.gal-catalog`; that earlier click re-sorted my new catalog rows as a correct
+  side-effect, which broke a LATER test that assumed `picRows[0]` was still "hero-banner-2026" by position. Fixed
+  by keying the later assertion off a STABLE identifier (`data-catno`) instead of DOM position. CLASS: any test
+  that captures "the Nth row" as a variable for reuse several assertions later, on a page where a SHARED sort/
+  reorder mechanism might fire in between, should re-query by a stable attribute at point of use — not trust a
+  captured NodeList-index reference across intervening reorder-capable clicks. → DISTILL-PENDING.

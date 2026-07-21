@@ -75,6 +75,19 @@ nav { background: var(--nav); border-bottom: 1px solid var(--border); padding: 0
 .bc { padding: 6px 20px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0; }
 .bc-arr { background: none; border: 1px solid var(--border); border-radius: 3px; color: var(--muted); cursor: pointer; font-size: 10px; padding: 1px 6px; margin-right: 8px; line-height: 1.5; }
 .bc-arr:hover { color: var(--hover); border-color: var(--accent); background: var(--nav); }
+/* BUILD 2 (Governor 2026-07-21) — back=RED, forward=GREEN, gentle/delicate thin outline.
+   Selected structurally (first .bc-arr = Back, its immediate sibling = Forward) — NOT by
+   [title=...], because initLang() rewrites the title attribute text on language switch
+   (EN "Back" -> HE "אחורה"), which would silently break a title-based selector. Glyph color
+   reuses --danger/--success (already FE-I13-measured >=4.5:1 on --bg/--nav, both themes,
+   GATE A) — no new contrast pairs introduced. Border stays a LOW-OPACITY tint of the same
+   hue (the "gentle/delicate" outline), full-strength only on hover/focus. */
+.bc .bc-arr:first-child { color: var(--danger); border-color: rgba(248,81,73,.4); }
+.bc .bc-arr:first-child:hover, .bc .bc-arr:first-child:focus { color: var(--danger); border-color: var(--danger); background: rgba(248,81,73,.08); }
+.bc .bc-arr:first-child + .bc-arr { color: var(--success); border-color: rgba(63,185,80,.4); }
+.bc .bc-arr:first-child + .bc-arr:hover, .bc .bc-arr:first-child + .bc-arr:focus { color: var(--success); border-color: var(--success); background: rgba(63,185,80,.08); }
+:root[data-theme="light"] .bc .bc-arr:first-child { border-color: rgba(164,14,38,.35); }
+:root[data-theme="light"] .bc .bc-arr:first-child + .bc-arr { border-color: rgba(17,99,41,.35); }
 .bc a { color: var(--accent); text-decoration: none; }
 .bc a:hover { text-decoration: underline; }
 .bc .sep { margin: 0 5px; opacity: .5; }
@@ -303,6 +316,17 @@ a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
 @media (max-width: 480px) { .rt-tools { display: none; } }
 .rt-btn { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; line-height: 1; padding: 3px 5px; cursor: pointer; font-family: var(--mono); }
 .rt-btn:hover { color: var(--hover); border-color: var(--accent); }
+/* BUILD 3 (Governor 2026-07-21) — every delete control (the × in every row/group/sub-group
+   control bar) is RED, consistently, across every page — ONE class, applied at the ONE place
+   the delete button is created (wireRowToolbar in search.js), so the whole CLASS is fixed by
+   this single rule (DEFECT->CLASS-AUDIT, Principle 17). Reuses --danger (already FE-I13-measured
+   AA on --bg/--nav, both themes) — no new contrast pair. */
+.rt-btn-danger { color: var(--danger); border-color: rgba(248,81,73,.4); }
+.rt-btn-danger:hover { color: var(--danger); border-color: var(--danger); background: rgba(248,81,73,.08); }
+:root[data-theme="light"] .rt-btn-danger { border-color: rgba(164,14,38,.35); }
+/* BUILD 4 — Edit (✎) control: same base .rt-btn look, no color change requested; a distinct
+   class only so it's a reliable, class-audit-able selector for the behavioral test. */
+.rt-btn-edit { /* inherits .rt-btn */ }
 .rt-move-sel { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: 10px; padding: 2px 3px; max-width: 110px; }
 .rt-file-input { display: none; }
 .rt-panel { margin: 2px 0 4px 20px; display: none; }
@@ -366,3 +390,62 @@ a.mm-link:hover .mm-label { fill: var(--hover); text-decoration: underline; }
   body.printing-scoped > *:not(#print-stage) { display: none !important; }
   body.printing-scoped #print-stage { display: block !important; color: #000; background: #fff; }
 }
+
+/* ── GENERIC MODAL ENGINE (BUILD 4 edit popup + BUILD 6 gallery "+" popup — ONE shared
+   mechanism, search.js openModal()/closeModal(); FE-I2 single-JS, A8 no duplicate mechanisms).
+   Escape + outside-click close (wired in JS); Save/Cancel are per-use content. ── */
+.cisem-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.cisem-modal { background: var(--nav); border: 1px solid var(--border); border-radius: 8px; width: min(520px, 100%); max-height: 86vh; overflow: auto; box-shadow: 0 12px 40px rgba(0,0,0,.5); }
+.cisem-modal-hdr { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--nav); }
+.cisem-modal-title { font-weight: 600; font-size: 14px; color: var(--text); }
+.cisem-modal-x { background: none; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); font-size: 14px; cursor: pointer; padding: 2px 8px; line-height: 1.4; }
+.cisem-modal-x:hover { color: var(--danger); border-color: var(--danger); }
+.cisem-modal-body { padding: 14px 16px; }
+.cm-field { margin-bottom: 12px; }
+.cm-field label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 4px; }
+.cm-field input, .cm-field textarea, .cm-field select { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; color: var(--text); font-size: 13px; padding: 6px 8px; font-family: inherit; box-sizing: border-box; }
+.cm-field textarea { min-height: 56px; resize: vertical; }
+.cm-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+.cm-btn { padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+.cm-btn:hover { border-color: var(--accent); }
+.cm-btn.primary { color: var(--accent); border-color: var(--accent); font-weight: 600; }
+.cm-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.cm-detail-grid .cm-field { margin-bottom: 4px; }
+@media (max-width: 480px) { .cm-detail-grid { grid-template-columns: 1fr; } }
+
+/* ── INLINE TEXT EDIT (BUILD 5, Governor 2026-07-21) — click ANY registered text element to
+   edit it in place (contenteditable). Subtle affordance so a first-time user knows it's
+   editable WITHOUT it reading as a broken link (FE-I14): dotted underline on hover, a filled
+   outline only while actively editing. ── */
+.inline-editable { cursor: text; }
+.inline-editable:hover { box-shadow: inset 0 -1px 0 0 var(--accent); border-radius: 2px; }
+.inline-editable.inline-editing { outline: 1px solid var(--accent); outline-offset: 2px; background: rgba(88,166,255,.07); border-radius: 3px; }
+
+/* ── SORT-KEY DROPDOWN (BUILD 1 enhancement — Name / Creation date / Last modified) ── */
+.sort-key-sel { background: var(--nav); border: 1px solid var(--border); border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 12px; padding: 4px 8px; }
+
+/* ── GALLERY REDEFINITION (BUILD 6, Governor 2026-07-21) — a media CATALOG, not a photo grid.
+   Default view = collapsed compact rows (filename + catalog number only, thumb hidden); the
+   pre-existing deep Metadata/SEO tree is PRESERVED UNCHANGED below as a collapsed "legacy"
+   section (Hard Constraint — additive only, nothing removed). ── */
+.gal-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin: 4px 0 14px; }
+.gal-view-modes, .gal-thumb-sizes { display: flex; gap: 6px; align-items: center; }
+.gal-toolbar-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-right: 2px; }
+.gal-mode-btn, .gal-size-btn { background: var(--nav); border: 1px solid var(--border); border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 12px; padding: 4px 10px; }
+.gal-mode-btn.active, .gal-size-btn.active { border-color: var(--accent); color: var(--accent); }
+ul.gal-catalog { list-style: none; margin-bottom: 18px; }
+.gal-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-top: 1px solid var(--border); }
+.gal-row:last-child { border-bottom: 1px solid var(--border); }
+.gal-row:hover { background: var(--nav); }
+.gal-thumb { flex-shrink: 0; }
+ul.gal-catalog.gal-mode-collapsed .gal-thumb { display: none; }
+ul.gal-catalog[data-size="s"] .gal-thumb { width: 22px; height: 16px; font-size: 10px; }
+ul.gal-catalog[data-size="m"] .gal-thumb { width: 40px; height: 28px; font-size: 13px; }
+ul.gal-catalog[data-size="l"] .gal-thumb { width: 72px; height: 52px; font-size: 20px; }
+.gal-filename { font-family: var(--mono); font-size: 13px; color: var(--text); }
+.gal-catno-lbl { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: auto; padding-right: 10px; }
+.gal-fav-btn, .gal-plus-btn { background: none; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); cursor: pointer; font-size: 13px; padding: 3px 9px; flex-shrink: 0; line-height: 1.4; }
+.gal-fav-btn:hover, .gal-plus-btn:hover { color: var(--hover); border-color: var(--accent); }
+.gal-fav-btn.active { color: var(--danger); border-color: var(--danger); }
+.gal-detail-thumb-lg { width: 100%; max-width: 260px; height: 160px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border); border-radius: 6px; background: var(--bg); font-size: 48px; margin-bottom: 12px; }
+.gal-legacy-note { color: var(--muted); font-size: 11px; margin: -6px 0 10px; }

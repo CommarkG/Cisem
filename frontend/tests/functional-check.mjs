@@ -35,6 +35,7 @@ function load(rel) {
 }
 function click(w, el) { el.dispatchEvent(new w.window.Event('click', { bubbles: true, cancelable: true })); }
 function fireInput(w, el) { el.dispatchEvent(new w.window.Event('input', { bubbles: true })); }
+function closeModalDom(w) { w.document.dispatchEvent(new w.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); }
 
 // ── GATE A — FE-I13 WCAG-AA CONTRAST (measured, permanent) ─────────────────────────────
 // Computes the REAL WCAG contrast ratio (relative-luminance formula) for every text/foreground
@@ -92,6 +93,28 @@ console.log('WCAG-AA CONTRAST TABLE (FE-I13, measured live from style.css tokens
   });
 });
 
+// ── GATE C — BUILD 2/3 (Governor 2026-07-21): back=RED, forward=GREEN, delete=RED ──────
+// Measured (not just present): reuses the SAME --danger/--success luminance values already
+// computed by GATE A above (both themes) — the arrows/delete controls carry NO new color
+// pair, only the pre-verified AA tokens, so "measured" here means citing that same computed
+// ratio while asserting the CSS rule actually maps the right selector to the right token.
+{
+  const hasBackRule = /\.bc\s+\.bc-arr:first-child\s*\{[^}]*color:\s*var\(--danger\)/.test(CSS_CONTRAST);
+  const hasFwdRule = /\.bc\s+\.bc-arr:first-child\s*\+\s*\.bc-arr\s*\{[^}]*color:\s*var\(--success\)/.test(CSS_CONTRAST);
+  ok('[BUILD 2] CSS maps the FIRST .bc-arr (Back) to --danger (red)', hasBackRule);
+  ok('[BUILD 2] CSS maps the SECOND .bc-arr (Forward, adjacent sibling) to --success (green)', hasFwdRule);
+  // language-independence: the selector must NOT depend on [title=...] (initLang() rewrites
+  // the title attribute text on language switch — a title-based selector would silently break).
+  ok('[BUILD 2] arrow color selectors are NOT title-attribute-based (survives language switch)',
+    !/\.bc-arr\[title=/.test(CSS_CONTRAST));
+  ok('[BUILD 2] --danger meets AA on --bg in both themes (measured above, reused for the Back arrow)',
+    contrastRatio(darkTokens.danger, darkTokens.bg) >= 4.5 && contrastRatio(lightTokens.danger, lightTokens.bg) >= 4.5);
+  ok('[BUILD 2] --success meets AA on --bg in both themes (measured above, reused for the Forward arrow)',
+    contrastRatio(darkTokens.success, darkTokens.bg) >= 4.5 && contrastRatio(lightTokens.success, lightTokens.bg) >= 4.5);
+  const hasDeleteRule = /\.rt-btn-danger\s*\{[^}]*color:\s*var\(--danger\)/.test(CSS_CONTRAST);
+  ok('[BUILD 3] CSS maps .rt-btn-danger (every delete control) to --danger (red)', hasDeleteRule);
+}
+
 // ── schema.html — the page the Governor found broken ──
 const w = load('schema.html');
 const doc = w.document;
@@ -109,6 +132,100 @@ if (branch) {
     ok('schema: clicking a branch row CHANGES collapse state (behavioral, not just wired)', before !== afterFirst);
     click(w, branch);
     ok('schema: second click toggles back', kids.classList.contains('tree-collapsed') === before);
+  }
+}
+
+// ── BUILD 2 — nav arrow DOM structure (the CSS selectors above target exactly this shape) ──
+{
+  const bcArrs = doc.querySelectorAll('.bc-arr');
+  ok('schema: exactly 2 nav arrows (Back, Forward)', bcArrs.length === 2);
+  ok('schema: first arrow is Back, second is Forward (matches the :first-child / sibling CSS selector)',
+    bcArrs.length === 2 && bcArrs[0].title === 'Back' && bcArrs[1].title === 'Forward' && bcArrs[0] === bcArrs[0].parentElement.querySelector('.bc-arr:first-child'));
+}
+
+// ── BUILD 1 — enhanced SORT (Name / Creation date / Last modified) — behavioral, not just a
+// dropdown that exists. Uses the RATIFIED corespine group (already a real non-alphabetical
+// fixture, per the pre-existing Sort test below) and asserts sorting by 'created' produces a
+// DIFFERENT order than sorting by 'name' (both are real reorders, not decorative). ──
+{
+  const sortKeySel = doc.querySelector('#sort-key-sel');
+  ok('schema: Sort now offers a key dropdown (Name / Creation date / Last modified)',
+    !!sortKeySel && sortKeySel.querySelectorAll('option').length === 3);
+  const ratifiedLabel = Array.prototype.find.call(
+    doc.querySelectorAll('.tree-row.branch-row .tree-label'), l => l.textContent.trim() === 'RATIFIED');
+  const ratifiedGroup = ratifiedLabel ? ratifiedLabel.closest('li.tree-node') : null;
+  const ratifiedUl = ratifiedGroup ? ratifiedGroup.querySelector(':scope > ul.tree-children') : null;
+  const sortBtnForKey = doc.querySelector('#vbtn-sort-all');
+  if (sortKeySel && ratifiedUl && sortBtnForKey) {
+    const label = li => li.querySelector(':scope > .tree-row .tree-label').textContent.trim();
+    // every row here already carries a REAL data-created (assignPlaceholderDates ran on load)
+    const rowsWithDates = Array.prototype.filter.call(ratifiedUl.children, c => c.classList.contains('tree-node'));
+    ok('schema: every row in the RATIFIED group carries data-created (BUILD 1 placeholder-date assignment)',
+      rowsWithDates.every(li => !!li.getAttribute('data-created')));
+    sortKeySel.value = 'created';
+    click(w, sortBtnForKey);
+    const byCreated = Array.prototype.filter.call(ratifiedUl.children, c => c.classList.contains('tree-node')).map(label);
+    sortKeySel.value = 'name';
+    click(w, sortBtnForKey);
+    const byName = Array.prototype.filter.call(ratifiedUl.children, c => c.classList.contains('tree-node')).map(label);
+    ok('schema: sorting by Creation date produces a DIFFERENT order than sorting by Name (real field, not decorative)',
+      byCreated.join(',') !== byName.join(','));
+  }
+}
+
+// ── BUILD 4 — Edit (✎) popup: mandatory on every row/sub-group/group, opens+saves (behavioral) ──
+{
+  const editBtn = doc.querySelector('.rt-btn-edit');
+  ok('schema: an Edit (✎) control exists on a row (mandatory per Build 4)', !!editBtn);
+  ok('schema: modal host is NOT yet in the DOM before any edit/detail popup is opened', !doc.getElementById('cisem-modal-host'));
+  if (editBtn) {
+    const li = editBtn.closest('li.tree-node');
+    const labelEl = li.querySelector(':scope > .tree-row .tree-label');
+    const originalName = labelEl.textContent.trim();
+    click(w, editBtn);
+    const modal = doc.getElementById('cisem-modal-host');
+    ok('schema: clicking Edit OPENS the modal (behavioral)', !!modal && modal.style.display !== 'none');
+    const nameInput = modal.querySelector('.cm-field input');
+    ok('schema: Edit modal Name field is PRE-FILLED with the row\'s current label', !!nameInput && nameInput.value === originalName);
+    if (nameInput) {
+      nameInput.value = originalName + ' (edited)';
+      const saveBtn = Array.prototype.find.call(modal.querySelectorAll('.cm-btn'), b => b.textContent === 'Save');
+      ok('schema: Edit modal has a Save button', !!saveBtn);
+      if (saveBtn) {
+        click(w, saveBtn);
+        ok('schema: Save UPDATES the row label in the DOM (behavioral, not just stored)',
+          labelEl.textContent.trim() === originalName + ' (edited)');
+        ok('schema: Save CLOSES the modal', modal.style.display === 'none');
+      }
+    }
+    // Escape-closes (Build 4 spec: "closes on Escape/outside-click")
+    click(w, editBtn);
+    ok('schema: re-opening Edit shows the modal again', modal.style.display !== 'none');
+    doc.dispatchEvent(new w.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    ok('schema: pressing Escape CLOSES the modal (behavioral)', modal.style.display === 'none');
+    // outside-click closes
+    click(w, editBtn);
+    ok('schema: re-opening Edit again shows the modal', modal.style.display !== 'none');
+    click(w, modal); // clicking the overlay itself (not the inner .cisem-modal card)
+    ok('schema: clicking outside the modal card CLOSES the modal (behavioral)', modal.style.display === 'none');
+  }
+}
+
+// ── BUILD 5 — INLINE TEXT EDIT: click makes text contenteditable in place, persists on blur ──
+{
+  // NOTE: jsdom does not implement the `.contentEditable` IDL property reflection (a known
+  // jsdom gap) — the underlying `contenteditable` ATTRIBUTE is what search.js actually sets/
+  // reads, so assertions use getAttribute() here (still a real, behavioral DOM-state check).
+  const h1 = doc.querySelector('h1');
+  ok('schema: page title (h1) is marked inline-editable', !!h1 && h1.classList.contains('inline-editable'));
+  if (h1) {
+    ok('schema: h1 is NOT contenteditable before any click', h1.getAttribute('contenteditable') !== 'true');
+    click(w, h1);
+    ok('schema: clicking h1 makes it contenteditable (behavioral)', h1.getAttribute('contenteditable') === 'true');
+    h1.textContent = 'Schema (edited inline)';
+    h1.dispatchEvent(new w.window.Event('blur', { bubbles: true }));
+    ok('schema: blur exits edit mode', h1.getAttribute('contenteditable') === 'false');
+    ok('schema: edited text persists in the DOM', h1.textContent === 'Schema (edited inline)');
   }
 }
 
@@ -417,6 +534,99 @@ if (langBtn) {
     const afterSort = Array.prototype.filter.call(picGroupUl.children, c => c.classList.contains('tree-node')).map(label);
     ok('gallery: clicking Sort REORDERS Sample Pictures alphabetically (behavioral)', afterSort.join(',') === ascSort.join(','));
   }
+
+  // ── BUILD 6 (Governor 2026-07-21) — gallery REDEFINITION: a collapsed-list media catalog,
+  // NOT a photo grid. The pre-existing deep tree is PRESERVED (asserted above/via the existing
+  // gallery block, unchanged) — these are the NEW additive assertions. ──
+  const picCatalog = panelPics.querySelector('ul.gal-catalog');
+  const vidCatalog = panelVids.querySelector('ul.gal-catalog');
+  ok('gallery: Pictures panel has a gal-catalog (collapsed-list default view)', !!picCatalog);
+  ok('gallery: Videos panel has a gal-catalog', !!vidCatalog);
+  ok('gallery: Pictures catalog starts in COLLAPSED mode (filename + catalog# only)', picCatalog.classList.contains('gal-mode-collapsed'));
+  const picRows = picCatalog ? picCatalog.querySelectorAll('.gal-row') : [];
+  ok('gallery: Pictures catalog has 3 rows (hero-banner, schema-diagram, agent-team)', picRows.length === 3);
+  ok('gallery: every catalog row shows filename + catalog number (collapsed-list spec)',
+    Array.prototype.every.call(picRows, r => !!r.querySelector('.gal-filename') && !!r.querySelector('.gal-catno-lbl') && /^CAT-/.test(r.querySelector('.gal-catno-lbl').textContent)));
+
+  // "+" popup — larger view + full metadata + SEO + heart favorite (behavioral open)
+  const firstRow = picRows[0];
+  const plusBtn = firstRow ? firstRow.querySelector('.gal-plus-btn') : null;
+  ok('gallery: first catalog row has a "+" details control', !!plusBtn);
+  if (plusBtn) {
+    click(wg, plusBtn);
+    const modal = dg.getElementById('cisem-modal-host');
+    ok('gallery: clicking "+" OPENS the detail popup (behavioral)', !!modal && modal.style.display !== 'none');
+    const bodyTxt = modal.querySelector('.cisem-modal-body').textContent;
+    ok('gallery: popup shows title/alt/caption/dimensions/format/size/date/SEO metadata',
+      ['Dimensions', 'Format', 'File size', 'SEO title', 'schema.org type'].every(f => bodyTxt.indexOf(f) !== -1)
+      && !!modal.querySelector('.cm-field input'));
+    const favBtnInModal = Array.prototype.find.call(modal.querySelectorAll('.cm-btn'), b => /favorite/i.test(b.textContent));
+    ok('gallery: popup has a ♥ favorite toggle', !!favBtnInModal);
+    closeModalDom(wg);
+  }
+
+  // ♥ favorite toggle on the ROW itself (behavioral — state persists via localStorage)
+  const favBtnRow = firstRow ? firstRow.querySelector('.gal-fav-btn') : null;
+  ok('gallery: row has its own favorite (♥) toggle', !!favBtnRow);
+  if (favBtnRow) {
+    const beforeActive = favBtnRow.classList.contains('active');
+    click(wg, favBtnRow);
+    ok('gallery: clicking ♥ toggles the favorited state (behavioral)', favBtnRow.classList.contains('active') !== beforeActive);
+    click(wg, favBtnRow);
+    ok('gallery: clicking ♥ again un-favorites (round-trip)', favBtnRow.classList.contains('active') === beforeActive);
+  }
+
+  // Thumbnail-size picker (S/M/L) — behavioral
+  const sizeL = panelPics.querySelector('.gal-size-btn[data-size="l"]');
+  ok('gallery: thumbnail-size picker has an L (large) control', !!sizeL);
+  if (sizeL) {
+    click(wg, sizeL);
+    ok('gallery: clicking L SETS the catalog\'s thumbnail size (behavioral)', picCatalog.getAttribute('data-size') === 'l');
+  }
+
+  // View-mode switch Collapsed <-> Details — behavioral (thumb hidden in collapsed, shown in details)
+  const detailsBtn = panelPics.querySelector('.gal-mode-btn[data-mode="details"]');
+  ok('gallery: view-mode switcher has a Details control', !!detailsBtn);
+  if (detailsBtn) {
+    click(wg, detailsBtn);
+    ok('gallery: clicking Details REMOVES collapsed mode (thumbnails become visible, behavioral)', !picCatalog.classList.contains('gal-mode-collapsed'));
+    const collapsedBtn = panelPics.querySelector('.gal-mode-btn[data-mode="collapsed"]');
+    click(wg, collapsedBtn);
+    ok('gallery: clicking Collapsed List reverts (round-trip, thumbnails hidden again)', picCatalog.classList.contains('gal-mode-collapsed'));
+  }
+
+  // Search reaches the NEW catalog rows too (Build 1 reuse — same shared search, not a 2nd impl).
+  // NOTE: looked up by the STABLE data-catno (not positional picRows[0]) — the earlier Sort
+  // test on this same page already re-sorted the shared .gal-catalog (a CORRECT side-effect of
+  // Build 1's sort now covering catalog lists too), so DOM position is no longer "hero-banner first".
+  const heroRow = picCatalog.querySelector('.gal-row[data-catno="CAT-P001"]');
+  const si2 = dg.getElementById('si');
+  if (si2 && heroRow) {
+    si2.value = 'hero-banner-2026';
+    fireInput(wg, si2);
+    ok('gallery: shared search FILTERS to the matching catalog row', heroRow.style.display !== 'none');
+    si2.value = 'zzz-no-such-catalog-item';
+    fireInput(wg, si2);
+    ok('gallery: shared search HIDES non-matching catalog rows', heroRow.style.display === 'none');
+    si2.value = ''; fireInput(wg, si2);
+  }
+
+  // BUILD 5 — inline edit reaches the gallery filename text too
+  const filenameEl = firstRow ? firstRow.querySelector('.gal-filename') : null;
+  ok('gallery: catalog row filename is marked inline-editable', !!filenameEl && filenameEl.classList.contains('inline-editable'));
+  if (filenameEl) {
+    click(wg, filenameEl);
+    ok('gallery: clicking the filename makes it contenteditable (behavioral)', filenameEl.getAttribute('contenteditable') === 'true');
+    filenameEl.textContent = 'hero-banner-2026-renamed.jpg';
+    filenameEl.dispatchEvent(new wg.window.Event('blur', { bubbles: true }));
+    ok('gallery: edited filename persists in the DOM after blur', filenameEl.textContent === 'hero-banner-2026-renamed.jpg');
+  }
+
+  // Hard Constraint — nothing removed: the legacy deep Metadata/SEO tree is STILL present,
+  // just collapsed by default (Governor: additive only, flag rather than remove).
+  const legacyHeader = Array.prototype.find.call(dg.querySelectorAll('.sh'), s => /Full Metadata Tree/.test(s.textContent));
+  ok('gallery: the pre-existing deep Metadata/SEO tree is PRESERVED (legacy section, collapsed not deleted)', !!legacyHeader);
+  ok('gallery: legacy tree section starts collapsed (sh-closed) — new catalog is the default surface', !!legacyHeader && legacyHeader.classList.contains('sh-closed'));
 }
 
 // ── dynamic-menu.html — Tiers/Responsive TAB SWITCH (behavioral) ──
@@ -558,6 +768,19 @@ ALL_PAGES.forEach(function (page) {
     // NO DEAD TOGGLE: a page carrying the toggle MUST have reshapeable content on it.
     const hasReshapeable = RESHAPEABLE.some(sel => doc2.querySelector(sel));
     ok(page + ': toggle present => page has content a view-window rule reshapes (no dead toggle)', hasReshapeable);
+  }
+
+  // ── BUILD 3/4 CLASS-AUDIT (Governor 2026-07-21, Principle 17 DEFECT->CLASS-AUDIT) — EVERY
+  // delete control on EVERY tree page carries rt-btn-danger (red); EVERY row/sub-group/group
+  // carries the mandatory Edit (✎) control. Enumerated across ALL pages with tree content, not
+  // a sample — a single row missed anywhere fails this. ──
+  if (treeNodeCount > 0) {
+    const delBtns = doc2.querySelectorAll('.rt-btn[title="Delete this row"]');
+    const editBtns = doc2.querySelectorAll('.rt-btn[title="Edit this row"]');
+    ok(page + ': [class-audit] every delete control is RED (' + delBtns.length + ' checked)',
+      delBtns.length > 0 && Array.prototype.every.call(delBtns, b => b.classList.contains('rt-btn-danger')));
+    ok(page + ': [class-audit] every tree-node row carries the mandatory Edit (✎) control (' + editBtns.length + '/' + treeNodeCount + ')',
+      editBtns.length === treeNodeCount);
   }
 
   // ── TREE PAGES — enumerated via `.tree-node` PRESENCE, never a curated page list
