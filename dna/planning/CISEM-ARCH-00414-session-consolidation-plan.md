@@ -35,6 +35,21 @@ agreeableness spike → drop-persona), RI-0020 (plan-gate evasion via DRAFT loop
 OVERRIDES (the profiling SSOT); (b) the 3 agent prompts; (c) a mechanical **[PLAN-GATE-SELFCHECK]** in plan-audit (flag a
 governed creation whose commit has no ratified-plan reference). Turns three named defaults into standing guards (D3/D4).
 
+### Phase 0b — Continuous Prevention Pipeline (Governor design consult 2026-07-22)
+Unify CISEM's scattered prevention pieces (Principle 17 reflex · ARCH-00370 harvest · ARCH-00406 RIPL · root-insights
+store) into ONE pipeline, each tempo triggered by a counter/bar — not "remember to":
+1. **REFLEX (per turn, mechanical, UNSKIPPABLE):** no defect/gap closes without a prevention-candidate written to a
+   capture buffer. THE highest-leverage fix — makes Principle 17 non-skippable-under-momentum (kills the RI-0017 defer at
+   the reflex). Wire: a turn-level check that a discussed defect emitted a candidate.
+2. **FLUSH (every 2–4 turns):** a turn-counter flushes the buffer to the durable prevention-inbox (root-insights) —
+   continuous small saves, not lossy boundary batches (RI-0011). CISEM-native counter, no OS scheduler needed.
+3. **DISTILL @ minimal-bar (daily):** dedup + cluster into CLASSES; promote ONLY candidates that clear the bar
+   (recurred ≥2× OR high-blast OR cheap-to-wire) into hardwired guards; park the rest. The bar prevents BOTH drift
+   (under-prevention) AND ossification/scatter (over-prevention).
+4. **RATIFY (human-in-the-loop, at CONCLUSIONS only):** distilled proposals do NOT self-enact — presented to the Governor
+   as a batched PCR, ratified before becoming law (A4 + Zero-Findings: the pipeline cannot self-certify). Human gated at
+   conclusion only, not at every capture — so it never burdens the loop yet always holds the gate.
+
 ### Phase 1 — Corespine maturity system  ⟵ GATED on Brain consult (Phase 4)
 Haiku round-1 evidence: only 3/15 corespines are complete+sealed; 7 are homeless orphans; ARCH-00413's own parent
 (CS-CONTROLPLANE-001) is one of them. Build: (a) a **unified maturity structure** (every corespine carries maturity +
