@@ -18,6 +18,30 @@ Entry format (append, newest at bottom):
   nests inside `.uxui-panel`. Root fix: anchor via `pgDesc.parentNode` (a known-stable ancestor present on every page),
   not a positional assumption. CLASS: code that assumes a fixed DOM position breaks on nested/tabbed layouts — anchor on
   a stable ancestor/element, never a positional index. → distilled to RI-0016.
+
+- [2026-07-21 · cisem-sonnet · frontend-page-registry.yaml build (Opus dispatch — companion tag/status catalog)]
+  **FE-I11's ALL_PAGES enumeration is NOT truly universal — it is scoped to one subdirectory, not the whole class.**
+  `frontend/tests/functional-check.mjs` builds its `ALL_PAGES` list via `fs.readdirSync(frontend/pages)`, so it
+  behaviorally-verifies all 27 files in `frontend/pages/*.html` (confirmed live run: 600 pass, 0 fail) but NEVER
+  loads or asserts `frontend/index.html` (zero reference to "index.html" anywhere in the file) — despite index.html
+  carrying its own interactive Grid/List view toggle, the exact element-class FE-I11 exists to gate. CLASS:
+  Principle 18-B "universal-by-default" enumeration must cover frontend/**/*.html (glob from repo root), not one
+  subdirectory picked because that's where the harness started — the same failure mode Principle 18-B was written
+  to prevent (22 files born ungoverned). PREVENTION: widen the existing `ALL_PAGES` enumeration to also load
+  `../index.html` (or switch to a recursive glob) rather than leave the root page permanently uncovered. →
+  DISTILL-PENDING (candidate: fold into FE-I11 + functional-check.mjs as a named coverage-completeness fix).
+
+- [2026-07-21 · cisem-sonnet · frontend-page-registry.yaml build] **Only 3 of 28 frontend pages carry an inline
+  `<!-- tags: -->` / `<!-- Status: -->` HTML-comment header** (dynamic-menu.html, gallery.html, uxui.html — all
+  "PREVIEW / DRAFT"); the other 25, including the most recently built schema.html (ARCH-00410), carry none. Also:
+  "PREVIEW" is used live on 4 pages (3 inline + 1 via commit message only) but is NOT a member of CISEM-VOC-00002's
+  Node Status enum (DRAFT|PROPOSED|DECLARED|RATIFIED|PLACEHOLDER|SCHEDULED|SPLIT|PROVISIONAL-ACTIVE) — meanwhile
+  VOC-00001 lists "preview" as a page-KIND tag value, conflating a lifecycle-state word with a kind-tag word across
+  the two vocab files. CLASS: a governance directive ("every page must carry tags+status") needs (a) a mechanical
+  creation-time check on frontend/**/*.html specifically (extending creation-gate.sh/FE-invariants, not just the
+  generic tags:/Status: presence check that already passes on non-HTML governed files), and (b) a VOC-00002 ruling
+  on whether PREVIEW is promoted to a real enum member or pages should say PROVISIONAL-ACTIVE instead. →
+  DISTILL-PENDING (candidate: new FE-invariant under CS-FRONTEND-001 + a VOC-00002 enum decision routed to Opus/Governor).
 - [2026-07-21 · cisem-sonnet · UX/UI build] **Theme-shared literal colors fail AA:** 3 badge classes reused literal hex
   (`#d29922`/`#3fb950`/`#f85149`) across themes → passed on dark, FAILED WCAG-AA on light (2.28/2.33/2.90:1). Root fix:
   promote to per-theme tokens (`--warn/--success/--danger`) measured against AA. CLASS: a color reused across themes must
