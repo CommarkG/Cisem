@@ -32,3 +32,4 @@ This format is DIRECTED by the Governor and IN USE (proving on the naming/number
 
 ## Change log
 - v0.1 — 2026-07-21 (Opus): format captured per Governor decree "create a cycle in this format for recurring use"; PROVISIONAL-ACTIVE, first run = naming/numbering enforcement (Haiku Stage-1 done, Sonnet Stage-2 running).
+- v0.2 — 2026-07-21 (Opus): FIRST RUN COMPLETE (naming/numbering enforcement). All 5 stages ran; each tier caught what the previous missed (Sonnet Stage-2 found +7 gaps Haiku missed incl. the creation-gate self-bug; Haiku Stage-5 verified the gaps CLOSED). Result: 3 new checks wired + [TYPE-MATCH] gap closed + creation-gate V10 fixed, ZF green. The FORMAT worked. STILL PROVISIONAL (Principle 15 — needs ≥2-3 DIVERGENT runs before sealing; this was one). Residual routed as persistent WARN (creation-gate 7 legacy-ungoverned files; 2 NAMING-FORMAT prose-mentions — a check-refinement follow-on to reuse [I1]'s NOT-YET-A-NODE exemption).
