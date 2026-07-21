@@ -1,6 +1,6 @@
 # Node-DNA Drafts / Pending-Ideas Extension — Per-Node Tagged+Statused Scratch Space
 **Node ID:** CISEM-ARCH-00409 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
+**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 soundness PASS 2026-07-21 — cisem-opus-pe verdict CONDITIONALLY-SOUND; 2 rulings folded v0.2 [sub-enum stays local; §XI version/size exempt]; awaiting Governor Stage-2 decree) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning-domain, node-dna, drafts, tag-status, schema-extension, gate, mandatory]
 **Goal:** Extend the Node DNA contract (CISEM-ARCH-00008, Sections I–X) with an OPTIONAL "§XI Drafts /
 Pending-Ideas" section — each draft a TAGGED + STATUSED sub-item (`DRAFT-RAW` → `PARKED` → `PROMOTED`),
@@ -72,9 +72,11 @@ promotion discipline.
 - **Drafting this plan → Sonnet** (STRUCTURING tier, this dispatch) — executing Opus's fully-specified field
   shape (`DRAFT-RAW`/`PARKED`/`PROMOTED`, tag+status per item, gradual population, promotion-through-normal-gates)
   verbatim; no design judgment beyond structuring per ARCH-00190/00401.
-- **Judging soundness (Stage 1) → Opus (cisem-opus-pe)** — cold default-refute verify pass, including a ruling
-  on the flagged `DRAFT-RAW`/`PARKED`/`PROMOTED` sub-enum (Existing-First item 4) and whether it should register
-  into VOC-00002 as a named internal axis.
+- **Judging soundness (Stage 1) → Opus (cisem-opus-pe)** — cold default-refute verify pass. **RULING 1 (Stage 1,
+  folded here v0.2):** the `DRAFT-RAW`/`PARKED`/`PROMOTED` sub-enum stays LOCAL and self-described INLINE in
+  ARCH-00008 §XI — it does NOT register into VOC-00002 as a third global axis. Reason: the parked coherence audit
+  flags ACTIVE status-enum PROLIFERATION (8 frozen vs 15 live) that must be reconciled BEFORE BP-0012; adding 3
+  more global values to VOC-00002 now would worsen exactly the problem that audit is tracking.
 - **Governor Stage 2 → ratification authority**, per ARCH-00190 §3 unchanged.
 - **Implementation (post-ratification) → Sonnet** for the ARCH-00008 §XI text edit (mechanical schema addition,
   no further judgment). The frontend rendering piece is EXPLICITLY a separate, later, CS-FRONTEND-001-governed
@@ -89,9 +91,10 @@ promotion discipline.
 - **PARKED (peripheral, explicitly out of this plan, per Anti-Scatter + Governor's own instruction scope):**
   (a) a mechanical `[DRAFTS]` plan-audit check enforcing the field shape — named as a disclosed follow-on, not
   built here (this plan's ask was the DATA MODEL, not its enforcement); (b) the frontend schema/back-office
-  rendering + query UI — CS-FRONTEND-001's domain, a separate build; (c) registering `DRAFT-RAW`/`PARKED`/
-  `PROMOTED` into VOC-00002 as a formal internal-axis entry — deferred to Opus's Stage-1 ruling (Existing-First
-  item 4), not pre-decided by Sonnet.
+  rendering + query UI — CS-FRONTEND-001's domain, a separate build.
+- **RULED OUT (not parked, not a future follow-on — Opus Stage-1 RULING 1, folded v0.2):** registering
+  `DRAFT-RAW`/`PARKED`/`PROMOTED` into VOC-00002 as a formal internal-axis entry. The sub-enum stays LOCAL and
+  self-described inline in ARCH-00008 §XI (see The Rule step 2) — this is a closed question, not an open one.
 
 ## The Rule — executable procedure
 1. **Add ARCH-00008 §XI "Drafts / Pending-Ideas (OPTIONAL)"** immediately after existing §X (Audit), before "What
@@ -107,7 +110,9 @@ promotion discipline.
      title: "<short idea title>"
      tag: [<VOC-00001 tags, or 'MISSING-TERM-FLAG' per CLAUDE.md §4 if none fit>]
      status: DRAFT-RAW | PARKED | PROMOTED      # LOCAL enum (Existing-First item 4) — distinct from the
-                                                  # node's own global Status field
+                                                  # node's own global Status field. STAYS LOCAL, self-described
+                                                  # inline here — RULED OUT of VOC-00002 registration (Opus
+                                                  # Stage-1 RULING 1, folded v0.2; see Tier-Routing Declaration).
      content: "<free text; placeholders populated gradually — a draft may sit with only a title for a long time>"
      created_date: "YYYY-MM-DD"
      promoted_to: "<CISEM-{TYPE}-{SEQ}, populated ONLY when status: PROMOTED>"
@@ -125,6 +130,16 @@ promotion discipline.
 5. **Queryability:** because §XI is a structured block (not prose) inside every node file that has one, a future
    scan (grep or a Haiku-gather pass) can enumerate all drafts repo-wide by `tag:`/`status:` without a separate
    index file — the node itself IS the record (A1 nothing stands alone; node-as-context-carrier).
+6. **Version-bump + Size-Gate EXEMPTION for §XI (Opus Stage-1 RULING 2, folded v0.2):** §XI is MUTABLE
+   scratch-space, not part of the node's immutable/versioned contract body (§I–X). Therefore: (a) editing, adding,
+   or removing an individual §XI draft item does **NOT** trigger ARCH-00008's own "any change bumps the version"
+   Change-protocol rule — only the ONE-TIME addition of the §XI section shape itself (this plan's implementation
+   step) is a real contract change and bumps the Version; every subsequent draft-item edit thereafter is exempt;
+   (b) §XI content does **NOT** count toward the Size Gate (§3.6, 3,500 words / 200 lines) word/line count for the
+   node it lives in — a node may accumulate many draft items without being forced into a mini-tree split. Mutable
+   scratch must not pollute the immutable/versioned contract body: without this exemption, the plan would inflate
+   a RATIFIED node's version history on every draft edit and force size-gate splits for what is explicitly
+   non-final scratch content — making the plan UNSOUND as originally written (Opus Stage-1 finding).
 
 ## Tags + Statuses on EVERY node this plan creates
 This plan creates **ZERO new governed nodes**. It extends ONE EXISTING node (CISEM-ARCH-00008, Version does NOT
@@ -138,15 +153,14 @@ tag/status (see above).
 |---|---|---|---|---|
 | `dna/planning/CISEM-ARCH-00409-node-drafts-pending-ideas-plan.md` (this file) | CISEM-ARCH-00409 (Sonnet-allocated via naming-registry.yaml, next_seq 409→410) | T-SYS, planning-governance layer | planning-domain, node-dna, drafts | Status: PROVISIONAL-ACTIVE / Planning Status: AWAITING-BUILDER-REVIEW |
 | `dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md` (target of §XI addition — NOT modified by this drafting task) | CISEM-ARCH-00008 (existing, unchanged number; RATIFIED 2026-07-16) | T-SYS, governance/schema layer | schema, node-dna, base-contract, governance (existing, unchanged) | Status: RATIFIED (unchanged; §XI addition is a proposal per ARCH-00008's own Change-protocol, bumps Version on implementation only) |
-| `dna/vocabulary/CISEM-VOC-00002-status-library.md` (candidate target for registering `DRAFT-RAW/PARKED/PROMOTED` as a named internal axis — NOT modified by this drafting task; Opus Stage-1 rules whether to register) | CISEM-VOC-00002 (existing, unchanged number) | T-SYS, vocabulary layer | status-library, vocabulary, draft (existing, unchanged) | Status: DRAFT (unchanged by this plan) |
+| `dna/vocabulary/CISEM-VOC-00002-status-library.md` (RULED OUT as a target — Opus Stage-1 RULING 1: the sub-enum stays LOCAL/inline in ARCH-00008 §XI, never registers here; row kept for the record, NOT modified by this plan) | CISEM-VOC-00002 (existing, unchanged number) | T-SYS, vocabulary layer | status-library, vocabulary, draft (existing, unchanged) | Status: DRAFT (unchanged by this plan) |
 | `dna/naming-registry.yaml` (already modified by Sonnet — ARCH next_seq 409→410, comment pre-registers this title) | REG type, self-exempt | T-SYS, naming-allocation layer | naming, numbering, mandatory | present, unchanged status |
 
 ## What DOES change (upon ratification — implementation is a LATER, separate step; nothing here executes now)
 - `dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md` — new §XI "Drafts /
-  Pending-Ideas (OPTIONAL)" per The Rule steps 1–4; Version bump + Change-log entry per ARCH-00008's own protocol.
-- (Conditional on Opus's Stage-1 ruling, Existing-First item 4) `dna/vocabulary/CISEM-VOC-00002-status-library.md`
-  — a new "## Draft Lifecycle Status (per-item, internal to §XI blocks)" section listing `DRAFT-RAW | PARKED |
-  PROMOTED`, explicitly marked as a THIRD axis distinct from Node Status and Planning Status.
+  Pending-Ideas (OPTIONAL)" per The Rule steps 1–5; ONE-TIME Version bump + Change-log entry per ARCH-00008's own
+  protocol for the section's addition — subsequent §XI draft-item edits are EXEMPT from further version bumps and
+  from the Size Gate count (The Rule step 6, Opus Stage-1 RULING 2, folded v0.2).
 
 ## What does NOT change
 - No new schema/protocol/corespine node is created (Core Seed 1) — ARCH-00008 keeps its ID, Type, and RATIFIED
@@ -160,10 +174,11 @@ tag/status (see above).
 ## Definition-of-Done reference
 Verified at implementation against `dna/checks/definition-of-done.md` (cited, not re-derived): PRODUCED (§XI
 text exists in ARCH-00008) → WIRED (an honest `NOT-YET-WIRED` tag on the enforcement side is acceptable at this
-phase — no `[DRAFTS]` check is claimed) → PROPAGATED (VOC-00002 gains the sub-enum IF Opus rules to register it,
-A8 — one place, cross-referenced) → HOOKED (N/A — no new CAL hook required for a schema-text addition) →
-COMMITTED+PUSHED → VERIFIED (a worked example: this plan's own implementation step SHOULD add one real §XI block
-to a live node as a proof-of-shape, disclosed as a stress-test, not claimed as the check).
+phase — no `[DRAFTS]` check is claimed) → PROPAGATED (the sub-enum stays inline in §XI itself, per Opus Stage-1
+RULING 1 — VOC-00002 is explicitly NOT touched, so there is no second home to propagate to, A8 satisfied by
+non-forking) → HOOKED (N/A — no new CAL hook required for a schema-text addition) → COMMITTED+PUSHED → VERIFIED
+(a worked example: this plan's own implementation step SHOULD add one real §XI block to a live node as a
+proof-of-shape, disclosed as a stress-test, not claimed as the check).
 
 ## Propagation Declaration
 This plan changes the NODE-DNA SCHEMA (a T-SYS structural rule). On implementation it propagates BY-REFERENCE,
@@ -184,8 +199,9 @@ no new page is proposed; an enhancement to the EXISTING pages is the disclosed f
   named as "the git-side data model the frontend back-office edits+exports into").
 - **Follow-on (explicitly NOT built here, disclosed per I2/I22):** (a) a mechanical `[DRAFTS]` plan-audit WARN
   check validating the §XI field shape; (b) frontend rendering/query UI on `schema.html`/`nodes.html` (or a new
-  page, if Opus judges the existing two insufficient) filtering drafts by tag+status across all nodes; (c) the
-  VOC-00002 sub-enum registration, conditional on Opus's Stage-1 ruling.
+  page, if Opus judges the existing two insufficient) filtering drafts by tag+status across all nodes.
+  **NOT a follow-on (ruled out, not deferred):** VOC-00002 sub-enum registration — CLOSED per Opus Stage-1
+  RULING 1 (see Tier-Routing Declaration); the sub-enum stays local/inline in ARCH-00008 §XI permanently.
 
 ## Ratification Path
 Stage 0 (iterative Haiku→Sonnet→Opus draft-review loop per ARCH-00190 §3, two orthogonal lenses per Enhancement
@@ -207,8 +223,10 @@ Rejection Declaration (below) ✓ CAL reference ✓ Change log ✓ Independent V
 - ❌ Rejected: routing draft-item ideas through IBD instead — IBD is repo-wide/standalone; this plan's ask is
   explicitly PER-NODE, in-place scratch space (disambiguated in Existing-First item 3).
 - ❌ Rejected: silently merging `DRAFT-RAW`/`PARKED`/`PROMOTED` into the global Node Status enum (VOC-00002) —
-  CLAUDE.md §4 forbids invented vocabulary without flagging; this plan FLAGS it as a proposed THIRD, LOCAL axis
-  and leaves the registration decision to Opus's Stage-1 ruling.
+  CLAUDE.md §4 forbids invented vocabulary without flagging; this plan flagged it as a proposed THIRD axis in
+  v0.1, and Opus Stage-1 RULING 1 (folded v0.2) settled it: the sub-enum stays LOCAL, self-described inline in
+  ARCH-00008 §XI, and does NOT register into VOC-00002 — active status-enum proliferation (8 frozen vs 15 live,
+  parked coherence audit) must be reconciled before BP-0012, and adding 3 more global values now would worsen it.
 - ❌ Rejected: allocating a naming-registry.yaml ID to individual draft items — a draft is a sub-item of an
   existing node, not a new CISEM-{TYPE}-{SEQ} node; only PROMOTION triggers the real naming-gate allocation
   (flagged explicitly in The Rule step 2 for Opus confirmation, not silently assumed).
@@ -225,3 +243,10 @@ No new CAL surface is claimed for the schema addition itself (honest NOT-YET-WIR
   draft. Existing-First search (6 sources, incl. disambiguation from IBD), field-shape spec, promotion protocol
   reusing IBD's own discipline, flagged local status-enum, Per-File Alignment Table, Path Rejection populated
   per Core Seeds 1–3.
+- v0.2 — 2026-07-21 (Sonnet, STRUCTURING tier, dispatched by Opus): folded Opus Stage-1 verdict rulings
+  (CONDITIONALLY SOUND, 2 rulings) — RULING 1: the `DRAFT-RAW`/`PARKED`/`PROMOTED` sub-enum stays LOCAL/inline
+  in ARCH-00008 §XI, does NOT register into VOC-00002 (status-enum proliferation reason stated); every
+  conditional VOC-00002 edit removed and the related Tier-Routing/Anti-Scatter/What-DOES-change/DoD/Dependencies/
+  Path-Rejection lines rewritten so VOC-00002 is untouched by this plan. RULING 2: new Rule step 6 — §XI is
+  mutable scratch-space, exempt from ARCH-00008's per-change Version bump (only the one-time §XI addition bumps
+  it) and exempt from the Size Gate word/line count.

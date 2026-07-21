@@ -1,6 +1,6 @@
 # Core-Template Principle — ONE Battle-Tested Template, Instances Duplicate-and-Disable
 **Node ID:** CISEM-ARCH-00408 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
+**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 soundness PASS 2026-07-21 — cisem-opus-pe verdict SOUND; 3 refinements folded v0.2; awaiting Governor Stage-2 decree) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning-domain, template, core-vs-instance, configuration-not-fork, gate, mandatory]
 **Goal:** Establish ONE core template per template-class as the SSOT (complete, verified, battle-tested capability
 set); every specific use is a DUPLICATE of the core declaring `core_template:` + `disabled_capabilities:` + its own
@@ -12,6 +12,10 @@ element lacking a registered `core_template:` parent + `disabled_capabilities:` 
 (this plan's disclosed follow-on CAL surface, same posture as `[SEED]`/`[RAW-PAIR]`/`[NAMING]` at introduction).
 **Independent Verifier:** `cisem-opus-pe`, cold default-refute pass (author = Sonnet, dispatched by Opus; verifier
 = Opus fresh read, not a rubber-stamp of its own dispatch — satisfies P5 author≠verifier).
+**Size-gate exception (§3.6, documented):** 216 lines after the v0.2 Stage-1 fold (core-template rule + 5-step
+procedure incl. cold-start + 4-source Existing-First + Per-File Alignment Table + full ARCH-00190/00401 mandatory-
+section set). Kept whole per the ARCH-00190/00401/00404/00407/00409 documented-exception precedent — a coherent
+single-topic template-governance plan; a mini-tree split would fragment one procedure across files for no gain.
 
 **Existing-First (§3.2b, done) — searched, in order:**
 1. `dna/ssot-registry.yaml` `concepts:` — no `core_template`/`template_instance` entry exists; `creation_checklist`
@@ -90,15 +94,30 @@ explicitly wants this "up and running"):
    MECHANICAL form of this pushback (WARN-only at introduction, per the established CAL posture; promotable to
    BLOCK later under ARCH-00270, same graduation path as every other WARN check).
 3. **Spec the `[TEMPLATE]` WARN check** (built in Phase 2, reusing the exact structural pattern of `[SEED]`/
-   `[NAMING]` in `dna/checks/plan-audit.sh`): for every file/section self-identifying as a template (heuristic:
-   filename or header contains `TEMPLATE`, or a governed node's Type/tags include `template`), flag it if it lacks
-   BOTH a `core_template:` line pointing to a resolvable ID AND a `disabled_capabilities:` line — UNLESS it IS
-   itself the core (a core template is exempt from requiring its own `core_template:` parent; exemption marker:
-   `core_template: none (this IS the core)`). WARN-only; NOT in the `[ZF]` formula at introduction (same posture
-   as every prior WARN check's first commit).
+   `[NAMING]` in `dna/checks/plan-audit.sh`): for every file/section that DECLARES template-class membership via a
+   MARKER/TAG — a `template_class:` field, or a governed node's Type/tags (VOC-00001) explicitly including
+   `template` — flag it if it lacks BOTH a `core_template:` line pointing to a resolvable ID AND a
+   `disabled_capabilities:` line — UNLESS it IS itself the core (a core template is exempt from requiring its own
+   `core_template:` parent; exemption marker: `core_template: none (this IS the core)`). Detection is by the
+   DECLARED FIELD/TAG, never by a filename-or-header substring match on "TEMPLATE" — substring-as-class-membership
+   is a known recurring false-positive class (RI-0012 minitree; the I24 "ratified"-substring false-positive fixed
+   this session), and any substring heuristic carries an inherent false-positive surface (it matches prose/example
+   mentions of the word, not just real template nodes) — which is exactly why the check keys on the declared
+   field/tag instead. This false-positive surface is further softened by the check's WARN-only posture (not in the
+   `[ZF]` formula at introduction, same as every prior WARN check's first commit) plus the PARKED-retrofit pattern
+   (Anti-Scatter Ordering above) — a mis-tagged or newly-surfaced node is flagged for later cleanup, never blocked.
 4. **Cross-reference §3.2c** (Core-vs-Instance gate, CLAUDE.md) explicitly from the new §4, so the two rules read
    as one coherent check rather than two similar-sounding but separately-discoverable rules (A8 — one home, this
    plan's enhancement IS that home for templates specifically; §3.2c stays the general node-level rule).
+5. **Cold-start clause (bootstrap-escape, ARCH-00011):** the FIRST template created for any class has no proven
+   core to point at yet — this is not an error, it is the expected chicken-and-egg start. That first template is
+   created with **Status: PROVISIONAL-ACTIVE** and declares `core_template: none (bootstrapping — not yet
+   Principle-15 promoted)`, instead of pointing at a core that does not exist. It EARNS full core-template status
+   only after CLAUDE.md §2 Principle 15's divergent-iteration-to-flawless is satisfied (≥2–3 DIFFERENT instances
+   flowed without surfacing new gaps) — at which point its `core_template:` self-reference may be updated to
+   reflect earned core status and later instances point to IT. Until then, `[TEMPLATE]` (step 3) treats a
+   bootstrapping first-of-class the same as any exempt core (its own `core_template: none (bootstrapping...)` line
+   satisfies the check).
 
 ## Tags + Statuses on EVERY node this plan creates
 This plan creates **ZERO new governed nodes**. It enhances one EXISTING node (CISEM-TEMPLATE-PROTOCOL-001, Status
@@ -153,6 +172,11 @@ links is named as a DISCLOSED, NOT-YET-SCOPED follow-on (out of this plan; CS-FR
 - **Follow-on (explicitly NOT built here, disclosed per I2/I22):** retrofitting any pre-existing template-shaped
   artifact once the `[TEMPLATE]` check's first run surfaces real findings; a `frontend/pages/templates.html`
   rendering of `core_template:` relationships (CS-FRONTEND-001 domain).
+- **Soft dependency (honest disclosure):** every instance under this rule must carry a VOC-00001 tag + a
+  VOC-00002 status per its own node header — but VOC-00002 is CURRENTLY DIVERGED (active status-enum
+  proliferation, 8 frozen vs 15 live, flagged for reconciliation before BP-0012) and VOC-00001 may be BODILESS.
+  Until those two mature, the ARCH-00011 §4 inline-tag/status-list fallback applies to any template/instance node
+  created under this plan — non-blocking, disclosed here rather than assumed silently.
 
 ## Ratification Path
 Stage 0 (iterative Haiku→Sonnet→Opus draft-review loop per ARCH-00190 §3 as it exists today, TWO orthogonal
@@ -187,3 +211,10 @@ template-type creation — that wiring is the disclosed Phase 2 follow-on above,
 - v0.1 — 2026-07-20 (Sonnet, STRUCTURING tier, dispatched by Opus per Governor-approved instruction): initial
   draft. Existing-First search, 2-phase Rule, Per-File Alignment Table, Propagation Declaration, Path Rejection
   populated per Core Seeds 1–3.
+- v0.2 — 2026-07-21 (Sonnet, STRUCTURING tier, dispatched by Opus): folded Opus Stage-1 verdict rulings (SOUND,
+  3 non-blocking refinements) — Rule step 3 now keys `[TEMPLATE]` detection on a declared marker/tag
+  (`template_class:` / VOC-00001 `template` tag), not a filename/header substring, with the false-positive
+  surface + WARN-only/parked-retrofit softening explicitly stated; new Rule step 5 cold-start clause
+  (first-of-class = PROVISIONAL-ACTIVE + `core_template: none (bootstrapping...)` until Principle-15 earns core
+  status); Dependencies gained the VOC-00001/VOC-00002 soft-dependency disclosure + ARCH-00011 §4 inline-fallback
+  note.
