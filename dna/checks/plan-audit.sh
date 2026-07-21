@@ -44,6 +44,10 @@
 #   'pocket-mechanism.md' filename in live (non-audit/diagnostics) files (ARCH-00011 §2.5). [POCKET] added —
 #   changed dna/planning|protocols files must carry a reasoning_scope proxy for a Pocket Declaration (CLAUDE.md
 #   §3.3). All three WARN-only, planted-test-verified, NOT in the ZF formula.
+#   v12 (2026-07-21, ARCH-00411, Sonnet-built per Opus dispatch): [INJECTION-SCAN] added — guard #5 of the
+#   skill-ingestion route; scans every RAW-EXTERNAL *-RAW.md + dna/ibd/*.md for 5 value-anchored override/
+#   injection pattern classes (persona-hijack, forced-format, MCP-block-marker, truth-write-attempt, non-Latin
+#   persona block). WARN-only, planted-test-verified, NOT in the ZF formula.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -514,6 +518,12 @@ bash dna/checks/creation-gate.sh 2>/dev/null
 # [DELETION-GUARD] — no collateral deletion (Governor decree 2026-07-21, RI-0010). WARN-only.
 bash dna/checks/deletion-guard.sh 2>/dev/null
 
+# [DEFER-SCAN] Principle 21 — un-parked defer-and-assume-later in changed governed files (Governor decree 2026-07-21). WARN.
+bash dna/checks/defer-scan.sh 2>/dev/null
+
+# [AGENT-PASS] Principle 21 — weekly all-agents compliance freshness gate (Governor decree 2026-07-21). WARN.
+bash dna/checks/agent-pass-gate.sh 2>/dev/null
+
 # [CHECK-LINT] — meta-guard against the substring-vs-field anti-pattern in the check files THEMSELVES
 # (RI-0012 class; 2 instances 2026-07-21 — the mini-tree -index filename collision + the I24 regex that matched a
 # value word ANYWHERE on a status line, so a negation like "not ratified" false-flagged a PARKED file). A status/
@@ -548,6 +558,10 @@ for f in dna/planning/*.md; do
   fi
 done
 [ "$found_ratgate" = 0 ] && echo "   (none — every RATIFIED plan cites its Stage-1 soundness verdict)"
+
+# [INJECTION-SCAN] — guard #5 of the skill-ingestion route (CISEM-ARCH-00411, Sonnet-built per ratified dispatch).
+# WARN-only, NOT in the ZF formula (same posture as [SEED]/[RAW-PAIR]/[ARCHIVE]/[NAMING]/[CHECK-LINT] at introduction).
+bash dna/checks/injection-scanner.sh 2>/dev/null
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
