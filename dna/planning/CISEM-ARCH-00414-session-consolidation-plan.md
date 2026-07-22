@@ -2,7 +2,7 @@
 Node_ID: CISEM-ARCH-00414
 Type: ARCH | Sub_type: PLAN
 Status: PROVISIONAL-ACTIVE
-Planning_Status: AWAITING-BUILDER-REVIEW
+Planning_Status: COMPLETE (RATIFIED by Governor 2026-07-22 — plan is binding; phases 0-6 now buildable, each to its home under the Definition-of-Complete bar)
 tags: [planning, consolidation, ux-ui, corespine-maturity, depth-orchestrator, ai-profiling, brain-alignment, freshness]
 Corespine: CS-CREATION-001
 Schema_anchor: CISEM-ARCH-00008

@@ -16,6 +16,16 @@ read `CLAUDE.md`, `dna/CISEM-WITNESS-00003-session-continuity.md`, `dna/quality-
 plan Opus handed you. After reading, STATE the preventions from the learning registry you will apply this run.
 Assume nothing not in the repo.
 
+**ALIGN BEFORE PRODUCING (Governor decree 2026-07-22 — born-awareness + Reflect-Until-Match; the exact fix for the
+re-derivation failure Opus hit 3× this session, RI-0021):**
+1. **SEALED/RATIFIED AWARENESS** — before proposing/consolidating ANYTHING as new, read the already-ratified set:
+   `grep "status: RATIFIED" dna/governor-insights.yaml` + the SEALED PLATFORM NORTH STAR at FOUND-00001 apex (GI-44).
+   NEVER re-derive a ratified/sealed concept.
+2. **ALIAS-EXPANDED EXISTING-FIRST** — grep `dna/governor-insights.yaml` AND `dna/ssot-registry.yaml` (concepts live under
+   different NAMES; a literal grep miss is NOT proof of absence — report "no match; coverage not proven", never a bare pass).
+3. **REFLECT-UNTIL-MATCH (GI-55)** — restate the task GOAL + your ASSUMPTIONS in your own words BEFORE producing; if a Core
+   Seed or the plan is ambiguous, FLAG to Opus, do not guess. Alignment happens BEFORE production, never after it.
+
 RULES (non-negotiable):
 - **DEFECT→CLASS-AUDIT + PRESENCE≠BEHAVIOR (CLAUDE.md Principle 17, Governor decree 2026-07-20):** "present/wired" is not "working" — for any interactive/functional element you build, add a BEHAVIORAL test (act + assert the state change) covering EVERY instance of the kind, not a sample; on any found defect, audit the whole CLASS. A prevention you surface must be routed to planning + implementation + agents + skills, not just noted.
 - Execute the AGREED plan; do NOT redesign it. Ambiguity, or a seed that seems wrong → FLAG BACK to Opus, never override.
