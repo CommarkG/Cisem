@@ -146,5 +146,30 @@ author) may NOT self-verify its own completion (P5 separation).
 Not yet Opus-reviewed for soundness (this is the DRAFT). Planning Status stays AWAITING-BUILDER-REVIEW until an independent
 Opus-PE soundness pass + Governor ratification (ARCH-00190 §3, RATIFY-GATE).
 
+## Definition of COMPLETE + per-element checklist (Brain-consult 2026-07-22, adopted; the professional bar)
+**COMPLETE = a RUNNING mechanism exists + EXERCISED ≥1× with REAL input + output CITABLE (file+command+result).** Not
+"designed", not "documented" (presence≠behavior + wire-don't-document). This bar applies to every phase AND to every
+"BUILT" claim — a summary line carries the same evidentiary bar as a commit.
+**Per-element checklist (every open item + every claimed-built item):** [ ] owner named · [ ] verification-method stated ·
+[ ] running mechanism cited (file) · [ ] exercised on ≥1 real input (command+result) · [ ] for a CHECK: fired on a
+KNOWN-BAD case (cite) · [ ] pushed — else honestly `NOT-YET-WIRED:<reason>`.
+**Corrections to the session "BUILT" summary (bar applied to Opus itself, Brain-caught):** (a) "3 AI-profiling defaults
+GUARDED" → DOWNGRADE: RI-0018/19/20 are RECORDED (verified on disk) but propagation to persona+agents is
+NOT-YET-WIRED (status: PENDING); (b) "board GREEN" → CITED: [ZF] ACHIEVED (I1+I9+I6-SIZE+I16+I19+I23+I24+P3+P5), verified
+2026-07-22; (c) "daily reminder scheduled" → mechanism = a Google Calendar recurring event (running), not a Builder cron;
+(d) pages = 28 (find-verified; Brain's 22 was stale v3 data).
+**Sequence (Brain, adopted):** (1) ratify/reject THIS plan FIRST — everything else is a phase or downstream; (2) build the
+maturity seal-check BEFORE ruling the 7 orphans (no criteria = re-litigation); (3) depth-orchestrator AFTER maturity
+(depth = a maturity concept); (4) frontend↔backend + UX-HOME run PARALLEL (different domain); (5) retention + channel-
+injection guard = containment, schedule independently + SOON; (6) ARCH-00160 anytime.
+**Highest completion-risk (Brain):** the maturity system itself — it's the checker that catches declared-done-but-not-wired,
+so if IT is declared-done-not-wired nothing catches that. MITIGATION (mandatory before calling it built): run the seal-check
+against a KNOWN-BAD corespine (one of the 7 homeless) and confirm it FLAGS it — not just that the check exists.
+**Missing-items added (Brain):** (i) every open item gets an OWNER + verification-method + TTL (RULE 5), not just a list;
+(ii) a PRECEDENCE rule for when the maturity system and the depth-orchestrator disagree on a corespine (same class as the
+git-vs-Drive precedence gap, one layer up); (iii) a retro-check on the "board GREEN" claim as its OWN line item.
+**Sync-scope refinement:** add `learning-registry/root-insights.yaml` + `session-learning-index.yaml` to Brain's connector
+(signal, small) so Brain can verify profiling work; keep `raw-activity/` excluded (bloat).
+
 ## Change log
 - v0.1 — 2026-07-21 (Opus, PROVISIONAL-ACTIVE, AWAITING-BUILDER-REVIEW): whole-session consolidation; chat reviewed twice.
