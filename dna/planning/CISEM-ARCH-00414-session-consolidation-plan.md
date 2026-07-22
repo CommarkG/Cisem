@@ -101,8 +101,12 @@ zero manual sync. (The Claude.ai Projects GitHub connector [verified 2026-07-22]
 to Brain's project knowledge, BUT sync is MANUAL "Sync now" per session, NOT auto-refresh — so it reduces the per-time
 burden to one Sync-click + question-only, not true zero-touch. Private personal-account repos have a known edge-case auth
 failure → .zip-upload fallback. The self-contained packet stays the zero-setup path; the two are complementary.)
-(f) **BRAIN PROJECT STABILIZATION (Brain-consult answer, accepted 2026-07-22):** stabilize at the PROJECT level (persists
-across all Brain chats). **Custom instructions** = a SHORT pointer-form paragraph (stance: colleague/never-self-ratify;
+(f) **BRAIN PROJECT STABILIZATION — CANONICAL HOME = ARCH-00160 (project-sync-manifest, EXISTS: custom-instructions text +
+required scope already written).** Existing-First MISS by BOTH Brain and Opus 2026-07-22 (we re-derived it) — corrected:
+Brain's design + this phase ENHANCE ARCH-00160, never fork it (A8); add dna/vocabulary + ARCH-00413 to its scope now they
+exist. Confirmed sync GAP (Brain, searching its project knowledge): CLAUDE.md, dna/schema/*, dna/vocabulary/*, and the
+corespine registry did NOT surface in Brain's synced knowledge — either the connector pick is incomplete or not-yet-pulled
+(fix at the connector). Brain-consult refinements to fold into ARCH-00160 (persist across all Brain chats): **Custom instructions** = a SHORT pointer-form paragraph (stance: colleague/never-self-ratify;
 git=SSOT; state assumed-state confirmed/inferred/assumed before acting; pointer to the pinned DNA contract) — NOT a
 restatement of the DNA (A8). **Pinned/scoped file set (minimal, RAG-retrieved):** ARCH-00413 DNA contract · CLAUDE.md ·
 corespine-registry (INDEX layer — names/status/seal-state, bodies pulled on demand) · naming-numbering policy · WITNESS
