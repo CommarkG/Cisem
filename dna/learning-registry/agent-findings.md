@@ -34,6 +34,25 @@ Entry format (append, newest at bottom):
   build ONLY Phase 0) — flagged so a future perf pass on [I16]'s per-file scanning isn't rediscovered from scratch.
   → DISTILL-PENDING.
 
+- [2026-07-22 · cisem-sonnet · ARCH-00415/00416 drafting (two DRAFT plans)] **Dispatch-framing can itself be stale —
+  Existing-First must re-verify the TASK'S OWN premise, not just its proposed artifact.** The dispatch described Plan
+  A as resolving an OPEN "I25 debt" for the Corespine Wizard ("was built WITHOUT a ratified plan... Governor ruled
+  ratify-with-retro-plan"). Existing-First search found that debt was ALREADY CLOSED — `dna/planning/CISEM-ARCH-00395`
+  is RATIFIED, Planning_Status COMPLETE, quality-ledger run 18 — for the exact artifacts named (ARCH-00393/00394).
+  Drafting a second "resolve the I25 debt" plan on the stale premise would have been a genuine A8/I19 duplication
+  (re-ratifying an already-ratified decision). CLASS: before drafting FROM a dispatch's problem-statement, verify the
+  problem-statement's OWN currency (is the described gap still open?) — not only whether the PROPOSED SOLUTION
+  duplicates something; a stale premise produces a duplicate even with a "new" framing. RESOLUTION (not a redesign,
+  per Core Seed — followed the dispatch's own fallback instruction to frame as a "learning comparison to ARCH-00190"
+  instead): drafted ARCH-00415 as an additive process-comparison analysis, explicitly citing ARCH-00395 as
+  already-closed and stating why this plan is distinct (comparison, not re-ratification). PREVENTION: any agent
+  (any tier) receiving a dispatch that names a specific "open debt/gap" MUST re-verify that gap is still open via
+  Existing-First BEFORE drafting toward it — do not trust the dispatch's own currency claim uncritically, even when
+  it comes from Opus/Governor (dispatches age; sessions between dispatch-authoring and dispatch-execution can close
+  the very gap named). → DISTILL-PENDING (candidate: fold into I19's Existing-First check-pattern family alongside
+  the existing "search before creating" rule — extend it to "search before drafting TOWARD a named problem," same
+  root as RI-0012's substring-vs-field family: trusting a label instead of verifying the underlying state).
+
 - [2026-07-21 · cisem-sonnet · UX/UI build] **DOM-position fragility:** `initPageViewToggle()` assumed `.sh` is a
   DIRECT child of `<main>` (`insertBefore(bar, firstSh)`) → threw `NotFoundError` on the tabbed uxui.html where `.sh`
   nests inside `.uxui-panel`. Root fix: anchor via `pgDesc.parentNode` (a known-stable ancestor present on every page),
