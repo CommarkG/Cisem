@@ -301,3 +301,5 @@ session_2026_07_21_creation_and_hardening:
     session_note: "Comprehensive audit session. 6 major reports (ZF cycles, Size Gate, SSOT, pre-compaction readiness, platform coherence, coherence+drift+alignment + CSP scan). All work written to disk as findings (evidence-only, no action yet). Haiku + Fable tiers applied. Learnings captured richly per A10 (full fidelity, not summary). Ready for compaction."
 
 session_2026_07_22_harvest: "dna/learning-registry/session-harvest-2026-07-22.md — full-fidelity harvest (retrieval crisis + born-awareness RESOLVED afaa575 + A11/I26 AWAITING-RATIFY + open items). READ ON RESUME."
+
+session_2026_07_22_DEEP_CORE: "dna/queue/PARK-BATCHING-CORESPIRAL-CYCLE-SCOPING-2026-07-22.md — humble-batching = CoreSpiral cycles; the DEEP issue: how to SCOPE a cycle (length x blast/depth x Governor-review-limits x tier-context). Could improve CISEM like hell. DEEP-DIVE AFTER COMPACT. Consult Brain (A11/D1)."
