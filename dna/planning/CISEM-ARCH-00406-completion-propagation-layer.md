@@ -1,6 +1,6 @@
 # Completion & Propagation Layer — Phased Plan (RIPL-v2 · Propagation Network · Tier-Cycle · Workflow Governance · Output-Liveness Monitor)
 **Node ID:** CISEM-ARCH-00406 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** IN-PROGRESS — Governor RATIFIED phase-gated (first-phase-only) 2026-07-22 · Opus Stage-1 verdict SOUND · Phase 0 BUILT (744325c) + Opus GATE 0→1 review PASS · Phases 1–5 gate individually (each needs its own Governor sign-off) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
+**Planning Status:** IN-PROGRESS — Governor RATIFIED phase-gated (first-phase-only) 2026-07-22 · Opus Stage-1 verdict SOUND · **Phase 0 CLOSED (Governor GATE 0→1 direct sign-off 2026-07-22)** · Phase 1 (RIPL-v2) NOT yet greenlit (awaits explicit Governor go) · Phases 2–5 gate individually | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning-domain, completion, propagation, ripl, tier-cycle, workflow-governance, output-liveness, mandatory, gate]
 **Goal:** End the recurring "I forgot to wire / propagate / push" class MECHANICALLY, and make root-insight handling
 disciplined (accumulate → weekly pattern-batch → plan → ratify → auto-propagate) — measurable as: (1) every SSOT-concept
