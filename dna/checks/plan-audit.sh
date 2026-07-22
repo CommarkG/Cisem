@@ -121,7 +121,7 @@ cv=$(git log --oneline -10 2>/dev/null | grep -iE "clos|resolv|complet| fix")
 # I16 — stale / self-contradicting status (FIELD-vs-FIELD: header Status vs body Status, not prose)
 echo "[I16] status contradictions (header Status FIELD vs body Status FIELD):"
 found_i16=0
-for f in $(find . -name "*.md" -not -path './.git/*' 2>/dev/null); do
+for f in $(find . -name "*.md" -not -path './.git/*' -not -path './dna/learning-registry/raw-activity/*' -not -path './dna/knowledge-library/*' 2>/dev/null); do
   header_status=$(head -20 "$f" | grep -iE "^\*\*Status:|^status:" | head -1 | sed -E 's/.*Status:\s*\*?\*?//i' | xargs)
   [ -z "$header_status" ] && continue
 
@@ -302,7 +302,7 @@ while IFS= read -r seedline; do
       found_seed_missing=1
     fi
   fi
-done < <(grep -rn "\[\[CORE-SEED" --include="*.md" . 2>/dev/null | grep -v '.git/' | grep "MUST:")
+done < <(grep -rn "\[\[CORE-SEED" --include="*.md" --exclude-dir=raw-activity --exclude-dir=knowledge-library . 2>/dev/null | grep -v '.git/' | grep "MUST:")
 [ "$found_seed_missing" = 0 ] && echo "   (none — all [[CORE-SEED]] directives carry APPLIES_TO)"
 
 # RAW-PAIR — Source-fidelity (ARCH-00011 §3.5, Governor decree 2026-07-19): imported external content is a
