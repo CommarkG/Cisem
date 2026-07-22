@@ -13,6 +13,27 @@ Entry format (append, newest at bottom):
 
 ## Entries
 
+- [2026-07-22 · cisem-sonnet · ARCH-00406 Phase 0 (Propagation Network)] **Bracket-in-quotes truncation bug in a
+  naive `[^]]*` field-extraction regex.** Extracting `mirrors:`/`regenerates:` YAML flow-arrays from
+  `ssot-registry.yaml` via `grep -oE 'mirrors:[[:space:]]*\[[^]]*\]'` truncated on the FIRST `]` encountered — which
+  broke on `definition_of_done`'s real value `mirrors: ["plan-audit.sh [DOD] check (pointer)"]` (stopped at
+  `[DOD]`'s own closing bracket, printing `["plan-audit.sh [DOD]`, silently malformed, not caught until the stress
+  test's actual printed output was inspected). CLASS: any shell/grep extraction of a bracket-delimited value MUST be
+  quote-aware + bracket-depth-aware whenever the value's own text can legitimately contain literal `[...]` — a plain
+  "match to first close-bracket" regex is unsound for that whole class of field, not just this one instance.
+  PREVENTION (fixed live, this commit): replaced the regex with a quote-respecting depth-counting `awk` extractor
+  (toggles an in-quote flag on `"`, only counts `[`/`]` depth when NOT inside a quote) — reusable pattern for any
+  future check that extracts a flow-YAML array field via shell. → DISTILL-PENDING (candidate: name this as a
+  standing extraction-pattern note beside [CHECK-LINT]'s substring-vs-field family, RI-0012).
+
+- [2026-07-22 · cisem-sonnet · ARCH-00406 Phase 0] **Performance observation (disclosed, not a regression I
+  introduced):** a full `plan-audit.sh` run on this repo/environment (Windows + git-bash) took ~2m29s wall-clock;
+  isolated timing of the new `[PROPAGATE]` block alone was ~8s. The dominant cost is the PRE-EXISTING `[I16]`
+  whole-tree per-`.md`-file scan (per-file `head`/`tail`/`awk`/`sed` subshell spawns — expensive on Windows), already
+  flagged by a prior commit message ("plan-audit perf fix"). Not fixed here (out of Phase-0 scope, Core Seed 1 —
+  build ONLY Phase 0) — flagged so a future perf pass on [I16]'s per-file scanning isn't rediscovered from scratch.
+  → DISTILL-PENDING.
+
 - [2026-07-21 · cisem-sonnet · UX/UI build] **DOM-position fragility:** `initPageViewToggle()` assumed `.sh` is a
   DIRECT child of `<main>` (`insertBefore(bar, firstSh)`) → threw `NotFoundError` on the tabbed uxui.html where `.sh`
   nests inside `.uxui-panel`. Root fix: anchor via `pgDesc.parentNode` (a known-stable ancestor present on every page),
