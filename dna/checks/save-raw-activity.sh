@@ -42,6 +42,28 @@ else
 fi
 total="$(wc -l < "$tx" 2>/dev/null | tr -d ' ')"
 kept="$(wc -l < "$snap" 2>/dev/null | tr -d ' ')"
-echo "[SAVE-RAW-ACTIVITY] snapshotted VERBATIM ${kept}/${total} transcript lines -> $snap (session $sid)."
-echo "  Commit + push this so the raw activity survives compaction: git add $snap && commit && push."
+
+# ── TIER 2: RAW ARCHIVE (Governor decree 2026-07-22, 2-tier platform-level enhancement) ─────
+# ADDITIVE ONLY — the CLEAN tier above (dialogue-only .md) is unchanged in behavior. In addition,
+# gzip the FULL VERBATIM transcript (perfect fidelity, incl. tool_use/tool_result) to a compressed
+# archive, out of the way of the human-accessible tree. This satisfies "keep the raw version saved"
+# without polluting the clean layer with noise (Principle 19: keep signal accessible, raw preserved).
+archdir="$outdir/archive"; mkdir -p "$archdir"
+rawgz="$archdir/raw-${sid}.jsonl.gz"
+if command -v gzip >/dev/null 2>&1; then
+  gzip -c "$tx" > "$rawgz" 2>/dev/null
+  raw_status="ok"
+else
+  echo "[SAVE-RAW-ACTIVITY] WARN: no gzip on PATH — raw archive tier skipped (clean tier still saved)." >&2
+  raw_status="skipped"
+fi
+
+clean_size="$(wc -c < "$snap" 2>/dev/null | tr -d ' ')"
+echo "[SAVE-RAW-ACTIVITY] TIER 1 (clean, accessible): snapshotted VERBATIM ${kept}/${total} dialogue lines -> $snap (${clean_size:-0} bytes, session $sid)."
+if [ "$raw_status" = "ok" ] && [ -f "$rawgz" ]; then
+  raw_orig_size="$(wc -c < "$tx" 2>/dev/null | tr -d ' ')"
+  raw_gz_size="$(wc -c < "$rawgz" 2>/dev/null | tr -d ' ')"
+  echo "[SAVE-RAW-ACTIVITY] TIER 2 (raw, archived): full verbatim transcript gzipped -> $rawgz (${raw_orig_size:-0} -> ${raw_gz_size:-0} bytes, session $sid)."
+fi
+echo "  Commit + push both so raw activity survives compaction: git add $snap $rawgz && commit && push."
 exit 0
