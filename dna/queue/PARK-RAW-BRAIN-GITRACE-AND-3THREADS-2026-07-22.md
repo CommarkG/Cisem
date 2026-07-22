@@ -51,3 +51,23 @@ archived/raw paths from plan-audit's live scan entirely (frozen, already-checked
 Brain split my one park into 3 — correctly (T3 is the hard one hiding inside T1/T2). Fold this into
 PARK-BATCHING-CORESPIRAL-CYCLE-SCOPING after compact. The git-race fix (A now / B next) is the first concrete build.
 More raw Governor content INCOMING — this file is the pattern (raw-capture + TRIGGER-AFTER-COMPACT).
+
+## ADDENDUM (Brain) — Thread 1 generalized: THE PRINCIPLE + 10 applications
+**THE GENERAL PRINCIPLE (state ONCE, at principle level — NOT 10 separate hardwirings, which would fork; = 1 principle +
+10 applications, a smaller maintainable surface):** **"SINGLE-UNIT-IN-FLIGHT PER PROCESS LANE"** — in any process where
+multiple parts can run before any is verified, CAP it: do NOT open unit N+1 until unit N is VERIFIED (not just started).
+Reset point = a clean/verified commit.
+
+**The 10 candidate lanes (each: the overload it prevents → its reset point) — targeted, not a blanket slowdown:**
+1. **Planning** — phase N's SOUNDNESS review completes before phase N+1 is DRAFTED (not just built) → no compounding on an unverified assumption.
+2. **Implementing** — one component builds → passes functional-check → commits, before the next starts (the git-race case; already converged).
+3. **External review rounds** — round N fully purified + folded into SSOT before round N+1's raw input is requested → no purification backlog.
+4. **Session learning harvest** — harvest write VERIFIED before the next session/tab starts new work → upgrades the existing PreCompact WARN toward a hard gate.
+5. **Corespine sealing** — one corespine's full seal-check (incl. evidenced trial) completes before the next opens → no rushed/skipped trials.
+6. **Class-wide frontend rollout** — verify an invariant on one page-group (incl. behavioral test) before extending → DEFECT→CLASS-AUDIT applied PROACTIVELY at creation, not reactively at fix.
+7. **Naming/numbering allocation** — single-writer lock per session: one actor allocates + commits naming-registry before any other allocates (the confirmed Brain/Builder collision).
+8. **Drive/GitHub sync** — one sync direction completes + verified before the next cycle triggers → no overlapping runs.
+9. **Governor ratification queue** — CAP open-awaiting-Governor items to what the Governor can genuinely review in ONE sitting → this is where Thread 3's "knowing my limits" becomes ACTIONABLE (counters the terse-proceed trap, Principle 20).
+10. **Axiom/constitutional propagation** (A11's own rollout) — one axiom's FULL propagation (through ARCH-00406) completes + verified before the next axiom is opened for consult → no half-wired axioms (the declared-vs-wired gap).
+
+**Opus note:** #9 is the concrete handle on Thread 3 (Governor review-bandwidth) + directly relevant to THIS session (many open-awaiting-Governor items stacked). #2/#7 are the git-race. Fold the PRINCIPLE ("single-unit-in-flight per process lane") into the batching/CoreSpiral deep-dive as the PARENT; the 10 are its applications. Not self-ratified — scope/priority is Thread-3's open question applied recursively.
