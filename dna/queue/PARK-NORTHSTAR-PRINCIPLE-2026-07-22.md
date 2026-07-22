@@ -1,12 +1,19 @@
 ---
 tags: [park, principle-candidate, north-star, goal, role, gate-0, corespine, foundational]
 Type: QUEUE | Sub_type: PRINCIPLE-CANDIDATE
-Status: DRAFT-PRINCIPLE-CANDIDATE — pending Governor ratification into the constitution
+Status: RETRACTED — RE-DERIVATION of the already-RATIFIED North Star (GI-44 / FOUND-00001 apex, SEALED 2026-07-20). Do NOT treat as a new principle; do NOT let it supersede the RATIFIED one.
 last_verified: 2026-07-22 | freshness: FRESH
 Proposed_home: sharpen Gate 0 (CS-THRESHOLD-001 / CLAUDE.md §2.7) + a FOUND-00001 tie to A9/A2 (Governor decides)
 ---
 
 # North Star Principle — Goal + Role define the essence (nested local/global)
+
+> **⚠ RETRACTED 2026-07-22 (Brain-caught, Opus-verified).** This concept is ALREADY RATIFIED + SEALED: the PLATFORM
+> GOAL / NORTH STAR at `FOUND-00001` apex (GI-44, Governor foundational decree 2026-07-20), which already states
+> *"a goal is a target to reach; sub-goals inherit + must SERVE it"* (the nesting) and the *"Goal DO/DON'T + typed Role"*
+> writing standard (the Goal+Role pairing). This park was a RE-DERIVATION — the 3rd Existing-First miss this session (RI-0021).
+> Any genuinely-additive phrasing (the explicit "local North Star" per-element frame) ENHANCES the FOUND-00001 home (A8);
+> it is NOT a new principle and must NOT supersede the RATIFIED one. Kept (not deleted) as the evidence of the miss.
 
 ## Governor's articulation (2026-07-22, essence preserved)
 "If we define the GOAL and the ROLE of something, it gives direction for the essence of any element, including a cause

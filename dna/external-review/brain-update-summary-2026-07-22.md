@@ -43,10 +43,18 @@ B. BUILT + VERIFIED (on disk, cited)
   (retention policy is OPEN - the .gz grows per session).
 - Two dangling registry->disk pointers fixed (the ones your validator pass found).
 - Daily "sync CISEM->Brain" reminder = a running Google Calendar event.
+  (Citations, per your discipline: pages=28 via `find frontend -name "*.html"|wc -l`;
+   623/0 via `node frontend/tests/functional-check.mjs`; [ZF] via `plan-audit.sh`.
+   OUTSIDE your git-scope, so you cannot verify these - the Calendar event + the
+   .gz tiering: Opus-verified but not git artifacts; your SILENCE on them means
+   "outside scope", NOT "confirmed".)
 
 C. DRAFT - AWAITING GOVERNOR CONSENSUS (not established)
-- NORTH STAR PRINCIPLE (Goal+Role define essence; North Stars NEST, local serves
-  global) - sharpens Gate 0. DRAFT-PRINCIPLE-CANDIDATE.
+- NORTH STAR: CORRECTED (you caught this). The platform North Star is ALREADY
+  RATIFIED + SEALED at FOUND-00001 apex (GI-44) - it already carries the nesting
+  ("sub-goals serve it") + the Goal+Role pairing ("Goal DO/DON'T + typed Role").
+  Opus's "North Star Principle" DRAFT was a RE-DERIVATION (3rd Existing-First miss,
+  RI-0021) and is RETRACTED - it does NOT supersede the RATIFIED one.
 - ARCH-00414 consolidation plan (phases 0-6) - PROVISIONAL-ACTIVE,
   AWAITING-BUILDER-REVIEW. It is a ratifiable PLAN OF WORK, not completed work -
   most phases are NOT-YET-WIRED by the Definition of Complete.
