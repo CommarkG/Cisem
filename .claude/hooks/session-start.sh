@@ -17,6 +17,15 @@ echo "INHERITED PREVENTIONS (apply BEFORE creating anything — state which you 
 grep -hiE "^ *prevention:|^ *hardwired_as:" dna/learning-registry/session-learning-index.yaml 2>/dev/null \
   | sed -E 's/^ *//' | head -14 | sed 's/^/  - /'
 echo ""
+echo "SEALED / RATIFIED — DO NOT RE-DERIVE (born-aware anti-re-derivation gate, RI-0021):"
+echo "  Before proposing OR consolidating ANY concept as NEW, GREP dna/governor-insights.yaml +"
+echo "  dna/ssot-registry.yaml FIRST and STATE the search. A consolidation that FEELS novel is the"
+echo "  exact trap (GI-55) — Opus re-derived RATIFIED content 3x in one session. Already RATIFIED:"
+grep -hE "status: RATIFIED" dna/governor-insights.yaml 2>/dev/null \
+  | sed -E 's/.*id: (GI-[0-9a-z_]+).*insight: "([^"]{0,84}).*/  - \1 \2.../' | head -12
+echo "  - PLATFORM NORTH STAR: SEALED at FOUND-00001 apex (GI-44) — sub-goals SERVE it, never redefine it."
+echo "  (This list is auto-pulled from governor-insights.yaml each session — it stays current.)"
+echo ""
 echo "LIVE ENFORCEMENT: run 'bash dna/checks/plan-audit.sh' → the [ZF] line is your done-gate."
 echo "CAL governs this: CISEM-ARCH-00390. No creation is done until [ZF] ACHIEVED or every finding routed."
 exit 0
