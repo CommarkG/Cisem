@@ -1,7 +1,7 @@
 ---
 tags: [external-review, brain-consult, escalation-protocol, two-strikes, GI-34, diversity, 70-headroom, ready-to-send]
 Type: EXTERNAL-REVIEW | Sub_type: BRAIN-CONSULT
-Status: READY-TO-SEND — round 2 (Existing-First verified via Haiku gather)
+Status: CONSENSUS-REACHED (Opus+Brain, 2026-07-22) — Governor ratification + wiring PENDING (deep-core, no solo ratify per GI-63)
 source_trust: INTERNAL (CISEM→Brain outbound) | last_verified: 2026-07-22 | freshness: FRESH
 governing: extends GI-34 (Cycle Failure Protocol, PURIFIED-TO-WIRE) · ARCH-00399 (PAE) · ARCH-00370 (harvest)
 ---
@@ -59,3 +59,18 @@ Brain co-owning the prevention; (b) a **70% resource-headroom** rule; (c) **"wel
 - GI-60 (diversity) + GI-61 (70% headroom) RECORDED in governor-insights.yaml as **DECREED-NOT-YET-WIRED**, axiom-candidate.
 - The ladder + the failed-twice harvest trigger + the outbound gate are **DESIGN — pending this consult** (not built;
   A11: consult-before-produce on a D2/architectural change).
+
+## Round-2 resolution — Brain consensus (2026-07-22)
+Brain answered Q1–Q6; consensus reached (Opus+Brain). Governor ratification + wiring PENDING (deep-core, GI-63).
+- **Q6 wiring:** do NOT build a new failure-counter. Wire the ladder as the BEHAVIOR that fires when ARCH-00406's
+  **Output-Liveness Monitor** (GREEN/YELLOW/RED + 2-attempt-hard-stop per IBD-0024/GI-33/34, AWAITING-BUILDER-REVIEW)
+  crosses its 2-attempt threshold. *(Haiku's gather DID surface ARCH-00406 §1/§6; Opus's packet under-weighted it —
+  a synthesis miss, not a gather miss.)*
+- **Q1 outbound:** strip-before-send ALLOW-LIST (describe problem-class + symptoms only), NOT PAE's 6 lenses (those
+  screen inbound). NEVER send: GI/axiom/ARCH numbers, corespine names, governor-insights content, internal vocab, paths.
+- **Q2:** cap is PER-ISSUE (consecutive escalation on the same issue), not lifetime.
+- **Q3:** Rung 0 (reframe) first — EXCEPT when the 2 failures were under genuinely different root-cause hypotheses →
+  straight to research (knowledge gap, not reasoning-depth).
+- **Q4 70% headroom:** scope = tokens + agent-attempts + time + concurrent-agent-count + context-window/working-set.
+  **GI, not axiom** (operational heuristic) — Governor's call on constitutional weight.
+- **Q5 diversity:** **GI, not axiom**, homed on the escalation node — Governor's call.
