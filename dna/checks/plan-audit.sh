@@ -61,6 +61,11 @@
 #   knowledge-library files are external source material that legitimately QUOTE example node-like ids (e.g.
 #   "CS-CRM-BILLING-001" cited as an illustrative tag in KL-0002); they are not governance references and must
 #   not be flagged as dangling. Real dangling refs elsewhere are still caught (planted-tested both directions).
+#   v15 (2026-07-22, ARCH-00406 Phase 0, Governor-ratified first-phase-only; Sonnet-built per Opus Core Seeds):
+#   [PROPAGATE] added — when a commit touches a file that IS the registered ssot: for a concept in
+#   dna/ssot-registry.yaml, prints that concept's mirrors:/regenerates: list as a reminder-surface ("did I
+#   update it in the axiom AND the wizard AND the persona AND the check?"). WARN-only, NOT in the ZF formula
+#   (same posture as [SEED]/[RAW-PAIR]/[ARCHIVE]/[NAMING] at introduction).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -581,6 +586,77 @@ bash dna/checks/injection-scanner.sh 2>/dev/null
 bash dna/checks/naming-format.sh 2>/dev/null
 bash dna/checks/type-match.sh 2>/dev/null
 bash dna/checks/cs-names.sh 2>/dev/null
+
+# [PROPAGATE] — Propagation Network (ARCH-00406 Phase 0, Governor-ratified first-phase-only 2026-07-22).
+# ENHANCES dna/ssot-registry.yaml (no parallel index, A8/I19): when a commit touches a file that IS the
+# registered `ssot:` for a concept, print that concept's `mirrors:`/`regenerates:` list as a reminder-surface
+# ("did I update it in the axiom AND the wizard AND the persona AND the check?"). WARN-ONLY reminder — does
+# NOT enter the ZF formula (same posture as [SEED]/[RAW-PAIR]/[ARCHIVE]/[NAMING]/[CHECK-LINT] at introduction).
+# Matching: a concept's `ssot:` value is either a literal repo-relative path (dna/foo/bar.md) or a
+# "CISEM-{TYPE}-{SEQ} <section-ref>" / "CLAUDE.md §N" style reference — the leading token before the first
+# space is taken as the anchor; a bare filename/path is matched directly against changed files, a node ID is
+# resolved to its on-disk file via `find` (same resolution style as [I1]) before matching. `ssot: filesystem`
+# (naming_id_to_file — no single ssot file) is explicitly skipped, honestly, rather than false-matched.
+echo "[PROPAGATE] SSOT-touch reminder (mirrors:/regenerates: per dna/ssot-registry.yaml; WARN-only, not in ZF):"
+found_propagate=0
+ssot_registry="dna/ssot-registry.yaml"
+changed_all=$( { git diff --cached --name-only 2>/dev/null; git diff --name-only 2>/dev/null; \
+                 git ls-files --others --exclude-standard 2>/dev/null; } | sort -u )
+if [ -f "$ssot_registry" ] && [ -n "$changed_all" ]; then
+  while IFS= read -r cline; do
+    [ -z "$cline" ] && continue
+    key=$(echo "$cline" | sed -E 's/^[[:space:]]*([A-Za-z_0-9]+):.*/\1/')
+    ssotval=$(echo "$cline" | grep -oE 'ssot:[[:space:]]*"[^"]*"|ssot:[[:space:]]*[^,]+' | head -1 | sed -E 's/^ssot:[[:space:]]*//' | tr -d '"')
+    [ -z "$ssotval" ] && continue
+    token=$(echo "$ssotval" | awk '{print $1}')
+    [ "$token" = "filesystem" ] && continue
+    matched=0
+    case "$token" in
+      */*|*.md|*.yaml)
+        if echo "$changed_all" | grep -qxF "$token"; then
+          matched=1
+        elif echo "$changed_all" | grep -qE "(^|/)$(printf '%s' "$token" | sed 's/[.[\*^$]/\\&/g')\$"; then
+          matched=1
+        fi
+        ;;
+      CISEM-*|CS-*)
+        resolved=$(find . -name "*$token*" -not -path './.git/*' 2>/dev/null | head -1)
+        if [ -n "$resolved" ]; then
+          resolved_rel="${resolved#./}"
+          echo "$changed_all" | grep -qxF "$resolved_rel" && matched=1
+        fi
+        ;;
+    esac
+    if [ "$matched" -eq 1 ]; then
+      # bracket-depth-aware extraction (quote-respecting) — a plain [^]]* regex truncates on the FIRST
+      # "]" it meets, which breaks on values containing a literal bracket inside quotes (e.g. the
+      # definition_of_done mirror '"plan-audit.sh [DOD] check (pointer)"' truncates at "[DOD]"'s own "]").
+      mirrors=$(echo "$cline" | awk -v field="mirrors" '
+        { idx = index($0, field ":"); if (idx==0) { print ""; exit }
+          rest = substr($0, idx); bidx = index(rest, "["); if (bidx==0) { print ""; exit }
+          s = substr(rest, bidx); depth=0; inq=0; out=""
+          for (i=1;i<=length(s);i++){ c=substr(s,i,1); out=out c
+            if (c=="\"") inq=!inq
+            else if (!inq && c=="[") depth++
+            else if (!inq && c=="]") { depth--; if (depth==0) { print field ": " out; exit } } }
+        }')
+      regenerates=$(echo "$cline" | awk -v field="regenerates" '
+        { idx = index($0, field ":"); if (idx==0) { print ""; exit }
+          rest = substr($0, idx); bidx = index(rest, "["); if (bidx==0) { print ""; exit }
+          s = substr(rest, bidx); depth=0; inq=0; out=""
+          for (i=1;i<=length(s);i++){ c=substr(s,i,1); out=out c
+            if (c=="\"") inq=!inq
+            else if (!inq && c=="[") depth++
+            else if (!inq && c=="]") { depth--; if (depth==0) { print field ": " out; exit } } }
+        }')
+      echo "   SSOT-TOUCHED: $key (ssot: $ssotval)"
+      [ -n "$mirrors" ] && echo "      $mirrors" || echo "      mirrors: []"
+      [ -n "$regenerates" ] && echo "      $regenerates" || echo "      regenerates: []"
+      found_propagate=1
+    fi
+  done < <(grep -E '^[[:space:]]+[A-Za-z_0-9]+:[[:space:]]*\{' "$ssot_registry" 2>/dev/null)
+fi
+[ "$found_propagate" = 0 ] && echo "   (none — no changed file is a registered SSOT this run)"
 
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
