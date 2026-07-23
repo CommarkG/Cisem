@@ -274,3 +274,55 @@ Entry format (append, newest at bottom):
   FORMALIZATION / CONSENSUS-REACHED); flagged NOT-YET-WIRED rather than claimed complete. CLASS-CONFIRMS: an
   index entry's home may point to a non-ratified doc as long as the entry states the doc's real status inline
   (no false promotion, I24). → DISTILL-PENDING (items 1+2 ready to graduate to RI on next RIPL weekly batch).
+
+- [2026-07-23 · cisem-sonnet · ARCH-00417 (Harvest-Loop Completion Controller plan draft)] **`[TAG-STATUS]`'s
+  block-extraction awk anchors on a BARE SUBSTRING match of `"Per-File Alignment Table"` anywhere in the file, not
+  the actual `## Per-File Alignment Table` HEADING line — the exact RI-0012 substring-vs-field class the
+  `[CHECK-LINT]` gate exists to catch, but `[CHECK-LINT]`'s own scope is status/type/membership regexes, NOT this
+  awk block-extractor, so it slipped through.** Concretely: `awk '/Per-File Alignment Table/{f=1} f&&/^## /&&!/Per-
+  File Alignment Table/{exit} f{print}'` (dna/checks/plan-audit.sh ~line 504) starts capturing at the FIRST line
+  containing that phrase ANYWHERE — including ordinary prose (this plan's own §3.6 size-gate-exception note said
+  "the mandatory ARCH-00401 sections (..., Per-File Alignment Table, ...)" ABOVE the real heading), so it captured
+  3 unrelated sentences instead of the real table and false-flagged `MISSING: ... (Per-File Alignment Table has no
+  Status column)` even though the table WAS present and correctly formed further down. CLASS: any awk/grep
+  block-extractor that locates a SECTION by a bare phrase-substring (not anchored to `^## <exact heading>`) will
+  mis-fire whenever a document's OWN PROSE happens to reference that section's name before the section itself —
+  which is common and even ENCOURAGED (e.g. "see the alignment table below," self-referential size-gate notes).
+  Same root as `[ROUTING]`/`[ALIGN]` (both use presence-only `grep -qiE` so are NOT affected — only `[TAG-STATUS]`'s
+  block-extractor is exposed). WORKAROUND applied THIS run (not a fix to the check): reworded the plan's own prose
+  to say "the alignment table below" instead of repeating the literal heading phrase before the real heading.
+  PREVENTION (class-level, not yet wired): anchor the awk pattern on `^## Per-File Alignment Table` (heading-only,
+  matching how `[ALIGN]`'s own presence-check could be tightened similarly) rather than a bare substring — same
+  fix shape as RI-0012's existing status/type/membership guidance, extended to section-locating extractors. →
+  DISTILL-PENDING (candidate: widen `[CHECK-LINT]`'s own scope, or add a sibling `[CHECK-LINT-SECTIONS]` check, to
+  audit plan-audit.sh's OWN awk block-extractors the same way it already audits value-regexes — the check-writing
+  tool has the same class of bug the checks exist to prevent).
+
+- [2026-07-23 · cisem-sonnet · ARCH-00417 (Harvest-Loop Completion Controller plan draft)] **Dispatch-issued
+  `[[CORE-SEED ...]]` blocks quoted verbatim into a plan can trigger `[SEED]`'s mandatory-`APPLIES_TO:` WARN, and
+  I13 (seed integrity — never edit/reinterpret/remove) creates a genuine tension with "just add the missing
+  field."** The Opus dispatch for ARCH-00417 supplied 7 Core Seeds (A–G) in `[[CORE-SEED | MUST: ... | WHY: ...]]`
+  form WITHOUT an `APPLIES_TO:` clause (unlike CLAUDE.md's own seed-authoring convention elsewhere, which always
+  includes one). Quoting them verbatim (as instructed, and as I13 requires) then trips `dna/checks/plan-audit.sh`'s
+  `[SEED]` WARN check (ARCH-00392 Phase-1) 7×. Resolution taken THIS run: left the seeds unedited (I13 wins; `[SEED]`
+  is WARN-only and explicitly NOT in the ZF formula, so this does not block ZF) and disclose the gap here rather
+  than silently patching immutable dispatch content. CLASS/PREVENTION: any tier AUTHORING a `[[CORE-SEED]]` for a
+  lower tier to execute (Opus→Sonnet, Sonnet→Haiku) should include `APPLIES_TO:` at AUTHORING time by default —
+  closing this at the SOURCE (the authoring habit) avoids ever putting a downstream executor tier in the
+  edit-immutable-seed-vs-clear-a-WARN bind. → DISTILL-PENDING (candidate: fold into the Core-Seed authoring
+  guidance in ARCH-00300/CLAUDE.md §3.0 as a mandatory field at creation, and/or teach `[SEED]` to tolerate a
+  seed-block-level `APPLIES_TO:` stated once for a GROUP of seeds sharing one scope, not required per-seed).
+
+- [2026-07-23 · cisem-sonnet · ARCH-00417 (Harvest-Loop Completion Controller plan draft)] **A dispatch's own
+  wording can mis-cite an SSOT even when clearly well-intentioned — verify the cited home against
+  `ssot-registry.yaml` before writing it into a plan, not just trust the dispatch prose.** The dispatch instructed
+  "apply the existing Wiring-State axis... cite that real home, NOT VOC-00002" and named `IBD-0003/0007/0010` as
+  the home. Checking `dna/ssot-registry.yaml` directly: `wiring_states: { ssot: "CISEM-ARCH-00011 §4", mirrors:
+  [VOC-00002] }` — the AUTHORITATIVE home is ARCH-00011 §4 (VOC-00002 is its declared mirror, not a rival second
+  source); IBD-0003 is the origin DESIGN CAPTURE that fed the upgrade into ARCH-00011 §4, IBD-0007/0010 are
+  adjacent lineage, not themselves the SSOT. Corrected in the plan with a disclosed Path-Rejection entry rather
+  than silently following the dispatch's literal (slightly imprecise) wording OR silently "fixing" it without
+  saying so. CLASS: RI-0024's "existing-first is a starting point, verify it's still the best/most-precise answer"
+  self-catch applies to CITATIONS inside a dispatch, not only to whether-to-build decisions — a Sonnet executing a
+  dispatch should still ssot-registry-verify a named home before writing it down. → DISTILL-PENDING (candidate:
+  fold into RI-0024's existing wording as an explicit citation-verification example).
