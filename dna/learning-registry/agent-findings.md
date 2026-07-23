@@ -437,3 +437,23 @@ Entry format (append, newest at bottom):
   into the ARCH-00190 revision-pass checklist alongside the prior entry, AND into `cisem-create`/`cisem-plan`
   skill guidance as a standing "compress → re-run plan-audit.sh, never eyeball" rule; also candidate for a new
   [I6-SIZE]-adjacent WARN that flags word-only size-claims lacking a paired line-count statement).
+
+- [2026-07-24 · cisem-sonnet · CISEM-ARCH-00418 (Finish-Line / DoD-Upgrade plan draft)] **SECOND CONFIRMED INSTANCE
+  of the 2026-07-23 `[TAG-STATUS]` bare-substring block-extractor bug (line 325 above) — same class, different
+  plan, one day later.** Drafting ARCH-00418's own §3.6 size-gate-exception paragraph, I wrote "...+ a Per-File
+  Alignment Table — the same structural tension named in RI-0026..." ABOVE the real `## Per-File Alignment Table`
+  heading; `plan-audit.sh`'s `[TAG-STATUS]` awk (`~line 504`, unchanged since the prior finding) captured that
+  prose sentence instead of the real table and false-flagged `MISSING: ... (Per-File Alignment Table has no
+  Status column)` even though the table was present and correctly formed further down — IDENTICAL mechanism to
+  the ARCH-00417 instance. WORKAROUND applied (not a fix): reworded to "the mandatory per-file alignment listing"
+  in the prose, re-ran the check locally (awk block re-extracted correctly, matched a status keyword, exit 0).
+  CLASS CONFIRMED SYSTEMIC (2 independent hits within 24h, same root as RI-0012's substring-vs-field family): the
+  bug is NOT plan-specific — ANY plan whose own size-gate/self-referential prose names a section title before that
+  section's real heading will keep re-triggering this false positive, and every future Sonnet drafter will keep
+  hand-working around it unless the extractor itself is fixed. PREVENTION (escalating past DISTILL-PENDING — two
+  instances is the Governor's own bar for "class confirmed, no longer novel"): anchor `[TAG-STATUS]`'s awk on
+  `^## Per-File Alignment Table` (heading-start only), matching how `[ROUTING]`/`[ALIGN]`'s simpler presence-only
+  `grep -qiE` checks are unaffected by this exact bug. → escalate to RI-0012's existing entry (routes_to already
+  covers "substring-vs-field" checks generally) as a NAMED sub-instance, and to `dna/checks/plan-audit.sh`
+  `[TAG-STATUS]` as a concrete WARN-only, planted-testable one-line awk anchor fix (candidate next small build,
+  not built here — out of THIS task's plan-skeleton-only scope, Core Seed E).
