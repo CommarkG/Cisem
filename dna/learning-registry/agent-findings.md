@@ -347,3 +347,23 @@ Entry format (append, newest at bottom):
   itself be applied to M1's OWN pass-criterion before Phase 0 is called done — require the cited number to be
   spot-checked against 1-2 manually-verified historical wiring events, not just "non-zero." → DISTILL-PENDING
   (candidate: strengthens I22/DoD — "measured" claims need a correctness check, not just a provenance check).
+
+- [2026-07-23 · cisem-sonnet · ARCH-00417 v0.3 revision (B3/SUBSUME + B1/B2/I1/I3/I4/I5 close-out)] **A targeted
+  cross-reference edit (SUBSUME B3) left a STALE contradicting sentence elsewhere in the same file** — the
+  "What does NOT change" section still read "this plan only specifies WHAT S2 does once ARCH-00406 Phase 1 is
+  itself greenlit; it does not greenlight it" AFTER Dependencies/Phase-1/What-DOES-change were all updated to
+  SUBSUME (ARCH-00417 directly greenlights the drain; ARCH-00406 Phase 1 becomes a pointer). Caught only by a
+  full re-read of the whole file post-edit, not by the six itemized fix instructions (which named specific
+  sections, not "search the whole doc for now-contradicted claims"). Same run: the file's own §3.6 size-gate
+  exception paragraph claimed "well under the 3,500-word ceiling" while the file was already ~3,669 words BEFORE
+  this revision (now ~4,760) — a self-claim that had drifted false and gone unnoticed across at least one prior
+  edit pass. CLASS: any multi-section targeted edit that changes a DECISION (not just adds content) must be
+  followed by a REPO-WIDE-WITHIN-FILE re-read for contradicting claims elsewhere (not just the sections named in
+  the edit instructions) — a decision change ripples to every sentence that assumed the old decision, including
+  self-referential claims (word/line counts, "does not X" statements) that silently go stale as content grows.
+  PREVENTION (routed): add a step to the plan-revision protocol (ARCH-00190 / the Sonnet-revision-pass pattern) —
+  "after closing named findings, grep the file for the SUPERSEDED decision's old keywords (e.g. 'does not
+  greenlight', 'greenlit') to catch orphaned contradicting prose"; and make self-referential size-claims either
+  computed (not hand-typed) or explicitly re-verified at every revision that grows the file. → DISTILL-PENDING
+  (candidate: fold into ARCH-00190 §3 Stage-0 revision-pass checklist + the plan-audit self-referential-claim
+  class alongside I22).
