@@ -2,22 +2,16 @@
 **Node ID:** CISEM-ARCH-00417 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
 **Planning Status:** COMMENTS-RECEIVED (Opus Stage-1 SOUND-design; mandatory dual review GI-68 found Phase-0 spec gaps [B1/B2/I1/I3/I4/I5] + a Governor decision [B3] — revision pending before Stage-2, 2026-07-23) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [harvest-loop, completion-controller, capacity-model, classification, freshness, drain, wiring-state, governance-loop, mandatory]
-**Goal:** Close CISEM's harvest loop from an OPEN-LOOP (writes insights, no forcing function on wiring them) to a
-CLOSED-LOOP controller — measurable as: (1) M1's capacity number is git/registry-**measured**, never hand-typed;
-(2) 100% of the session-harvest §B ENHANCE-INDEX rows carry an M2 class (a/b/c); (3) Phase 4's hand-executed first
-drain run processes THIS plan's own consensus item with disk-verifiable before/after evidence.
+**Goal:** Close CISEM's harvest loop from OPEN-LOOP (insights written, nothing forces wiring) to CLOSED-LOOP —
+measurable as: (1) M1's number is git/registry-**measured**, never hand-typed; (2) 100% of §B rows carry an M2
+class (a/b/c); (3) Phase 4's first drain run processes THIS plan's own item, disk-verifiable.
 **Governing corespine:** CS-CREATION-001
-**Independent Verifier:** `cisem-haiku` (cold pass, distinct from author `cisem-sonnet` — see Tier-Routing below for
-why this differs from the `cisem-opus-pe`-as-verifier convention used elsewhere).
-**Size-gate exception (§3.6, documented):** this file exceeds 200 lines — the dispatch instruction's phase-index
-mitigation (Phase 0 fully specified, Phases 1–4 compact) was already applied to hold it near the 200-line gate;
-the mandatory ARCH-00401 sections (Existing-First, Tier-Routing, the alignment table below, Path Rejection, etc.)
-push it past 200 lines. **v0.3 update (honest disclosure):** closing the six accepted dual-review findings
-(B1/B2/I1/I3/I4/I5 + B3/Seed H) required substantive Phase-0 spec detail (the whole point of the gaps being real,
-not cosmetic) — the file is now ~350 lines / ~4,700 words, OVER the 3,500-word ceiling this section previously
-claimed to stay under. Flagged honestly (Principle 17 honest-reporting), not silently left stale; a mini-tree split
-(Phase 0 as its own sub-document) is a live option Opus/Governor may choose at re-review — not pre-empted here.
-Declared per the same documented-exception precedent as ARCH-00190/ARCH-00406, not exceeded silently.
+**Independent Verifier:** `cisem-haiku` (cold, protocol-lens; distinct from `cisem-sonnet` — Tier-Routing below).
+**Size-gate (§3.6, documented exception, honesty per Principle 17):** v0.3 exceeded BOTH ceilings (~4,700w/350L).
+**v0.4 compresses WORDS back under 3,500** (exact count in the v0.4 Change-log entry), zero mandatory section
+dropped, all 8 Core Seeds A–H verbatim (I13). It still exceeds 200 lines — NOT silently claimed fixed: the seed
+block + three tables can't compress under 200 lines without cutting substance, so LINES stay a documented
+exception (same precedent as ARCH-00190/ARCH-00406), a partial fix reported honestly, not dressed as a full pass.
 
 ## Core Seeds (from Opus dispatch, 2026-07-23 — immutable, executed verbatim, I13; quoted here per Principle 14 —
 this plan is the block they govern)
@@ -53,305 +47,238 @@ of the apparent tension between them is stated explicitly under Ambiguities in t
 silently.**
 
 ## Executive Summary
-Assemble CISEM's already-scattered NAMED pieces (capacity, classification, freshness-check.sh, DoD/I22, the
-Wiring-State axis, ARCH-00406's weekly drain) into ONE closed-loop completion controller — sensor (M2) + actuator
-(S2) + setpoint (M1) — so harvested insights stop accumulating as NAMED-not-WIRED. Phased; enhances existing homes,
-forks nothing; the final phase's first drain run processes this plan's own item, proving the loop closes on itself.
+Assemble CISEM's scattered NAMED pieces (capacity, classification, freshness-check.sh, DoD/I22, the Wiring-State
+axis, ARCH-00406's weekly drain) into ONE closed-loop controller — sensor (M2) + actuator (S2) + setpoint (M1) — so
+harvested insights stop accumulating as NAMED-not-WIRED. Phased, enhances existing homes; the final phase's first
+drain run proves the loop closes on itself.
 
 ## Existing-First (§3.2b, done) — searched, in order
-1. `dna/learning-registry/session-harvest-2026-07-23.md` §B ENHANCE-INDEX — the exact backlog this controller
-   drains. EXISTS; not duplicated — used as the seed data set for M2/S4, referenced by pointer.
-2. `dna/planning/CISEM-ARCH-00406-completion-propagation-layer.md` — Phase 1 (RIPL-v2 weekly-batch) was the
-   NAMED-but-UNBUILT home for S2's drain actuator (its own header: "Phase 1 NOT yet greenlit"). **SUBSUME (Governor
-   decision 2026-07-23, Core Seed H):** since ARCH-00406 Phase 1 was never built, ARCH-00417 becomes the
-   spec-of-record for the drain — ARCH-00406 Phase 1's header is updated to POINT here (a pointer, not a second
-   drain mechanism, A8/I19); ratifying ARCH-00417 authorizes the drain build directly.
-3. `dna/vocabulary/CISEM-VOC-00002-status-library.md` Freshness axis — already declares the `freshness-check.sh`
-   contract (FRESH/AGING/STALE/UNKNOWN from `last_verified:`) as `NOT-YET-WIRED`. S1 **is that wiring**, not a new
-   design.
-4. `dna/checks/definition-of-done.md` + `[DOD]`/I22 in `dna/checks/plan-audit.sh` — S3 **extends** these (adds the
-   observable-value-assertion requirement to a "WIRED" claim); does not create a parallel done-definition.
-5. Wiring-State axis — confirmed via `dna/ssot-registry.yaml`: `wiring_states: { ssot: "CISEM-ARCH-00011 §4",
-   mirrors: [VOC-00002] }`. Origin design capture: `dna/ibd/IBD-0003-gemini-vocab-alignment.md` item 22 ("The 4
-   Wiring States... UPGRADE ours... enhance ARCH-00011 §4"), and `dna/ibd/IBD-0007`/`IBD-0010` as the broader
-   rigid-vs-context / external-input lineage that fed the same axis family. **Correction to the dispatch instruction,
-   disclosed not silently followed:** the AUTHORITATIVE home per the SSOT registry is `CISEM-ARCH-00011 §4`
-   (VOC-00002 is its declared mirror, not a second source) — S4 cites ARCH-00011 §4 as the home, IBD-0003/0007/0010
-   as the design lineage, consistent with Core Seed F's intent ("cite that real home, NOT VOC-00002") while being
-   precise about which file is actually authoritative (I10).
-6. `dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md` RI-0024 clause ("Existing-First is a STARTING
-   point... is it still the BEST option?") — already WIRED. This entire plan is RI-0024 applied at plan-scale:
-   every part it needs already exists, unassembled.
-7. `dna/archive/archive-ledger.yaml` — grepped for "harvest loop" / "drain" / "completion controller" — no
-   RULED-OUT entry found; nothing here to avoid re-proposing.
-8. `dna/corespines/corespine-registry.yaml` CANDIDATES block — grepped; no existing candidate for this exact
-   controller. CS-CREATION-001 remains the correct governing corespine; no new corespine is proposed.
-**VERDICT:** every mechanism (M1/M2/S1/S2/S3/S4) ENHANCES a named, disclosed existing home. Two NEW files are
-genuinely novel artifacts (see the alignment table below), not forks of anything existing.
+1. `session-harvest-2026-07-23.md` §B ENHANCE-INDEX — the backlog this controller drains. EXISTS; used by pointer
+   as the M2/S4 seed data, not duplicated.
+2. `CISEM-ARCH-00406` Phase 1 (RIPL-v2 weekly-batch) was NAMED-but-UNBUILT for S2's drain. **SUBSUME (Core Seed
+   H):** ARCH-00417 becomes the drain's spec-of-record; ARCH-00406 Phase 1's header points here (pointer, not a
+   2nd mechanism, A8/I19). Boundary: see `## SUBSUME Migration Note` below.
+3. `CISEM-VOC-00002` Freshness axis already declares `freshness-check.sh` as `NOT-YET-WIRED`. S1 IS that wiring.
+4. `definition-of-done.md` + `[DOD]`/I22 — S3 EXTENDS these (adds observable-value-assertion), no parallel definition.
+5. Wiring-State axis — confirmed via `ssot-registry.yaml`: home = `CISEM-ARCH-00011 §4` (VOC-00002 its mirror);
+   lineage `IBD-0003`/`0007`/`0010`. S4 cites §4, correcting the dispatch's VOC-00002 wording (disclosed, I10).
+6. `CS-AI-PROFILING-001` RI-0024 ("is Existing-First still the BEST option?") already WIRED — this plan applies it
+   at plan scale: every part it needs already exists, unassembled.
+7. `archive-ledger.yaml` — grepped "harvest loop"/"drain"/"completion controller" — no RULED-OUT entry.
+8. `corespine-registry.yaml` CANDIDATES — grepped, no candidate; CS-CREATION-001 remains governing.
+**VERDICT:** every mechanism ENHANCES a named, disclosed existing home; two artifacts are genuinely novel
+(alignment table below).
 
 ## Pocket Declaration
-- **reasoning_scope:** draft a phased plan assembling M1 (capacity)/M2 (classification)/S1 (freshness)/S2 (drain)/
-  S3+S4 (gates)/M4 (exemption)/M3 (self-test) into ONE closed-loop controller plan; produce the plan document only
-  (Core Seed G)
-- **inherited_constraints:** A4/A11 (consult-before-production; this plan itself IS the consultation output);
-  A8/I10/I19 (enhance, never fork); I25 (a plan authorizes, does not implement); §1.7 git-race (specific-file
-  staging, one committer); Core Seeds A–G verbatim, immutable
-- **output_contract:** this plan document + the ONE naming-gate self-registration (`dna/naming-registry.yaml`
-  ARCH next_seq 417→418) only — no check/hook/registry content-file is built or edited in this drafting task
-- **ai_cannot:** self-ratify; stamp Status/RATIFIED; execute Phase 4's hand-run in THIS drafting task (resolved
-  under Ambiguities — Core Seed E describes the PLAN'S OWN Phase 4 content, executed post-ratification, not a
-  demand to fake/simulate it now, which Core Seed G + I22 forbid)
+- **reasoning_scope:** draft a phased plan assembling M1/M2/S1/S2/S3+S4/M4/M3 into ONE closed-loop controller
+  plan; the plan document only (Seed G)
+- **inherited_constraints:** A4/A11 (consult-before-production, this plan IS that output); A8/I10/I19 (enhance,
+  never fork); I25 (a plan authorizes, never implements); §1.7 git-race discipline; Core Seeds A–H verbatim
+- **output_contract:** this plan document + the ONE naming-gate self-registration (`naming-registry.yaml` ARCH
+  417→418) only — no check/hook/registry content-file built or edited in this drafting task
+- **ai_cannot:** self-ratify; stamp Status/RATIFIED; execute Phase 4's hand-run in THIS drafting task (Seed E
+  governs the PLAN'S post-ratification Phase 4, not a demand to fake it now — forbidden by Seed G + I22)
 - **recorded_at:** 2026-07-23
 
 ## Tier-Routing Declaration (CLAUDE.md §3.0)
-- **Drafting (this task) → Sonnet**, single-context authoring; no live Haiku subagent dispatched for the
-  Existing-First gather (performed directly via grep/read, disclosed per the ARCH-00406 precedent — this session's
-  tool-set has no subagent-dispatch capability).
-- **Independent Verifier → `cisem-haiku`, cold pass, PROTOCOL-COMPLIANCE lens** (does this file follow ARCH-00190
-  §2's checklist, structurally?) — run BEFORE Stage 1.
-- **Stage 1 soundness → `cisem-opus-pe`, CONTENT-CORRECTNESS + judgment lens** (is the assembled design sound, do
-  the seeds cohere, is the ambiguity resolution reasonable?). This is a deliberate 3-way split (author ≠ verifier
-  ≠ judge) rather than the 2-way author≠verifier-as-judge pattern used elsewhere — it directly instantiates the
-  persona SSOT's "two orthogonal review lenses" (protocol-checklist × content-correctness, no single model does
-  both), stronger than P5's bare minimum.
-- **Building each phase (post-ratification) → Sonnet**, per the Phase Rule (mechanical check/script edits are
-  Sonnet's lane, §3.0 rubric).
-- **Phase 4's hand-executed first drain run → Sonnet executes, Opus/Governor witness the evidence.**
-- **Fable Stage 1.5 → not invoked** (no Governor activation requested).
-- **Governor Stage 2 → ratification authority.**
+- **Drafting (this task) → Sonnet**, single-context; Existing-First via direct grep/read (no live Haiku subagent
+  available this session, disclosed per the ARCH-00406 precedent).
+- **Independent Verifier → `cisem-haiku`, cold, PROTOCOL-COMPLIANCE lens** (ARCH-00190 §2 checklist) — before Stage 1.
+- **Stage 1 → `cisem-opus-pe`, CONTENT-CORRECTNESS + judgment lens** (design coherence, seed cohesion, ambiguity
+  resolution) — a deliberate 3-way split (author ≠ verifier ≠ judge), stronger than P5's bare minimum.
+- **Building each phase (post-ratification) → Sonnet**, per the Phase Rule (§3.0 rubric).
+- **Phase 4's hand-run → Sonnet executes, Opus/Governor witness. Fable Stage 1.5 → not invoked. Governor Stage 2 →
+  ratification authority.**
 
 ## Anti-Scatter Ordering (CLAUDE.md §2 Principle 16 — per dispatch instruction, verbatim sequencing rationale)
-M1+M2 are PREREQUISITES — every downstream threshold (S1's BLOCK trigger, S2's drain size N, S4's default-posture)
-depends on a real capacity number and a real classification, so nothing else can be soundly specified before them.
-S2 (drain) comes next — it is the actuator the whole controller exists to build. S1 (freshness) follows — it is
-PRESSURE on the drain, meaningless before the drain exists to feel pressure. S3+S4 (gates) come after — they
-audit/classify what S1/S2 now produce. M4 (exemption) is stated IN-TEXT inside Phase 1, not a separate phase — it
-is a clause on S2, not an independent mechanism. M3 (self-test) is LAST by construction (Core Seed E: it processes
-what Phase 1 builds, so it cannot run before Phase 1 exists).
+M1+M2 are PREREQUISITES — every downstream threshold needs a real capacity number and classification first. S2
+(drain) is next — the actuator the controller exists to build. S1 (freshness) follows — pressure on the drain,
+meaningless before it exists. S3+S4 (gates) audit what S1/S2 produce. M4 is a clause IN Phase 1, not a separate
+phase. M3 (self-test) is LAST by construction (Seed E: it processes what Phase 1 builds).
 
 ## The Rule — PHASE 0 fully specified; Phases 1–4 given as a PHASE-INDEX (size-gate mitigation, stated per the
 dispatch instruction's own carve-out: "if it cannot fit, produce the plan for the prerequisite phase + a
 phase-index of the rest, and say so.")
 
 ### PHASE 0 — M1 (capacity setpoint) + M2 (classification sensor) — PREREQUISITE, fully specified
-**Deliverable (a) M1:** a NEW measurement script, `dna/checks/harvest-capacity-model.sh`, that computes "items
-wired per drain cycle, per tier" from disk history — e.g. `git log --since="<cycle window>" --name-only -- dna/checks/
-.claude/ dna/protocols/` cross-referenced against `dna/learning-registry/` entries that transitioned to LIVE (or a
-named WIRED threshold, deliverable (d)) within that window. Output: a cited number + the exact command that
-produced it (never a literal typed by a human — Core Seed B). **Re-measurement cadence (I1 fix):** the script
-RE-RUNS at the START of each drain cycle (Phase 1); N is always the LATEST measurement for that cycle, never a
-value carried forward or frozen as a literal — Core Seed B's discipline holds across cycles, not just at Phase-0
-build time. This drafting task does NOT run it or invent the number; that is Phase 0's own build step.
-**Deliverable (b) M2:** define a three-way classification schema — `wire-this-cycle (a)` / `wire-this-quarter-
-needs-plan (b)` / `long-horizon-explicit-re-park (c)` — and ADD it as a new column to the EXISTING
-`session-harvest-2026-07-23.md` §B table (enhance, not fork). Apply it retroactively to the current ~20 rows as
-the seed data set.
-**Deliverable (c) GI-66 cluster-maturity read (Opus+Brain consensus 2026-07-23; folded here per anti-fragmentation, GI-66 spirit):**
-M2's SAME three-way classification also reads at CLUSTER scale — a topic-cluster is `plan-ready` when its core
-mechanism has genuine Opus+Brain consensus AND every remaining open item independently classifies (b)/(c)
-peripheral, with NONE still (a) core-blocking. Wire = ONE pointer row added to VOC-00002:
-`Cluster Maturity | forming→converging→plan-ready→shipping | GI-66 | topic-clusters` — mirroring the EXISTING
-Planning-Status pointer pattern (a pointer to GI-66 as home, NOT a fork of DIOS/VOC-00003, which is epistemic
-maturity of KNOWLEDGE, a distinct axis — verified 2026-07-23). No new mechanism beyond the pointer row + M2's
-cluster-scale application. **Aggregation rule (I5 fix — resolves the derived-vs-manual ambiguity):** `plan-ready`
-is DERIVED **+** CONFIRMED, not one or the other — the MECHANICAL signal is `0 of the cluster's member items
-classify (a) core-blocking` (computed straight off M2's per-row classification, same pass as M1/M2); the
-Opus+Brain judgment CONFIRMS the other half (does the core mechanism itself have genuine consensus). A cluster is
-`plan-ready` only when BOTH hold. The read DEFAULTS to Opus+Brain agreement on the confirmed half; escalate to the
-Governor only on disagreement (mirrors the GI-67 exception; single-model maturity read risks the RI-0002 blind
-spot). **Own stress test + pass criteria (I4 fix):** run the mechanical 0-count check against at least one real
-multi-item cluster from the current ENHANCE-INDEX (this harvest-loop cluster itself, post-classification) → the
-computed core-blocking count must RECONCILE against an independently hand-enumerated count for the same cluster
-(mirrors B2's standard); the Opus+Brain consensus-confirmation is logged as a disclosed y/n, never asserted silently.
-**Deliverable (d) Wiring-State normalization (B1 fix — the M1-measurability crux):** M1 cannot measure "items wired
-per cycle" against a free-text `state` column — there is no WIRED/CLOSED enum to detect a transition into. FIX:
-normalize every ENHANCE-INDEX §B row's free-text state onto the EXISTING controlled vocabulary
-`DECLARED→CONNECTED→ACCESSIBLE→LIVE` (home: `CISEM-ARCH-00011 §4`, S4's own axis applied EARLY — not a new
-dependency). M1 then measures "items wired per cycle" = the count of rows that TRANSITION to `LIVE` (or an
-explicitly named WIRED threshold per row-class) within the drain-cycle window. **Explicit Phase split:** Phase 0
-does the INITIAL Wiring-State STAMP (one-time classification pass, giving M1 a real substrate from day one); Phase 3
-(S4) still does the FULLER injection→enforcement CONVERSION pass (moving items along the axis, blast-safe ordering)
-— two different depths of the same axis, not a duplicate pass.
-**Deliverable (e) Self-index (I3 fix):** add ARCH-00417's OWN row to the `session-harvest-2026-07-23.md` §B
-ENHANCE-INDEX table (currently absent — a silent gap, since M3's Phase-4 self-test needs a real row to process for
-the loop to close on itself). Classified per M2 + stamped per deliverable (d) like every other row.
-**Stress test:** run the M1 script against real git-log/learning-registry history → a non-zero, disk-cited number
-(not "TBD"); classify all current ENHANCE-INDEX rows → 100% carry exactly one class; Wiring-State-stamp all current
-rows → 100% carry exactly one of DECLARED/CONNECTED/ACCESSIBLE/LIVE; confirm ARCH-00417's own row is present;
-run deliverable (c)'s mechanical 0-count check against one real cluster and reconcile against a hand count.
-**Pass criteria (numeric):** M1 number is disk-computed with its command+output cited AND RECONCILED against an
-independently enumerated actual count of rows that reached LIVE (or the named WIRED threshold) in the window —
-matching counts, not merely non-zero (B2 fix: S3's value-not-presence standard applied to M1 itself). M2 100%
-row-coverage (0 rows unclassified). Wiring-State 100% row-coverage (0 rows unstamped). ARCH-00417's own row
-present (1/1). Deliverable (c)'s mechanical count matches its hand-enumerated count for the tested cluster (0
-discrepancy).
+**(a) M1:** NEW script `dna/checks/harvest-capacity-model.sh` computes "items wired per drain cycle, per tier" from
+disk history — e.g. `git log --since="<window>" --name-only -- dna/checks/ .claude/ dna/protocols/` cross-referenced
+against `dna/learning-registry/` entries that reached LIVE (deliverable (d)) in that window. Output: a cited number
++ the exact command (never hand-typed — Seed B). **Cadence (I1 fix):** re-runs at the START of each drain cycle;
+N is always the LATEST measurement, never frozen. This drafting task does NOT run it or invent the number.
+**(b) M2:** a three-way classification — `wire-this-cycle (a)` / `wire-this-quarter-needs-plan (b)` /
+`long-horizon-explicit-re-park (c)` — added as a new column to the EXISTING §B table (enhance, not fork), applied
+retroactively to the current ~20 rows.
+**(c) GI-66 cluster-maturity read (Opus+Brain consensus, folded in):** M2's SAME classification also reads at
+CLUSTER scale — `plan-ready` when a cluster's core has genuine Opus+Brain consensus AND every remaining item
+classifies (b)/(c), none (a). Wire = ONE pointer row in VOC-00002:
+`Cluster Maturity | forming→converging→plan-ready→shipping | GI-66 | topic-clusters` (pointer to GI-66, NOT a
+DIOS/VOC-00003 fork). **Aggregation (I5 fix):** `plan-ready` = DERIVED (`0 items class-(a)`, off M2's data) **+**
+CONFIRMED (Opus+Brain core-consensus judgment) — both required; escalates to the Governor only on disagreement
+(GI-67; single-model risks RI-0002). **Stress test (I4 fix):** run the 0-count check against one real cluster
+(this harvest-loop cluster) → reconcile against an independently hand-enumerated count (mirrors B2); logged y/n.
+**(d) Wiring-State normalization (B1 fix — the M1-measurability crux):** M1 cannot measure "items wired per cycle"
+against a free-text `state` column — no WIRED/CLOSED enum to detect a transition into. FIX: normalize every §B
+row's free-text state onto the EXISTING controlled vocabulary `DECLARED→CONNECTED→ACCESSIBLE→LIVE` (home:
+`CISEM-ARCH-00011 §4`, S4's own axis applied EARLY, not a new dependency). M1 then measures rows TRANSITIONING to
+`LIVE` (or a named WIRED threshold) within the window. **Phase split:** Phase 0 does the INITIAL one-time stamp;
+Phase 3 (S4) does the FULLER injection→enforcement conversion pass — two depths, not a duplicate pass.
+**Registered-reconciliation linkage (A8 merge, not a parallel patch — Change 1, v0.4):** this normalization
+EXECUTES the status/state-enum reconciliation already registered as a PREVENTION-CANDIDATE in
+`session-learning-index.yaml` (~L260: "Status enum frozen [ARCH-00011 §4: 8 values] but practice has 15+ values...
+reconcile status enum BEFORE BP-0012 builds... consolidate into one authoritative enum + update VOC-00002 mirror")
+— scoped here to the §B State column as its first concrete instance (its own free text — `DECREED-NOT-YET-WIRED`,
+`NAMED`, `GAP`, `pending` — IS that same divergence class). ONE effort serves BOTH ends: M1 gets a measurable
+substrate now; BP-0012's future gate inherits a clean, §4-conformant table instead of re-discovering the drift.
+The BROADER survey the registered item also names (corespine-registry, learning-index, DoD) stays BP-0012's to
+complete — this deliverable only stops adding to that drift, it does not close the whole scope.
+**(e) Self-index (I3 fix):** add ARCH-00417's OWN row to the §B ENHANCE-INDEX (currently absent — M3's Phase-4
+self-test needs a real row). Classified per M2, stamped per (d), like every other row.
+**Stress test:** M1 script against real history → a non-zero, disk-cited number; classify all rows → 100% one
+class; Wiring-State-stamp all rows → one of four states; confirm ARCH-00417's row present; run (c)'s 0-count check
+against one real cluster and reconcile.
+**Pass criteria (numeric):** M1 number disk-computed, cited AND RECONCILED against an independently enumerated
+LIVE-count (B2 fix: value-not-presence applied to M1) — matching, not merely non-zero. M2/Wiring-State 100%
+coverage. ARCH-00417's row present (1/1). (c)'s mechanical count matches its hand-enumerated count (0 discrepancy).
 **GATE 0→1:** Opus review + Governor sign-off.
 
 ### PHASE-INDEX (Phases 1–4, compact — full deliverable/stress-test/pass-criteria detail deferred to each phase's
 own build-step spec, produced when that phase is greenlit, per the size-gate carve-out)
 | Phase | Mechanism | One-line deliverable | Depends on | Gate |
 |---|---|---|---|---|
-| **1 — S2 (drain actuator) + M4 (exemption, in-text)** | ARCH-00417 IS the spec-of-record for the drain (SUBSUME, Core Seed H, Governor decision 2026-07-23) — ARCH-00406 Phase 1 becomes a POINTER to it, not a second drain mechanism | Each cycle, drain N=M1's measured-capacity oldest class-(a) items: wire-or-explicitly-repark + log a value test. **M4 clause:** ARCH-00417 itself is EXEMPT from S2's pressure while being built — exemption keyed to `CISEM-ARCH-00417` exactly, EXPIRES the moment its own Planning Status reaches COMPLETE (Core Seed D). **New Phase-1 deliverable (Seed H):** update `CISEM-ARCH-00406` Phase 1's header to POINT to ARCH-00417 as the drain's spec-of-record (a pointer, not a duplicate — A8). | Phase 0 (N) only — the ARCH-00406 Phase-1 greenlight cross-dependency is REMOVED (Seed H/SUBSUME) | 1→2 |
-| **2 — S1 (freshness pressure)** | BUILDS the declared-not-wired `dna/checks/freshness-check.sh` (VOC-00002 spec), wires into `plan-audit.sh` WARN | WARN every cycle a class-(a)/(b) item is STALE; BLOCK only if the WARN survived one FULL drain cycle un-addressed (drain-cycle-gated, not age-gated alone — Core Seed C); class-(c) items EXEMPT by construction | Phase 0 (class tags); Phase 1 (drain-cycle definition) | 2→3 |
-| **3 — S3 (extend DOD/I22) + S4 (Wiring-State pass)** | EXTENDS `[DOD]`/I22 in `plan-audit.sh`: a "WIRED" claim must cite a running mechanism REF + an observable value assertion (test/metric-delta/log), not presence alone. S4: ONE-TIME classification-first pass applying the EXISTING Wiring-State axis (DECLARED→CONNECTED→ACCESSIBLE→LIVE; home = ARCH-00011 §4, origin IBD-0003) to every governance mechanism named in the ENHANCE-INDEX — produces a classification list BEFORE any conversion; default = inject-toward-enforcement only where blast-safe, class-(a) items first | Phase 0 (M2 classes feed S4's ordering) | 3→4 |
-| **4 (FINAL) — M3 (self-test, escapes recursion)** | Hand-executed FIRST real drain run using Phase 1's rule (N = Phase 0's number) against the LIVE ENHANCE-INDEX; the FIRST item processed is deliberately **THIS PLAN'S OWN CONSENSUS ITEM** (the ARCH-00417 row, once indexed) — proves the loop closes on itself. Evidence: commit + quality-ledger run entry + before/after state, disk-verifiable. | Phases 0–3 built + ratified | 4→LIVE |
+| **1 — S2 (drain) + M4 (exemption)** | ARCH-00417 IS the drain's spec-of-record (SUBSUME, Seed H) — ARCH-00406 Phase 1 becomes a POINTER (boundary: SUBSUME Migration Note below) | Each cycle, drain N=M1's oldest class-(a) items: wire-or-repark + log a value test. **M4:** ARCH-00417 EXEMPT from S2 while being built, keyed to `CISEM-ARCH-00417`, EXPIRES at COMPLETE (Seed D). Updates ARCH-00406 Phase 1's header to point here (A8). | Phase 0 (N) only — ARCH-00406 Phase-1 greenlight REMOVED (Seed H) | 1→2 |
+| **2 — S1 (freshness)** | BUILDS `freshness-check.sh` (VOC-00002 spec), wires into `plan-audit.sh` | WARN each cycle a class-(a)/(b) item is STALE; BLOCK only after one FULL cycle un-addressed (Seed C); class-(c) EXEMPT | Phase 0 (class tags); Phase 1 (cycle def) | 2→3 |
+| **3 — S3 (extend DOD/I22) + S4 (Wiring-State pass)** | EXTENDS `[DOD]`/I22: "WIRED" needs a running mechanism + an observable value assertion, not presence alone | S4: ONE-TIME classification pass (home ARCH-00011 §4) over every ENHANCE-INDEX mechanism before conversion; default = inject-toward-enforcement where blast-safe, class-(a) first | Phase 0 (M2 classes feed ordering) | 3→4 |
+| **4 (FINAL) — M3 (self-test)** | Hand-executed FIRST real drain run (N = Phase 0's number); first item is deliberately **THIS PLAN'S OWN row** — proves the loop closes on itself. Evidence: commit + quality-ledger entry + before/after, disk-verifiable | — | Phases 0–3 ratified | 4→LIVE |
 
 ## Tags + Statuses on every node this plan creates (ARCH-00401 Enh.2)
-See the alignment table below. Two genuinely NEW artifacts: `harvest-capacity-model.sh` (Phase 0) and
-`freshness-check.sh` (Phase 2) — both `NOT-YET-BUILT` honestly, not silently assumed present. All other touched
-files are ENHANCEMENTS to already-tagged/already-statused existing files (no new tag/status pair needed beyond
-what they already carry).
+See the alignment table below. Two genuinely NEW artifacts: `harvest-capacity-model.sh` and `freshness-check.sh` —
+both `NOT-YET-BUILT` honestly. All other touched files are ENHANCEMENTS to already-tagged existing files.
 
 ## Per-File Alignment Table (ARCH-00401 Enh.3)
 | File | ID / Number | Schema Placement | Tag | Status |
 |---|---|---|---|---|
-| `dna/planning/CISEM-ARCH-00417-harvest-loop-completion-controller.md` (this file) | CISEM-ARCH-00417 (naming-registry.yaml ARCH next_seq 417→418, Sonnet-allocated via the ONE gate) | T-SYS, planning-governance layer | harvest-loop, completion-controller (see header) | PROVISIONAL-ACTIVE / AWAITING-BUILDER-REVIEW |
-| `dna/checks/harvest-capacity-model.sh` (Phase 0 — NOT created by this drafting task) | no ID — executable script, governed by ARCH-00320 §6 pattern | T-SYS, enforcement/CAL layer | capacity-model, measurement, mandatory (planned) | NOT-YET-BUILT |
-| `dna/checks/freshness-check.sh` (Phase 2 — NOT created by this drafting task) | no ID — executable script, governed by ARCH-00320 §6 pattern | T-SYS, enforcement/CAL layer | freshness, gate, mandatory (planned, already declared in VOC-00002) | NOT-YET-BUILT |
-| `dna/checks/plan-audit.sh` (Phase 2/3 target — NOT edited here) | no ID — existing, governed by ARCH-00320 §6 | T-SYS, enforcement/CAL layer | gate, audit, mandatory (existing, unchanged by this drafting task) | present, unchanged |
-| `dna/learning-registry/session-harvest-2026-07-23.md` (Phase 0/3 target — NOT edited here) | no ID — existing learning-registry artifact | T-SYS, learning-loop layer | session-harvest, enhance-index (existing, unchanged by this drafting task) | LIVE, unchanged |
-| `dna/planning/CISEM-ARCH-00406-completion-propagation-layer.md` (Phase 1 cross-dependency — NOT edited here) | CISEM-ARCH-00406 (existing) | T-SYS, planning-governance layer | planning-domain, completion, propagation (existing, unchanged) | PROVISIONAL-ACTIVE, unchanged |
-| `dna/naming-registry.yaml` (already modified — ARCH next_seq 417→418, comment pre-registers this title) | REG type, self-exempt | T-SYS, naming-allocation layer | naming, numbering, mandatory | present, unchanged |
+| `.../CISEM-ARCH-00417-...md` (this file) | CISEM-ARCH-00417 (naming-registry.yaml 417→418, ONE gate) | T-SYS, planning-governance | harvest-loop, completion-controller | PROVISIONAL-ACTIVE / AWAITING-BUILDER-REVIEW |
+| `dna/checks/harvest-capacity-model.sh` (Phase 0, not created) | no ID — script, ARCH-00320 §6 | T-SYS, enforcement/CAL | capacity-model, measurement | NOT-YET-BUILT |
+| `dna/checks/freshness-check.sh` (Phase 2, not created) | no ID — script, ARCH-00320 §6 | T-SYS, enforcement/CAL | freshness, gate (declared VOC-00002) | NOT-YET-BUILT |
+| `dna/checks/plan-audit.sh` (target, not edited here) | no ID — existing | T-SYS, enforcement/CAL | gate, audit | present, unchanged |
+| `session-harvest-2026-07-23.md` (target, not edited here) | no ID — existing | T-SYS, learning-loop | session-harvest, enhance-index | LIVE, unchanged |
+| `CISEM-ARCH-00406-...md` (cross-dependency, not edited here) | CISEM-ARCH-00406 (existing) | T-SYS, planning-governance | planning-domain, completion | PROVISIONAL-ACTIVE, unchanged |
+| `dna/naming-registry.yaml` (modified — 417→418) | REG type, self-exempt | T-SYS, naming-allocation | naming, numbering | present, unchanged |
 
 ## What DOES change (upon ratification — implementation is a LATER step; nothing here executes now)
-- New: `dna/checks/harvest-capacity-model.sh` (Phase 0). New: `dna/checks/freshness-check.sh` (Phase 2).
-- `dna/checks/plan-audit.sh` — new `[FRESHNESS]` WARN/BLOCK check (Phase 2); extended `[DOD]`/I22 logic (Phase 3).
-- `dna/learning-registry/session-harvest-2026-07-23.md` — new class (a/b/c) column (Phase 0) + a Phase-0
-  Wiring-State STAMP (normalizes each row's free-text state onto the EXISTING DECLARED→CONNECTED→ACCESSIBLE→LIVE
-  enum, ARCH-00011 §4 — B1 fix, Phase 0 deliverable (d)); Phase 3 still does the fuller injection→enforcement
-  conversion pass over the same column (explicit split, not a duplicate pass). Phase 0 ALSO adds ARCH-00417's OWN
-  row to the §B table (I3 fix, deliverable (e)) so M3's Phase-4 self-test has a row to process.
-- `dna/vocabulary/CISEM-VOC-00002-status-library.md` — ONE new Cluster-Maturity pointer row (Phase 0, home GI-66;
-  pointer pattern, not a DIOS/VOC-00003 fork) per the Opus+Brain maturity consensus 2026-07-23.
-- `dna/planning/CISEM-ARCH-00406-completion-propagation-layer.md` Phase 1 — header UPDATED to POINT to ARCH-00417
-  as the drain's spec-of-record (SUBSUME, Core Seed H, Governor decision 2026-07-23) — a pointer, not a duplicate
-  (A8); NO separate ARCH-00406 Phase-1 greenlight is needed — ratifying ARCH-00417 directly authorizes Phase 1's
-  drain build.
+- New: `harvest-capacity-model.sh` (Phase 0). New: `freshness-check.sh` (Phase 2).
+- `plan-audit.sh` — new `[FRESHNESS]` WARN/BLOCK check (Phase 2); extended `[DOD]`/I22 logic (Phase 3).
+- `session-harvest-2026-07-23.md` — new class (a/b/c) column + a Phase-0 Wiring-State STAMP (normalizes free-text
+  state onto DECLARED→CONNECTED→ACCESSIBLE→LIVE, ARCH-00011 §4 — B1 fix, (d)); Phase 3 does the fuller conversion
+  pass. Phase 0 also adds ARCH-00417's OWN row (I3 fix, (e)).
+- `CISEM-VOC-00002` — ONE new Cluster-Maturity pointer row (home GI-66; not a DIOS/VOC-00003 fork).
+- `CISEM-ARCH-00406` Phase 1 — header UPDATED to point to ARCH-00417 (SUBSUME, Seed H); boundary in the SUBSUME
+  Migration Note below. No separate ARCH-00406 Phase-1 greenlight needed.
 - `dna/naming-registry.yaml` — ARCH next_seq 417→418 (this drafting task, the ONE gate).
 
+## SUBSUME Migration Note (B3) — Change 2, this v0.4 revision
+ARCH-00417 becomes the spec-of-record for the **DRAIN of NAMED-but-unwired items specifically** — the weekly-evolve
+drain (S2, Phase 1) that `CISEM-ARCH-00406` Phase 1 (RIPL-v2 weekly-batch) named but never built. The **OTHER four
+ARCH-00406/RIPL-v2 pillars — Propagation Network (Phase 0), Tier-Cycle + Workflow-Governance (Phase 2), and the
+Output-Liveness Monitor (Phase 3) — STAY in ARCH-00406; they are NOT absorbed by this plan.** ARCH-00406 Phase 1's
+header POINTS to ARCH-00417 for the drain spec (a pointer, not a duplicate, A8); ARCH-00406's non-drain scope
+(Phases 0/2/3) remains its own, untouched. **Boundary, one sentence:** ARCH-00417 owns the drain of
+named-not-wired items; ARCH-00406 owns everything else in its 5-pillar plan.
+
 ## What does NOT change
-- No ratified invariant/axiom/decree is altered. **Updated for SUBSUME (v0.3, Core Seed H):** ARCH-00406's Phase 1
-  header is the ONE thing that DOES change (a pointer added, see What DOES change) — the rest of ARCH-00406's own
-  gates/phases are untouched; ratifying ARCH-00417 does not touch ARCH-00406's OTHER phases, only points its
-  Phase 1 header at ARCH-00417 as the drain's spec-of-record.
-- S5 (a separate production-throttle mechanism) is NOT built — dropped by consensus, folded into S1/S2/M1
-  (Core Seed A).
+- No ratified invariant/axiom/decree is altered. ARCH-00406's Phase 1 header (a pointer, see above) is the ONE
+  thing that changes there — its other phases/gates are untouched.
+- S5 (a separate production-throttle) is NOT built — folded into S1/S2/M1 (Core Seed A).
 - No new escalation vocabulary — S1 reuses WARN/BLOCK; no new tier invented.
 - No new Wiring-State axis — S4 applies the EXISTING one (ARCH-00011 §4), does not redefine it.
 
 ## Definition-of-Done reference (ARCH-00401 Enh.5)
 Per `dna/checks/definition-of-done.md` (cited, not re-derived): each phase is DONE only when (1) the deliverable
-exists; (2) a running mechanism enforces it OR carries an honest `NOT-YET-WIRED:<reason>` tag; (3) propagated to
-all stated homes; (4) CAL/hook surface updated if it is an enforcement mechanism; (5) any found-wrong→improved
-event is RIPL-extracted; (6) committed + pushed; (7) independently verified (I22), not asserted. Phase 3's own S3
-extension IS this exact requirement made mechanical for every future "WIRED" claim on a governance item — this
-plan dogfoods DoD item 7 onto itself.
+exists; (2) a running mechanism enforces it OR carries `NOT-YET-WIRED:<reason>`; (3) propagated to all stated
+homes; (4) CAL/hook surface updated if enforcing; (5) found-wrong→improved is RIPL-extracted; (6) committed+pushed;
+(7) independently verified (I22). Phase 3's S3 extension makes item 7 mechanical for every future "WIRED" claim.
 
 ## Propagation Declaration (ARCH-00401 Enh.6)
-(1) M1's capacity number, once computed, becomes the SINGLE reusable `N` referenced by S1's BLOCK trigger and S2's
-drain size — by-reference, never re-typed in two places. (2) M2's classification schema is defined ONCE (this
-plan, Phase 0) and referenced by S1 (exemption), S2 (drain ordering), and S4 (default posture) — not redefined at
-each site. (3) The Wiring-State axis stays homed at `CISEM-ARCH-00011 §4`; S4 references it, never forks a
-parallel enum (I10). (4) `dna/ssot-registry.yaml`'s live `[PROPAGATE]` check (ARCH-00406 Phase 0, LIVE) already
-fires on any future edit to this plan's registered SSOT-touching files, so propagation is mechanically reminded,
-not just declared here.
+(1) M1's number becomes the SINGLE reusable `N` for S1's BLOCK trigger and S2's drain size — by-reference, never
+re-typed. (2) M2's classification is defined ONCE (Phase 0), referenced by S1/S2/S4, not redefined per site. (3)
+The Wiring-State axis stays homed at `CISEM-ARCH-00011 §4`; S4 references it, never forks (I10). (4)
+`ssot-registry.yaml`'s live `[PROPAGATE]` check (LIVE) already fires on any future edit to this plan's
+SSOT-touching files.
 
 ## Dependencies (blocks-on / unblocks-for)
-- **Blocks-on:** none for the drain itself. **SUBSUME (Governor decision 2026-07-23, Core Seed H):** ARCH-00417 IS
-  the spec-of-record for the drain; ratifying ARCH-00417 directly authorizes Phase 1's drain build — the prior
-  "blocks-on ARCH-00406 Phase-1 greenlight" cross-dependency is REMOVED by this revision (ARCH-00406 Phase 1
-  becomes a pointer to ARCH-00417, not a separate gate). `CISEM-VOC-00002` Freshness axis (the freshness-check.sh
-  spec this plan's Phase 2 wires — spec is stable and declared, so this is a light dependency, not a blocker on new
-  design work).
-- **Unblocks-for:** draining the ENTIRE `session-harvest-2026-07-23.md` §B ENHANCE-INDEX (~20 rows) once live, plus
-  every FUTURE session-harvest via the same M1/M2/S1/S2 mechanism (this plan is infrastructure for the harvest
-  loop generally, not a one-time drain of the current backlog only).
+- **Blocks-on:** none for the drain. **SUBSUME (Core Seed H):** ratifying ARCH-00417 directly authorizes Phase 1's
+  drain build — the prior "blocks-on ARCH-00406 Phase-1 greenlight" is REMOVED. `CISEM-VOC-00002` Freshness axis
+  is a light dependency only (stable, already declared).
+- **Fulfills (Change 1, v0.4):** the registered enum-reconciliation PREVENTION-CANDIDATE
+  (`session-learning-index.yaml` ~L260, "reconcile status enum BEFORE BP-0012 builds") — scoped to the §B State
+  column (deliverable (d)). The broader corespine-registry/learning-index/DoD survey stays BP-0012's to finish;
+  this plan PRECEDES that reconciliation, does not replace it.
+- **Unblocks-for:** draining the ENTIRE §B ENHANCE-INDEX (~20 rows) once live, plus every FUTURE session-harvest
+  via the same mechanism (infrastructure, not a one-time drain).
 
 ## Ratification Path
-Stage 0 (iterative Haiku→Sonnet→Opus draft-review loop, per ARCH-00190 §3 as it exists today) — **NOT yet run**;
-this is the v0.1 Sonnet draft awaiting Stage 0 → Independent Verifier (`cisem-haiku`, protocol-lens, cold) →
-Stage 1 (`cisem-opus-pe`, content-lens, soundness verdict) → Stage 1.5 (fable — not invoked) → Stage 2 (Governor
-decree). Each PHASE additionally carries its own Gate (0→1→2→3→4→LIVE) — a later phase's implementation cannot
-start before the earlier phase's Gate clears, per the ARCH-00406 phased-plan precedent (reused, A8).
+Stage 0 (iterative Haiku→Sonnet→Opus draft-review, ARCH-00190 §3) — **NOT yet run**; this v0.4 draft awaits
+Independent Verifier (`cisem-haiku`, cold) → Stage 1 (`cisem-opus-pe`, soundness) → Stage 1.5 (fable, not invoked)
+→ Stage 2 (Governor decree). Each PHASE carries its own Gate (0→1→2→3→4→LIVE), reused from ARCH-00406 (A8).
 
 ## Opus Stage-1 Soundness Verdict + Mandatory Dual Review (ARCH-00190 §3 Stage 1; GI-68; [RATIFY-GATE])
-**Verdict: SOUND DESIGN — PHASE-0 SPEC REVISION REQUIRED before build-greenlight (NOT ratification-ready as v0.2).**
-Sequence: (1) Opus solo Stage-1 = SOUND (mirrors ARCH-00190; honors Seeds A–G verbatim +APPLIES_TO; Existing-First
-rigorous; phasing prerequisite-correct). (2) MANDATORY dual review (GI-68) then ran — cisem-haiku (protocol/evidence):
-CLEAN, all references verified resolve; cisem-sonnet (design/implementability): found REAL gaps the solo pass missed.
-**Opus value-assessment of the reviews (GI-68 requires this):** Haiku = valuable confirmation. Sonnet = HIGH value —
-its findings are accepted as real, not noise:
-- **B1 (accept):** M1 is not measurable as specified — learning-registry statuses are free-text, no WIRED/CLOSED enum
-  to detect a transition into. REVISION: Phase 0 must add a status-enum normalization sub-deliverable OR an explicit,
-  named proxy + a representativeness check; a bare "disk-cited number" is insufficient.
-- **B2 (accept):** M1 pass-criterion proves provenance, not correctness — must apply S3's own value-not-presence
-  standard to M1 itself.
-- **I1/I3/I4/I5 (accept):** state an M1 re-measurement cadence (Seed B spirit); add a deliverable to index ARCH-00417's
-  own row into the ENHANCE-INDEX (M3 needs it); give the maturity fold-in (c) its own acceptance test + a concrete
-  aggregation rule (plan-ready = 0 of the cluster's items class-(a)) to resolve the derived-vs-manual ambiguity.
-- **B3 → RESOLVED: SUBSUME (Governor 2026-07-23).** ARCH-00417 is now the spec-of-record for the drain; ratifying
-  ARCH-00417 greenlights the drain scope directly (no separate ARCH-00406 Phase-1 greenlight); ARCH-00406 Phase 1
-  is updated to POINT to ARCH-00417 for the drain spec (Core Seed H, wired into Dependencies + Phase 1 + What-DOES-change above).
-**Next:** v0.3 (this revision) addresses B1/B2/I1/I3/I4/I5 with Opus design guidance (Phase 0 deliverables (a) cadence,
-(c) own stress test + aggregation rule, (d) Wiring-State normalization, (e) self-index; Pass criteria reconciled per
-B2) and B3/Seed H (SUBSUME) — awaiting re-verify (dual review) → then Stage-2 ratification.
+**Verdict: SOUND DESIGN — PHASE-0 SPEC REVISION REQUIRED before build-greenlight (v0.2 not ratification-ready).**
+(1) Opus solo Stage-1 = SOUND (Seeds A–G honored; Existing-First rigorous; phasing correct). (2) MANDATORY dual
+review (GI-68): `cisem-haiku` (protocol) = CLEAN; `cisem-sonnet` (design) found REAL gaps, accepted as real:
+- **B1:** M1 not measurable — free-text status, no WIRED/CLOSED enum. → Phase 0 gets a normalization sub-deliverable.
+- **B2:** M1's pass-criterion proved provenance, not correctness. → apply S3's value-not-presence standard to M1.
+- **I1/I3/I4/I5:** state a re-measurement cadence; index ARCH-00417's own row; give (c) its own acceptance test +
+  a concrete aggregation rule.
+- **B3 → RESOLVED: SUBSUME (Governor 2026-07-23).** ARCH-00417 is now the drain's spec-of-record; ARCH-00406
+  Phase 1 points here (Seed H).
+**v0.3** addressed B1/B2/I1/I3/I4/I5 + B3/Seed H. **v0.4** closes the B1-merge (normalization EXECUTES the
+registered reconciliation, not a parallel patch — Change 1), scopes the B3 boundary precisely (SUBSUME Migration
+Note — Change 2), and compresses the file under the §3.6 ceiling (Change 3). Awaiting re-verify → Stage-2.
 
 ## Self-Compliance (against ARCH-00230 checklist + ARCH-00190 §2, ARCH-00401-amended)
-✓ Header ✓ Tier-Routing Declaration (incl. the disclosed 3-way author/verifier/judge split) ✓ Anti-Scatter
-Ordering ✓ The Rule (Phase 0 full + Phase-Index for 1–4, size-gate-disclosed) ✓ Tags+Statuses on every created
-node ✓ Per-File Alignment Table ✓ What DOES / does NOT change ✓ DoD reference ✓ Propagation Declaration
-✓ Dependencies ✓ Ratification Path ✓ Independent Verifier named (cisem-haiku) ✓ Existing-First stated (8-source
-search, disclosed, incl. one correction to the dispatch instruction) ✓ Path Rejection Declaration ✓ CAL reference
+✓ Header ✓ Tier-Routing (3-way split) ✓ Anti-Scatter ✓ The Rule (Phase 0 full + Phase-Index) ✓ Tags+Statuses
+✓ Alignment Table ✓ What DOES/NOT change ✓ SUBSUME Migration Note ✓ DoD ref ✓ Propagation Decl ✓ Dependencies
+(incl. Fulfills) ✓ Ratification Path ✓ Verifier named ✓ Existing-First (8-source) ✓ Path Rejection ✓ CAL ref
 ✓ Change log.
 
 ## Path Rejection Declaration (CLAUDE.md §2.8)
-- ❌ Rejected: S5 (a separate production-throttle mechanism) — folded into S1/S2/M1's interaction by consensus
-  (Core Seed A); a 5th mechanism would be redundant and the highest-blast option.
-- ❌ Rejected: BLOCK-on-age-alone for S1 — WARN-first, BLOCK only after one ignored drain cycle (Core Seed C);
-  age-alone manufactures false urgency and forces bad re-parks of legitimately long-horizon items.
-- ❌ Rejected: forking new mechanisms for S1/S3/S4 — each enhances an existing declared/named home
-  (freshness-check.sh spec, DOD/I22, the Wiring-State axis) rather than inventing a parallel one (Core Seed F/A8).
-- ❌ Rejected: an open-ended M4 build-exemption — time-boxed to `CISEM-ARCH-00417` exactly, expires at COMPLETE
-  (Core Seed D); an unbounded exemption becomes the new frictionless-forever it exists to prevent.
-- ❌ Rejected: simulating/faking Phase 4's first drain run in THIS drafting task — deliberately deferred to a REAL
-  post-ratification execution (Core Seed G + I22; no unverified "done").
-- ❌ Rejected: implementing any mechanism in this same task — A4/I25 requires ratification before implementation;
-  this artifact is the PLAN (the ONE exception is the naming-gate self-registration, the allocation mechanism
-  itself, not a governed build).
-- ❌ Rejected: citing VOC-00002 as the Wiring-State axis's authoritative home per the literal dispatch wording —
-  corrected to `CISEM-ARCH-00011 §4` per `ssot-registry.yaml`'s own `ssot:`/`mirrors:` fields (I10; disclosed
-  correction, not a silent deviation).
+- ❌ S5 (production-throttle) — folded into S1/S2/M1 (Seed A); a 5th mechanism is redundant, highest-blast.
+- ❌ BLOCK-on-age-alone for S1 — WARN-first, BLOCK only after one ignored cycle (Seed C); manufactures false urgency.
+- ❌ Forking new mechanisms for S1/S3/S4 — each enhances an existing declared home instead (Seed F/A8).
+- ❌ An open-ended M4 exemption — time-boxed to `CISEM-ARCH-00417`, expires at COMPLETE (Seed D).
+- ❌ Simulating/faking Phase 4's first drain run here — deferred to a REAL post-ratification run (Seed G + I22).
+- ❌ Implementing any mechanism in this same task — A4/I25 requires ratification first (naming-gate
+  self-registration exempt only).
+- ❌ Citing VOC-00002 as the Wiring-State axis's home per the dispatch wording — corrected to `CISEM-ARCH-00011 §4`
+  per `ssot-registry.yaml`'s own fields (I10, disclosed).
+- ❌ (Change 1, v0.4) Building a parallel Wiring-State/enum patch scoped only to this table — merged into the
+  existing REGISTERED reconciliation instead (`session-learning-index.yaml` ~L260, A8).
 
 ## CAL reference (CISEM-ARCH-00390)
-Pre-commit `[ZF]` + `[DOD]` + `[ROUTING]`/`[ALIGN]`/`[TAG-STATUS]` + `[PROPAGATE]` (ARCH-00406 Phase 0, LIVE) all
-run on this plan file at commit time. Once implemented, Phase 2's `[FRESHNESS]` and Phase 3's extended `[DOD]`/I22
-join the SAME `plan-audit.sh` invocation — no new hook, no new trigger point.
+Pre-commit `[ZF]`+`[DOD]`+`[ROUTING]`/`[ALIGN]`/`[TAG-STATUS]`+`[PROPAGATE]` (LIVE) all run on this file at commit
+time. Once implemented, Phase 2's `[FRESHNESS]` and Phase 3's extended `[DOD]`/I22 join the SAME invocation — no
+new hook.
 
 ## Change log
-- v0.1 — 2026-07-23 (Sonnet, STRUCTURING tier, dispatched by Opus per the Opus+Sonnet+Brain consensus design,
-  Governor-greenlit as a research/design phase 2026-07-23): initial phased-plan skeleton. Phase 0 (M1+M2) fully
-  specified; Phases 1–4 (S2+M4, S1, S3+S4, M3) given as a compact Phase-Index per the dispatch instruction's own
-  size-gate carve-out. All 7 Core Seeds (A–G) embedded verbatim. One disclosed correction to the dispatch wording
-  (Wiring-State home = ARCH-00011 §4, not VOC-00002). NOT committed by Sonnet (Opus commits after review, §1.7
-  one-committer discipline). Ambiguities flagged in the dispatch return, not guessed silently.
-- v0.2 — 2026-07-23 (Opus, dual-review GI-68 pass): mandatory dual review (`cisem-haiku` protocol-clean;
-  `cisem-sonnet` design/implementability found real gaps) ran against v0.1; findings B1/B2/I1/I3/I4/I5 accepted +
-  B3 (ARCH-00406 Phase-1 vs ARCH-00417 spec-of-record) escalated as a Governor decision-under-uncertainty; Opus
-  recommendation SUBSUME logged; Planning Status set COMMENTS-RECEIVED, revision pending before Stage-2.
-- v0.3 — 2026-07-23 (Sonnet, STRUCTURING tier, targeted revision per Opus dispatch, Governor B3=SUBSUME decreed):
-  added Core Seed H (SUBSUME, immutable, verbatim) to the seed block. Closed all six accepted dual-review findings:
-  **B3/Seed H** — Dependencies + Existing-First item 2 + Phase-1 table row + What-DOES-change + the Opus verdict's
-  B3 line all updated to SUBSUME (ARCH-00417 is the drain's spec-of-record; ARCH-00406 Phase 1 becomes a pointer;
-  no separate greenlight). **B1** — Phase 0 gets new deliverable (d): Wiring-State normalization of the
-  ENHANCE-INDEX rows onto the EXISTING DECLARED→CONNECTED→ACCESSIBLE→LIVE enum (ARCH-00011 §4), giving M1 a real
-  substrate to measure ("wired per cycle" = rows transitioning to LIVE/named threshold); explicit split from
-  Phase 3/S4's fuller conversion pass. **B2** — M1's Pass criteria now require RECONCILIATION against an
-  independently enumerated LIVE-count, not a bare non-zero disk query (S3's value-not-presence standard applied to
-  M1 itself). **I1** — deliverable (a) states the re-measurement cadence: the script re-runs every drain cycle, N
-  is always the latest measurement. **I3** — Phase 0 gets new deliverable (e): ARCH-00417's own row is added to the
-  ENHANCE-INDEX §B table (M3's Phase-4 self-test needs it). **I4/I5** — deliverable (c) gets its own stress test +
-  numeric pass criteria (reconciled mechanical count vs hand count) and an explicit aggregation rule: cluster
-  `plan-ready` = the MECHANICAL 0-core-blocking-count DERIVED from M2 **+** the Opus+Brain judgment CONFIRMING core
-  consensus — both required, not either/or. Targeted edits only; all 7 pre-existing Core Seeds (A–G) preserved
-  verbatim (I13); header `Status`/`Planning Status` fields left untouched (Hard Line I7 — Sonnet does not write
-  truth-bearing fields; Opus updates on re-review). NOT committed by Sonnet (§1.7, Opus commits after re-review).
+- v0.1 — 2026-07-23 (Sonnet, dispatched per Opus+Sonnet+Brain consensus, Governor-greenlit research/design):
+  initial skeleton; Phase 0 fully specified, Phases 1–4 compact Phase-Index (size-gate carve-out); 7 Core Seeds
+  (A–G) verbatim; one disclosed correction (Wiring-State home = ARCH-00011 §4, not VOC-00002). Not committed.
+- v0.2 — 2026-07-23 (Opus, dual-review GI-68): `cisem-haiku` protocol-clean; `cisem-sonnet` found real gaps.
+  Findings B1/B2/I1/I3/I4/I5 accepted; B3 (ARCH-00406 vs ARCH-00417 spec-of-record) escalated as a Governor
+  decision; SUBSUME recommendation logged; Planning Status → COMMENTS-RECEIVED.
+- v0.3 — 2026-07-23 (Sonnet, targeted revision, Governor B3=SUBSUME decreed): added Core Seed H verbatim; closed
+  all six findings (B3/Seed H SUBSUME threaded through; B1 deliverable (d) normalization; B2 reconciled pass
+  criteria; I1 cadence; I3 deliverable (e) self-index; I4/I5 deliverable (c) stress test + aggregation rule); all
+  7 prior seeds preserved verbatim; header truth fields untouched (I7). Not committed.
+- v0.4 — 2026-07-23 (Sonnet, targeted revision per Opus dispatch): three changes. **(1) B1 merge (A8):** deliverable
+  (d) now states it EXECUTES the registered enum-reconciliation PREVENTION-CANDIDATE (`session-learning-index.yaml`
+  ~L260) — one effort for both M1's measurement and BP-0012's future gate; added a Dependencies "Fulfills" bullet +
+  a matching Path-Rejection entry. **(2) SUBSUME scope note (B3):** new `## SUBSUME Migration Note` states the
+  boundary — ARCH-00417 owns only the DRAIN of named-not-wired items; the other four ARCH-00406/RIPL-v2 pillars
+  (Propagation Network, Tier-Cycle, Workflow-Governance, Output-Liveness Monitor) stay in ARCH-00406, not absorbed.
+  **(3) Size resolution (§3.6, COMPRESS-FIRST, no split):** tightened every section's prose; every mandatory
+  ARCH-00401 section retained; all 8 Core Seeds (A–H) verbatim (I13); header truth fields untouched (I7). WORD
+  count is now under 3,500 (measured by `wc`, exact figure in the header's Size-gate note); LINE count still
+  exceeds 200 (documented exception, honestly disclosed, not silently claimed fixed — see header). Not committed
+  by Sonnet (§1.7 — Opus commits after re-review).

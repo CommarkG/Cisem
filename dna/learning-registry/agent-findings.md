@@ -367,3 +367,26 @@ Entry format (append, newest at bottom):
   computed (not hand-typed) or explicitly re-verified at every revision that grows the file. → DISTILL-PENDING
   (candidate: fold into ARCH-00190 §3 Stage-0 revision-pass checklist + the plan-audit self-referential-claim
   class alongside I22).
+
+- [2026-07-23 · cisem-sonnet · ARCH-00417 v0.4 (B1-merge + SUBSUME-scope-note + size-compression)] **Compressing a
+  header to save word-count SILENTLY BROKE a mechanical gate** — merging the `**Independent Verifier:**` field
+  onto the same line as `**Governing corespine:**` (to save ~3 words) made the `[P5]` independent-verifier check
+  in `plan-audit.sh` report a false MISSING, because its regex requires the field label at LINE-START
+  (`^\*\*independent[ _-]verifier`). This is EXACTLY the presence≠behavior / wire-don't-document trap (Principle
+  17/18C) applied to compression: prose-level word-savings can silently defeat a regex-anchored mechanical check
+  that assumes a specific line-start position for a field. CLASS: any edit that MERGES, REFLOWS, or REORDERS
+  header/field lines in a governed file (for compression, tidiness, or any other reason) MUST be followed by
+  actually RUNNING the mechanical checker (`plan-audit.sh`), not just eyeballing that the field text is "still
+  present somewhere in the file" — presence in the body ≠ passing the check's positional assumption. PREVENTION
+  (fixed live, this task): reverted the merge, restored `**Independent Verifier:**` to its own line-start; re-ran
+  `plan-audit.sh` and confirmed `[P5] (none)` + `[ZF] ACHIEVED`. Root prevention (routed): before any header-line
+  compression in a plan/protocol file, grep `plan-audit.sh` for `^\*\*` / `^field:` anchored patterns matching that
+  file's field names, and verify the compressed layout still satisfies each one — don't rely on "the words are
+  still there." Also observed this run: a §3.6 size-gate exception is TWO-DIMENSIONAL (words AND lines) but the
+  Governor-dispatched task instruction and my own first-pass framed it as word-only — the mechanical `[I6-SIZE]`
+  check only enforces LINES (>200), so a file can be honestly "under 3,500 words" while still needing a documented
+  line-count exception; conflating the two into "compressed = compliant" would have been a subset-pass-dressed-as-
+  full-pass (Principle 17 HONEST-REPORTING sub-rule) had it gone unnoticed. → DISTILL-PENDING (candidate: fold
+  into the ARCH-00190 revision-pass checklist alongside the prior entry, AND into `cisem-create`/`cisem-plan`
+  skill guidance as a standing "compress → re-run plan-audit.sh, never eyeball" rule; also candidate for a new
+  [I6-SIZE]-adjacent WARN that flags word-only size-claims lacking a paired line-count statement).
