@@ -251,6 +251,26 @@ unresolved CORE design question (M1's substrate). Do NOT force it to ratificatio
 (Opus+Brain consensus) → ONE clean revision → re-review → Stage-2. Firing revision N+1 without resolving the core
 would be the gap-creation engine (Principle 15).
 
+## PARKED — Resume Spec (M1-substrate resolution; Opus+Brain consensus 2026-07-23; Governor parked for core-extraction)
+When the Governor says "proceed," ONE clean revision applies ALL of the below, then → GI-68 re-review → Stage-2:
+- **M1 substrate = a PURPOSE-BUILT scoped instrument, NOT a general axis and NOT a normalization of the existing
+  enums.** Add a single `wired_at: <date>` field to the §B backlog rows. "Items wired per cycle" = rows whose
+  `wired_at` falls in the drain window. This DECOUPLES M1 from both lifecycle-status AND Wiring-State (kills the
+  RB1 conflation). **DROP the "executes the L260 reconciliation" claim** — that lifecycle-status cleanup stays
+  BP-0012's separate concern (RB1 was right; Opus over-accepted the merge).
+- **Brain's 3 sharpenings (consensus, fold into the revision):** (1) state EXPLICITLY in the text that this marker
+  is *scoped to §B/M1 measurement only, NOT a general maturity axis* — else a future session extends it by analogy
+  and we are back to three overlapping status fields; (2) implement as an **append-only** `wired_at: <date>` event
+  (added once), NEVER a mutable/flippable boolean — matches the append-only convention of every durable registry
+  (I16, no untraceable state-mutation); (3) DEFINE "the window" explicitly against the drain cycle's actual
+  start/end dates in the same revision, so N's measurement is unambiguous.
+- **B3 fixes (RB2):** drain scope = session-harvest §B ONLY; root-insights.yaml `RI-NNNN`/`batch_status` stays
+  ARCH-00406's RIPL backlog (different file+schema, NOT folded); correct the Migration Note pillar count (ARCH-00406
+  keeps Phases 0/2/3/4/5, not "four").
+- **Out of scope (routed to RI-0026, not this plan):** the §3.6 line-gate vs ARCH-00401 mandatory-sections tension.
+- **Core-insight extracted (RI-0025):** consensus-laundering / paraphrase-trust — the reason the conflation survived
+  four passes; drives the GI-68 source-read lens + the plan-authoring quote-the-source rule (separate wiring).
+
 ## Self-Compliance (against ARCH-00230 checklist + ARCH-00190 §2, ARCH-00401-amended)
 ✓ Header ✓ Tier-Routing (3-way split) ✓ Anti-Scatter ✓ The Rule (Phase 0 full + Phase-Index) ✓ Tags+Statuses
 ✓ Alignment Table ✓ What DOES/NOT change ✓ SUBSUME Migration Note ✓ DoD ref ✓ Propagation Decl ✓ Dependencies
