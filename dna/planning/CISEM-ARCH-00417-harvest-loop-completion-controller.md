@@ -232,9 +232,24 @@ review (GI-68): `cisem-haiku` (protocol) = CLEAN; `cisem-sonnet` (design) found 
   a concrete aggregation rule.
 - **B3 → RESOLVED: SUBSUME (Governor 2026-07-23).** ARCH-00417 is now the drain's spec-of-record; ARCH-00406
   Phase 1 points here (Seed H).
-**v0.3** addressed B1/B2/I1/I3/I4/I5 + B3/Seed H. **v0.4** closes the B1-merge (normalization EXECUTES the
-registered reconciliation, not a parallel patch — Change 1), scopes the B3 boundary precisely (SUBSUME Migration
-Note — Change 2), and compresses the file under the §3.6 ceiling (Change 3). Awaiting re-verify → Stage-2.
+**v0.3** addressed B1/B2/I1/I3/I4/I5 + B3/Seed H. **v0.4** attempted the B1-merge + B3 boundary + compression.
+**v0.4 GI-68 DUAL RE-REVIEW (2026-07-23) — NOT RATIFICATION-READY; two real correctness gaps caught (Opus concurs):**
+- **RB1 (Sonnet, reading ARCH-00011 §4 directly):** the B1-merge CONFLATES TWO DISTINCT AXES. ARCH-00011 §4 states
+  Wiring-State (DECLARED→CONNECTED→ACCESSIBLE→LIVE) is "a SEPARATE dimension from lifecycle status." The registered
+  L260 prevention is about the LIFECYCLE-STATUS enum; deliverable (d) normalizes onto WIRING-STATE — different enum,
+  same §4 section. The merge is into the wrong prevention, AND M1 still lacks a measurable substrate: real §B values
+  (CONSENSUS/GAP/design/open) don't map to DECLARED→LIVE and no mapping rule exists. **The original B1 gap (M1 not
+  measurable) reappeared one layer down.** ROOT DESIGN QUESTION to resolve before any further build: *what is M1's
+  actual measurable substrate?* — an Opus(+Brain, GI-65) design decision, not another mechanical revision.
+- **RB2 (Haiku + Sonnet):** the SUBSUME Migration Note (a) mis-counts ARCH-00406's remaining pillars ("four" — Phases
+  4/5 PACK-CONTEXT + HAIKU-REVIEW omitted); (b) leaves the RI-NNNN/batch_status backlog (root-insights.yaml, a
+  different file+schema) un-reconciled against §B — the exact fork risk SUBSUME exists to prevent, still open.
+- **Non-blocking (route separately):** §3.6 line-gate vs ARCH-00401 mandatory-sections is a SYSTEMIC tension (2nd
+  occurrence this session; ARCH-00401 Trial-Obs #3 hit the same wall) → standing root-insight, not this plan's fault.
+**DISCIPLINED CALL (GI-66 + GI-04 core-first):** this cluster is LESS mature than believed — the re-review exposed an
+unresolved CORE design question (M1's substrate). Do NOT force it to ratification; PARK v0.4, resolve M1's substrate
+(Opus+Brain consensus) → ONE clean revision → re-review → Stage-2. Firing revision N+1 without resolving the core
+would be the gap-creation engine (Principle 15).
 
 ## Self-Compliance (against ARCH-00230 checklist + ARCH-00190 §2, ARCH-00401-amended)
 ✓ Header ✓ Tier-Routing (3-way split) ✓ Anti-Scatter ✓ The Rule (Phase 0 full + Phase-Index) ✓ Tags+Statuses

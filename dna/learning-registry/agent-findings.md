@@ -34,6 +34,53 @@ Entry format (append, newest at bottom):
   build ONLY Phase 0) — flagged so a future perf pass on [I16]'s per-file scanning isn't rediscovered from scratch.
   → DISTILL-PENDING.
 
+- [2026-07-23 · cisem-sonnet (adversarial re-review) · ARCH-00417 v0.4 GI-68 re-review] **A "merge into an existing
+  registered item" claim can conflate two SSOT-declared-SEPARATE axes when both happen to share a home file.**
+  ARCH-00417's B1-merge (deliverable (d)) claims its Wiring-State normalization of §B's free-text State column
+  "EXECUTES" the registered enum-reconciliation candidate at `session-learning-index.yaml` ~L260. But L260's item is
+  about the LIFECYCLE-STATUS enum (ARCH-00011 §4's 8 values: DRAFT/PROPOSED/RATIFIED/etc. — divergence = 15+ practice
+  variants like RATIFIED-SPEC, PARKED-AS-KERNEL); ARCH-00417 normalizes onto the WIRING-STATE axis
+  (DECLARED→CONNECTED→ACCESSIBLE→LIVE) — which ARCH-00011 §4 itself explicitly labels "a SEPARATE dimension from
+  lifecycle status" (line 142). Both axes are homed in the same section (§4), which made the merge LOOK like the
+  same fix; it is not. CLASS: before claiming plan-B "executes"/"fulfills" a registered prevention-candidate, verify
+  the target VOCABULARY, not just the target FILE/SECTION — same SSOT section can host multiple orthogonal axes.
+  Compounding evidence the merge is premature: several real §B State values (`CONSENSUS`, `GAP`, `finding`, `design`,
+  `approved`, `open`) do not map onto any of the 4 Wiring-State values — deliverable (d) has no stated mapping rule
+  for non-conforming free text, so "100% row-coverage" (its own Phase-0 pass criterion) is not yet achievable as
+  specified. PREVENTION: any "normalize free text onto controlled vocabulary X" deliverable must include the mapping
+  RULE (incl. an explicit fallback/UNKNOWN bucket for non-conforming values), not just cite the target vocabulary's
+  existence. → DISTILL-PENDING (candidate RI, routes to ARCH-00190 §3 Stage-1 checklist: "does a normalization
+  deliverable specify its non-conforming-value handling?").
+
+- [2026-07-23 · cisem-sonnet (adversarial re-review) · ARCH-00417 v0.4 GI-68 re-review] **SUBSUME can name which
+  PHASES stay put while leaving which BACKLOG/FILE is authoritative unresolved.** ARCH-00417's SUBSUME Migration
+  Note states ARCH-00417 owns "the drain of named-not-wired items" and ARCH-00406 Phase 1 (RIPL-v2 weekly-batch)
+  becomes a pointer — but ARCH-00406 Phase 1 was scoped to a DIFFERENT substrate: `root-insights.yaml` RI-NNNN
+  entries with their OWN `batch_status: ACCUMULATING|BATCHED|ROUTED` enum + 7-day TTL, not `session-harvest-2026-07-23
+  .md` §B (which ARCH-00417 actually drains). The Migration Note resolves phase-ownership (Propagation
+  Network/Tier-Cycle/Workflow-Governance/Output-Liveness stay with ARCH-00406) but never states whether root-insights
+  .yaml's RI-NNNN backlog now (a) folds into §B, (b) stays a second, separately-tracked backlog, or (c) is dead-lettered
+  now that ARCH-00406 Phase 1 is a pointer. M1's own script description ("cross-referenced against `dna/learning-
+  registry/` entries that reached LIVE") makes this concrete: root-insights.yaml entries never use the word "LIVE"
+  (they use batch_status values) — so a naive M1 scan of the whole `dna/learning-registry/` directory would silently
+  undercount. CLASS: a SUBSUME/absorption ruling that resolves ownership by PHASE-NAME without checking whether the
+  absorbed phase's DATA SUBSTRATE differs from the absorbing plan's substrate can leave a real duplicate-backlog risk
+  standing — exactly the fork SUBSUME was meant to prevent. PREVENTION: any SUBSUME note must state the substrate
+  (file+schema) being absorbed, not just the phase label, and reconcile or explicitly park any mismatch.
+  → DISTILL-PENDING (candidate RI, routes to the SUBSUME-decision pattern used for future ARCH-00406-pillar absorptions).
+
+- [2026-07-23 · cisem-sonnet (adversarial re-review) · ARCH-00417 v0.4 GI-68 re-review] **§3.6 Size Gate vs
+  ARCH-00401's mandatory-section list is a RECURRING, already-once-disclosed tension, not a one-off.** ARCH-00401's
+  own Trial-Observation #3 (2026-07-20) already named "a genuine tension between §3.6 (size discipline) and I2/
+  completeness" when fitting its OWN 12 enhancements under 200 lines. ARCH-00417 hit the identical wall a session
+  later (documented-exception precedent reused, same as ARCH-00190/00406). Two independent plans citing the same
+  documented-exception is a signal the exception is load-bearing, not incidental. PREVENTION: this is worth ONE
+  root-insight naming the CLASS ("a phased/governance ARCH plan with N mandatory ARCH-00401 sections structurally
+  cannot fit 200 lines without either a mini-tree split standard OR a raised/differentiated line ceiling for this
+  file class") rather than each future plan re-discovering and re-disclosing it individually. → DISTILL-PENDING
+  (candidate RI; routes to §3.6 itself — propose a Type-scoped ceiling, e.g. ARCH/phased-plan gets 300–350 lines,
+  or a standard mini-tree-split template plans can cite instead of a bespoke documented-exception each time).
+
 - [2026-07-22 · cisem-sonnet · ARCH-00415/00416 drafting (two DRAFT plans)] **Dispatch-framing can itself be stale —
   Existing-First must re-verify the TASK'S OWN premise, not just its proposed artifact.** The dispatch described Plan
   A as resolving an OPEN "I25 debt" for the Corespine Wizard ("was built WITHOUT a ratified plan... Governor ruled
