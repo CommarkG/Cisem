@@ -326,3 +326,24 @@ Entry format (append, newest at bottom):
   self-catch applies to CITATIONS inside a dispatch, not only to whether-to-build decisions — a Sonnet executing a
   dispatch should still ssot-registry-verify a named home before writing it down. → DISTILL-PENDING (candidate:
   fold into RI-0024's existing wording as an explicit citation-verification example).
+
+- [2026-07-23 · cisem-sonnet · independent design review, CISEM-ARCH-00417 (Harvest-Loop Completion Controller)]
+  **A "measured-from-disk" pass-criterion can be satisfied by a VACUOUS number if the criterion only checks
+  "non-zero, disk-cited," not "semantically meaningful."** ARCH-00417 Phase 0 Deliverable (a) (M1 capacity script)
+  is graded by "a non-zero, disk-cited number (not TBD)" — but the actual data it must correlate against
+  (`dna/learning-registry/` entries "transitioning to a WIRED/CLOSED state") does NOT exist as a clean, git-diffable
+  enum: verified on disk, `session-learning-index.yaml` statuses are free-text prose (`PREVENTION-DONE (this run —
+  verify-before-recommend applied...)`, `PREVENTION-CANDIDATE (route to a plan — deferred, not ad-hoc)`) and
+  `session-harvest-2026-07-23.md`'s ENHANCE-INDEX "State" column uses ~9 distinct free-text values (DECREED-NOT-YET-
+  WIRED / NAMED / GAP / pending / open / design / approved / CONSENSUS...) — no literal "WIRED" or "CLOSED" state
+  exists anywhere to detect a transition INTO. A script built to spec would either (a) fail to find any real signal
+  and fall back to a proxy like "count of files touched under dna/checks/" (satisfies the pass-criterion while
+  measuring something semantically unrelated to "items wired per tier"), or (b) require an UNSCOPED prerequisite —
+  normalizing the learning-registry to a clean status enum — that Phase 0 does not list as a deliverable. CLASS: any
+  plan pass-criterion of the shape "a disk-computed number, not TBD" is NOT sufficient proof the number is
+  MEANINGFUL — the criterion must also state what makes the number correct/representative, or verify against a
+  hand-checked expected range/example, not just verify provenance. PREVENTION (routed, not fixed — this is a review
+  finding, not my task to fix): DoD/[DOD]-style "observable value assertion" (S3's own extension, ironically) should
+  itself be applied to M1's OWN pass-criterion before Phase 0 is called done — require the cited number to be
+  spot-checked against 1-2 manually-verified historical wiring events, not just "non-zero." → DISTILL-PENDING
+  (candidate: strengthens I22/DoD — "measured" claims need a correctness check, not just a provenance check).

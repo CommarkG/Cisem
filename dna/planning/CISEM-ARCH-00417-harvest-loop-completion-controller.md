@@ -1,6 +1,6 @@
 # Harvest-Loop Completion Controller — Phased Plan (M1 capacity · M2 classification · S1 freshness · S2 drain · S3/S4 gates · M3 self-test)
 **Node ID:** CISEM-ARCH-00417 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 soundness = SOUND, 2026-07-23; awaiting Governor Stage-2 authority) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
+**Planning Status:** COMMENTS-RECEIVED (Opus Stage-1 SOUND-design; mandatory dual review GI-68 found Phase-0 spec gaps [B1/B2/I1/I3/I4/I5] + a Governor decision [B3] — revision pending before Stage-2, 2026-07-23) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [harvest-loop, completion-controller, capacity-model, classification, freshness, drain, wiring-state, governance-loop, mandatory]
 **Goal:** Close CISEM's harvest loop from an OPEN-LOOP (writes insights, no forcing function on wiring them) to a
 CLOSED-LOOP controller — measurable as: (1) M1's capacity number is git/registry-**measured**, never hand-typed;
@@ -132,6 +132,15 @@ by a human — Core Seed B). This drafting task does NOT run it or invent the nu
 needs-plan (b)` / `long-horizon-explicit-re-park (c)` — and ADD it as a new column to the EXISTING
 `session-harvest-2026-07-23.md` §B table (enhance, not fork). Apply it retroactively to the current ~20 rows as
 the seed data set.
+**Deliverable (c) GI-66 cluster-maturity read (Opus+Brain consensus 2026-07-23; folded here per anti-fragmentation, GI-66 spirit):**
+M2's SAME three-way classification also reads at CLUSTER scale — a topic-cluster is `plan-ready` when its core
+mechanism has genuine Opus+Brain consensus AND every remaining open item independently classifies (b)/(c)
+peripheral, with NONE still (a) core-blocking. Wire = ONE pointer row added to VOC-00002:
+`Cluster Maturity | forming→converging→plan-ready→shipping | GI-66 | topic-clusters` — mirroring the EXISTING
+Planning-Status pointer pattern (a pointer to GI-66 as home, NOT a fork of DIOS/VOC-00003, which is epistemic
+maturity of KNOWLEDGE, a distinct axis — verified 2026-07-23). The read DEFAULTS to Opus+Brain agreement; escalate
+to the Governor only on disagreement (mirrors the GI-67 exception; single-model maturity read risks the RI-0002
+blind spot). No new mechanism beyond the pointer row + M2's cluster-scale application.
 **Stress test:** run the M1 script against real git-log/learning-registry history → a non-zero, disk-cited number
 (not "TBD"); classify all current ENHANCE-INDEX rows → 100% carry exactly one class.
 **Pass criteria (numeric):** M1 number is disk-computed with its command+output cited; M2 100% row-coverage (0 rows
@@ -169,6 +178,8 @@ what they already carry).
 - `dna/checks/plan-audit.sh` — new `[FRESHNESS]` WARN/BLOCK check (Phase 2); extended `[DOD]`/I22 logic (Phase 3).
 - `dna/learning-registry/session-harvest-2026-07-23.md` — new class (a/b/c) column (Phase 0) + Wiring-State column
   (Phase 3), applied to existing rows.
+- `dna/vocabulary/CISEM-VOC-00002-status-library.md` — ONE new Cluster-Maturity pointer row (Phase 0, home GI-66;
+  pointer pattern, not a DIOS/VOC-00003 fork) per the Opus+Brain maturity consensus 2026-07-23.
 - `dna/planning/CISEM-ARCH-00406-completion-propagation-layer.md` Phase 1 — ENHANCED with the drain rule + M4
   exemption clause (Phase 1 of this plan; that file's own Governor greenlight is a separate, cross-referenced
   event, not granted by this plan).
@@ -215,18 +226,27 @@ Stage 1 (`cisem-opus-pe`, content-lens, soundness verdict) → Stage 1.5 (fable 
 decree). Each PHASE additionally carries its own Gate (0→1→2→3→4→LIVE) — a later phase's implementation cannot
 start before the earlier phase's Gate clears, per the ARCH-00406 phased-plan precedent (reused, A8).
 
-## Opus Stage-1 Soundness Verdict (ARCH-00190 §3 Stage 1; [RATIFY-GATE])
-**Verdict: SOUND** (cisem-opus-pe, 2026-07-23; content-correctness + judgment lens, distinct from author cisem-sonnet
-and protocol-lens verifier cisem-haiku — the 3-way split above). Basis: mirrors ARCH-00190 §2 (all sections);
-honors all 7 Core Seeds (A–G, verbatim + APPLIES_TO added by the seed author, Opus); Existing-First rigorous and
-disclosed; phasing is prerequisite-correct (M1/M2 before all thresholds). Sonnet's 4 flagged ambiguities ruled:
-(1) Seed-E-vs-G resolved correctly (E = the plan's own Phase 4, not this task); (2) Wiring-State home corrected to
-ARCH-00011 §4 — Sonnet was right, the dispatch seed was imprecise, seed F now carries the accurate home;
-(3) APPLIES_TO gap fixed by the author; (4) Executive Summary added.
-**ONE named pending sub-issue (does NOT block ratification — GI-67(3)):** S2's drain IS ARCH-00406 Phase-1's
-weekly-evolve, yet the plan treats ARCH-00406 Phase-1 as a separate greenlight — a potential double-gate for the
-same actuator. DECISION FOR THE GOVERNOR: does ratifying ARCH-00417 also greenlight ARCH-00406 Phase-1's drain
-scope (subsume), or stay separately gated? Parked as a decision-point, plan proceeds either way.
+## Opus Stage-1 Soundness Verdict + Mandatory Dual Review (ARCH-00190 §3 Stage 1; GI-68; [RATIFY-GATE])
+**Verdict: SOUND DESIGN — PHASE-0 SPEC REVISION REQUIRED before build-greenlight (NOT ratification-ready as v0.2).**
+Sequence: (1) Opus solo Stage-1 = SOUND (mirrors ARCH-00190; honors Seeds A–G verbatim +APPLIES_TO; Existing-First
+rigorous; phasing prerequisite-correct). (2) MANDATORY dual review (GI-68) then ran — cisem-haiku (protocol/evidence):
+CLEAN, all references verified resolve; cisem-sonnet (design/implementability): found REAL gaps the solo pass missed.
+**Opus value-assessment of the reviews (GI-68 requires this):** Haiku = valuable confirmation. Sonnet = HIGH value —
+its findings are accepted as real, not noise:
+- **B1 (accept):** M1 is not measurable as specified — learning-registry statuses are free-text, no WIRED/CLOSED enum
+  to detect a transition into. REVISION: Phase 0 must add a status-enum normalization sub-deliverable OR an explicit,
+  named proxy + a representativeness check; a bare "disk-cited number" is insufficient.
+- **B2 (accept):** M1 pass-criterion proves provenance, not correctness — must apply S3's own value-not-presence
+  standard to M1 itself.
+- **I1/I3/I4/I5 (accept):** state an M1 re-measurement cadence (Seed B spirit); add a deliverable to index ARCH-00417's
+  own row into the ENHANCE-INDEX (M3 needs it); give the maturity fold-in (c) its own acceptance test + a concrete
+  aggregation rule (plan-ready = 0 of the cluster's items class-(a)) to resolve the derived-vs-manual ambiguity.
+- **B3 → GOVERNOR DECISION (decision-under-uncertainty, GI-67(2)):** ARCH-00406 Phase-1 is NAMED-but-UNBUILT, so this
+  plan's Phase-1 would be its FIRST build — an A8 "which plan is spec-of-record for the drain" question, not mere
+  double-gating; S2 stalls with no default. **Opus recommendation: SUBSUME** — make ARCH-00417 the spec-of-record for
+  the drain, so ratifying ARCH-00417 greenlights the drain scope directly (removes the stall + the double-gate).
+**Next:** on the Governor's B3 call, a Sonnet revision pass addresses B1/B2/I1/I3/I4/I5 with Opus design guidance →
+re-verify (dual review) → then Stage-2 ratification. The dual-review mandate worked: it caught gaps before ratification.
 
 ## Self-Compliance (against ARCH-00230 checklist + ARCH-00190 §2, ARCH-00401-amended)
 ✓ Header ✓ Tier-Routing Declaration (incl. the disclosed 3-way author/verifier/judge split) ✓ Anti-Scatter
