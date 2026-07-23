@@ -1,8 +1,8 @@
 ---
 Node_ID: CISEM-ARCH-00415
 Type: ARCH
-Status: DRAFT
-Planning_Status: AWAITING-BUILDER-REVIEW
+Status: SUPERSEDED
+Planning_Status: SUPERSEDED — RETRACTED 2026-07-23: built on a stale premise (the wizard ARCH-00394 I25 debt was ALREADY closed by ARCH-00395, RATIFIED 2026-07-18, which explicitly covered ARCH-00393 + ARCH-00394). Not for ratification. Retained as audit trail of the dispatch-premise-staleness episode (RI-0023). The process-comparison insight (wizard execution vs ARCH-00190) survives here as a finding only, not as a governed plan.
 depth_level: L2
 tags: [planning-domain, retro-plan, i25, learning-comparison, arch-00190, arch-00394, corespine-wizard]
 ---
