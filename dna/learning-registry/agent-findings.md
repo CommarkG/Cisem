@@ -34,6 +34,23 @@ Entry format (append, newest at bottom):
   build ONLY Phase 0) — flagged so a future perf pass on [I16]'s per-file scanning isn't rediscovered from scratch.
   → DISTILL-PENDING.
 
+- [2026-07-24 · cisem-sonnet · CISEM-ARCH-00419 plan drafting] **The [I6-SIZE] §3.6 documented-exception detector
+  is a brittle prose-regex, not a structured field — same class as RI-0012's [CHECK-LINT] substring-vs-field family.**
+  `plan-audit.sh`'s I6-SIZE check only recognizes a size-exception note if the file's PROSE happens to contain one
+  of a fixed set of literal substrings (`size.exception|mini.tree|exceeds.*200|200.line.*exception|exception.*200|
+  size.*gate.*defer|size.*gate.*exempt`). A first honest draft of ARCH-00419's Size-gate note used "the LINE ceiling
+  is EXCEEDED by..." (past-tense "exceeded", not "exceeds") and "this file is 249 lines" (not "exceeds 200 lines")
+  — semantically identical disclosure, but it silently failed to match ANY pattern, so [ZF] read NOT-ZF until the
+  wording was rewritten to hit the literal regex. CLASS: any check that gates on "did the author disclose X in
+  prose" via keyword-regex will silently miss a truthful disclosure phrased differently — the author can be 100%
+  honest and still fail the mechanical gate, which teaches authors to game the regex's exact wording rather than
+  write clearly. PREVENTION (near-term, cheap): document the CANONICAL phrase ("exceeds 200 lines") as the required
+  wording in §3.6/ARCH-00230 so future plan-authors hit the regex on the first try, not by trial-and-error against
+  plan-audit's source. PREVENTION (longer-term, structural — routes to the same fix RI-0012 already named): replace
+  prose-regex detection with a structured field (e.g. a `size_exception: true` frontmatter-style marker) the same
+  way [DOD]/[ROUTING] moved toward structured checks — out of THIS task's scope, flagged for the check-hardening
+  backlog. → DISTILL-PENDING (candidate: fold into RI-0012's substring-vs-field family as a named sibling instance).
+
 - [2026-07-23 · cisem-sonnet (adversarial re-review) · ARCH-00417 v0.4 GI-68 re-review] **A "merge into an existing
   registered item" claim can conflate two SSOT-declared-SEPARATE axes when both happen to share a home file.**
   ARCH-00417's B1-merge (deliverable (d)) claims its Wiring-State normalization of §B's free-text State column
