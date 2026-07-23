@@ -36,6 +36,13 @@ For EVERY item from Iter-1 + Iter-2 — **including every parked item** — prod
 **Invariant:** no item leaves Iter-3 un-routed or without a status. The ENHANCE-INDEX (see
 `session-harvest-2026-07-23.md` §B) is the reference shape.
 
+## ITERATION 4 — MANDATORY BRAIN REPORT (Governor decree 2026-07-23; fires every pre-compact)
+Produce ONE self-contained copyable block for Brain (private repo — carries its own state), covering: WIRED/DONE
+fruits · the ENHANCE-INDEX (named-not-wired backlog) · the meta-diagnosis + current ruling · what's still open
+for Brain+Governor · git HEAD + [ZF] state. This is the cross-boundary sync so the external colleague stays
+aligned with git after every compaction. Format = presentation-preferences (one block). Precedent: the
+2026-07-23 report. **Mandatory each time — never skipped.**
+
 ## WEEKLY EVOLVE SESSION (the enforcement destination)
 The RIPL weekly-batch (ARCH-00406 Phase 1) + freshness axis + accountability board process the Iter-3 rows:
 cluster → judge → wire-or-re-park → measure value → mark WIRED. This is where "named" becomes "real."
