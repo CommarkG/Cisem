@@ -26,6 +26,17 @@ grep -hE "status: RATIFIED" dna/governor-insights.yaml 2>/dev/null \
 echo "  - PLATFORM NORTH STAR: SEALED at FOUND-00001 apex (GI-44) — sub-goals SERVE it, never redefine it."
 echo "  (This list is auto-pulled from governor-insights.yaml each session — it stays current.)"
 echo ""
+echo "OPERATING PROCESS (always-loaded — CLAUDE.md §1.8 — HOW WE WORK, inherits every tab):"
+echo "  ROLES: Governor(sole-ratify, sets goals) · Opus(orchestrate+build+COMPLETE decided/ratified, GI-69) · Brain(external cross-check, NO repo access)."
+echo "  FLOW: goal→approach→plan→ratify→build (GI-65/67). NOTHING built without a ratified plan (A4/A11). End every reply: (A) plain-for-Governor + (B) one-click-for-Brain."
+echo "  EVERY TURN: complete decided/ratified work (never 'update'+defer, GI-69); route a REAL prevention + preserve the good (GI-70); prefer completion over new inputs (GI-71)."
+echo ""
+echo "GOVERNOR-INSIGHTS = DUAL: an analysis-archive of how the Governor thinks AND a LIVE PARK-QUEUE. Below is the un-wired backlog —"
+echo "  the system is ENFORCED to go over it every session and drive the top items toward WIRED (do NOT let it become a stale archive, RI-0027/0029):"
+grep -hE 'DECREED-NOT-YET-WIRED|DECREED,|"?PARKED|AWAITING-GOVERNOR|AXIOM-CANDIDATE|CONSENSUS-REACHED|WISH-PARKED|DECLARED,' dna/governor-insights.yaml 2>/dev/null \
+  | sed -E 's/.*id: (GI-[0-9a-z_]+).*insight: "([^"]{0,72}).*/  - \1 \2.../' | head -16
+echo "  (auto-pulled each session; a GROWING list = the platform declaring faster than it wires — close it. Same for un-WIRED root-insights.)"
+echo ""
 echo "LIVE ENFORCEMENT: run 'bash dna/checks/plan-audit.sh' → the [ZF] line is your done-gate."
 echo "CAL governs this: CISEM-ARCH-00390. No creation is done until [ZF] ACHIEVED or every finding routed."
 exit 0

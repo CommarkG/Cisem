@@ -10,6 +10,14 @@
 #
 # STATUS values: RATIFIED-WIRED (decreed + mechanically live) · RATIFIED (decreed, honored behaviorally) ·
 #   DECREED-NOT-YET-WIRED (decreed this session, wiring is a queued plan) · AWAITING-GOVERNOR (needs his definition).
+#
+# ═══ DUAL ROLE + MECHANICAL ENFORCEMENT (Governor decree 2026-07-24 — "I do not allow it to become a stale archive") ═══
+# This file has TWO EQUAL tasks: (1) an ANALYSIS ARCHIVE of how the Governor thinks (his decrees), mined to make CISEM
+# better with the conclusions; AND (2) a LIVE PARK-QUEUE — every not-yet-WIRED decree is an OPEN ISSUE to be processed
+# later in CISEM, never a dead record. MECHANICALLY ENFORCED: the CAL session-start hook (.claude/hooks/session-start.sh)
+# injects the un-wired backlog EVERY session, so the platform is FORCED to go over it + drive items toward WIRED
+# (GI-70/71; RI-0027/0029). A GROWING un-wired list = declaring faster than wiring — the [BUILD-STATE]/[INHERIT-CHECK]
+# family (ARCH-00420) is the mechanical close. This is not optional review; it fires every session by construction.
 
 groups:
 
