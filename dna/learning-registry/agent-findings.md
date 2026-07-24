@@ -501,3 +501,78 @@ Entry format (append, newest at bottom):
   extractors, not just status/type/membership value regexes, matching the candidate raised in the 2026-07-23 entry
   above. → DISTILL-PENDING (this entry + the two prior TAG-STATUS entries should distill to ONE RI-0012 sub-entry
   update on the next RIPL weekly batch, not three separate items).
+
+- [2026-07-24 · cisem-sonnet · CISEM-ARCH-00403 implementation (Tier 1 build: `dna/checks/zf-convergence.md`)]
+  **POSITIVE (D4 enhancement):** built the ratified SSOT exactly per the plan's "The Rule" §1(a)-(e) — verified
+  UNBUILT first (file did not exist), read the CoreSpiral founding text (FOUND-00001 line 57) to ground the
+  "named INSTANCE of CoreSpiral" relationship in the ACTUAL sealed axiom text (CoreSpiral explicitly names "ZF,
+  loop-until-ZF (ARCH-00403)" as one of its direct children) rather than asserting the parentage unverified —
+  this is the Reflect-Until-Match / sealed-awareness discipline (GI-55) applied concretely: I did not paraphrase
+  or assume what CoreSpiral says, I grepped and quoted it. `plan-audit.sh` ran clean: `[ZF] ✅ ZF ACHIEVED`, and
+  `[CREATION-GATE]` did NOT flag the new file (tags:+Status: present at creation, not retrofitted) — confirms
+  §3.5b was honored from the first write, not patched after.
+  **SCOPE-BOUNDARY finding (routed, not a defect):** the task instructions were internally in tension — "IMPLEMENT
+  ARCH-00403" (which per the plan means Tier 1 SSOT + Tier 2's 8 by-path pointer insertions into 4 agents + 3
+  skills + ARCH-00370) vs. the explicit deliverable line ("create dna/checks/zf-convergence.md") vs. the explicit
+  constraint ("do NOT duplicate content into agents/skills; the plan says they REFERENCE this SSOT"). Resolved by
+  treating the deliverable + constraint as authoritative and building ONLY Tier 1 (the SSOT), leaving Tier 2's 8
+  pointer insertions as an explicit, disclosed follow-on — consistent with the plan's OWN Tier-Routing Declaration,
+  which requires TWO-MODEL VERIFY for the 4 agent-file edits specifically (a materially different, higher-rigor
+  step than writing one new SSOT file) and should not be silently folded into a single-pass Sonnet build. FLAGGED
+  to Opus rather than guessed (per the "ambiguity → flag, don't invent" rule) so Opus can either dispatch the
+  Tier-2 pass separately (with its two-model-verify requirement honored) or clarify scope. PREVENTION (class-level,
+  routed to root-insights): when a dispatch names one explicit "Deliverable" file but the underlying ratified plan
+  specifies MULTIPLE tiers with DIFFERENT verification rigor per tier, the dispatcher should state which tier(s)
+  are in scope for THIS build vs. explicitly deferred — otherwise the executing tier must infer scope from a
+  partially-contradictory instruction, which is itself a form of the ambiguity this persona is required to flag.
+
+- [2026-07-24 · cisem-sonnet · CISEM-ARCH-00409 implementation (ARCH-00008 §XI addition)] **[I3]'s
+  "uncommitted truth-field additions" check false-positives on illustrative YAML content that legitimately
+  contains the field-name `status:` inside a documentation code-block — same class as RI-0012's
+  substring-vs-field family.** `plan-audit.sh`'s `[I3]` matches any diff-added line against
+  `^\+ *status:` (case-insensitive) to catch a lower tier self-stamping a node's real `**Status:**`
+  truth-field (I7). ARCH-00409's OWN ratified spec requires the §XI field-shape example to literally
+  contain a line `status: DRAFT-RAW | PARKED | PROMOTED   # ...` (documenting a per-draft-item LOCAL
+  enum, not the node's header Status) — this line matches `[I3]`'s regex on first character position
+  even though it is documentation-about-a-schema, not a truth-field write. Verified benign: the diff
+  shows the node's actual `**Status:** RATIFIED` header line untouched (confirmed via `git diff`
+  before/after comparison) — I7 was honored; only the illustrative field-name string was added. CLASS:
+  `[I3]`, like `[CHECK-LINT]`'s already-tracked family, cannot currently distinguish "a truth-bearing
+  `**Status:**`/`status:` field being asserted" from "the literal string `status:` appearing inside a
+  fenced code-block / schema-shape example" — both are legitimate content in a governance repo whose own
+  job is to DOCUMENT field shapes. PREVENTION (near-term, disclosed not fixed here — out of this task's
+  scope, Core Seed "build ONLY §XI"): a future `[I3]` hardening pass should exclude diff-lines inside
+  fenced code blocks (` ``` ` delimited) from the truth-field regex, or require the match to NOT be
+  preceded by a code-fence-open on an earlier line in the same hunk — same fix-shape as RI-0012's
+  quote/depth-aware extraction. This is NOT in the `[ZF]` gate (I3 isn't one of the 9 ZF invariants), so
+  it did not block ZF ACHIEVED this run, but is disclosed per Principle 17 (report the whole board
+  honestly, not a ZF-subset pass). → DISTILL-PENDING (candidate: fold into RI-0012's substring-vs-field
+  family as a named sibling instance, alongside the [I6-SIZE] prose-regex finding logged 2026-07-24).
+
+- [2026-07-24 · cisem-sonnet · ARCH-00408 Phase 2 build ([TEMPLATE] check) + name-triage WARN-scope fix]
+  **POSITIVE (D4 enhancement):** built `[TEMPLATE]` exactly per ARCH-00408 Rule step 3+5 (field/tag-anchored
+  detection, core/cold-start exemption markers, WARN-only, not in ZF) and applied the [CS-NAMES]/[NAMING-FORMAT]
+  raw-activity+knowledge-library exclusion using the LITERAL `--exclude-dir` idiom already established by [I1]/[SEED]
+  in plan-audit.sh (A8, copied not reinvented) — before/after: [CS-NAMES] 4→0 findings, [NAMING-FORMAT] 3→0
+  findings (2 real declared exceptions added to naming-exceptions.yaml, 1 raw-activity fixture excluded), [ZF]
+  stayed ACHIEVED throughout (none of the touched checks are in the ZF formula).
+  **SELF-REFERENTIAL FINDING (disclosed, not silently narrowed):** the [TEMPLATE] check, built literally per the
+  plan's own spec ("a governed node's Type/tags explicitly including template" → flag if missing core_template:+
+  disabled_capabilities:), flags `dna/planning/CISEM-ARCH-00408-core-template-principle-plan.md` ITSELF — its own
+  `tags:` line carries the bare token `template` (`[planning-domain, template, core-vs-instance, ...]`), which the
+  check cannot distinguish from a real template-class artifact. This is exactly the false-positive surface the
+  plan's own Rule step 3 discloses and accepts ("any substring heuristic carries an inherent false-positive
+  surface... softened by the check's WARN-only posture") — I did NOT narrow the detection to avoid this (that
+  would be inventing scope beyond the ratified spec, forbidden per my dispatch). Also flags all 12 pre-existing
+  `dna/templates/*.md` files (agent/check-gate/corespine-manifest/decision-archive-entry/founding-node/ibd-capture/
+  node-generic/plan/protocol/skill/vocabulary/wizard-template.md) + mini-tree-protocol.md + the ONE-CLICK-OPUS-
+  HANDOFF-TEMPLATE.md — all pre-existing template-shaped artifacts surfaced for the FIRST time by the check's
+  first run, exactly the PARKED-retrofit pattern ARCH-00408's Anti-Scatter Ordering names as future cleanup, not
+  this build's scope. CLASS/PREVENTION (routed): a tags-based class-membership check (any check keying on a bare
+  tag token, not a dedicated field) will always flag every node that happens to SHARE that tag word for an
+  unrelated reason (here: "template" used both as a real class-marker and as a topic-descriptor tag on the
+  governing PLAN about templates) — the mitigation is the same one already in place (WARN-only + disclosed +
+  PARKED-retrofit), not a narrower regex, because narrowing risks under-catching real template-class nodes that
+  legitimately tag themselves "template" for exactly the reason the check needs. → DISTILL-PENDING (candidate:
+  when authoring a NEW plan whose OWN topic is a class the plan is about to gate, consider whether the plan's own
+  tags will trip its own new check, and disclose it in the plan rather than leaving it as a build-time surprise).

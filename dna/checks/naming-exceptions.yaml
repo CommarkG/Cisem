@@ -50,3 +50,28 @@ exceptions:
       generated/served frontend files (they are not governance nodes). This entry exempts the whole
       subtree by path prefix so format/type-match checks do not false-flag every HTML/CSS/JS filename.
     declared_by: "CS-FRONTEND-001 RATIFIED scope (ARCH-00393/00395, Governor decree 2026-07-18) — this entry only documents the existing scope boundary for the mechanical checks"
+
+  - path: dna/corespines/CS-AI-BEHAVIOR-001/CISEM-ARCH-00008-base-contract-node-dna.md
+    id: CISEM-BASE-CONTRACT-001
+    reason: >
+      A PROPOSED-FUTURE node name, explicitly disclosed in the file's own header as "Proposed content for:
+      a future CISEM-BASE-CONTRACT-001 node — not yet TYPE-registered" (BASE-CONTRACT does not appear in
+      the ARCH-00011 §1 TYPE registry). It is a forward-reference/candidate name living in prose, never a
+      resolved node with a file of its own, so [NAMING-FORMAT]'s 5-digit-SEQ rule structurally cannot apply
+      to it — the id was deliberately authored with a legacy 3-digit placeholder pending its own future
+      TYPE-registration, not a live naming violation. Kept as a named exception until (if ever) the node is
+      actually created, at which point it would be born correctly 5-digit per ARCH-00011 §2.
+    declared_by: "Sonnet-declared exception (Governor+Brain SWIFT-safe WARN-scope fix, 2026-07-24) — flagged for Governor confirmation, not self-ratified (I7)"
+
+  - path: dna/protocols/CISEM-ARCH-00230-file-creation-template.md
+    id: CISEM-PROTOCOL-TEMPLATE-001
+    reason: >
+      A RETIRED legacy mis-titling, explicitly named and corrected in ARCH-00230's own header: "Renamed
+      2026-07-15: was 'Protocol File Template' / mis-titled 'CISEM-PROTOCOL-TEMPLATE-001' — real naming
+      violation, corrected per Governor's direct catch, not treated as sacred." The remaining mentions (here
+      and in dna/templates/CISEM-ARCH-00290-template-library-draft.md, which independently calls it "a DEAD
+      reference (I1)") are historical narration of the correction, never a live reference to a real node —
+      [NAMING-FORMAT] cannot see that narrative context and flags the dead id's shape. Distinct from
+      CISEM-TEMPLATE-PROTOCOL-001 (the real, live, differently-spelled node, already exempted above) — the
+      two ids must not be conflated.
+    declared_by: "Sonnet-declared exception (Governor+Brain SWIFT-safe WARN-scope fix, 2026-07-24) — flagged for Governor confirmation, not self-ratified (I7)"

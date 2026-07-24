@@ -66,6 +66,20 @@
 #   dna/ssot-registry.yaml, prints that concept's mirrors:/regenerates: list as a reminder-surface ("did I
 #   update it in the axiom AND the wizard AND the persona AND the check?"). WARN-only, NOT in the ZF formula
 #   (same posture as [SEED]/[RAW-PAIR]/[ARCHIVE]/[NAMING] at introduction).
+#   v16 (2026-07-24, ARCH-00408 Phase 2, Governor Stage-2 RATIFIED 2026-07-21; Sonnet-built per the plan):
+#   [TEMPLATE] added — a file declaring template-class membership (template_class: field, or a tags: list
+#   carrying the literal token "template") must declare BOTH core_template:+disabled_capabilities:, unless
+#   an exempt core (core_template: none (this IS the core)) or a cold-start bootstrap (core_template: none
+#   (bootstrapping...), Rule step 5). Detection is field/tag-anchored, never a substring match on the word
+#   TEMPLATE. WARN-only, NOT in the ZF formula (same posture as [SEED]/[RAW-PAIR]/[NAMING] at introduction).
+#   Also (RI-0009/RI-0012, Governor+Brain SWIFT-safe WARN-scope fix, 2026-07-24): [CS-NAMES] and
+#   [NAMING-FORMAT] (in their own files, dna/checks/cs-names.sh and naming-format.sh) now exclude
+#   dna/learning-registry/raw-activity/ + dna/knowledge-library/ from their id-scan (Haiku-verified: the
+#   only occurrences of CS-BAITCORE-001/CS-SECURITY-001/CS-SECURITY-002/CS-EXTERNAL-001/CISEM-BAIT-007 are
+#   inside the raw-activity transcript dump — test-fixtures/hypotheticals, not real governance references),
+#   using the exact --exclude-dir idiom already established by [I1]/[SEED] in THIS file (A8, copied not
+#   reinvented); naming-exceptions.yaml gained 2 declared exceptions (CISEM-BASE-CONTRACT-001,
+#   CISEM-PROTOCOL-TEMPLATE-001 — both real prose forward-refs/legacy mentions, never resolved filenames).
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -402,6 +416,52 @@ for f in $(find . -name "*.md" -not -path './.git/*' \
   done < <(grep -n "pocket-mechanism\.md" "$f" 2>/dev/null)
 done
 [ "$found_naming" = 0 ] && echo "   (none — no live file references the bare retired filename)"
+
+# TEMPLATE — Phase 2 (CISEM-ARCH-00408, Governor Stage-2 RATIFIED 2026-07-21; Sonnet-built per the plan's
+#            Rule step 3): every file that DECLARES template-class membership — via a `template_class:`
+#            field, OR a `tags:` list carrying the LITERAL token "template" (value-anchored, RI-0012 — a
+#            compound tag like "core-template-instance"/"template-protocol"/"template-library" does NOT
+#            match) — must declare BOTH `core_template:` (pointing to a parent) AND `disabled_capabilities:`,
+#            UNLESS it is an exempt CORE (`core_template: none (this IS the core)`) or a cold-start
+#            BOOTSTRAP first-of-class (`core_template: none (bootstrapping...)`, Rule step 5). Detection is
+#            by the declared FIELD/TAG, never a filename/header substring match on the word TEMPLATE (Rule
+#            step 3) — the plan itself discloses the residual false-positive surface a tags-based match still
+#            carries (e.g. a node whose tags legitimately include the bare "template" token without being a
+#            duplicable template-class artifact) and states it is softened by WARN-only + the Anti-Scatter
+#            PARKED-retrofit pattern (pre-existing template-shaped artifacts are FLAGGED for later cleanup on
+#            first run, never pre-emptively retrofitted by this check itself). WARN-only; NOT part of [ZF]
+#            (same posture as [SEED]/[RAW-PAIR]/[NAMING] at introduction, per this plan's CAL reference).
+echo "[TEMPLATE] template-class files missing core_template:+disabled_capabilities: (or an exempt core/cold-start marker; ARCH-00408 Phase 2; WARN-only, not in ZF):"
+found_template=0
+for f in $(find . -name "*.md" -not -path './.git/*' -not -path './dna/learning-registry/raw-activity/*' -not -path './dna/knowledge-library/*' 2>/dev/null); do
+  is_tclass=0
+  grep -qiE "^\*{0,2}template_class:" "$f" 2>/dev/null && is_tclass=1
+  if [ "$is_tclass" -eq 0 ]; then
+    tagsline=$(grep -iE "^\*{0,2}tags:" "$f" 2>/dev/null | head -1)
+    if [ -n "$tagsline" ]; then
+      tagvals=$(echo "$tagsline" | grep -oE '\[[^]]*\]' | tr -d '[]' | tr ',' '\n' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')
+      echo "$tagvals" | grep -qxi "template" && is_tclass=1
+    fi
+  fi
+  [ "$is_tclass" -eq 0 ] && continue
+
+  # exempt: declared core (self) or cold-start bootstrap — both use the "core_template: none (...)" marker
+  excore=$(grep -iE "^\*{0,2}core_template:\*{0,2}[[:space:]]*none" "$f" 2>/dev/null)
+  if [ -n "$excore" ] && echo "$excore" | grep -qiE "this is the core|bootstrapping"; then
+    continue
+  fi
+
+  has_core=0
+  grep -qiE "^\*{0,2}core_template:\*{0,2}" "$f" 2>/dev/null && has_core=1
+  has_disabled=0
+  grep -qiE "^\*{0,2}disabled_capabilities:\*{0,2}" "$f" 2>/dev/null && has_disabled=1
+  if [ "$has_core" -eq 1 ] && [ "$has_disabled" -eq 1 ]; then
+    continue
+  fi
+  echo "   MISSING: $f (declares template-class membership but lacks core_template:+disabled_capabilities:, and is not an exempt core/cold-start)"
+  found_template=1
+done
+[ "$found_template" = 0 ] && echo "   (none — every template-class file declares core_template:+disabled_capabilities:, or is an exempt core/cold-start)"
 
 # EDGE — Phase-0 (ARCH-00392): UNKNOWN/penumbra channel. UNKNOWN ≠ FAIL; advisory for Opus judgment.
 # Phase-1 enhancement: reads dna/checks/concept-envelope-registry.yaml by path to route concept-edge

@@ -13,7 +13,9 @@ CISEM node must carry from its first draft.
 required node fields for creation-time compliance checks; DRAFT, not yet
 enforced by tooling.
 **Status:** RATIFIED — Governor ratification 2026-07-16
-**Version:** v1.0 (ratified 2026-07-16; prior: v0.1 draft)
+**Version:** v1.1 (§XI added 2026-07-24 per CISEM-ARCH-00409, Governor Stage-2 RATIFIED 2026-07-21 —
+proposal-form edit per this document's own Change protocol below, not a re-ratification of §I–X;
+prior: v1.0 ratified 2026-07-16)
 **Change protocol:** Edits are proposals, not silent updates — any change
 bumps the version, is logged in §X Change log, and does not become binding
 until CS-MASTER-VALIDATION-001 ratifies it. Builder may not apply a change
@@ -215,6 +217,84 @@ Ratified: Governor decree 2026-07-16
     Position in schema PLACEHOLDER → T-SYS (CISEM-SCHEMA-00001 now
     committed). §IV ai-pocket-mechanism.md gap resolved (committed 71b15fd).
     §III Applied note updated to reflect resolved positions.
+  - v1.1 — 2026-07-24: added §XI "Drafts / Pending-Ideas (OPTIONAL)" per CISEM-ARCH-00409 (Opus
+    Stage-1 SOUND, Governor Stage-2 RATIFIED 2026-07-21) — implemented by Sonnet (STRUCTURING
+    tier). Both Opus Stage-1 rulings folded verbatim: RULING 1 (the DRAFT-RAW/PARKED/PROMOTED
+    sub-enum stays LOCAL/inline in §XI, does NOT register into VOC-00002) and RULING 2 (§XI is
+    mutable scratch-space — exempt from further per-edit Version bumps and from the Size Gate
+    word/line count; only this one-time §XI addition itself bumped the Version, per this
+    document's own Change protocol). Sections I–X are unchanged. This is a proposal-form edit
+    per the Change protocol above (logged here); Status field left untouched (remains RATIFIED).
+
+## XI. DRAFTS / PENDING-IDEAS (OPTIONAL)
+Per-node, in-place scratch space for ideas about extending or refining THIS node. **OPTIONAL at
+the section level** — a node with no drafts omits this section entirely; A3 (nothing exists
+without a schema place) is satisfied by the section's EXISTENCE-when-used, not by mandatory
+presence on every node — contrast with §I–X, which are mandatory. Distinct from CLAUDE.md §2.6
+(IBD — Internal Brain Dump): IBD is repo-wide/standalone raw capture, disconnected from any
+specific node; §XI is per-node, in-place scratch space for ideas that already ARE about THIS
+specific node (see CISEM-ARCH-00409 Existing-First item 3 for the full disambiguation).
+
+**Field shape per draft item** — a YAML-like block, machine-parseable, embedded inline in this
+node's own Markdown file, not a separate registry (so the node stays a self-contained
+context-carrier):
+```
+- draft_id: {ParentNodeID}.DRAFT-{NN}   # locally sequenced WITHIN the node; NOT a
+                                          # naming-registry.yaml allocation (a sub-item, not a
+                                          # new CISEM-{TYPE}-{SEQ} node) — only PROMOTION
+                                          # triggers the real naming-gate allocation.
+  title: "<short idea title>"
+  tag: [<VOC-00001 tags, or 'MISSING-TERM-FLAG' per CLAUDE.md §4 if none fit>]
+  status: DRAFT-RAW | PARKED | PROMOTED   # LOCAL enum, self-described INLINE here — distinct
+                                            # from this node's own global Status field (§I/§V).
+                                            # Does NOT register into VOC-00002 (Opus Stage-1
+                                            # RULING 1, CISEM-ARCH-00409 v0.2): a THIRD, narrower
+                                            # axis at the sub-item level, same pattern as the
+                                            # existing Node Status vs Planning Status distinction
+                                            # (VOC-00002) — never a fork.
+  content: "<free text; placeholders populated gradually — a draft may sit with only a title for
+            a long time>"
+  created_date: "YYYY-MM-DD"
+  promoted_to: "<CISEM-{TYPE}-{SEQ}, populated ONLY when status: PROMOTED>"
+```
+
+**Lifecycle:** `DRAFT-RAW` (just captured, unrefined) → `PARKED` (registered, intentionally set
+aside — Governor/Opus judgment, per CLAUDE.md §2.7 park-by-demand) → `PROMOTED` (graduated
+through the promotion protocol below). A draft may also simply remain `DRAFT-RAW` or `PARKED`
+indefinitely — no forced completion (D6 context-focus, not rigidity).
+
+**Promotion protocol (no shortcut, A4/I25 upheld):** a draft item reaching `status: PROMOTED`
+MUST first pass through the FULL §3 hard gates (Goal-First, Corespine-First, Existing-First,
+Core-vs-Instance, Pocket Declaration, False Assumption, Naming & Index-Extension via the ONE
+naming-registry.yaml gate, Size Gate) — identical treatment to any other new creation event. The
+draft's `content:` is a STARTING POINT for the new node's Goal/Rule, never auto-copied as final.
+This mirrors CLAUDE.md §2.6's own rule for IBD promotion ("Promotion to a governed node is a
+SEPARATE, later step that runs the full gates") — ONE promotion discipline, reused, not
+duplicated (I19/A8).
+
+**Queryability:** because §XI is a structured block (not prose) inside every node file that has
+one, a future scan (grep or a Haiku-gather pass) can enumerate all drafts repo-wide by
+`tag:`/`status:` without a separate index file — the node itself IS the record (A1 nothing
+stands alone; node-as-context-carrier).
+
+**Version-bump + Size-Gate exemption for §XI (Opus Stage-1 RULING 2, CISEM-ARCH-00409 v0.2):**
+§XI is MUTABLE scratch-space, not part of a node's immutable/versioned contract body (§I–X).
+Editing, adding, or removing an individual §XI draft item does **NOT** trigger that node's own
+"any change bumps the version" Change-protocol rule — only the ONE-TIME addition of the §XI
+section shape itself (this edit) is a real contract change and bumps the Version; every
+subsequent draft-item edit thereafter is exempt. §XI content does **NOT** count toward the Size
+Gate (§3.6, 3,500 words / 200 lines) word/line count for the node it lives in — a node may
+accumulate many draft items without being forced into a mini-tree split.
+
+**Enforcement status (honest, per I22/I23 EXISTS≠ACTIVE):** this section defines the field
+SHAPE only. No mechanical `[DRAFTS]` plan-audit check enforces it yet, and no §XI content
+currently exists on any node (this is the schema-text addition, not a populated example) —
+**NOT-YET-WIRED**, disclosed as a follow-on in CISEM-ARCH-00409's Dependencies, not claimed here.
+
+**Governing plan:** CISEM-ARCH-00409 (Opus Stage-1 SOUND, Governor Stage-2 RATIFIED 2026-07-21)
+specifies this section's field shape, promotion protocol, and both Opus Stage-1 rulings in full;
+not re-derived here — see that plan for the complete Existing-First search, Tier-Routing
+Declaration, and Path Rejection Declaration governing this addition.
 
 ## What this document is NOT
 Ratified (2026-07-16, Governor decree) but **NOT yet enforced** by tooling,

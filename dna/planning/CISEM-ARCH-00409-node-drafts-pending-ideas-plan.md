@@ -1,6 +1,6 @@
 # Node-DNA Drafts / Pending-Ideas Extension — Per-Node Tagged+Statused Scratch Space
 **Node ID:** CISEM-ARCH-00409 | **Type:** ARCH | **Status:** RATIFIED — Governor Stage-2 decree 2026-07-21
-**Planning Status:** COMPLETE (Opus Stage-1 SOUND + Governor Stage-2 RATIFIED 2026-07-21 — implementation authorized under A4/I25; §XI schema edit + inline sub-enum) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
+**Planning Status:** COMPLETE (Opus Stage-1 SOUND + Governor Stage-2 RATIFIED 2026-07-21 — implementation authorized under A4/I25; §XI schema edit + inline sub-enum; **§XI BUILT + verified 2026-07-24** in ARCH-00008 (`DRAFT-RAW|PARKED|PROMOTED` sub-enum), whole-file preserved, [ZF] green) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning-domain, node-dna, drafts, tag-status, schema-extension, gate, mandatory]
 **Goal:** Extend the Node DNA contract (CISEM-ARCH-00008, Sections I–X) with an OPTIONAL "§XI Drafts /
 Pending-Ideas" section — each draft a TAGGED + STATUSED sub-item (`DRAFT-RAW` → `PARKED` → `PROMOTED`),

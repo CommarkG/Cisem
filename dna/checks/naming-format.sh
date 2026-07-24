@@ -21,7 +21,11 @@ if [ -f "$exceptions_file" ]; then
   exc_paths=$(grep -E '^\s*path:' "$exceptions_file" | sed -E 's/^\s*path:\s*//; s/^"//; s/"$//')
 fi
 
-ids=$(grep -rhoE "CISEM-[A-Z]+(-[A-Z]+)*-[0-9]+" --include="*.md" --include="*.yaml" . 2>/dev/null | grep -v '.git/' | sort -u)
+# Exclude raw-activity/knowledge-library (same --exclude-dir idiom as plan-audit.sh's [I1]/[SEED] checks, A8):
+# these dirs hold transcript dumps + external source material that legitimately QUOTE test-fixture/hypothetical
+# ids (e.g. CISEM-BAIT-007 — Haiku-verified 2026-07-24, present ONLY in dna/learning-registry/raw-activity/) —
+# they are not governance references and must not be flagged.
+ids=$(grep -rhoE "CISEM-[A-Z]+(-[A-Z]+)*-[0-9]+" --include="*.md" --include="*.yaml" --exclude-dir=raw-activity --exclude-dir=knowledge-library . 2>/dev/null | grep -v '.git/' | sort -u)
 for id in $ids; do
   seq=$(echo "$id" | grep -oE "[0-9]+$")
   [ "${#seq}" -eq 5 ] && continue    # compliant — nothing to flag
