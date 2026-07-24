@@ -101,11 +101,15 @@ the script's own exit code: `exit 1` when `zf_open > 0`, `exit 0` otherwise, in 
 true` (the `|| true` SILENTLY SWALLOWS any non-zero exit — this is the ONE line that must change); replace with a
 form that propagates a non-zero `plan-audit.sh` exit as a commit BLOCK. WARN-only checks are UNAFFECTED — none of
 them sets a `found_*` variable that feeds `zf_open`, so a `[SEED]`/`[RAW-PAIR]`/etc. finding cannot cause a BLOCK
-(verified by reading the formula, not assumed). **[STRENGTHENED]**. *Finish line:* planted-test (same discipline as
-`[CHECK-LINT]`/`[RATIFY-GATE]`) — stage a synthetic ZF-core violation (e.g. an unresolved I1 dangling reference)
-and confirm the commit is REFUSED; then remove it and confirm a clean commit SUCCEEDS; both states shown in the
-build's verification evidence. *Closure-grade:* **MECHANICAL** (the hook's own exit behavior, on both states, is
-the evidence).
+(verified by reading the formula, not assumed). **[STRENGTHENED]**. *Finish line (TIGHTENED — Opus Stage-1 + Brain concur 2026-07-24; graduate BY D1's rule, not by stability):*
+PLANTED-TEST EACH of the 9 ZF-core checks INDIVIDUALLY, both directions — an injected violation of that specific
+check is REFUSED, and a clean tree passes. **[I6-SIZE] contingency:** it is phrasing-brittle (its documented-
+exception detector needs a magic phrase; a compliant-but-differently-worded plan could false-positive-BLOCK) — vet
+it explicitly; if it can cry wolf, it stays WARN alongside [TAG-STATUS] and only the remaining 8 graduate now.
+**BUILD-CLOSURE VERIFICATION (Governor standing requirement, attached to THIS plan):** the build is "done" only when
+ONE report shows, together — (a) the real commit hash, (b) Brain reading the actual changed source directly (not a
+paraphrase), and (c) the planted-test evidence (a commit that SHOULD be blocked, confirmed blocked + a clean commit,
+confirmed still passing). *Closure-grade:* **MECHANICAL** (the per-check hook behavior + the 3-part report is the evidence).
 
 **D3 — The WARN-stays list, per-check graduation status.** Insertion: new `## WARN-Stays List` section in THIS
 document enumerating every non-ZF-core check currently live in `plan-audit.sh` (`[SEED]`, `[RAW-PAIR]`, `[ARCHIVE]`,

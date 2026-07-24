@@ -484,15 +484,17 @@ triage the Governor mandated — no creation escapes all three.
 ## 5. CURRENT MATURITY — full honesty
 Phase 1→2. FIRST gate now WIRED: `dna/checks/plan-audit.sh` (WARN-ONLY pre-commit,
 invariants I1/I3/I6). The rest of §3 remain manual discipline until ARCH-00180 wires
-them and ARCH-00270 flips to BLOCK-mode. Invariant set I1–I11 (ARCH-00320 §4);
+them and ARCH-00270 flips to BLOCK-mode (v2 drafted, Stage-1 SOUND). Invariant set I1–I26 (ARCH-00320 §4);
 Recurring Quality Cycle live (ARCH-00320 §6); RQC recurrence 0.
 
 ## 6. ACTIVE STATE — critical path (full session context: CISEM-WITNESS-00003)
 - CISEM-ARCH-00008 RATIFIED (Governor decree); CISEM-ARCH-00011 RATIFIED (foundational).
 - Naming compliance on every new file; sole numbering authority = Builder session.
+- CISEM-ARCH-00320 RATIFIED (Governor decree 2026-07-18) — invariants I1–I26 + the RQC are BINDING. (Stale
+  "pending" label corrected 2026-07-24; the BLOCK-mode precondition is met — ARCH-00270 v2 drafted, Opus Stage-1 SOUND.)
 - PENDING GOVERNOR (the whole spine): (1) Founding Node axioms — CISEM-FOUND-00001 is a
-  PLACEHOLDER awaiting source-or-lost ruling; (2) ratify ARCH-00320; (3) decree
-  CS-MASTER-VALIDATION-001; (4) ARCH-00280 Q4 template ruling; (5) ai-oversight-layer3 build/drop.
+  PLACEHOLDER awaiting source-or-lost ruling; (2) decree
+  CS-MASTER-VALIDATION-001; (3) ARCH-00280 Q4 template ruling; (4) ai-oversight-layer3 build/drop.
 
 ## 7. Open dependencies
 CS-MASTER-VALIDATION-001 content now DRAFTED (awaiting foundational decree);
