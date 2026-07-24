@@ -635,3 +635,44 @@ Entry format (append, newest at bottom):
   correct-per-spec. Routed to Opus in the build report (this run) for judgment: either (a) ARCH-00410's row is a
   genuine newly-surfaced RI-0027 candidate (the check is right, the plan's prediction was wrong), or (b) the marker
   vocabulary needs a Governor-ratified addition (e.g. "NOT built by"). Not decided here — I7/A4, Opus/Governor call.
+
+## 2026-07-25 — CISEM-ARCH-00420-PART08 build (Sonnet, plan-authorization gate)
+**Findings + class preventions surfaced during build (Principle 17/21 harvest):**
+
+1. **INFRASTRUCTURE GAP — no `jq` binary on this Windows Git-Bash dev machine** (verified: not on PATH,
+   not found under any common install root, no `jq.exe` anywhere searched). Per the plan's own CORE-SEED 3
+   this makes `.claude/hooks/pretooluse-plan-gate.sh` FAIL-OPEN (exit 0, no-op) on THIS machine unconditionally
+   until jq is provisioned — safe by design (BLOCK 5 is the fail-closed backstop and IS jq-free/pure-bash, so
+   real enforcement is live regardless), but Layer 1 (the early write-time catch) is currently inert here.
+   **CLASS PREVENTION:** any hook/check design that hard-depends on an external binary (jq, node, python) should
+   be verified installed on the ACTUAL target dev/CI machine(s) at plan time, not assumed present — the
+   Existing-First search for such plans should include "is the runtime dependency actually on this box." Routed:
+   provision `jq` in this repo's dev environment (or document the fail-open-until-provisioned state as an
+   accepted interim risk, since Layer 2 covers it). Proven for real (not simulated) via Test D of
+   `dna/checks/fixtures/plan-gate/run-test.sh` — garbage stdin exits 0 for the genuine reason (jq absent), not a
+   forced/faked path.
+2. **Test-harness-only jq shim used, never shipped** — to still prove the DENY/PASS *content logic* (not just the
+   fail-open safety net) works when jq IS present, I wrote a disclosed, scratchpad-only Node shim (never placed
+   in the repo, never referenced by the real hook/lib) invoked via `PLAN_GATE_TEST_JQ_SHIM` env var in
+   `run-test.sh`; without that env var the harness SKIPS those 3 tests with an honest SKIP line rather than
+   faking a pass. **CLASS PREVENTION:** a planted test that needs an absent runtime dependency to prove
+   content-logic must either (a) genuinely install/verify the dependency, or (b) disclose a test-only substitute
+   AND make its absence produce an honest SKIP (never a silently-faked PASS) — I19/I22 applied to test harnesses
+   themselves, not just to production claims.
+3. **`is_plan_ratified` real-corpus proof, live not synthetic:** ran BLOCK 5 against the two REAL new deliverable
+   files (staged for real, then unstaged) citing `CISEM-ARCH-00420-PART08` — BLOCK 5 correctly BLOCKS them
+   because that plan's own header still shows `Planning Status: CONSENSUS-REACHED` (not yet flipped to RATIFIED
+   in the file, even though the Governor's task framing said "the Governor-RATIFIED plan"). **I did NOT touch
+   that Status field (Hard Line I7 — only Opus writes truth-bearing fields).** Routed to Opus: the two dogfooded
+   files cannot land in git until PART08's own header is updated to RATIFIED/COMPLETE (Opus's call), OR the
+   commit uses `--no-verify` with a logged reason. This is the exact "gate governs its own kind" proof CORE-SEED
+   4 asked for, working end-to-end for real.
+4. **`extract_token` is unsuitable for extracting a plan-ID citation (only for enum-tokens).** It cuts a field's
+   value at the first hyphen/em-dash — correct for `Status: RATIFIED` but would truncate
+   `authorizing_plan: CISEM-ARCH-00420-PART08` down to `CISEM`. Built a separate `extract_citation` (whole-ID
+   match, not token-cut) in the shared lib rather than reusing `extract_token` for a purpose its own design
+   doesn't support. **CLASS PREVENTION:** before reusing an existing extractor (A8), verify its cut/truncation
+   behavior actually fits the NEW field's value SHAPE (enum-word vs compound-ID) — don't assume signature
+   compatibility implies behavioral fitness (ties RI-0031, "reuse must be behavior-complete not signature-complete").
+
+**Status of all findings:** disclosed here + in the build report to Opus this same turn (not deferred — Principle 21).

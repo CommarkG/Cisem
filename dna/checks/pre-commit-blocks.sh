@@ -72,4 +72,20 @@ if [ -n "$tsmiss" ]; then
   echo "   Add a tags: line AND a Status: line (§3.5b) — or, if intentional: git commit --no-verify (log it)."
   exit 1
 fi
+
+# BLOCK 5 — PLAN-AUTHORIZATION commit-time backstop (CISEM-ARCH-00420-PART08 Deliverable 2; A4/A11/I25).
+#           Catches any STRICT-governed NEW file that bypassed the write-time hook (raw shell edit,
+#           external editor, write-blank-then-grow) — the fail-CLOSED guarantee the write-time layer's
+#           fail-open (CORE-SEED 3) relies on. Sources the shared lib — ONE definition (A8), no fork.
+if [ -f "$root/dna/checks/lib/plan-gate.sh" ]; then
+  # shellcheck disable=SC1090
+  source "$root/dna/checks/lib/plan-gate.sh"
+  added_files="$(git diff --cached --name-only --diff-filter=A 2>/dev/null)"
+  gaps="$(authorization_gaps $added_files)"
+  if [ -n "$gaps" ]; then
+    echo "── BLOCKED (plan-authorization, A4/A11/I25, ARCH-00420-PART08): governed file(s) added without a ratified authorizing_plan citation:${gaps}"
+    echo "   Add \`authorizing_plan: CISEM-ARCH-NNNNN\` naming a RATIFIED/COMPLETE plan (or run /cisem-plan) — or, if intentional: git commit --no-verify (log it)."
+    exit 1
+  fi
+fi
 exit 0

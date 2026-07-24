@@ -28,6 +28,14 @@ repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"; cd "$repo" 2>/dev
 
 scan_dir="${1:-dna/planning}"
 
+# extract_token now SOURCED from the shared lib (CISEM-ARCH-00420-PART08 Deliverable 3 — one
+# definition, A8; behavior identical, verbatim move, no top-level side effects sourced). Falls back
+# to a local re-declaration only if the lib is somehow absent, so this check never hard-fails.
+if [ -f "dna/checks/lib/plan-gate.sh" ]; then
+  # shellcheck disable=SC1090
+  source "dna/checks/lib/plan-gate.sh"
+fi
+
 UNBUILT_MARKERS='NOT-YET-WIRED
 NOT-YET-BUILT
 implementation is a LATER
@@ -44,6 +52,10 @@ echo "   SHAPE-DISCLOSURE: covers NEW-FILE path existence only (test -e on extra
 # live: 00392 puts Planning Status on its own line; 00420-PART02 puts it mid-line after "| "), grabs
 # the value up to the next "|" or "(", then cuts to the LEADING token at the first em-dash/hyphen/
 # whitespace, and strips stray "*" (bold markers wrapping the value itself).
+# MOVED to dna/checks/lib/plan-gate.sh (CISEM-ARCH-00420-PART08 Deliverable 3, A8 — one definition);
+# sourced above. This fallback re-declaration fires ONLY if the lib was somehow absent (never masks
+# a source failure with silent breakage — the check still works standalone if the lib disappears).
+if ! command -v extract_token >/dev/null 2>&1; then
 extract_token() {
   local f="$1" label="$2" raw token
   raw=$(grep -oiE "(^|[|])[[:space:]]*\*{0,2}${label}:\*{0,2}[[:space:]]*[^|(]*" "$f" 2>/dev/null | head -1)
@@ -52,6 +64,7 @@ extract_token() {
   token=$(printf '%s' "$raw" | sed -E 's/—.*//' | sed -E 's/-.*//' | awk '{print toupper($1)}')
   printf '%s' "$token"
 }
+fi
 
 # ── deliverable path extraction (Step 4) ────────────────────────────────────────────────────────
 path_re='(dna|frontend|\.claude|\.git/hooks)/[A-Za-z0-9_./-]*\.(md|sh|yaml|yml|js|html)'
