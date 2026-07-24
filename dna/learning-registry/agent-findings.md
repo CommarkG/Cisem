@@ -576,3 +576,26 @@ Entry format (append, newest at bottom):
   legitimately tag themselves "template" for exactly the reason the check needs. → DISTILL-PENDING (candidate:
   when authoring a NEW plan whose OWN topic is a class the plan is about to gate, consider whether the plan's own
   tags will trip its own new check, and disclose it in the plan rather than leaving it as a build-time surprise).
+
+- [2026-07-24 · cisem-sonnet · GI-68 dual-review, CISEM-ARCH-00420-PART02 (build-state.sh design)] **A plan
+  specifying a NEW status/field-anchored check must itself state the anchor precision to [RATIFY-GATE]/[CHECK-LINT]
+  grade — "value contains X" is not evidence-grade; it must specify token-anchoring (leading-token exact-match after
+  splitting on the first delimiter), else it silently reproduces RI-0012 (substring-vs-field) inside its own design.**
+  CONCRETE PROOF: PART02's Step 3 ("select the plan iff a value contains COMPLETE or RATIFIED anchored on the
+  field") breaks on its own two named acid-test files — `CISEM-ARCH-00392-...md:3` and
+  `CISEM-ARCH-00406-completion-propagation-layer.md:3` both have Planning Status VALUE = `IN-PROGRESS — Governor
+  RATIFIED ...` (phase-gated prose) — the literal-value CONTAINS "RATIFIED" as a substring while the actual state
+  enum is IN-PROGRESS. `plan-audit.sh`'s own `[CHECK-LINT]` (lines 607-624) exists to catch exactly this shape of
+  regex; `[RATIFY-GATE]` (line 634) already anchors correctly (`status:\**[[:space:]]*ratified`, immediately after
+  the marker). ALSO FOUND (same review): whole-file (not per-row) marker-scanning silently clears EVERY absent
+  deliverable in a multi-row plan once ANY marker phrase appears anywhere in the file (proven against ARCH-00406's
+  11-row alignment table); and path-existence-only scope cannot detect "edited-in-place but not actually edited"
+  deliverables — proven live on ARCH-00401 (Planning Status COMPLETE/RATIFIED 2026-07-20) whose named deliverable
+  `CISEM-ARCH-00190-planning-domain-protocol.md` EXISTS on disk (passes `test -e`) yet lines 61/67/73 show 3 of its
+  12 promised insertion-points still unchecked `[ ]` — a live, undetected RI-0027 instance the new check as
+  currently scoped will never catch. CLASS PREVENTION: any plan-audit-style check spec must (1) state token-anchor
+  precision for status/field selection to [CHECK-LINT] grade, (2) scope marker/evidence search to the SAME
+  row/paragraph as the extracted deliverable, never whole-file, and (3) explicitly disclose which deliverable SHAPES
+  (new-file vs edit-in-place) its detection method can and cannot cover — before ratification, not as a build-time
+  spot-check. → DISTILL-PENDING (candidate: fold into the [CHECK-LINT] family as a meta-rule for check-DESIGN plans,
+  not just check-CODE; route to Opus for RI-NNNN assignment + ARCH-00406 propagation).
