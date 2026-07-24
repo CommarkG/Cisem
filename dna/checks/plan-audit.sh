@@ -501,7 +501,9 @@ for f in $changed_plans; do
   [ -f "$f" ] || continue
   echo "$align_missing" | grep -qF " $f " && continue          # already flagged by [ALIGN] — skip
   grep -qiE "Per-File Alignment Table" "$f" || continue        # only files that HAVE the table
-  block=$(awk '/Per-File Alignment Table/{f=1} f&&/^## /&&!/Per-File Alignment Table/{exit} f{print}' "$f")
+  # RI-0012 fix (2026-07-24): anchor on the real HEADING line (^## …), not a bare substring — a prose mention of
+  # "Per-File Alignment Table" before the real heading used to capture the wrong block and false-flag a present table.
+  block=$(awk 'tolower($0) ~ /^## +per-file alignment table/{f=1;next} f&&/^## /{exit} f{print}' "$f")
   if ! echo "$block" | grep -qiE "Status"; then
     echo "   MISSING: $f (Per-File Alignment Table has no Status column)"; found_tagstatus=1
   elif ! echo "$block" | grep -qiE "DRAFT|PROPOSED|DECLARED|RATIFIED|PROVISIONAL|PLACEHOLDER|SCHEDULED|SPLIT|LIVE|COMPLETE|unchanged|modified|present|follow-on"; then
