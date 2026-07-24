@@ -599,3 +599,25 @@ Entry format (append, newest at bottom):
   (new-file vs edit-in-place) its detection method can and cannot cover — before ratification, not as a build-time
   spot-check. → DISTILL-PENDING (candidate: fold into the [CHECK-LINT] family as a meta-rule for check-DESIGN plans,
   not just check-CODE; route to Opus for RI-NNNN assignment + ARCH-00406 propagation).
+
+- [2026-07-24 · cisem-sonnet · BUILD, CISEM-ARCH-00420-PART02 (build-state.sh, live-run finding)] **The RATIFIED
+  plan's pre-staged real-corpus classification for a fixture file can be WRONG once the check is actually built to
+  spec — build first, then trust the live output over the plan's advance prediction; report the discrepancy, don't
+  silently "fix" the check to match the prediction.** CONCRETE PROOF: PART02 §"Real-corpus regression fixtures"
+  pre-classified `CISEM-ARCH-00410-frontend-visualization-layer-plan.md` as "should-PASS (absent but unbuilt-marker
+  present)". Built-to-spec `build-state.sh` (Core Seeds 1-3 verbatim) instead FLAGS it: the plan is
+  Status=RATIFIED/Planning-Status=COMPLETE (both correctly token-anchor-selected), names
+  `frontend/js/mindmap.js` as a NEW deliverable (absent on disk — verified `test -e` false), and the row's own
+  disclosure phrase is "NOT built by this drafting task" — which is NOT a fixed-string match against the plan's
+  own VALIDATED marker vocabulary (`NOT-YET-WIRED`/`NOT-YET-BUILT`/"implementation is a LATER"/"follow-on
+  build"/"awaiting build"/`buildable`/"not yet greenlit"). The row is honestly disclosed in PROSE but does not use
+  the enumerated marker phrase set the ratified Core Seed fixed — so the check (built exactly to that Core Seed)
+  correctly flags it. I did NOT add "NOT built by this" to the marker list to force a match — Core Seed 2's list
+  is a RATIFIED enumeration, not mine to extend at build time. CLASS PREVENTION: when a plan enumerates an EXACT
+  marker/token vocabulary as a Core Seed, the plan's own pre-staged "expected real-corpus classification" examples
+  must be VERIFIED against that literal vocabulary before ratification (a human-judged "this row discloses it's
+  unbuilt" reading is not the same evidence as "this row contains one of the N enumerated marker strings") — else
+  the build produces a live discrepancy between plan-predicted and actual output that looks like a bug but is
+  correct-per-spec. Routed to Opus in the build report (this run) for judgment: either (a) ARCH-00410's row is a
+  genuine newly-surfaced RI-0027 candidate (the check is right, the plan's prediction was wrong), or (b) the marker
+  vocabulary needs a Governor-ratified addition (e.g. "NOT built by"). Not decided here — I7/A4, Opus/Governor call.

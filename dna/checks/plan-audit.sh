@@ -720,6 +720,15 @@ if [ -f "$ssot_registry" ] && [ -n "$changed_all" ]; then
 fi
 [ "$found_propagate" = 0 ] && echo "   (none — no changed file is a registered SSOT this run)"
 
+# [BUILD-STATE] — ratified-but-unbuilt class closure (CISEM-ARCH-00420-PART02, Governor-RATIFIED,
+# Opus Stage-1 SOUND, GI-68 dual-reviewed; Sonnet-built per the plan's "The Rule"). Any plan whose
+# Status:/Planning Status: field VALUE token-anchors to COMPLETE or RATIFIED must have its named
+# new-file deliverables on disk, or the absent deliverable's OWN row must carry an explicit unbuilt-
+# marker — else FLAGGED (RI-0027). WARN-only, NOT in the ZF formula (same posture as [SEED]/[TEMPLATE]
+# at introduction). Fixtures + a standalone regression harness live at
+# dna/checks/fixtures/build-state/run-test.sh (re-run when build-state.sh changes, not every commit).
+bash dna/checks/build-state.sh 2>/dev/null
+
 # ZF — Zero-Findings gate (aggregate, ARCH-00320 §4). NOW ACTIVATED (was text-only = EXISTS≠ACTIVE).
 #      A run is ZF only when EVERY violation check is clean (each finding resolved / tag-exempt / routed).
 #      MANDATORY (agents): no creation is "done" until this line shows ZF ACHIEVED. Report honestly either way.
