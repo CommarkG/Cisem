@@ -474,3 +474,30 @@ Entry format (append, newest at bottom):
   covers "substring-vs-field" checks generally) as a NAMED sub-instance, and to `dna/checks/plan-audit.sh`
   `[TAG-STATUS]` as a concrete WARN-only, planted-testable one-line awk anchor fix (candidate next small build,
   not built here — out of THIS task's plan-skeleton-only scope, Core Seed E).
+
+- [2026-07-24 · cisem-sonnet · CISEM-ARCH-00270 v2 (Enforcement Depth — Graduated BLOCK-Mode Flip revision)]
+  **THIRD CONFIRMED INSTANCE of the `[TAG-STATUS]` bare-substring block-extractor bug — this time SELF-INFLICTED
+  while DOCUMENTING the bug itself, in a THIRD distinct plan, on a THIRD distinct day (2026-07-23 ARCH-00417,
+  2026-07-24 ARCH-00418, 2026-07-24 ARCH-00270-v2).** Drafting this plan's D3 deliverable (the WARN-Stays List
+  naming `[TAG-STATUS]`'s bug as Core Seed C requires), the Existing-First section quoted the literal awk source
+  fragment `awk '/Per-File Alignment Table/{f=1}...'` and the D3 prose repeated the bare heading phrase — both
+  ABOVE the file's own real `## Per-File Alignment Table` heading — which is EXACTLY the trigger condition being
+  described, and `[TAG-STATUS]` duly false-flagged this document's own (present, correctly-formed) table as
+  `MISSING`. Caught by running `plan-audit.sh` before returning (not eyeballing), per the RI-0025 "verify against
+  the mechanism, not the paraphrase" discipline. WORKAROUND applied (not a fix): reworded the pre-heading mentions
+  to paraphrase the section name ("the alignment section's own heading text", "the heading line itself") instead
+  of quoting/repeating the literal phrase; re-ran `plan-audit.sh`, confirmed `[TAG-STATUS] (none — alignment tables
+  carry Status, or no plan changed)` and `[ZF] ACHIEVED`. CLASS CONFIRMATION ESCALATED FURTHER: three independent
+  hits across three days, the third one arising from the ACT OF DOCUMENTING the bug (a check-writing tool bug that
+  bites anyone who even describes it in prose) — the strongest possible case that the `^## Per-File Alignment
+  Table` heading-anchor fix (already named as the concrete fix in the 2026-07-24 ARCH-00418 entry above) is now
+  overdue as a real, small, planted-testable build, not a third recorded workaround. PREVENTION (routed, not
+  built — out of this task's plan-skeleton-only scope, matching Core Seed E): (1) fix `[TAG-STATUS]`'s awk to
+  anchor on `^## Per-File Alignment Table` (heading-start), planted-test (inject a false-trigger prose mention
+  above a real table → confirm clean; remove the real table → confirm it still flags) before it may graduate to
+  BLOCK per ARCH-00270 v2's own Graduation Rule; (2) generalize: any check-writing guidance (ARCH-00190/CLAUDE.md
+  §3.0 Sonnet-authoring notes) should warn that DESCRIBING a section-name trigger in prose is itself a way to
+  trip a substring-anchored check — an argument for `[CHECK-LINT]`'s scope to widen to section-locating
+  extractors, not just status/type/membership value regexes, matching the candidate raised in the 2026-07-23 entry
+  above. → DISTILL-PENDING (this entry + the two prior TAG-STATUS entries should distill to ONE RI-0012 sub-entry
+  update on the next RIPL weekly batch, not three separate items).
