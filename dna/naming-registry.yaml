@@ -13,7 +13,7 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 420 }  # 00419 = Planning Marker / Pipeline-Position View plan (thin read-only view mapping
+ARCH:    { next_seq: 421 }  # 00419 = Planning Marker / Pipeline-Position View plan (thin read-only view mapping
 # pipeline position across FOUR existing homes — IBD PARKED-RAW [front] / CS-THRESHOLD-001 new goal-consensus+
 # approach-iterating+approach-ratified states [new, hard-blocked on Threshold body] / Planning Status ARCH-00190
 # [middle, unchanged] / Disposition archive-ledger [back, unchanged]; completes GI-66's named-but-unbuilt
