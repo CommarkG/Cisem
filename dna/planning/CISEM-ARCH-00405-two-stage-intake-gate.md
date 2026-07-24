@@ -1,6 +1,6 @@
 # Two-Stage External-Input Intake Gate — De-Pollution (outside) + Conflict-Check (inside)
 **Node ID:** CISEM-ARCH-00405 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** COMPLETE (Opus Stage-1 SOUND + Governor accepted the design 2026-07-20; implementation authorized — Phase 2 prompt shipped, Phase 1 mechanical gate is the next build) | **depth_level:** L1 | **Position in schema:** T-SYS, intake/purification layer (sibling to ARCH-00399)
+**Planning Status:** COMPLETE (Opus Stage-1 SOUND + Governor accepted the design 2026-07-20; implementation authorized. **Phase 1 mechanical gate BUILT + verified 2026-07-24** — all 3 pieces live: `[RAW-PAIR]` depollution check (plan-audit.sh:313-337), `depollution_source:`/`depollution_pass:` schema field (ARCH-00011 §3.5), `external-depollution-prompt.md`. Phase 2 prompt shipped. Stale "next build" label corrected — was already done.) | **depth_level:** L1 | **Position in schema:** T-SYS, intake/purification layer (sibling to ARCH-00399)
 **tags:** [intake, purification, provenance, de-pollution, two-stage, external-input, mandatory]
 **Goal:** Formalize a TWO-STAGE external-input intake gate — Stage 1 (branding/scaffolding de-pollution, done OUTSIDE
 CISEM by an external AI, provenance-stamped on the way in) and Stage 2 (conflict-with-CISEM alignment, done INSIDE

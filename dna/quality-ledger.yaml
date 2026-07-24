@@ -633,3 +633,13 @@ target:
     A rising invariants_added_per_run means we keep discovering new failure
     CLASSES — immature. A declining trend toward zero means the invariant set
     is becoming complete. That trend is the single health metric of the cycle.
+
+# ── RQC catch-up: session 2026-07-22→24 (logged 2026-07-24 — the §3.7 oversight-leg gap Brain flagged) ──
+session_catchup_2026_07_24:
+  scope: "Ran plan-audit on every commit ([ZF] ACHIEVED each) but logged no per-run RQC entry until this catch-up."
+  commits: "~19 governed commits, all [ZF] ACHIEVED; git HEAD edd1fc0 at catch-up time."
+  plans_drafted_awaiting_stage2: "ARCH-00418 (finish-line/DoD), ARCH-00419 (Planning Marker), ARCH-00270 v2 (graduated BLOCK-flip) — all Opus Stage-1 SOUND, awaiting a FRESH GI-68 dual review -> Governor Stage-2. ARCH-00417 (harvest controller) PARKED (unresolved M1-substrate)."
+  checks_refined: "+1 — [TAG-STATUS] extractor FIXED (RI-0012 heading-anchor class, edd1fc0, planted-tested both directions). HONEST: it fired FALSE 3x this session before the fix — a known-buggy check kept flagging compliant tables. Not a recurrence of a resolved finding; a persistent-unfixed one, now closed. [I6-SIZE] flagged phrasing-brittle -> must be vetted before it graduates to BLOCK (ARCH-00270 v2)."
+  premise_staleness_catches: "ARCH-00405 Phase 1 verified already-BUILT (stale 'next build' header corrected); ARCH-00320 stale 'pending' label in CLAUDE.md §§5-6 corrected. RI-0023 pattern, twice."
+  new_root_insights: "RI-0025 (consensus-laundering / paraphrase-trust), RI-0026 (size-gate vs mandatory-sections tension). Scheduling verified: Claude Code cron here is SESSION-ONLY (no durable/independent scheduler) -> weekly cadences need event-triggered CAL hooks, not a clock."
+  honest_wiring_note: "Most session substance is Stage-1-SOUND / NAMED, not WIRED (awaits Stage-2). Real WIRED completions: [TAG-STATUS] fix, CLAUDE.md + ARCH-00405 stale-header corrections, RI-0024/0025 persona legs, GI-66/67/68 recorded, ARCH-00406 Phase 0."
