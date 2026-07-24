@@ -34,6 +34,20 @@ Entry format (append, newest at bottom):
   build ONLY Phase 0) — flagged so a future perf pass on [I16]'s per-file scanning isn't rediscovered from scratch.
   → DISTILL-PENDING.
 
+- [2026-07-25 · cisem-sonnet · GI-68 dual-review of CISEM-ARCH-00420-PART08 (plan-authorization gate)]
+  **Class-level finding: a new "governed set" enumeration that widens scope into a directory (e.g. `dna/checks/`)
+  MUST explicitly carve out that directory's own test-fixtures subtree, or every future planted-test fixture
+  self-trips the new gate.** Concretely demonstrated against a REAL existing file — `dna/checks/fixtures/build-state/
+  should-flag.md` — which is explicitly "gate-exempt by design" per its own header, yet PART08's STRICT_GOVERNED_SET
+  (`dna/checks/` with no `*/fixtures/*` exemption) would have refused/blocked its creation, and would self-trip
+  PART08's OWN Deliverable-1 fixtures (`dna/checks/fixtures/plan-gate/*`) at build time. PREVENTION: any plan that
+  widens a governed-set/gate enumeration to a NEW directory must audit that directory's existing exempt subtrees
+  (fixtures, templates, scratch) before shipping, not assume the dir is uniformly governed. Also: a "reuse extract_token"
+  design should mirror the SOURCE function's full behavior (build-state.sh ORs `Status` + `Planning Status` tokens;
+  a partial reuse that checks only `Planning Status` produces false-negatives against real RATIFIED plans that use
+  only `Status:` — e.g. CISEM-ARCH-00395, Status: RATIFIED, no Planning Status field). → DISTILL-PENDING (candidate:
+  pair with RI-0012 substring/partial-reuse family — "reuse must be behavior-complete, not signature-complete").
+
 - [2026-07-24 · cisem-sonnet · CISEM-ARCH-00419 plan drafting] **The [I6-SIZE] §3.6 documented-exception detector
   is a brittle prose-regex, not a structured field — same class as RI-0012's [CHECK-LINT] substring-vs-field family.**
   `plan-audit.sh`'s I6-SIZE check only recognizes a size-exception note if the file's PROSE happens to contain one
