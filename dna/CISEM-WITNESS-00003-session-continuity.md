@@ -401,3 +401,126 @@ Session 4ba9c382 (this session, current compaction) created UX/UI handoff and au
   now committed; the CS-UX dangling ref is resolved (I1-exempt via the reconciliation note). §1.7: enforce one-writing-tab going forward.
 - **HARVEST discipline reinforced (Governor decree):** the harvest must capture "ALL with all NUANCES and INTENT" — added
   to ARCH-00370 (the harvest protocol) + A10. Not just facts: the reasoning, the nuance, the intent behind each decision.
+
+---
+
+## COMPACT STATE v11 — 2026-07-25 (Planning System Audit + Installation Roadmap; RESUME ANCHOR)
+
+**Session UUID:** 4ba9c382 continued (same session, deeper analysis phase).  
+**TRIGGER:** Governor → "prepare for compacting" + "how planning works in CISEM now, is it scattered?"
+
+### ANALYSIS COMPLETED — PLANNING SYSTEM COHERENCE FINDINGS:
+
+**Core system (ARCH-00190 protocol):** INTEGRATED ✅
+- Double-ratification wired (Stage 0 iterative loop + Stage 1 Opus + Stage 2 Governor)
+- Planning Status enum clear (separate from Node Status)
+- Per-file alignment requirements declared
+- Tier-routing mandatory on all plans
+- plan-audit.sh checks [I19], [P5], [RATIFY-GATE]
+
+**Queue + pending work:** PARTIALLY-INTEGRATED ⚠️
+- BP queue tracked with dependencies, but no enforcement that depends-on items are COMPLETE before plan proceeds
+- No [PENDING-DEPENDENCY] check in plan-audit.sh
+
+**Parked items + GI coordination:** SCATTERED ✗
+- 12+ IBD entries + 35+ GI entries exist separately
+- No mechanical link between parked items and governor-insights
+- No enforcement that plans CONSIDER top-priority GI entries
+
+**Depth-level optimization:** ADEQUATE
+- L1-heavy (18+ at L1, 5+ at L2, 0 at L3) by design (correct for platform phase)
+- Not scattered, but tilted
+
+**PE (Opus) connection:** PARTIALLY-INTEGRATED ⚠️
+- Integrated into review path (Stage-1 soundness judge)
+- Missing: "pending backlog" re-check mechanism at each session
+- Example failure: ARCH-00392 silently dropped for weeks (no mechanical re-queue of "Phase 2→3 awaiting Governor sign-off")
+
+**Hardwiring:** PARTIAL
+- Wired: core gates (plan-audit [I19/P5/RATIFY-GATE], CAL hooks)
+- NOT wired: [PENDING-DEPENDENCY], [GI-CONSIDERATION], plan backlog TTL escalation
+
+**Governor-insight integration:** MISSING ✗
+- No [GI-CONSIDERATION] check
+- Plans don't cite which GI entries they depend on or strengthen
+- Example: ARCH-00417/418/419 reference "GI-68 dual review" but GI-68 itself has no wired mechanism
+
+### KEY FINDING: CISEM has a good PROTOCOL (ARCH-00190, how one plan is made) but a weak SYSTEM (how all plans coordinate, how pending work feeds back, how wisdom accumulates).
+
+---
+
+### INSTALLATION ROADMAP CREATED: CISEM-ARCH-00420
+
+Maps 10+ pending items (BP-0001–0010, ARCH-00417/418/419) into 4 tiers with best-order sequencing:
+
+**Tier 0 (THIS SESSION — blocking items):**
+- GI-68 wiring (unblocks ARCH-00417/418/419)
+- Status enum reconciliation (blocks BP-0012)
+- A2 reframe decision (Governor only)
+- ARCH-00370 status correction
+- CS-THRESHOLD manifestation decision
+
+**Tier 1 (Sessions 2–3 — foundational automation):**
+- BP-0007 (plan-gate bootstrap) → enables all downstream
+- BP-0002 (invariant orchestration) → wires I1–I26
+- BP-0009 (completion-propagation) → closes feedback loop
+- BP-0010 (two-model-verify) → dual-lens enforcement
+
+**Tier 2 (Sessions 2–3 — unblock current plans):**
+- ARCH-00417/418/419 (harvest-loop, DoD-upgrade, planning-marker)
+
+**Tier 3 (Sessions 3+ — domain work):**
+- BP-0003/0004/0005/0006/0008 (skills, frontend, naming, archive)
+
+**Estimated realistic timeline:** ~5–6 focused sessions to achieve fully coherent, hardwired planning system.
+
+---
+
+### HARVESTED FOR NEXT SESSION (to dna/learning-registry/session-learning-index.yaml 2026-07-25 entry):
+
+**Positive pole (7 enhancements to preserve):**
+- Comprehensive planning protocol wired (ARCH-00190 LIVE, /cisem-plan mirrors it 1:1)
+- Intake system clear (PROCESS-NOW/QUEUE/PARK/REJECT routes defined)
+- Tier-routing mandatory on all plans
+- RQC learns from every plan review (quality-ledger logs)
+- Plan-audit checks P5 (independent verifier), I19 (Existing-First), [RATIFY-GATE]
+- BP queue tracks dependencies (depends-on field)
+- Planning Status separate from Node Status (no confusion)
+
+**Negative pole (12 prevention candidates):**
+1. GI-68 dual review = decree with no wired mechanism (blocking 3 plans)
+2. [PENDING-DEPENDENCY] check missing (plans can declare depends-on but no enforcement)
+3. [GI-CONSIDERATION] check missing (plans don't cite which GI entries they depend on)
+4. Status enum divergence (8 in SSOT, 15+ active practice)
+5. A2 reframe unratified but actively shaping work (IBD-0017)
+6. ARCH-00370 false LIVE claim (should be RATIFIED-SPEC)
+7. CS-THRESHOLD-001 bodiless RATIFIED (I23 violation)
+8. ARCH-00392 half-done, silently dropped (Principle 9 violation)
+9. DECISION-CLOSURE-REGISTRY missing (governance decisions lack closure records)
+10. Plan backlog TTL missing (no escalation for plans stuck "awaiting Governor" > 14 days)
+11. Parked items + GI entries tracked separately (violates A8 One-Source)
+12. Planning system itself incomplete (protocol defined; system/feedback-loop not ratified)
+
+**Consolidation opportunities (3):**
+1. Connect planning to governor insights ([GI-CONSIDERATION] check)
+2. Wire pending-dependency enforcement ([PENDING-DEPENDENCY] in plan-audit.sh)
+3. Create planning system completion (ARCH-00420 analysis input to ARCH-00421 or ARCH-00190 v1.2)
+
+---
+
+**CLEAN STATE AT NEXT COMPACTION:**
+- ✅ CISEM-ARCH-00420 created (planning analysis + 4-tier roadmap) — committed + pushed
+- ✅ Haiku audit findings synthesized (10 verified findings from 2026-07-24 audit) — on disk
+- ✅ WITNESS v11 updated (this entry) — staged
+- ⏳ Learning-registry harvest (session-learning-index.yaml 2026-07-25 entry) — NEXT STEP before commit
+
+**RESUME PATH (next session post-compaction):**
+1. Read CLAUDE.md §1–3 + WITNESS v11 (this block)
+2. Review CISEM-ARCH-00420 (planning analysis + installation roadmap)
+3. Governor decides on Tier 0 actions (GI-68 wiring, A2 decision, etc.)
+4. Sequence Tier 1 builds (BP-0007 first, enables all downstream)
+5. Unblock ARCH-00417/418/419 (once Tier 0+1 complete)
+
+---
+
+**Ready for compaction. All analysis on disk, Haiku audit integrated, planning system strategy documented for Governor decision.**
