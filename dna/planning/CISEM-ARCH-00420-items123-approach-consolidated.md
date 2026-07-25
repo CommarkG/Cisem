@@ -1,5 +1,5 @@
 # ARCH-00420 Items #1–#3 — Consolidated Approach (for Brain review + comment)
-**Node ID:** CISEM-ARCH-00420-items123 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** APPROACH-ITERATING (goal + Existing-First done; approach for Brain/Governor consensus BEFORE any plan is drafted)
+**Node ID:** CISEM-ARCH-00420-items123 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** APPROACH-RATIFIED (Brain consensus 2026-07-25; 3 plan drafts follow → Opus soundness → GI-68 dual review → Governor ratification, non-delegable)
 **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [approach-consolidated, plan-sections, gi-consideration, pending-dependency, gi-68-mechanism, wiring-consolidation]
 **Goal:** Present, together, the goal + Existing-First + approach for the top 3 install-order items so Brain can review them as ONE coherent step (they interlock: all three tighten the plan pipeline). NOTHING built; each item still runs its own goal→approach→plan→Opus-soundness→GI-68 dual-review→Governor ratify→build.
@@ -37,8 +37,16 @@ All three tighten the SAME pipeline at different points: #1 guarantees a plan is
 ## DOGFOOD NOTE
 Building #1–#3 will be the FIRST real creations to pass through PART08's plan-authorization gate — each new check file (dna/checks/plan-sections.sh etc.) must cite the ratified plan that authorizes it (or it self-blocks at commit, as PART08's own build proved).
 
+## BRAIN CONSENSUS 2026-07-25 (APPROACH-RATIFIED by Brain review — folds into the plan drafts)
+Brain reviewed (real comments, not a rubber-stamp) and RESOLVED all three asks + raised one:
+- **#1 — CONSOLIDATE BY REFERENCE, not rewrite (resolved):** `[PLAN-SECTIONS]` becomes the SINGLE enumeration of all ~15 mandatory elements, but internally REUSES the extraction logic the 4 existing checks (`[ROUTING]/[ALIGN]/[TAG-STATUS]/[POCKET]`) already use — factor that logic into a shared lib (the SAME pattern PART08 used with build-state's token-anchor), the 4 existing checks + [PLAN-SECTIONS] all call it. ONE check surface, ZERO duplicated logic, no regression of the 4 working checks.
+- **#2 relevance-hole (resolved):** presence-not-count is right but self-certifiable alone (cite an irrelevant-but-present insight to pass). FIX — do NOT build a new mechanism: fold a SMALL SAMPLE of `[GI-CONSIDERATION]` citations into the periodic GI-68 review, spot-checked for ACTUAL relevance (exactly how Haiku already spot-checks fixture claims against disk). Mechanical presence + review-sampled relevance.
+- **#2 retroactivity (Brain's open question — ANSWERED explicitly):** `[PENDING-DEPENDENCY]` (and `[GI-CONSIDERATION]`) are **FORWARD-ONLY** — changed-plans-only, like PART02/PART08 + BLOCK 4's precedent; NOT retroactive to the 33-plan backlog (retro would flag the whole backlog at once = noise). The backlog is drained separately by install-order item #4 (live index + TTL).
+- **#3 auto-fire path (resolved + named, not closed):** Brain verified an **`agent`-type hook** exists (can spawn a subagent to verify conditions before returning a decision) — genuinely close to auto-fire dual-review dispatch, BUT experimental + 60s default timeout (too short for Sonnet+Haiku+Opus synthesis). So the skill+[RATIFY-GATE] ceiling is right for the NEAR-TERM ship, but the plan must NAME the `agent`-hook as the future auto-fire path to revisit (don't close the door as if no primitive exists).
+- **Build order 1→2→3:** Brain agreed.
+
 ## STATUS / NEXT
-APPROACH-ITERATING. For Brain: review each item's goal + Existing-First + approach; comment on (a) the scope fork in #2, (b) whether #1 should CONSOLIDATE the 4 existing section-checks or only ADD the missing ones, (c) the honest "#3 is a skill not an auto-gate" framing. On Brain+Governor approach-consensus → each item drafts its own ratifiable PART → Opus soundness → GI-68 dual review → Governor ratify → build.
+**APPROACH-RATIFIED (Brain consensus 2026-07-25; Governor stepped back from turn-by-turn — report later).** Next: draft the 3 ratifiable PART plans folding the above → Opus soundness → GI-68 dual review → **Governor ratification (non-delegable — Brain's go is not ratification)** → build (order 1→2→3). PART numbers: #1 → PART12 `[PLAN-SECTIONS]`, #2 → PART13 `[GI-CONSIDERATION]`, #3 → PART01 (GI-68 mechanism, its existing index slot).
 
 ## Change log
 - v0.1 2026-07-25 (Opus) — consolidated approach for install-order items #1-3; goal + source-verified Existing-First + approach each; presented for Brain review per Governor "proceed with next 3 + consolidated report for Brain."

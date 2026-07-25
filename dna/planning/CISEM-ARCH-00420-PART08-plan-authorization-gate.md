@@ -9,7 +9,7 @@
 
 ## Pocket Declaration (§3.3)
 - **reasoning_scope:** design the two-layer plan-authorization enforcement + its citation field; not the plan protocol itself.
-- **inherited_constraints:** A4/A11/I25 (the doctrine); ARCH-00390 CAL (mechanism home); ARCH-00270 (WARN→BLOCK graduation); §2.6 IBD exemption; §2.7 SWIFT; Principle 18 (universal-by-default, class-coverage); RI-0025 (source not paraphrase); RI-0029 (check-design-spec precision).
+- **inherited_constraints:** A4/A11/I25 (the doctrine); ARCH-00390 CAL (mechanism home); ARCH-00270 (WARN→BLOCK graduation); §2.6 IBD exemption; §2.7 SWIFT; Principle 18 (universal-by-default, class-coverage); RI-0025 (source not paraphrase); RI-0034 (check-design-spec precision, formerly RI-0029).
 - **output_contract:** a PreToolUse hook + a BLOCK 5 in pre-commit-blocks.sh + an `authorizing_plan` field in ARCH-00230, with a two-direction planted test.
 - **ai_cannot:** self-ratify; mark COMPLETE before the deliverables are on disk + tested; weaken I13/existing BLOCKs.
 - **recorded_at:** 2026-07-25

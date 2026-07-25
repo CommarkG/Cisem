@@ -676,3 +676,33 @@ Entry format (append, newest at bottom):
    compatibility implies behavioral fitness (ties RI-0031, "reuse must be behavior-complete not signature-complete").
 
 **Status of all findings:** disclosed here + in the build report to Opus this same turn (not deferred — Principle 21).
+
+- [2026-07-25 · cisem-sonnet · ARCH-00420 PART12/PART13/PART01 (3 DRAFT plans, dispatch per Opus Core Seeds 1-4)]
+  **DRAFT-QUALITY findings (process, not code — no build performed, plans only):**
+  1. **`plan-audit.sh` full run is too slow to use as a per-draft dry-run gate on this dev machine** — a full
+     `bash dna/checks/plan-audit.sh` on this repo exceeded the 120s bash timeout and had to be backgrounded
+     (confirms the prior 2026-07-22 performance observation in this file, still unresolved — DISTILL-PENDING
+     there). CLASS PREVENTION (reinforced, not new): drafting agents should dry-run ONLY the specific check
+     idiom(s) relevant to their artifact (grep the exact regex plan-audit.sh uses for `[ROUTING]`/`[ALIGN]`/
+     `[TAG-STATUS]`/`[POCKET]`/`[I19]`/`[P5]`/`[TAG-STATUS]` block-anchor and re-run those inline) rather than
+     waiting on the full aggregate — I did this and it worked, but it is a workaround for a real perf gap, not
+     a fix. Routed: the standing perf-fix candidate (chunk plan-audit.sh into a `--fast`/changed-files-only mode
+     for draft-time use, distinct from the full commit-time run) should be prioritized once ARCH-00420 install
+     order reaches a "check-authoring ergonomics" PART — none currently named for it; candidate new backlog item.
+  2. **Duplicate-with-different-content GI ids exist in the source I read (`RI-0029` appears twice in
+     `root-insights.yaml` — once as "CHECK-DESIGN-SPEC PRECISION" 2026-07-24 and again as "CORE OPERATING
+     KNOWLEDGE LEFT IN AN INDEX DOES NOT INHERIT" later in the same file).** Not touched/fixed here (out of this
+     dispatch's scope — I7, and it is a content-integrity issue for Opus/RIPL, not a plan-authoring task), but
+     flagged because a future `[GI-CONSIDERATION]` check (this session's own PART13 draft) will need to tolerate
+     or dedupe colliding ids when it verifies a cited id "exists" — if PART13 is built as specified, a citation of
+     `RI-0029` would match BOTH entries; the check's existence-verification (grep for the id) still succeeds
+     either way (presence-not-count design absorbs this), so NOT a blocker for PART13, but the underlying
+     duplicate-id data-integrity gap is real and independent of this dispatch. → DISTILL-PENDING (candidate: a
+     root-insights.yaml id-uniqueness lint, sibling of `[CS-NAMES]`'s registered-once check for corespine names).
+  3. **Confirmed by direct read (RI-0025 discipline, not paraphrase):** the `agent`-type PreToolUse hook
+     Core Seed 3 required me to "name, not close the door on" is referenced in `CISEM-ARCH-00420-PART08`'s own
+     MAJOR-3 finding (subagent-firing) but PART08 did NOT itself document the `agent`-TYPE hook (spawn-a-
+     subagent-to-verify) as distinct from the `command`-type hook it built — I verified this distinction is
+     accurate to the approach doc's Brain-verified claim (approach doc line 45) before citing it in PART01,
+     rather than trusting the approach doc's summary alone.
+  **Status:** disclosed here + in this dispatch's return report to Opus this same turn (Principle 21, not deferred).
