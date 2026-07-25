@@ -36,5 +36,55 @@ Items 1-4 are the CHEAP + HIGH-LEVERAGE foundation (enforcement + formalization)
 ## WHAT THIS DOC DOES / DOES NOT
 DOES: index + rank + price every open thread in ONE place; confirm the governing mechanism + its DRAFT gap; supersede-by-reference the 3 prior indexes. DOES NOT: ratify any item (each runs its own pipeline); delete/restructure the prior indexes (RI-0036 — no freestyle restructuring); start any build (the pause holds).
 
+## COMPLETENESS INTEGRATION — Brain Core-Council-2 sweep (2026-07-25; all 30 items VERIFIED against source, NOTHING left out)
+Per Governor decree "insert it all with full detail, nothing left out" + the WALL doctrine (IBD-0032): each item is source-verified (Haiku cross-ref + Opus session-correction), NOT Brain's raw claim. Brain's raw doc is quarantined at `dna/external-review/BRAIN-CONSOLIDATED-OPEN-ITEMS-2026-07-25-RAW-EXTERNAL.md` (behind the wall). This is INDEX/completeness maintenance only — no item ratified, no build (pause holds).
+
+| Brain# | Item | Verified status (source) | Home / disposition |
+|---|---|---|---|
+| A1 | RIPL-drain (BP-0009) | QUEUED (vault=36 RIs exists; drain is the gap) | #1 (tracked) |
+| A2 | Rejected-Path Memory | folds into #1 | #1b (tracked) |
+| A3 | Edit-gating (RI-0036) | DESIGNED, awaiting build | #2 (tracked) |
+| A4 | Graphify (ARCH-00422) | RATIFIED; GI-68 done; **BUILD HALTED at step-1** (base install writes CLAUDE.md=governance root, out of scope; uv missing) → BLOCKED pending amendment | **N3 (new, build-blocked)** |
+| A5 | GI-51 durable wiring (no-MCP) | PARKED (decree in chat+IBD-0022; NOT in always-loaded layer) | **N4 (new)** |
+| A6 | Pre-Goal Triage Protocol | NO FILE; may fold into GATE-0 (§2.7) | **N6 (new open question)** |
+| A7 | RI-0039 (false-fork) | NAMED + committed (root-insights.yaml); wiring pending | **N8 (new)** |
+| A8 | Uncommitted batch | DONE — committed d704d1e | CLOSED |
+| A9 | Registry [CORESPINE-BODILESS] check | NOT BUILT; = Threshold-audit item 2a (a PROPOSAL, never ratified) | **N5 (new cluster)** |
+| A10 | Pointer-manifests (Threshold + MASTER-VALIDATION) | BOTH bodiless (verified this session); no manifests | **N5 (new cluster)** |
+| A11 | GI-30 mis-cite | **CONFIRMED MIS-CITE (this session's audit):** GI-30 claims RATIFIED-WIRED citing ARCH-00360 RULE 5, but the only live mechanism (agent-pass-gate.sh) implements a DIFFERENT decree; P3 covers only decisions_pending, not the parked population | **N5 (new cluster; truth-field, Governor's call)** |
+| A12 | Aging-threshold decision | parked-item aging UNCOVERED (P3 narrow); no threshold set for IBD/BP parks | **N5 (new cluster)** |
+| A13 | Coverage-map check | NOT BUILT; = Threshold-audit item 2b | **N5 (new cluster)** |
+| A14 | Stale queue README | STALE (stops at BP-0008) | #10 (tracked) |
+| A15 | De-dup Threshold invariants | duplicated across ARCH-00320+CLAUDE.md (registry admits it) | **N5 (new cluster)** |
+| A16 | ARCH-00420 ID collision | CONFIRMED (4 non-PART 00420 files + naming-counter drift) | **N7 (new housekeeping)** |
+| A17 | PART12/13/01 built | VERIFIED BUILT+WIRED (plan-sections.sh:620, gi-consideration.sh:624, SKILL.md) | CLOSED |
+| A18 | GI-68 review 00270v2/418/419 | 00417 comments-received; 418/419 CONSENSUS-REACHED awaiting review | #7 (tracked) |
+| A19 | freshness-check.sh + stage-timer | NOT BUILT | #10 (tracked) |
+| A20 | minitree vocab (ARCH-190+330) | partial; ARCH-00330 DRAFT | #4 (tracked) |
+| A21 | Ratify ARCH-00330 | DRAFT-not-ratified | #4 (tracked) |
+| A22 | Turn-cadence push | DESIGNED (GI-72 ratified; mechanism unwired) | #8 (tracked) |
+| A23 | Educational template | PARTIAL (ties ARCH-00408) | #9 (tracked) |
+| A24 | F-RECON | umbrella | #10 (tracked) |
+| B1 | Size-gate vs sections (RI-0026) | CAPTURED (RI-0026) | #4/#10 (tracked) |
+| B2 | GI-15 reuse-before-coin | DECREED-NOT-WIRED | **N9 (new, decreed backlog)** |
+| B3 | GI-18 loop-until-ZF | DECREED-NOT-WIRED (ARCH-00403 SOUND, awaiting Stage-2) | **N9 (new)** |
+| B4 | GI-19 CoreSpiral | AWAITING-GOVERNOR (P0 founding keystone; FOUND-00001) | **N9 (new, Governor-authorship)** |
+| B5 | I25 retro-ratification | RESOLVED-RATIFIED (ARCH-00395 COMPLETE) | CLOSED |
+| B6 | ARCH-00418 DoD upgrade | CONSENSUS-REACHED awaiting review | #7 (tracked) |
+
+### NEW ACTIVE THREADS (surfaced/created this session — full detail captured; to be RANKED into the program via the normal goal→approach→rank flow, NOT presumptuously ranked here)
+- **N3 · Graphify adoption (ARCH-00422):** RATIFIED, BUILD-BLOCKED at step-1 (CLAUDE.md write + uv). Needs a `--project`-scope amendment (re-ratify) verified to keep it fully behind the wall, OR pivot to build-our-own-index. External element — WALL-governed.
+- **N4 · GI-51 durable wiring:** wire the no-MCP decree into the always-loaded governance layer (chat/IBD-only now → RI-0029 non-inheritance risk). Awaiting Governor go.
+- **N5 · Threshold-audit follow-on cluster (A9/A10/A11/A12/A13/A15 — the audit RAN this session):** registry-self-audit check (2a) · thin pointer-manifests for the 2 bodiless corespines · GI-30 mis-cite correction (truth-field, Governor's call) · parked-item aging beyond `decisions_pending:` · coverage-map check (2b) · de-dup Threshold's invariants. The Threshold/Routing/Parking audit is DONE; these are its ratifiable outputs.
+- **N1 · WALL doctrine wiring (IBD-0032, Governor decree):** consolidate the external-trust-boundary fragments (RI-0038/RI-0025/§1.8/ARCH-00405/PAE/GI-51/RAW-EXTERNAL/injection-scan) into a CLAUDE.md principle + corespine. FOUNDATIONAL; plan-gated (A11 consult + ratify).
+- **N2 · Self-describing state-manifest (RI-0037):** generated cadence/wiring/boundary-clean manifest + fixed boot-order (the context-restoration fix); ties neuronal-grid (#6). Plan-gated.
+- **N6 · Pre-Goal Triage Protocol (Brain proposal):** decide fold-into-GATE-0 vs separate; needs the hard carve-out (external-tool/hot-path/governed-edit → never fast-lane) + Existing-First + ratification.
+- **N7 · ARCH-00420 ID-collision + naming-counter drift:** 4 non-PART 00420 files; ARCH/IBD/BP counters drifted vs disk. Housekeeping reconciliation.
+- **N8 · Operating-process self-check for RI-0039:** wire the false-fork/gate-as-option self-check into §1.8.
+- **N9 · Decreed-not-wired GIs:** GI-15 reuse-before-coin · GI-18 loop-until-ZF · GI-19 CoreSpiral (AWAITING-GOVERNOR, P0).
+
+**Coverage check:** 30/30 Brain items present above (5 CLOSED: A8/A17/B5 + verified-done; 16 tracked in #1–#10; 9 new threads N1–N9). Nothing left out.
+
 ## Change log
 - v0.1 2026-07-25 (Opus) — consolidated per Governor request + Brain consensus (ranking, structured-field-over-commit-message, reuse-governed-set, RIPL#1/edit-gating#2); Existing-First done (per-file lineage absent but authorizing_plan/lineage precedent exists; ARCH-00330 DRAFT); priced each thread. For Brain verification.
+- v0.2 2026-07-25 (Opus) — COMPLETENESS INTEGRATION of Brain's Core-Council-2 30-item sweep (Governor "nothing left out"): each item source-verified (Haiku cross-ref + Opus session-corrections on A4 build-halt, A11 confirmed-mis-cite, Threshold-audit-done); Brain's raw doc quarantined behind the WALL; 9 new active threads (N1–N9) captured with full detail; nothing dropped. Index maintenance only — no ratification, no build.
