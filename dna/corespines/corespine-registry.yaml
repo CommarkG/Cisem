@@ -15,7 +15,8 @@ CS-THRESHOLD-001:
   status: RATIFIED
   goal: "Layer 1 mechanical input validation — the only fully closed corespine"
   content_location:
-    distributed_in: [ARCH-00320, CLAUDE.md]   # Invariants I1-I21 live in both places
+    canonical_file: dna/corespines/CS-THRESHOLD-001/CISEM-ARCH-00424-threshold-corespine-manifest.md   # ARCH-00423 D2, thin pointer (A8/I10)
+    distributed_in: [ARCH-00320, CLAUDE.md]   # Invariants I1-I21 live in both places; MIRROR — SSOT is ARCH-00320 (ARCH-00423 D5)
   depth_level: L2
 
 CS-CREATION-001:
@@ -46,6 +47,7 @@ CS-MASTER-VALIDATION-001:
   root_authority: true
   goal: "Governs all other corespines — defines the corespine validation protocol V1–V5 and the foundational-decree escape"
   content_location:
+    canonical_file: dna/corespines/CS-MASTER-VALIDATION-001.md   # ARCH-00423 D2 fill: an already-RATIFIED body file existed on disk, unlinked (I19/A8 Existing-First re-check) — pointed here instead of forking a 2nd new manifest
     distributed_in: [ARCH-00008, ARCH-00320, quality-ledger.yaml]  # foundational decree, invariants, ratification record
   depth_level: L1
 

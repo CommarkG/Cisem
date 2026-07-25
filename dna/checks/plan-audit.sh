@@ -637,6 +637,18 @@ bash dna/checks/defer-scan.sh 2>/dev/null
 # [AGENT-PASS] Principle 21 — weekly all-agents compliance freshness gate (Governor decree 2026-07-21). WARN.
 bash dna/checks/agent-pass-gate.sh 2>/dev/null
 
+# [CORESPINE-BODILESS] — D1 (CISEM-ARCH-00423, anchor): RATIFIED corespines with no canonical_file
+# (registry self-audit). WARN-only, ships standing ALONE per Core Seed 1 (not gated on D2).
+bash dna/checks/corespine-bodiless.sh 2>/dev/null
+
+# [PARK-REVIEW-FRESH] — D3 (CISEM-ARCH-00423): parked-population (dna/ibd PARKED-RAW + dna/queue/BP
+# not-COMPLETE) review freshness gate, N=14 days (Governor-set 2026-07-25). WARN-only.
+bash dna/checks/park-review-fresh.sh 2>/dev/null
+
+# [THRESHOLD-COVERAGE-MAP] — D4 (CISEM-ARCH-00423): per-part honest wiring map of CS-THRESHOLD-001's
+# own parts (I1-I21 + Gate-0 + SWIFT + park-by-demand routing). WARN-only.
+bash dna/checks/threshold-coverage-map.sh 2>/dev/null
+
 # [CHECK-LINT] — meta-guard against the substring-vs-field anti-pattern in the check files THEMSELVES
 # (RI-0012 class; 2 instances 2026-07-21 — the mini-tree -index filename collision + the I24 regex that matched a
 # value word ANYWHERE on a status line, so a negation like "not ratified" false-flagged a PARKED file). A status/

@@ -792,3 +792,53 @@ Entry format (append, newest at bottom):
   → DISTILL-PENDING (candidate RI: "prose-promise vs executable-artifact divergence" + "external hook / governance-check
   interference must be differentially regression-tested"). Full verdict (SOUND-WITH-CONDITIONS, C1-C9) delivered to
   Opus this turn, not filed as a separate report file (per no-report-files instruction).
+
+- [2026-07-25 · cisem-sonnet · ARCH-00423 (Threshold-Audit Remediation plan draft, backlog N5)] **The 200-line
+  ceiling and ARCH-00401's mandatory-section set are in real, measurable tension for a 5-deliverable plan** —
+  first draft hit 206/207 lines with all mandatory sections present; only reached 192 lines after a full
+  compression pass (tighter Existing-First bullets, merged Tier-Routing lines, terser Path Rejection). This is
+  the SAME structural tension ARCH-00419 already named and DOCUMENTED-AS-EXCEPTION (RI-0026) rather than
+  fought — but this task's directive was a HARD "keep it under 200," so it was fought-and-won here instead.
+  PREVENTION (class-level): a plan author facing ≥4 deliverables should budget ~15-20 lines/deliverable INSIDE
+  "The Rule" and expect to compress the surrounding boilerplate sections (Existing-First, Path Rejection,
+  Dependencies) to 1-line-per-item BEFORE writing D1..Dn, rather than writing generously and cutting after —
+  cutting-after risks silently thinning a REQUIRED section's substance to hit the number. → DISTILL-PENDING
+  (candidate: note in `.claude/skills/cisem-plan/SKILL.md` Step 1 — "when the 200-line gate is a HARD
+  directive (not the default documented-exception path), draft boilerplate sections at 1-line-per-bullet from
+  the start, budget deliverable-body lines up front").
+  **Second, smaller finding:** `[GI-CONSIDERATION]`'s detection is a FIELD-MARKER match
+  (`^\*{0,2}wisdom_considered:\*{0,2}`) — a `## wisdom_considered` HEADING alone does not satisfy it; a
+  plan must ALSO include a literal `wisdom_considered: GI-NNN, RI-NNNN` field line under that heading. This
+  is not a bug (the check is correctly field-anchored per RI-0012), but it is UNDER-DOCUMENTED in-context —
+  a plan author reading only ARCH-00401's mandatory-section prose would reasonably assume a heading suffices
+  and get a false [GI-CONSIDERATION] MISSING on first `plan-audit.sh` run (caught + fixed this turn by running
+  the check locally before returning, per Principle 5/17 verify-before-declaring-done). → DISTILL-PENDING
+  (candidate: `.claude/skills/cisem-plan/SKILL.md` should show the exact field-line form, not just name the
+  section, so future plans get it right on the first pass instead of discovering it via a local check-run).
+
+- [2026-07-25 · cisem-sonnet · CISEM-ARCH-00423 BUILD (D1-D5, Threshold-Audit Remediation)] **A RATIFIED
+  plan's own Existing-First section can itself be incomplete** — D2's spec (build 2 NEW pointer-manifests,
+  allocate 2 new ARCH ids) was written after a search that checked `corespine-registry.yaml`'s
+  `content_location:` fields but never did a `dna/corespines/` directory listing. Mid-build, a real,
+  already-RATIFIED body file — `dna/corespines/CS-MASTER-VALIDATION-001.md` (v1.0, Governor foundational
+  decree 2026-07-18) — turned up unlinked from the registry. Building a 2nd new thin manifest would have
+  forked a duplicate SSOT (I19/A8 violation) for content that already had a real, better home. FIX APPLIED:
+  pointed `canonical_file` at the existing file instead of creating one; only 1 new ARCH id consumed (00424,
+  Threshold), 00425 un-allocated (naming-registry.yaml corrected + annotated). PREVENTION (class-level): a
+  plan's stated Existing-First search for "does a canonical/body file already exist" must include a
+  DIRECTORY LISTING of the artifact's expected home (e.g. `find dna/corespines -iname "*NAME*"`), not just a
+  registry-field check — a registry can be silently out of sync with what's actually on disk (same class as
+  RI-0009 DECLARED-UNIVERSAL-BUT-WIRED-NARROW: the search itself was scoped narrower than "everything that
+  could exist"). → DISTILL-PENDING (candidate: ARCH-00190/ARCH-00394 Existing-First checklist should name
+  "directory-glob for an unlinked existing file" as a mandatory sub-step alongside the registry-field check,
+  for any deliverable that fills a `canonical_file`/content-home gap).
+  **Second finding (secondary, not fixed here — routed):** `dna/ssot-registry.yaml`'s `validation_protocol`
+  entry still says `note: "V1-V5; awaiting foundational decree"` for CS-MASTER-VALIDATION-001, but the
+  decree happened 2026-07-18 (confirmed by both the corespine-registry.yaml status and the file's own v1.0
+  change-log entry) — an I16-class stale note, out of this task's D1-D5 scope, flagged for a future pass.
+  **Third finding:** D4's per-part coverage map (built dynamic, re-grepping `plan-audit.sh` + the git hook
+  each run rather than a hardcoded snapshot) found CS-THRESHOLD-001's real state is 7/24 parts WIRED, 1
+  PROSE-BY-DESIGN (Gate-0, citing CLAUDE.md §2.7's own disclosed input-time-stamp limit), 16 NOT-YET-WIRED —
+  confirming the original Threshold/Routing/Parking audit's finding that routing (SWIFT, park-by-demand) is
+  currently prose/discipline with zero mechanical enforcement. This is a disclosed, honest gap, not a
+  regression — it is the audit's whole point made mechanically re-verifiable on every commit going forward.

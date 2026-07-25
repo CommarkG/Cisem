@@ -526,7 +526,9 @@ triage the Governor mandated — no creation escapes all three.
 ## 5. CURRENT MATURITY — full honesty
 Phase 1→2. FIRST gate now WIRED: `dna/checks/plan-audit.sh` (WARN-ONLY pre-commit,
 invariants I1/I3/I6). The rest of §3 remain manual discipline until ARCH-00180 wires
-them and ARCH-00270 flips to BLOCK-mode (v2 drafted, Stage-1 SOUND). Invariant set I1–I26 (ARCH-00320 §4);
+them and ARCH-00270 flips to BLOCK-mode (v2 drafted, Stage-1 SOUND). Invariant set I1–I26 (ARCH-00320 §4) —
+MIRROR — SSOT is ARCH-00320 (this and every CLAUDE.md reference to I1–I26 is a pointer/summary, never the
+authoritative text; ARCH-00423 D5, I10).
 Recurring Quality Cycle live (ARCH-00320 §6); RQC recurrence 0.
 
 ## 6. ACTIVE STATE — critical path (full session context: CISEM-WITNESS-00003)

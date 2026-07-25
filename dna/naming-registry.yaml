@@ -13,7 +13,14 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 424 }  # 00423 = Threshold-Audit Remediation plan (backlog N5; [CORESPINE-BODILESS] self-audit
+ARCH:    { next_seq: 425 }  # 00424 = CS-THRESHOLD-001 thin pointer-manifest (D2, points at ARCH-00320 I1-I21 +
+# CLAUDE.md §2.7/§3, zero copied content, ARCH-00397 precedent; Sonnet 2026-07-25, dispatched by Opus Core
+# Seeds, CISEM-ARCH-00423 D2). NOTE: the plan's D2 spec called for a 2nd new ARCH id for a CS-MASTER-VALIDATION-001
+# pointer-manifest, but an Existing-First re-check (§3.2b, mid-build) found a REAL, already-RATIFIED body file
+# already on disk — dna/corespines/CS-MASTER-VALIDATION-001.md (missed by the plan's own Existing-First pass,
+# which checked corespine-registry.yaml content_location fields but not a dna/corespines/ directory listing) —
+# so canonical_file was pointed at that EXISTING file instead of forking a 2nd new manifest (I19/A8); no 2nd
+# ARCH id consumed; flagged to Opus for review. 00423 = Threshold-Audit Remediation plan (backlog N5; [CORESPINE-BODILESS] self-audit
 # anchor + thin pointer-manifests for CS-THRESHOLD-001/CS-MASTER-VALIDATION-001 + [PARK-REVIEW-FRESH] parking-aging
 # extension beyond decisions_pending: + [threshold-coverage-map] per-part honesty check + MIRROR label on the
 # duplicated Threshold invariants; GI-30 mis-cite flagged Opus-only (I7); DRAFT / AWAITING-BUILDER-REVIEW; Sonnet

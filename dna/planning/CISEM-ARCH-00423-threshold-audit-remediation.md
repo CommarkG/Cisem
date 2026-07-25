@@ -1,6 +1,6 @@
 # Threshold-Audit Remediation (backlog N5) — close the bodiless-corespine + parking-aging gaps found live
-**Node ID:** CISEM-ARCH-00423 | **Type:** ARCH | **Status:** DRAFT
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND 2026-07-25 — see §Opus Soundness Verdict; NOT ratified — awaits Governor Stage-2) | **depth_level:** L2
+**Node ID:** CISEM-ARCH-00423 | **Type:** ARCH | **Status:** RATIFIED
+**Planning Status:** COMPLETE (Governor RATIFIED 2026-07-25, informed — saw the plan; D3 N=14 set; Opus Stage-1 SOUND) | **depth_level:** L2
 **Position in schema:** T-SYS, planning-governance layer
 **tags:** [threshold-audit, corespine-bodiless, parking-aging, coverage-map, dedup, backlog-N5]
 **Goal:** close 3 gaps the Threshold/Routing/Parking audit found (bodiless RATIFIED corespines with no
@@ -93,7 +93,7 @@ I10). Labeling only — no deletion of either copy (Governor decree 2026-07-21, 
 
 ### D3 — `[PARK-REVIEW-FRESH]` parked-item aging (extends beyond `decisions_pending:`)
 **Spec:** `dna/checks/park-review-fresh.sh`, wired into `plan-audit.sh`, WARN-only. Same freshness-stamp
-shape as `agent-pass-gate.sh` (`.stamp` file, WARN if >N days stale) — NOT a per-file TTL backfill (rejected
+shape as `agent-pass-gate.sh` (`.stamp` file, WARN if >14 days stale — N=14, Governor-set 2026-07-25) — NOT a per-file TTL backfill (rejected
 below). On fire: counts current `dna/ibd/*.md status: PARKED-RAW` + `dna/queue/BP-*.md` not `COMPLETE`,
 prints the count, directs a batch review sweep; `touch`ing the stamp resets the clock.
 **Finish line:** stamp absent/>N days old → WARN with a real count (tested vs current ~20 PARKED-RAW + 12
@@ -185,8 +185,13 @@ wisdom_considered: GI-39, RI-0009, RI-0010
 ## Opus Soundness Verdict (Stage-1, [RATIFY-GATE])
 **SOUND.** Goal measurable; the 3 gaps are genuine + bounded (Existing-First source-verified, not inherited); anti-scatter order correct (D1 anchor drives D2); tier-routing + I7 respected (GI-30 Opus-only); path rejections sound (no per-file backfill, no fake-fixing prose-by-design routing, no collateral deletion); Core Seeds filled. **ONE GOVERNOR DECISION flagged (not Opus's to pick):** D3's staleness threshold **N days** is a parking-aging POLICY call — the old 7-day figure was for a different population; the Governor sets N at ratification (or delegates it to Opus). **GI-30 correction** awaits Governor awareness (his insight record). Pre-build gates still to run AFTER ratification, BEFORE any D1–D5 build: the cisem-haiku independent-verify (P5) + the GI-68 dual-review. — Opus (cisem-opus-pe), 2026-07-25.
 
+## GI-68 Dual-Review Verdict — CLEARED (2026-07-25)
+Mandatory dual-tier review of the D1–D5 BUILD (GI-68). **P1 (Opus, cisem-opus-pe):** judged the build — D5 verified LABEL-ONLY (CLAUDE.md +label, 0 deletion), D2 existing-body substitution APPROVED (CS-MASTER-VALIDATION-001 is a real RATIFIED body linked, not forked — I19/A8), 3 checks wired. **P5 (Haiku, cisem-haiku, cold independent-verify, distinct from the Sonnet builder):** re-ran all 5 → ALL PASS; [ZF] ACHIEVED; deletion-guard clean (zero collateral deletion); 3 Core Seeds honored (I13). No regression, over-reach, or fake-fixing (D4 labels prose-by-design honestly). **VERDICT: CLEARED for done.**
+
 ## Change log
 - v0.1 — 2026-07-25 (Sonnet, STRUCTURING tier, dispatched by Opus per the Threshold/Routing/Parking audit
   findings, backlog N5): initial skeleton. 5 deliverables (D1 anchor, D2, D5, D3, D4) in anti-scatter order;
   3 Core-Seed placeholder slots for Opus; 7-source Existing-First; GI-30 flagged Opus-only. Not committed by
   Sonnet (§1.7 — Opus commits after review).
+- v0.2 — 2026-07-25 (Opus): Core Seeds filled + Stage-1 SOUND verdict recorded; **Governor RATIFIED (informed, "all ratified")** + set D3 threshold **N=14 days**. Status DRAFT→RATIFIED, Planning CONSENSUS-REACHED→COMPLETE. Pause lifted for THIS ratified item only. Next: build D1→D2→D5→D3→D4 (Sonnet, per Core Seeds, each behaviorally verified) → GI-68 dual-review + Haiku independent-verify → GI-30 correction (Opus, Governor sign-off).
+- v0.3 — 2026-07-25 (Sonnet): **D1→D2→D5→D3→D4 BUILT + individually behaviorally verified** (full detail: `agent-findings.md` 2026-07-25 entry; trimmed here for size gate). D1 flags exactly the 2 expected, 0 false positives, verified ALONE before D2 existed. D2: Threshold got a NEW manifest (ARCH-00424); Master-Validation ALREADY had a real RATIFIED body file unlinked on disk — pointed `canonical_file` at it, not a duplicate (I19/A8), flagged to Opus. D1 re-run → 0 findings. D5 MIRROR label added, both copies intact. D3 tested both directions (stale/none → WARN w/ real counts; fresh → clean). D4 built DYNAMIC: 7/24 WIRED, 1/24 PROSE-BY-DESIGN, 16/24 NOT-YET-WIRED. All 5 WARN-only, not in ZF. Full-board: **[ZF] ✅ ACHIEVED**, zero new findings. GI-30 untouched (I7). Not committed (§1.7). GI-68 + Haiku verify next.
