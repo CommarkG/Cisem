@@ -771,3 +771,24 @@ Entry format (append, newest at bottom):
   unrelated, pre-existing gap surfaced as a side-effect of touching the file, not introduced by this build, not
   fixed here (out of scope).
   **Status:** disclosed here + in the build return to Opus this same turn (Principle 21, not deferred).
+
+- [2026-07-25 · cisem-sonnet · GI-68 review of CISEM-ARCH-00422 (Graphify adoption)] **CLASS-LEVEL FINDING —
+  "the-rule-says-pin, the-command-doesn't" (prose-vs-executable-step divergence):** a plan can correctly STATE a
+  RI-0038-class requirement ("pin the exact version") in its prose (Step 1) while the literal EXECUTABLE command in
+  a later step (`uv tool install graphifyy`, no `==X.Y.Z`) fails to encode it — a mechanical/lower-tier executor
+  running the command AS WRITTEN would silently violate the very requirement the plan claims to satisfy. This is
+  the same family as I22 (unverified-done) / RI-0021 (plausibility-completion) but at the STEP level: a Core Seed
+  or gate can be present in PROSE without being present in the EXECUTABLE ARTIFACT it governs. CLASS PREVENTION:
+  any plan step whose prose asserts a constraint (pin/scope/exclude) on an external command MUST show the
+  constraint literally encoded IN the command text itself (not just described above/around it) — reviewers should
+  diff "what the prose promises" against "what the copy-pasteable command actually contains," not just read the
+  prose as if it were the command.
+  **Second finding, same review — external-tool PreToolUse hooks intercept the SAME Bash/Grep tool-call surface
+  CISEM's own agents use to run governance checks interactively** (grep/find via the Bash tool during a live
+  session) — a third-party hook (e.g., Graphify's search-redirect hook) could silently return stale/wrong results
+  to a governance check (I19 Existing-First, I1 orphan-detection) with no error surfaced. Plan CISEM-ARCH-00422 did
+  not include a differential regression test (governance checks run byte-identical with the hook active vs.
+  disabled) — recommended as a standing pattern for ANY future external-tool-with-hooks adoption, not just this one.
+  → DISTILL-PENDING (candidate RI: "prose-promise vs executable-artifact divergence" + "external hook / governance-check
+  interference must be differentially regression-tested"). Full verdict (SOUND-WITH-CONDITIONS, C1-C9) delivered to
+  Opus this turn, not filed as a separate report file (per no-report-files instruction).
