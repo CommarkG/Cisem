@@ -2,6 +2,7 @@
 Node_ID: CISEM-ARCH-00395
 Type: ARCH
 Status: RATIFIED
+GI-68 exempt (ratified pre-decree): true (Opus backfill 2026-07-25, ARCH-00420-PART01 — ratified 2026-07-18, before GI-68's 2026-07-23 decree; no dual-review record exists because the mechanism postdates the ratification)
 Planning_Status: COMPLETE — Governor decree 2026-07-18; D-1..D-4 verified fixed; Opus PE stamped; I25 debt CLOSED
 depth_level: L2
 tags: [planning-domain, retro-plan, cs-frontend-001, i25-resolution]

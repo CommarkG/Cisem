@@ -8,7 +8,7 @@ tags: [planning-domain, operating-model, one-tab-orchestrator, git-ssot, creatio
 ---
 
 # Operating-Model + Creation-Layer Consolidation — Plan
-**CISEM-ARCH-00396** | ARCH | **Status: RATIFIED** (Governor decree 2026-07-18) | **Planning Status: COMPLETE — all 4 phases executed + gated, ZF green (runs 23-28)**
+**CISEM-ARCH-00396** | ARCH | **Status: RATIFIED** (Governor decree 2026-07-18) | **Planning Status: COMPLETE — all 4 phases executed + gated, ZF green (runs 23-28)** | **GI-68 exempt (ratified pre-decree):** true (Opus backfill 2026-07-25, ARCH-00420-PART01 — ratified pre the 2026-07-23 GI-68 decree)
 **Goal:** Fix the ROOT cause of CISEM's recurring gaps — parallel unsynced work — by (A) formalizing the
 one-tab-orchestrator + git-SSOT operating model, and (B) consolidating the scattered creation layer under the
 proven meta-root (ARCH-00340) with CS-CREATION-001 formalized as the apex "corespine-of-corespines". ONE plan,

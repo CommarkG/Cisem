@@ -1,5 +1,5 @@
 # Core-Template Principle — ONE Battle-Tested Template, Instances Duplicate-and-Disable
-**Node ID:** CISEM-ARCH-00408 | **Type:** ARCH | **Status:** RATIFIED — Governor Stage-2 decree 2026-07-21
+**Node ID:** CISEM-ARCH-00408 | **Type:** ARCH | **Status:** RATIFIED — Governor Stage-2 decree 2026-07-21 | **GI-68 exempt (ratified pre-decree):** true (Opus backfill 2026-07-25, ARCH-00420-PART01 — ratified pre the 2026-07-23 GI-68 decree; no dual-review record predates the mechanism)
 **Planning Status:** COMPLETE (Opus Stage-1 SOUND + Governor Stage-2 RATIFIED 2026-07-21 — implementation authorized under A4/I25; **[TEMPLATE] check BUILT + verified 2026-07-24** — `plan-audit.sh` v16, field-anchored (RI-0012), WARN-only; flags the anticipated pre-existing template-retrofit surface; [ZF] green) | **depth_level:** L1 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning-domain, template, core-vs-instance, configuration-not-fork, gate, mandatory]
 **Goal:** Establish ONE core template per template-class as the SSOT (complete, verified, battle-tested capability

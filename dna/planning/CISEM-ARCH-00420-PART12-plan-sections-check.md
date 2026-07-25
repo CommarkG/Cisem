@@ -1,6 +1,6 @@
 # PART12 — [PLAN-SECTIONS] mandatory-section completeness check (consolidated by reference)
 **Parent:** CISEM-ARCH-00420 (Wiring Consolidation minitree root) | **Node ID:** CISEM-ARCH-00420-PART12
-**Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** CONSENSUS-REACHED (Opus soundness + GI-68 dual-review folded 2026-07-25 — awaiting Governor ratification, non-delegable; NOTHING built until ratified, A4/A11, and PART08's gate enforces it)
+**Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** COMPLETE — Governor-RATIFIED 2026-07-25 + BUILT + Opus-VERIFIED (lib+check+refactor on disk; planted test PASSES both directions; no-regression diff over the real 37-plan corpus is EMPTY — the 4 legacy checks byte-identical)
 **depth_level:** L2 | **Position in schema:** T-SYS, planning-governance layer (a plan-audit check)
 **Priority:** 1 (install-order item #1 — cheapest, applies to all 33+ plans, ships first) | **tags:** [plan-sections, check-consolidation, arch-00401, ri-0032, plan-audit]
 **Authorizing lineage:** `dna/planning/CISEM-ARCH-00420-items123-approach-consolidated.md` Item #1, BRAIN CONSENSUS 2026-07-25 (Planning Status APPROACH-RATIFIED) + `CISEM-ARCH-00420-wiring-consolidation-index.md` (minitree root, PART slot).

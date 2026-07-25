@@ -80,6 +80,27 @@
 #   using the exact --exclude-dir idiom already established by [I1]/[SEED] in THIS file (A8, copied not
 #   reinvented); naming-exceptions.yaml gained 2 declared exceptions (CISEM-BASE-CONTRACT-001,
 #   CISEM-PROTOCOL-TEMPLATE-001 — both real prose forward-refs/legacy mentions, never resolved filenames).
+#   v17 (2026-07-25, CISEM-ARCH-00420-PART12, Governor-RATIFIED, GI-68 dual-reviewed; Sonnet-built per
+#   the plan's "The Rule"): [ROUTING]/[ALIGN]/[TAG-STATUS]/[POCKET] extraction logic REFACTORED to source
+#   dna/checks/lib/plan-sections-lib.sh (A8, one definition, mirrors PART08's plan-gate.sh precedent) —
+#   behavior BYTE-IDENTICAL (proven: real-corpus diff across every dna/planning/*.md, 0 differences).
+#   [PLAN-SECTIONS] added — flags a CHANGED plan missing one of 8 additional ARCH-00401 mandatory
+#   sections (RI-0032: a dropped section was caught at review-time twice this session, not author-time).
+#   WARN-only, NOT in the ZF formula (same posture as [SEED]/[BUILD-STATE] at introduction).
+#   v18 (2026-07-25, CISEM-ARCH-00420-PART13, Governor-RATIFIED, GI-68 dual-reviewed; Sonnet-built per
+#   the plan's "The Rule"): [GI-CONSIDERATION] added — a changed plan must cite ≥1 resolving GI-NNN/
+#   RI-NNNN id (wisdom_considered: field, extends I19/GI-10, presence-not-count, DELIMITER-ANCHORED
+#   lookup per the RI-0012 substring class). WARN-only, NOT in the ZF formula.
+#   v19 (2026-07-25, CISEM-ARCH-00420-PART01, Governor-RATIFIED, GI-68 dual-reviewed; Sonnet-built per
+#   the plan's "The Rule"): [RATIFY-GATE] EXTENDED — a RATIFIED plan must also cite its GI-68 dual-review
+#   verdicts (a `## GI-68 Dual Review` heading, or dual/sonnet/haiku-review evidence) OR carry an explicit
+#   `GI-68 exempt (ratified pre-decree)` tag. NO date-detection (full-scan, same loop, reused — a git-touch-
+#   date proxy would drift and false-flag legitimately-ratified plans on any incidental edit). One-time
+#   backfill: dna/planning/CISEM-ARCH-00395-*.md tagged exempt (the sole pre-GI-68 RATIFIED plan the plan's
+#   Existing-First search verified live 2026-07-25 — see the PART01 build report for a disclosed premise-
+#   staleness finding: additional pre-existing RATIFIED plans surfaced on direct re-test). New skill:
+#   .claude/skills/cisem-plan-verify/SKILL.md (dispatches the dual review; NOT a CAL auto-fire mechanism —
+#   a git hook cannot spawn subagents, honestly disclosed). WARN-only, NOT in the ZF formula.
 set -u
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" || exit 0
@@ -529,16 +550,21 @@ done
 # ROUTING / ALIGN / TAG-STATUS — ARCH-00401 gate requirements, machine-checked (ARCH-00402, Governor-approved
 #   2026-07-20). Scoped to plans CHANGED in this commit (staged+unstaged+untracked) — forward-looking, so the
 #   pre-00401 backlog is not retro-flagged. All three WARN-only, NOT in the ZF formula (BLOCK is ARCH-00270's track).
-changed_plans=$( { git diff --cached --name-only 2>/dev/null; git diff --name-only 2>/dev/null; \
-                   git ls-files --others --exclude-standard 2>/dev/null; } \
-                 | grep -E '^dna/planning/.*\.md$' | sort -u )
+# REFACTORED (CISEM-ARCH-00420-PART12, Core Seed A): extraction logic now sourced from
+# dna/checks/lib/plan-sections-lib.sh (A8, one definition) — behavior BYTE-IDENTICAL (proven: real-corpus
+# diff across every dna/planning/*.md, 0 differences, in the PART12 build report).
+if [ -f "dna/checks/lib/plan-sections-lib.sh" ]; then
+  # shellcheck disable=SC1090
+  source "dna/checks/lib/plan-sections-lib.sh"
+fi
+changed_plans=$(changed_plans)
 
 # [ROUTING] — a changed plan must declare a Tier-Routing Declaration (ARCH-00401 Enh.1)
 echo "[ROUTING] changed plans missing a Tier-Routing Declaration (ARCH-00401 Enh.1; WARN-only):"
 found_routing=0
 for f in $changed_plans; do
   [ -f "$f" ] || continue
-  grep -qiE "Tier-Routing Declaration" "$f" || { echo "   MISSING: $f (no Tier-Routing Declaration)"; found_routing=1; }
+  pattern_present "$f" "Tier-Routing Declaration" || { echo "   MISSING: $f (no Tier-Routing Declaration)"; found_routing=1; }
 done
 [ "$found_routing" = 0 ] && echo "   (none — every changed plan declares tier-routing, or no plan changed)"
 
@@ -547,7 +573,7 @@ echo "[ALIGN] changed plans missing a Per-File Alignment Table (ARCH-00401 Enh.3
 found_align=0; align_missing=""
 for f in $changed_plans; do
   [ -f "$f" ] || continue
-  if ! grep -qiE "Per-File Alignment Table" "$f"; then
+  if ! pattern_present "$f" "Per-File Alignment Table"; then
     echo "   MISSING: $f (no Per-File Alignment Table)"; found_align=1; align_missing="$align_missing $f "
   fi
 done
@@ -560,10 +586,10 @@ found_tagstatus=0
 for f in $changed_plans; do
   [ -f "$f" ] || continue
   echo "$align_missing" | grep -qF " $f " && continue          # already flagged by [ALIGN] — skip
-  grep -qiE "Per-File Alignment Table" "$f" || continue        # only files that HAVE the table
+  pattern_present "$f" "Per-File Alignment Table" || continue  # only files that HAVE the table
   # RI-0012 fix (2026-07-24): anchor on the real HEADING line (^## …), not a bare substring — a prose mention of
   # "Per-File Alignment Table" before the real heading used to capture the wrong block and false-flag a present table.
-  block=$(awk 'tolower($0) ~ /^## +per-file alignment table/{f=1;next} f&&/^## /{exit} f{print}' "$f")
+  block=$(heading_block "$f" "per-file alignment table")
   if ! echo "$block" | grep -qiE "Status"; then
     echo "   MISSING: $f (Per-File Alignment Table has no Status column)"; found_tagstatus=1
   elif ! echo "$block" | grep -qiE "DRAFT|PROPOSED|DECLARED|RATIFIED|PROVISIONAL|PLACEHOLDER|SCHEDULED|SPLIT|LIVE|COMPLETE|unchanged|modified|present|follow-on"; then
@@ -586,9 +612,16 @@ echo "[POCKET] changed dna/planning|protocols files missing a Pocket Declaration
 found_pocket=0
 for f in $changed_plan_proto; do
   [ -f "$f" ] || continue
-  grep -qiE "reasoning_scope" "$f" || { echo "   MISSING: $f (no reasoning_scope / Pocket Declaration)"; found_pocket=1; }
+  pattern_present "$f" "reasoning_scope" || { echo "   MISSING: $f (no reasoning_scope / Pocket Declaration)"; found_pocket=1; }
 done
 [ "$found_pocket" = 0 ] && echo "   (none — every changed plan/protocol carries a Pocket Declaration, or none changed)"
+
+# [PLAN-SECTIONS] — mandatory-section completeness (CISEM-ARCH-00420-PART12, RI-0032). WARN-only, NOT in ZF.
+bash dna/checks/plan-sections.sh 2>/dev/null
+
+# [GI-CONSIDERATION] — wisdom-citation check, extends I19/GI-10 (CISEM-ARCH-00420-PART13, Governor-RATIFIED,
+# GI-68 dual-reviewed). WARN-only, NOT in ZF.
+bash dna/checks/gi-consideration.sh 2>/dev/null
 
 # [CREATION-GATE] — universal mandatory-minimum: every governed file has a tag + a status (Governor audit 2026-07-20/21, RI-0009).
 # WARN-only (not in ZF); the BLOCK form is ARCH-00407 Phase 0. Closes the DECLARED≠WIRED hole where non-plan/non-CISEM-ID
@@ -627,14 +660,26 @@ done
 # dna/planning/ at Status RATIFIED MUST cite its Opus Stage-1 soundness verdict (contains "Stage-1" AND "sound").
 # Surfaces a plan rushed to RATIFIED without the soundness gate visibly satisfied — the exact hole a terse approval
 # opens. Keys on the Status VALUE (RI-0012: value-anchored, not a bare substring). WARN-only, NOT in ZF (BLOCK is ARCH-00270).
+# EXTENDED (CISEM-ARCH-00420-PART01, Governor-RATIFIED, GI-68 dual-reviewed; Sonnet-built per the plan's "The Rule"):
+# a RATIFIED plan must ALSO cite its GI-68 dual-review verdicts (a `## GI-68 Dual Review` heading, or
+# `dual.review|sonnet.*review|haiku.*review` evidence) OR carry an explicit `GI-68 exempt (ratified pre-decree)`
+# tag. NO date-auto-detection (Core Seed C — a git-touch-date proxy drifts on any incidental edit and false-flags
+# a legitimately-ratified plan); this reuses the SAME full-scan loop above, never a separate date filter.
 echo "[RATIFY-GATE] RATIFIED plans must cite an Opus Stage-1 soundness verdict (Principle 20; WARN-only):"
+echo "   [RATIFY-GATE] verifies a dual-review CITATION-EXISTS on every RATIFIED plan (pre-GI-68 plans carry an explicit exempt tag); it cannot verify review CONTENT was substantive — that is Opus's value-assessment role, never a mechanical check."
 found_ratgate=0
 for f in dna/planning/*.md; do
   [ -f "$f" ] || continue
-  grep -qiE "status:\**[[:space:]]*ratified" "$f" || continue
+  grep -qiE "(^|\| )\**status:\**[[:space:]]*ratified" "$f" || continue   # HEADER Status field only (RI-0012 fix: bare "status:.*ratified" false-matched PROSE like `Status: RATIFIED` inside a sentence or a line about ANOTHER node — anchor to line-start or a "| "-delimited header field; catches both `Status: RATIFIED` and `... | **Status:** RATIFIED` formats, excludes prose)
   if ! { grep -qiE "stage.?1" "$f" && grep -qiE "sound" "$f"; }; then
     echo "   PREMATURE-RATIFY: $f (Status RATIFIED but no Opus Stage-1 soundness verdict cited — informed-ratification, Principle 20)"
     found_ratgate=1
+  fi
+  if ! grep -qiE "^## +GI-68 Dual Review" "$f"; then   # heading only (GI-68 fix: the loose fallback dual.review|sonnet.*review|haiku.*review is an unanchored RI-0012-class substring that false-passes any plan whose PROSE mentions "dual review"/"sonnet review"; the /cisem-plan-verify skill always writes this exact heading, so the heading alone is the precise, non-gameable citation)
+    if ! grep -qiE "GI-68 exempt \(ratified pre-decree\)" "$f"; then
+      echo "   PREMATURE-RATIFY: $f (RATIFIED but no GI-68 dual-review verdict cited — CISEM-ARCH-00420-PART01)"
+      found_ratgate=1
+    fi
   fi
 done
 [ "$found_ratgate" = 0 ] && echo "   (none — every RATIFIED plan cites its Stage-1 soundness verdict)"

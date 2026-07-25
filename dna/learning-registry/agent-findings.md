@@ -731,3 +731,43 @@ Entry format (append, newest at bottom):
   (candidate: generalize as "any new id-citation check must anchor on a delimiter, and its planted test must include
   a prefix-collision fixture, not just an unrelated-fabricated-id fixture").
   **Status:** disclosed here + in the GI-68 dual-review return to Opus this same turn (Principle 21, not deferred).
+
+- [2026-07-25 · cisem-sonnet · BUILD of ARCH-00420-PART12/PART13/PART01 (Sonnet STRUCTURING tier, per Opus Core
+  Seeds A/B/C/D)] **Two real defects found via ACTUAL testing (not review-by-reading), both disclosed same-turn
+  (Principle 21), neither silently fixed (execute-the-plan discipline, flag don't override):**
+  (1) **PART01's literal Rule-specified `[RATIFY-GATE]` fallback regex `dual.review|sonnet.*review|haiku.*review`
+  is a genuine RI-0012 unanchored-substring defect, proven TWICE via real testing, not merely reasoned about:**
+  (a) it ALREADY false-passes 3 real pre-existing plans (ARCH-00408/00409/00410) — their prose describing the
+  generic "Stage 0 (iterative Haiku→Sonnet→Opus draft-review loop..." satisfies `haiku.*review` even though none
+  of them carry an actual GI-68 dual-review record; (b) it false-passed my OWN synthetic should-FLAG fixture on
+  first run, because the fixture's own descriptive comment/filename ("ratify-gate-dual-review should-FLAG")
+  contained the substring "dual-review" — I had to rename the fixture's prose to get a true negative case at all,
+  which is itself proof the pattern triggers on ANY mention of the phrase, not an actual review record. CLASS:
+  same family as GI-7/GI-70 (PART13) and the pre-fix [TAG-STATUS] bug — a bare OR of OR of prose-substring
+  patterns, with NO heading-anchor requirement, cannot distinguish "a real record" from "a sentence that merely
+  mentions the topic" (including a NEGATION sentence, e.g. "carries no ## GI-68 Dual Review section" — the
+  substring match doesn't see the negation). PREVENTION: anchor the fallback evidence the same way
+  `heading_present()` does (`^## ` + case-insensitive phrase), or drop the `sonnet.*review|haiku.*review`
+  alternatives entirely and require ONLY the `## GI-68 Dual Review` heading (or the explicit exempt tag) — the
+  loose OR-prose-alternatives buy nothing but false-passes. Built EXACTLY as Core Seed C / the plan's Rule text
+  specified (not silently redesigned); flagging for Opus to decide whether to tighten before committing.
+  (2) **Core Seed C's premise "the ONE pre-existing RATIFIED plan (ARCH-00395)" is factually STALE** — direct
+  testing (not the plan's own claimed verification) found FIVE real plans with an own-header `Status: RATIFIED`
+  predating the GI-68 decree (2026-07-23): ARCH-00395, ARCH-00396, ARCH-00408, ARCH-00409, ARCH-00410 (all
+  Governor-decreed pre-GI-68). Only ARCH-00395 was named for the one-time backfill tag. Once the `[RATIFY-GATE]`
+  extension is live, the other 4 will ALSO be flagged PREMATURE-RATIFY unless Opus extends the same backfill
+  tag to them (or judges some of them differently). This is the RI-0023 "premise-staleness" pattern (the same
+  class flagged twice already in the 2026-07-22→24 catch-up: ARCH-00405/ARCH-00320 stale-header corrections) —
+  now a THIRD instance, this time inside a Core Seed's own stated fact rather than a status field. PREVENTION:
+  a Core Seed that states a COUNT or an exhaustive claim ("the ONE X") about live repo state should be
+  RE-VERIFIED by the builder at build-time (not just trusted from the plan-drafting-time search), exactly as
+  done here — the class-fix is "verify-count-claims-at-build-time," not "trust the plan's Existing-First count."
+  Per I7 + the plan's OWN Rule text ("Opus stamps — I7"), I did **NOT** write the `GI-68 exempt (ratified
+  pre-decree)` tag onto ARCH-00395 myself — that single truth-adjacent edit is left for Opus, together with a
+  ruling on the 4 newly-discovered plans.
+  **Also disclosed (minor, non-blocking):** editing `dna/protocols/CISEM-ARCH-00230-file-creation-template.md`
+  (PART13 Deliverable 1) causes it to be a "changed dna/protocols file," which the PRE-EXISTING `[POCKET]` check
+  now WARN-flags (ARCH-00230 itself has no `reasoning_scope`/Pocket Declaration on its own header) — a genuine,
+  unrelated, pre-existing gap surfaced as a side-effect of touching the file, not introduced by this build, not
+  fixed here (out of scope).
+  **Status:** disclosed here + in the build return to Opus this same turn (Principle 21, not deferred).

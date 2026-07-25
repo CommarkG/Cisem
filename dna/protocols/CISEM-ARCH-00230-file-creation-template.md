@@ -31,6 +31,12 @@ Governor's direct catch, not treated as sacred.
 [ ] Self-compliance note if applicable
 [ ] Role, Who-serving, Pocket Declaration — present OR explicitly
     marked N/A, never silently absent
+[ ] wisdom_considered: (PLANS ONLY, CISEM-ARCH-00420-PART13, Governor-RATIFIED, GI-68 dual-reviewed
+    2026-07-25) — a plan header line citing ≥1 EXISTING governor-insight/root-insight id it depends on
+    or strengthens, e.g. `wisdom_considered: [GI-10, RI-0032]` (extends I19/GI-10, Existing-First,
+    §3.2b). Presence-not-count: ONE resolving id is sufficient; relevance is spot-checked by SAMPLING
+    inside the periodic GI-68 dual review, never a separate mechanism. Mechanically enforced by
+    `dna/checks/gi-consideration.sh` ([GI-CONSIDERATION], WARN-only, not in [ZF]).
 [ ] INHERITANCE (Governor-directed enhancement 2026-07-20) — every created element DECLARES its parent
     (corespine/element) and INHERITS its parent's WHAT (as testable assertions where applicable), and carries
     the DNA it is born into: the persona SSOT (`dna/corespines/CS-AI-PROFILING-001/persona-collaborator.md`,

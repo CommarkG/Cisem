@@ -1,6 +1,6 @@
 # PART01 — GI-68 dual-review MECHANISM (`/cisem-plan-verify` skill + [RATIFY-GATE] extension)
 **Parent:** CISEM-ARCH-00420 (Wiring Consolidation minitree root) | **Node ID:** CISEM-ARCH-00420-PART01
-**Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** CONSENSUS-REACHED (Opus soundness + GI-68 dual-review folded 2026-07-25, bootstrap hand-dispatch — awaiting Governor ratification, non-delegable; NOTHING built until ratified, A4/A11)
+**Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** COMPLETE — Governor-RATIFIED 2026-07-25 + BUILT + Opus-VERIFIED (skill + [RATIFY-GATE] extension on disk; planted test PASSES; TWO defects Opus caught + fixed post-build: dropped the unanchored fallback regex (RI-0012 class), and anchored [RATIFY-GATE]'s own selection to header-fields (was false-matching prose — a pre-existing RI-0012 bug); 5 pre-GI-68 RATIFIED plans exempt-tagged; gate verified CLEAN on the real corpus. RI-0035 routed.)
 **depth_level:** L1 | **Position in schema:** T-SYS, plan-review layer (a Claude Code skill + a plan-audit gate extension)
 **Priority:** 2 (its existing index slot per the wiring-consolidation-index; ships 3rd in Brain's build order 1→2→3 — unblocks 3 stuck plans) | **tags:** [gi-68, dual-review, cisem-plan-verify, ratify-gate, plan-review-mechanism]
 **Authorizing lineage:** `dna/planning/CISEM-ARCH-00420-items123-approach-consolidated.md` Item #3, BRAIN CONSENSUS 2026-07-25 (Planning Status APPROACH-RATIFIED) + `CISEM-ARCH-00420-wiring-consolidation-index.md` (minitree root, PART01 slot).
