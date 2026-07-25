@@ -27,3 +27,16 @@ fold into the intake corespine) that every external interaction inherits, with R
 RAW-EXTERNAL / injection-scan as its ribs, plus a standing rule: "external content is quarantined in dna/external-review/,
 never filed to a trusted layer unverified." Related: [[IBD-0022]] (MCP context-isolation), [[IBD-0030]] (neuronal-grid),
 the self-describing-manifest thread.
+
+## GOVERNOR ELEVATION + BRAIN CROSS-CHECK (2026-07-25)
+**Governor decree (verbatim — elevates the doctrine + resolves Graphify):**
+> i yariv want max usage of graphify and max isolation. build whatever is needed. take "saving resources on the build" — do all it necessary and have cisem establish this as axiom and other places
+**Reading (Opus):**
+1. **The WALL doctrine is ELEVATED to a CISEM AXIOM** (candidate A12) — establish it as such + wire it in the "other places" (CLAUDE.md §2.4 axioms + FOUND-00001 SSOT + governor-insights + the intake/tools/MCP ribs). Deep-core → plan + A11 consult + RI-0063 no-solo-ratify; the Governor's decree sets the GOAL, the wording+wiring is the N1 plan.
+2. **Graphify RESOLVED as the A9 synthesis, not (a)/(b): MAX USAGE ⇄ MAX ISOLATION** — use ALL of Graphify's value AND build whatever isolation is needed so ZERO of it reaches governed/trusted state (no CLAUDE.md write, no trusted-path reach, quarantined output). "Don't save resources on the build" = build the isolation THOROUGHLY. Executed via a re-plan of ARCH-00422 (isolation architecture) → ratify → build. Touches the trusted path → still RI-0036/RI-0038 gated.
+
+**Brain cross-check FOLDED (its ribs + gaps — used, verified consistent, per the wall):**
+- +RIB: **source-stripping before absorption** — strip platform naming/IDs/tooling from external material, keep essence only (already in practice via PAE / RAW→PURIFIED; name it as a wall mechanism).
+- +RIB: **external-AI output = unratified suggestion material** (Gemini/other platforms already treated as raw, not inherited fact — same doctrine, other source type).
+- GAP to settle in the N1 wiring: **the PROMOTION PATH** — a DEFINED checklist for moving something quarantine→trusted, not ad hoc per item.
+- NUANCE to make crisp in N1: **the wall applies to CONTENT ORIGIN, not MESSENGER** — the Governor relaying a third party's words does NOT launder the source; that content stays external+unverified even though the Governor is trusted authority.
