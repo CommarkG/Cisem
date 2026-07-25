@@ -504,7 +504,7 @@ Maps 10+ pending items (BP-0001–0010, ARCH-00417/418/419) into 4 tiers with be
 **Consolidation opportunities (3):**
 1. Connect planning to governor insights ([GI-CONSIDERATION] check)
 2. Wire pending-dependency enforcement ([PENDING-DEPENDENCY] in plan-audit.sh)
-3. Create planning system completion (ARCH-00420 analysis input to ARCH-00421 or ARCH-00190 v1.2)
+3. Create planning system completion (ARCH-00420 analysis input to a new ARCH-00421 (NOT-YET-A-NODE — candidate) or ARCH-00190 v1.2)
 
 ---
 

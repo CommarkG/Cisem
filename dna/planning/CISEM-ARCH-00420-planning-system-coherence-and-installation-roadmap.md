@@ -218,7 +218,7 @@ Currently ARCH-00190 is LIVE but not "complete" in the sense that:
 - It does NOT define the FEEDBACK LOOP (how pending work feeds back into new planning)
 - It does NOT define the GOVERNOR-INSIGHT INTEGRATION (how GI entries inform planning)
 
-**Suggestion:** Create CISEM-ARCH-00421 (Planning System Integration + Feedback Loop) as a follow-on, OR extend ARCH-00190 v1.2 to include these feedback surfaces.
+**Suggestion:** Create a new ARCH node — `CISEM-ARCH-00421` (NOT-YET-A-NODE — a follow-on candidate, not an existing node) "Planning System Integration + Feedback Loop" — as a follow-on, OR extend ARCH-00190 v1.2 to include these feedback surfaces.
 
 ---
 
