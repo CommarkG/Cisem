@@ -61,7 +61,17 @@ Read: CLAUDE.md → this file → dna/quality-ledger.yaml (latest runs) → dna/
 dna/queue/README.md. Then you have full context with zero conversation dependency. First move:
 process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
-## COMPACT STATE — 2026-07-18 (latest; use THIS to resume after compact/new tab)
+## COMPACT STATE — 2026-07-25 (SUPERSEDES all below; THE authoritative resume anchor)
+**git HEAD ~50072ad+, [ZF] green, pushed, tree clean.** RESUME PATH: CLAUDE.md → this block → `dna/learning-registry/session-learning-index.yaml` (`session_2026_07_24_25_harvest` — the full fruits) → `dna/planning/CISEM-ARCH-00420-MASTER-consolidated-backlog-program.md` (THE ranked+priced backlog) → `dna/learning-registry/root-insights.yaml` RI-0028..0036 → `dna/ibd/IBD-0030-*` (Governor brain-dump).
+- **BUILT+LIVE this session (5 enforcement mechanisms):** PART02 [BUILD-STATE] · PART08 plan-authorization gate (write-time hook + BLOCK5 backstop = the A4/A11 enforcement) · PART12 [PLAN-SECTIONS] · PART13 [GI-CONSIDERATION] (wisdom-at-plan-time, Governor Q6/Q7) · PART01 GI-68 mechanism (/cisem-plan-verify skill + [RATIFY-GATE] ext). All verified, [ZF] green.
+- **THE CORE LESSON — RI-0036:** Opus freestyled governed-file EDITS + scope-creep (unratified) around the ratified builds. The gate is NEW-FILE-only → edits ungated = where freestyle lives. Behavioral rules keep failing (known RI-0004/GI-52). FIX = extend the gate to Edit + scope-boundary; ranked #2.
+- **STANDING GOVERNOR FRAME:** no implementation without a ratified plan (direction → Opus+Brain consensus → present → Governor ratifies → build → ZF → Haiku+Sonnet review). **PAUSE new construction is ON** — nothing builds until Governor lifts it + ratifies an item off the MASTER backlog.
+- **BACKLOG order (Brain-consensus):** 1 RIPL-drain/prevention-enforcement (+Rejected-Path-Memory) · 2 edit-gating(RI-0036) · 3 PART14 · 4 ratify ARCH-00330(minitree DRAFT, NOT a hard blocker) · 5 AI-profiling(HIGH) · 6 neuronal-grid(HIGH) · 7 GI-68-review 00270v2/00418/00419(unblocked) · 8-10 turn-cadence/educational-template/F-RECON.
+- **jq:** installed + on CISEM PATH (C:/Users/finky/bin); write-time hook ACTIVATES NEXT SESSION (loads at startup); backstop live now.
+- **Brain:** awaiting a PASTE of the MASTER doc (sync-lag). Consensus outcomes sound.
+- **Minor follow-ons (WARN):** extract_citation should tolerate **-bold; [CHECK-LINT] false-positives the anchored [RATIFY-GATE] regex; [I16] xargs-quote degradation on Windows.
+
+## COMPACT STATE — 2026-07-18 (older; superseded by the 2026-07-25 block above)
 - **Invariants I1–I19** (I19 = Existing-First anti-duplication; I18 = Creation Triad; I17 = PE-pocket).
 - **RATIFIED:** ARCH-00008, ARCH-00011, ARCH-00320, CS-MASTER-VALIDATION-001 (foundational).
 - **Engines:** `plan-audit.sh` (WARN + I13 seed-strip BLOCK, pre-commit); `dna/queue/` build-prompt intake.
