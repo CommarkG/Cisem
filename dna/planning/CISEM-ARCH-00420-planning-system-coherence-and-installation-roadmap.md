@@ -277,4 +277,8 @@ The analysis above is SOUND but its roadmap is now partly stale. Reconciled to c
 
 **Each item above installs via the full pipeline** (goal→approach→plan→Opus-soundness→GI-68 dual-review→Governor ratify→build) as its own ARCH-00420 PART. Items 1-2 are the highest-leverage (they close exactly the gaps this refresh + the original 28%-dangling both name). **Next action on Governor go: PART for item #1 or #2.**
 
+## BRAIN REVIEW ADDITIONS 2026-07-25 (post items #1-3 dual review)
+- **PART14 candidate — `[CHECK-LINT]` extended to check-DESIGN plans (NEW, pulled off DISTILL-PENDING per Brain).** Rationale: TWO live instances this session of the substring-vs-field class (PART02's original [CHECK-LINT] trigger, and PART13's GI-id lookup) — the second proves the gap. Cheap (a lint pattern on plan PROSE, not new machinery); catches the class at plan-authoring, EARLIER than the build-time [CHECK-LINT] backstop. Insert around order-position #1-2 (cheap + high-leverage, same tier as [PLAN-SECTIONS]). Home: RI-0034.
+- **SYSTEMIC (Brain): the "route to harvest" / DISTILL-PENDING pattern is unreliable without the RIPL-DRAIN mechanism (BP-0009 = completion-propagation, the Governor's top-priority parked item).** Two concrete items would otherwise die quietly: the PART14 candidate above + the RI-0029/id-uniqueness lint (deferred this session). This is an argument to ELEVATE the RIPL-drain in the order — it is the ENABLING dependency that makes every "routed, not yet built" note actually resolve. Flagged for the Governor's reprioritization call (not unilaterally reordered).
+
 **End of analysis + refresh. The order above is the saved best-order; ratification of the sequence (or a reorder) is the Governor's call.**
