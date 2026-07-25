@@ -706,3 +706,28 @@ Entry format (append, newest at bottom):
      accurate to the approach doc's Brain-verified claim (approach doc line 45) before citing it in PART01,
      rather than trusting the approach doc's summary alone.
   **Status:** disclosed here + in this dispatch's return report to Opus this same turn (Principle 21, not deferred).
+
+- [2026-07-25 · cisem-sonnet · GI-68 DESIGN/IMPLEMENTABILITY review of ARCH-00420-PART01/PART12/PART13 (dual-review,
+  design lens)] **Three concrete, source-verified findings, all with fixes, all disclosed same-turn (Principle 21):**
+  (1) PART12's shared-lib refactor names only two primitives (`heading_present`/`pattern_present`) but the REAL
+  [TAG-STATUS] check (plan-audit.sh:566) does BLOCK extraction via `awk` between two headings, not a boolean
+  presence test — the named primitives cannot literally rebuild it; a third `heading_block()` primitive is needed
+  or TAG-STATUS must be excluded from the refactor. CLASS: "reuse via a named primitive list" must be checked
+  against the ACTUAL behavior of what it claims to subsume (RI-0025/RI-0034 sibling — reuse-behavior-completeness),
+  not just its presence/absence semantics. (2) PART12 also claims refactoring [ROUTING]/[ALIGN] to `heading_present`
+  (anchored to `^## `) is "SAME regex, SAME scope, plumbing only" — but their CURRENT code (plan-audit.sh:541,550) is
+  an UNANCHORED substring `grep -qiE` with no heading requirement; switching to a heading-anchored primitive is a
+  real semantic tightening, not pure plumbing (their own no-regression diff-proof would likely catch it, but the
+  claim as written is inaccurate — recommend using `pattern_present`, their own unanchored primitive, for these 2
+  legacy checks and reserving `heading_present` for the 8 brand-new sections only). (3) PART13's
+  `gi-consideration.sh` design (`grep -q "id: <ID>"` against governor-insights.yaml) is NOT end-anchored — since
+  GI ids are zero-padded 2-digit today (GI-01..GI-72), a malformed/fabricated citation like `GI-7` would falsely
+  PASS via substring match against a real line `id: GI-70,` or `id: GI-72,` (verified: "id: GI-7" IS a literal
+  prefix of "id: GI-70,"). This is the EXACT RI-0012 substring-vs-field class this same repo already fixed once in
+  [TAG-STATUS] — PART13 reintroduces it in a sibling check. The planted "should-FLAG (fabricated id)" fixture uses
+  `GI-99999`, which happens NOT to collide, so the fixture would pass even with the bug present (sample-tested-as-
+  class-tested, RI-0008 class). Fix: anchor the grep with a delimiter, e.g. `grep -qE "id: ${ID}(,|$)"`, and add a
+  collision-class fixture (a citation that is a strict prefix of a real id) to the planted test. → DISTILL-PENDING
+  (candidate: generalize as "any new id-citation check must anchor on a delimiter, and its planted test must include
+  a prefix-collision fixture, not just an unrelated-fabricated-id fixture").
+  **Status:** disclosed here + in the GI-68 dual-review return to Opus this same turn (Principle 21, not deferred).
