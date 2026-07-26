@@ -129,6 +129,9 @@ CS-RESEARCH-001:
   goal: "Turn research from ad-hoc AI freestyling into governed CISEM infrastructure — one inheritance chain every research act obeys."
   content_location:
     canonical_file: dna/corespines/CS-RESEARCH-001/research-corespine-PLACEHOLDER.md
+    # appendix (referenced, not co-equal — Brain consensus 2026-07-26, distributed-body ruled a defect):
+    # dna/corespines/CS-RESEARCH-001/research-hierarchy-tree-PLACEHOLDER.md — the root/branch/instance tree
+    # shape, explicitly referenced FROM the canonical file above; NOT a second body (A8/I10, no companion_files field)
   wizard: ARCH-00394            # full manifest to be created via wizard at ratification
   depth_level: L1
   authorizing_basis: "Governor directive 2026-07-26 (capture-first placeholder, gate-exempt like IBD); ratified build pending Brain consensus + plan (A4/A11)"

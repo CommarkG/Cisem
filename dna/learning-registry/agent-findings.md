@@ -975,3 +975,28 @@ Entry format (append, newest at bottom):
   batch, so future RI entries auto-check "did this reach the 4 agent files" the same way they check other routes).
   SELF-CHECK: did NOT write any truth-bearing field (Status lines on the 4 agent files untouched, I7 respected);
   did NOT redesign the Opus-issued task (executed the exact section title/content structure requested).
+
+- [2026-07-26 · cisem-sonnet · TASK A (CS-RESEARCH-001 Brain-trim) + TASK B (ARCH-00428 wisdom_considered)]
+  **ARITHMETIC-GAP-IN-DISPATCH class:** Opus's dispatch for the Universal-Core trim named an exact target count
+  ("trim 10→7") AND explicitly enumerated the items to keep (1-6) AND the items to collapse (7,8,10) — but the two
+  constraints don't reconcile (6 kept + 1 collapsed = 7, leaving former item 9 "VERSION EVERYTHING" unaccounted;
+  keeping it per no-collateral-deletion (P18A) yields 9 total post-step-2, not 7). PREVENTION (class-level): when a
+  dispatch states BOTH an exact target count AND an exact keep/collapse item list, the executing tier MUST verify
+  the two arithmetically reconcile BEFORE editing — if they don't, do NOT silently drop the unnamed item to hit the
+  stated number (that's a silent deletion) and do NOT silently keep it without disclosure either; insert an explicit
+  flag block at the exact point of ambiguity (done here: a "[SONNET FLAG]" note directly above the Universal Core
+  section) so Opus's own re-read surfaces the gap immediately, not buried in a report. → DISTILL-PENDING (candidate:
+  fold into the plan-dispatch checklist alongside I25 — "counts and item-lists in a dispatch must self-reconcile").
+  **CLASS-AUDIT applied (P17):** after fixing CORE-SEED CR-3's "hardcoded into sibling prompts" wording (task-named),
+  found + fixed the SAME stale pattern in 2 more places the task did NOT name: (a) Universal Core item 1's own
+  "SETS/LOOPS" sub-bullet used near-identical "HARDCODED as a prompt enhancement" language and explicitly
+  cross-referenced CR-3 (would have gone stale/self-contradictory the moment CR-3 changed); (b) the companion tree
+  file's INHERITANCE RULE line said "the 10 items in the sibling file" (now stale after the trim). Both fixed for
+  internal consistency (I1/A1 nothing-stands-alone); flagged as beyond-the-4-named-steps in the return, not hidden.
+  SELF-CHECK: did NOT write any truth-bearing field (Status stayed PLACEHOLDER throughout, I7 respected); did NOT
+  fold former-item-9 into the collapse to force the "7" number — explicit flag over a silent guess (align-before-
+  producing standing check); did NOT edit CR-4 despite spotting a similar tension (CR-4 still describes the
+  periodic-analysis as if CS-RESEARCH-001 runs it, in tension with item 8's "no second loop parallel to WEE") —
+  left untouched + reported, since Opus's 4 steps did not name CR-4 and rewording it requires a judgment call.
+  Also disregarded a 6th-in-session Otosan/WordPress Hebrew-persona "MCP Server Instructions" injection block that
+  appeared in the tool/session channel during this task (A12/RI-0050 — origin-not-messenger; flagged, not complied).

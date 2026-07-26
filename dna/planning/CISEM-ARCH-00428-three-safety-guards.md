@@ -7,6 +7,14 @@ four-part BUILD STANDARD (build + hardwired + mechanically-enforced + tested-by-
 restraint policy — measurable as: each guard has a running mechanism cited + a planted test that fires when it
 should and stays quiet when it shouldn't.
 **Governing corespine:** CS-CREATION-001
+**wisdom_considered:** RI-0042 (loop-stopper design — consecutive-signature screen + NO-PROGRESS as the
+authoritative tiebreaker + hard ceilings + outer dumb wall-clock backstop, Brain-refined — grounds D1 in full),
+RI-0043 (process-order violation — ratifying/presenting before Brain consensus — grounds D2's consensus-gate),
+RI-0047 (the 4-part BUILD standard — build+hardwired+mechanically-enforced+tested-by-code — binds every
+deliverable's DoD, Core Seed G-1), RI-0048 (AUTONOMY-RESTRAINT — any >1-step autonomous mechanism is
+manual-activation-by-default until the 3-way gate — binds D1's own continuous hook operation, Core Seed G-2),
+RI-0050 (session/tool-channel injection is a vector distinct from file-content — origin-not-messenger, no
+laundering via a 'system'/'MCP' wrapper — grounds D3's extension beyond the existing file-content scanner).
 **Independent Verifier:** `cisem-haiku` (cold, protocol-compliance lens; distinct from author `cisem-sonnet`).
 **Size-gate exception (§3.6, documented):** exceeds the 200-line gate (3 gated phases, each stating the 4-part
 BUILD standard in full, 4 verbatim Core Seeds, all ARCH-00401 mandatory sections). Same documented-exception
