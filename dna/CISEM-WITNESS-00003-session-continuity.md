@@ -62,7 +62,7 @@ dna/queue/README.md. Then you have full context with zero conversation dependenc
 process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
 ## COMPACT STATE — 2026-07-26 EVENING (SUPERSEDES all below; THE authoritative resume anchor — DESIGN→BUILD seam)
-**RESUME:** CLAUDE.md → this block → `dna/learning-registry/root-insights.yaml` RI-0037..0052 (+RI-0041b) → the 3 RATIFIED plans (ARCH-00426/00427/00428) → `dna/queue/CONSENSUS-PACKAGE-for-Brain-2026-07-26.md`. git HEAD pushed. **COMMIT DISCIPLINE: `git commit` with `run_in_background:true` (plan-audit is slow, RI-0041b — the background lets the gate run to completion); NEVER `--no-verify`.** New governed FILES need an `authorizing_plan:` (PART08) — else held out.
+**RESUME:** CLAUDE.md → this block → **`dna/learning-registry/session-harvest-2026-07-26-EVENING.md` (full narrative harvest — read FIRST)** → `dna/learning-registry/root-insights.yaml` RI-0037..0052 (+RI-0041b) → the 3 RATIFIED plans (ARCH-00426/00427/00428) → `dna/queue/CONSENSUS-PACKAGE-for-Brain-2026-07-26.md`. git HEAD pushed. **COMMIT DISCIPLINE: `git commit` with `run_in_background:true` (plan-audit is slow, RI-0041b — the background lets the gate run to completion); NEVER `--no-verify`; SERIALIZE — never fire a second background commit while one is running (§1.7 shared-index race — it bundles the second's `git add` into the first's commit).** New governed FILES need an `authorizing_plan:` (PART08) — else held out.
 
 **THIS SESSION'S FRUITS (the design-and-ratify phase — now COMPLETE):**
 - **RATIFIED 2026-07-26 (Governor "I yriv ratify all 4" + D4) — each Opus-SOUND + Haiku Independent-Verifier PASSED + Brain-concur:**
