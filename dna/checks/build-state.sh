@@ -15,7 +15,7 @@
 #   bracket/regex pattern — a whole-file scan lets one stray marker clear every absent row in a
 #   multi-row plan (proven on ARCH-00406's 11-row table).
 # CORE-SEED 3 (existence): `test -e` on FILE-PATH-SHAPED tokens ONLY (dna|frontend|.claude|.git/hooks
-#   paths ending .md/.sh/.yaml/.yml/.js/.html) — never inferred by content-grep. SHAPE-DISCLOSURE
+#   paths ending .md/.sh/.yaml/.yml/.json/.js/.html) — never inferred by content-grep. SHAPE-DISCLOSURE
 #   printed every run: this check covers NEW-FILE existence only, NOT edit-in-place completeness.
 # CORE-SEED 4: WARN-only, always exit 0; never writes/edits a truth-bearing Status field on any real
 #   plan (I7 — Opus stamps truth); fixtures live under dna/checks/fixtures/ (outside `find dna/planning`)
@@ -67,7 +67,11 @@ extract_token() {
 fi
 
 # ── deliverable path extraction (Step 4) ────────────────────────────────────────────────────────
-path_re='(dna|frontend|\.claude|\.git/hooks)/[A-Za-z0-9_./-]*\.(md|sh|yaml|yml|js|html)'
+# NOTE (RI-0031 recurrence fix 2026-07-27): `json` MUST precede/accompany `js` in the alternation —
+# without it, POSIX ERE matched `.js` INSIDE `.json`, truncating every `.claude/settings.json`
+# deliverable to a phantom `.claude/settings.js` that never exists → 4 FALSE FLAGs (PART08/00422/00428
+# + PART01). POSIX leftmost-LONGEST now picks `json` over `js` on a real `.json` path. Verified in isolation.
+path_re='(dna|frontend|\.claude|\.git/hooks)/[A-Za-z0-9_./-]*\.(md|sh|yaml|yml|json|js|html)'
 
 section_block() {
   local f="$1" heading_re="$2"
@@ -103,6 +107,9 @@ for f in $(find "$scan_dir" -name '*.md' 2>/dev/null | sort); do
 
   for path in $deliverables; do
     [ -z "$path" ] && continue
+    # placeholder patterns (e.g. CISEM-ARCH-NNNNN-....md) are template shapes, not real deliverables
+    # — a plan that itself CREATES other plans names a PATTERN, never a checkable file (RI-0031).
+    case "$path" in *NNNNN*|*'....'*) continue;; esac
     if [ -e "$path" ]; then
       continue
     fi
