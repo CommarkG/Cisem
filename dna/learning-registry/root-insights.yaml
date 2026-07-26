@@ -534,4 +534,36 @@ insights:
       - "A12 / CLAUDE.md (messenger-does-not-launder, session channel); GI-51 clean-posture"
       - "Governor ops-decision: disconnect non-CISEM MCP connectors from CISEM tabs"
     status: PROPOSED
+  RI-0051:
+    date: "2026-07-26"
+    trigger: "Verification pass — Opus earlier asserted 'PART08 write-time hook may not be wired' from a [BUILD-STATE] flag about `.claude/settings.js` (absent) in a plan's alignment table. Haiku verification found the hook IS wired in `.claude/settings.json` (lines 18-20): a stale `.js`-vs-`.json` deliverable-NAME in the plan doc, NOT a missing mechanism."
+    root_insight: >
+      NEGATIVE-CLAIM-NEEDS-VERIFICATION (presence≠behavior, inverted): asserting a mechanism is MISSING /
+      not-wired based on a plan doc's deliverable-name or an intermediate check's flag — WITHOUT reading the
+      ACTUAL running config — is the presence-vs-behavior error run backwards. A [BUILD-STATE] flag on a stale
+      doc filename is NOT evidence the mechanism is absent; the mechanism lives in the real config
+      (`settings.json`, not the doc's `.settings.js`). PREVENTION: verify the ACTUAL mechanism/config before
+      asserting missing OR present; a check-flag or a doc's deliverable-name is a POINTER to verify, never the
+      truth. Both 'wired' AND 'not-wired' claims require reading the real artifact. (Opus made exactly the error
+      the opus-pe standing checks now guard — apply them to myself.)
+    routes_to:
+      - "cisem-opus-pe standing checks (extend presence≠behavior explicitly to NEGATIVE/absence claims)"
+      - "the PART08 plan doc: fix the stale `.settings.js` -> `.settings.json` deliverable name; Brain"
+    status: PROPOSED
+  RI-0052:
+    date: "2026-07-26"
+    trigger: "[RATIFY-GATE] flags ARCH-00423 + ARCH-00425 as 'RATIFIED but no GI-68 verdict cited', yet Haiku verified both contain a logged 'GI-68 Dual-Review Verdict — CLEARED' (ARCH-00423:188, ARCH-00425:90). A check-vs-content discrepancy."
+    root_insight: >
+      CHECK-FINDING-IS-A-CLAIM-TO-VERIFY: a mechanical check's finding is itself a CLAIM to verify against the
+      real content, not automatic truth. A check can false-positive (regex not matching the real citation
+      format) and cry-wolf, OR reveal a real gap. Here the GI-68 CLEARED verdicts ARE logged, so [RATIFY-GATE]
+      appears to false-positive on 00423/00425 (format/regex mismatch — ties [CHECK-LINT]/RI-0012). PER-CASE:
+      ARCH-00422's GI-68 is genuinely PENDING (build halted) so ITS flag may be legitimate. PREVENTION: (a)
+      verify a check's finding against the actual artifact before acting; (b) fix [RATIFY-GATE]'s matcher to
+      recognize the logged 'GI-68 Dual-Review Verdict' citation form so it stops false-flagging. NOT-YET-
+      DIAGNOSED: the exact regex-vs-format cause needs a targeted read of the check + the citations.
+    routes_to:
+      - "[RATIFY-GATE] check matcher fix (recognize logged verdict form); [CHECK-LINT] (RI-0012 class)"
+      - "verification-by-code pass follow-up (diagnose the exact regex gap); Brain"
+    status: PROPOSED
 
