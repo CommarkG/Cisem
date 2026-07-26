@@ -13,7 +13,16 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 428 }  # 00427 = Opus Orchestration & Tier-Automation plan (D1 §3.0 rubric gap-fill [research->GATHER,
+ARCH:    { next_seq: 429 }  # 00428 = Three Safety Guards plan (D1 loop-stopper [Claude Code PostToolUse/Stop hook +
+# session-scoped state file; consecutive-signature screen + NO-PROGRESS authoritative tiebreaker + hard ceilings +
+# 3 context-profiles + polling-interval signal + outer dumb wall-clock backstop, per RI-0042 Brain-refined] + D2
+# consensus-gate [self-check + dna/checks/consensus-gate.sh scanning digest-class files for ratify/decide language
+# lacking a cited consensus artifact, per RI-0043] + D3 injection-scan extension [ENHANCES existing
+# dna/checks/injection-scanner.sh ARCH-00411 guard #5 with a session/tool-channel capture protocol -> new
+# dna/security/CISEM-ARCH-00428-session-injection-log-RAW.md, per RI-0050]; 4 Core Seeds G-1/G-2/G-3/G-4 (4-part
+# BUILD standard RI-0047, RI-0048-aligned outer backstop, RI-0042 no-progress-authoritative + no-self-cert, RI-0050
+# both-vectors); DRAFT / AWAITING-BUILDER-REVIEW; Sonnet 2026-07-26, dispatched by Opus per Governor-approved draft
+# + Brain CONCUR 2026-07-26). 00427 = Opus Orchestration & Tier-Automation plan (D1 §3.0 rubric gap-fill [research->GATHER,
 # RI-0044] + D4 [EXECUTOR-ROUTE] mechanical opus-executor-flag check [Routed-By: commit trailer, new
 # opus_executor_incidents.mechanical_flags metric] + D2 versioned subagent-return schema [dna/schemas/, schema_version,
 # STALE-SCHEMA flag] + D3 keep-context-lean avg_subagent_return_size_kb metric [disclosed N=3 starting default] + D5

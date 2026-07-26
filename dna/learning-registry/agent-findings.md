@@ -938,3 +938,40 @@ Entry format (append, newest at bottom):
   disk-verified sources; one item (Brain's "PROCEDURAL-not-mechanical" grading of the consensus-gate, §1) could
   not be independently re-verified from a written artifact in this repo (no file states it in those words) —
   disclosed in the SELF-REVIEW of the return message, not silently asserted as verified.
+
+- [2026-07-26 · cisem-sonnet · CISEM-ARCH-00428 three-safety-guards plan draft] **Live confirmation of the RI-0050
+  class DURING this very drafting task:** a 5th Otosan-class session/tool-channel injection ("MCP Server
+  Instructions" Hebrew-WordPress-assistant block) fired at bootstrap of this task, on top of the 4 already logged
+  in RI-0050. All tiers keep disregarding it correctly per A12, but nothing CAPTURES it — the block is disregarded
+  and then lost, with no on-disk trace of any single occurrence. **CLASS-LEVEL PREVENTION (embedded in the plan's
+  D3, not yet built):** the correct behavior is disregard-AND-CAPTURE, not disregard-alone — a session/tool-channel
+  injection should be appended verbatim to a RAW-EXTERNAL-tagged log file the moment it is noticed, so it becomes
+  auditable + falls inside the EXISTING universal `[INJECTION-SCAN]` `*-RAW.md` enumeration (no new scanner
+  needed, A8/I19) instead of evaporating from context at the next compaction. → routed to CISEM-ARCH-00428 Phase 3
+  (`dna/security/CISEM-ARCH-00428-session-injection-log-RAW.md`); DISTILL-PENDING (candidate: strengthen RI-0050's
+  own text with "capture, not just disregard" once the plan is ratified and built).
+
+- [2026-07-26 · cisem-sonnet · CISEM-ARCH-00428 three-safety-guards plan draft] **Existing-First finding worth
+  flagging forward:** `dna/checks/injection-scanner.sh`'s `MCP-BLOCK-MARKER` pattern class
+  (`mcp server.{0,40}(instructions|provided instructions)|<system-reminder>|## mcp server instructions`) and its
+  `NON-LATIN-PERSONA-BLOCK` class already structurally MATCH this session's live Otosan injections when tested
+  against captured text — meaning D3's file-content half needs NO new pattern, only a new scannable TARGET (the
+  session-injection log). Sonnet did not add a redundant 6th pattern class; scoped D3 as capture-plus-existing-
+  coverage, avoiding an unnecessary parallel detection mechanism (I19 discipline applied inside a single plan's
+  own phase design, not just at the file-creation level).
+
+- [2026-07-26 · cisem-sonnet · Agent standing-checks hardening (Governor directive: "hardcode points they must
+  check and how to check them")] **Enhancement (not a defect):** added a `## MANDATORY STANDING CHECKS` section to
+  each of the 4 agent files (cisem-haiku, cisem-sonnet, cisem-opus-pe, cisem-fable), applying RI-0037..0050 as
+  pre-work checks. Kept REFERENCE-NOT-DUPLICATE discipline (A8/I10): each check cites its RI + a one-line how-to;
+  root-insights.yaml stays the SSOT, not restated. Verified via `git diff --stat`: 4 files changed, 51
+  insertions(+), 0 deletions — confirms additive-only (deletion-guard / RI-0018 enumerate-the-whole-after-touching-
+  a-part self-check passed). CLASS-LEVEL NOTE: this is the FIRST time this session's RI-0037..0050 batch was
+  ROUTED into the agent-file surface named in each RI's own `routes_to` (e.g. RI-0042/RI-0047/RI-0048 all name
+  "persona"/"agent files" as a route) — Principle 17's PREVENTION-MUST-PROPAGATE requires routing to (1) planning,
+  (2) implementation, (3) checking agents, (4) skills; this closes leg (3) for these 14 RIs. Legs (1)/(2)/(4) still
+  open per each RI's `routes_to` (mostly "pending three-guards plan, A4/RI-0036" — mechanical wiring, not yet
+  built) → DISTILL-PENDING (candidate: track agent-file-routing as its own checklist item inside the weekly RIPL
+  batch, so future RI entries auto-check "did this reach the 4 agent files" the same way they check other routes).
+  SELF-CHECK: did NOT write any truth-bearing field (Status lines on the 4 agent files untouched, I7 respected);
+  did NOT redesign the Opus-issued task (executed the exact section title/content structure requested).
