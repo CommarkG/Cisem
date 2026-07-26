@@ -314,7 +314,18 @@ insights:
     routes_to:
       - "ARCH-00407 BLOCK-flip backlog (pre-commit performance optimization, parked)"
       - "candidate RI for the weekly RIPL batch (performance class learnings)"
-    status: PARKED
+    correction_2026_07_26: >
+      Attempted fix FAILED (caught by test-first-in-isolation; live gate NEVER touched): the hoist replaced the
+      UNANCHORED registry check `\"?${id}\"?:` with an ANCHORED `^...:` pre-filter, which silently drops
+      nested/indented keys (e.g. CS-DATA-PATTERNS-001, CS-DOCGEN-001) -> would have made the gate FALSE-FLAG
+      registered nodes as UNRESOLVED. LESSON (class-level): a hoist that replaces a per-item regex with a one-time
+      lookup set MUST preserve the ORIGINAL match semantics (anchored-vs-unanchored, quoted-vs-unquoted), not just
+      the common case (ties the RI-0012 anchoring family). ALSO: I1's O(n²) is NOT the dominant runtime cost — the
+      full audit exceeded 580s and had already run PAST I1 into [BUILD-STATE]; the slowness is spread across checks,
+      esp. I16's whole-tree per-file scans (flagged 2026-07-22, still unfixed). RE-DIAGNOSIS needed: PROFILE which
+      checks dominate before fixing. Opus's confident "ready to apply" design was buggy + incomplete — the
+      test-first + human checkpoint caught it (vindicates both disciplines).
+    status: PARKED — re-diagnosis needed (Opus's I1-hoist was buggy + incomplete; caught by test, NOT applied)
   RI-0042:
     date: "2026-07-26"
     trigger: "Governor caught a subagent (cisem-sonnet) spinning: it launched plan-audit.sh in the BACKGROUND, then re-Read the same output file 6+ times while polling for completion — near-identical reads, zero state change. 'looks like a loop - is it?'"

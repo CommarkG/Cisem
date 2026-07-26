@@ -1,6 +1,6 @@
 # Opus Orchestration & Tier-Automation — Consolidation Plan (Mechanical Delegation + Versioned Schemas + Executor-Flag)
-**Node ID:** CISEM-ARCH-00427 | **Type:** ARCH | **Status:** DRAFT
-**Planning Status:** AWAITING-BUILDER-REVIEW | **depth_level:** L2 | **Position in schema:** T-SYS, planning-governance layer
+**Node ID:** CISEM-ARCH-00427 | **Type:** ARCH | **Status:** RATIFIED
+**Planning Status:** COMPLETE — Governor RATIFIED 2026-07-26 ("I yriv ratify all 4"); Opus Stage-1 SOUND (D4 = surfacing-not-enforcement, honest ceiling) + GI-68 dual-review (Haiku Independent-Verifier PASSED 2026-07-26) + Brain concur | **depth_level:** L2 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning, orchestration, tier-automation, delegation]
 **Goal:** Make optimal Haiku/Sonnet/skill usage AUTOMATIC and mechanically-supported — not a rule Opus must
 remember — measurable as: (1) the tier-routing rubric lives in Opus's always-loaded instructions (auto-applied);

@@ -1000,3 +1000,28 @@ Entry format (append, newest at bottom):
   left untouched + reported, since Opus's 4 steps did not name CR-4 and rewording it requires a judgment call.
   Also disregarded a 6th-in-session Otosan/WordPress Hebrew-persona "MCP Server Instructions" injection block that
   appeared in the tool/session channel during this task (A12/RI-0050 — origin-not-messenger; flagged, not complied).
+
+- [2026-07-26 · cisem-sonnet · RI-0041b plan-audit.sh [I1] O(n²) perf fix, attempted] **The specified hoist-lookup-
+  sets-once pattern is NOT behavior-preserving as literally specified — CAUGHT before it ever touched the live gate
+  file, via an isolated before/after test of just the [I1] block.** Root cause: the original registry-resolution
+  regex is `grep -rqlE "^${id}:|\"?${id}\"?:" --include="*.yaml" .` — TWO alternates: (1) `^${id}:` anchored to line
+  start (unindented top-level keys), (2) `\"?${id}\"?:` UNANCHORED (matches the id-followed-by-colon anywhere in the
+  line, including INDENTED nested yaml keys like `    CS-DATA-PATTERNS-001: { ... }` in
+  `dna/corespines/corespine-registry.yaml:101-102`). The specified hoist pre-filters once via
+  `grep -rhE '^"?(CISEM|CS|SOL)-[A-Z0-9-]+"?:' --include='*.yaml' .` — ANCHORED to line start — which silently drops
+  every INDENTED registry key from the lookup set, so ids registered only as nested/indented yaml keys become false
+  UNRESOLVED findings. Isolated test (extracted [I1] block only, run standalone against the real repo, not the full
+  801-line script) proved the divergence directly: before=`(none — all refs resolve or are tag-exempt)`,
+  after=2 spurious `UNRESOLVED: CS-DATA-PATTERNS-001` / `UNRESOLVED: CS-DOCGEN-001` findings. Per the task's
+  CORE-SEED, this is FAILED — the live `dna/checks/plan-audit.sh` was never edited (confirmed via `git diff --stat`
+  empty), so no revert was needed. CLASS-LEVEL PREVENTION: any hoist/lookup-set optimization that "pre-computes once
+  outside a loop" a check previously done with an UNANCHORED regex MUST preserve the unanchored semantics (i.e. drop
+  the `^` from the hoisted pre-filter, or verify no indented/nested matches exist) — anchoring a pre-filter that
+  replaces an unanchored per-item regex is a silent behavior-narrowing bug, not just a perf change. SECONDARY
+  FINDING (disclosed, not fixed): even the TRUE baseline full-script run timed out at 580s (RC=124, `timeout 580`)
+  without completing — the partial output (121 lines) shows it ran well past [I1]/[I9] into `[BUILD-STATE]` before
+  being killed, confirming the O(n²) [I1] loop is NOT the dominant cost of the ~10+min full-script runtime on this
+  Windows/git-bash environment; the isolated [I1] block alone only took ~34-44s. A real perf win needs to profile
+  the OTHER ~20 check sections (I16 whole-tree per-file scans were already flagged 2026-07-22 as the dominant cost
+  and are still unfixed). → DISTILL-PENDING (candidate: pair with RI-0012 substring/anchoring family — "an anchored
+  pre-filter must not silently replace an unanchored per-item check").

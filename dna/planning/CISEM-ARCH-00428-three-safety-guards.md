@@ -1,6 +1,6 @@
 # Three Safety Guards — Loop-Stopper, Consensus-Gate, Injection-Scan (RATIFIED restraint policy, build plan)
-**Node ID:** CISEM-ARCH-00428 | **Type:** ARCH | **Status:** DRAFT
-**Planning Status:** AWAITING-BUILDER-REVIEW | **depth_level:** L2 | **Position in schema:** T-SYS, planning-governance layer
+**Node ID:** CISEM-ARCH-00428 | **Type:** ARCH | **Status:** RATIFIED
+**Planning Status:** COMPLETE — Governor RATIFIED 2026-07-26 ("I yriv ratify all 4"); Opus Stage-1 SOUND + GI-68 dual-review (Haiku Independent-Verifier PASSED 2026-07-26, zero protocol violations) + Brain concur | **depth_level:** L2 | **Position in schema:** T-SYS, planning-governance layer
 **tags:** [planning, safety, guards, loop-stopper, consensus-gate, injection-scan]
 **Goal:** Build the three safety guards — loop-stopper, consensus-gate, injection-scan — each satisfying the
 four-part BUILD STANDARD (build + hardwired + mechanically-enforced + tested-by-code), governed by the RATIFIED
