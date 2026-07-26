@@ -606,5 +606,34 @@ insights:
     routes_to:
       - "CLAUDE.md A12 / FOUND-00001 A12 SSOT (platform-origin rib); the report/handoff-intake protocol"
       - "keep CISEM ↔ CSP/Csps councils separate (cross-platform contamination guard); Brain #3 (H1 adopted)"
+      - "RI-0055 platform-isolation (the structural layers this behavioral rule needs)"
+    status: PROPOSED
+  RI-0055:
+    date: "2026-07-26"
+    trigger: "Governor: 'how do we isolate each platform?? chaotic if one platform can trigger things in another without permission!!!' + coworker's correction (the Csps report was an internal RELAY routing failure, not an MCP breach; the relay channel needs a mandatory origin header). ALSO demonstrated live: Opus grepped Csps files FROM the CISEM tab to identify the source — proof a CISEM session can reach sibling-platform files (workspace not isolated). AND: the Otosan MCP kept injecting despite settings.json DENYING its tool-calls and every agent DISREGARDING it."
+    root_insight: >
+      PLATFORM ISOLATION needs THREE STRUCTURAL layers — the A12 Wall alone is INSUFFICIENT (it governs content-TRUST
+      behaviorally + can DENY tool-CALLS, but cannot isolate workspace, connection, or relay):
+      (1) WORKSPACE ISOLATION (filesystem) — each platform's Claude Code session must have ONLY ITS OWN directory as a
+          working dir, NEVER a sibling's. CISEM's tab currently lists CSP + Csps dirs as additional working dirs — the
+          exact leak that let a CISEM agent read Csps. FIX (Governor config action): remove cross-platform dirs from each
+          session's workspace config (.code-workspace / additional-working-directories). Opus cannot remove its own
+          launch-set working dirs.
+      (2) MCP ISOLATION — per-project `.mcp.json` + `--strict-mcp-config` so each platform loads ONLY its own MCP servers,
+          not the global set (Otosan/Canva/Gmail/Drive). settings.json now denies `mcp__*` (defense-in-depth on tool-CALLS),
+          but deny does NOT stop instruction-INJECTION — only per-project strict-config + disconnecting the global/claude.ai
+          server does (config action, outside the repo).
+      (3) RELAY ORIGIN-VERIFICATION (coworker + RI-0054) — the relay channel (human copy-paste between councils) needs a
+          MANDATORY ORIGIN HEADER: every council message/report begins with `PLATFORM: CISEM|CSP|Csps`; a receiving council
+          REFUSES to queue content whose header ≠ its own platform (or is missing). Origin BEFORE content. The mechanical-
+          gate equivalent of what `.mcp.json` is for tools.
+      CISEM's MECHANICAL ARM: a session-start guard that FLAGS (a) foreign-platform paths in the workspace, (b) any non-CISEM
+          MCP connected, (c) un-tagged/foreign-origin relayed content — surfacing cross-contamination mechanically, not
+          relying on behavioral vigilance. The Wall did its repo-level job (disregard + tool-deny); isolation is the
+          config+structural layer it structurally cannot reach alone.
+    routes_to:
+      - "Governor config actions: (1) per-session workspace = own-platform-only; (2) per-project .mcp.json + --strict-mcp-config; (3) disconnect global/claude.ai non-CISEM MCP"
+      - "CISEM build: session-start cross-contamination detection (foreign path / foreign MCP / un-tagged relay) — propose+build carefully (CAL hook)"
+      - "RI-0054 relay origin-header (fold in); CLAUDE.md A12 (clarify Wall scope = content-trust + tool-perms, NOT workspace/connection/relay); coworker (aligned)"
     status: PROPOSED
 
