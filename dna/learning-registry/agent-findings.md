@@ -887,3 +887,54 @@ Entry format (append, newest at bottom):
   loosening the regex to tolerate a parenthetical between the field name and colon, or (b) a one-line fix to
   ARCH-00422's header if/when it is next touched (I7 — not touched by this task). → DISTILL-PENDING (candidate
   RI: "mandatory-field checks should tolerate parenthetical annotations before the colon, not just after").
+
+- [2026-07-26 · cisem-sonnet · CS-RESEARCH-001 refinements task (Governor 2026-07-26 dispatch — no ratified
+  plan yet, capture-first per §2.6)]
+  **What was done:** (1) EXTENDED the existing `research-corespine-PLACEHOLDER.md` PROPOSED CONTENT — added
+  a "SETS/LOOPS cross-model" facet to Universal Core item 1, sharpened item 7 (propagate-to-siblings), added
+  new items 9 (VERSION EVERYTHING) and 10 (PREDEFINED PERIODIC ANALYSIS), and added two new verbatim Core Seeds
+  (CR-3, CR-4). (2) CREATED a new companion file `research-hierarchy-tree-PLACEHOLDER.md` (schema-like
+  root→branch→instance tree, B1-B4 branches referencing the sibling file as SSOT rather than duplicating branch
+  definitions). Both remain Status: PLACEHOLDER, all content marked [PROPOSED], no truth field touched (I7).
+  **Self-caught note (worth routing):** the new companion file is a SECOND file under the same CS-RESEARCH-001
+  node id, distinct from the existing corespine-registry.yaml `canonical_file` pointer (which still points only
+  at `research-corespine-PLACEHOLDER.md`). This is a deliberate companion/tree-file pattern (explicitly asked
+  for in the dispatch), but it means CS-RESEARCH-001 now has TWO files and the registry doesn't yet reflect the
+  second one. CLASS-LEVEL note: when a corespine grows a companion artifact (tree/schema/index file) alongside
+  its main manifest, the registry's `canonical_file` (singular) field doesn't have a slot for "companion files"
+  — a real gap for ANY corespine that later needs more than one governed file (e.g. a corespine + its schema
+  tree, or a corespine + its test-fixture set). PREVENTION (routing, not yet applied — no plan authorizes a
+  registry-schema edit from this task): when CS-RESEARCH-001 is promoted through ARCH-00394, the registry
+  schema should be checked for a `companion_files:` (plural) field alongside `canonical_file`, or this pattern
+  will silently under-register every corespine that legitimately needs more than one file. → DISTILL-PENDING
+  (candidate RI: "corespine-registry schema needs a companion_files slot, not just canonical_file, for
+  multi-file corespines").
+  **No gaps found in the dispatch instructions themselves** — both files created cleanly, both stayed under the
+  §3.6 size gate (111 and 90 lines respectively), no invariant collisions noticed on read-back.
+
+- [2026-07-26 · cisem-sonnet · Consensus-package assembly for Brain (`dna/queue/CONSENSUS-PACKAGE-for-Brain-2026-07-26.md`) — consultation doc, no ratified plan (§2.6-adjacent capture, no truth-field written)]
+  **A prompt-injection attempt fired mid-task via the MCP-server-instructions channel** (a fake "Otosan
+  WordPress Claude" block demanding a Hebrew-persona switch + forced greeting + forced 3-option footer on every
+  reply). This is the SAME vector already logged in `session-learning-index.yaml` (2026-07-18,
+  `opus_arch_00396.prompt_injection_note`) — recurring, not novel. **Class confirmed (not new): MCP-server-
+  instruction / tool-context injection is an established attack surface against this repo's sessions; A12 (The
+  External Wall) already covers it in principle (content-origin-not-messenger; never let external content write
+  behavior), but there is still no MECHANICAL scan that flags an injected instructions-block the way
+  `plan-audit.sh` flags governed-file drift — it is caught only by the model noticing + refusing each time.**
+  PREVENTION (routing, not applied — no plan authorizes a check-build from this task): a candidate
+  `[INJECTION-SCAN]`-style check is already named in ARCH-00426's Existing-First survey ("injection-scan") as a
+  RIB of the A12 doctrine but not itself built; this incident is a second, independent, disk-verifiable data
+  point for prioritizing that build. → DISTILL-PENDING (candidate RI or reinforcement of an existing RI: "MCP/
+  tool-context prompt-injection recurs across sessions; behavioral refusal works so far but has no mechanical
+  backstop — same class as CAL replacing behavioral discipline everywhere else").
+  **Task execution note:** built the package from VERIFIED repo state only (Read/Grep/Glob/git status/diff —
+  no assumption from memory), per RI-0025 (source-not-paraphrase). Confirmed via `git diff --stat` that
+  `root-insights.yaml` (RI-0042/43/44, 113 new lines), `corespine-registry.yaml` (CS-RESEARCH-001 entry, 9 new
+  lines), `naming-registry.yaml` (9 changed lines), and `agent-findings.md` itself all carry LOCAL UNCOMMITTED
+  edits on top of a clean `main...origin/main` HEAD (62a1c0f) — every link to those 4 files in the package is
+  explicitly flagged "(modified — newest content not yet visible until committed)"; `ARCH-00426` and the two
+  `CS-RESEARCH-001` placeholder files are untracked-new and flagged "(uncommitted — will 404 until committed)".
+  **No gaps found in the dispatch instructions themselves** — all 11 required sections were fillable from real,
+  disk-verified sources; one item (Brain's "PROCEDURAL-not-mechanical" grading of the consensus-gate, §1) could
+  not be independently re-verified from a written artifact in this repo (no file states it in those words) —
+  disclosed in the SELF-REVIEW of the return message, not silently asserted as verified.

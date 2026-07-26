@@ -13,7 +13,19 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 426 }  # 00425 = Graphify MAX-ISOLATION adoption (backlog N3; re-plans ARCH-00422's build-halted
+ARCH:    { next_seq: 428 }  # 00427 = Opus Orchestration & Tier-Automation plan (D1 §3.0 rubric gap-fill [research->GATHER,
+# RI-0044] + D4 [EXECUTOR-ROUTE] mechanical opus-executor-flag check [Routed-By: commit trailer, new
+# opus_executor_incidents.mechanical_flags metric] + D2 versioned subagent-return schema [dna/schemas/, schema_version,
+# STALE-SCHEMA flag] + D3 keep-context-lean avg_subagent_return_size_kb metric [disclosed N=3 starting default] + D5
+# /cisem-research skill promotion explicitly SEQUENCED-NOT-BUILT [blocked on CS-RESEARCH-001 10->7 trim, open Brain
+# question]; 3 Core Seeds O-1/O-2/O-3 (4-part BUILD standard RI-0047, RI-0048 autonomy-restraint, schema versioning);
+# DRAFT / AWAITING-BUILDER-REVIEW; Sonnet 2026-07-26, dispatched by Opus). 00426 = Weekly Evolution Engine plan (consolidates ARCH-00406 + ARCH-00417 + BP-0009 into a
+# 6-phase gated harness — L1 SCAN [session-start.sh echo] / L2 QUEUE [root-insights.yaml pe_score+dedup] / L3 BATCH
+# [RIPL-BATCH, 3-5/session, 2-session escalation] / L4 GATE [4-surface propagation, tier-separated verify] / L5
+# AUTO-TRIGGER [RemoteTrigger scan+queue-only, NOT-YET-WIRED pending platform confirm] / Phase 6 self-referential
+# seed-harvest; 3-source x 5-layer coverage table proves nothing dropped, S5 explicitly dropped per ARCH-00417 Core
+# Seed A; DRAFT / AWAITING-BUILDER-REVIEW; Sonnet 2026-07-26, dispatched by Opus per Governor-ratified approach
+# 2026-07-26 + Brain-consensus 4 sharpenings). 00425 = Graphify MAX-ISOLATION adoption (backlog N3; re-plans ARCH-00422's build-halted
 # base-install approach around the grounded CLI-only architecture — pip-install, `graphify extract --code-only`
 # into quarantined graphify-out/, CISEM's own thin untrusted-data query step; DoD = the ratified 8-point isolation
 # bar; DRAFT / AWAITING-BUILDER-REVIEW; Sonnet 2026-07-26, dispatched by Opus per Governor decree 2026-07-25
@@ -94,3 +106,4 @@ CS:
   CORECOUNCIL:         { registered: true, source: corespine-registry.yaml }
   THRESHOLD:           { registered: true, source: corespine-registry.yaml }
   COMMS:               { registered: true, source: "reserved — forward-ref, no manifest/registry entry yet (dna/audits/cs-comms-existing-map-2026-07-19.md GAP finding; CISEM-WITNESS-00003 pending-Governor list); NAME reserved so future CS-COMMS-001 build is not blocked by this gate, pending: true", pending: true }
+  RESEARCH:            { registered: true, source: corespine-registry.yaml, status: PLACEHOLDER, note: "capture-first reserve per Governor directive 2026-07-26; ratified body pending ARCH-00394 wizard + ratified plan + Brain consensus (A4/A11); NOT ratified/active" }

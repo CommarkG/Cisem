@@ -124,6 +124,15 @@ CS-CORECOUNCIL-001:
          acknowledged, awaiting core-basics completion before build"
   depth_level: L1
 
+CS-RESEARCH-001:
+  status: PLACEHOLDER            # capture-first, Governor directive 2026-07-26; NOT ratified/active
+  goal: "Turn research from ad-hoc AI freestyling into governed CISEM infrastructure — one inheritance chain every research act obeys."
+  content_location:
+    canonical_file: dna/corespines/CS-RESEARCH-001/research-corespine-PLACEHOLDER.md
+  wizard: ARCH-00394            # full manifest to be created via wizard at ratification
+  depth_level: L1
+  authorizing_basis: "Governor directive 2026-07-26 (capture-first placeholder, gate-exempt like IBD); ratified build pending Brain consensus + plan (A4/A11)"
+
 # SIMULATION-ONLY — NOT REAL BUILD TRACKS
 SOL-GIFTPRO-001:
   status: SIMULATION-ONLY
