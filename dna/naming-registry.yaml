@@ -13,7 +13,12 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 425 }  # 00424 = CS-THRESHOLD-001 thin pointer-manifest (D2, points at ARCH-00320 I1-I21 +
+ARCH:    { next_seq: 426 }  # 00425 = Graphify MAX-ISOLATION adoption (backlog N3; re-plans ARCH-00422's build-halted
+# base-install approach around the grounded CLI-only architecture — pip-install, `graphify extract --code-only`
+# into quarantined graphify-out/, CISEM's own thin untrusted-data query step; DoD = the ratified 8-point isolation
+# bar; DRAFT / AWAITING-BUILDER-REVIEW; Sonnet 2026-07-26, dispatched by Opus per Governor decree 2026-07-25
+# max-usage+max-isolation; ARCH-00422 stays RATIFIED for the adoption DECISION, referenced not edited, I7).
+# 00424 = CS-THRESHOLD-001 thin pointer-manifest (D2, points at ARCH-00320 I1-I21 +
 # CLAUDE.md §2.7/§3, zero copied content, ARCH-00397 precedent; Sonnet 2026-07-25, dispatched by Opus Core
 # Seeds, CISEM-ARCH-00423 D2). NOTE: the plan's D2 spec called for a 2nd new ARCH id for a CS-MASTER-VALIDATION-001
 # pointer-manifest, but an Existing-First re-check (§3.2b, mid-build) found a REAL, already-RATIFIED body file

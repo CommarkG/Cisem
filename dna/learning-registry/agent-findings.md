@@ -842,3 +842,18 @@ Entry format (append, newest at bottom):
   confirming the original Threshold/Routing/Parking audit's finding that routing (SWIFT, park-by-demand) is
   currently prose/discipline with zero mechanical enforcement. This is a disclosed, honest gap, not a
   regression — it is the audit's whole point made mechanically re-verifiable on every commit going forward.
+
+- [2026-07-26 · cisem-sonnet · CISEM-ARCH-00425 (Graphify MAX-ISOLATION build-plan draft, backlog N3)]
+  **Class-fix (small, applied live):** the `[GI-CONSIDERATION]` check's field-marker regex
+  (`^\*{0,2}wisdom_considered:\*{0,2}`) requires the colon IMMEDIATELY after `wisdom_considered` (optionally
+  bolded) — a plainly-readable variant like `**wisdom_considered (GI-CONSIDERATION):**` (parenthetical BEFORE
+  the colon, the exact style ARCH-00422 itself already uses) silently FALSE-FAILS the check even though a real
+  citation follows. CLASS: same RI-0012 family (value-anchored regex vs. natural prose variation) — any
+  mandatory-field check anchored this tightly should be noted as brittle-to-prose-style, not just brittle-to-
+  substring-collision. PREVENTION (applied in THIS plan, not yet propagated): wrote the field as
+  `**wisdom_considered:** (GI-CONSIDERATION) RI-0038 ...` (parenthetical AFTER the colon) to pass cleanly;
+  flagging ARCH-00422's own header as carrying the SAME non-matching format (undetected only because it is not
+  a "changed" file in any recent run, so the check never scanned it) — a follow-on candidate for either (a)
+  loosening the regex to tolerate a parenthetical between the field name and colon, or (b) a one-line fix to
+  ARCH-00422's header if/when it is next touched (I7 — not touched by this task). → DISTILL-PENDING (candidate
+  RI: "mandatory-field checks should tolerate parenthetical annotations before the colon, not just after").
