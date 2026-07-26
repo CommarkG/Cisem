@@ -76,5 +76,13 @@ One Opus tab orchestrates many models to produce work that is **more correct** (
 
 *All five are behavioral and leak under momentum. The permanent counter is to convert each into a mechanism (a check, a hook, a gate) — and until then, to self-catch every turn and let the Governor catch what self-audit can't.*
 
+## 11. CROSS-PLATFORM CONVERGENCE (CDS) — independent validation + patterns worth adopting
+A sibling platform (CDS, same Governor) independently arrived at the SAME core principles — the WALL (used-not-trusted, max-usage/max-isolation), producer/reviewer separation, one-truth-over-one-file, mechanical-over-documentation, and "wiring is as essential as implementation." When two platforms converge on the same laws independently, those laws are real, not one platform's idiosyncrasy. Patterns from CDS worth adopting:
+- **A crisp wiring-state ladder:** DEFINED → WIRED → REACHABLE → CURRENT (self-declaring the top state is invalid; it needs an independent verify + Governor signature). Cleaner than free-text status.
+- **"Wiring is essential as implementation":** every implementation ships TWO deliverables — the artifact AND a propagation sweep proving every consumer was updated. Delivery-2 is the completion condition, not a bonus. (This is the fix for the propagation-completeness blind spot both platforms share.)
+- **A permanent, auto-triggered weekly evolution engine** (session-start scan → findings queue → rate-limited weekly batch → propagation-verified gate → scheduled cloud auto-trigger). Improvement becomes permanent + platform-wide + automatic, not per-session. This is the meta-mechanism that keeps every other mechanism alive.
+- **Health metrics as the honest scoreboard:** e.g. wiring-health = mechanisms-actually-active / total. Turns the "declared-vs-wired" gap into a number you can drive down.
+The shared, un-solved failure mode both platforms name identically: **the governance architecture runs ahead of the enforcement code — the AI holds the gap closed by discipline until the mechanisms catch up.** The permanent exit is to mechanize each behavioral rule; the weekly engine is how that mechanization gets scheduled, verified, and propagated forever.
+
 ---
-*v1 — Opus (Claude Opus 4.8), 2026-07-26. Consolidation of live 2026-07-25/26 session experience. References (does not fork) the SSOTs in §1.6/§1.7/§1.8/§3.0/A12. A CDS-informed refinement folds in once the CDS file is provided.*
+*v1.1 — Opus (Claude Opus 4.8), 2026-07-26. Consolidation of live 2026-07-25/26 session experience + a CDS-informed cross-platform pass (§11). References (does not fork) the SSOTs in §1.6/§1.7/§1.8/§3.0/A12.*
