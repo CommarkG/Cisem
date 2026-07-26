@@ -635,5 +635,71 @@ insights:
       - "Governor config actions: (1) per-session workspace = own-platform-only; (2) per-project .mcp.json + --strict-mcp-config; (3) disconnect global/claude.ai non-CISEM MCP"
       - "CISEM build: session-start cross-contamination detection (foreign path / foreign MCP / un-tagged relay) — propose+build carefully (CAL hook)"
       - "RI-0054 relay origin-header (fold in); CLAUDE.md A12 (clarify Wall scope = content-trust + tool-perms, NOT workspace/connection/relay); coworker (aligned)"
+      - "RI-0056 (the full defense-in-depth matrix + identification triggers)"
+    status: PROPOSED
+  RI-0056:
+    date: "2026-07-26"
+    trigger: "Governor: 'produce preventions like a top security expert, out of the box, and create preventions and triggers of identifications!!' — for the multi-platform contamination/injection/isolation threat class."
+    root_insight: >
+      MULTI-PLATFORM SECURITY = DEFENSE-IN-DEPTH + IDENTIFICATION TRIGGERS. Doctrine: EVERY crossing (a file touched ·
+      a tool called · a message ingested · a state written · an outbound emission) is DENIED-BY-DEFAULT, permitted only
+      on a VERIFIED + TAGGED + FRESH + OWN-PLATFORM origin. Ten threat vectors, each paired PREVENTION (stop it) +
+      IDENTIFICATION TRIGGER (detect it firing): (A) relay-contamination -> fingerprint scan of intake vs this platform's
+      TYPE enum/check-layer; (B) origin-SPOOFING -> THREE-FACTOR (header==you AND fingerprint-passes AND IDs-resolve-in-
+      registry; a header alone is necessary-not-sufficient); (C) authority-laundering -> content-origin-not-messenger
+      (even the Governor relaying does not launder); (D) workspace-cross-access -> own-repo-only + PreToolUse/pre-commit
+      path-block + LOG-on-sibling-read (reads leak context too); (E) MCP-injection -> strict-config + session-start
+      inventory-vs-allowlist; (F) staleness/replay -> verifiable freshness-anchor (hash/next_seq/RI-range) checked vs
+      LIVE; (G) governance-poisoning -> creation-gate fingerprint scan on new/edited governed files (contamination that
+      becomes ratified is the deepest threat); (H) covert-channels -> platform-scoped temp/env/git-remote; (I)
+      supply-chain -> NO shared mutable tooling (skills/hooks) across platforms; (J) outbound-exfil -> tag + block
+      emissions targeting a sibling path or non-allowlisted external. Behavioral disregard (A12) is the LAST line, never
+      the only one; each guard proven build+wired+enforced+tested (RI-0047) + an OUTER dumb backstop independent of the
+      smart checks (RI-0048). CONCRETE LIVE EXPOSURES found this session: the CISEM session's working dirs include CSP +
+      Csps (incl. Csps/.claude/skills) -> a CISEM session can READ siblings AND LOAD their skills (proven live); global
+      MCP; unchecked relay. SSOT for the full matrix: dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md.
+    routes_to:
+      - "dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md (SSOT matrix); the sibling-hardening prompt (dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md)"
+      - "CISEM build: ONE session-start contamination-detector + ONE intake origin-gate (RI-0047 4-part + RI-0048 outer backstop; CAL hook — build carefully/tested)"
+      - "ribs: RI-0050 (channel injection) · RI-0054 (platform-origin) · RI-0055 (isolation layers); a Security corespine (IBD-0008 seed); Governor config actions (workspace/MCP)"
+      - "SUPERSEDED-IN-PART by RI-0057 corrections (Existing-First missed IBD-0022/GI-51; header-not-primary; wrong-hook)"
+    status: PROPOSED (corrections in RI-0057)
+  RI-0057:
+    date: "2026-07-26"
+    trigger: "Brain #3 review caught six real defects in today's isolation response. Verified each against source. Owned, not defended."
+    root_insight: >
+      CORRECTIONS TO TODAY'S ISOLATION WORK (RI-0054/0055/0056 + the matrix + the hardening prompt):
+      (A) EXISTING-FIRST ON THE PARKED BACKLOG (the core failure): IBD-0022 (MCP context-isolation, PARKED-RAW
+          2026-07-20, same coworker source) + GI-51 (no-MCP, WIRED-2026-07-25) ALREADY held today's isolation design —
+          incl. the SWIFT 'Governor disables the Otosan connector NOW' + the plan-gated .mcp.json/--strict-mcp-config
+          restructure. RI-0054/0055/0056 were RE-DERIVATION without grepping the IBD/GI parked backlog (RI-0021/GI-55
+          novelty-trap). They ENHANCE IBD-0022 + GI-51, they do NOT fork them (A8/RI-0024). The item to CLOSE is not
+          more design: (a) the SWIFT connector-disable = Governor account action (in motion), (b) the structural
+          .mcp.json + --strict-mcp-config restructure = PLAN-GATED (the real CISEM next step). Un-closed for 6 days
+          because the parked SWIFT was never re-nudged across recurring injections — Principle 9 / I14 on the platform's
+          own top-priority security item.
+      (B) HEADER-IS-A-PRE-FILTER-NOT-A-GATE: a self-declared `PLATFORM:` header is UNTRUSTED content (the class A12
+          refuses as governed truth); the Csps report arrived with NO header. INTRINSIC verification is PRIMARY +
+          mandatory (fingerprint vs TYPE-enum + check-layer inventory + does-the-mechanism-even-exist); the header is a
+          cheap pre-filter only, never the ingest decision. Corrects RI-0056(B) + the hardening prompt (which over-led
+          with the header).
+      (C) RIGHT-HOOK-PER-LAYER: workspace + MCP guards are session-start-shaped (fire once). RELAY-intake (flagging
+          pasted foreign content) is MID-session -> a UserPromptSubmit-class hook, OR labeled honestly BEHAVIORAL —
+          never a behavioral check mislabeled mechanical (presence!=behavior on my own guard).
+      (D) REPORT-THE-HASH-NOT-THE-TASK-ID: never report a commit as landed until the real hex HASH returns (git log). A
+          background task-ID (b90089cu3) or 'committing' is NOT a hash; reporting it is unconfirmed-terminal (2nd
+          instance in 2 turns of Brain's own new class). Real hashes: RI-0053/0054 = 5efc2ec; RI-0055 + deny = bea3390
+          (HEAD==origin, pushed). Mechanical arm: a report-commit helper that reads + returns the hash.
+      (E) COMPLETION-MOVES-NOT-ASKS: after a direct 'resolve it', ending with 'build or hold?' is deferral-as-option
+          (RI-0014/GI-69). The clear-safe-available fix MOVES; only the not-mine-to-touch part (Governor config actions)
+          waits.
+      (F) INBOUND-CROSSING + VERIFY-THE-ASSERTION: verified — ALL raw-activity files have ZERO pnpm/P-META/tools-wip hits
+          (earlier match was the loose gap_[A-Z] pattern; 'attributed to this discussion' was unverified, now CLEAN). No
+          Csps->CISEM contamination in raw-activity; a fuller git-authorship inbound audit is owed (RI-0008: one crossing
+          obligates the whole class, incl. inbound history).
+    routes_to:
+      - "consolidate RI-0054/0055/0056 INTO IBD-0022 + GI-51 (enhance, A8); the structural .mcp.json/--strict-mcp-config restructure PLAN (the real completion, plan-gated)"
+      - "FOUND-00001 A12 'Does NOT cover' section (isolation/connection/channel/tool-perms — N1 follow-on, Brain); correct the hardening prompt + RI-0056 header/hook"
+      - "report-hash discipline (helper); fuller inbound git-authorship audit; Brain #3 (all six adopted)"
     status: PROPOSED
 
