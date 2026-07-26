@@ -4,3 +4,4 @@ node_modules/
 *.log
 .wrangler/
 gcp-oauth.keys.json
+graphify-out/

@@ -1,6 +1,6 @@
 # CISEM-ARCH-00425 — Graphify MAX-ISOLATION Adoption (CLI-only, quarantined)
-**Node ID:** CISEM-ARCH-00425 | **Type:** ARCH | **Status:** DRAFT / AWAITING-BUILDER-REVIEW
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND 2026-07-26 — see §Opus Soundness Verdict; NOT ratified — awaits Governor re-ratification) · NOT a build
+**Node ID:** CISEM-ARCH-00425 | **Type:** ARCH | **Status:** RATIFIED
+**Planning Status:** COMPLETE (Governor RE-RATIFIED 2026-07-26, informed — saw the plan; Opus Stage-1 SOUND; build approach materially changed from ARCH-00422 → earned a fresh ratify)
 **depth_level:** L2 | **tags:** [planning-domain, external-tool-adoption, graphify, isolation, quarantine, revertible, backlog-N3]
 **goal:** Use ALL of Graphify's value (structural search/graph, token-saving) via its pure CLI mode, while building whatever isolation is needed so ZERO of it reaches governed/trusted CISEM state — measurable against the ratified 8-point isolation bar (below).
 **governing corespine:** CS-CREATION-001
@@ -86,6 +86,9 @@ Tag + Status present · 3 Core Seeds inline (OPUS-TO-FILL, per dispatch instruct
 
 ## Opus Soundness Verdict (Stage-1, [RATIFY-GATE])
 **SOUND.** Goal measurable (the 8-point bar); the CLI-only path is the grounded max-isolation architecture (RI-0038-verified); D1 verify-surface is the correct anchor gate; I7 respected (ARCH-00422 referenced-not-edited); path rejections complete; Core Seeds filled. **Two build-time sharpenings (not defects):** (1) prove "no network" by running the extract **OFFLINE (network disabled)** — success then *proves* no network dependency, stronger than watching traffic (live-monitor is the fallback if an offline run isn't feasible); (2) D3's new query-integration script is a NEW governed file → it MUST carry `authorizing_plan: CISEM-ARCH-00425` at creation (the PART08 gate lesson from ARCH-00423). **Honest build-feasibility note (surfaced, not a plan defect):** D1's `pip install graphifyy` needs the environment to permit PyPI access once; if it can't (as `uv` was missing for ARCH-00422), the BUILD halts at D1 and is reported — the plan is sound regardless. Pre-build GI-68 dual-review runs after ratification, before build. — Opus (cisem-opus-pe), 2026-07-26.
+
+## GI-68 Dual-Review Verdict — CLEARED (2026-07-26)
+Mandatory dual-tier review of the D1–D4 BUILD (GI-68). **P1 (Opus, cisem-opus-pe):** judged — graphify-query.sh carries `authorizing_plan` + real path-validation (9 guards), `.gitignore` quarantines graphify-out/, governed-path grep EMPTY (zero CLAUDE.md/.claude/hooks touch). **P5 (Haiku, cisem-haiku, cold independent, distinct from the Sonnet builder):** 8/8 core checks PASS, zero defects — Core Seed 2 BEHAVIORALLY proved (`--self-test` rejects a fake path), version-pinned 0.9.26 (real artifact via pip), deletion-guard clean; the full [ZF] board timed out in Haiku's 2-min tool window (perf note RI-0041b, NOT a defect — [ZF] confirmed green via the real commit hooks + Sonnet's completed run). **Sonnet build:** behaviorally verified each deliverable + revert tested to zero residual. **VERDICT: CLEARED.** Max-isolation held — CLI-only, quarantined, zero governed-path reach, no MCP/server/network.
 
 ## Change log
 - v1.0 — 2026-07-26 (Sonnet, dispatched by Opus): drafted per Governor decree 2026-07-25 (MAX-USAGE + MAX-ISOLATION) and the grounded CLI-only architecture (RI-0038-verified against the real repo). Supersedes ARCH-00422's build approach only; ARCH-00422 stays RATIFIED for the adoption decision (I7, referenced not edited). Status DRAFT / AWAITING-BUILDER-REVIEW — Opus must fill the 3 Core Seeds + issue the Stage-1 soundness verdict before Governor ratification. NOT a build; nothing installed.

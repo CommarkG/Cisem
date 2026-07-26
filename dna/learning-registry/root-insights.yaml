@@ -280,3 +280,38 @@ insights:
     root_insight: "PREMATURE-DONE/LIVE-CLAIM-AT-REPORTING — asserting 'committed / pushed / live / done' to the Governor in the SAME breath as INITIATING an async/deferred operation (background commit, push, remote availability), before it has verifiably completed. This is presence!=behavior (Principle 17/18C) + no-unverified-done (I22) at the human-reporting surface; it recurs because the momentum default narrates the intended end-state as if achieved. PERMANENT COUNTER: never state 'committed/pushed/live/done' until VERIFIED this turn — for a git op confirm HEAD advanced + local==origin + (for 'live') the artifact is actually reachable (git cat-file / fetch-from-remote / an authenticated load); for a PRIVATE repo where an independent web-load is blocked, say so and cite git-fetch-from-remote as the authoritative proxy + ask the human to confirm on their authenticated view. Present-tense 'committing/going live' is allowed ONLY as an explicit in-progress STATUS, never as a claimed RESULT. Self-catch: am I asserting a result an async step hasn't confirmed yet?"
     routes_to: ["behavioral (all tiers, every Governor-facing completion claim): verify-landed-before-asserting; present-tense progress != claimed result", "sibling of I22 (no-unverified-done) + Principle 17/18C (presence!=behavior) + RI-0036-family (rules leak under momentum) at the REPORTING layer", "mechanical backstop weak (chat framing); durable guard = verify-before-assert habit + Governor catching 404s", "ties the multimodel guide's honest-reporting section + the weekly-engine verify-done discipline"]
     status: NAMED — captured this harvest; recurred TWICE same session (both owned to the Governor without defensiveness); counter = verify-landed-before-asserting
+  RI-0041:
+    date: "2026-07-26"
+    trigger: "GI-68 independent verification of CISEM-ARCH-00425 — behavioral testing of Core Seed 2 (path-validation) revealed the pattern: presence-only checks vs behavior-proven checks have different confidence levels"
+    root_insight: >
+      Principle 18C (Presence ≠ Behavior) requires a DISTINCTION between THREE confidence levels:
+      (1) PRESENT = field/file/listener exists (lowest confidence) · (2) HEADER-COMPLIANT = structure correct
+      (3) BEHAVIORAL-VERIFIED = actual-run proves the mechanism works (highest confidence).
+      D3 graphify-query.sh passed all 3 but Core Seed 2 BEHAVIORAL proof (--self-test rejecting fake paths)
+      is the irreducible proof; presence alone would have missed if validate_paths() had a logic bug.
+      CLASS PREVENTION: any "done" claim on a gate/validator MUST cite the BEHAVIORAL proof method,
+      not just "header correct" or "file exists". When Principle 18 audits find breaches, always ask
+      "was this behavior-tested or only presence-checked?" — a pervasive category across UI toggles,
+      path validators, and external-tool wrappers (Core Seed 2 is the pattern).
+    routes_to:
+      - "CLAUDE.md Principle 18C (already present; emphasis needed on behavioral proof method)"
+      - "plan-audit.sh [PRESENCE] check (candidate new invariant for behavioral gates)"
+      - "cisem-haiku audit hardening: add explicit behavioral-proof verification to gate audits"
+      - "creation checklist ARCH-00230 (add behavioral-proof requirement for validators)"
+    status: PROPOSED
+  RI-0041b:
+    date: "2026-07-26"
+    trigger: "plan-audit.sh timeout during GI-68 verification — 2+ minutes on ~80 node references with nested find/grep loops; pre-commit hook runs this"
+    root_insight: >
+      PERFORMANCE REGRESSION CLASS: I1/I9 checks iterate every reference via `find . -name *ID*` +
+      `grep` inside a loop (O(n²) or worse). This scales poorly past ~50 references and becomes a
+      pre-commit bottleneck (pre-commit fired: must complete <10s for acceptable UX). The check
+      is CORRECT but EXPENSIVE; it does not need rewrite, but caching/memoization or an indexed
+      registry of known-valid IDs (instead of find-each) would fix it. Current: ~2-4 min on full
+      repo. Root cause: verification-by-brute-force. Prevention: staged execution (check early-subset
+      first, stop if passed) or pre-computed registry-of-known-IDs + incremental delta (only new
+      commits checked).
+    routes_to:
+      - "ARCH-00407 BLOCK-flip backlog (pre-commit performance optimization, parked)"
+      - "candidate RI for the weekly RIPL batch (performance class learnings)"
+    status: PARKED
