@@ -5,3 +5,8 @@ node_modules/
 .wrangler/
 gcp-oauth.keys.json
 graphify-out/
+
+# RI-0059 (no-git-track-unbounded-binaries): the TIER-2 raw transcript archives are
+# multi-MB gzips accumulated per session — they bloat history unboundedly and 408 the push.
+# The TIER-1 dialogue .md snapshot (the SIGNAL) stays tracked; these raw archives do not.
+dna/learning-registry/raw-activity/archive/*.gz
