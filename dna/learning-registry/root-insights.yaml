@@ -577,4 +577,34 @@ insights:
       - "[RATIFY-GATE] check matcher fix (recognize logged verdict form); [CHECK-LINT] (RI-0012 class)"
       - "verification-by-code pass follow-up (diagnose the exact regex gap); Brain"
     status: PROPOSED
+  RI-0053:
+    date: "2026-07-26"
+    trigger: "Git-race: fired two background `git commit`s close together; because they share the ONE working-tree index, the second's `git add` (WITNESS) was swept into the FIRST's commit (0a4116f) rather than its own. Benign (WITNESS landed) but a real §1.7 violation."
+    root_insight: >
+      CONCURRENT-BACKGROUND-COMMIT RACE: background `git commit`s share the working-tree index; firing a second
+      while the first is still running its (slow) pre-commit hook causes the second's `git add` to be bundled into
+      the first's commit, or hits index.lock. PREVENTION: SERIALIZE — never fire a background commit while another
+      is running; wait for the first's completion notification, then commit the next. §1.7 one-committer-at-a-time.
+      (Wired into the WITNESS commit-discipline note this session.)
+    routes_to:
+      - "WITNESS commit-discipline note (added); §1.7 git-race discipline; build-phase"
+    status: PROPOSED
+  RI-0054:
+    date: "2026-07-26"
+    trigger: "Brain #3 (Council) flagged a relayed 'engine report' (pnpm verify · tools/wip/ · P-META-019 · S076 · Monday cron · gap-recurrence-register.yaml · wiring-sweep-log.yaml) and could not place it in CISEM. Opus verified against the live repo: NO pnpm workspace (CISEM = 19 bash .sh + git hooks), NO tools/wip, NO P-META TYPE (ARCH-00011: Type==CISEM-{TYPE}-{SEQ}), WEE is a PLAN not a running engine, L5 OFF (RI-0048). The report is a DIFFERENT platform (CSP/Csps) or a fabrication, relayed into the CISEM council by mistake."
+    root_insight: >
+      PLATFORM-ORIGIN VERIFICATION (A12 extension; Brain #3's H1). The dangerous input is not a stated-stale claim
+      but a FLUENT, WELL-DISCIPLINED report from an UNVERIFIED origin that inherits the authority of the platform it
+      RESEMBLES — a report that is entirely HONEST about a DIFFERENT platform (the Governor runs CSP + Csps alongside
+      CISEM, with pnpm/P-META/S-number conventions), or a fabrication, mistaken for CISEM. PREVENTION: before any
+      relayed engine/state report updates CISEM queue/state, VERIFY ITS PLATFORM-ORIGIN FIRST — check its identifiers
+      against ARCH-00011's enumerated TYPE prefixes + the known check-layer inventory (bash .sh + git hooks, NOT pnpm)
+      + whether the described MECHANISM even exists in CISEM (WEE is a plan, not a run; L5 OFF). ORIGIN-verification
+      BEFORE CONTENT-evaluation. A mismatch -> route to the correct platform's council, NEVER ingest into CISEM. Keep
+      the platforms' councils/tabs SEPARATE. Ties A12 (external wall) + RI-0050 (channel-injection) + the §1.7
+      wrong-content-paste pattern (recurred this session).
+    routes_to:
+      - "CLAUDE.md A12 / FOUND-00001 A12 SSOT (platform-origin rib); the report/handoff-intake protocol"
+      - "keep CISEM ↔ CSP/Csps councils separate (cross-platform contamination guard); Brain #3 (H1 adopted)"
+    status: PROPOSED
 
