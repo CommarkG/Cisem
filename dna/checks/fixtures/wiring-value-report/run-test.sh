@@ -11,12 +11,13 @@ pass=0; fail=0
 assert() { # <desc> <regex>
   if printf '%s' "$out" | grep -qE "$2"; then echo "PASS: $1"; pass=$((pass+1)); else echo "FAIL: $1 (expected /$2/)"; fail=$((fail+1)); fi
 }
-assert "TOTAL = 3 elements"                 'TOTAL governed elements: 3'
-assert "LIVE = 2, not-yet-LIVE = 1"         'LIVE=2.*not-yet-LIVE=1'
-assert "REAL-VALUE = 1"                     'REAL-VALUE \(LIVE \+ value_delivered=yes\)=1'
-assert "LIVE-but-no-proven-value = 1"       'LIVE-but-no-proven-value=1'
+assert "TOTAL = 4 elements"                 'TOTAL governed elements: 4'
+assert "LIVE = 3, not-yet-LIVE = 1"         'LIVE=3.*not-yet-LIVE=1'
+assert "REAL-VALUE = 1 (evidence+verifier)" 'REAL-VALUE \(LIVE \+ value_delivered=yes \+ evidence \+ independent verifier\)=1'
+assert "SELF-DECLARED = 1 (no evidence)"    'SELF-DECLARED \(yes WITHOUT.*\)=1'
+assert "self-declared element flagged"      'SELF-DECLARED: .*should-selfdeclared.md'
 assert "runs-no-value element flagged"      'RUNS-NO-VALUE: .*should-runs-no-value.md'
-assert "bottom line 1/3 (33%)"              'BOTTOM LINE: 1 / 3 .*33%'
+assert "bottom line 1/4 (25%)"              'BOTTOM LINE: 1 / 4 .*25%'
 echo "───────────────────────────────────────────────────"
 if [ "$fail" -eq 0 ]; then echo "RESULT: ALL $pass ASSERTIONS PASSED (both directions)"; exit 0
 else echo "RESULT: $fail FAILED / $pass passed"; exit 1; fi

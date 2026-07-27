@@ -29,7 +29,7 @@ Central: (1) the SSOT schema (2 axes + evidence-per-state + independent-verifier
    - **AXIS-1 wiring_state** — REFERENCE ARCH-00011 §4 (DECLARED→CONNECTED→ACCESSIBLE→LIVE; only LIVE counts, I23). Do NOT redefine; cite the SSOT.
    - **AXIS-2 value_delivered** — does the LIVE element achieve its INITIAL INTENT (the goal it was created for)? {yes/no/partial} + REQUIRED EVIDENCE (a shown run/outcome, not a doc — Principle 18C) + `verified_by` (INDEPENDENT, not the asserter — I23/I24; self-declaring the top state is invalid).
    - The **bottom line**: real value = LIVE (axis-1) AND value_delivered=yes (axis-2), evidence shown, independently verified. Anything less is "effort without proven value" — surfaced, not hidden.
-2. Tag convention: elements carry `wiring_state:` (from the existing status/wiring enum) + a `value:` field per the schema. The existing [TAG-STATUS] check already reads Status; this extends the surface, not a second enum.
+2. Tag convention: elements carry `wiring_state:` (from the existing status/wiring enum) + a `value_delivered:` field (+ `evidence:`/`verified_by:` when yes) per the schema. The existing [TAG-STATUS] check already reads Status; this extends the surface, not a second enum.
 3. Create `dna/checks/wiring-value-report.sh` (+ `dna/checks/fixtures/wiring-value-report/run-test.sh`, RI-0058 both-directions) — reads governed elements' wiring_state/value tags → emits a PER-ELEMENT board + the AGGREGATE bottom-line (% LIVE, % value-delivered, what stalled at DECLARED). WARN-only, on-demand + weekly cue. This is the "review weekly what happened, if it happened."
 4. Register: naming-registry (SCHEMA 00002), ssot-registry (real_value_verification concept → this schema).
 
