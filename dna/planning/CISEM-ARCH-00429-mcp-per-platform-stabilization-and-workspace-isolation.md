@@ -47,7 +47,7 @@ No source logic; no governed nodes beyond this plan; no GitHub PAT in any commit
 Per `dna/checks/definition-of-done.md`: (1) settings posture enacted [DONE] + **Governor `/mcp` confirms** [PENDING his run]; (2) detector landed + negative-control test passes [Phase 2]; (3) workspace split [Phase 2]. Honest state: Phase-1 posture enacted, awaiting the in-session proof; Phases 2–3 authored-not-built.
 
 ## Propagation Declaration
-GI-51 amendment recorded here (its always-loaded mirror + governor-insights entry updated by-reference). RI-0059/0060 already routed. No generated view regenerates from this.
+GI-51 amendment recorded AND propagated: `dna/governor-insights.yaml` GI-51 entry was EDITED (2026-07-27) to mark the zero-MCP posture SUPERSEDED and point to this plan — the amendment lives in the SSOT entry itself, NOT merely "by-reference" (CIC-audit C2 fix, RI-0066 — an earlier draft over-claimed this as done). RI-0059/0060 routed. No generated view regenerates from this.
 
 ## Dependencies
 blocks-on: Governor `/mcp` verification (Phase-1 proof); Governor-held inputs for Phase-2 (per-platform PAT rollout, CDS path — Brain L15–L17). unblocks: the held detector; the workspace split; Brain's four-platform stabilization sequence (L16).

@@ -28,10 +28,16 @@ if [ -f .mcp.json ] && grep -qE '"mcpServers"[[:space:]]*:[[:space:]]*\{[[:space
 else
   echo "   ⚠ .mcp.json missing/non-empty — external MCP may load (GI-51 clean-posture gap)."
 fi
+# CIC-audit fix (ARCH-00429 amended GI-51): the OVER-BROAD mcp__* blanket was deliberately REMOVED
+# (it would block wanted GitHub/Playwright) and replaced with a server-specific Otosan deny. So assert
+# the RATIFIED posture — Otosan denied specifically, NOT the blanket. (RI-0066 — a detector must track the
+# posture it enforces when that posture is amended.)
 if grep -q '"mcp__\*"' .claude/settings.json 2>/dev/null; then
-  echo "   ✓ settings.json denies mcp__* (tool-CALL block). HONEST LIMIT: deny blocks CALLS, NOT instruction-INJECTION — a global/claude.ai connector still injects until DISCONNECTED (GI-51 SWIFT = Governor account action, not a repo action)."
+  echo "   ⚠ settings.json has an OVER-BROAD mcp__* deny — would block wanted connectors (ARCH-00429 replaced it with server-specific denies); review."
+elif grep -q 'mcp__claude_ai_Otosan' .claude/settings.json 2>/dev/null; then
+  echo "   ✓ settings.json denies Otosan specifically + deniedMcpServers blocks its CONNECTION (ARCH-00429 posture). HONEST LIMIT: permissions.deny blocks CALLS; deniedMcpServers blocks the connection/injection (Otosan). Runtime proof of the 4 wanted connectors + Otosan-absent = Governor /mcp."
 else
-  echo "   ⚠ settings.json does NOT deny mcp__* — external MCP tool-calls permitted."
+  echo "   ⚠ settings.json has neither the Otosan-specific deny nor a blanket — verify the ARCH-00429 MCP posture."
 fi
 [ "$found" = 0 ] && echo "   ✓ no reachable sibling-platform repo (workspace isolated at the filesystem level)"
 echo "   NOT-YET (ratified follow-ons, not claimed by this preview): relay-intake UserPromptSubmit gate · source-verification 4th factor (native-false content) · BLOCK-mode graduation."
