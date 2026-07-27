@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# authorizing_plan: CISEM-ARCH-00429 (RATIFIED 2026-07-27 — the platform-isolation-check.sh call added here is authorized by this plan; citation for audit honesty, BLOCK 5 does not force it on modifications — RI-0061)
 # ── CISEM AUTONOMIC LAYER (CAL) — SessionStart hook ──────────────────────────
 # Fires AUTOMATICALLY at every session start (startup / resume / after compact).
 # Injects inherited learnings + the resume path into context so NO agent starts
@@ -7,6 +8,7 @@
 repo="$(git rev-parse --show-toplevel 2>/dev/null || echo .)"
 cd "$repo" 2>/dev/null || exit 0
 echo "── CISEM AUTONOMIC LAYER (CAL) — inherited context, auto-injected ──"
+bash "$repo/dna/checks/platform-isolation-check.sh" 2>/dev/null; echo ""
 echo "RESUME: CLAUDE.md → dna/CISEM-WITNESS-00003-session-continuity.md (COMPACT STATE) →"
 echo "        dna/quality-ledger.yaml → dna/learning-registry/session-learning-index.yaml → dna/queue/README.md"
 echo ""
