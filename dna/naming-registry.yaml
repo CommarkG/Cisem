@@ -13,7 +13,7 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 431 }  # 00430 = CIC/Golden-Thread Auditor agent (cisem-cic-auditor: read-only Opus-tier flow-traceability auditor; 4-check golden-thread audit goal->inheritance->value->mechanism; consolidates existing invariants, coins none; Governor-ratified 2026-07-27). 00429 = MCP per-platform stabilization + workspace isolation (Governor informed decree 2026-07-27: CISEM keeps 4 own connectors active [Gmail/Calendar/Drive/Canva] + Otosan denied at connection layer; consolidates IBD-0022 + amends GI-51; authorizes the held platform-isolation-check.sh workspace detector; Phase-2 = per-platform GitHub[local-scope]/Playwright + workspace split). 00428 = Three Safety Guards plan (D1 loop-stopper [Claude Code PostToolUse/Stop hook +
+ARCH:    { next_seq: 432 }  # 00431 = Real-Value Verification schema (SSOT CISEM-SCHEMA-00002 + wiring-value-report.sh weekly bottom-line; references wiring-states SSOT ARCH-00011 §4 + adds value-delivery axis; Governor-ratified 2026-07-27, no third agent). 00430 = CIC/Golden-Thread Auditor agent (cisem-cic-auditor: read-only Opus-tier flow-traceability auditor; 4-check golden-thread audit goal->inheritance->value->mechanism; consolidates existing invariants, coins none; Governor-ratified 2026-07-27). 00429 = MCP per-platform stabilization + workspace isolation (Governor informed decree 2026-07-27: CISEM keeps 4 own connectors active [Gmail/Calendar/Drive/Canva] + Otosan denied at connection layer; consolidates IBD-0022 + amends GI-51; authorizes the held platform-isolation-check.sh workspace detector; Phase-2 = per-platform GitHub[local-scope]/Playwright + workspace split). 00428 = Three Safety Guards plan (D1 loop-stopper [Claude Code PostToolUse/Stop hook +
 # session-scoped state file; consecutive-signature screen + NO-PROGRESS authoritative tiebreaker + hard ceilings +
 # 3 context-profiles + polling-interval signal + outer dumb wall-clock backstop, per RI-0042 Brain-refined] + D2
 # consensus-gate [self-check + dna/checks/consensus-gate.sh scanning digest-class files for ratify/decide language
@@ -71,7 +71,7 @@ SES:     { next_seq: 2 }
 WITNESS: { next_seq: 7, pending_migration: ["00002"] }   # 00001 migrated; 00003 = session-continuity (2026-07-16); 00004 = compaction handoff, 00005 = sonnet bp0001-bp0003 handoff, 00006 = bp0007/bp0004/haiku-audit handoff (all 2026-07-18). FIXED 2026-07-18: next_seq was 5 but 00005/00006 already existed on disk — collision risk closed.
 VOC:     { next_seq: 4 }    # 00001 (Tag Library), 00002 (Status Library), 00003 (Maturity-Depth Axis, DIOS-adopted 2026-07-18)
 LOAD:    { next_seq: 2 }    # 00001 used
-SCHEMA:  { next_seq: 2 }    # 00001 (placement-engine) — added 2026-07-18 after the I9 check flagged CISEM-SCHEMA-00001 unregistered
+SCHEMA:  { next_seq: 3 }    # 00002 (real-value-verification-checklist — 2-axis: wiring_state [ref ARCH-00011 §4] + value_delivered [evidence + independent verifier]; ARCH-00431, 2026-07-27). 00001 (placement-engine) — added 2026-07-18 after the I9 check flagged CISEM-SCHEMA-00001 unregistered
 REG:     { next_seq: 1 }    # this file's own type, unassigned a sequence itself (root registry, exempt)
 
 # ── PRE-NODE namespaces (parking / queue / handoff) — now allocated through THIS SINGLE GATE too ──
