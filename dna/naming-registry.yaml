@@ -13,7 +13,7 @@
 FOUND:   { next_seq: 2 }
 DNA:     { next_seq: 2 }
 GOV:     { next_seq: 27 }
-ARCH:    { next_seq: 430 }  # 00429 = MCP per-platform stabilization + workspace isolation (Governor informed decree 2026-07-27: CISEM keeps 4 own connectors active [Gmail/Calendar/Drive/Canva] + Otosan denied at connection layer; consolidates IBD-0022 + amends GI-51; authorizes the held platform-isolation-check.sh workspace detector; Phase-2 = per-platform GitHub[local-scope]/Playwright + workspace split). 00428 = Three Safety Guards plan (D1 loop-stopper [Claude Code PostToolUse/Stop hook +
+ARCH:    { next_seq: 431 }  # 00430 = CIC/Golden-Thread Auditor agent (cisem-cic-auditor: read-only Opus-tier flow-traceability auditor; 4-check golden-thread audit goal->inheritance->value->mechanism; consolidates existing invariants, coins none; Governor-ratified 2026-07-27). 00429 = MCP per-platform stabilization + workspace isolation (Governor informed decree 2026-07-27: CISEM keeps 4 own connectors active [Gmail/Calendar/Drive/Canva] + Otosan denied at connection layer; consolidates IBD-0022 + amends GI-51; authorizes the held platform-isolation-check.sh workspace detector; Phase-2 = per-platform GitHub[local-scope]/Playwright + workspace split). 00428 = Three Safety Guards plan (D1 loop-stopper [Claude Code PostToolUse/Stop hook +
 # session-scoped state file; consecutive-signature screen + NO-PROGRESS authoritative tiebreaker + hard ceilings +
 # 3 context-profiles + polling-interval signal + outer dumb wall-clock backstop, per RI-0042 Brain-refined] + D2
 # consensus-gate [self-check + dna/checks/consensus-gate.sh scanning digest-class files for ratify/decide language
