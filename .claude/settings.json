@@ -4,8 +4,7 @@
   ],
   "permissions": {
     "allow": [
-      "Edit",
-      "Write"
+      "Edit(./**)"
     ],
     "deny": [
       "mcp__claude_ai_Otosan_wordpress_Claude__*"
