@@ -61,7 +61,29 @@ Read: CLAUDE.md → this file → dna/quality-ledger.yaml (latest runs) → dna/
 dna/queue/README.md. Then you have full context with zero conversation dependency. First move:
 process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
-## COMPACT STATE — 2026-07-26 NIGHT (SUPERSEDES all below; THE authoritative resume anchor — SECURITY/ISOLATION phase)
+## COMPACT STATE — 2026-08-07 (SUPERSEDES all below; THE authoritative resume anchor — MCP/ISOLATION CLOSED + governance-tools + harmonious-flow phase)
+**RESUME:** CLAUDE.md → this block → `dna/learning-registry/root-insights.yaml` RI-0058..0067 → `dna/planning/CISEM-ARCH-00432-...md` (the drafted next-build) → `dna/external-review/CISEM-Opus__FOR-Antigravity__2026-08-07__...md`. git HEAD = **f62dccd** (== origin, all pushed). Commit discipline holds: bg-commit · NEVER --no-verify · serialize · report the real hex hash · new governed files in strict dirs need `authorizing_plan:` (PART08). NOTE: permissions are now SCOPED — `allow: [Edit(./**)]` (b9e5a72), so editing OUTSIDE the Cisem root PROMPTS (cross-project isolation for file tools).
+
+**THIS SESSION — DELIVERED (all committed + pushed):**
+- **Deep-core:** **Principle 22 (provenance-before-reliance) + §2.3 DEEP-ROOT TRIGGER PROTOCOL** wired into the constitution (fe79fbb) — RI-0062/0063.
+- **cisem-cic-auditor** — new read-only CIC/Golden-Thread flow auditor agent (ARCH-00430; 297f45e/0006328). **First run PROVED it**: caught a real C2 backward-propagation gap + a detector drift on the MCP thread that Opus + both GI-68 reviewers missed. RI-0064/0066.
+- **Real-Value Verification SSOT** — CISEM-SCHEMA-00002 (2-axis: wiring-state + value_delivered, evidence + independent verifier) + `wiring-value-report.sh` weekly bottom-line (ARCH-00431; 7cc4b31/8b46641). GI-68 caught + fixed a self-declaration hole in it. RI-0065.
+- **MCP CLOSED (ARCH-00429):** CISEM keeps Gmail/Calendar/Drive/Canva ACTIVE, Otosan denied (2fde884). **C4 PASSED — Governor ran `/mcp`: all 4 connected (65 tools), Otosan absent (2fa7b1e).** GI-51 amended + propagated (CIC-audit C2 fix).
+- **ISOLATION:** Layer-1 detector LANDED (47155f7). **RI-0067 (verified doc+empirical):** mechanical filesystem isolation is UNAVAILABLE on native Windows (no OS sandbox) — config gives DETECTION (detector) + FILE-TOOL PREVENTION (scoped-allow prompt, b9e5a72); only raw Bash bypasses. True mechanical = WSL2 or physical-separation (Governor decision).
+- **SSOT repair:** root-insights.yaml did not whole-parse (3 pre-existing bare-colon status lines) — FIXED (69e74e5); [YAML-VALID] registry check routed as the prevention.
+- **Operating-spine synthesis + Antigravity exchange (f62dccd):** the 5 processes = ONE goal-rooted loop; harmony gap = pending work scattered across ~14 homes (A8) + ratified-unbuilt seam-closers. Antigravity (Governor's parallel platform) mechanized the same seams → ideas adopted into **ARCH-00432 (harmonious-flow, DRAFTED, awaiting ratification)** whose core is a GENERATED work-spine view. Outbound Antigravity doc authored for Governor to relay.
+
+**★ FRESH-TAB FIRST MOVE = ARCH-00432** (the harmonious-flow work-spine) is drafted at AWAITING-BUILDER-REVIEW — run it through Opus-soundness → GI-68 → Governor ratification, then build the **generated work-spine view** (one board over the ~14 pending-work homes; NOT a 15th list). It consolidates ARCH-00419/426/406.
+
+**KEY OPEN (flagged, not dropped):**
+- **Governor decision — the bash-isolation residual:** WSL2 (true mechanical isolation) vs accept detection+discipline (RI-0067). The one remaining slice of the isolation thread.
+- **Governor config — the WORKSPACE SPLIT:** siblings (`../Core Sights Platform`, `../Csps`) are still filesystem-reachable (the detector flags it every session); only the split or WSL2 closes the Bash vector.
+- **ARCH-00432 ratification** (the harmonious-flow build) — awaiting Governor.
+- **[YAML-VALID] check** — routed prevention; nothing currently yaml-validates the registries (that's how the 3 broken lines hid).
+- Held (reasoned, not dropped): security-matrix + hardening-prompt (partially stale re: the removed `mcp__*` blanket — need a revision pass); CS-RESEARCH-001 (needs its own authorizing plan). Cloudflare connector needs-auth (not one of the 4 wanted).
+- **RI-0041b corrected:** the plan-audit gate is ~2 min MEASURED (not the assumed ~10) — the "top blocker" premise was unverified; the triple whole-tree scan (penumbra-sweep/build-state) is the real cost, now lower-priority.
+
+## COMPACT STATE — 2026-07-26 NIGHT (SUPERSEDED by the 2026-08-07 block above; kept as history — SECURITY/ISOLATION phase, now largely CLOSED)
 **RESUME:** CLAUDE.md → this block → `dna/learning-registry/root-insights.yaml` RI-0037..0057 → `dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md` (the defense-in-depth matrix, on disk) → the EVENING block below (the 3 RATIFIED plans). git HEAD = **6556769** (pushed). **COMMIT DISCIPLINE (reinforced this phase): `git commit` run_in_background:true; NEVER `--no-verify`; SERIALIZE (never a 2nd bg commit while one runs); REPORT THE REAL HEX HASH, never a task-ID or "committing" (RI-0057-D); new governed files need `authorizing_plan:` (PART08) — else HELD.**
 
 **THIS PHASE — MULTI-PLATFORM SECURITY / ISOLATION (triggered by a real cross-platform contamination):**
