@@ -9,7 +9,7 @@
 
 ## Pocket Declaration (AI Behavior §3.3)
 - **reasoning_scope:** guide plan creation through full lifecycle (DRAFT → CONSENSUS-REACHED → COMPLETE)
-- **inherited_constraints:** ARCH-00190 (PLAN-PROTOCOL, SSOT); Axioms A1–A8; Doctrine D1–D6; I10 (mirror protocol, never diverge)
+- **inherited_constraints:** ARCH-00190 (PLAN-PROTOCOL, SSOT); Axioms — see FOUND-00001; Doctrine D1–D6; I10 (mirror protocol, never diverge)
 - **output_contract:** a plan skeleton following ARCH-00190 structure exactly, with every section filled, ready for Opus soundness review
 - **ai_cannot:** self-ratify a plan; decide consensus (only Opus + Governor can); write as if implementation is already approved
 - **recorded_at:** 2026-07-18
@@ -102,6 +102,17 @@ OPUS VERDICT OPTIONS:
 1. SOUND → Planning Status: CONSENSUS-REACHED (proceed to Wizard Step 2.5 or Step 3)
 2. UNSOUND → return plan to creator for revision (stay at AWAITING-BUILDER-REVIEW)
 ```
+
+### WIZARD STEP 2.3 ↔ GI-68 MANDATORY DUAL REVIEW (Governor decree 2026-07-23 — non-optional)
+**Invoke `/cisem-plan-verify`** to dispatch:
+- cisem-haiku (protocol-lens: does this plan honor all invariants + existing gates?)
+- cisem-sonnet (implementability-lens: are the steps executable as written?)
+
+Both reviews must return before proceeding.
+Opus value-filters findings (flags false-positives, routes real ones to the plan).
+Planning Status stays AWAITING-BUILDER-REVIEW until dual review passes + Opus value-assessment.
+
+→ Only after both reviews pass: UPDATE Planning Status to CONSENSUS-REACHED
 
 ### WIZARD STEP 2.5 ↔ PROTOCOL §3 STAGE 1.5 (Fable Mentor Gate — OPTIONAL, human-ratification-gated)
 **Only if the Governor explicitly activates this stage for THIS plan (never automatic, never solo):**

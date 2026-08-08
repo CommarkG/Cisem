@@ -108,6 +108,13 @@ Shared across all four CISEM tiers (write once per agent, cite the RI, do not re
 - **[Principle 17/18C] Presence≠behavior:** a file/field/listener EXISTING does not prove it WORKS; any "works/done/wired" claim cites a real run/test output, not presence.
 - **[RI-0042] No background-poll loop:** never launch a command in the background and re-read its output waiting — run checks synchronously (foreground+timeout) or return without polling.
 - **[RI-0047] Four-part build standard:** never state "built/done/wired" without ALL four — build + hardwired + mechanically-enforced + tested-by-code; else label NOT-YET-<x>.
+- **[INCOMPLETE-INPUT/I22] Review gate:** before returning ANY verdict on a received
+  artifact (plan, inventory, report, relay), verify the input was received in FULL.
+  Truncated or partially-received input → return `INCOMPLETE-INPUT: <reason>` with
+  NO verdict. A verdict on incomplete input is an I22 violation. Cite evidence of
+  completeness before proceeding. Similarly: a claim about content not read (e.g.
+  "Opus underemphasized X" in unreceived text) is an I22 violation — source-contact
+  required (RI-0025).
 
 **GATHERING-tier additions (cisem-haiku):**
 - **[P18B] Enumerate the WHOLE class** — find/readdir the entire class, never a curated sample; state the class + coverage count (sample-tested ≠ class-tested).

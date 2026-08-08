@@ -1,5 +1,5 @@
 # Harmonious Flow — the Work-Spine View + Seam Mechanization
-**Node ID:** CISEM-ARCH-00432 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** GI-68-DUAL-REVIEWED — findings folded (v0.3, 2026-08-08); AWAITING GOVERNOR RATIFICATION of the SPLIT scope (see `## Ratification Scope`: D1+D2 build-authorize · D3 sequence-only · D4 own-Stage-1-first · D5 assess-only) — NOT self-ratified (GI-63)
+**Node ID:** CISEM-ARCH-00432 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE | **Planning Status:** COMPLETE — Governor RATIFIED SPLIT scope 2026-08-08 (D1+D2 build-authorized; D3 ARCH-00426 sequence-only; D4 carve-out/own-Stage-1; D5 assess-only) (Opus I7 truth-stamp, per ARCH-00432 v0.4)
 **depth_level:** L2 | **Position in schema:** T-SYS, process-orchestration layer
 **tags:** [planning, harmonious-flow, work-spine, mechanization, orchestration, antigravity-informed]
 **wisdom_considered:** [the 3-Haiku operating-spine gather 2026-08-07 (14-home A8 scatter finding), ARCH-00419 (pipeline-view — PARENT, consolidated not forked), ARCH-00426 (WEE — the harvest mechanization), ARCH-00406 (RIPL/vault), A8 one-source, I23 EXISTS≠ACTIVE, Principle 22, A12 (Antigravity = external, ideas-adapted-not-copied), the Real-Value/wiring-state schema SCHEMA-00002]
@@ -104,7 +104,37 @@ Dispatched 2026-08-08 via `/cisem-plan-verify` (cisem-sonnet design lens + cisem
 _Provenance clarification (H-x):_ the "3-Haiku operating-spine gather 2026-08-07" was a PRIOR-SESSION conversational gather (INHERITED, not a persisted artifact) — its conclusion (the ~11-home scatter) is now re-verified on disk this review, so the plan no longer relies on the unpersisted claim.
 _DoD note (F6):_ per-deliverable finish lines are the Falsification Tests above; the DoD prose describes D1's (the core-first proof), not the whole plan's.
 
+---
+
+## AMENDMENTS v0.4 (2026-08-08 — Governor RATIFICATION of SPLIT scope; Brain caveats recorded)
+
+### RATIFICATION (Governor decree, 2026-08-08 — Opus I7 truth-stamp)
+Governor ratified the SPLIT scope (Yariv Fink, informed relay via Brain cross-check):
+- **D1 + D2 (work-spine view + `cisem-status` CLI)** → **BUILD AUTHORIZED**
+- **D3 (WEE build, ARCH-00426)** → ARCH-00426 already RATIFIED; SEQUENCE-ONLY
+- **D4 (active-process router)** → CARVE-OUT; needs own Opus Stage-1 + GI-68
+- **D5 (BLOCK-mode graduation)** → ASSESS-ONLY
+
+### Brain caveats (acknowledged, not blocking D1/D2 build)
+- **Brain D2 — enforcement tier:** before D1/D2 build starts, declare the view's enforcement tier
+  (generated view = BEHAVIORAL; a check enforcing no-12th-list is NOT-YET-WIRED).
+  Current: `## Tier-Routing Declaration` covers who BUILDS, not the view's enforcement tier.
+  Action: ARCH-00432 build ticket (when dispatched to Sonnet) must state the output-tier.
+- **Brain D3 — cross-plan dependency unenforced:** ARCH-00432 → ARCH-00426 dependency is declared
+  but the cross-plan dependency check is NOT-YET-BUILT (no [DEPENDS-ON] gate exists yet).
+  Accepted as-is; state it honestly at build time.
+- **Brain D4 — ARCH-00270 v2 contradiction:** an internal contradiction in ARCH-00270 v2 is
+  documented. D5 assess-only defers this; a home for the contradiction note is needed.
+  Route: ARCH-00434 (decision-closure register — when built).
+- **Brain D1 — ARCH-00419 disposition:** still formally unanswered (asked 3×).
+  Opus ruling (2026-08-08): ARCH-00419 covers pipeline-position of TOPICS (where does X sit in the
+  governance pipeline). ARCH-00432 D1 covers the state of PENDING WORK ITEMS across 11 homes.
+  These are DIFFERENT functions — no supersession. ARCH-00419 is EXPLICITLY PARKED: its D3 is
+  hard-blocked (CS-THRESHOLD-001 bodiless); D1/D4/D2 need GI-68 + Governor ratification first.
+  Wording for ARCH-00419 status: `CONSENSUS-REACHED — PARKED (D3 hard-blocked on CS-THRESHOLD-001 body; D1/D4/D2 awaiting GI-68 + Governor ratification; function distinct from ARCH-00432 D1, 2026-08-08)`.
+
 ## Change log
 - v0.1 — 2026-08-07 (Opus drafted at Governor direction, after the operating-spine synthesis + reading Antigravity's Harmonious-Flow plan): the work-spine view as core; seams mechanized by adapting Antigravity's proven ideas to native-primitives; consolidates ARCH-00419/426/406. Awaits Opus soundness → GI-68 → Governor ratification.
 - v0.3 — 2026-08-08 (Opus Stage-1 verdict + GI-68 dual-review folded, fresh tab, on Governor "I approve what previous tab suggested" = approve the REVIEW PROCESS, not a self-ratify): dispatched `/cisem-plan-verify` (cisem-sonnet + cisem-haiku); both verdicts VERBATIM in `CISEM-ARCH-00432-GI-68-dual-review.md`. Folded all 9 accepted findings — D2 test → live relationship (F1); D1 reframed NEW-construction, ARCH-00419 ghost-seed corrected + verified (F2); SPLIT ratification scope added (F3); D3/D4 alignment rows (F4); home-count 14→11 distinct + parked-register filename + IBD-0017 folded (F5); DoD/provenance notes (F6/F7/H-x). Status → GI-68-DUAL-REVIEWED, AWAITING GOVERNOR RATIFICATION of the split scope. NOT self-ratified (GI-63).
 - v0.2 — 2026-08-07 (enriched from CDS's 7-Tier Harmonious-Flow plan — the THIRD independent convergence on the same 5-system map, built by Sonnet 4.6; A12 — ideas adopted, code not copied): added a FALSIFICATION TEST per deliverable (verify-behavior baked in — CDS's strongest pattern) + a GAP→deliverable traceability. Cross-refs CDS Tier-4 (live-existence-check, not format-only) for the routed-destination-exists guard + Tier-6 (park↔vault bridge) as the vault reference. Convergence across CISEM/Antigravity/CDS validates the synthesis is a real structural map, not one model's opinion.
+- v0.4 — 2026-08-08 (Opus I7 truth-stamp): Governor RATIFIED SPLIT scope — D1+D2 build-authorized; D3 sequence-only (ARCH-00426); D4 carve-out; D5 assess-only. Brain caveats acknowledged (enforcement tier, cross-plan dependency, ARCH-00270 contradiction, ARCH-00419 disposition). ARCH-00419 explicitly ruled distinct-function + PARKED. Planning Status → COMPLETE.
