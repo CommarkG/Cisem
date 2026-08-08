@@ -1,6 +1,6 @@
 # CISEM Enforcement Layer v1
 **Node ID:** CISEM-ARCH-00433 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW
+**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND + GI-68 dual-review complete: haiku protocol-lens PASS + sonnet implementability-lens PASS after v1.3; 2026-08-08)
 **depth_level:** L2 | **tags:** [planning-domain, enforcement, wiring, governance]
 **goal:** Wire 8 currently-declared governance gates as LIVE mechanical checks; close the DECLARED→LIVE gap for this batch
 **governing corespine:** CS-CREATION-001
