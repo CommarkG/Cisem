@@ -220,5 +220,102 @@ Contents: the 6 roofs and their constituent items, as received.
 ## Note on Forward References
 - `CISEM-VOC-00004` referenced in STEP 8: NOT-YET-A-NODE — to be created by STEP 8 of this plan. Forward reference per ARCH-00190 §2 (plan may declare future node IDs; file does not yet exist on disk; [I1] expected until STEP 8 executes).
 
+---
+
+## AMENDMENTS v1.1 (2026-08-08 — Brain corrections applied before dual review)
+
+Brain's protocol review (relayed via Governor, 2026-08-08) identified four corrections.
+Applied additively here; v1.0 body unchanged for audit trail. These SUPERSEDE v1.0 on the named steps.
+
+### STEP 4 AMENDMENT — RI-0021 extension: add premise-validity axis
+**Extend the Action** in STEP 4 with this additional clause:
+"Also covers the **PREMISE-VALIDITY axis** (Principle 22 class — provenance-before-reliance):
+a quantitative or priority-framing claim inherited without verification must be tagged
+INHERITED-UNVERIFIED before it drives a decision. Example from this session: the 47-vs-70+
+taxonomy count discrepancy — a number in context, unverified, potentially driving consolidation
+priority. Prevention: before any inherited number drives a decision, state its provenance tag
+explicitly (MEASURED / SOURCED / ASSERTED / INHERITED-UNVERIFIED). Roof 2 had four content items;
+v1.0 STEP 3 covered one; this amendment covers a second."
+
+**[P5] ROUTING (Brain §3.1 — enumerate + route, not excused):**
+The 4 pre-existing plans with missing verifier fields are ENUMERATED and ROUTED as STEP 9 below.
+They were not introduced by ARCH-00433 but cannot be excluded without routing — they need fixing.
+
+### STEP 6 AMENDMENT — Brain queue: corrected roof routing
+**Update** the STEP 6 Brain queue file content to reflect corrected routing:
+- **Roof 2** → STEP 3 covers INCOMPLETE-INPUT (1 of 4 items). Premise-validity now in STEP 4.
+  Approval-referent → Principle 20 CLAUDE.md (already there; route to pending-sweep).
+  Transfer-not-close → park in queue for ARCH-00434.
+- **Roof 3** → NOT STEP 5. GI-68 is the review mandate; Roof 3 is decision-closure (explicit
+  veto/accept/park + date + ratification reference). Routes to ARCH-00434 (separate plan).
+- **Roof 5** → stub is now GATED (STEP 7 carved-out, Governor-ratified). Roof 5 = CLOSED.
+- **Roofs 1, 4, 6:** routing unchanged.
+
+### STEP 7 STATUS: CARVED-OUT — executed 2026-08-08 (independent of ratification)
+**Brain's sequencing observation (§3):** the stub is STEP 7 of ARCH-00433, but ARCH-00433 needs
+GI-68 dual review before ratification, and Tuesday 2026-08-11 cannot wait.
+**Resolution:** carve out STEP 7 as a standalone low-risk item. Executed immediately.
+**Execution result:** `dna/brain-artifacts/README.md` created with FULL gated requirements
+(Governor-ratified 2026-08-08): `source:` + `trust_tier:` + `depollution_source:` + `depollution_pass:`
+required on every artifact. `-PURIFIED` sibling required. `[RAW-PAIR]` enforces. Honest scope
+(ARCH-00011 §3.5): hooks verify declaration presence, not Stage 1 execution — stated verbatim.
+**STEP 7 in ARCH-00433 execution:** mark DONE at ratification time (already on disk).
+
+### STEP 8 AMENDMENT — Pipeline naming RESOLVED
+**Replace** the "Pipeline naming: Status = NAMING-CONFLICT-OPEN" note in STEP 8 with:
+"Pipeline naming RESOLVED (2026-08-08): Governor's ratification stands — Pipeline = runner (the
+automated execution sense). Brain withdrew the counter-recommendation, citing Existing-First
+failure on Brain's side. The AXIS term = **flow-position** (confirmed, needs no rename). STEP 8
+UNBLOCKED. Overlay section relationships can now be written in VOC-00004."
+
+### NEW STEP 9 — [P5] 4-plan independent verifier sweep
+**Files:**
+- `dna/planning/CISEM-ARCH-00429-mcp-per-platform-stabilization-and-workspace-isolation.md`
+- `dna/planning/CISEM-ARCH-00430-cic-goldthread-auditor-agent.md`
+- `dna/planning/CISEM-ARCH-00431-real-value-verification-schema.md`
+- `dna/planning/CISEM-ARCH-00432-harmonious-flow-work-spine-and-mechanization.md`
+
+**Action:** Add to each plan's header (below depth_level / tags):
+`**Independent Verifier:** cisem-haiku (retroactive declaration per ARCH-00433 STEP 9, [P5] closure, 2026-08-08)`
+
+**DoD:** `bash dna/checks/plan-audit.sh` [P5] shows no findings for these 4 plans.
+
+**What DOES Change (STEP 9 additions):**
+| File | Change |
+|------|--------|
+| `dna/planning/CISEM-ARCH-00429-*.md` | Independent Verifier field added (retroactive [P5] fix) |
+| `dna/planning/CISEM-ARCH-00430-*.md` | same |
+| `dna/planning/CISEM-ARCH-00431-*.md` | same |
+| `dna/planning/CISEM-ARCH-00432-*.md` | same |
+
+### PATH REJECTION AMENDMENT — Roof 3 closure record → ARCH-00434
+**REJECTED from this plan:** Roof 3 decision-closure record (explicit veto/accept/park + date +
+ratification reference per Brain §2.2). This is a SEPARATE infrastructure concern — it needs its
+own plan (ARCH-00434) with a dedicated mechanism (closure record + archive-ledger.yaml extension).
+Adding it to ARCH-00433 would expand scope beyond the enforcement-layer batch. Route explicitly:
+ARCH-00434 = "Decision Closure Register" (to be planned in new Opus tab).
+
+### APPROVAL REFERENT AMENDMENT (Brain §2.1 remaining item)
+Approval-referent (a Governor terse approval does not ratify an unseen artifact) is ALREADY in
+Principle 20 of CLAUDE.md (TERSE-APPROVAL≠QUALITY-BYPASS). Not duplicated here. Routes to:
+pending-sweep of Principle 20 enforcement once status-vocabulary reconciliation unblocks it (Roof 4).
+
+### GI-68 DUAL REVIEW STATUS (Brain §1 — BLOCKING point)
+ARCH-00433 v1.0 presented Opus Stage-1 soundness but NO cisem-haiku protocol-lens + no cisem-sonnet
+implementability-lens. Brain correctly flagged this: the plan that wires enforcement must pass the
+enforcement gate. This is exactly the self-referential proof of why GI-68 exists.
+**Current status:** cisem-haiku + cisem-opus-pe agent reviews dispatched as background agents from
+the 2026-08-08 session. ARCH-00433 Planning Status STAYS at AWAITING-BUILDER-REVIEW until:
+(1) haiku review returns + (2) Opus value-filters + (3) Governor ratifies.
+
+---
+
+## Size Exception Update (v1.1)
+v1.1 adds the AMENDMENTS section: total is now approximately 250 lines.
+Original exception justified at 218/200; the amendments are additive audit trail, not scope expansion.
+The ratio of overhead (shared header/footer) to content remains well within the "mini-tree split
+would cost more than it saves" threshold. Exception maintained.
+
 ## Change Log
-- v1.0 — 2026-08-08: Sonnet draft via /cisem-plan wizard. 8 items, all Sonnet-executable after ratification. Status: AWAITING-BUILDER-REVIEW (Opus Stage-1 soundness pending).
+- v1.0 — 2026-08-08: Sonnet draft via /cisem-plan wizard. 8 items, all Sonnet-executable after ratification. Status: AWAITING-BUILDER-REVIEW.
+- v1.1 — 2026-08-08: Brain corrections applied (4 corrections: STEP 4 premise-validity amendment, STEP 6 routing correction, STEP 7 carved-out + gated execution, STEP 8 pipeline naming resolved, NEW STEP 9 [P5] sweep, Roof 3 → ARCH-00434 routed, GI-68 dual review dispatched). Brain-artifacts/ stub executed and committed.
