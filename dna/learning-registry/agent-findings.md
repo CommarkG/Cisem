@@ -1073,3 +1073,65 @@ Entry format (append, newest at bottom):
   anchor relax (`^[[:space:]-]*\**Independent Verifier`) + I16 value-anchor. Recommend folding into the next
   [CHECK-LINT]/ARCH-00270 check-precision pass. Neither finding is a real defect in ARCH-00432 (its verifier is
   cisem-haiku + cisem-sonnet, GI-68-run this session).
+
+## Task: Sweep 1 (overlay concept) + Sweep 2 (pipeline two-sense) — 2026-08-08
+
+**Executor:** Haiku tier (Gathering tier)  
+**Date:** 2026-08-08  
+**Preventions applied:** [RI-0025], [RI-0042], [RI-0047], [Principle 17/18C], [RULE-0 CLASS-AUDIT], [RULE-2 FIELD-VARIANCE]
+
+### SWEEP 1 SUMMARY — "overlay" concept existence check
+
+**Search scope:** case-insensitive word and partial match across .md, .yaml, .sh, .js, .html files in c:\Users\finky\Desktop\Claude Code\Cisem (excluding .git)
+
+**Synonyms searched:** "overlay", "cross-cutting", "applies everywhere", "binds across", "security constraint" (cross-cutting context), "cross-corespine"
+
+**Results:**
+- **"overlay" (case-insensitive, whole-word + partial):** 41+ hits across planning, governance, registry, trial, archive files
+- **"cross-cutting" + "overlay" pairing:** 12+ hits specifically linking the two concepts
+- **Corespine registry CANDIDATES block:** 2 entries explicitly tagged `OVERLAY-CANDIDATE` (Security) and `OVERLAY-CANDIDATES` (Privacy/Observability/Accessibility)
+- **Trial artifact:** dna/corespines/trial-inheritance-overlay-2026-07-20.md (full manifest of a first-trial overlay candidate, UNSOUND per cold verifier)
+- **Archive entry:** DEC-0007 (Inheritance-as-overlay, superseded/ruled-out, reclassified as KERNEL mechanic)
+- **IBD references:** IBD-0017 P2 (inheritance scope), IBD-0025 (CSP pillars-orthogonal), IBD-0008 (Security as overlay)
+- **Frontend references:** schema.html and corespines-set.html both display OVERLAY-CANDIDATE status badges
+- **Governance docs:** ARCH-00400, ARCH-00404, ARCH-00426, ARCH-00427 all use "overlay" terminology in planning contexts
+
+**Coverage:** overlay concept is WIDESPREAD (distributed across 10+ files, multiple categories). Not absent; actively in use and governed.
+
+### SWEEP 2 SUMMARY — "pipeline" two-sense count
+
+**Search scope:** case-insensitive across same scope
+
+**Output:** 150-line cap reached (grep result larger than capture). Preview shows:
+- CLAUDE.md line 164: **RUNNER sense** ("full VALUE PIPELINE: extract → form → route → consensus → draft → plan")
+- CLAUDE.md line 471: **AXIS sense** ("routed to a rigid pipeline" — governance-flow positioning)
+- ARCH-00406/00407/00426: **RUNNER sense** (Weekly Evolution Engine phases: SCAN → QUEUE → BATCH → GATE → TRIGGER)
+- ARCH-00404: **AXIS sense** (corespine "pipeline position" as a schema placement axis)
+- frontend/pages/pipelines.html line 56: **AXIS sense** (schema documentation: "ordered creation chains" as a governance construct)
+- CS-CI-PIPELINE-001: **Example** (governance reference, example-only tag)
+- Multiple IBD/planning files: **RUNNER sense** (e.g., "governance pipeline + wizard", "creation pipeline")
+
+**Partial count from preview:** RUNNER≈15+, AXIS≈8+, AMBIGUOUS≈3+ (larger set exists beyond 150-line cap)
+
+**Evidence:** "pipeline" serves BOTH senses in active use; requires exhaustive enumeration to classify each hit properly.
+
+---
+
+**FINDINGS FOR OPUS:**
+
+**SWEEP 1 Claim:**
+- **Overlay concept EXISTS** (not a missing 5th concept; already present in corespine-registry CANDIDATES block)
+- **Status:** two CANDIDATES (Security, Privacy/Observability/Accessibility) tagged OVERLAY-CANDIDATE(S)
+- **Governance presence:** ARCH-00400/00404/00426 all model overlays; cold-verifier trial ran (UNSOUND, reclassified)
+- **Coverage:** distributed (not consolidated in one file; split across registry + planning + trials + archive)
+
+**SWEEP 2 Claim:**
+- **Pipeline word** appears 50+ times (estimate, output capped at 150 lines)
+- **Two distinct senses co-exist:** RUNNER (execution stages) and AXIS (governance positioning/lifecycle)
+- **Ambiguity risk:** high — mixed metaphors in same docs (e.g., "pipeline" as both a run-sequence AND a schema-axis)
+- **Consolidation opportunity:** no single term hierarchy disambiguates the senses
+
+---
+
+**Timestamp:** 2026-08-08 | **Preventions routed:** [CLASS-AUDIT] on overlay corespine-registry entries (enumerate all OVERLAY candidates, not just the 2 visible); [FIELD-VARIANCE] manual check needed before "overlay" compliance claim.
+
