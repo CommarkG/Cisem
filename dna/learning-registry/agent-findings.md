@@ -1059,3 +1059,17 @@ Entry format (append, newest at bottom):
   falsification test ("a KNOWN open item from each of the 14 homes") is therefore literally un-runnable as
   written. → DISTILL-PENDING (candidate: plan-audit enumeration-count check — any plan citing "N homes/sources"
   in prose must have exactly N enumerated + each grep-verifiable on disk).
+- [2026-08-08 · cisem-opus · ARCH-00432 v0.3 ZF-board] **[P5] + [I16] check-precision FALSE-POSITIVES (RI-0012
+  class).** After committing ARCH-00432 v0.3 the [ZF] gate showed "2 open findings". Both are check-regex
+  precision bugs, NOT content defects: (a) **[P5] "plans missing an independent verifier"** flags ARCH-00429/
+  00430/00431/00432 — but ALL FOUR declare the field in the CANONICAL Pocket-Declaration bullet form
+  `- **Independent Verifier:** …` (line 15/16). P5 anchors the label at LINE START (`^**Independent Verifier`
+  / `^Independent Verifier:`), so the leading `- ` bullet defeats the match → every plan using the standard
+  field layout is silently mis-flagged. (b) **[I16]** flags CONSENSUS-PACKAGE-for-Brain-2026-07-26.md on a bare
+  `Status:` substring inside PROSE ("Status: 100% manual relay today"), not a real status field. CLASS: field-
+  detection regexes must anchor on the FIELD (allowing an optional leading `- `/whitespace bullet marker) and on
+  the VALUE, never a bare line-start or bare substring (RI-0012 / [CHECK-LINT] family). → DISTILL-PENDING +
+  PLAN-GATED FIX (touches the enforcement gate plan-audit.sh — must NOT be freestyled, RI-0036): one-line P5
+  anchor relax (`^[[:space:]-]*\**Independent Verifier`) + I16 value-anchor. Recommend folding into the next
+  [CHECK-LINT]/ARCH-00270 check-precision pass. Neither finding is a real defect in ARCH-00432 (its verifier is
+  cisem-haiku + cisem-sonnet, GI-68-run this session).
