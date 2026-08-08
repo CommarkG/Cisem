@@ -1025,3 +1025,37 @@ Entry format (append, newest at bottom):
   the OTHER ~20 check sections (I16 whole-tree per-file scans were already flagged 2026-07-22 as the dominant cost
   and are still unfixed). → DISTILL-PENDING (candidate: pair with RI-0012 substring/anchoring family — "an anchored
   pre-filter must not silently replace an unanchored per-item check").
+
+- [2026-08-08 · cisem-sonnet · GI-68 dual-review (design/implementability lens) of CISEM-ARCH-00432
+  (harmonious-flow work-spine)] **Class-level finding: a plan's acceptance criterion baking in a TODAY count
+  (e.g. "43 IBD, 12 BP") as a hardcoded falsification-test target is a Principle-22 provenance gap AND an
+  implementability gap — the number is un-cited (no "measured on <date> via <command>" tag) and, being a live
+  filesystem count, will legitimately drift the moment a new IBD/BP is created, making a CORRECT script fail a
+  STALE test. CLASS: any falsification test comparing against a "current count" must assert the RELATIONSHIP
+  (script-count == `find`/`ls`-count, computed at test-run-time) never a frozen literal baked in at drafting-time.
+  Verified independently: filesystem count actually matches (43 IBD files via `ls dna/ibd | grep -c ^IBD-`, 12
+  canonical BP-NNNN files in dna/queue/) — so the numbers are accidentally right, not verifiably-sourced right.
+  → DISTILL-PENDING (candidate: extend RI-0062/Principle-22 PREMISE family with a "no frozen-count acceptance
+  criteria" sub-rule).
+- [2026-08-08 · cisem-sonnet · same review] **Ghost-destination class-audit finding (I23):** ARCH-00432 D1's
+  "seed" (ARCH-00419) is itself Planning Status CONSENSUS-REACHED / Node Status PROVISIONAL-ACTIVE — NOT
+  Governor-ratified (quality-ledger.yaml session_catchup_2026_07_24 explicitly lists it "awaiting a FRESH GI-68
+  dual review -> Governor Stage-2", and no later record shows that review completing) — and ARCH-00419's OWN D2
+  (the actual view-generation script, `dna/checks/planning-marker-view.sh`) is explicitly "NOT-YET-BUILT" per its
+  own text; only a 4-home DOCS-ONLY mapping table (its D1) exists on disk. So "ARCH-00419 (parent — its
+  pipeline-view is D1's seed)" cites a conceptual table, not a buildable/running artifact — D1 of ARCH-00432 must
+  be built fresh (10 of its ~12-14 named homes have no counterpart in ARCH-00419 at all). CLASS: a plan's
+  "blocks-on X (X is my seed)" dependency line must state X's ACTUAL wiring-state (ratified? built? docs-only?),
+  not just cite it by name — else a reviewer/builder inherits a false sense of an existing foundation.
+  → DISTILL-PENDING (candidate: extend the ARCH-00420 wiring-consolidation-index checklist to require a
+  wiring-state tag on every cited "seed"/"parent" dependency).
+- [2026-08-08 · cisem-sonnet · same review] **D1's named 12-home list ("todo-tracker · IBD · BP-queue · queue
+  PARK/NEWTAB · root-insights · session-index · parked-register · quality-ledger open · unbuilt plans ·
+  governor-insights backlog · IBD-0017 · WITNESS") does not match the plan's own repeated "~14 homes" /
+  "the 14 homes" claim (goal line, executive summary, falsification test) — it is 12, not 14, and one named
+  home ("parked-register") has NO corresponding file/registry anywhere in the repo (grepped repo-wide; the only
+  hits are ARCH-00432 self-references). "IBD-0017" is also listed as its OWN home separate from the general
+  "IBD" home, an instance-vs-class conflation not applied to any other multi-item IBD (e.g. IBD-0030). The D1
+  falsification test ("a KNOWN open item from each of the 14 homes") is therefore literally un-runnable as
+  written. → DISTILL-PENDING (candidate: plan-audit enumeration-count check — any plan citing "N homes/sources"
+  in prose must have exactly N enumerated + each grep-verifiable on disk).
