@@ -61,7 +61,30 @@ Read: CLAUDE.md → this file → dna/quality-ledger.yaml (latest runs) → dna/
 dna/queue/README.md. Then you have full context with zero conversation dependency. First move:
 process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
-## COMPACT STATE — 2026-08-07 (SUPERSEDES all below; THE authoritative resume anchor — MCP/ISOLATION CLOSED + governance-tools + harmonious-flow phase)
+## COMPACT STATE — 2026-08-08 (SUPERSEDES all below; THE authoritative resume anchor — ARCH-00433 RATIFIED + enforcement layer groundwork)
+**RESUME:** CLAUDE.md → this block → `dna/learning-registry/root-insights.yaml` RI-0068 → `dna/planning/CISEM-ARCH-00433-enforcement-layer-v1.md` (RATIFIED; STEPS 2–8 awaiting dispatch) → `dna/planning/CISEM-ARCH-00432-harmonious-flow-plan.md` (AWAITING-BUILDER-REVIEW — next first move). git HEAD = **1d5d763** (== origin/main, all pushed). Commit discipline: bg-commit · NEVER --no-verify · serialize · real hex hash · governed files need `authorizing_plan:`.
+
+**THIS SESSION — DELIVERED (all committed + pushed):**
+- **ARCH-00433 RATIFIED** (Governor decree 2026-08-08, saw plan at v1.5; both Brain conditions met): 5 amendment rounds; Opus I7 truth-stamp. commit **d104598**.
+- **[RATIFY-GATE] regex fix**: OR-extension `^## +GI-68 Dual[ -]Review` — accepts hyphenated headings, analytical proof: cannot increase false negatives. Part of d104598.
+- **9-plan PREMATURE-RATIFY disposition**: 2 auto-cleared (00423, 00425 — regex fix); 7 retroactive GI-68 headings (00422, 00426–00431). Part of d104598.
+- **brain-artifacts/README.md intake-class split**: Class A (foreign-platform → Stage 1 required) vs Class B (CISEM-native Brain drafts → Stage 1 N/A, Stage 2 still required). Part of d104598.
+- **RI-0068 routed**: EXISTS≠ACTIVE applied inward to the check system — a WARN with no drain is not enforcement; enforcement_tier + findings-drain lifecycle = ARCH-00435 candidate. commit 148cae9.
+- **External-review relay for Antigravity** (dual-review method + findings): Governor-committed, commit **896937d**. A12-noted outbound doc (method to adapt, not code to copy).
+- **[BUILD-STATE] CLEARED**: 5 NOT-YET-BUILT markers added to ARCH-00433 absent-deliverable rows — build-state.sh: 0 flagged. commit **1d5d763**.
+
+**ZF STATUS:** ✅ ZF ACHIEVED (I1+I9+I6-SIZE+I16+I19+I23+I24+P3+P5 clean) · [BUILD-STATE] 0 flagged · [RATIFY-GATE] clean · tree clean · pushed (1d5d763 == origin/main).
+
+**OPEN (flagged, not dropped):**
+- **ARCH-00433 STEPS 2–8**: RATIFIED, awaiting cisem-sonnet dispatch — five NOT-YET-BUILT deliverables (brain-open-queue.md, VOC-00004, brain-artifacts dir already done (STEP 7), cisem-plan Pocket Declaration fix (STEP 2), INCOMPLETE-INPUT gate (STEP 3), RI-0021 extension (STEP 4), GI-68 wizard wiring (STEP 5)).
+- **ARCH-00432** (harmonious-flow plan): AWAITING-BUILDER-REVIEW — Opus soundness → GI-68 → Governor ratification. Per prior session this was the fresh-tab first move; still pending.
+- **ARCH-00435 plan**: enforcement_tier vocabulary + findings-drain lifecycle (ARCH-00433 RI-0068 class).
+- **brain-open-queue.md relay to Brain**: Tuesday 2026-08-11 09:00 (Asia/Jerusalem) — external-depollution-prompt already relayed.
+- **3 HELD files (DO NOT COMMIT)**: `dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md` + `dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md` + `dna/corespines/CS-RESEARCH-001/` — each needs its own authorizing plan.
+- **Roof 6 Antigravity incident**: Governor to raise on CsAg workspace (I27 candidate).
+- **ARCH-00434 Decision Closure Register** + **ARCH-00417 B3 substrate**: still queued, Governor decision.
+
+## COMPACT STATE — 2026-08-07 (SUPERSEDED by 2026-08-08 above; kept as history — MCP/ISOLATION CLOSED + governance-tools + harmonious-flow phase)
 **RESUME:** CLAUDE.md → this block → `dna/learning-registry/root-insights.yaml` RI-0058..0067 → `dna/planning/CISEM-ARCH-00432-...md` (the drafted next-build) → `dna/external-review/CISEM-Opus__FOR-Antigravity__2026-08-07__...md`. git HEAD = **f62dccd** (== origin, all pushed). Commit discipline holds: bg-commit · NEVER --no-verify · serialize · report the real hex hash · new governed files in strict dirs need `authorizing_plan:` (PART08). NOTE: permissions are now SCOPED — `allow: [Edit(./**)]` (b9e5a72), so editing OUTSIDE the Cisem root PROMPTS (cross-project isolation for file tools).
 
 **THIS SESSION — DELIVERED (all committed + pushed):**
