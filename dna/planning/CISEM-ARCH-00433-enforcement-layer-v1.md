@@ -37,14 +37,14 @@ This plan nominates 9 elements to wire; STEP 1 moot + STEP 9 pre-executed = 6 ac
 
 ### STEP 1 — Route [BUILD-STATE] [ZF] findings
 **Files:**
-- `dna/planning/CISEM-ARCH-00410-frontend-visualization.md`
+- `dna/planning/CISEM-ARCH-00410-frontend-visualization.md` NOT-YET-BUILT: MOOT (STEP 1 pre-executed — markers confirmed present 2026-08-08)
 - `dna/planning/CISEM-ARCH-00420-PART08-plan-authorization-gate.md`
 
 **Action:** In ARCH-00410, find the mindmap.js deliverable row and append:
-`# unbuilt: frontend/js/mindmap.js absent — visualization not yet built; [BUILD-STATE] routed 2026-08-08`
+`# unbuilt: frontend/js/mindmap.js absent — visualization NOT-YET-BUILT; [BUILD-STATE] routed 2026-08-08`
 
 In ARCH-00420-PART08, find the .claude/settings.js deliverable row and append:
-`# unbuilt: .claude/settings.js absent — plan-authorization gate deliverable not yet built; [BUILD-STATE] routed 2026-08-08`
+`# unbuilt: .claude/settings.js absent — plan-authorization gate deliverable NOT-YET-BUILT; [BUILD-STATE] routed 2026-08-08`
 
 **DoD:** `bash dna/checks/plan-audit.sh` shows no [BUILD-STATE] findings for ARCH-00410 or ARCH-00420-PART08.
 
@@ -176,9 +176,9 @@ Contents: the 6 roofs and their constituent items, as received.
 | `.claude/skills/cisem-plan/SKILL.md` | Step 2.3 added + A1-A8 → A1-A9 in Pocket Declaration |
 | `dna/planning/CISEM-ARCH-00410-*.md` | # unbuilt marker added to mindmap.js deliverable row |
 | `dna/planning/CISEM-ARCH-00420-PART08-*.md` | # unbuilt marker added to settings.js deliverable row |
-| `dna/queue/brain-open-queue.md` | new file — Brain's 6 roofs / 11 items |
+| `dna/queue/brain-open-queue.md` | new file — Brain's 6 roofs / 11 items · NOT-YET-BUILT |
 | `dna/brain-artifacts/README.md` | new directory + README |
-| `dna/vocabulary/CISEM-VOC-00004-concept-definitions.md` | new file — A1/A2 + overlay status |
+| `dna/vocabulary/CISEM-VOC-00004-concept-definitions.md` | new file — A1/A2 + overlay status · NOT-YET-BUILT |
 | `dna/learning-registry/root-insights.yaml` | RI-0021 extended with INCOMPLETE-INPUT class |
 | `dna/naming-registry.yaml` | ARCH: 433→434, VOC: 4→5 |
 
