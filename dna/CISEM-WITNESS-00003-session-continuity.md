@@ -61,7 +61,36 @@ Read: CLAUDE.md → this file → dna/quality-ledger.yaml (latest runs) → dna/
 dna/queue/README.md. Then you have full context with zero conversation dependency. First move:
 process the Founding axioms (Governor to provide), then hand queued BPs to cisem-sonnet.
 
-## COMPACT STATE — 2026-08-08 (SUPERSEDES all below; THE authoritative resume anchor — ARCH-00433 RATIFIED + enforcement layer groundwork)
+## COMPACT STATE — 2026-08-08 cont. (SUPERSEDES all below; Governor RATIFIED ARCH-00432 SPLIT scope + ARCH-00433 STEPS 2-5 DONE + STEP 8 VOC-00004 created)
+**RESUME:** CLAUDE.md → this block → `dna/planning/CISEM-ARCH-00433-enforcement-layer-v1.md` (RATIFIED; STEP 6 in-progress, STEP 8 DONE-pending-commit) → `dna/planning/CISEM-ARCH-00432-harmonious-flow-work-spine-and-mechanization.md` (COMPLETE — Governor RATIFIED SPLIT scope 2026-08-08). git HEAD = **4ef8284** (STEPS 2-5 + ARCH-00432 v0.4 committed; VOC-00004 + STEP 6 pending commit). Commit discipline: bg-commit · NEVER --no-verify · serialize · real hex hash.
+
+**THIS CONTINUATION — DELIVERED:**
+- **ARCH-00432 v0.4 COMPLETE**: Governor RATIFIED SPLIT scope 2026-08-08 (D1+D2 build-authorized; D3 ARCH-00426 sequence-only; D4 carve-out/own-Stage-1; D5 assess-only). Brain caveats recorded; ARCH-00419 EXPLICITLY PARKED (different function). I7 truth-stamp. commit **4ef8284**.
+- **ARCH-00433 STEP 2**: cisem-plan/SKILL.md Pocket Declaration axiom range → unranged pointer (`Axioms — see FOUND-00001`). commit 4ef8284.
+- **ARCH-00433 STEP 3**: INCOMPLETE-INPUT gate added to ALL 3 tier agents (cisem-haiku/sonnet/opus-pe). commit 4ef8284.
+- **ARCH-00433 STEP 4**: RI-0021 routes_to extended (INCOMPLETE-INPUT class + RI-0062 sibling); Opus I7 stamp applied (WIRED-INTO-TIER-AGENTS behavioral; mechanical gate NOT-YET-WIRED). commit 4ef8284.
+- **ARCH-00433 STEP 5**: WIZARD STEP 2.3 GI-68 MANDATORY DUAL REVIEW block inserted in cisem-plan/SKILL.md. commit 4ef8284.
+- **ARCH-00433 STEP 8**: `dna/vocabulary/CISEM-VOC-00004-concept-definitions.md` CREATED (Sonnet, verified). Def 1 wizard/pipeline RATIFIED; Def 2 corespine/protocol RATIFYING-AS-PAIR (3 candidates: CS-CREATION-001/45 nodes, CS-THRESHOLD-001, CS-MASTER-VALIDATION-001); Def 3 overlay CANDIDATE FRAMING PENDING CONSENSUS. **PENDING commit** (with ARCH-00433 change-log update for STEPS 6+8).
+
+**STILL-OPEN before next commit:**
+- ARCH-00433 STEP 6 (`dna/queue/brain-open-queue.md`): Sonnet agent dispatched (in-progress).
+- Opus to add STEP 6 + STEP 8 entries to ARCH-00433 change-log section.
+- Commit VOC-00004 + brain-open-queue.md + ARCH-00433 change-log together.
+
+**STILL-OWED to Brain (pending relay):**
+- Model×mode plan text (Item 7) — Governor has not pasted; still missing.
+- (ARCH-00419 disposition, DEC-0007, inventory verdict: all answered this session — ready to relay.)
+
+**OPEN (flagged, not dropped):**
+- **Amendment 2 corespine pair ratification**: 3 RECLASSIFICATION CANDIDATES identified (CS-CREATION-001/45-node cascade, CS-THRESHOLD-001, CS-MASTER-VALIDATION-001). Present to Governor + Brain.
+- **ARCH-00434 Decision Closure Register**: new Opus tab (first entry = pipeline naming; second = Amendment 2 corespine pair).
+- **ARCH-00419 Planning Status update**: add PARKED notation in the file (awaiting Governor explicit word).
+- **ARCH-00435 plan**: enforcement_tier vocabulary + findings-drain lifecycle.
+- **3 HELD files (DO NOT COMMIT)**: `dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md` + `dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md` + `dna/corespines/CS-RESEARCH-001/`.
+- **Roof 6 Antigravity**: Governor handling with Brain (CsAg workspace); I27 candidate.
+- **ARCH-00417 B3 substrate**: still queued, Governor decision.
+
+## COMPACT STATE — 2026-08-08 phase-1 (SUPERSEDED by continuation above; kept as history — ARCH-00433 RATIFIED + [BUILD-STATE] cleared)
 **RESUME:** CLAUDE.md → this block → `dna/learning-registry/root-insights.yaml` RI-0068 → `dna/planning/CISEM-ARCH-00433-enforcement-layer-v1.md` (RATIFIED; STEPS 2–8 awaiting dispatch) → `dna/planning/CISEM-ARCH-00432-harmonious-flow-plan.md` (AWAITING-BUILDER-REVIEW — next first move). git HEAD = **1d5d763** (== origin/main, all pushed). Commit discipline: bg-commit · NEVER --no-verify · serialize · real hex hash · governed files need `authorizing_plan:`.
 
 **THIS SESSION — DELIVERED (all committed + pushed):**

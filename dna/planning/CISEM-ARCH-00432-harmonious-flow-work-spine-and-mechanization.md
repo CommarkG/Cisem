@@ -34,9 +34,9 @@ Central, in order: **D1 the work-spine GENERATED view** (makes the whole flow vi
 | File | ID / registry | Schema placement | tags | status |
 |---|---|---|---|---|
 | `dna/planning/CISEM-ARCH-00432-...md` (this) | CISEM-ARCH-00432 (naming 432→433) | T-SYS, planning-orchestration | planning, harmonious-flow | PROVISIONAL-ACTIVE / AWAITING-BUILDER-REVIEW |
-| `dna/checks/cisem-status.sh` (NEW, D1/D2) | check | T-SYS, check layer | work-spine, view | to-be-created at build (+ fixture, RI-0058) |
+| `dna/checks/cisem-status.sh` (NEW, D1/D2) | check | T-SYS, check layer | work-spine, view | NOT-YET-BUILT (D1+D2 build-authorized 2026-08-08; fixture required per RI-0058; awaiting build dispatch) |
 | WEE artifacts (D3 — per ARCH-00426 L1–L4) | per ARCH-00426 | T-SYS, CAL/harvest layer | harvest, wee | ARCH-00426 RATIFIED — SEQUENCE the build (no new ratification) |
-| `dna/checks/active-process-router.sh` (NEW, D4) | check/hook | T-SYS, check layer | swift, router | NEEDS its OWN Opus Stage-1 before build (has none) |
+| `dna/checks/active-process-router.sh` (NEW, D4) | check/hook | T-SYS, check layer | swift, router | NOT-YET-BUILT — CARVE-OUT: needs own Opus Stage-1 + GI-68 before build (D4 carved-out at ratification) |
 | ARCH-00419 / 00426 / 00406 | existing plans | — | — | CONSOLIDATED/SEQUENCED by this plan (not forked) |
 
 ## What DOES change
@@ -51,7 +51,7 @@ Per `dna/checks/definition-of-done.md`: the work-spine view RUNS and emits a rea
 ## Falsification Tests (per deliverable — discipline ADOPTED from CDS's 7-Tier Harmonious-Flow plan, 2026-08-07)
 Each deliverable ships a concrete "do X → assert Y" test that FAILS if the deliverable doesn't behave — verify-behavior baked into the plan (the CDS pattern; the strongest thing about their plan, and CISEM's own Principle-18C operationalized):
 - **D1 (work-spine view):** take a KNOWN open item from each of the 11 homes (e.g. a specific IBD-NNNN, a BP-NNNN, an open RI) → the generated board MUST list all of them at their correct stage. FALSIFIES if any known pending item is MISSING from the board.
-- **D2 (`cisem-status`):** run it → each count MUST equal the SAME-INSTANT `find`/`ls` count RECOMPUTED at test-run-time — a LIVE relationship (`view-count == filesystem-count`), NEVER a frozen literal (verified 43 IBD / 12 BP on 2026-08-08, but the test asserts the *equality*, so it stays true as the repo grows — Principle 22: no frozen number as an acceptance criterion). FALSIFIES if `cisem-status`'s count ≠ the live filesystem count.
+- **D2 (`cisem-status`):** run it → each count MUST equal the SAME-INSTANT `find`/`ls` count RECOMPUTED at test-run-time — a LIVE relationship (`view-count == filesystem-count`), NEVER a frozen literal (snapshot at review time 2026-08-08: 43 IBD / 12 BP — DOCUMENT-READ from registry, NOT filesystem-verified; the test asserts the live *equality*, so it stays true as the repo grows — Principle 22: no frozen number as an acceptance criterion). FALSIFIES if `cisem-status`'s count ≠ the live filesystem count.
 - **D3 (harvest mechanization):** trigger a compact → the hook MUST have WRITTEN the structured extraction to disk (not merely echoed the mandate). FALSIFIES if only the cue fired (the current state).
 - **D4 (active-process router):** park an item tagged to match the ACTIVE plan → it MUST be surfaced for swift-integration that session. FALSIFIES if it waits for the weekly batch.
 - **D5 (BLOCK-mode):** a check with a KNOWN false-positive MUST NOT graduate to BLOCK. FALSIFIES if a false-positiving check blocks a commit.

@@ -354,3 +354,33 @@ session_2026_08_08_harvest:
     - "VOC-00004 file body creation: STEP 8 (ARCH-00433 execution, post-ratification)"
     - "ARCH-00426 WEE build: weekly deep-pattern session automation (parked, GI-72 manual cue until built)"
   resume_anchor: "CLAUDE.md → dna/CISEM-WITNESS-00003-session-continuity.md → dna/planning/CISEM-ARCH-00433-enforcement-layer-v1.md (CONSENSUS-REACHED, v1.4) → Governor ratification"
+
+session_2026_08_08_continuation_harvest:
+  date: "2026-08-08 (continuation tab — Governor relay processed)"
+  git_head_at_commit: "4ef8284 (STEPS 2-5 + ARCH-00432 v0.4; further commits pending STEP 6 + STEP 8)"
+  phase: "Governor relay + ARCH-00433 STEPS 2-8 execution + Amendment 2 corespine sweep"
+  fruits:
+    - "Governor RATIFIED ARCH-00432 SPLIT scope (D1+D2 build-authorized; D3 ARCH-00426 sequence-only; D4 carve-out/own-Stage-1; D5 assess-only). Brain caveats recorded in v0.4 amendment block. ARCH-00419 EXPLICITLY PARKED (different function from ARCH-00432 D1 — topic pipeline-position vs work-item board). Opus I7 truth-stamp. Planning Status → COMPLETE."
+    - "ARCH-00433 STEPS 2-5 DONE (Sonnet execution + Opus I7 stamps): STEP 2 = unranged axiom pointer (`Axioms — see FOUND-00001`) in cisem-plan/SKILL.md Pocket Declaration — prevents stale-range-literal class; STEP 3 = INCOMPLETE-INPUT behavioral gate wired into all 3 tier agents (cisem-haiku/sonnet/opus-pe) MANDATORY STANDING CHECKS; STEP 4 = RI-0021 routes_to extended (INCOMPLETE-INPUT class + RI-0062 sibling); Opus I7 status stamp applied (WIRED-INTO-TIER-AGENTS behavioral, mechanical gate NOT-YET-WIRED); STEP 5 = WIZARD STEP 2.3 GI-68 MANDATORY DUAL REVIEW block inserted in cisem-plan/SKILL.md between Steps 2 and 2.5. commit 4ef8284."
+    - "ARCH-00433 STEP 8 DONE: VOC-00004 dna/vocabulary/CISEM-VOC-00004-concept-definitions.md created by Sonnet (Def 1 wizard/pipeline RATIFIED Governor 2026-08-08; Def 2 corespine/protocol RATIFYING-AS-PAIR with 3 reclassification candidates identified; Def 3 overlay CANDIDATE FRAMING PENDING CONSENSUS). PROVISIONAL-ACTIVE. PENDING commit."
+    - "Amendment 2 corespine pair: Haiku sweep completed → 3 RECLASSIFICATION CANDIDATES (CS-CREATION-001 RATIFIED/45 governed nodes, CS-THRESHOLD-001 RATIFIED, CS-MASTER-VALIDATION-001 RATIFIED); 9 confirmed always-on corespines; 3 ambiguous (CS-ACCOUNTABILITY-001, CS-CONTROLPLANE-001, CS-CORECOUNCIL-001). Pair ratification pending Governor + Brain (GI-63 deep-core)."
+    - "Pipeline naming CLOSED: Brain B3 re-opening found to be a relay describing a pre-settled decision; Brain withdrawal already recorded in ARCH-00433 v1.1; Governor confirmed closed. ARCH-00434 Decision Closure Register queued as first entry (pipeline naming re-opened after recorded closure = example of the closure-register problem it will solve)."
+    - "DEC-0007 CONTENT-VERIFIED (archive-ledger.yaml read in full, not title-matched): voided inheritance-as-overlay trial implementation specifically (Inheritance = KERNEL mechanic); overlay concept remains alive as CANDIDATE (2 OVERLAY-CANDIDATE entries in corespine-registry.yaml)."
+    - "BOUNDED STANDING AUTHORIZATION (Brain, accepted): pre-authorized reversible edits that touch nothing ratified, create no governed node, write no status or truth-bearing field, add no vocabulary term, change no check logic. Everything else still needs Governor by name."
+  meta_lessons:
+    - "DISPATCH-VS-PLAN DRIFT: one-click dispatch descriptions encode the plan's action AT TIME OF DISPATCH; after multiple amendment rounds the dispatch goes stale. STEP 2 dispatch encoded v1.0 A1-A9 action; Sonnet correctly bootstrapped from the RATIFIED v1.4 document (unranged pointer). Prevention: executor reads RATIFIED PLAN DOCUMENT directly, never trusts dispatch prose alone (RI-0025 applied; harvested in agent-findings.md)."
+    - "RELAY-PACKET PROVENANCE (Principle 22 inward): the Brain packet Opus wrote re-opened pipeline naming as 'still open' (Item 6) without verifying the CURRENT plan state. Brain's v1.1 withdrawal was on disk; Opus treated the old dispatch description as current truth. Same provenance failure that Principle 22 prevents in external premises — applies to Opus's own relay drafting."
+    - "STALE-RANGE-LITERAL CLASS (confirmed recurrence): A1-A8 → A1-A9 → A1-A12 literal ranges keep aging. Terminal fix = unranged pointer `see FOUND-00001`. A1-A9 sweep was itself listed as pending-backlog (governor-insights.yaml PARKED queue) — the class propagated into the sweep's own deliverable."
+    - "ZF [BUILD-STATE] vs WARN-ONLY inconsistency: build-state.sh labels ARCH-00432 absent deliverables as WARN-only but the script counts them toward NOT-ZF verdict. Pre-existing technical debt; flagged in agent-findings.md."
+  preventions_new:
+    - "DISPATCH-VS-PLAN DRIFT class: never trust dispatch description prose as authoritative for multi-amendment plans; always read the RATIFIED plan file directly before executing. Route as RI-0069 candidate."
+    - "RELAY-PACKET self-provenance: before writing a Brain relay packet listing 'still open / unresolved' items, verify each item against current repo state ON DISK (not memory/prior-session recollection). A 'still open' claim in a relay is an assertion that should be RI-0062 tagged MEASURED or INHERITED-UNVERIFIED."
+  open_for_next:
+    - "ARCH-00433 STEP 6 (brain-open-queue.md): Sonnet agent dispatched; commit with STEP 8 + change-log update."
+    - "Amendment 2 corespine pair ratification: present 3 candidates + 45-node cascade note to Governor + Brain (GI-63 gate)."
+    - "ARCH-00434 Decision Closure Register plan: new Opus tab."
+    - "Brain relay packet update with answers (ARCH-00419/DEC-0007/inventory all answered) + Amendment 2 list + model×mode still missing."
+    - "Model×mode plan text: Governor has not pasted Item 7."
+    - "ARCH-00419 Planning Status file update: add explicit PARKED notation (awaiting Governor word)."
+    - "ARCH-00435 plan: enforcement_tier vocabulary + findings-drain lifecycle (RI-0068 class)."
+  witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
