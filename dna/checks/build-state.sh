@@ -109,7 +109,7 @@ for f in $(find "$scan_dir" -name '*.md' 2>/dev/null | sort); do
     [ -z "$path" ] && continue
     # placeholder patterns (e.g. CISEM-ARCH-NNNNN-....md) are template shapes, not real deliverables
     # — a plan that itself CREATES other plans names a PATTERN, never a checkable file (RI-0031).
-    case "$path" in *NNNNN*|*'....'*) continue;; esac
+    case "$path" in *NNNNN*|*'...'*) continue;; esac
     if [ -e "$path" ]; then
       continue
     fi

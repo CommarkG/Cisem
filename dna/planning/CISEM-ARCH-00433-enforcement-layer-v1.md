@@ -385,11 +385,106 @@ premise-validity content extension routes to RI-0062.
 
 ---
 
-## Size Exception Update (v1.2)
-v1.2 adds the amendments section: total ~330 lines. All additions are amendments + audit trail.
+---
+
+## AMENDMENTS v1.3 (2026-08-08 — cisem-sonnet implementability-lens applied)
+
+cisem-sonnet implementability-lens returned NOT-IMPLEMENTABLE (2 blocking + 3 caveats). Opus value-filter: all confirmed.
+
+### STEP 1 MOOT — DoD already satisfied on both targets (executed pre-ratification)
+**Sonnet Blocking #1:** Both original STEP 1 targets have satisfied DoDs without execution:
+- ARCH-00410 mindmap.js: `NOT-YET-BUILT` marker already present at line 141 (Sonnet verified)
+- ARCH-00420-PART08 settings.json: file exists on disk (Sonnet verified; no [BUILD-STATE] finding)
+
+No action required for original STEP 1. Mark MOOT/DONE at ratification time.
+
+**Actual [BUILD-STATE] findings (separate class — fixed pre-ratification 2026-08-08):**
+ARCH-00429/430/431 show false-positive [BUILD-STATE] flags due to abbreviated path patterns (`...-...md`)
+being parsed as absent deliverable paths by build-state.sh. Root: `build-state.sh` line 112 exclusion
+pattern caught `....` (four dots) but not `...` (three dots). Fix: changed to `*'...'*` (three dots,
+superset). ARCH-00429/430/431 false-positive [BUILD-STATE] findings cleared. Routed to root-insights.yaml.
+
+### STEP 6 CONTENT EMBEDDED (node-as-context-carrier violation resolved)
+**Sonnet Blocking #2:** STEP 6 action said "sourced from Brain's 2026-08-08 relay" but the content
+was not in any repo-resident file. A Sonnet executor bootstrapping cold would have no content to use.
+Violates Self-Compliance "node-as-context-carrier" claim.
+
+**Resolution:** Full brain-open-queue.md content embedded below for verbatim creation by Sonnet:
+
+```markdown
+# Brain Open Queue — coordination file
+# Status: BRAIN-ACTIVE
+# last_updated: 2026-08-08
+# source: Brain relay via Governor, 2026-08-08 session
+# NOTE: items are Brain's tracking; they earn CISEM IDs when promoted via /cisem-plan
+
+## Roof 1 — Enforcement gate actually fires
+**Route:** ARCH-00433 (enforcement-layer plan)
+**Status:** PARTIALLY-CLOSED (v1.2/v1.3 pre-ratification fixes; remainder closes on execution)
+Items:
+- [P5] regex false-negative on bullet-list bold → **FIXED 2026-08-08** (regex extended in plan-audit.sh)
+- INCOMPLETE-INPUT gate for all 3 tier agents → **STEP 3** of this plan
+- [BUILD-STATE] original STEP 1 targets: DoD already met; three-dot false-positive bug fixed in build-state.sh
+
+## Roof 2 — Claims outran evidence
+**Route:** ARCH-00433 STEP 3+4 (partial); ARCH-00434 (transfer-not-close item)
+**Status:** IN-PROGRESS
+Items:
+- INCOMPLETE-INPUT / verdict on truncated input → **STEP 3** (tier agents) + **STEP 4** (RI-0021 extension)
+- Premise-validity (INHERITED-UNVERIFIED claims driving decisions, Principle 22) → **STEP 4** (RI-0062 extension)
+- Approval-referent (terse approval ≠ unseen-artifact ratification) → Principle 20 CLAUDE.md (already wired);
+  pending-sweep when status-vocabulary (Roof 4) unblocks
+- Transfer-not-close (routing a decision ≠ resolving it) → **ARCH-00434** (decision-closure register)
+
+## Roof 3 — Decision memory
+**Route:** ARCH-00433 STEP 5 + ARCH-00434
+**Status:** SPLIT-ROUTED
+Items:
+- GI-68 mandatory dual-review wired into /cisem-plan wizard → **STEP 5** (WIRED-INTO-WIZARD-PROSE, behavioral)
+- Decision-closure record (explicit veto/accept/park + date + ratification reference;
+  covers orphaned ARCH-00419, Amendment 3 DEC-0007 revival cases) → **ARCH-00434** (new Opus tab)
+
+## Roof 4 — Status vocabulary (8 official, 15+ active variants)
+**Route:** VOC-00002 enum reconciliation (future plan)
+**Status:** PARKED
+Cost of parking: blocks BP-0012 (8-value enum enforcement) + ARCH-00432 split-scope ratification
+Deferred: until VOC-00002 enum reconciliation is prioritized
+
+## Roof 5 — External content intake (Brain channel)
+**Route:** dna/brain-artifacts/ (carved-out, ARCH-00433 STEP 7)
+**Status:** CLOSED (Governor-ratified 2026-08-08)
+Mechanism: ARCH-00405 Stage 1 → ARCH-00399 Stage 2; [RAW-PAIR] enforces pairing
+Note (v1.2 correction): raw files use [filename]-RAW.md + RAW-EXTERNAL content marker
+
+## Roof 6 — Antigravity permission event (security incident)
+**Route:** CsAg workspace (separate repo) → I27 plan via /cisem-plan
+**Status:** OPEN (not yet raised on CsAg workspace)
+I27 candidate (Brain-tightened wording 2026-08-08):
+  "Agent may not widen its own execution or filesystem permissions,
+  AND may not record a permission change as a deliverable"
+Action needed: Governor raises incident on CsAg workspace;
+  I27 plan via /cisem-plan once recorded there
+```
+
+### STEP 4 EXECUTION GUARD (non-blocking caveat)
+RI-0021 confirmed to have no `prevention:` field (fields at :163-169: date, trigger, root_insight, routes_to, status, recurrence_2026_07_27). The v1.0 action "extend the prevention: field" is imprecise.
+**Execution guard:** Sonnet adds INCOMPLETE-INPUT extension to `routes_to:` list and adds a new `sibling: RI-0062 (premise-validity / provenance-before-reliance — Principle 22)` YAML field. The RI-0062 content extension (premise-validity text) is Opus-only (truth-bearing field, I7) — Sonnet adds only the cross-reference; flags RI-0062 extension for Opus separately.
+
+### STEP 8 EXECUTION GUARD (non-blocking caveat)
+naming-registry.yaml VOC already at next_seq: 5 and ARCH at next_seq: 434 (pre-incremented during 2026-08-08 session).
+**Execution guard:** Sonnet creates `dna/vocabulary/CISEM-VOC-00004-concept-definitions.md` ONLY. Do NOT re-apply naming-registry.yaml increment — both counters already advanced.
+
+### STEPS 2+5 SEQUENCING (non-blocking caveat)
+Both STEP 2 and STEP 5 edit `.claude/skills/cisem-plan/SKILL.md`. Execute as ONE edit pass to avoid conflicts.
+
+---
+
+## Size Exception Update (v1.2+v1.3)
+v1.2+v1.3 add amendments sections: total ~420 lines. All additions are amendments + audit trail + embedded content.
 The original exception (enforcement-batch coherence, no split benefit) holds for the full set.
 
 ## Change Log
 - v1.0 — 2026-08-08: Sonnet draft via /cisem-plan wizard. 8 items, all Sonnet-executable after ratification. Status: AWAITING-BUILDER-REVIEW.
 - v1.1 — 2026-08-08: Brain corrections applied (4 corrections: STEP 4 premise-validity amendment, STEP 6 routing correction, STEP 7 carved-out + gated execution, STEP 8 pipeline naming resolved, NEW STEP 9 [P5] sweep, Roof 3 → ARCH-00434 routed, GI-68 dual review dispatched). Brain-artifacts/ stub executed and committed.
 - v1.2 — 2026-08-08: Opus Stage-1 UNSOUND verdict applied. 4 MAJOR + 2 MINOR corrections: [P5] regex bug fixed pre-ratification (plan-audit.sh); brain-artifacts/ naming corrected to `*-RAW.md`; GI-68 status overclaim corrected to WIRED-INTO-WIZARD-PROSE; cisem-sonnet implementability lens dispatched (still pending); STEP 2 A1-A12 (not A1-A9); STEP 4 premise-validity → RI-0062. Plan stays AWAITING-BUILDER-REVIEW.
+- v1.3 — 2026-08-08: cisem-sonnet implementability-lens verdict (NOT-IMPLEMENTABLE) applied. 2 blocking fixes: STEP 1 declared MOOT (DoD already met on both targets; build-state.sh three-dot bug fixed pre-ratification); STEP 6 Brain queue content embedded inline (node-as-context-carrier). 3 non-blocking execution guards added: STEP 4 RI-0021 field structure; STEP 8 naming-registry pre-incremented; STEPS 2+5 SKILL.md sequencing. GI-68 dual-review complete (haiku + sonnet). Plan ready for Opus final-assessment + Governor ratification.
