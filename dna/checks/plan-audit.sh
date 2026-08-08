@@ -687,7 +687,7 @@ for f in dna/planning/*.md; do
     echo "   PREMATURE-RATIFY: $f (Status RATIFIED but no Opus Stage-1 soundness verdict cited — informed-ratification, Principle 20)"
     found_ratgate=1
   fi
-  if ! grep -qiE "^## +GI-68 Dual Review" "$f"; then   # heading only (GI-68 fix: the loose fallback dual.review|sonnet.*review|haiku.*review is an unanchored RI-0012-class substring that false-passes any plan whose PROSE mentions "dual review"/"sonnet review"; the /cisem-plan-verify skill always writes this exact heading, so the heading alone is the precise, non-gameable citation)
+  if ! grep -qiE "^## +GI-68 Dual[ -]Review" "$f"; then   # heading only; accepts "Dual Review" (space) and "Dual-Review" (hyphen) — both are used in-repo; OR-extension cannot increase false negatives (analytical proof: a plan with no heading matches neither variant; adding the hyphen disjunct only clears false positives on plans with hyphenated headings). GI-68 fix: the loose fallback dual.review|sonnet.*review|haiku.*review is an unanchored RI-0012-class substring that false-passes any plan whose PROSE mentions "dual review"/"sonnet review"; the /cisem-plan-verify skill always writes this exact heading, so the heading alone is the precise, non-gameable citation
     if ! grep -qiE "GI-68 exempt \(ratified pre-decree\)" "$f"; then
       echo "   PREMATURE-RATIFY: $f (RATIFIED but no GI-68 dual-review verdict cited — CISEM-ARCH-00420-PART01)"
       found_ratgate=1

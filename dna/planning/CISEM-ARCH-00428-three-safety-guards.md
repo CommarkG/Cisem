@@ -317,6 +317,9 @@ registration (no new hook-loading mechanism, CAL already loads it); Phase 2's `[
 extended `[INJECTION-SCAN]` both join the SAME `plan-audit.sh` invocation already firing on every commit — no new
 trigger point for either.
 
+## GI-68 Dual Review
+Haiku Independent-Verifier: PASSED 2026-07-26 (cited verbatim in Planning Status: "GI-68 dual-review (Haiku Independent-Verifier PASSED 2026-07-26, zero protocol violations)"). Brain concurred. Review was conducted; the `## GI-68 Dual Review` heading that [RATIFY-GATE] checks for was not added at ratification time. Heading added retroactively 2026-08-08 per Governor-authorized disposition sweep. No new review conducted.
+
 ## Change log
 - v1.0 — 2026-07-26 (Sonnet, STRUCTURING tier, executing Opus's dispatch): initial draft. 3-phase gated plan
   (D1 loop-stopper → D2 consensus-gate → D3 injection-scan extension) per the Anti-Scatter Ordering above. All 4

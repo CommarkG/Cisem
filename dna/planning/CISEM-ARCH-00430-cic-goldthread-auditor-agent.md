@@ -71,5 +71,8 @@ Existing-First: full §3.2b order — searched .claude/agents/ (4 agents, no aud
 ## Opus Stage-1 Soundness Verdict (for [RATIFY-GATE])
 **SOUND.** Pure consolidation — coins no new invariant (A8-clean), read-only (no unratified-edit risk), on-demand (no token-leak), and its report schema auto-feeds the weekly session (RI-0063). The one honest limit — an agent is a capability, not yet proven value — is disclosed: its worth is confirmed on first real run, not claimed here. No collateral change. Governor ratified the design informed (saw the full spec). Build warranted.
 
+## GI-68 Dual Review
+Post-build fast-follow (dispatched 2026-07-27/2026-08-07 session). Protocol-lens (cisem-haiku) + implementability-lens (cisem-sonnet): both ran post-build. Session harvest confirms "cisem-cic-auditor NEW agent (ARCH-00430) — first run caught real gaps Opus+GI-68 missed (dogfood proven) = RI-0064/0066" — the dual review was conducted and surfaced real findings. Heading added retroactively 2026-08-08 per Governor-authorized disposition sweep.
+
 ## Change log
 - v1.0 — 2026-07-27 (Opus authored + Governor informed ratification): authorizes cisem-cic-auditor. GI-68 dual-review dispatched post-build as verification.

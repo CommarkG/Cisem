@@ -301,6 +301,9 @@ itself at commit time. Once implemented, Phase 2's `[EXECUTOR-ROUTE]` and Phase 
 enhances the EXISTING always-loaded `CLAUDE.md` surface (inherited via `.claude/hooks/session-start.sh`) rather
 than adding a second one.
 
+## GI-68 Dual Review
+Haiku Independent-Verifier: PASSED 2026-07-26 (cited verbatim in Planning Status: "GI-68 dual-review (Haiku Independent-Verifier PASSED 2026-07-26)"). Brain concurred. Review was conducted; the `## GI-68 Dual Review` heading that [RATIFY-GATE] checks for was not added at ratification time. Heading added retroactively 2026-08-08 per Governor-authorized disposition sweep. No new review conducted.
+
 ## Change log
 - v1.0 — 2026-07-26 (Sonnet, STRUCTURING tier, executing Opus's dispatch): initial draft. 5-phase gated plan
   (D1 rubric gap-fill → D4 opus-executor flag → D2 versioned schemas → D3 lean-context metric → D5 sequenced-not-

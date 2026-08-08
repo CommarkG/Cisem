@@ -1,6 +1,6 @@
 # CISEM Enforcement Layer v1
 **Node ID:** CISEM-ARCH-00433 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND + GI-68 dual-review complete: haiku protocol-lens PASS + sonnet implementability-lens PASS after v1.3; 2026-08-08)
+**Planning Status:** COMPLETE — Governor RATIFIED 2026-08-08 (Yariv Fink, informed decree; saw the plan at v1.5; both Brain conditions met: STEP 2+4 re-check PASS + overlay stub softened; Opus I7 truth-stamp)
 **depth_level:** L2 | **tags:** [planning-domain, enforcement, wiring, governance]
 **goal:** Wire 9 nominated governance gates as LIVE mechanical checks; STEP 1 moot + STEP 9 pre-executed = 6 active for execution; close the DECLARED→LIVE gap for this batch
 **governing corespine:** CS-CREATION-001

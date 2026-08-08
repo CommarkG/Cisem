@@ -359,6 +359,9 @@ extended `[PROPAGATE]`/`[REVIEW-GATE]`, and Phase 5's `[WEE-WRITE-SCOPE]` all jo
 invocation — no new hook, no new trigger point. Phase 1 enhances the EXISTING `session-start.sh` CAL surface
 (SessionStart) rather than adding a second one.
 
+## GI-68 Dual Review
+Haiku Independent-Verifier: PASSED 2026-07-26 (cited verbatim in Planning Status: "GI-68 dual-review (Haiku Independent-Verifier PASSED 2026-07-26)"). Brain concurred. Review was conducted; the `## GI-68 Dual Review` heading that [RATIFY-GATE] checks for was not added at ratification time (heading requirement not yet explicit at 2026-07-26). Heading added retroactively 2026-08-08 per Governor-authorized disposition sweep. No new review conducted.
+
 ## Change log
 - v1.0 — 2026-07-26 (Sonnet, STRUCTURING tier, executing Opus's design + Brain-consensus per the WEE dispatch task):
   initial draft. 6-phase gated plan (L1 SCAN → L2 QUEUE → L3 BATCH → L4 GATE → L5 AUTO-TRIGGER → Phase 6

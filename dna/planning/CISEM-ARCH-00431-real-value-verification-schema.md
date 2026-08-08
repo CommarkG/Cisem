@@ -72,5 +72,8 @@ Existing-First: full §3.2b — ssot-registry (found `wiring_states` SSOT = ARCH
 ## Opus Stage-1 Soundness Verdict (for [RATIFY-GATE])
 **SOUND.** References the wiring-states SSOT rather than forking it (Principle-22-corrected mid-design), adds a genuinely-new value-delivery axis, is WARN-only (no blast), and its report is a running mechanism not a doc (Principle 18C). The one honest limit — the schema's value is proven on the first real weekly run — is disclosed. No collateral change. Governor ratified informed (saw the design + the no-third-agent constraint). Build warranted.
 
+## GI-68 Dual Review
+Post-build fast-follow (dispatched 2026-07-27/2026-08-07 session). Protocol-lens (cisem-haiku) + implementability-lens (cisem-sonnet): both ran post-build. Session harvest confirms "GI-68 caught a self-declaration hole in the verifier itself = RI-0065" — the dual review caught a real defect that was fixed before done-claimed. Heading added retroactively 2026-08-08 per Governor-authorized disposition sweep.
+
 ## Change log
 - v1.0 — 2026-07-27 (Opus authored + Governor informed ratification): authorizes CISEM-SCHEMA-00002 + wiring-value-report.sh. Principle-22 correction folded (reference ARCH-00011 §4, do not fork). GI-68 dispatched post-build.

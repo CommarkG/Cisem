@@ -31,6 +31,16 @@ A `-PURIFIED` sibling MUST exist alongside every raw artifact:
 
 ---
 
+## Two Intake Classes (Brain-noted 2026-08-08)
+
+**Class A — Foreign-platform material** (documents from external tools, other AI platforms, third-party sources): full Stage 1 de-branding runs in an external project with no CISEM context. `depollution_pass: yes [date]` is required.
+
+**Class B — CISEM-native Brain drafts** (Brain's own documents written in CISEM vocabulary — analysis, cross-checks, recommendations about CISEM): Stage 1 is **NOT APPLICABLE**. Running a de-brander on CISEM-native material is lossy — it strips CISEM vocabulary and Stage 2 would re-apply it, a round trip that destroys nuance the full-fidelity rule protects. Instead: `depollution_pass: N/A — CISEM-native Brain draft (no foreign platform DNA to strip)`. Stage 2 (PAE 6-lens + Existing-First) still runs in full — the Wall is about verification, not about branding.
+
+Brain does NOT author the purified sibling. Stage 2 (applying CISEM vocabulary, conflict-check) is defined as requiring internal context Brain does not have. Brain delivers raw only; the `-PURIFIED.md` sibling is the paired file flagged by `[RAW-PAIR]` until Opus completes the purification inside CISEM.
+
+---
+
 ## Honest Scope (ARCH-00011 §3.5 — state verbatim, not implied)
 
 `[RAW-PAIR]` check verifies: (a) every `*-RAW.md` file with `RAW-EXTERNAL` has a `-PURIFIED.md` sibling; (b) raw files are not contaminated with purified-section headers.
