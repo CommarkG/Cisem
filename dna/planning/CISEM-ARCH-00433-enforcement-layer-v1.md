@@ -2,20 +2,20 @@
 **Node ID:** CISEM-ARCH-00433 | **Type:** ARCH | **Status:** PROVISIONAL-ACTIVE
 **Planning Status:** CONSENSUS-REACHED (Opus Stage-1 SOUND + GI-68 dual-review complete: haiku protocol-lens PASS + sonnet implementability-lens PASS after v1.3; 2026-08-08)
 **depth_level:** L2 | **tags:** [planning-domain, enforcement, wiring, governance]
-**goal:** Wire 8 currently-declared governance gates as LIVE mechanical checks; close the DECLARED→LIVE gap for this batch
+**goal:** Wire 9 nominated governance gates as LIVE mechanical checks; STEP 1 moot + STEP 9 pre-executed = 6 active for execution; close the DECLARED→LIVE gap for this batch
 **governing corespine:** CS-CREATION-001
 **Independent Verifier:** cisem-haiku (distinct from Sonnet author; runs [ZF] after all steps)
 
 ## Pocket Declaration (§3.3)
 - **reasoning_scope:** create an enforceable, Governor-ratifiable plan for wiring declared gates
-- **inherited_constraints:** Axioms A1–A9, Doctrine D1–D6, I1–I25, CLAUDE.md §1.6/§1.7, ARCH-00190 PLAN-PROTOCOL, ARCH-00390 CAL
+- **inherited_constraints:** Axioms — see FOUND-00001; Doctrine — see FOUND-00001; Invariants — see ARCH-00320; CLAUDE.md §1.6/§1.7, ARCH-00190 PLAN-PROTOCOL, ARCH-00390 CAL
 - **output_contract:** plan skeleton following ARCH-00190 exactly, ready for Opus Stage-1 soundness review
 - **ai_cannot:** self-ratify; execute any step before ratification; write truth-bearing fields (I7)
 - **recorded_at:** 2026-08-08
 - **cal_reference:** CISEM-ARCH-00390
 
 ## Executive Summary
-This plan wires 8 elements that are decided/ratified but not yet mechanically active, ordered by unblocking value. Highest impact: (1) INCOMPLETE-INPUT gate prevents review verdicts on truncated input — class prevention for errors caught by Brain this session; (2) RI-0021 STANDING CHECKS extension closes the most-recurred re-derivation gap; (3) GI-68 Step 2.3 in the /cisem-plan wizard closes the dual-review gap that opened 2026-07-23. All items are low-blast Sonnet-executable. Excludes pipeline rename (blocked by naming conflict) and thin-dispatcher PreToolUse hooks (separate plan, requires naming decision first).
+This plan nominates 9 elements to wire; STEP 1 moot + STEP 9 pre-executed = 6 active for execution. Ordered by unblocking value. Highest impact: (1) INCOMPLETE-INPUT gate prevents review verdicts on truncated input — class prevention for errors caught by Brain this session; (2) RI-0021 STANDING CHECKS extension closes the most-recurred re-derivation gap; (3) GI-68 Step 2.3 in the /cisem-plan wizard closes the dual-review gap that opened 2026-07-23. All items are low-blast Sonnet-executable. Excludes pipeline rename (blocked by naming conflict) and thin-dispatcher PreToolUse hooks (separate plan, requires naming decision first).
 
 ## Tier-Routing Declaration (§3.0)
 - **ALL steps → Sonnet** (edits to existing files; no new architecture; no truth-bearing fields)
@@ -664,12 +664,77 @@ node awaiting full ratification. Do NOT use status values outside the official 8
 
 ---
 
-## Size Exception Update (v1.4)
-v1.4 adds amendments + behavioral proofs: total ~580 lines. All additions are amendments + audit
-trail + evidence. Enforcement-batch coherence exception maintained.
+---
+
+## AMENDMENTS v1.5 (2026-08-08 — Brain full-read v1.4, D1–D9 + CIC audit intake)
+
+### D2 — Opus PE STEP 2 + STEP 4 implementability re-check
+Brain's ratification condition: narrow re-verify of the two steps whose actions changed in v1.4 
+(STEP 2 outright replaced; STEP 4 mechanism changed). Running as Opus PE judge tier.
+
+**STEP 2 (re-checked):** Action — in `.claude/skills/cisem-plan/SKILL.md` Pocket Declaration, 
+replace `Axioms A1–A8;` with `Axioms — see FOUND-00001;`. DoD — grep returns nothing.
+**Verdict: IMPLEMENTABLE.** Single fixed-string replacement in a known file. DoD is verifiable by 
+grep. No sequencing dependency on other steps. No blast risk.
+
+**STEP 4 (re-checked):** Action — in `dna/learning-registry/root-insights.yaml`, extend RI-0021 
+`routes_to:` list with a new entry pointing to RI-0062. Per v1.4 FINDING 3 note: Sonnet uses 
+`routes_to:` extension, NOT a new top-level field like `sibling:`.
+**Verdict: IMPLEMENTABLE.** YAML list append in a single known field of a known entry. 
+The v1.4 correction to use `routes_to:` (not a new field) is a cleaner, schema-valid operation. 
+Honest scope: delivers cross-reference only — Roof 2 Premise-Validity stays NOT-BUILT.
+
+Brain's ratification condition 1 — SATISFIED by this re-check.
+
+### D3 — Header range literals → unranged pointers
+Applied inline (not amendment-only — these are factual errors in a live truth field):
+- `Axioms A1–A9, Doctrine D1–D6, I1–I25` → `Axioms — see FOUND-00001; Doctrine — see FOUND-00001; Invariants — see ARCH-00320`
+- Same class as HOLD 2 (stale-range-literal). The plan that prevented stale range literals had 3 
+  instances of the class in its own header. All 3 fixed inline.
+
+### D5 — STEP 8 overlay stub: candidate framing (Brain ratification condition 2)
+The v1.4 clarification wrote a substantive identity: "a layer that modulates an element's behavior 
+from a specialized context without changing its core standing definition." Brain correctly flags 
+this as a definition, not a stub — and the Governor opened overlay's definition as sequenced work.
+
+**Correction to STEP 8 overlay content guidance:**
+The overlay section in VOC-00004 carries:
+- Section header: present
+- Identity: **CANDIDATE FRAMING PENDING CONSENSUS** — "a layer modulating an element's behavior 
+  from a specialized context without changing its core standing definition" — label explicitly as 
+  a candidate, not a settled definition
+- Relationship schema: AWAITING-RATIFICATION (unchanged)
+
+One-word difference; keeps the sequenced work intact. Brain ratification condition 2 — SATISFIED.
+
+### D6 — STEP 4 conflicting guards (v1.3 says new field; v1.4 says use routes_to)
+Brain correctly flagged two contradictory STEP 4 guards:
+- v1.3 guard: "Sonnet may add a `sibling:` field"
+- v1.4 amendment: "do not add new top-level fields; use routes_to: extension"
+
+**Explicit supersession (stated here, not only in v1.4 preamble):**
+The v1.3 `sibling:` guidance is SUPERSEDED by the v1.4 amendment. Sonnet executes: append to 
+`routes_to:` list only. The v1.3 guard is preserved for audit trail but must NOT be followed.
+
+### CIC Audit intake — RI-0068 class routed (NOT plan scope; recorded here for completeness)
+The CIC golden-thread audit identified the EXISTS≠ACTIVE class applied to the check system 
+itself. Class prevention: enforcement_tier + findings_lifecycle on every check. Routed to 
+root-insights.yaml as RI-0068 (separate routing act). Not ARCH-00433 scope; named here so the 
+route is traceable from this session.
+
+Brain intake-class split (Stage 1 not applicable to CISEM-native Brain drafts): correct insight; 
+routes to dna/brain-artifacts/README.md as a follow-on amendment. Not ARCH-00433 scope.
+
+---
+
+## Size Exception Update (v1.5)
+v1.5 adds amendments for Brain second-review + CIC audit cleanup: total ~650 lines. Enforcement-
+batch coherence exception maintained. All additions are amendments + audit trail.
 
 ## Change Log
 - v1.0 — 2026-08-08: Sonnet draft via /cisem-plan wizard. 8 items, all Sonnet-executable after ratification. Status: AWAITING-BUILDER-REVIEW.
 - v1.1 — 2026-08-08: Brain corrections applied (4 corrections: STEP 4 premise-validity amendment, STEP 6 routing correction, STEP 7 carved-out + gated execution, STEP 8 pipeline naming resolved, NEW STEP 9 [P5] sweep, Roof 3 → ARCH-00434 routed, GI-68 dual review dispatched). Brain-artifacts/ stub executed and committed.
 - v1.2 — 2026-08-08: Opus Stage-1 UNSOUND verdict applied. 4 MAJOR + 2 MINOR corrections: [P5] regex bug fixed pre-ratification (plan-audit.sh); brain-artifacts/ naming corrected to `*-RAW.md`; GI-68 status overclaim corrected to WIRED-INTO-WIZARD-PROSE; cisem-sonnet implementability lens dispatched (still pending); STEP 2 A1-A12 (not A1-A9); STEP 4 premise-validity → RI-0062. Plan stays AWAITING-BUILDER-REVIEW.
 - v1.3 — 2026-08-08: cisem-sonnet implementability-lens verdict (NOT-IMPLEMENTABLE) applied. 2 blocking fixes: STEP 1 declared MOOT (DoD already met on both targets; build-state.sh three-dot bug fixed pre-ratification); STEP 6 Brain queue content embedded inline (node-as-context-carrier). 3 non-blocking execution guards added: STEP 4 RI-0021 field structure; STEP 8 naming-registry pre-incremented; STEPS 2+5 SKILL.md sequencing. GI-68 dual-review complete (haiku + sonnet). Plan ready for Opus final-assessment + Governor ratification.
+- v1.4 — 2026-08-08: Brain full cross-review applied (9 findings: 2 HOLDs + 7 smaller). HOLD 1: behavioral proof for pre-ratification check fixes (fixture test ALL ASSERTIONS PASSED + OR-extension analytical proof). HOLD 2: STEP 2 replaced with unranged axiom pointer (terminal fix, same class as HOLD 2). F3: STEP 4 scope label (cross-reference only; Roof 2 NOT-BUILT). F4: STEP 5 follow-on named ([DUAL-REVIEW] check, future plan). F5.1-5.5: count corrected, STEP 6 re-derive guard, STEP 8 atomicity + overlay scope + status enum. Planning Status → CONSENSUS-REACHED (Opus I7).
+- v1.5 — 2026-08-08: Brain second review (v1.4 full-read) + CIC audit cleanup. D1 change log added (this entry). D3 range literals in header replaced with unranged pointers. D5 overlay stub softened to candidate framing. D6 v1.3/v1.4 guard conflict explicitly marked. D9 goal + summary count corrected. Opus PE STEP 2+4 implementability re-check: PASS. Brain intake-class split (Stage 1 not applicable to CISEM-native Brain drafts) noted as dna/brain-artifacts/README.md follow-on (not ARCH-00433 scope).
