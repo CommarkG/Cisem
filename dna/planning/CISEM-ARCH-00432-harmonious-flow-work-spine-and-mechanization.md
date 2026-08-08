@@ -46,6 +46,17 @@ No fork of ARCH-00419/426/406 (consolidated). No new invariant. No 15th manual l
 ## Definition of Done
 Per `dna/checks/definition-of-done.md`: the work-spine view RUNS and emits a real board (Principle 18C — shown output, not a doc) + its fixture passes + it reads the actual 14 homes' tags; each consolidated plan (419/426/406) cited with its status; A12 note present. Honest: this plan's VALUE is proven when the board first replaces "where is everything?" with one glance.
 
+## Falsification Tests (per deliverable — discipline ADOPTED from CDS's 7-Tier Harmonious-Flow plan, 2026-08-07)
+Each deliverable ships a concrete "do X → assert Y" test that FAILS if the deliverable doesn't behave — verify-behavior baked into the plan (the CDS pattern; the strongest thing about their plan, and CISEM's own Principle-18C operationalized):
+- **D1 (work-spine view):** take a KNOWN open item from each of the 14 homes (e.g. a specific IBD-NNNN, a BP-NNNN, an open RI) → the generated board MUST list all of them at their correct stage. FALSIFIES if any known pending item is MISSING from the board.
+- **D2 (`cisem-status`):** run it → the counts MUST equal the real file counts (43 IBD, 12 BP, …), not zeros/stale. FALSIFIES if a count is wrong.
+- **D3 (harvest mechanization):** trigger a compact → the hook MUST have WRITTEN the structured extraction to disk (not merely echoed the mandate). FALSIFIES if only the cue fired (the current state).
+- **D4 (active-process router):** park an item tagged to match the ACTIVE plan → it MUST be surfaced for swift-integration that session. FALSIFIES if it waits for the weekly batch.
+- **D5 (BLOCK-mode):** a check with a KNOWN false-positive MUST NOT graduate to BLOCK. FALSIFIES if a false-positiving check blocks a commit.
+
+## Gap → Deliverable traceability (the seams the operating-spine gather found, mapped)
+GAP-1 pending-work scattered across ~14 homes → D1/D2 · GAP-2 queue→plan handoff manual (build-prompt) → D4 + a follow-on · GAP-3 Gate-0/anti-scatter prose-only → cross-ref CDS Tier-4 live-existence-check (a routed-destination-exists guard) · GAP-4 harvest STEP 1–5 model-performed → D3 · GAP-5 no vault/escalate → D5 + WEE build (CDS Tier-6 park↔vault bridge as reference).
+
 ## Propagation Declaration
 ssot-registry gains a `work_spine` concept → the generated view (SSOT for "what's open + where"). The 14 homes stay their own SSOTs; the view REFERENCES them (I10). The Antigravity exchange doc (dna/external-review/CISEM-Opus__FOR-Antigravity...) records the value-trade + is relayed outward by the Governor.
 
@@ -70,3 +81,4 @@ DEFERRED — this plan is at AWAITING-BUILDER-REVIEW; the Opus soundness verdict
 
 ## Change log
 - v0.1 — 2026-08-07 (Opus drafted at Governor direction, after the operating-spine synthesis + reading Antigravity's Harmonious-Flow plan): the work-spine view as core; seams mechanized by adapting Antigravity's proven ideas to native-primitives; consolidates ARCH-00419/426/406. Awaits Opus soundness → GI-68 → Governor ratification.
+- v0.2 — 2026-08-07 (enriched from CDS's 7-Tier Harmonious-Flow plan — the THIRD independent convergence on the same 5-system map, built by Sonnet 4.6; A12 — ideas adopted, code not copied): added a FALSIFICATION TEST per deliverable (verify-behavior baked in — CDS's strongest pattern) + a GAP→deliverable traceability. Cross-refs CDS Tier-4 (live-existence-check, not format-only) for the routed-destination-exists guard + Tier-6 (park↔vault bridge) as the vault reference. Convergence across CISEM/Antigravity/CDS validates the synthesis is a real structural map, not one model's opinion.
