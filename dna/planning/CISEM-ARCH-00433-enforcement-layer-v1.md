@@ -310,12 +310,86 @@ the 2026-08-08 session. ARCH-00433 Planning Status STAYS at AWAITING-BUILDER-REV
 
 ---
 
-## Size Exception Update (v1.1)
-v1.1 adds the AMENDMENTS section: total is now approximately 250 lines.
-Original exception justified at 218/200; the amendments are additive audit trail, not scope expansion.
-The ratio of overhead (shared header/footer) to content remains well within the "mini-tree split
-would cost more than it saves" threshold. Exception maintained.
+## AMENDMENTS v1.2 (2026-08-08 — Opus Stage-1 UNSOUND verdict applied)
+
+Opus PE soundness review returned UNSOUND with 4 MAJOR + 2 MINOR findings. All applied additively.
+v1.0 + v1.1 body unchanged for audit trail. These SUPERSEDE v1.1 on the named steps.
+
+### STEP 9 REPLACEMENT — Fix [P5] regex in plan-audit.sh (VOIDING the "add duplicate fields" action)
+**Opus Major Finding #1:** All 4 target plans (ARCH-00429/430/431/432) already carry Independent
+Verifier fields in bullet-list bold format (`- **Independent Verifier:**`). plan-audit.sh [P5] regex
+at line 313 matched ONLY line-start forms — it false-negated on bullet-list bold. STEP 9 v1.1 would
+have added duplicate/divergent fields to 4 RATIFIED plans: an A8/I10 violation.
+
+**Root fix (pre-ratification bug fix — low-blast, improves check accuracy):**
+`dna/checks/plan-audit.sh` line 313 regex extended 2026-08-08 to accept bullet-list bold form:
+```
+^[[:space:]]*[-*][[:space:]]*\*\*[Ii]ndependent[ _-][Vv]erifier
+```
+STEP 9 v1.1 content **VOIDED** — the 4 plans are NOT touched.
+**New STEP 9 DoD:** `bash dna/checks/plan-audit.sh` [P5] shows no findings for ARCH-00429/430/431/432 (satisfied by the regex fix, pre-ratification).
+
+### STEP 7 FIX — brain-artifacts/ raw naming aligned to [RAW-PAIR] trigger
+**Opus Major Finding #2:** brain-artifacts/README.md v1.1 specified `[filename].md` (raw) naming.
+[RAW-PAIR] triggers on `find -name "*-RAW.md"` glob + `RAW-EXTERNAL` content marker only. Under the
+old naming, the check NEVER fired for brain-artifacts/ files — the enforcement claim was false.
+
+**Root fix (applied 2026-08-08 to the carved-out stub):** brain-artifacts/README.md updated — raw
+artifacts must use `[filename]-RAW.md` naming + include `RAW-EXTERNAL` content marker. [RAW-PAIR] now
+covers brain-artifacts/ via the repo-wide `find -name "*-RAW.md"` sweep.
+
+Honest Scope section also corrected: [RAW-PAIR] verifies RAW↔PURIFIED pairing + contamination-check;
+it does NOT verify the four declaration fields (source/trust_tier/depollution_source/depollution_pass)
+— field-presence enforcement is ARCH-00405 Phase 1 follow-on (**NOT-YET-WIRED**).
+
+### STEP 5 LABEL CORRECTION — GI-68 status is WIRED-INTO-WIZARD-PROSE, not WIRED
+**Opus Major Finding #3:** STEP 5 instructs Opus to mark GI-68 as "WIRED." Adding Step 2.3 prose to
+the wizard is BEHAVIORAL enforcement (the wizard says to run dual review; no check/hook prevents
+CONSENSUS-REACHED without completed reviews). Claiming WIRED is documentation-as-progress (Principle 18C).
+
+**Correction applied 2026-08-08:** governor-insights.yaml GI-68 status updated to:
+`WIRED-INTO-WIZARD-PROSE (behavioral; not mechanical — a hook/check enforcing dual-review completion is NOT-YET-WIRED)`
+
+STEP 5 DoD must read: "Step 2.3 present in SKILL.md; GI-68 status updated to WIRED-INTO-WIZARD-PROSE (Opus to confirm, I7)."
+
+### SELF-REFERENTIAL FIX — cisem-sonnet implementability lens dispatched
+**Opus Major Finding #4:** GI-68 requires cisem-haiku (protocol-lens) + cisem-sonnet (implementability-lens).
+v1.1 dispatched haiku + cisem-opus-pe. Opus-PE is the Stage-1 soundness gate, NOT a GI-68 lens.
+Only one of the two GI-68 lenses was present.
+
+**Status:** cisem-sonnet implementability review dispatched 2026-08-08. Plan stays AWAITING-BUILDER-REVIEW
+until: (1) Sonnet implementability review returns; (2) Opus value-filters; (3) Governor ratifies.
+
+### STEP 2 FIX — A1–A12 (not A1–A9)
+**Opus Minor Finding #5:** The Pocket Declaration STEP 2 fix bumped A1-A8 to A1-A9. Current canonical
+axiom set in CLAUDE.md §2.4 is A1–A12 (A10 Full-Fidelity, A11 Prevention-Before-Production, A12
+External Wall). **STEP 2 action must target "Axioms A1–A12"** (replaces "A1–A9" in the v1.0 body).
+
+Updated DoD: no instance of "A1–A8" or "A1–A9" in cisem-plan/SKILL.md Pocket Declaration.
+
+### STEP 4 FIX — premise-validity routes to RI-0062, not co-homed in RI-0021
+**Opus Minor Finding #6:** RI-0021 owns the read-before-act / Existing-First class. Co-homing
+premise-validity (Principle 22 class) in RI-0021 violates A8 (one concept, one home). Premise-validity
+belongs at RI-0062 (or as an RI-0062 extension).
+
+**Correction:** STEP 4 v1.1 amendment action revised — RI-0021 extension adds `sibling: RI-0062
+(premise-validity / provenance-before-reliance — Principle 22)` as a cross-reference only; the
+premise-validity content extension routes to RI-0062.
+
+### What DOES Change (v1.2 pre-ratification fixes, already on disk)
+| File | Change |
+|------|--------|
+| `dna/checks/plan-audit.sh` | [P5] regex extended — bullet-list bold format now matches (bug fix, 2026-08-08) |
+| `dna/brain-artifacts/README.md` | raw naming → `*-RAW.md` + `RAW-EXTERNAL` marker; Honest Scope corrected |
+| `dna/governor-insights.yaml` | GI-68 status WIRED → WIRED-INTO-WIZARD-PROSE (behavioral) |
+
+---
+
+## Size Exception Update (v1.2)
+v1.2 adds the amendments section: total ~330 lines. All additions are amendments + audit trail.
+The original exception (enforcement-batch coherence, no split benefit) holds for the full set.
 
 ## Change Log
 - v1.0 — 2026-08-08: Sonnet draft via /cisem-plan wizard. 8 items, all Sonnet-executable after ratification. Status: AWAITING-BUILDER-REVIEW.
 - v1.1 — 2026-08-08: Brain corrections applied (4 corrections: STEP 4 premise-validity amendment, STEP 6 routing correction, STEP 7 carved-out + gated execution, STEP 8 pipeline naming resolved, NEW STEP 9 [P5] sweep, Roof 3 → ARCH-00434 routed, GI-68 dual review dispatched). Brain-artifacts/ stub executed and committed.
+- v1.2 — 2026-08-08: Opus Stage-1 UNSOUND verdict applied. 4 MAJOR + 2 MINOR corrections: [P5] regex bug fixed pre-ratification (plan-audit.sh); brain-artifacts/ naming corrected to `*-RAW.md`; GI-68 status overclaim corrected to WIRED-INTO-WIZARD-PROSE; cisem-sonnet implementability lens dispatched (still pending); STEP 2 A1-A12 (not A1-A9); STEP 4 premise-validity → RI-0062. Plan stays AWAITING-BUILDER-REVIEW.

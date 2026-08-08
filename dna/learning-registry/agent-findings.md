@@ -1135,3 +1135,29 @@ Entry format (append, newest at bottom):
 
 **Timestamp:** 2026-08-08 | **Preventions routed:** [CLASS-AUDIT] on overlay corespine-registry entries (enumerate all OVERLAY candidates, not just the 2 visible); [FIELD-VARIANCE] manual check needed before "overlay" compliance claim.
 
+
+## 2026-08-08 — cisem-opus-pe: ARCH-00433 v1.1 Stage-1 soundness review (VERDICT: UNSOUND, fix-before-ratify)
+- **[MAJOR][STEP 9][A8/I10 + check-brittleness class]** The 4 target plans (ARCH-00429/430/431/432) ALREADY carry an
+  `Independent Verifier` field, as a list item `- **Independent Verifier:**` inside the Pocket Declaration. [P5] flags them
+  MISSING only because the P5 regex (plan-audit.sh:313) requires line-start form (`^\*\*independent...`) and does not accept
+  the list-item bold form. MECHANICALLY CONFIRMED (ran the regex: all 4 FAIL despite the field being present). STEP 9's fix
+  (add a second line-start `**Independent Verifier:** cisem-haiku (retroactive...)`) would create a DUPLICATE + DIVERGENT
+  field in RATIFIED plans (existing 430/431/432 say "haiku + sonnet GI-68"; the new one says "haiku"). CLASS PREVENTION:
+  when a mechanical check reports "missing X," verify X is truly absent vs present-but-mis-formatted BEFORE "fixing" content —
+  a check false-negative is fixed at the CHECK (regex), not by duplicating content (else gap-creation-engine, Principle 15).
+  Route: fix P5 regex to accept `^[[:space:]]*[-*][[:space:]]*\*\*independent[ _-]verifier`. Sibling of RI-0012 (anchor/substring brittleness).
+- **[MAJOR][STEP 7][A12 / presence≠behavior]** brain-artifacts/README.md claims "[RAW-PAIR] enforces the sibling requirement"
+  + "pre-commit hooks verify the declaration fields are PRESENT." MECHANICALLY CONFIRMED FALSE as written: [RAW-PAIR]
+  (plan-audit.sh:354) only fires on `find -name "*-RAW.md"` AND files containing `RAW-EXTERNAL`. The README's intake naming
+  is `[filename].md` (raw) + `[filename]-PURIFIED.md` — a raw file NOT named `*-RAW.md` and not required to carry `RAW-EXTERNAL`
+  gets ZERO enforcement (no sibling req, no source/trust_tier/depollution field check). CLASS PREVENTION: an intake gate's
+  file-naming convention must match its enforcing check's trigger glob, verified by a planted RAW file that actually trips the
+  check. Fix: mandate raw artifact = `*-RAW.md` + `RAW-EXTERNAL` tag, OR extend [RAW-PAIR] to cover dna/brain-artifacts/*.
+- **[MAJOR][STEP 5][Principle 18C / RI-0047 four-part]** Marking GI-68 "WIRED" after adding Step 2.3 to the wizard is
+  documentation-as-progress: the wizard is prose; no mechanical gate blocks a plan reaching CONSENSUS-REACHED without the
+  Haiku+Sonnet dual review. Honest label = WIRED-INTO-WIZARD-PROSE (behavioral, not mechanically enforced).
+- **[MAJOR][self-referential]** The plan that WIRES the mandatory GI-68 dual review has itself only run Haiku + Opus-Stage-1;
+  the cisem-sonnet implementability lens is missing. Under its own STEP 5 rule it cannot reach CONSENSUS-REACHED until Sonnet returns.
+- **[MINOR][STEP 4][A8]** Premise-validity (Principle 22) is already homed at RI-0062 (+RI-0023 note); folding it into RI-0021
+  (a different class: read-before-act/Existing-First) creates a second home. Cross-reference RI-0062, don't co-home.
+- **[MINOR][STEP 2]** Fix bumps "A1–A8" → "A1–A9" but the current axiom set is A1–A12 (CLAUDE.md §2.4). Still-stale after the "fix."

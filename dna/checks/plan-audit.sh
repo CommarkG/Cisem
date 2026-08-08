@@ -310,7 +310,7 @@ found_p5=0
 for f in $(find dna/planning -name "*.md" 2>/dev/null); do
   # Require field-label form at line start: "**Independent Verifier" or "Independent Verifier:" or YAML key
   # Prose mentions ("no Independent Verifier...") must NOT satisfy this check — only a declared field.
-  if ! grep -qiE "^\*\*independent[ _-]verifier|^independent[ _-]verifier:|^[[:space:]]*independent[ _-]verifier:[[:space:]]" "$f"; then
+  if ! grep -qiE "^\*\*independent[ _-]verifier|^independent[ _-]verifier:|^[[:space:]]*independent[ _-]verifier:[[:space:]]|^[[:space:]]*[-*][[:space:]]*\*\*[Ii]ndependent[ _-][Vv]erifier" "$f"; then
     echo "   MISSING: $f (no independent verifier field declared)"; found_p5=1
   fi
 done

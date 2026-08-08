@@ -24,7 +24,7 @@ depollution_pass: "yes [date]"
 ```
 
 A `-PURIFIED` sibling MUST exist alongside every raw artifact:
-- `my-doc.md` → raw, Brain's original language preserved (the `-RAW.md` in ARCH-00405 schema)
+- `my-doc-RAW.md` → raw, Brain's original language preserved; **must carry `RAW-EXTERNAL` content marker** so [`RAW-PAIR`] triggers
 - `my-doc-PURIFIED.md` → CISEM vocabulary, platform-specific references stripped, Stage 2 run
 
 `[RAW-PAIR]` enforces the sibling requirement at commit time.
@@ -33,10 +33,11 @@ A `-PURIFIED` sibling MUST exist alongside every raw artifact:
 
 ## Honest Scope (ARCH-00011 §3.5 — state verbatim, not implied)
 
-CISEM's pre-commit hooks verify that the **declaration fields are PRESENT** on intake.
-They **CANNOT** verify that ARCH-00405 Stage 1 actually ran faithfully in the claude.ai session.
-The Governor + Brain carry responsibility for Stage 1 compliance. The provenance stamp is the
-enforceable gate; the external act itself is trusted, not verified.
+`[RAW-PAIR]` check verifies: (a) every `*-RAW.md` file with `RAW-EXTERNAL` has a `-PURIFIED.md` sibling; (b) raw files are not contaminated with purified-section headers.
+
+It does **NOT** verify the four declaration fields (`source:` / `trust_tier:` / `depollution_source:` / `depollution_pass:`) — field-presence enforcement is an ARCH-00405 Phase 1 follow-on (**NOT-YET-WIRED**).
+
+It also **CANNOT** verify that ARCH-00405 Stage 1 actually ran faithfully in the claude.ai session. The Governor + Brain carry responsibility for Stage 1 compliance. The provenance stamp is the enforceable gate; the external act itself is trusted, not verified.
 
 This is the same limit documented in `dna/checks/external-depollution-prompt.md` §Honest limit.
 
@@ -48,7 +49,7 @@ This is the same limit documented in `dna/checks/external-depollution-prompt.md`
    into a fresh claude.ai/Gemini project with **no CISEM context** and runs it on the document.
 2. **Brain stamps provenance** — output carries `depollution_source: claude.ai — CISEM Brain project` + `depollution_pass: yes [date]`.
 3. **Governor places artifacts here:**
-   - `[filename].md` — raw (Brain-original language; `source:` + `trust_tier:` + `depollution_source:` + `depollution_pass:` declared in header)
+   - `[filename]-RAW.md` — raw (Brain-original language; **must include `RAW-EXTERNAL` content marker**; `source:` + `trust_tier:` + `depollution_source:` + `depollution_pass:` declared in header)
    - `[filename]-PURIFIED.md` — Stage 1 output (neutralized essence, CISEM vocabulary applied by Brain/Governor)
 4. **Opus runs Stage 2** inside CISEM: PAE (ARCH-00399) 6-lens check + Existing-First conflict-check before any governed use.
 5. **Nothing is used** until the `-PURIFIED` sibling exists and `[RAW-PAIR]` passes.
