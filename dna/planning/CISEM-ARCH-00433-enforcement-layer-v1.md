@@ -479,9 +479,194 @@ Both STEP 2 and STEP 5 edit `.claude/skills/cisem-plan/SKILL.md`. Execute as ONE
 
 ---
 
-## Size Exception Update (v1.2+v1.3)
-v1.2+v1.3 add amendments sections: total ~420 lines. All additions are amendments + audit trail + embedded content.
-The original exception (enforcement-batch coherence, no split benefit) holds for the full set.
+---
+
+## AMENDMENTS v1.4 (2026-08-08 — Brain cross-review applied; 2 HOLDs + 7 smaller findings)
+
+Brain returned INCOMPLETE-INPUT on v1.3 (Brain read a packet about the plan, not the plan itself —
+correctly invoking the very gate STEP 3 adds). Findings are on the packet. All confirmed by Opus
+value-filter. Applied here additively; v1.0–v1.3 unchanged.
+
+---
+
+### HOLD 1 — DISCLOSED PRE-RATIFICATION CHECK FIXES (BEHAVIORAL PROOF REQUIRED + PROVIDED)
+Brain §1: Two checks were modified pre-ratification and then cleared this plan. "Flags went away"
+looks identical from outside whether the fix is correct or broken. Behavioral evidence required.
+
+**DISCLOSED DEVIATION — explicitly named as required by Brain:**
+This plan fixed two check mechanisms before ratification: [P5] regex (plan-audit.sh) and three-dot
+exclusion (build-state.sh). Both are bug fixes (false-negative and false-positive respectively), not
+relaxations. Both were executed as low-blast pre-ratification bug fixes with disclosed justification
+(v1.2 amendments §STEP 9 REPLACEMENT, §STEP 1 MOOT). Governor sign-off on these specific fixes
+is requested at ratification time.
+
+**BEHAVIORAL PROOF — [P5] regex extension (plan-audit.sh line 313):**
+The check uses `! grep -qiE "P1|P2|P3|P4"` — a NOT-FOUND means flagged. Adding P4 (bullet-list bold
+pattern) as a disjunct means: a plan is flagged iff it matches NONE of P1–P4. A plan with NO verifier
+field will still match none of P1, P2, P3 — AND will not match P4 (which requires the actual
+bullet-list bold text to be present). Therefore: adding P4 cannot increase false negatives.
+Formal: `¬(P1∨P2∨P3)` → still true when `¬P4` is also true, and it is (no verifier field ⟹ ¬P4).
+No [P5]-specific fixture exists; the analytical proof above is the complete evidence.
+
+**BEHAVIORAL PROOF — build-state.sh three-dot exclusion (line 112):**
+Change: `*NNNNN*|*'....'*` → `*NNNNN*|*'...'*` (three-dot catches all four-dot patterns as superset).
+Fixture test run 2026-08-08: `bash dna/checks/fixtures/build-state/run-test.sh`
+
+```
+RESULT: ALL ASSERTIONS PASSED (both directions)
+  PASS: should-flag.md FLAGGED as expected (absent deliverable, no unbuilt-marker)
+  PASS: should-pass-present.md CLEAN as expected (deliverable present on disk)
+  PASS: should-pass-marker.md CLEAN as expected (row-scoped unbuilt-marker present)
+```
+
+The should-flag.md case (COMPLETE plan with absent deliverable) is still caught. The fix did not
+break real-deliverable detection. Additional analytical proof: real CISEM paths follow the naming-
+registry convention `CISEM-{TYPE}-{NNNNN}-{slug}.{ext}` — no consecutive `...` ever appears in a
+valid CISEM path. The exclusion targets editorial abbreviations only.
+
+---
+
+### HOLD 2 → STEP 2 REPLACEMENT — unranged pointer, not a fresh range literal
+**Brain §2:** Replacing `A1-A8` with `A1-A12` repeats the class: a hand-authored range literal that
+goes stale when the next axiom arrives. History: A8 added 07-18, A9 added 07-20 (no sweep), now
+A12 — instance 3 of the same class, introduced by the prevention plan. Same edit cost; terminal fix.
+
+**STEP 2 action REPLACED (supersedes v1.0 + v1.2 amendment):**
+In `.claude/skills/cisem-plan/SKILL.md` Pocket Declaration section, replace:
+```
+**inherited_constraints:** ARCH-00190 (PLAN-PROTOCOL, SSOT); Axioms A1–A8;
+```
+with:
+```
+**inherited_constraints:** ARCH-00190 (PLAN-PROTOCOL, SSOT); Axioms — see FOUND-00001;
+```
+This is an unranged pointer: it never needs updating when a new axiom is added. All range-literal
+instances (A1–A8, A1–A9, A1–A12) in the Pocket Declaration are eliminated by one edit.
+
+**STEP 2 DoD (updated):** No axiom range literal in cisem-plan/SKILL.md Pocket Declaration.
+grep confirms: `grep -n "Axioms A1" .claude/skills/cisem-plan/SKILL.md` returns nothing.
+
+---
+
+### FINDING 3 — STEP 4 LABEL CORRECTION + RI schema note
+**Brain §3:** STEP 4 delivers a cross-reference (sibling pointer), not the prevention itself. A
+`sibling:` field is DOCUMENTATION-ABOUT, not the wired check. Roof 2 Premise-Validity must not be
+reported closed after STEP 4 executes.
+
+**Correction to STEP 4 honest scope (addition to execution guidance):**
+- STEP 4 result on execution: RI-0021 INCOMPLETE-INPUT text added to `routes_to:` list + a cross-
+  reference pointer to RI-0062 added.
+- HONEST STATUS after STEP 4: Premise-Validity check = cross-reference DOCUMENTED. Wired =
+  NOT-YET-BUILT. Roof 2 remains open on the frozen-number axis.
+- Sonnet MUST NOT report Roof 2 as closed after executing STEP 4.
+
+**RI schema note:** `sibling:` and `prevention:` are NOT registered fields in the RI-0021 schema.
+Confirmed RI-0021 fields at :163-169: `date`, `trigger`, `root_insight`, `routes_to`, `status`,
+`recurrence_<date>`. Sonnet should add the cross-reference as a new `routes_to:` list item:
+`"sibling RI-0062 (premise-validity / provenance-before-reliance — Principle 22)"`.
+Adding a new top-level YAML field (e.g. `sibling:`) is a schema change and must be avoided here.
+
+---
+
+### FINDING 4 — STEP 5 NAMED MECHANICAL FOLLOW-ON
+**Brain §4:** STEP 5 makes GI-68 behavioral (wizard prose). GI-68 in behavioral form can still be
+bypassed by not running the wizard. Named follow-on is required so STEP 5 is not reported as
+"GI-68 fully enforced."
+
+**Addition to STEP 5 execution guidance:**
+MECHANICAL FOLLOW-ON (named, NOT blocking this step, intentionally deferred to a future plan):
+A future plan step should add a `[DUAL-REVIEW]` check to plan-audit.sh — flagging any plan that
+reaches RATIFIED status without two recorded review verdicts (one from cisem-haiku, one from
+cisem-sonnet). This is what "GI-68 mechanically wired" would look like. It is explicitly named
+here so STEP 5's execution cannot be reported as completing the full GI-68 wiring chain.
+Route: queue for ARCH-00435 (or fold into the pending plan-audit enhancement batch).
+
+---
+
+### FINDING 5.1 — STEP COUNT CORRECTION
+**Brain §5.1:** The packet said "8 steps" then listed STEP 1 through STEP 9. Hand-authored count
+drifting from content — same class as Brain §2 (range literals).
+
+**Correction:** The plan has 9 nominal steps. Accurate description:
+- STEP 1: MOOT (DoD already satisfied pre-ratification)
+- STEP 7: DONE (carved-out + executed pre-ratification)
+- STEP 9: DONE ([P5] regex fixed pre-ratification)
+- **6 active steps for Sonnet execution: STEP 2, 3, 4, 5, 6, 8**
+No body edits — this is a correction to any summary/packet citing this plan; state it accurately.
+
+---
+
+### FINDING 5.2 — STEP 6 ADDITIONAL EXECUTION GUARDS
+**Brain §5.2:** Embedded STEP 6 content was authored at v1.3 time; Roof 5 has since closed, Roof 2
+has split to ARCH-00434. A queue file born stale from copied plan prose is a quality problem.
+
+**STEP 6 additional execution guard (supersedes v1.3 guard on re-derive):**
+When Sonnet creates `dna/queue/brain-open-queue.md`, it MUST re-derive the `**Status:**` field for
+each roof by reading the CURRENT state of ARCH-00433 amendments at execution time. Do NOT copy
+**Status:** values verbatim from the embedded template — verify each roof's current route + status.
+In particular: Roof 5 should read CLOSED at execution time (gate is in place).
+
+**Naming question answered:**
+`brain-open-queue.md` is a coordination artifact (same class as `queue/README.md`). It does NOT
+need a naming-registry ID. The `dna/queue/` directory holds coordination files, not governed CISEM
+nodes; no `PARK` namespace entry is required.
+
+---
+
+### FINDING 5.3 — STEP 8 ATOMICITY GUARD
+**Brain §5.3:** Naming-registry increment (VOC next_seq 4→5, already executed) and file creation
+must land in the SAME commit. A pre-incremented allocation without the file body = I23 violation
+(a bodiless node, the CS-THRESHOLD-001 class).
+
+**STEP 8 atomicity guard (addition to execution guidance):**
+VOC-00004 naming-registry pre-increment ALREADY DONE (2026-08-08 session). When Sonnet executes
+STEP 8: create `dna/vocabulary/CISEM-VOC-00004-concept-definitions.md` AND stage it in the same
+commit as the ARCH-00433 change-log entry recording STEP 8 completion. Do NOT commit the
+registry update alone — it already landed; commit only the file + the plan update together.
+
+---
+
+### FINDING 5.4 — STEP 8 OVERLAY SECTION SCOPE CLARIFIED
+**Brain §5.4:** If STEP 8's overlay section references the flow-position/pipeline relationship, it
+may be blocked; if it merely stubs the definition, it is not. Which is it?
+
+**Clarification:** STEP 8 creates a STUB for the overlay section — it states WHAT overlay IS
+(an A9 complementary-polarity / A2 inheritance-infrastructure facet concept: a layer that modulates
+an element's behavior from a specialized context without changing its core standing definition),
+and marks its relationship schema as AWAITING-RATIFICATION. It does NOT write the full overlay
+relationship map (which requires further Brain↔Opus consensus). Specifically:
+- Overlay section header: present
+- What overlay is: prose definition (A9 / A2 facet)
+- Relationship to other concepts (corespine, pipeline, flow-position): AWAITING-RATIFICATION
+  (not written in this step — deferred to post-ARCH-00434 consensus)
+STEP 8 is NOT blocked on flow-position naming; the stub writes the concept identity, not the
+relationship topology.
+
+---
+
+### FINDING 5.5 — STEP 8 STATUS ENUM GUARD
+**Brain §5.5:** VOC-00004 may use status values from the diverged enum (8 official, 15+ in use).
+A new governance node born with a non-canonical status value is the creation-gate anti-pattern.
+
+**STEP 8 status guard (addition to execution guidance):**
+VOC-00004 header `**Status:**` field MUST use one of the 8 official enum values (VOC-00002 / BP-0012
+registered set). Use `PROVISIONAL-ACTIVE` — the standard status for a new, in-use governance
+node awaiting full ratification. Do NOT use status values outside the official 8-value set.
+
+---
+
+### BRAIN §6 — OPEN ACTIONS (not plan amendments, Governor-visible)
+1. **external-depollution-prompt.md relay** (Roof 5 / Tuesday 2026-08-11): Brain needs the verbatim
+   depollution prompt text before the copy session. Text is at `dna/checks/external-depollution-prompt.md`.
+   Relayed in the Brain one-click packet for this turn.
+2. **Roof 6 — Antigravity incident (security):** Still OPEN. Governor to raise on CsAg workspace.
+   I27 candidate ready for /cisem-plan once the incident is recorded there.
+
+---
+
+## Size Exception Update (v1.4)
+v1.4 adds amendments + behavioral proofs: total ~580 lines. All additions are amendments + audit
+trail + evidence. Enforcement-batch coherence exception maintained.
 
 ## Change Log
 - v1.0 — 2026-08-08: Sonnet draft via /cisem-plan wizard. 8 items, all Sonnet-executable after ratification. Status: AWAITING-BUILDER-REVIEW.
