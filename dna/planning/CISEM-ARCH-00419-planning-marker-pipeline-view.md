@@ -252,7 +252,34 @@ Pre-commit `[ZF]` + `[DOD]` + `[ROUTING]`/`[ALIGN]`/`[TAG-STATUS]` + `[PROPAGATE
 commit time. Once D2/D3 are built, they join the SAME `plan-audit.sh` invocation — no new hook required for a
 read-only view.
 
+## Pre-ratification edge-case addenda (Brain, 2026-08-09; Opus decision 2026-08-09)
+
+**Edge 2.1 — Cross-axis flag (archived+open = leak):**
+When a topic shows ARCHIVED on the lifecycle axis (Disposition = RULED-OUT-*/SUPERSEDED) while
+open work items for that topic still sit in repository homes (IBD, queue, planning), that is a
+**cross-axis inconsistency flag**, NOT an error in either view. The lifecycle axis closed the topic;
+the repository homes still carry live work. The view (D2) MUST surface this condition explicitly
+rather than silently displaying the two views as independent. Detection: a topic whose Disposition
+is non-null AND whose IBD/Planning Status home has PARKED-RAW or CONSENSUS-REACHED open entries
+→ emit `CROSS-AXIS-FLAG: archived-with-open-work`.
+
+**Edge 2.2 — CONSENSUS-REACHED = ratified-awaiting-build (named sub-state):**
+The `MIDDLE — plan (drafting→ratified)` row currently bundles three qualitatively different states
+under one label. CONSENSUS-REACHED is not "still drafting" — it is **ratified, awaiting build**,
+and is the exact home of CISEM's most persistent failure mode (ratified-and-rotting). The mapping
+table SHALL treat CONSENSUS-REACHED as a distinct sub-state:
+- `AWAITING-BUILDER-REVIEW → COMMENTS-RECEIVED` = pre-ratification drafting/review
+- `CONSENSUS-REACHED` = **ratified-awaiting-build** (Opus+Governor both approved; no build started)
+D2's view SHOULD distinguish the two visually so ratified-but-unbuilt plans are immediately
+visible as a class. This does not add a new Planning Status value (Core Seed A unchanged); it is
+a display-grouping distinction within the existing vocab.
+
 ## Change log
+- v0.2 — 2026-08-09 (Opus decision, bounded standing authorization): added pre-ratification
+  edge-case addenda — two edges from Brain review (cross-axis flag condition; CONSENSUS-REACHED
+  named as ratified-awaiting-build sub-state). No architectural change to the four-home mapping;
+  Opus Stage-1 soundness verdict (v0.1) remains valid. These addenda feed into D2's display spec
+  at build time.
 - v0.1 — 2026-07-24 (Sonnet, STRUCTURING tier, dispatched by Opus per the three-way ratified design — Governor
   goal 2026-07-24, Governor approach 2026-07-24, Opus+Brain consensus, source-verified): initial skeleton. Four
   deliverables (D1 mapping, D4 reconciliation, D2 view spec, D3 blocked goal/approach spec) in anti-scatter order;
