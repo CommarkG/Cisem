@@ -19,6 +19,11 @@ Potential CISEM application: multi-lens Opus review stage (e.g., within GI-68 du
 review, or as an optional Wizard Step within /cisem-plan). Related: ARCH-00426 WEE
 (Weekly Evolution Engine) could use this to review weekly patterns.
 
+## Note on consult status (Brain 2026-08-09)
+Brain never received the model×mode paste — the paste marker was empty in both relay packets.
+Parking is fine. But: a consult satisfied by parking CANNOT be cited as consulted.
+If this is later promoted and requires Brain input, that consult must happen then, not retrospectively.
+
 ## Promotion path
 Separate, later step — runs full §3 gates. Assigned IBD-0033; no CISEM ID until
 promoted via /cisem-plan.

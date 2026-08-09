@@ -38,10 +38,20 @@ Deferred: until VOC-00002 enum reconciliation is prioritized
 
 ## Roof 5 — External content intake (Brain channel)
 **Route:** dna/brain-artifacts/ (ARCH-00433 STEP 7, carved-out)
-**Roof-status:** CLOSED (Governor-ratified 2026-08-08)
+**Roof-status:** PARTIALLY-CLOSED (re-opened 2026-08-09 — CLOSED was premature; two-class intake rule clarified by Brain, not yet resolved at ratification)
+⚠ **URGENT — copy session in 2 days (Tuesday 2026-08-11)**
 Mechanism: ARCH-00405 Stage 1 → ARCH-00399 Stage 2; [RAW-PAIR] enforces pairing
-Intake classes: Class A (foreign-platform) = Stage 1 required; Class B (CISEM-native Brain drafts) = Stage 1 N/A, Stage 2 required; depollution_pass: N/A recorded
-Note: Brain delivers RAW only; Opus authors PURIFIED sibling
+**Two-class intake (Brain 2026-08-09 — applied):**
+- Class A (foreign-platform material): Stage 1 (de-branding) REQUIRED + Stage 2
+- Class B (CISEM-native Brain drafts): Stage 1 N/A — reason recorded (Brain writes in
+  CISEM's own vocabulary; de-branding is a lossy round-trip against full-fidelity rule)
+  → Stage 2 IN FULL
+Note: Brain delivers RAW only; Stage 2 (purification + CISEM vocabulary application) is
+Opus work; [RAW-PAIR] flags unpaired file until Opus completes — this is correct visible
+state, not a defect.
+**Guard limit (honest):** the re-derive guard reads the repo; it cannot see an open Brain
+item. Status went stale because the change was in Brain's relay, not in the plan. Real limit
+named — not a mistake blamed.
 
 ## Roof 6 — Antigravity permission event (security incident)
 **Route:** CsAg workspace (separate repo) → I27 plan via /cisem-plan
