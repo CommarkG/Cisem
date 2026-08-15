@@ -662,3 +662,107 @@ Maps 10+ pending items (BP-0001–0010, ARCH-00417/418/419) into 4 tiers with be
 ---
 
 **Ready for compaction. All analysis on disk, Haiku audit integrated, planning system strategy documented for Governor decision.**
+
+---
+
+## COMPACT STATE v12 — 2026-08-14/15 (MCP wiring + A13 draft + Security validations + Schema absorption prep; RESUME ANCHOR)
+
+**Session UUID:** 219df8d7-5dc9-4d34-9382-e3d07ca13c40
+**HEAD at compaction:** `a9a5cfb` (IBD-0034 + raw-activity; pushed to origin/main)
+**ZF status:** NOT-ZF — pre-existing [I16] CONSENSUS-PACKAGE stale body Status field (no new findings introduced this session)
+**3 HELD files (boundary anchor 2026-08-07, DO NOT COMMIT without authorizing plan):**
+- `dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md`
+- `dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md`
+- `dna/corespines/CS-RESEARCH-001/`
+
+---
+
+### WHAT HAPPENED THIS SESSION
+
+**Brain Relay 3 processed:** RI-0069 (truncated-tool-result → INCOMPLETE-INPUT at tooling layer; prevention = all grep feeding completeness/absence claims must run unbounded) + RI-0070 (BOUNDARY-BLINDNESS CLASS — mechanism reading one side of boundary cannot detect other-side state). Both committed at `70d3c0d` prior to this session start.
+
+**Roof 5 (ARCH-00405) three-clause edit:** Brain's parallel edits to intake rules accepted — Tuesday/Roof 5 declared CLOSED by Governor ("today"). The three clauses are ratified content pending a formal plan-gated edit to the ARCH-00405 file itself (plan required — NOT done yet).
+
+**Pair ratification (5 files) — PENDING GOVERNOR, never executed this session:**
+1. VOC-00004 Def 2: remove CS-CREATION-001 and CS-THRESHOLD-001 from candidate list; pair = definition + CS-MASTER-VALIDATION-001 only
+2. CS-MASTER-VALIDATION-001: add reclassification entry
+3. ARCH-00170: `Governing corespine:` → `Validation authority:` (same value)
+4. ARCH-00008: `Governing corespine:` → `Validation authority:` (same value)
+5. ARCH-00011: `Governing corespine:` → `Validation authority:` (same value)
+6. ARCH-00310: `Governing corespine: CS-MASTER-VALIDATION-001` → `Governing corespine: CS-CREATION-001`
+These 5+1 edits are an ATOMIC commit — all or nothing. Status: NOT YET EXECUTED. Requires plan-audit [ZF] pass after execution.
+
+**Security audit rules extracted and saved (permanent mandatory rules):**
+- `C:\Users\finky\.claude\projects\c--Users-finky-Desktop-Claude-Code-Cisem\memory\security-audit-credential-rule.md` — NEVER output credential values; name+file:line only; NOT FOUND / UNVERIFIED for uncertain; never create DB connections to audit
+- `C:\Users\finky\.claude\projects\c--Users-finky-Desktop-Claude-Code-Cisem\memory\security-rls-identity-check.md` — Supabase RLS only enforced if backend uses constrained identity + per-request client; service-role or singleton = RLS structurally bypassed
+
+**MCP user-level config created:**
+- `C:\Users\finky\.claude\.mcp.json` (LIVE on disk) — Supabase (read-only, `@supabase/mcp-server-supabase@latest`) + Vercel (`@vercel/mcp-server@latest`)
+- **GOVERNOR ACTION REQUIRED:** replace `REPLACE_WITH_sbp_TOKEN` and `REPLACE_WITH_VERCEL_TOKEN` with real tokens, then restart Claude Code
+- **UNVERIFIED:** Vercel package name `@vercel/mcp-server@latest` — Governor should confirm before activating
+- **CSP action needed:** In CSP workspace, move inline `sbp_...` token from `args[3]` to `env.SUPABASE_ACCESS_TOKEN` in its `.mcp.json` (separate task, separate workspace)
+- NOTE: `settings.json` does NOT accept `mcpServers` — `.mcp.json` is the correct location (confirmed this session)
+
+**Graphify security validation:** CONFIRMED STRUCTURALLY SOUND. ARCH-00425 (MAX-ISOLATION, RATIFIED+COMPLETE, GI-68 dual-review CLEARED 2026-07-26) passes all 8 isolation criteria. `dna/checks/graphify-query.sh` confirmed LIVE with 9 path-validation guards. `graphify-out/` in `.gitignore`. Core Seeds enforced: NEVER run `graphify install/hook/serve/--mcp`. The two security docs (PLATFORM-ISOLATION, SECURITY-multi-platform) are HELD (not committed, SHAREABLE-DELIVERABLE status, not governed artifacts).
+
+**A13 axiom draft created:**
+- `dna/ibd/IBD-0034-prevention-preservation-improving-creation.md` (committed at `a9a5cfb`, status: PARKED-RAW)
+- Five clauses: class-level prevention → same turn; preservation → SSOT home same turn; learning loops (RIPL/RQC/WEE) as delivery mechanism; SSOT as gravitational constant; 5-condition new element creation gate
+- Why A13 is LEADING: provides the OPERATING MECHANISM for A11/D3/D4
+- **REQUIRES FULL GI-63 PROCESS** — no solo ratification of deep-core: Governor + Opus + Brain three-way; approach → plan via /cisem-plan → foundational decree → FOUND-00001 A13 slot → CLAUDE.md §2.4 mirror
+- Brain one-click relay for A13 approach drafted (was ready in last reply before compaction)
+
+**Schema absorption (NEW — Governor directive this session):**
+- Framing (verbatim, engrave): "we are building a universal platform so any indication of specific products, industry, role or anything else are just examples. your top expert job is to build the universal elements and classify all specific things as specific and non-universal."
+- SSOT home identified: `CS-DATA-PATTERNS-001` (corespine-registry.yaml, status: PROPOSED, goal: "Duplicate engine, sub-record CRUD, tag system, global library pattern")
+- Existing-First done (§3.2b): CS-DATA-PATTERNS-001 is the right home; no fork needed
+- Governing discipline: §3.2c Core-vs-Instance + A12 External Wall intake + ARCH-00405 two-class intake (Class B = CISEM-native Brain)
+- **Status: WAITING** — Governor will share backend schema/database files; format question pending (shared files vs paste vs path)
+- This is the PRIMARY TASK for the fresh tab session
+
+**ARCH-00405 two-class intake (from Brain Relay 3):** Class A (foreign-platform) = Stage 1 (de-branding) + Stage 2; Class B (CISEM-native Brain) = Stage 2 only. Formally confirmed this session.
+
+---
+
+### PENDING GOVERNOR (all open, none closed without decree)
+
+1. **Schema file sharing** (NEW, HIGH priority) — Governor shares backend schema/database files for absorption into CS-DATA-PATTERNS-001; format to be confirmed
+2. **Pair ratification atomic commit** — 5+1 file edit, plan-audit pass required, then commit
+3. **MCP token fill + restart** — Governor action: fill `~/.claude/.mcp.json` tokens + restart Claude Code
+4. **A13 GI-63 process** — paste Brain one-click to Brain → approach consensus → plan → decree
+5. **Roof 5 formal plan** — 3-clause edit to ARCH-00405 file (plan-gated, not yet drafted as ARCH-NNNNN)
+6. **Roof 6 (whitelist)** — Governor has been answering for 7+ relays; status unknown
+7. **B4 document** — Governor identifying which doc received "Trustworthy" verdict on crystal-normalizer/taxonomy
+8. **ARCH-00434** — decision-closure register plan; not yet drafted
+9. **ARCH-00435** — enforcement_tier vocabulary + findings-drain lifecycle (RI-0068 class)
+10. **Weekly agent compliance pass** — OVERDUE (plan-audit `[AGENT-PASS]`)
+11. **Parked-population review** — OVERDUE (plan-audit `[PARK-REVIEW-FRESH]`)
+
+---
+
+### CLEAN STATE AT COMPACTION
+
+- ✅ IBD-0034 committed + pushed (`a9a5cfb`)
+- ✅ Raw-activity log committed + pushed (`a9a5cfb`)
+- ✅ MCP config created (`~/.claude/.mcp.json`) — tokens placeholder, Governor action required
+- ✅ Security rules saved to memory (credential rule + RLS identity check)
+- ✅ Graphify security validated (ARCH-00425 passes all 8 isolation criteria)
+- ✅ CS-DATA-PATTERNS-001 identified as SSOT home for schema work (Existing-First done)
+- ✅ WITNESS v12 (this entry) — to be committed in same commit as handoff document
+- ⏳ Schema absorption — waiting for Governor to share files
+- ⏳ Pair ratification — pending Governor signal to execute
+- ⏳ MCP tokens — pending Governor action
+
+---
+
+### RESUME PATH (fresh tab)
+
+1. `CLAUDE.md` (CISEM-LOAD-00001, always-loaded)
+2. This file — WITNESS-00003 COMPACT STATE v12 (this block)
+3. `dna/quality-ledger.yaml`
+4. `dna/learning-registry/session-learning-index.yaml` (latest entry)
+5. `dna/corespines/corespine-registry.yaml` → find CS-DATA-PATTERNS-001 entry
+6. **HANDOFF document:** `dna/queue/HANDOFF-SCHEMA-ABSORPTION-2026-08-15.md` (zero-assembly, self-contained)
+7. Governor shares backend schema/database files → absorption begins under CS-DATA-PATTERNS-001 + A12 Wall + §3.2c Core-vs-Instance
+
+**NEXT MOVE:** Fresh tab reads CLAUDE.md → WITNESS v12 → handoff document → asks Governor for the schema files in the format already agreed.
