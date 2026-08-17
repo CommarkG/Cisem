@@ -874,3 +874,57 @@ These 5+1 edits are an ATOMIC commit — all or nothing. Status: NOT YET EXECUTE
 4. `dna/queue/brain-open-queue.md` (6 roofs, current status)
 5. **HANDOFF doc:** `dna/queue/HANDOFF-PLAN1-THRESHOLD-2026-08-15.md` (zero-assembly, self-contained)
 6. First action: present Governor with ONE consensus page → await ratification → /cisem-plan
+
+---
+
+## COMPACT STATE v14 — 2026-08-17 (session continuation + compaction-recovery)
+**Session:** new context window after 219df8d7 compacted | **Git HEAD:** bhtsry8ac (IBD-0036 + naming-registry; committing) | **Pushed through:** c3c3a41 (raw-activity + harvest)
+
+### WHAT HAPPENED THIS SESSION
+
+**Pre-boundary work completed (all mandatory CAL gates):**
+- ✅ ARCH-00370 harvest (219df8d7): session-learning-index.yaml + RI-0071/0072/0073/0074 written + committed in c3c3a41
+- ✅ raw-activity session close committed (c3c3a41)
+- ✅ IBD-0036 created + committed (bhtsry8ac — landing): compaction-recovery for Brain's Finding C (media-URL/attachment collision) + "fabrication implies impossible honesty" phrasing; naming-registry.yaml IBD next_seq corrected 28→37
+- ✅ All prior session commits pushed (2291036, d958748, c3c3a41)
+
+**Compaction review (Governor request):**
+- Governor asked to confirm nothing dropped in compacting 219df8d7
+- 15 items confirmed captured correctly
+- ONE item confirmed dropped: **Brain's Finding C — Media-URL array vs Attachment pattern collision**
+- ONE phrasing partially dropped: **"When an agent fabricates, look first for the rule that made honesty impossible"** (concept captured in RI-0074 but exact Brain phrasing not verbatim in any file)
+- Both recovered in IBD-0036
+
+**Naming-registry gap found + fixed:**
+- IBD next_seq showed 28; actual highest IBD on disk = 0035; next = 0037 (0036 being created)
+- Registry corrected in naming-registry.yaml (committed in bhtsry8ac)
+
+### CURRENT STATE
+
+**Plan 1:** CONSENSUS-REACHED (Brain + Opus). Awaiting Governor ratification ("go" → /cisem-plan).
+**Scope (5 items):** tri-state I27 · five-business test → DNA · four-label wiring · upgrade-path-before-gate · crash-reports RI-0074
+**NOT in Plan 1:** schema patterns · axioms A-1/3/4/5 · AI embedding · TRANSACTION-PIPELINE
+
+**Open Governor decisions:**
+1. Plan 1 ratification ("go")
+2. CS-DATA-PATTERNS-001: regoal / cancel / defer (Brain lean: keep concept, move home; Opus lean: regoal)
+3. IBD-0035 axioms A-1/3/4/5: which → three-way ratification; CS-THRESHOLD-001 body plan
+4. A-4 open question: per-domain or global surfacing cadence?
+5. Brain file provision: 8 files to upload (manifest in HANDOFF-PLAN1-THRESHOLD-2026-08-15.md)
+
+**ZF status:** NOT-ZF (pre-existing: I1 CS-DEFINITION-001 + AGENT-PASS overdue)
+
+**HELD (DO NOT COMMIT):**
+- dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md
+- dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md
+- dna/corespines/CS-RESEARCH-001/
+
+### RESUME PATH (next tab)
+
+1. CLAUDE.md (always-loaded)
+2. WITNESS-00003 COMPACT STATE v14 (this block)
+3. dna/ibd/IBD-0035-parking-priority-axioms-threshold-body-2026-08-15.md
+4. dna/ibd/IBD-0036-ubop-media-url-attachment-collision-2026-08-17.md (compaction-recovery)
+5. dna/queue/brain-open-queue.md (6 roofs)
+6. **HANDOFF:** dna/queue/HANDOFF-PLAN1-THRESHOLD-2026-08-15.md
+7. First action: present ONE consensus page to Governor → await "go" → /cisem-plan
