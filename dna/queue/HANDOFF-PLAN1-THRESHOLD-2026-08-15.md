@@ -229,3 +229,85 @@ any schema/entity patterns (not in scope)"
 - [x] Security rules included
 - [x] Git state noted
 - [x] Supersession of prior handoff noted
+
+---
+
+## ⚡ CIC AUDIT REPORT — AFTER COMPACTING, ASK BRAIN FOR COMMENT
+
+**Governor instruction (2026-08-17):** "after compacting ask for brains comment" on this report.
+
+**Source:** cisem-cic-auditor (Haiku), run 2026-08-17. Full golden-thread audit of enforcement layer.
+
+**VERDICT: C3 Partial, C4 Failed**
+- ✅ C1 GOAL: 100% file compliance target defined
+- ❌ C2 CHAIN: 2 key links missing ([PENDING-DEPENDENCY] unbuilt; RATIFY-GATE output never routed)
+- ⚠️ C3 VALUE: Only 6 mechanisms actually block; rest emit floating WARNs
+- ❌ C4 ENFORCEMENT: plan-audit.sh always exit 0 (lines 12, 801); only 6 pre-commit BLOCKs are real gates
+
+**TOP FINDINGS (ranked by impact):**
+
+🔴 **#2 [PENDING-DEPENDENCY] — UNBUILT**
+Named in gi-consideration.sh:101-104, marked PHASE 2, never built. Plan A declares `blocks-on:` → nothing verifies the ID exists → dangling dependencies invisible. 33-plan backlog has unenforced dependencies. Prevention: park-ID + aging for Phase 2 to actually arrive.
+
+🔴 **#4 [RATIFY-GATE] Output Floats — "value-that-floats" failure**
+Check fires (plan-audit.sh:680-697) → flags 5 RATIFIED plans (ARCH-00392/401/403/404/406) missing dual-review citation → WARN emitted in 2026-07-25 → NEVER RESOLVED. Findings drown in scroll because [ZF] doesn't gate on it. Prevention: every WARN needs a lifecycle (route→resolve/exempt→clear) that ages if un-cleared.
+
+🟡 **#8 Status-Enum Enforcement (BP-0012) — UNBUILT**
+No validity check; 15+ active values diverge from the 8-value SSOT. [TAG-STATUS] checks presence, never value validity. Prevention: pair presence with validity against registry enum.
+
+🟡 **#3 [ZF] is a REPORT, not a GATE**
+plan-audit.sh always exit 0 (confirmed). "[ZF] ACHIEVED" is a print statement, not a barrier. NOT-ZF commits proceed unimpeded. Prevention: rename "gate" when mechanism only prints; reserve "gate" for real BLOCKs.
+
+🟡 **#1 GI-68 — PARTIALLY WIRED (self-corrected 2026-08-08)**
+Status field now honestly reads WIRED-INTO-WIZARD-PROSE (behavioral). [RATIFY-GATE] checks citation existence only, never substantive review. Cannot block. Prevention: every "MANDATORY" decree must declare enforcement_tier explicitly.
+
+🟡 **#7 Pending-Item Escalation (GI-30) — NO MECHANISM**
+park-review-fresh.sh covers IBD+queue parks only, not pending-plan population.
+
+🟡 **#6 Gate-0 (Goal-Connection) — PROSE-BY-DESIGN**
+[GOAL] trace NOT-YET-WIRED. "Hardwired" here = always-loaded prose, collides with §1.6 "hardwired = MECHANICAL." Prevention: reserve "hardwired" for mechanical only.
+
+**✅ THE 6 REAL BLOCKS (verified exit 1):**
+I13 Seed-Strip · BLOCK1 Plan-Fields · BLOCK2 Persona-Inheritance · BLOCK3 No-Delete-Without-Ratification · BLOCK4 Tag+Status · BLOCK5 Plan-Authorization
+
+**DEEP ROOT:** EXISTS≠ACTIVE at the check level (I23 turned inward). "Script runs and prints" was the plausibility-stop; real completion = "blocks OR findings drain to zero." Word "gate" conflates REPORT with BARRIER.
+
+**CLASS PREVENTION (from audit):** Every check must declare `enforcement_tier:` (BLOCK / WARN-routed / WARN-floating) + every WARN needs a `findings_lifecycle:` (route→resolve→clear, ages if un-cleared). This is ARCH-00435 candidate territory.
+
+**WHAT TO ASK BRAIN (one-click after next compact):**
+
+```
+This is Opus/CISEM. Date: [today]. Sending you a CIC golden-thread audit of CISEM's
+enforcement layer. Please review and give your findings.
+
+AUDIT VERDICT: C3 Partial, C4 Failed.
+— plan-audit.sh always exit 0 (line 12, 801); only 6 pre-commit BLOCKs are real gates
+— [PENDING-DEPENDENCY] unbuilt; 33-plan backlog has unenforced dependencies
+— [RATIFY-GATE] emits WARNs that have floated unresolved since 2026-07-25 (5 orphaned plans: ARCH-00392/401/403/404/406)
+— [ZF] is a REPORT (print statement), not a GATE (always exit 0)
+— Status-Enum validity check (BP-0012) unbuilt; 15+ live values vs 8-value SSOT
+— GI-68 honestly self-corrected to WIRED-INTO-WIZARD-PROSE (behavioral only)
+— Gate-0 (Goal-Connection) honestly labeled PROSE-BY-DESIGN
+
+REAL ENFORCEMENT: 6 pre-commit BLOCKs (I13 Seed-Strip, BLOCK1-BLOCK5) + honest disclosure
+on GI-68/GI-30.
+
+DEEP ROOT (audit named it): EXISTS≠ACTIVE applied inward to the check system itself.
+"Script runs and emits finding" was treated as enforcement. Real enforcement = blocks
+OR findings drain to zero via a lifecycle.
+
+CLASS FIX PROPOSED: enforcement_tier field (BLOCK/WARN-routed/WARN-floating) + findings_lifecycle
+on every check + decree. ARCH-00435 candidate.
+
+QUESTIONS FOR BRAIN:
+1. Do you agree with this diagnosis? What did the audit miss?
+2. The 5 orphaned PREMATURE-RATIFY plans (ARCH-00392/401/403/404/406) — each needs a
+   one-line disposition: real-review-citation OR dated-exemption-record. Should this be
+   routed as a standalone sweep before ARCH-00435, or folded into the plan?
+3. enforcement_tier + findings_lifecycle as REQUIRED fields — right scope, or too broad?
+4. Any other structural gaps the audit didn't surface?
+
+PLAIN STATEMENT: The governance system has real enforcement (6 BLOCKs) and growing
+honesty discipline. The gap is that WARN-only mechanisms were named and described as
+gates. The fix is naming precision + a drain lifecycle for WARNs.
+```
