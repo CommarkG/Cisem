@@ -928,3 +928,89 @@ These 5+1 edits are an ATOMIC commit — all or nothing. Status: NOT YET EXECUTE
 5. dna/queue/brain-open-queue.md (6 roofs)
 6. **HANDOFF:** dna/queue/HANDOFF-PLAN1-THRESHOLD-2026-08-15.md
 7. First action: present ONE consensus page to Governor → await "go" → /cisem-plan
+
+---
+
+## COMPACT STATE v15 — 2026-08-17 (post-219df8d7 compact session — save-all + Opus review)
+**Session:** new context window post-219df8d7 compact | **Git HEAD:** bf4bad8 (IBD-0037 + Opus PE review + governed reports) | **Pushed:** ✓ all commits on remote
+
+### WHAT HAPPENED THIS SESSION
+
+**Boundary close-out (from prior compact, bvd2fk5kn notification):**
+- ✅ HANDOFF-PLAN1 CIC audit section committed + pushed (3bce813) — confirmed via task notification
+- ✅ Plan 1 consensus page presented to Governor (one word "go" starts /cisem-plan)
+
+**Harvest for 219df8d7 second half (CIC audit portion):**
+- ✅ `session_2026_08_17_cic_audit_and_compaction_recovery` written to session-learning-index.yaml
+- ✅ raw-activity-219df8d7 (final snapshot) + raw-activity-4ba9c382 committed (24cfef1)
+- Captured: CIC audit deep root (EXISTS≠ACTIVE turned inward on check system) · 6 real BLOCKs verified · plan-audit.sh exits-0 finding · 5 orphaned PREMATURE-RATIFY plans · ARCH-00435 candidate · naming-registry IBD staleness class
+
+**Brain relay (IBD-0037) — Governor relayed Brain's session-close message:**
+- ✅ IBD-0037 created + committed (bf4bad8): Brain's verbatim corrections + Opus routing notes
+- Key corrections:
+  1. **CS-DATA-PATTERNS-001**: NOT cancel/defer/regoal → RESOLVED: move home to table-writing platform; five-business test STAYS in CISEM DNA (Plan 1 item 2 already covers it)
+  2. **Axioms A-1/3/4/5**: NOT uniform — A-2 is the ONE accepted revision; A-1/3/4/5 are drafts; three-way path must NOT treat them identically (would ratify drafts on A-2's strength)
+  3. **Roof 6** (permission incident): sixteen relays open; tri-state (Plan 1 item 1) is the fix; must be raised on CsAg workspace — CISEM plan does not close it
+  4. **CS-THRESHOLD-001 body**: four-question ladder in IBD-0035 extracted block is the body candidate; threshold node blocks reclassification sweep + routing work + personal-schema question
+  5. **Brain self-correction**: any Brain recommendation touching a ratified CISEM mechanism should be framed as a question ("does this handle X?"), never an instruction
+
+**Opus PE review of Sonnet improvements report:**
+- ✅ `OPUS-PE-REVIEW-SYSTEM-IMPROVEMENTS-2026-08-17.md` written + committed (bf4bad8)
+- Verdict: **PARTIALLY SOUND**
+- Population A (SOUND — CISEM governance): ~10 items → enforcement layer, prevention propagation, FE-I wiring, [PREMISE] tagging, external alignment axis
+- Population B (OUT OF SCOPE — World A product): ~15 items → viewport automation, GAP-01..09, ARCH-00411 convergence, 9 gap-remediation plans
+- Critical gap in Sonnet report: missed CIC audit entirely; ARCH-00435 is the most important gap
+- Existing-First failures in Sonnet report: 1.1 ([ZF]) already in ARCH-00270 v2; 1.4 (RATIFY-GATE) already in ARCH-00435; 3.3 (weekly session) already in ARCH-00426
+
+**New governed files committed (bf4bad8):**
+- `dna/learning-registry/CISEM-UX-UI-COMPREHENSIVE-REPORT-2026-08-17.md` — haiku-compiled reference; 575 lines, size-gate exempted (REFERENCE|COMPILATION type); tags added
+- `dna/queue/SONNET-SYSTEM-IMPROVEMENTS-PRIORITY-REPORT-2026-08-17.md` — status updated to AWAITING-OPUS-REVIEW
+- `dna/naming-registry.yaml` — IBD next_seq 37→38
+
+**New untracked file (DO NOT COMMIT without Governor decision):**
+- `"UX UI DNA CISEM CLAUDE CODE.txt"` — appeared in workspace; content/origin unknown; flagged but not committed
+
+### CURRENT STATE
+
+**Plan 1:** CONSENSUS-REACHED (Brain + Opus). ONE WORD from Governor starts it.
+**Scope (5 items):** (1) tri-state I27 · (2) five-business test → DNA · (3) four-label wiring · (4) upgrade-path-before-gate · (5) crash-reports RI-0074
+
+**Governor decisions pending (updated from v14):**
+1. **Plan 1 ratification: "go" → /cisem-plan** (PRIMARY)
+2. **CS-DATA-PATTERNS-001 confirmation**: Brain resolved it (move home + keep test in DNA); Governor confirms
+3. **ARCH-00270 v2 ratification**: [ZF] graduation, already Stage-1 SOUND — one word
+4. **World A scope decision**: Is "CISEM Build" SIMULATION-ONLY or real product? → gates 60% of Sonnet improvements backlog
+5. **IBD-0035 axioms**: A-2 first (ready); A-1/3/4/5 individually (after A-2 ratification)
+6. **Brain file provision**: 8 files in one batch (manifest in HANDOFF-PLAN1)
+7. **After compact**: paste Brain one-click from HANDOFF §CIC → Brain comment on enforcement gaps
+8. **"UX UI DNA CISEM CLAUDE CODE.txt"**: what is it? commit / hold / use?
+
+**ZF status:** NOT-ZF (pre-existing: I1 CS-DEFINITION-001 dangling ref + I16 3 STALE status items + AGENT-PASS overdue)
+**New I1 finding**: CISEM-FOUND-00002 referenced in Sonnet improvements report (rejected candidate, not a real node); route: add example-only tag in that file
+
+**HELD (DO NOT COMMIT):**
+- dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md
+- dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md
+- dna/corespines/CS-RESEARCH-001/
+- "UX UI DNA CISEM CLAUDE CODE.txt" (pending Governor decision)
+
+### RESUME PATH (next tab — zero-assembly)
+
+```
+BOOTSTRAP:
+1. CLAUDE.md (always-loaded constitution)
+2. dna/CISEM-WITNESS-00003-session-continuity.md → COMPACT STATE v15 (this block)
+3. dna/queue/HANDOFF-PLAN1-THRESHOLD-2026-08-15.md (zero-assembly, self-contained)
+4. dna/ibd/IBD-0037-brain-relay-session-close-2026-08-17.md (Brain corrections)
+5. dna/queue/OPUS-PE-REVIEW-SYSTEM-IMPROVEMENTS-2026-08-17.md (Opus verdict)
+6. dna/quality-ledger.yaml + dna/learning-registry/session-learning-index.yaml
+
+FIRST MOVES:
+(1) bash dna/checks/plan-audit.sh → note ZF status
+(2) Present Plan 1 consensus page to Governor → "go" → /cisem-plan
+(3) Present CS-DATA-PATTERNS-001 PCR: Brain resolved (move home + keep test in DNA)
+(4) Present ARCH-00270 v2 ratification request (Stage-1 SOUND, one word)
+(5) Ask Governor about "UX UI DNA CISEM CLAUDE CODE.txt"
+
+Do NOT commit the three held files. Do NOT treat any prior approval as extending to new actions.
+```

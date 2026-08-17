@@ -529,12 +529,84 @@ session_2026_08_17_cic_audit_and_compaction_recovery:
       committed_in: "a1cff36 (swept alongside IBD-0036)"
       compact_state: "v14 — records all 219df8d7 session work: Plan 1 consensus, CIC audit integration, IBD-0036 recovery, three open Governor decisions"
 
+  - date: 2026-08-17
+    session_id: "post-219df8d7-compact — save-all + Opus PE review session"
+    session_title: "Brain relay absorption + Opus PE review + pre-compact v15 save"
+    tiers_active: [opus-pe]
+    git_head: "bf4bad8"
+
+    # ── POSITIVE pole (preserve → D4) ──
+    positive:
+      - insight: "Scope-split (Population A vs B) is the correct structural response when a single report mixes CISEM governance with customer-product work. A binary SOUND/UNSOUND verdict on a mixed report is wrong — split first, then judge each population separately."
+        hardwired_as: "NOT-YET-WIRED — route to GI-68 dual-review guidance and plan-review template"
+      - insight: "Brain's correction on axioms A-1/3/4/5 ('not uniform — A-2 is the ONE accepted revision, others are drafts') prevented a category error: a three-way ratification path that treats all five uniformly would have ratified drafts on A-2's acceptance strength. IBD-0037 captures this."
+        hardwired_as: "NOT-YET-WIRED — route to axiom-ratification flow (IBD-0035); A-2 ratifies first"
+      - insight: "World A vs World B distinction (customer onboarding product vs CISEM's own frontend) must be declared in every plan/report that touches the frontend. SOL-GIFTPRO-001 is the precedent: a SIMULATION-ONLY product does not earn CISEM plans."
+        hardwired_as: "NOT-YET-WIRED — route to ARCH-00393 (CS-FRONTEND-001) scope declaration and plan-audit [I25]"
+      - insight: "Existing-First (I19) failures in a Sonnet-tier report are a recurring class: the report independently rediscovered 3 items already covered by ARCH-00270 v2, ARCH-00435, and ARCH-00426. Prevention: Sonnet bootstraps must include the plan registry as a mandatory search before listing improvements."
+        hardwired_as: "NOT-YET-WIRED — route to cisem-sonnet.md bootstrap instructions"
+
+    # ── NEGATIVE pole (prevent → D3) ──
+    negative:
+      - problem: "Brain relay (IBD-0037) arrived mid-turn and contained three substantive corrections. Had no IBD artifact existed (A12 quarantine), these corrections would have been absorbed into context without a durable file — and would have been lost at compact."
+        prevention: "Every Brain relay with substantive corrections (>2 items) is IBD-filed BEFORE the compact boundary, classified Class B (CISEM-native Brain). This session did this correctly; make it explicit in CAL PreCompact relay-scan mandate (RI-0072 extension)."
+        status: PREVENTION-QUEUED
+        routes_to: "RI-0072 + CAL PreCompact hook mandate"
+      - problem: "CISEM-FOUND-00002 was referenced in the Sonnet improvements report as a proposed new Founding Node. No such node exists. Plan-audit [I1] flags it as UNRESOLVED. The report's author did not run Existing-First before proposing a new FOUND node."
+        prevention: "Sonnet report bootstrap must grep FOUND-nodes and ssot-registry before proposing any new FOUND-level artifact. A FOUND proposal without GI-63 (no-solo-ratify-deep-core) is an automatic A4+GI-63 violation."
+        status: PREVENTION-QUEUED
+        routes_to: "cisem-sonnet.md bootstrap + plan-audit [I1] correction (add FOUND-check)"
+      - problem: "WITNESS v15 was about to be written when the compact was requested — it had to be written first in the recovery session. The pre-compact mandate (Principle 13 + ARCH-00370 STEP 0) says WITNESS must be committed BEFORE the boundary, not deferred to the next session."
+        prevention: "WITNESS write is STEP 0 of the pre-compact sequence, not optional last item. If a new input arrives during pre-compact prep, finish the WITNESS write FIRST, then handle the input. CAL PreCompact hook should check for a WITNESS v-bump since the last commit."
+        status: PREVENTION-QUEUED
+        routes_to: "CAL PreCompact hook enhancement; ARCH-00370 STEP 0 restatement"
+
+    # ── FULL-FIDELITY FRUITS (A10 — latest decisions captured richly) ──
+    fruits_richly_captured:
+      opus_pe_review_verdict:
+        file: "dna/queue/OPUS-PE-REVIEW-SYSTEM-IMPROVEMENTS-2026-08-17.md"
+        verdict: "PARTIALLY SOUND"
+        population_a_sound: "~10 CISEM governance items (enforcement layer, prevention propagation, FE-I wiring, [PREMISE] tagging, external axis)"
+        population_b_out_of_scope: "~15 World A customer-product items (GAP-01..09, viewport automation, ARCH-00411)"
+        critical_gap_in_report: "CIC audit findings entirely missing from Sonnet report; ARCH-00435 should be Tier 0"
+        existing_first_failures: "3 items (1.1→ARCH-00270, 1.4→ARCH-00435, 3.3→ARCH-00426)"
+
+      brain_corrections_ibd0037:
+        file: "dna/ibd/IBD-0037-brain-relay-session-close-2026-08-17.md"
+        correction_1: "CS-DATA-PATTERNS-001 = RESOLVED: move home to table-writing platform; five-business test STAYS in CISEM DNA (Plan 1 item 2 already covers it)"
+        correction_2: "Axioms A-1/3/4/5 NOT uniform — A-2 is the ONE accepted revision; other four are drafts; A-2 ratifies first, others reviewed individually"
+        correction_3: "Roof 6 (permission incident) must be raised on CsAg workspace, NOT CISEM; tri-state (Plan 1 item 1) is the fix but CISEM plan doesn't close CsAg"
+        correction_4: "CS-THRESHOLD-001 body = four-question ladder from IBD-0035 extracted block; threshold blocks reclassification sweep + routing + personal-schema question"
+        correction_5: "Brain self-correction protocol: any Brain recommendation touching ratified CISEM mechanism → framed as question ('does this handle X?'), never instruction"
+
+      governor_decisions_pending:
+        primary: "Plan 1 ratification — 'go' → /cisem-plan (args pre-written in HANDOFF-PLAN1)"
+        fast_1: "ARCH-00270 v2 ratification (Stage-1 SOUND; one word)"
+        fast_2: "CS-DATA-PATTERNS-001 confirmation (Brain resolved; Governor confirms)"
+        gating: "World A scope decision (SIMULATION-ONLY vs real product? — gates 60% of Sonnet backlog)"
+        axiom: "IBD-0035 axioms: A-2 ratifies first; A-1/3/4/5 individually after"
+        unknown: "'UX UI DNA CISEM CLAUDE CODE.txt' — provenance unknown; do NOT commit until Governor clarifies"
+
+      commits_this_session:
+        - hash: "24cfef1"
+          content: "session harvest for 219df8d7 second half + raw-activity-219df8d7 (final) + raw-activity-4ba9c382"
+        - hash: "bf4bad8"
+          content: "IBD-0037 + Opus PE review + governed UX/UI report + governed Sonnet improvements report + naming-registry IBD counter update"
+
+    witness_v15:
+      written_in: "this session (compact recovery)"
+      committed_in: "pending — this harvest + WITNESS v15 are the final commit"
+      compact_state: "v15 — records: Brain relay IBD-0037, Opus PE review (PARTIALLY SOUND), three Governor decisions, resume path for next tab"
+
   pending_decisions_carried_forward:
     - "Plan 1 ratification (Governor 'go' → /cisem-plan)"
-    - "CS-DATA-PATTERNS-001: regoal / cancel / defer"
+    - "ARCH-00270 v2 ratification (Stage-1 SOUND; one word)"
+    - "CS-DATA-PATTERNS-001 confirmation (Brain resolved: move home + keep test in DNA)"
+    - "World A scope decision (SIMULATION-ONLY vs real product)"
+    - "IBD-0035 axioms: A-2 first; A-1/3/4/5 individually"
     - "Brain file provision: 8 files (manifest in HANDOFF-PLAN1)"
     - "After compact: paste Brain one-click from HANDOFF §CIC → Brain comment on CIC audit"
-    - "IBD-0035 axioms A-1/3/4/5: three-way ratification → CS-THRESHOLD-001 body plan"
-    - "5 orphaned PREMATURE-RATIFY plans (ARCH-00392/401/403/404/406): disposition before or as part of ARCH-00435"
+    - "5 orphaned PREMATURE-RATIFY plans (ARCH-00392/401/403/404/406): disposition via ARCH-00435"
+    - "'UX UI DNA CISEM CLAUDE CODE.txt': Governor clarification before committing"
 
   witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
