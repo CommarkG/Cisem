@@ -384,3 +384,71 @@ session_2026_08_08_continuation_harvest:
     - "ARCH-00419 Planning Status file update: add explicit PARKED notation (awaiting Governor word)."
     - "ARCH-00435 plan: enforcement_tier vocabulary + findings-drain lifecycle (RI-0068 class)."
   witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+# ═══════════════ SESSION HARVEST 2026-08-15 (219df8d7) — cross-platform absorption + Plan 1 consensus — ARCH-00370 STEP 1-5 ═══════════════
+session_2026_08_15_absorption_plan1:
+  date: "2026-08-15"
+  session_id: "219df8d7-5dc9-4d34-9382-e3d07ca13c40"
+  git_head_at_session_close: "d958748 (WITNESS v13 + IBD-0035 + HANDOFF-PLAN1)"
+  phase: "Cross-platform proposal absorption (PROPOSAL 00-04 + UBOP schema) + Plan 1 consensus + IBD-0035 extraction (six-day unparked block)"
+  tiers_active: [opus-pe, brain-relay-x3]
+  note: "A10 full-fidelity. Fruits captured richly; routine items indexed."
+
+  fruits:
+    governor_verbatim_engrave:
+      - text: "we are building a universal platform so any indication of specific products, industry, role or anything else are just examples. get it?? your top expert job is to build the universal elements and classify all specific things as specific and non-universal."
+        what: "Governor's permanent framing for universal-vs-instance decisions"
+        home: "CLAUDE.md §1.6 / FOUND-00001 (pending formal placement in Plan 1)"
+
+    plan1_consensus_reached:
+      Brain_and_Opus_agreed: "2026-08-15"
+      items:
+        - "(1) Tri-state validation (ABSENT/PLACEHOLDER/REAL_BOUND) -> I27 candidate + plan-audit.sh + agent prompts"
+        - "(2) Five-business test -> CISEM foundational DNA (law firm/supermarket/manufacturer/education/B2B)"
+        - "(3) Four-label claim taxonomy (VERIFIED/FILE-EVIDENCE/INFERRED/UNKNOWN) -> wiring only (existing Governor instruction)"
+        - "(4) Upgrade-path-before-gate rule -> plan-audit.sh enhancement (live gap: plan-audit.sh self-verifies, no ratified upgrade path)"
+        - "(5) Crash-reports principle -> root-insights.yaml (fail-loud vs plausible-but-wrong)"
+
+    ibd_0035_extracted:
+      what: "Parking/priority axioms A-1 through A-5 + four-question routing ladder + standalone description + chat-ungoverned-channel finding"
+      status: "PARKED-RAW (only A-2 revision accepted by Governor in 2026-08-09 conversation)"
+      A2_revision_operative: "Human declaration of priority is admissible on its own and is never overridden. Where the system's model conflicts with the declaration, the system surfaces the conflict as a question — states what it observed, asks what it is missing — and revises on the answer. Understanding is confirmed by restating it and having the human accept the restatement. An unanswered question leaves the declaration standing."
+      home: "dna/ibd/IBD-0035-parking-priority-axioms-threshold-body-2026-08-15.md (d958748)"
+
+    two_class_intake_confirmed:
+      Class_A: "Foreign-platform external content — Stage 1 de-branding (strip names/labels ONLY, no quality judgment) + Stage 2"
+      Class_B: "CISEM-native Brain content — Stage 2 only; no de-branding needed"
+      home: "ARCH-00405 (ratified); IBD-0035 intake-class field = reference implementation"
+
+  brain_corrections_accepted:
+    - correction: "Five-business test is the most valuable item in the PROPOSAL packet — Opus walked past it. Brain named it."
+      class: "Expert-significance-ranking failure: missed the CENTRAL item because it lacked a familiar CISEM-mechanism frame (category bias)"
+      prevention_candidate: "RI-0071"
+    - correction: "CS-DATA-PATTERNS-001 wrong address — CISEM has no active DB work; Tier 0 ruling already excluded platform work; documentation-as-progress at library scale"
+      class: "Scope-boundary miss — routing non-governance content to CISEM without checking standing scope decrees in governor-insights.yaml first"
+      prevention_candidate: "RI-0072; self-catch: 'governance pattern or platform-work artifact? -> check scope-boundary decrees FIRST'"
+    - correction: "AI embedding: Opus named it high-ROI AND no-CISEM-use-case in the same sentence — internal contradiction"
+      class: "Self-contradiction within one turn; claims high-value + no-use-case are mutually exclusive; parked"
+    - correction: "Cost formula (total = base + service + setup/qty) is a frozen structure violating governing law; no zero guard on quantity"
+      class: "Pattern absorption without checking the receiving platform's governing laws"
+    - correction: "Stage 1 is STRIP-ONLY. 'Source schema had this wrong as an array' = quality judgment during a strip-only pass."
+      class: "Stage 1 violation"
+      prevention_candidate: "RI-0073; Stage 1 = strip external names/labels, NOTHING ELSE"
+
+  vocabulary_collision:
+    event: "TRANSACTION-PIPELINE named by Opus; Brain flagged pipeline = execution mechanism (closed last week) — SECOND recurrence"
+    routes_to: "ARCH-00434 (Decision Closure Register) as entry 2; decision not yet in register = why collision recurred"
+
+  unparked_block:
+    event: "Five axiom drafts + standalone + routing ladder from 2026-08-09 Brain session existed ONLY in Brain's context for six days"
+    root_cause: "Chat is CISEM's highest-bandwidth input channel AND its only ungoverned one; nothing watches what arrives"
+    prevention_candidate: "RI-0074 (chat-as-ungoverned-channel)"
+
+  pending_decisions:
+    - "Plan 1 scope ratification (Governor 'go' -> /cisem-plan)"
+    - "CS-DATA-PATTERNS-001: regoal / cancel / defer"
+    - "IBD-0035 axioms A-1/3/4/5: three-way ratification before CS-THRESHOLD-001 body plan"
+    - "A-4 open question: per-domain or global surfacing cadence?"
+    - "Brain file provision: 8 files to upload (manifest in HANDOFF-PLAN1)"
+
+  witness_node: dna/CISEM-WITNESS-00003-session-continuity.md

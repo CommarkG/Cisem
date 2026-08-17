@@ -835,3 +835,104 @@ insights:
       - "sibling of RI-0069 (truncated tool result = boundary at output limit) + ARCH-00419 Edge 2.1 (archive vs. live work = cross-axis boundary) + Principle 22 (inherited claims may be boundary-blind)"
     status: NAMED 2026-08-09 — class defined; behavioral prevention stated; no mechanical check proposed yet (class too broad for one check; individual instances (RI-0069, ARCH-00419) have their own proposed checks).
 
+  RI-0071:
+    date: "2026-08-15"
+    trigger: "Brain named the five-business test as the single most valuable item in the entire PROPOSAL 00-04 packet. Opus had walked past it completely — not because it wasn't valuable, but because it lacked a familiar CISEM-mechanism frame (it looked like a design/governance concept, not a 'CISEM mechanism'). Brain also caught CS-DATA-PATTERNS-001 as the wrong address: CISEM has no active DB work; the Tier 0 ruling (2026-08-08) already excluded platform work from CISEM. Both missed for the same root reason."
+    root_insight: >
+      CATEGORY-BIAS-AS-SCOPE-FILTER: Opus's significance-ranking (Principle 16 Anti-Scatter) correctly
+      filters by 'relevance to CISEM DNA' — but the relevance judgment defaults to a FAMILIAR PATTERN (a
+      CISEM check, a CISEM invariant, a CISEM agent). A concept that is CENTRAL but FRAMELESS (no existing
+      home, no familiar CISEM category) gets ranked peripheral. The five-business test is the exact instance:
+      it is a FALSIFICATION TOOL for the universal-vs-instance decision — the most fundamental missing piece
+      in CISEM's foundational design — but because it arrived in a design-governance frame (not a 'check' or
+      'principle' or 'agent'), Opus ranked it low and Brain caught the miss. SAME ROOT: CS-DATA-PATTERNS-001
+      routed to CISEM without checking scope-boundary decrees in governor-insights.yaml. Both are
+      'familiar-category bias masking a centrality miss.' PREVENTION: before ranking any absorption item
+      PERIPHERAL, run an explicit CENTRALITY TEST against CISEM's foundational gaps (the open-roofs list +
+      the bodiless ratified items + the open five-question routers). A concept that fills a FOUNDATIONAL GAP
+      is CENTRAL regardless of how it is framed. Self-catch: 'Am I ranking this peripheral because it lacks
+      a familiar CISEM category? -> Run the centrality test against foundational gaps first.'
+      SECOND PREVENTION: before routing ANY non-governance content to CISEM, check the standing scope-boundary
+      decrees in governor-insights.yaml (esp. the Tier 0 ruling) FIRST. A scope miss that reaches CISEM
+      is documentation-as-progress at scale.
+    routes_to:
+      - "CLAUDE.md Principle 16 (Anti-Scatter) self-catch: add centrality-test-before-peripheral-ranking"
+      - "Plan 1 (pending ratification): five-business test -> CISEM foundational DNA (direct fix)"
+      - "governor-insights.yaml scope-boundary decrees: add standing self-check before routing non-governance content to CISEM"
+      - "weekly RIPL batch (category-bias class)"
+    status: NAMED 2026-08-15 — class identified + prevention stated; wiring in Plan 1 (pending ratification).
+
+  RI-0072:
+    date: "2026-08-15"
+    trigger: "IBD-0035 extraction revealed that five axiom drafts + standalone description + four-question routing ladder from 2026-08-09 Brain session existed ONLY in Brain's context for six days — not filed, not captured, not parked. The loss was structural: Brain relay chat is CISEM's highest-bandwidth input channel but has no watching mechanism."
+    root_insight: >
+      CHAT-AS-UNGOVERNED-CHANNEL: every other input channel in CISEM has a governance mechanism:
+      IBD = capture protocol; queue = process protocol; repo artifacts = creation gates; hooks = CAL.
+      Chat (the Governor's conversational input and the Brain relay channel) is the ONLY channel with ZERO
+      systematic capture. It is also the HIGHEST-BANDWIDTH channel — every Brain relay, every Governor
+      verbal directive, every in-session insight arrives here. The scheduled batch copy session (GI-72) is
+      periodic, not continuous; it captures what the Governor manually assembles, not everything. A block
+      six days old is STRUCTURAL loss, not carelessness. The fix is at the CHANNEL level, not the session level:
+      something must watch what arrives in chat and confirm it was filed BEFORE each boundary. The CAL
+      PreCompact hook is the closest existing hook-point; it fires before every compact/tab-switch. The gap
+      is that it does NOT currently scan 'what relay content arrived this session and was NOT filed.' Adding
+      a 'relay-scan' mandate to the PreCompact hook (or a UserPromptSubmit hook that tags relay content) is
+      the class-level mechanical fix. Until then, the behavioral form is: every Brain relay received this
+      session → confirm a corresponding IBD or commit exists before boundary.
+    routes_to:
+      - "CAL PreCompact hook (dna/hooks/pre-compact.sh): add relay-scan mandate — confirm every Brain relay has a corresponding filed artifact"
+      - "IBD-0035 intake-class note: Class B Brain content must be filed at relay time, not batch-time"
+      - "ARCH-00390 (CAL) follow-on: UserPromptSubmit relay-tagger (candidate, plan-gated)"
+      - "CLAUDE.md §1.8 / GI-72 7-day cadence: supplement with per-relay filing mandate"
+      - "weekly RIPL batch (channel-governance class)"
+    status: NAMED 2026-08-15 — class identified; behavioral mandate stated; mechanical fix (relay-scan in PreCompact) is a plan-gated candidate (ARCH-00390 follow-on). The IBD-0035 filing is the immediate instance fix (done, d958748).
+
+  RI-0073:
+    date: "2026-08-15"
+    trigger: "Opus wrote 'the source schema had this wrong as an array' during the Stage 1 de-branding pass of the UBOP schema. This is a quality judgment — NOT a strip action. Brain caught it as Finding A."
+    root_insight: >
+      STAGE-1-VIOLATION CLASS: A12 two-class intake defines Stage 1 as STRIP-ONLY — remove external names,
+      labels, vocabulary, branding. Stage 1 is a TRANSFORMATION PASS, not an evaluation pass. Writing any
+      clause that begins 'the source had this wrong / this is a mistake / this should have been / this
+      violates' is a quality judgment and belongs in Stage 2 (evaluation + absorption decisions). The failure
+      mode is AUTO-ASSESS: when encountering unfamiliar structure, the default reflex is to annotate it with
+      a quality verdict while stripping names. It FEELS like one pass (stripping + noting what's wrong) but
+      it is two different gates conflated. The violation risk: a Stage 1 quality judgment that carries an
+      unverified assumption (e.g. 'array is wrong here') can propagate as a CISEM-stamped verdict into
+      Stage 2, biasing the evaluation with an unevaluated premise. PREVENTION: Stage 1 output contains
+      ONLY the stripped content; if a quality observation occurs during Stage 1, save it as a STAGED-NOTE
+      outside the Stage 1 artifact, clearly marked NOT-YET-EVALUATED, for use as Stage 2 input only.
+      Self-catch every Stage 1 pass: 'Did I write anything about what the source did wrong? -> Move it to a
+      Stage 2 note, remove it from the Stage 1 output.'
+    routes_to:
+      - "ARCH-00405 (two-stage intake) Stage 1 definition: add explicit 'strip-only, no quality clauses' gate text"
+      - "CLAUDE.md §2.4 A12 External Wall: Stage 1 definition clarification (strip = names/labels ONLY)"
+      - "cisem-haiku / cisem-sonnet agent prompts: add Stage-1-violation self-catch"
+      - "weekly RIPL batch (stage-conflation class)"
+    status: NAMED 2026-08-15 — class identified; prevention stated; wiring in ARCH-00405 Stage 1 spec (plan-gated, pending Plan 1 ratification and ARCH-00405 edit plan).
+
+  RI-0074:
+    date: "2026-08-15"
+    trigger: "Brain: 'crash reports; fabricated value propagates' — as a named distinction surfaced during PROPOSAL absorption. The contrast: when a required value is missing or cannot be validated, a system that crashes loudly forces the caller to fix the real problem; a system that invents a plausible default propagates a wrong value silently until it surfaces much later (often as a data corruption or wrong decision)."
+    root_insight: >
+      CRASH-REPORTS-FABRICATED-VALUE-PROPAGATES: the tri-state credential validation model (ABSENT →
+      honest dev pass / PLACEHOLDER → hard block / REAL_BOUND → pass) is the concrete instance, but the
+      class is broader: any gate that tolerates a fabricated or synthesized value as a substitute for a
+      real one converts a LOUD FAILURE into a SILENT CORRUPTION. The fabrication feels safe because the
+      system 'keeps running' — but the running state is false, and it compounds: other components build
+      on the fabricated value, routing decisions are made from it, and the eventual failure is now far
+      from its cause. Fail-loud at the boundary is SAFER than plausible-default at the interior, even
+      though it creates immediate friction. This principle is the deep logic behind: (1) I22 (no unverified
+      done — a fabricated 'done' propagates downstream as if real); (2) the tri-state model (PLACEHOLDER
+      blocks rather than defaulting to 'looks like a value'); (3) Principle 22 (INHERITED-UNVERIFIED is
+      tagged and blocked, not trusted silently). The unique value of naming it explicitly: it converts a
+      behavioral rule ('be honest') into a STRUCTURAL decision ('design systems so fabrications block at
+      entry, not corrupt at depth').
+    routes_to:
+      - "Plan 1 item 5: route to root-insights.yaml (done — this entry); evolve to CLAUDE.md principle if Plan 1 warrants"
+      - "Tri-state validation model (Plan 1 item 1): this is the concrete instance the principle is derived from"
+      - "I22 (no unverified done) and Principle 22 (provenance): this principle names their STRUCTURAL logic"
+      - "cisem-haiku / cisem-sonnet agent prompts: 'crash-reports-fabricated-value-propagates' as a named self-check on any gate or presence check"
+      - "weekly RIPL batch"
+    status: NAMED 2026-08-15 — principle stated; wiring via Plan 1 (pending ratification). Already in this file as the durable home (I22/Principle 22 are the mechanical siblings).
+
