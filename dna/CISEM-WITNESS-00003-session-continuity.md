@@ -766,3 +766,111 @@ These 5+1 edits are an ATOMIC commit — all or nothing. Status: NOT YET EXECUTE
 7. Governor shares backend schema/database files → absorption begins under CS-DATA-PATTERNS-001 + A12 Wall + §3.2c Core-vs-Instance
 
 **NEXT MOVE:** Fresh tab reads CLAUDE.md → WITNESS v12 → handoff document → asks Governor for the schema files in the format already agreed.
+
+---
+
+## COMPACT STATE v13 — 2026-08-15 (Brain Relays 4+5 + Consensus + IBD-0035 + Tab Switch Prep; RESUME ANCHOR)
+
+**Session UUID:** 219df8d7-5dc9-4d34-9382-e3d07ca13c40 (continued from v12)
+**HEAD at compaction:** IBD-0035 commit pending (parent: `6aa8ddc`; background job running)
+**ZF status:** NOT-ZF — pre-existing [I16] CONSENSUS-PACKAGE stale body Status field only
+
+---
+
+### WHAT HAPPENED SINCE v12
+
+**Schema absorption context arrived:** Governor shared UBOP (parallel B2B SaaS) schema — 6 tables (customer_accounts, contacts, product_groups, catalog_items, product_variations, supplier_mappings, branding_subcontractors, branding_rate_cards) + transactional pipeline (inquiries → supply_offers → quotes).
+
+**Opus extraction (A12 Stage 1 de-branded):** 14 universal entity patterns identified + confirmed against five-business test. Key findings: (1) EXTERNAL-PROVIDER-MAPPING (decouple internal stable ID from external volatile provider refs); (2) TIERED-PRICING-MATRIX (provider + service_type + qty brackets + setup_fee + unit_cost); (3) COST-ASSEMBLY-FORMULA (base + service + setup/qty); (4) AI-EMBEDDING-ATTACHMENT (vector column on catalog entities); (5) TRANSACTION-PIPELINE meta-pattern.
+
+**Brain Relay 4 (absorption approach):** Brain REJECTED Option B (schema → CISEM). Core finding: CISEM has no active DB work; 22 patterns in an empty node = documentation-as-progress at library scale. The 2026-08-08 Tier 0 ruling already routed platform work back to its platform. Brain's recommendation: **split by subject, not urgency.** Governance → CISEM; schema → platform writing tables; five-business test → CISEM DNA.
+
+**Brain's four corrections accepted by Opus (all valid):**
+- A: Stage 1 violation (Opus judged quality during strip-only pass)
+- B: Tri-state finding closes Roof 6 (Antigravity permission incident) — CLASS = "mandatory presence without real-world binding"; mechanical fix = ABSENT/PLACEHOLDER/REAL_BOUND
+- C: Media-URL array vs Attachment pattern collision — must resolve before any library is written
+- D: Cost formula violates its own governing law (frozen structure under a law forbidding frozen structures; no zero guard on quantity divisor)
+
+**PIPELINE naming rejected:** Brain correctly flagged TRANSACTION-PIPELINE as re-importing the vocabulary collision ratified closed last week ("pipeline" = execution mechanism). Second recurrence — routes to ARCH-00434 decision-closure register.
+
+**Brain Relay 5 (unparked block extraction):** Six-day loose block extracted. Contents:
+- A-1 through A-5 parking/priority axioms (A-2 revision Governor-accepted; A-1/3/4/5 are unaccepted drafts)
+- Two rejected candidates with reasons (aging escalates priority REJECTED; forced resolution REJECTED)
+- Two open questions (per-domain or global cadence; standalone with/without dialogue)
+- Standalone description (complete model for holding unready work)
+- Four-question routing ladder (beneficiary → kind → attachment → does-it-need-to-become-work?) — Brain proposed as CS-THRESHOLD-001 body candidate
+- Gap in ladder: "have you asked him?" gate not present — premise-validity class for person-referenced inputs
+- Structural finding: **chat is CISEM's highest-bandwidth input channel and its only ungoverned one** — the six-day loss was structural, not accidental
+- Third option on CS-DATA-PATTERNS-001: "keep the concept, move the home" — schema patterns where tables are written; CISEM keeps five-business test + governance rules; nothing cancelled, nothing waiting
+
+**Brain concurs on Plan 1 scope (two notes):**
+- Five-business test home = wherever other platforms inherit from
+- Four-label taxonomy = wiring of existing Governor instruction, not CISEM-authored
+
+**IBD-0035 created:** `dna/ibd/IBD-0035-parking-priority-axioms-threshold-body-2026-08-15.md` — committed (background, parent 6aa8ddc)
+
+**Brain file provision requested (Governor action):** Governor requests 8 files for Brain to read source directly. All 8 confirmed to exist. See HANDOFF doc for full manifest + notes.
+
+---
+
+### PLAN 1 CONSENSUS (Brain + Opus agreed — awaiting Governor ratification)
+
+**IN Plan 1 (CISEM, immediate):**
+1. **Tri-state validation** (ABSENT/PLACEHOLDER/REAL_BOUND) → I27 candidate; wired into plan-audit.sh + agent prompts; closes Roof 6 class-level
+2. **Five-business test** → CISEM foundational DNA; exact home = Governor decides (FOUND-00001 §2 or CLAUDE.md §2.4 extension)
+3. **Four-label claim taxonomy** (VERIFIED/FILE-EVIDENCE/INFERRED/UNKNOWN) → wiring of existing Governor instruction into WITNESS/handoff protocol; no new principle number
+4. **Upgrade-path-before-gate rule** → plan-audit check + principle addition
+5. **"Crash reports; fabricated value propagates"** → root-insights.yaml (RIPL target)
+
+**NOT in Plan 1 (deferred/routed):**
+- Schema patterns (22 items) → where tables are being written; NOT CISEM now
+- CS-DATA-PATTERNS-001 → narrow to governance + five-business test; OR Governor decides cancel-vs-defer-vs-regoal
+- A-1/A-3/A-4/A-5 axioms → separate plan for CS-THRESHOLD-001 body (IBD-0035)
+- AI embedding → parked
+- TRANSACTION-PIPELINE → vocabulary collision closed; routes to ARCH-00434
+
+---
+
+### BRAIN OPEN QUEUE — STATUS (from brain-open-queue.md, last_updated 2026-08-08)
+
+- **Roof 1** (enforcement gate fires): PARTIALLY-CLOSED — 8 named-but-unwired mechanisms → ARCH-00435
+- **Roof 2** (claims outran evidence): IN-PROGRESS — premise-validity wired check NOT-YET-BUILT
+- **Roof 3** (decision memory): SPLIT-ROUTED — ARCH-00434 (decision-closure register) pending
+- **Roof 4** (status vocabulary): BLOCKING — VOC-00002 enum reconciliation unscheduled
+- **Roof 5** (external content intake): PARTIALLY-CLOSED re-opened 2026-08-09 — two-class intake clarified, not yet ratified at ARCH-00405 level
+- **Roof 6** (Antigravity permission): OPEN — I27 candidate sits in queue; **tri-state finding from Brain Relay 4 is the class-level fix; Governor must route to CsAg workspace + I27 plan**
+
+---
+
+### PENDING GOVERNOR
+
+1. **Ratify Plan 1 scope** (consensus reached — Governor confirms → /cisem-plan runs)
+2. **CS-DATA-PATTERNS-001 decision**: cancel / regoal / defer (three options Brain named)
+3. **A-2 revised axiom + A-1/3/4/5**: read IBD-0035; signal which need three-way ratification vs can go straight to CS-THRESHOLD-001 body plan
+4. **Open question A-4 cadence**: per-domain or global? Governor's personal working style; Brain won't decide
+5. **Roof 6 / Tri-state routing**: route to CsAg workspace + I27 plan via /cisem-plan
+6. **Pair ratification atomic commit** (still pending from v12)
+7. **MCP tokens**: fill `~/.claude/.mcp.json` + restart Claude Code
+8. **Brain file provision**: upload 8 files to Brain (manifest in handoff)
+
+---
+
+### CLEAN STATE AT TAB SWITCH
+
+- ✅ IBD-0035 committed (background; parent `6aa8ddc`)
+- ✅ Brain Relay 4 processed: consensus on Plan 1 scope, schema routing, four corrections accepted
+- ✅ Brain Relay 5 processed: unparked block saved (A-1 through A-5, ladder, standalone, chat-ungoverned)
+- ✅ WITNESS v13 (this entry)
+- ⏳ Brain file provision: Governor uploads 8 files → Brain reads source directly
+- ⏳ Plan 1: awaiting Governor ratification → /cisem-plan
+
+---
+
+### RESUME PATH (next tab)
+
+1. CLAUDE.md (always-loaded)
+2. WITNESS-00003 COMPACT STATE v13 (this block)
+3. `dna/ibd/IBD-0035-parking-priority-axioms-threshold-body-2026-08-15.md`
+4. `dna/queue/brain-open-queue.md` (6 roofs, current status)
+5. **HANDOFF doc:** `dna/queue/HANDOFF-PLAN1-THRESHOLD-2026-08-15.md` (zero-assembly, self-contained)
+6. First action: present Governor with ONE consensus page → await ratification → /cisem-plan
