@@ -595,10 +595,61 @@ session_2026_08_17_cic_audit_and_compaction_recovery:
 
     witness_v15:
       written_in: "this session (compact recovery)"
-      committed_in: "pending — this harvest + WITNESS v15 are the final commit"
+      committed_in: "6f541fd"
       compact_state: "v15 — records: Brain relay IBD-0037, Opus PE review (PARTIALLY SOUND), three Governor decisions, resume path for next tab"
 
+  - date: 2026-08-17
+    session_id: "post-6f541fd — Plan 1 creation + ratification session"
+    session_title: "CISEM-ARCH-00434 Plan 1 ratified; P1-P7 consolidation verification dispatched"
+    tiers_active: [opus-pe, cisem-haiku, cisem-sonnet]
+    git_head: "pending (pre-compact commit)"
+
+    positive:
+      - insight: "GI-68 dual review caught 8 real issues in a plan skeleton — I7 routing error, ambiguous triggers, missing build steps, wrong status value, unresolved 'or'. This is exactly what dual review is for. All 8 fixed before ratification."
+        hardwired_as: "CISEM-ARCH-00434 v0.2 changelog records every fix (this is the mechanism — plan versioning captures the correction class)"
+      - insight: "Concrete trigger patterns for plan-audit.sh checks: 'self-verifying mechanism' = any file in dna/checks/*.sh or .git/hooks/*. 'Binary presence assertion' = grep patterns (-f $, != '', grep -c, [ -e ) without ABSENT|PLACEHOLDER|REAL_BOUND in ±10 lines. These are machine-detectable definitions."
+        hardwired_as: "NOT-YET-WIRED as a general pattern — route to ARCH-00435 enforcement_tier design (a check trigger must be machine-detectable or it cannot be wired)"
+      - insight: "Fable g1 guard (planted test at each check's entry point) is now Plan 1 DoD. This means every new check added to plan-audit.sh must prove itself via a planted-fail string. This is the behavioral-verification extension of Principle 17 (PRESENCE≠BEHAVIOR) applied to check scripts."
+        hardwired_as: "CISEM-ARCH-00434 DoD line; NOT-YET-WIRED as a general requirement on all future check plans"
+
+    negative:
+      - problem: "S5 was routed to Sonnet in the initial plan skeleton — a truth-bearing field write. I7 catches this at dual review, but it should never reach dual review. Tier-routing declaration for any step that writes status:/last_verified: must default to Opus."
+        prevention: "Add to Sonnet tier-routing guidance: 'if the step writes status: or last_verified: anywhere, route to Opus — no exceptions'. Route to cisem-sonnet.md bootstrap and ARCH-00190 plan-template."
+        status: PREVENTION-QUEUED
+        routes_to: "cisem-sonnet.md bootstrap + ARCH-00190 plan-template DoD"
+      - problem: "RI-0074 status was stated as 'PARKED' in the plan skeleton — it was actually 'NAMED 2026-08-15'. A false-assumption about a registry entry's current state is exactly what Principle 22 (PROVENANCE-BEFORE-RELIANCE) prevents. Sonnet's grep verified the actual value."
+        prevention: "Any plan step that changes a status field MUST cite the current value verbatim (not from memory) before stating the transition. Add to plan-template: 'status transitions: cite current value from disk before writing target value'."
+        status: PREVENTION-QUEUED
+        routes_to: "ARCH-00190 plan-template + definition-of-done.md (add: 'verify current status before transition')"
+
+    fruits_richly_captured:
+      arch_00434_ratified:
+        file: "dna/planning/CISEM-ARCH-00434-governance-absorption-plan1.md"
+        status: "COMPLETE (Governor ratified 2026-08-17)"
+        build_steps_ready: "S3 (plan-audit.sh [I27]) + S4 ([UPGRADE-PATH]) + S4b (CLAUDE.md Principle 18) + S5 (RI-0074 Opus) + S6 (CLAUDE.md §1.8) + S7 (BLOCKED: needs Governor §-placement) + S8 (Opus verify)"
+        s7_gate: "Governor must decide: five-business test goes in which CLAUDE.md section? Recommendation: §2.4 (alongside axioms)"
+
+      p1_p7_verification:
+        agent: "cisem-sonnet (a59131273990397ad)"
+        output_target: "dna/learning-registry/agent-findings/sonnet-consolidation-verify-2026-08-17.md"
+        status: "dispatched — check on next bootstrap"
+        feeds: "Plans C1-C4 (P1-P7 Fable consolidation workstream)"
+        sequence: "C1(P2 machine-readable enum) → C2(P1 check library) → C3(P3+P4) → C4(P5+P6+P7)"
+
+    witness_v16:
+      written_in: "this session (pre-compact)"
+      committed_in: "pending — this harvest + WITNESS v16 + plan file are the final commit"
+      compact_state: "v16 — records: ARCH-00434 RATIFIED, P1-P7 verification dispatched, S7 blocked on placement, resume path for Plan 1 build"
+
   pending_decisions_carried_forward:
+    - "Five-business test CLAUDE.md placement (gates S7 in Plan 1 build) — §2.4 recommended"
+    - "ARCH-00270 v2 ratification (one word)"
+    - "CS-DATA-PATTERNS-001 confirmation (Brain resolved)"
+    - "World A scope decision"
+    - "IBD-0035 axioms: A-2 first"
+    - "'UX UI DNA CISEM CLAUDE CODE.txt': Governor clarification"
+
+  witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
     - "Plan 1 ratification (Governor 'go' → /cisem-plan)"
     - "ARCH-00270 v2 ratification (Stage-1 SOUND; one word)"
     - "CS-DATA-PATTERNS-001 confirmation (Brain resolved: move home + keep test in DNA)"

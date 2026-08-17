@@ -1014,3 +1014,84 @@ FIRST MOVES:
 
 Do NOT commit the three held files. Do NOT treat any prior approval as extending to new actions.
 ```
+
+---
+
+## COMPACT STATE v16 — 2026-08-17 (Plan 1 ratified + P1-P7 verification dispatched)
+**Session:** continuation of post-219df8d7 compact | **Git HEAD:** pending (pre-compact commit) | **Pushed:** after this compact fires
+
+### WHAT HAPPENED THIS SESSION
+
+**Plan 1 — RATIFIED (Governor decree "PROCEED" 2026-08-17):**
+- ✅ CISEM-ARCH-00434 created (Opus skeleton draft)
+- ✅ GI-68 dual review completed: Haiku protocol-lens + Sonnet implementability-lens
+- ✅ 8 Sonnet + 2 Haiku findings all real, all fixed in v0.2
+- ✅ Opus Stage-1 verdict: SOUND
+- ✅ Governor ratified: Planning Status = COMPLETE
+- Naming-registry: ARCH next_seq updated 434 → 435
+
+**Plan 1 build scope (NEXT SESSION — 5 items, all defined):**
+- S3: [I27] check in plan-audit.sh (scans dna/checks/*.sh for binary-presence patterns; planted test)
+- S4: [UPGRADE-PATH] check in plan-audit.sh (detects check/hook plans missing upgrade_path:; planted test)
+- S4b: CLAUDE.md Principle 18 upgrade-path Core Seed (Opus writes, Sonnet inserts)
+- S5: Opus updates RI-0074 status NAMED → WIRED-INTO-BEHAVIOR in root-insights.yaml
+- S6: Sonnet adds four-label sentence to CLAUDE.md §1.8 relay section
+- S7: Sonnet inserts five-business test Core Seed into CLAUDE.md — **BLOCKED on Governor placement decision** (§2.4 recommended)
+- S8: Opus behavioral verification (6 grep confirms + planted-test proof)
+
+**OPEN GOVERNOR DECISION (gates S7):** Which CLAUDE.md section gets the five-business test Core Seed? Recommendation: §2.4 (alongside A1–A12 axioms).
+
+**P1-P7 Consolidation verification (Sonnet):**
+- Dispatched in background (agent a59131273990397ad)
+- Output file: dna/learning-registry/agent-findings/sonnet-consolidation-verify-2026-08-17.md
+- Status: running / may have completed — CHECK ON BOOTSTRAP
+- This feeds Plans C1–C4 (P1-P7 consolidation workstream, SEPARATE from Plan 1)
+
+**Fable consolidation review file:**
+- `dna/queue/SONNET-CONSOLIDATION-REVIEW-2026-08-17.md` (exists, read this session)
+- 7 hypotheses P1–P7 with Brain+Fable consensus corrections
+- Sequence: C1(P2 alone) → C2(P1 library) → C3(P3+P4) → C4(P5+P6+P7)
+- Each phase = one /cisem-plan
+
+### PENDING GOVERNOR DECISIONS (priority-ranked)
+
+1. **Five-business test CLAUDE.md section** — gates S7 in Plan 1 build (§2.4 recommended)
+2. **ARCH-00270 v2 ratification** — [ZF] graduation, Stage-1 SOUND, one word
+3. **CS-DATA-PATTERNS-001 confirmation** — Brain resolved (move home + keep test in DNA)
+4. **World A scope** — SIMULATION-ONLY vs real product (gates Plans C1-C4 if any touch World A)
+5. **IBD-0035 axioms** — A-2 first; A-1/3/4/5 individually
+6. **"UX UI DNA CISEM CLAUDE CODE.txt"** — provenance unknown; do NOT commit
+
+### ZF STATUS
+NOT-ZF (pre-existing: I1 CS-DEFINITION-001 dangling ref + AGENT-PASS overdue)
+
+### HELD (DO NOT COMMIT)
+- dna/PLATFORM-ISOLATION-HARDENING-PROMPT-2026-07-26.md
+- dna/SECURITY-multi-platform-preventions-and-triggers-2026-07-26.md
+- dna/corespines/CS-RESEARCH-001/
+- "UX UI DNA CISEM CLAUDE CODE.txt"
+
+### RESUME PATH (next tab — zero-assembly)
+```
+BOOTSTRAP:
+1. CLAUDE.md
+2. dna/CISEM-WITNESS-00003-session-continuity.md → COMPACT STATE v16 (this block)
+3. dna/planning/CISEM-ARCH-00434-governance-absorption-plan1.md (COMPLETE — read The Rule)
+4. dna/queue/SONNET-CONSOLIDATION-REVIEW-2026-08-17.md (P1-P7 Fable review)
+5. dna/learning-registry/agent-findings/sonnet-consolidation-verify-2026-08-17.md (IF EXISTS — check first)
+6. dna/quality-ledger.yaml
+
+FIRST MOVES:
+(1) Check if P1-P7 Sonnet verification landed (dna/learning-registry/agent-findings/)
+(2) Ask Governor for five-business test placement → then S7 unblocks
+(3) Begin Plan 1 build: S3 (Opus Core Seeds for Sonnet) → Sonnet executes S3+S4+S4b+S6 → Opus executes S5 → Sonnet S7 (after placement) → Opus S8 verify
+(4) Present ARCH-00270 v2 ratification request
+(5) Present CS-DATA-PATTERNS-001 PCR (Brain resolved)
+
+PLAN 1 BUILD ORDER:
+- Opus first: write Core Seeds for S3, S4, S4b, S7 (inline in a Sonnet dispatch prompt)
+- Sonnet executes: S3 (plan-audit.sh [I27] + agent headers + planted test) + S4 ([UPGRADE-PATH] + planted test) + S4b (CLAUDE.md Principle 18) + S6 (CLAUDE.md §1.8 four-label)
+- Opus executes: S5 (root-insights.yaml RI-0074 status update)
+- Sonnet executes: S7 (CLAUDE.md five-business test seed — AFTER Governor gives section)
+- Opus: S8 verify + commit
+```
