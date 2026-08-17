@@ -452,3 +452,89 @@ session_2026_08_15_absorption_plan1:
     - "Brain file provision: 8 files to upload (manifest in HANDOFF-PLAN1)"
 
   witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
+
+# ═══════════════ SESSION HARVEST 2026-08-17 (219df8d7 cont.) — CIC audit + compaction-recovery — ARCH-00370 STEP 1-5 ═══════════════
+session_2026_08_17_cic_audit_and_compaction_recovery:
+  date: "2026-08-17"
+  session_id: "219df8d7-5dc9-4d34-9382-e3d07ca13c40"
+  note: "CONTINUATION of session_2026_08_15_absorption_plan1 (same session ID, second compact boundary). Prior harvest head d958748; this harvest head 3bce813."
+  git_head_at_session_close: "3bce813 (HANDOFF-PLAN1: CIC audit + Brain-comment instruction)"
+  phase: "Memory refresh / compaction recovery + CIC golden-thread audit integration + WITNESS v14 + pre-compact close"
+  tiers_active: [opus-pe, cisem-cic-auditor-haiku]
+
+  fruits:
+    compaction_recovery_ibd_0036:
+      what: "Brain's Finding C (Media-URL array vs Attachment pattern collision in UBOP schema) was dropped in the prior compaction (219df8d7 first boundary). Also dropped: Brain's verbatim phrasing 'when an agent fabricates, look first for the rule that made honesty impossible'."
+      recovery_method: "Governor pasted Opus's full pre-compaction response verbatim; Opus compared against all written files and identified the gap."
+      home: "dna/ibd/IBD-0036-ubop-media-url-attachment-collision-2026-08-17.md (a1cff36)"
+      routes_to:
+        - "Media-URL/Attachment conflict → schema-owning platform; five-business test (Plan 1 item 2) resolves which pattern is more universal"
+        - "'fabrication implies impossible honesty' → RI-0074 routes_to addendum (tri-state is the structural fix)"
+      class_note: "RI-0072 (chat-as-ungoverned-channel) is the prevention: a relay channel with no watching mechanism loses content at compact boundaries."
+
+    naming_registry_staleness:
+      what: "IBD next_seq in naming-registry.yaml was stale at 28; actual latest was IBD-0036 → corrected to 37."
+      root_cause: "IBD-0028 through IBD-0036 created without updating the registry counter."
+      fix: "Corrected in a1cff36 with note 'CORRECTED 2026-08-17 — was stale at 28'."
+      class_note: "Registry drift is the SAME class as ARCH-number drift (BP-0002). Counter must be updated atomically with every governed file creation."
+
+    cic_audit_findings:
+      auditor: "cisem-cic-auditor (Haiku)"
+      run_date: "2026-08-17"
+      verdict: "C3 Partial, C4 Failed"
+      home: "dna/queue/HANDOFF-PLAN1-THRESHOLD-2026-08-15.md §CIC AUDIT REPORT (3bce813)"
+
+      deep_root_richly_captured:
+        insight: "EXISTS≠ACTIVE (I23) turned INWARD on the enforcement system itself. The platform knows this invariant for governed nodes — it had not applied it to its own checks. 'plan-audit.sh runs and emits' was treated as enforcement, the same way 'a field exists' is treated as activation. The check system needs to self-inspect against the invariant it enforces."
+        class: "Self-referential blind spot: a governance rule applies to the system's own checks, not only to the artifacts the checks govern."
+        prevention_candidate: "ARCH-00435 — enforcement_tier (BLOCK/WARN-routed/WARN-floating) + findings_lifecycle on every check. A check without a classified enforcement_tier is WARN-floating by default and its findings are silent."
+
+      six_real_blocks_verified:
+        - "I13 Seed-Strip (no seed deletion without ratification)"
+        - "BLOCK1 Plan-Fields (required plan header fields)"
+        - "BLOCK2 Persona-Inheritance (tier agents must inherit persona)"
+        - "BLOCK3 No-Delete-Without-Ratification"
+        - "BLOCK4 Tag+Status on every governed file"
+        - "BLOCK5 Plan-Authorization (new file cites authorizing plan)"
+
+      critical_gaps_found:
+        - gap: "plan-audit.sh always exits 0 (lines 12 + 801 hardcode exit 0). [ZF] is a REPORT, not a GATE — a script that always exits 0 cannot block anything."
+          impact: HIGH
+          routes_to: "ARCH-00435 (enforcement_tier overhaul)"
+        - gap: "[PENDING-DEPENDENCY] UNBUILT — 33-plan backlog has unenforced dependencies; a dependent plan can proceed even if its blocker is incomplete."
+          impact: HIGH
+          routes_to: "ARCH-00435"
+        - gap: "5 orphaned PREMATURE-RATIFY plans (ARCH-00392/401/403/404/406) — [RATIFY-GATE] emitted WARNs since 2026-07-25 that floated unresolved. No findings_lifecycle exists; WARNs have no drain."
+          impact: HIGH
+          routes_to: "ARCH-00435 findings_lifecycle + each plan's individual disposition"
+        - gap: "Status-Enum validity check (BP-0012) UNBUILT — 15+ live enum values vs 8-value SSOT. Every new-status addition widens the unreferenced set silently."
+          impact: MEDIUM
+          routes_to: "BP-0012 (already parked; now has urgency evidence from audit)"
+        - gap: "GI-68 is WIRED-INTO-WIZARD-PROSE (behavioral) only — no hook blocks CONSENSUS-REACHED without dual review. Correctly labeled (self-corrected in session_2026_08_08)."
+          impact: MEDIUM
+          routes_to: "ARCH-00435 enforcement_tier; GI-68 label already honest"
+        - gap: "Gate-0 (goal-connection) is PROSE-BY-DESIGN (always-loaded, not mechanical) — deliberate; correctly stated."
+          impact: LOW
+          routes_to: "document as PROSE-BY-DESIGN in ARCH-00435 scope declaration"
+
+      brain_one_click_prepared: "Full one-click packet embedded in HANDOFF §CIC for Governor to paste to Brain post-compact. Brain is asked: (1) diagnosis agreement + what audit missed; (2) 5 orphaned plans — sweep or fold into ARCH-00435; (3) enforcement_tier + findings_lifecycle scope; (4) other structural gaps."
+
+    new_ris_committed:
+      - "RI-0071 (c3c3a41): Category-bias-as-scope-filter — centrality test before ranking; scope-boundary decrees check before routing non-governance to CISEM"
+      - "RI-0072 (c3c3a41): Chat-as-ungoverned-channel — CAL PreCompact relay-scan mandate candidate; every Brain relay must have a filed artifact before boundary"
+      - "RI-0073 (c3c3a41): Stage-1-violation class — Stage 1 = strip external names/labels ONLY; quality observations → STAGED-NOTE outside Stage 1 artifact"
+      - "RI-0074 (c3c3a41): Crash-reports-fabricated-value-propagates — fail-loud vs plausible-but-wrong; I22 and Principle 22 are the mechanical siblings; 'fabrication implies impossible honesty' is the companion insight (IBD-0036)"
+
+    witness_v14:
+      committed_in: "a1cff36 (swept alongside IBD-0036)"
+      compact_state: "v14 — records all 219df8d7 session work: Plan 1 consensus, CIC audit integration, IBD-0036 recovery, three open Governor decisions"
+
+  pending_decisions_carried_forward:
+    - "Plan 1 ratification (Governor 'go' → /cisem-plan)"
+    - "CS-DATA-PATTERNS-001: regoal / cancel / defer"
+    - "Brain file provision: 8 files (manifest in HANDOFF-PLAN1)"
+    - "After compact: paste Brain one-click from HANDOFF §CIC → Brain comment on CIC audit"
+    - "IBD-0035 axioms A-1/3/4/5: three-way ratification → CS-THRESHOLD-001 body plan"
+    - "5 orphaned PREMATURE-RATIFY plans (ARCH-00392/401/403/404/406): disposition before or as part of ARCH-00435"
+
+  witness_node: dna/CISEM-WITNESS-00003-session-continuity.md
