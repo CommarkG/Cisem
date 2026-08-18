@@ -3,6 +3,8 @@
 **RESUME PATH:** CLAUDE.md → this file → `dna/learning-registry/root-insights.yaml` → `dna/planning/CISEM-ARCH-00435-*.md` (disposition pending) → the open Governor decisions below.
 git HEAD at close = **e6f8b7f** (ARCH-00435 v1.0 committed+pushed).
 
+**I2C ACTIVE — permanent, all tiers (CLAUDE.md §1.8 decree 2026-08-18):** terse colleague-style; NO summaries / (A)(B) packets / boundary recaps / tier-narration; converge to consensus; nothing decided until Governor EXPLICITLY ratifies. KEEP: honesty (no unverified "done"), pushback, no build/truth-stamp without ratify.
+
 ## THE FRUITS (latest decisions — full fidelity, A10)
 
 ### 1. ARCH-00435 — GI-68 found it is a DUPLICATE; Opus recommends WITHDRAW (AWAITING GOVERNOR DISPOSITION)

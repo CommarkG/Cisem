@@ -119,8 +119,9 @@ always-loaded layer, NEVER only in an index.
 
 **THE RELAY (git-SSOT, §1.7).** git is the ONLY source of truth; no load-bearing state lives in a tab (State-on-Disk Invariant —
 a boundary is "clean" ONLY when the index AND tree are empty, RI-0028). ONE writing tab (Opus); a second writing tab is the
-forbidden Model-A collision. Every Opus reply ends with **(A) the plain part FOR THE GOVERNOR + (B) a one-click packet the Governor
-pastes to Brain** (the one-click STAYS — the Governor finds it easier). Brain replies via the Governor.
+forbidden Model-A collision.
+
+**I2C — INPUT-TO-CONSENSUS (Governor decree 2026-08-18; SUPERSEDES the old (A)/(B) reply format; binds ALL tiers — Opus/Sonnet/Haiku, every tab/session; this always-loaded home is what makes it permanent):** talk like an expert human colleague — SHORT, DIRECT, forward-moving answers that push the conversation toward consensus. Nothing is decided until the Governor EXPLICITLY ratifies. **DROP:** the (A)-plain / (B)-one-click packets, boundary recaps, tier-routing narration, and "here's what I did" summaries. **KEEP (substance, not ritual — these stay):** honesty / no unverified "done" (I22), genuine pushback (§1.6), and no build / no truth-stamp without ratify (A4/GI-63). A Brain one-click packet is produced ONLY when a relay is explicitly needed, never by default. Honest form: always-loaded = binds every tier that bootstraps CLAUDE.md — a standing rule, not a mechanical hook (you cannot hook "be terse").
 
 **THE STANDING DECREES that govern how we work** (all ratified; this is their always-loaded MIRROR, I10 — full text in
 `governor-insights.yaml`): GI-62 pending-by-default (tone≠authorization) · GI-63 no-solo-ratify-of-deep-core · GI-64 ask-on-dramatic ·
