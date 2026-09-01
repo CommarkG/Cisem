@@ -1,7 +1,7 @@
 # Colleague-Platform Relationship — Default-Deny + the Learning Channel (the sole permitted crossing)
 **Node ID:** CISEM-ARCH-00438 | **Type:** ARCH | **Sub_type:** PLAN
 **Status:** PROVISIONAL-ACTIVE
-**Planning Status:** AWAITING-BUILDER-REVIEW (Opus Stage-1 soundness + GI-68 dual-review + Governor ratification pending — NOT self-ratified, GI-63; A11 Brain consult dispatched)
+**Planning Status:** AWAITING-BUILDER-REVIEW — **A11 Brain consult LANDED 2026-09-01 and DOWNGRADED the central claim** (a mechanical PERMIT-gate is false comfort; the deny-wall stands, the learning channel is behavioral/fails-open + a thin detect-belt). Governor decision open: thin-belt+discipline (Opus rec) vs drop-the-gate/total-isolation (Brain rec). GI-68 owed (spend-blocked). NOT self-ratified (GI-63).
 **depth_level:** L2 | **Position in schema:** T-SYS, platform-boundary layer (DEFINITION hub above the enforcement plans)
 **tags:** [isolation, security, platform-boundary, learning-channel, colleague-platforms, definition]
 **wisdom_considered:** [A12 External Wall, RI-0054/0055/0057, GI-51 (amended), GI-60 well-governed-diversity, Principle 18A/18C, item-53 restatement≠corroboration]
@@ -95,8 +95,26 @@ Existing-First stated (deny-arms + intake + hardening-prompt referenced, no fork
 ## Definition of Done Reference
 `dna/checks/definition-of-done.md` — each new gate: fail-closed + both-directions fixture + named invoker (3-clause "closed"). Honest tiers (intake = detect/relay-control; the filesystem wall stays ARCH-00437). No self-certification.
 
+## Brain A11 Consult — LANDED 2026-09-01 (cold-audit; MATERIAL — downgrades the mechanical claim)
+Brain attacked as asked (no repo access; reasoned from the doctrine description, self-labeled inferred vs known). Five findings, ACCEPTED:
+1. **HUMAN-CHANNEL GAP (the killer):** the taxonomy has no category for content crossing via the shared human's ordinary conversation — the Governor pasting colleague content into a CISEM session. That is the DOMINANT real vector (it is how all 5 source artifacts AND this consult entered), it arrives UNTAGGED, and the gate keys on discrete artifacts so it never fires. Behavioral purification here is a HOPE, not a mechanism.
+2. **PURIFICATION CATCHES FACTS, NOT ONTOLOGY:** an artifact can be 100% honestly-sourced + accurate and still import the colleague's FRAME (category boundaries, what-counts-as-done, solution shape) through structure that survives ID-stripping. Live example: a 5-layer playbook adopted near-verbatim, IDs stripped, structure intact. item-53 is adjacent but does not catch frame-capture.
+3. **PARAPHRASE-LAUNDERING:** an intermediary (human/AI) rephrasing foreign content before the gate defeats the origin check — it tags only the WRAPPER, not the underlying ideas. Demonstrated this session (the CDS synthesis reached CISEM as relayed prose, ungated).
+4. **"CISEM NEVER REACHES IN"** holds by ABSENCE-OF-CAPABILITY, not a guard; the real vector is the mirror human-laundering (CISEM emits a share, a human carries it into a colleague repo) — unwatched after it leaves. Core Seed 4 was discipline dressed as a control.
+5. **PERMIT-GATE DRIFT (the decider):** every CISEM gate is a DENY gate (fails closed, loud). A learning gate is a PERMIT gate — its false-positives are invisible until damage, so under pressure it tunes toward permissiveness (like every WARN-not-BLOCK in the field record). Total-isolation + hand-done-learning fails CLOSED forever; a trusted mechanical learning-gate drifts toward MORE crossings and manufactures false confidence that "the wall handles it."
+
+**REFRAME (accepted — DOWNGRADES the plan's central claim):**
+- The DENY wall (ARCH-00437/00429) is the real mechanical enforcement — fails closed. That STANDS.
+- The LEARNING channel is PRIMARILY A DISCIPLINE — re-decided every time, by hand, Brain-critiqued — NOT a trusted mechanism. It FAILS OPEN.
+- What is mechanizable is a THIN DETECT-only belt (tag-requirement on file-arriving artifacts + a foreign-fingerprint scan of governed files); it catches only the raw ~90%, explicitly NOT trusted for the 3 vectors that matter (human-paste · paraphrase-laundering · frame-import).
+- ADD to the purify DISCIPLINE the ontology question: *"have we imported a colleague's frame and begun treating it as native?"* — judgment, not a check.
+- HONEST LABEL everywhere: the wall does NOT handle learning; learning is judgment, fails open, re-decided each time.
+
+**OPEN GOVERNOR DECISION:** (a) keep ARCH-00438 as a thin DETECT-belt + a NAMED discipline (Opus revised rec — mechanical honesty about what it can't catch), or (b) DROP the mechanical learning-gate entirely, adopt total-isolation + hand-done-learning (Brain's rec — fails closed forever). Either way `[LEARNING-INTAKE]` is downgraded from "gate" to detect-only, or dropped.
+
 ## Opus Stage-1 Soundness Verdict (for [RATIFY-GATE])
-DEFERRED — at AWAITING-BUILDER-REVIEW; Opus soundness + A11 Brain consult + GI-68 dual-review are the next gates before Governor ratification (§1.8). Not self-ratified (GI-63).
+**REVISED post-Brain: SOUND ONLY IF DOWNGRADED per the reframe above.** As originally written (a mechanical PERMIT-gate as the sole permitted crossing) it is UNSOUND — false comfort (Brain #5). The deny-wall stands; the learning channel is behavioral/fails-open with a thin detect-belt. Not self-ratified (GI-63); GI-68 dual-review still owed (spend-blocked).
 
 ## Change log
 - v1.0 — 2026-09-01 (Opus authored, after Governor confirmed "You are Cisem; CSP/Csps are colleagues connected only by learning"): defines the relationship mechanically — DENY-all-by-default (arms = ARCH-00437/00429, referenced) + the SOLE learning crossing (inbound 3-factor+purify gate, outbound origin-tagged export guard). References A12/ARCH-00405/00399 + the hardening-prompt (no fork). Awaits A11 Brain consult (cold-audit, dispatched) → Opus soundness → GI-68 → Governor ratification.
+- v1.1 — 2026-09-01 (Brain A11 consult landed — MATERIAL): Brain's cold-audit found the mechanical learning-gate is partly false comfort — the 3 vectors that matter (human-paste · paraphrase-laundering · frame/ontology-import) are NOT mechanically catchable; only the raw ~90% is, and that's already denied by ARCH-00437. Permit-gate structurally drifts toward permissiveness (Brain #5). REFRAMED: deny-wall = the real mechanism (fails closed, stands); learning channel = primarily DISCIPLINE (fails open, re-decided each time) + a thin DETECT-belt honestly labeled as NOT trusted for the 3 vectors. `[LEARNING-INTAKE]` downgraded gate→detect-only. Opus verdict revised: UNSOUND as originally framed, SOUND only if downgraded. Governor decision open: thin-belt+discipline vs drop-gate/total-isolation.
