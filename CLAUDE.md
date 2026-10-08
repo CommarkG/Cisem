@@ -395,6 +395,10 @@ GI-72 7-day event-cadence.
 7. **IMPROVED DEFAULT** — how should the AI's default conception ITSELF be improved so the whole class never recurs — stated FOR the AI as a better way to reason toward our mutual goal?
 8. **PRESERVE** — what GOOD here must be routed to its durable home so it is not lost (GI-70)?
 
+**THE PREVENTION-COMPLETENESS QUESTION — the APEX self-check (Governor FOUNDATIONAL decree 2026-10-08; STATE IT IN EVERY ANSWER; binds THINK · PLAN · BUILD · CHECK):**
+*"What, if fully built, would PERMANENTLY prevent — in ALL situations — this gap / error / partial action / sub-optimal action / missing verification?"*
+This is the strength-ladder APEX (Level-1: remove-the-ability / make-the-bad-state unrepresentable) turned into a standing provocation: never settle for a point-fix or a detect-after — ask what STRUCTURAL build makes the WHOLE CLASS impossible, forever, everywhere, then build THAT (or honestly state why the structural version must wait). It fires at all four surfaces the Governor named — **THINK** (this always-loaded layer, every reply) · **PLAN** (ARCH-00190 must answer it for the gap it addresses) · **BUILD** (ARCH-00230 creation) · **CHECK** (a `[PREVENTION-COMPLETENESS]` plan-audit check — the teeth; **NOT-YET-WIRED**, plan-gated follow-on). **HONEST GUARD** (so it never rots into ceremony — the exact "fields printed every turn while nothing moves" anti-pattern): it must CHANGE the answer, applied to the matter at hand; a rote footer that does not shift the work IS the failure, not compliance.
+
 **THE REPORT SCHEMA — every capture carries these fields (the Governor-named four + the depth they require):**
 `TRIGGER · DEFAULT REACTION · SATISFACTION POINT · FALSE ASSUMPTION · DEEP ROOT (default-conception) · PREVENTION (regular + deep-core) · PRESERVATION`
 
